@@ -1,0 +1,212 @@
+/* styles.css */
+
+
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body with fixed full-page background image and primary text color */
+body {
+    font-family: 'Alegreya', serif; /* Fantasy style font */
+    background: url('assets/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #DCFAFA;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+
+/* Sticky Navigation Bar styling */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(13, 54, 77, 133); /* semi-transparent dark */
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 1000;
+    /* Add box-shadow for depth */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Logo styling */
+.logo img {
+    height: 75px;
+}
+
+/* Navigation links container */
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+/* Individual nav items */
+.nav-links li {
+    position: relative; /* for dropdown positioning */
+}
+
+/* Nav link styling */
+.nav-links a {
+    color: #DCFAFA;
+    text-decoration: none;
+    padding: 12px 30px;
+    font-weight: bold;
+    display: block;
+    transition: color 0.3s ease;
+    font-size: 1.5rem;
+
+}
+
+/* Hover effect for nav links */
+.nav-links a:hover {
+    color: #ffffff;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%; /* position below the nav item */
+    left: 0;
+    background: rgba(63,204,245,0.5);
+    min-width: 180px;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Dropdown list items */
+.dropdown-content li {
+    display: block;
+}
+
+/* Links inside dropdown */
+.dropdown-content li a {
+    padding: 5px 5px;
+    font-weight: normal;
+    font-size: 1.5rem;
+
+}
+
+.dropdown-content li a:hover {
+background: rgba(63,204,200,0.5);
+
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Search bar container */
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Search input styling */
+.search-container input[type="text"] {
+    padding: 7px 10px;
+    border: none;
+    border-radius: 3px;
+    background: rgba(255,255,255,0.1);
+    color: #DCFAFA;
+    width: 160px;
+}
+
+/* Search input placeholder color */
+.search-container input[type="text"]::placeholder {
+    color: #AAAAAA;
+}
+
+/* Search input focus effect */
+.search-container input[type="text"]:focus {
+    outline: none;
+    background: rgba(255,255,255,0.2);
+}
+
+/* Main content area */
+main {
+    margin-top: 150px;
+   }
+
+.grid-container{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 60px;
+    max-width:70%; 
+    margin: 8em auto 1em;
+}
+
+article.featured{
+    grid-column: span 3;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    border-bottom: 1px solid #ffffff;
+    padding: bottom 40px;
+}
+
+article img, article.featured img{
+    width:100%;
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+}
+
+article p, article h3{
+    margin:20px 10px;
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 980px) {
+    article{
+        grid-column: span 3;
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    /* Nav links become column */
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+    }
+    .nav-links li {
+        width: 100%;
+    }
+    .nav-links a {
+        padding: 10px;
+    }
+    /* Dropdown adjustments for mobile */
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+    }
+    /* Search bar full width */
+    .search-container {
+        width: 100%;
+        padding: 10px 0;
+    }
+    .search-container input[type="text"] {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    article, article.featured{
+        display:block;
+        margin:0 20px;
+    }
+}
