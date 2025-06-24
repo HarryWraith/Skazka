@@ -11,9 +11,8 @@
     <!-- Google Font for a fantasy feel -->
     <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet" />
     <link rel="icon" type="image/png" href="assets/logo.png" />
-
 </head>
-<!--change folder name-->
+
 <body>
     <!-- Navigation Bar (sticky at top) -->
     <nav class="navbar">
@@ -114,56 +113,28 @@
     <!-- Main Content Area -->
     <main class="grid-container">
 
-</p>
-        <article class="featured">
-            <img src="assets/title_page.png" alt="image of adventurers facing a ruined castle on a mountain">
-            <div>
-                <h2>Welcome to Skazka</h2>
-                <p>A land forged in myth, ruled by mystery, and whispered about in forgotten tongues. Here, ancient
-                    creatures stir beneath moonlit forests, and the stars themselves bleed secrets into the night. This
-                    is no place for the faint of heart.</p>
-                <p>Within these cursed realms, every tale is a trap, every wonder a warning. Yet those brave enough to
-                    adventure here may uncover lost legends, forbidden magic, and truths too terrible to remain buried.
-                </p>
-                <p>Enter the dream then, if you dare — for stories don't always have happy endings. </p>
-            </div>
-        </article>
+    
+         <form action="https://formspree.io/f/xgvynjno" method="POST">
+            <label class="contact">
+                Your email:
+                <input class="contact" type="email" name="email">
+            </label>
+            <br/>
+            <label class="contact">
+                Your message:
+                <textarea class="contact" name="message"></textarea>
+            </label>
+            <!-- your other form fields go here -->
+            <button class="send" type="submit">Send</button>
+        </form>
+ 
 
-        <article>
-            <img src="assets/skazka_intro.jpg" alt="image of a little girl thief">
-            <h2>The Thief</h2>
-            <p>Back where the soldier began his journey, the streets of Calarium are choked with the dust from passing
-                horses and carts. A small child weaves through a crowd of merchants and soft skinned gentry. Spotting
-                her mark, she approaches confidently. With practiced ease she feigns a trip and bumps into the
-                unsuspecting gem cutter. With an apology she pushes away from the man, but not empty handed. The
-                concealed blade in one hand has liberated a purse of its strings. Stepping casually away from the crowd
-                she slips into a darkened alleyway to assess her work. Only five gold coins. Not bad, but not enough to
-                get her to Ku'Than. That will have to wait, for now.</p>
-        </article>
-
-        <article>
-            <img src="assets/kuthan_intro.jpg" alt="image of a young witch with a fairy in a bottle">
-            <h2>The Witchling</h2>
-            <p>A three week journey away the beggar's sister stifles in the humidity of Ku'Than's forested canopy.
-                Insects constantly gnaw at her ankles and the sweat stings her eyes. Her companion, a small white owl,
-                hoots impatiently. She bends down to retrieve the bottle that is the focus of her task. Inside, a tiny
-                winged creature flutters and bashes the glass in frustration, its lips mouthing silent curses. The
-                Witchling wonders what will become of the fairy; her mistress and mentor is oft cruel. "I won't be like
-                that when I'm a full witch", she tells herself.</p>
-        </article>
-
-        <article>
-            <img src="assets/warrior_intro.jpg" alt="">
-            <h2>The Warlord</h2>
-            <p>A lone adventurer steps off the longboat that has taken him to the necropolis of Dargav. The aging jetty
-                creaks underfoot and the forest seems to mimic the sound. A crow lands on a nearby branch to judge the
-                visitor. It caws, perhaps in approval? Clutching the urn he has brought here, the warrior takes a deep
-                breath and steps forward. This place is hallowed so he must tread carefully.</p>
-        </article>
+        
     </main>
 
-    <p id="noResultsMessage" style="display: none; text-align: center; font-size: 1.5rem; color: #f88; margin-top: 20px;">
-  No results found.
+    <p id="noResultsMessage"
+        style="display: none; text-align: center; font-size: 1.5rem; color: #f88; margin-top: 20px;">No results found.
+    </p>
 
     <footer class="footer">
         <div class="footer-inner">
