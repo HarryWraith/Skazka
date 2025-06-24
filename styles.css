@@ -28,15 +28,21 @@ h2{
   background: rgba(13, 54, 77, 0.85);
   display: flex;
   align-items: center;
- 
+  padding-left: 25px;
+  padding-right: 25px;
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   flex-wrap: wrap;
 }
 
+.navbar{
+  justify-content: center;
+}
+
 /* Logo */
 .logo img {
-  height: 50px;
+  height: 60px;
+  padding-top: 10px;
 }
 
 /* Navigation */
