@@ -10,7 +10,7 @@ body {
   min-height: 100vh;
   line-height: 1.6;
   color: #DCFAFA;
-  padding: 2rem;
+  
 
   /* Combined background layers */
   background-image:
@@ -78,10 +78,6 @@ h2 {
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   flex-wrap: wrap;
-}
-
-.navbar {
-  justify-content: center;
 }
 
 /* Logo */
