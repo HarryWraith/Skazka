@@ -10,7 +10,10 @@ body {
   min-height: 100vh;
   line-height: 1.6;
   color: #DCFAFA;
-  
+
+article p{
+  text-align: justify;
+}
 
   /* Combined background layers */
   background-image:
@@ -59,9 +62,13 @@ body {
 }
 
 
-
 h2 {
   font-size: 2rem;
+  font-weight: 900;
+}
+
+h3 {
+  font-size: 1.6rem;
   font-weight: 900;
 }
 
@@ -120,7 +127,7 @@ h2 {
   position: absolute;
   top: 100%;
   left: 0;
-  background: rgba(63, 204, 245, 0.5);
+  background: rgba(63, 204, 245, 0.9);
   min-width: 180px;
   border-radius: 0 0 4px 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
@@ -308,8 +315,7 @@ article.featured p {
   font-weight: 500;
 }
 
-article p,
-article h2 {
+article p, article h2, article ul, h3 {
   margin: 20px 10px;
 }
 
