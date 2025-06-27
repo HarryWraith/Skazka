@@ -61,6 +61,15 @@ article p{
   }
 }
 
+blockquote{
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.3rem;
+  background-color: cadetblue;
+  padding: 10px;
+  border:#ffffff 1px solid;
+  border-radius: 4px;
+}
 
 h2 {
   font-size: 2rem;
