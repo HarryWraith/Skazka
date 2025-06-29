@@ -397,8 +397,6 @@ article p, article h2, article ul, h3 {
   article {
     grid-column: span 3;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
     align-items: center;
   }
 }
@@ -406,7 +404,6 @@ article p, article h2, article ul, h3 {
 @media screen and (max-width: 768px) {
   .grid-container {
     grid-template-columns: 1fr;
-    gap: 30px;
     max-width: 90%;
   }
 }
