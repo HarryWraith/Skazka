@@ -1,531 +1,737 @@
 <!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Skazka - Dark Fantasy Lore</title>
-    <!-- Link to external CSS -->
-    <link rel="stylesheet" href="styles.css" />
-    <!-- Google Font for a fantasy feel -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="icon" type="image/png" href="assets/logo.png" />
-  </head>
-  <!--change folder name-->
-  <body>
-    <!-- Navigation Bar (sticky at top) -->
-    <nav class="navbar">
-      <div class="logo">
-        <img src="assets/logo.png" alt="Skazka Logo" />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skazka - Dark Fantasy Lore</title>
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Google Font for a fantasy feel -->
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+</head>
+<!--change folder name-->
+
+<body>
+  <!-- Navigation Bar (sticky at top) -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="assets/logo.png" alt="Skazka Logo" />
+    </div>
+    <!-- Hamburger menu icon -->
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <!-- Navigation links with dropdown menus -->
+    <ul class="nav-links">
+      <li class="dropdown">
+        <a href="index.html">Home</a>
+        <ul class="dropdown-content"></ul>
+      </li>
+      <li class="dropdown">
+        <a href="world.html">World</a>
+        <ul class="dropdown-content">
+          <li><a href="overview.html">Overview</a></li>
+          <li><a href="multiverse.html">Multiverse</a></li>
+          <li><a href="seasons.html">Seasons & Time</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="beliefs.html">Beliefs</a>
+        <ul class="dropdown-content">
+          <li><a href="creation.html">Creation</a></li>
+          <li><a href="vek.html">The Vekya</a></li>
+          <li><a href="ann.html">The Annarr</a></li>
+          <li><a href="prir.html">The Prir</a></li>
+          <li><a href="pow.html">Lesser Powers</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="races.html">People</a>
+        <ul class="dropdown-content">
+          <li><a href="races.html">Races</a></li>
+          <li><a href="nations.html">Nations</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="places.html">Places</a>
+        <ul class="dropdown-content">
+          <li><a href="cities.html">Cities</a></li>
+          <li><a href="landmarks.html">Landmarks</a></li>
+          <li><a href="realms.html">Realms</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Groups</a>
+        <ul class="dropdown-content">
+          <li><a href="major.html">Major powers</a></li>
+          <li><a href="minor.html">Minor powers</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">History</a>
+        <ul class="dropdown-content">
+          <li><a href="timeline.html">Timeline</a></li>
+          <li><a href="events.html">Events</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Things</a>
+        <ul class="dropdown-content">
+          <li><a href="artefacts.html">Artefacts</a></li>
+          <li><a href="materials.html">Materials</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Players</a>
+        <ul class="dropdown-content">
+          <li><a href="cc.html">Character creation</a></li>
+          <li><a href="options.html">Player options</a></li>
+          <li><a href="cast.html">Cast</a></li>
+          <li><a href="scores.html">Statistics</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Other</a>
+        <ul class="dropdown-content">
+          <li><a href="#">Bestiary</a></li>
+        </ul>
+      </li>
+    </ul>
+    <!-- Search bar on the far right -->
+    <form class="search-container" id="searchForm">
+      <input type="text" id="searchInput" name="query" placeholder="Search..." />
+      <button type="submit">Search</button>
+    </form>
+  </nav>
+
+  <!-- Main Content Area -->
+  <main class="grid-container">
+    <article class="featured">
+      <img src="assets/prir.jpg" alt="" />
+      <div>
+        <p>They walk among ruins and riches, memories and myths — gods who were once human. The Prir, known as the
+          Walking Gods,
+          are not born divine but become divine. Some ascended through great deeds or deep wisdom. Others stumbled into
+          godhood by sheer chance, cruel fate, or cosmic whim. A few were elevated as reward, others as punishment. The
+          universe, it seems, has a sense of humor.</p>
+        <p>No two Prir are alike. Some are benevolent protectors, lighting the way for their followers. Others are
+          unpredictable, vengeful, or wholly indifferent to mortal concerns. Some still whisper to their worshipers,
+          guide
+          kings, or stir the wind over battlefields. Others have vanished into silence, lost in their own eternity.</p>
+        <p>Yet all share one truth: their power is not infinite. It ebbs and flows with the devotion of those who
+          believe.
+          Worship is the lifeblood of a Prir. Shrines, prayers, songs, and sacrifices feed their essence. A forgotten
+          god is a
+          fading god. A beloved one burns like a star.</p>
+        <p>To understand the Prir is to understand the heights and failings of mortal existence itself — magnified,
+          eternal, and walking
+          still.</p>
       </div>
-      <!-- Hamburger menu icon -->
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <!-- Navigation links with dropdown menus -->
-      <ul class="nav-links">
-        <li class="dropdown">
-          <a href="index.html">Home</a>
-          <ul class="dropdown-content"></ul>
-        </li>
-        <li class="dropdown">
-          <a href="world.html">World</a>
-          <ul class="dropdown-content">
-            <li><a href="overview.html">Overview</a></li>
-            <li><a href="multiverse.html">Multiverse</a></li>
-            <li><a href="seasons.html">Seasons & Time</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="beliefs.html">Beliefs</a>
-          <ul class="dropdown-content">
-            <li><a href="creation.html">Creation</a></li>
-            <li><a href="vek.html">The Vekya</a></li>
-            <li><a href="ann.html">The Annarr</a></li>
-            <li><a href="prir.html">The Prir</a></li>
-            <li><a href="pow.html">Lesser Powers</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="races.html">People</a>
-          <ul class="dropdown-content">
-            <li><a href="races.html">Races</a></li>
-            <li><a href="nations.html">Nations</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="places.html">Places</a>
-          <ul class="dropdown-content">
-            <li><a href="cities.html">Cities</a></li>
-            <li><a href="landmarks.html">Landmarks</a></li>
-            <li><a href="realms.html">Realms</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#">Groups</a>
-          <ul class="dropdown-content">
-            <li><a href="major.html">Major powers</a></li>
-            <li><a href="minor.html">Minor powers</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#">History</a>
-          <ul class="dropdown-content">
-            <li><a href="timeline.html">Timeline</a></li>
-            <li><a href="events.html">Events</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#">Things</a>
-          <ul class="dropdown-content">
-            <li><a href="artefacts.html">Artefacts</a></li>
-            <li><a href="materials.html">Materials</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#">Players</a>
-          <ul class="dropdown-content">
-            <li><a href="cc.html">Character creation</a></li>
-            <li><a href="options.html">Player options</a></li>
-            <li><a href="cast.html">Cast</a></li>
-            <li><a href="scores.html">Statistics</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#">Other</a>
-          <ul class="dropdown-content">
-            <li><a href="#">Bestiary</a></li>
-          </ul>
+    </article>
+
+    <article>
+      <img src="assets/chernabog.jpg" alt="" />
+      <h2>Chernabog</h2>
+      <p class="sub">God of misfortune and corruption. Patron to the downtrodden</p>
+      <blockquote>"I am not your punishment. I am what comes when you pretend the world is just."</blockquote>
+      <p>Among all the Prir and twisted divines that haunt Skazka’s mythic past, Chernabog is the shadow cast by hope
+        itself. Once a forsaken mortal, cursed by fate or Kaos itself, he became god not by ascension, but through
+        corruption, hatred, and the mockery of divine pity. Chernabog is misfortune made incarnate: cold, inevitable,
+        and
+        patient.</p>
+
+      <h3>Symbols</h3>
+      <ul>
+        <li><b>The Blighted Eye</b>: A cracked, blackened eye weeping ash—seen etched on cursed altars, hidden in
+          desperate
+          places.</li>
+        <li><b>Withered Tree</b>: Once lush, now hollow and lifeless. Often carved where misfortune lingers long.</li>
+        <li><b>The Eclipse Halo</b>: A black circle around a pale disc—an eternal reminder of his birth beneath a dying
+          sun.
         </li>
       </ul>
-      <!-- Search bar on the far right -->
-      <form class="search-container" id="searchForm">
-        <input
-          type="text"
-          id="searchInput"
-          name="query"
-          placeholder="Search..."
-        />
-        <button type="submit">Search</button>
-      </form>
-    </nav>
 
-    <!-- Main Content Area -->
-    <main class="grid-container">
-      <article class="featured">
-        <img src="assets/prir.jpg" alt="" />
-        <div>
-          <p>They walk among ruins and riches, memories and myths — gods who were once human. The Prir, known as the Walking Gods,
-            are not born divine but become divine. Some ascended through great deeds or deep wisdom. Others stumbled into
-            godhood by sheer chance, cruel fate, or cosmic whim. A few were elevated as reward, others as punishment. The
-            universe, it seems, has a sense of humor.</p>
-          <p>No two Prir are alike. Some are benevolent protectors, lighting the way for their followers. Others are
-            unpredictable, vengeful, or wholly indifferent to mortal concerns. Some still whisper to their worshipers, guide
-            kings, or stir the wind over battlefields. Others have vanished into silence, lost in their own eternity.</p>
-          <p>Yet all share one truth: their power is not infinite. It ebbs and flows with the devotion of those who believe.
-            Worship is the lifeblood of a Prir. Shrines, prayers, songs, and sacrifices feed their essence. A forgotten god is a
-            fading god. A beloved one burns like a star.</p>
-          <p>To understand the Prir is to understand the heights and failings of mortal existence itself — magnified, eternal, and walking
-            still.</p>
-        </div>
-      </article>
+      <h3>Domains</h3>
+      <ul>
+        <li><b>Misfortune</b>: Wherever luck turns bitter and triumphs collapse, Chernabog walks unseen.</li>
+        <li><b>Despair</b>: Not raw destruction, but carefully sown ruin—turning hope to ash and bonds to blades.</li>
+        <li><b>Corruption</b>: He is not the chaos of Kaos, but its precision; a seed of rot planted in systems and
+          souls.
+        </li>
+        <li><b>Creation of Monsters</b>: From his rage, he forged the orcs—brutal reflections of his own exile.</li>
+      </ul>
 
-      <article>
-        <img src="assets/chernabog.jpg" alt="" />
-        <h2>Chernabog</h2>
-        <blockquote>"I am not your punishment. I am what comes when you pretend the world is just."</blockquote>
-        <p>Among all the Annarr and twisted divines that haunt Skazka’s mythic past, Chernabog is the shadow cast by hope
-          itself. Once a forsaken mortal, cursed by fate or Kaos itself, he became god not by ascension—but through
-          corruption, hatred, and the mockery of divine pity. Chernabog is misfortune made incarnate: cold, inevitable, and
-          patient.</p>
+      <h3>Rites</h3>
+      <ul>
+        <li><b>The Mask of Ruin</b>: Said to be worn by Chernabog when walking among mortals. It bears no eyes, only a
+          faint
+          smile. It is now a symbol worn by priests of this deity.</li>
+        <li><b>Ashblade</b>: A sword carried by his earliest orc warlords, forged from volcanic glass and regret. It
+          breaks
+          not bodies, but loyalty. Said to be used to ordain priests in to the ranks of Chernabog.</li>
+        <li><b>The Thousand Whispers</b>: A forbidden prayer spoken only by those who have lost everything. The prayer
+          does
+          not ask for aid — it asks for vengeance through entropy.</li>
+      </ul>
+
+      <h3>Lore</h3>
+      <ul>
+        <li><b>The Founding of the First Orc</b>: Beneath the Dead Peak, Chernabog shaped the first orc from stone, ash,
+          and raw will. He did not gift them purpose — he gave them anger. Their hearts burn with echoes of Chernabog’s
+          first scream.</li>
+        <li><b>The Ashfall War</b>: When the orcs flooded from his sanctum, no god knew where the tide would end. Cities
+          vanished beneath choking smoke. Chernabog himself never lifted a blade — he whispered, and kings tore down
+          their own
+          thrones.</li>
+        <li><b>The Banishment</b>: The Annarr, unified in fear, shattered Chernabog’s name, divided his orc legions, and
+          sealed his sanctum. For a thousand years his name was erased from stone, song, and prayer. But misfortune does
+          not
+          sleep.</li>
+        <li><b>Worship & Fear</b>: Chernabog is not worshipped openly. His name is muttered only by the
+          broken—prisoners,
+          the plague-touched, exiled warlords. Secret cults called The Hollowed Eye plant despair deliberately,
+          believing
+          that only ruin brings truth.</li>
+      </ul>
+    </article>
+
+    <article>
+      <img src="assets/herukan.jpg" alt="" />
+      <h2>Herukan</h2>
+      <p class="sub">God of song, memory and revelation. Patron to bards.</p>
+      <p>
+        Born in the shadowed alleys of Varn Hollow under a blood moon, Herukan, a gnome with hauntingly large eyes and
+        nimble fingers, was sold to the Carnival of the Shrieking Bell by his parents who could not afford to raise him.
+        Amid cruelty and fractured instruments, he learned to
+        channel sorrow through his harp-like voice. One night, after a brutal beating, his lament awake a Shard of
+        Uzume, an
+        ancient fragment of song-power buried in nearby for thousands of years. The shard fused with his soul, and in
+        his next performance, time itself stopped. Herukan, through no choice of his own,
+        ascended and became god of song and emotional transformation — one who sings and the world obeys.
+      </p>
+      <h3>Symbols</h3>
+      <ul>
+        <li><b>The Shattered Bell</b>: A cracked handbell, often worn as a pendant. It represents the broken silence
+          Herukan shattered with
+          his song at the carnival of the Shrieking Bell. Worshippers never ring it—only wear it. To ring it is to beg
+          for a voice
+          in the silence of despair. </li>
+        <li><b>“When silence hurts, I listen.”</b>: Whispered creed of Herukan’s faithful.</li>
+        <li><b>The Spiral Harp</b> :An impossible harp whose strings spiral into infinity. Appears in murals and
+          frescoes. Used as an emblem by bardic orders aligned with Herukan’s truth-driven music.</li>
+        <li><b>The Mask with No Mouth:</b> A simple theatre mask with no mouth, only expressive eye slits. A symbol of
+          those who were never
+          heard. Carried by orphans, the exiled, and abused performers. When a follower sings
+          with it placed beside them, it’s said Herukan sings in harmony.</li>
+      </ul>
+
+      <h3>Domains</h3>
+      <ul>
+        <li><b>Song & Emotion</b>: His voice commands tears and ecstasy, weaving potent emotional resonance into all who
+          hear him.</li>
+        <li><b>Memory & Loss</b>: He gives form to grief, unlocks nostalgia, and binds memory with melody.</li>
+        <li><b>Revelation & Truth</b>: In his harmonies, hidden truths surface; lies unravel to silence.</li>
+        <li><b>Veil & Inter-Realm Chorus</b>: Herukan bridges realms, warping reality through sound.</li>
+      </ul>
+
+      <h3>Rites</h3>
+
+      <ul>
+        <li>
+          <b>The Blood-Moon Lament</b>: During lunar eclipses, gnome bards perform low dirges in acoustic chambers. As
+          tears flow, they believe Herukan listens — rekindling empathy in a world grown harsh.
+        </li>
+
+        <li>
+          <b>Carnival’s Silence</b>: Displaced performers hang broken instruments at doorways. Once silent, they are
+          never played again — tokens of respect for
+          the night Herukan’s song turned sorrow into cosmic pause.
+        </li>
+
+        <li>
+          Shard-Adaptive Hymn: melodies are sung in layered counterpoint until the air quivers. When done
+          correctly, singers claim to feel doorways open beyond mortal perception.
+        </li>
+      </ul>
+      <h3>Lore</h3>
+    </article>
+
+    <article>
+      <img src="assets/mortifer.jpg" alt="" />
+      <h2>Mortifer</h2>
+      <p class="sub">Lord of murder and ambition. Patron to assassins and serial killers.</p>
+      <blockquote>“A blade, a name, a silence. This is his prayer.” — from the banned Velkarian Catechism of Knives
+      </blockquote>
+      <p>Mortifer was born beneath the counting-houses of Velkaria, ignored even by his own lineage. He watched as
+        brothers
+        inherited, sisters were adored, and his father spoke only of legacy — never his. His first kill was not rage,
+        but
+        experiment. The next, calculation. Then came artistry. As the bodies fell and his family's line crumbled,
+        Mortifer’s
+        name rose like smoke over a ruined ledger. But even wealth and titles could not still his hunger. He turned to
+        the
+        forbidden: blood sorcery, exile-born rites, the carving of power into flesh.</p>
+
+      <p>On a night soaked in red moonlight, Mortifer killed the city’s entire merchant council — thirteen blades,
+        thirteen
+        names, thirteen deaths in one breath. When dawn broke, he stood alone amidst chaos, not merely feared but
+        revered. The
+        divine took notice — not to bless him, but to acknowledge him. With each murder done in ambition, his essence
+        deepened.
+        With each assassin’s whisper, his shadow lengthened.</p>
+
+      <p>He is now worshipped in silence, invoked without voice. No church dares claim him — and yet every assassin,
+        every
+        traitor, every power-hungry soul knows his mark. He is the god of murder not as madness, but as method.</p>
+
+
+      <h3>Symbols</h3>
+      <ul>
+        <li><b>A nod and a wink</b>: A blood-slick dagger plunged into a coin; this is the calling card of those who
+          serve Mortifer.</li>
+        <li><b>A dire warning</b>: a severed hand clutching thirteen black threads; this is the symbol which indicates
+          refuge is close-by for those who follow the Lord of Murder.</li>
+        <li><b>Guess whose coming to dinner</b>: a tarot card with a red crescent moon biting through darkness; a gift
+          given to those a devotee intends on killing.</li>
+      </ul>
+
+      <h3>Domains</h3>
+      <ul>
+        <li><b>Planned to perfection</b>: Mortifier is not just about murder, but murder which is planned immactulately.
+        </li>
+        <li><b>Slay thy borother</b>: ambition above everything else. Even family should not be above scheming.</li>
+      </ul>
+
+      <h3>Rites</h3>
+
+      <ul>
+        <li><b>The Rite of Thirteen</b>: A ritual killing involving thirteen symbolic elements — thirteen blades,
+          thirteen heartbeats, thirteen names whispered. Said to draw Mortifer's gaze directly and confer dark favor or
+          protection in exchange for the killer’s own soul fraying.</li>
+
+        <li><b>Velkarian Marking</b>: Practitioners slice the rune of Mortifer — an angular glyph resembling a dagger
+          through an eye — into their skin before committing a murder-for-power. Done properly, the mark never scars,
+          only deepens.</li>
+        <img src="assets/mortifer_rune.jpg" alt="">
+
+        <li><b>The Crimson Silence</b>: A vow taken by assassins, never to speak of the act once done. Each broken vow
+          supposedly awakens a fragment of Mortifer within, leading to madness or worse — divine possession.</li>
+      </ul>
+
+      <h3>Lore</h3>
+      <ul>
+        <li><b>Mortifer was not born divine</b>: he proved himself divine. In the mercantile sprawl of Velkaria, where
+          merchants bartered souls and family was priced in ledgers, he was a forgotten child: the seventh son, the
+          unmentioned heir. But Mortifer did not beg for legacy. He seized it, body by body, crime by crime, blade by
+          blade. His murders were not acts of madness — they were assertions of order, deliberate, ritualistic,
+          inevitable.</li>
+
+        <li><b>He rose by subtraction</b>: thinning the world of his rivals until only he remained. The gods took notice
+          when mortals fled from his shadow rather than from theirs. They watched as he carved divinity into himself —
+          not through worship, but through work.</li>
+
+        <li><b>He has no temples, only scenes of crime</b></li>: His sermons are written in bloodstains. His hymns are
+        final breaths.
+
+        <li><b>The Ledger of Unspoken Names</b>: A tattered book said to list every name Mortifer has claimed. No ink,
+          only impressions — names felt rather than read.</li>
+
+        <li><b>The Dagger of Final Inheritance</b>: A black-bladed relic believed to be the very knife used to slay the
+          merchant council. It thirsts audibly when near betrayal.</li>
+
+        <li><b>The Silence-Bound Psalms</b>: Etched onto bone, readable only under blood-moonlight. Reciting one is said
+          to hide a murderer from all gods — save Mortifer.</li>
+      </ul>
+    </article>
+
+    <article>
+      <img src="assets/agos.jpg" alt="" />
+      <h2>Agos</h2>
+      <p class="sub">God of farming, agriculture and the seasons. Patron to farmers and anyone who works on the land.</p>
       
-        <h3>Symbols</h3>
-        <ul>
-          <li><b>The Blighted Eye</b>: A cracked, blackened eye weeping ash—seen etched on cursed altars, hidden in desperate
-            places.</li>
-          <li><b>Withered Tree</b>: Once lush, now hollow and lifeless. Often carved where misfortune lingers long.</li>
-          <li><b>The Eclipse Halo</b>: A black circle around a pale disc—an eternal reminder of his birth beneath a dying sun.
-          </li>
-        </ul>
-      
-        <h3>Domains</h3>
-        <ul>
-          <li><b>Misfortune</b>: Wherever luck turns bitter and triumphs collapse, Chernabog walks unseen.</li>
-          <li><b>Despair</b>: Not raw destruction, but carefully sown ruin—turning hope to ash and bonds to blades.</li>
-          <li><b>Corruption</b>: He is not the chaos of Kaos, but its precision; a seed of rot planted in systems and souls.
-          </li>
-          <li><b>Creation of Monsters</b>: From his rage, he forged the orcs—brutal reflections of his own exile.</li>
-        </ul>
-      
-        <h3>Rites</h3>
-        <ul>
-          <li><b>The Mask of Ruin</b>: Said to be worn by Chernabog when walking among mortals. It bears no eyes, only a faint
-            smile. It is now a symbol worn by priests of this deity.</li>
-          <li><b>Ashblade</b>: A sword carried by his earliest orc warlords, forged from volcanic glass and regret. It breaks
-            not bodies, but loyalty. Said to be used to ordain priests in to the ranks of Chernabog.</li>
-          <li><b>The Thousand Whispers</b>: A forbidden prayer spoken only by those who have lost everything. The prayer does
-            not ask for aid — it asks for vengeance through entropy.</li>
-        </ul>
-      
-        <h3>Lore</h3>
-        <ul>
-          <li><b>The Founding of the First Orc</b>: Beneath the Dead Peak, Chernabog shaped the first orc from stone, ash,
-            and raw will. He did not gift them purpose — he gave them anger. Their hearts burn with echoes of Chernabog’s
-            first scream.</li>    
-          <li><b>The Ashfall War</b>: When the orcs flooded from his sanctum, no god knew where the tide would end. Cities
-            vanished beneath choking smoke. Chernabog himself never lifted a blade — he whispered, and kings tore down their own
-            thrones.</li>
-          <li><b>The Banishment</b>: The Annarr, unified in fear, shattered Chernabog’s name, divided his orc legions, and
-            sealed his sanctum. For a thousand years his name was erased from stone, song, and prayer. But misfortune does not
-            sleep.</li>
-          <li><b>Worship & Fear</b>: Chernabog is not worshipped openly. His name is muttered only by the broken—prisoners,
-            the plague-touched, exiled warlords. Secret cults called The Hollowed Eye plant despair deliberately, believing
-            that only ruin brings truth.</li>
-        </ul>
-      </article>
+      <p>Agos, the hulking god of farming and agriculture, stands as a sentinel over the soil and its stewards. Often
+        portrayed as a muscular, earth-streaked farmer wielding a broad scythe, he embodies the sweat and strength
+        required to coax bounty from the land. He was especially revered by the Sken, the hardy folk who migrated from Skia to Kelos
+        centuries ago, bringing with them veneration for Agos and integrating his worship deeply into their agrarian
+        culture.
+      </p>
+      <h3>Symbols</h3>
+      <ul>
+        <li><b>Scythe</b>: A broad, curved blade used for harvesting, symbolizing both the cutting of ripe crops and the
+          severing of blight.</li>
+        <li><b>Cornucopia of Grain & Gourd</b>: Often seen at his feet, representing the harvest’s abundance and the
+          nourishing cycles of growth.</li>
+        <li><b>Oxen yoke</b>: Symbolic of strength, partnership between man and beast, and the burdens borne for a
+          fruitful yield.</li>
+        <li><b>Green-and-Brown Robes:</b>: His garments are dyed in the soil and sprout-green hues, a living tapestry of
+          earth and growth.</li>
+      </ul>
 
-      <article>
-        <img src="assets/herukan.jpg" alt="" />
-        <h2>Herukan</h2>
-        <p>
-          Born in the shadowed alleys of Varn Hollow under a blood moon, Herukan, a gnome with hauntingly large eyes and
-          nimble fingers, was sold to the Carnival of the Shrieking Bell by his parents who could not afford to raise him. Amid cruelty and fractured instruments, he learned to
-          channel sorrow through his harp-like voice. One night, after a brutal beating,  his lament awake a Shard of Uzume, an
-          ancient fragment of song-power buried in nearby for thousands of years. The shard fused with his soul, and in his next performance, time itself stopped. Herukan, through no choice of his own,
-          ascended and became god of song and emotional transformation — one who sings and the world obeys.
-        </p>
-        <h3>Symbols</h3>
-        <ul>
-          <li><b>The Shattered Bell</b>: A cracked handbell, often worn as a pendant. It represents the broken silence Herukan shattered with
-            his song at the carnival of the Shrieking Bell. Worshippers never ring it—only wear it. To ring it is to beg for a voice
-            in the silence of despair. </li>
-          <li><b>“When silence hurts, I listen.”</b>: Whispered creed of Herukan’s faithful.</li>
-          <li><b>The Spiral Harp</b> :An impossible harp whose strings spiral into infinity. Appears in murals and frescoes. Used as an emblem by bardic orders aligned with Herukan’s truth-driven music.</li>
-          <li><b>The Mask with No Mouth:</b> A simple theatre mask with no mouth, only expressive eye slits. A symbol of those who were never
-            heard. Carried by orphans, the exiled, and abused performers. When a follower sings
-            with it placed beside them, it’s said Herukan sings in harmony.</li>
-        </ul>
+      <h3>Domains</h3>
+      <ul>
+        <li><b>Agriculture & Harvest:</b>: Patron of sowing, tending, and reaping—seasonal cycles are his domain.</li>
+        <li><b>Soil and growth</b>: Oversees fertility, irrigation, and the unseen work in the earth.</li>
+        <li><b>Labour and strength</b>: He honors toil, diligence, perseverance; the very bones of a farmer echo his
+          divine essence.</li>
+        <li><b>Cycles of decay and renewal</b>: Agos embraces that every harvest is tied to death and rebirth—stubble
+          fields feed renewal.</li>
+      </ul>
 
-        <h3>Domains</h3>
-        <ul>
-          <li><b>Song & Emotion</b>: His voice commands tears and ecstasy, weaving potent emotional resonance into all who hear him.</li>
-          <li><b>Memory & Loss</b>: He gives form to grief, unlocks nostalgia, and binds memory with melody.</li>
-          <li><b>Revelation & Truth</b>: In his harmonies, hidden truths surface; lies unravel to silence.</li>
-          <li><b>Veil & Inter-Realm Chorus</b>: Herukan bridges realms, warping reality through sound.</li>
-        </ul>
+      <h3>Rites</h3>
 
-        <h3>Rites</h3>
+      <ul>
+        <li><b>Breaking the first furrow</b>: At spring’s first plowing, farmers dedicate the fresh earth, sprinkling
+          seed and wine at Agos’s shrine, invoking his blessing.</li>
 
-        <ul>
-          <li>
-            <b>The Blood-Moon Lament</b>: During lunar eclipses, gnome bards perform low dirges in acoustic chambers. As
-            tears flow, they believe Herukan listens — rekindling empathy in a world grown harsh.
-          </li>
-          
-          <li>
-            <b>Carnival’s Silence</b>: Displaced performers hang broken instruments at doorways. Once silent, they are never played again — tokens of respect for
-            the night Herukan’s song turned sorrow into cosmic pause.
-          </li>
-          
-          <li>
-            Shard-Adaptive Hymn: melodies are sung in layered counterpoint until the air quivers. When done
-            correctly, singers claim to feel doorways open beyond mortal perception.
-          </li>
-        </ul>
-        <h3>Lore</h3>
-      </article>
+        <li><b>Mid-Summer Scythe Blessing</b>: Villagers ceremonially sharpen scythes and pass them near a hearth fire,
+          offering tobacco or sweet grain to ensure a swift harvest.</li>
 
-      <article>
-        <img src="assets/mortifer.jpg" alt="" />
-        <h2>Mortifer</h2>
-        <blockquote>“A blade, a name, a silence. This is his prayer.” — from the banned Velkarian Catechism of Knives</blockquote>
-        <p>Mortifer was born beneath the counting-houses of Velkaria, ignored even by his own lineage. He watched as brothers
-          inherited, sisters were adored, and his father spoke only of legacy — never his. His first kill was not rage, but
-          experiment. The next, calculation. Then came artistry. As the bodies fell and his family's line crumbled, Mortifer’s
-          name rose like smoke over a ruined ledger. But even wealth and titles could not still his hunger. He turned to the
-          forbidden: blood sorcery, exile-born rites, the carving of power into flesh.</p>
-        
-        <p>On a night soaked in red moonlight, Mortifer killed the city’s entire merchant council — thirteen blades, thirteen
-          names, thirteen deaths in one breath. When dawn broke, he stood alone amidst chaos, not merely feared but revered. The
-          divine took notice — not to bless him, but to acknowledge him. With each murder done in ambition, his essence deepened.
-          With each assassin’s whisper, his shadow lengthened.</p>
-        
-        <p>He is now worshipped in silence, invoked without voice. No church dares claim him — and yet every assassin, every
-          traitor, every power-hungry soul knows his mark. He is the god of murder not as madness, but as method.</p>
+        <li><b>Harvest Feast (“Agos’ Abundance”)</b>: A communal celebration at harvest’s end with bread shaped like
+          earthen mounds, singing of toil and thanks, and the first sheaf carried in procession to the temple.</li>
+        <li><b>Stubble blessing</b>: After harvest, participants leap over burned stubble while singing an old chant to
+          cleanse any lingering pestilence.</li>
+      </ul>
+
+      <h3>Lore</h3>
+      <ul>
+        <li><b>The Sken Pilgrimage</b>: Legend tells of a migration from Skia to Kelos, where floods and famine once
+          struck the early Sken settlements. A humble farmer named Khelan prayed to Agos, and by sunrise, the clouds parted,
+          revealing fertile land. The Sken built an altar on a grassy ridge where Khelan first sowed seed in Kelos, and
+          for generations, every new settlement began with that same rite.</li>
+
+        <li><b>The Tale of the Iron Field</b>: A rich landowner, hoping to expand his domain, cursed a field, believing
+          he could control Agos’s bounty with iron spikes. Crops failed, cattle sickened, and his family fell into
+          despair — until a peasant girl, Marisa, removed the spikes and reburied them deep in the earth. With that act of
+          humility, Agos restored the field, teaching that reverence outweighs dominion over the land’s spirit.</li>
+
+        <li><b>The Trials of the Green Scythe</b>: Agos once walked as a mortal among farmers, testing their hearts. He
+          lent a green-hilted scythe to three brothers, instructing them to harvest their own plots. The first two
+          brothers ignored the soil’s needs and cut swiftly — the yield was poor and blighted. The youngest brother, however,
+          cleaned the field, prayed for the blade’s guidance, and worked patiently. When he finished, his scythe glowed
+          with verdant light and his yield overflowed. Agos revealed himself, granting the farmer lifelong
+          protection—and.</li>
+      </ul>
+
+    </article>
+
+    <article>
+      <img src="assets/silithus.jpg" alt="" />
+      <h2>Silithus</h2>
+      <p class="sub">God of deception and secrets. Patron to spies and illusionists. </p>
+      <blockquote>“Trust not the silver tongue that weaves such honeyed lies, for beneath each word lies another face.”</blockquote>
+      <p>Silithus, once a mortal of striking beauty and cunning wit, ascended to divinity through Kaos’s dark grace.
+        Whispers say his ambition caught the primordial’s eye — Kaos saw in him the perfect vessel for deception. Now known as
+        Silithus, God of Lies and Deception, he presides over secrets, illusions, and the art of masks. Though remarkably
+        charismatic, half of his visage is scarred by holy flame — a cruel reminder of his former humanity and the powers he
+        wields.</p>
+    
+      <h3>Symbols</h3>
+      <ul>
+        <li><b>Two-faced mask</b>: One side smooth and serene, the other grotesquely burned—symbolizes duality of truth and
+          falsehood.</li>
+        <li><b>Burned Quill</b>: An inkwell’s feather scorched at the nib, emblematic of writing false deeds and signing
+          secret pacts.</li>
+        <li><b>Serpentine key</b>: A twisting key said to unlock doors of perception and deceit.</li>
+      </ul>
+    
+      <h3>Domains</h3>
+      <ul>
+        <li><b>Secrets & Espionage:</b>: Guardianship over hidden truths and clandestine networks.</li>
+        <li><b>Deception and illusion</b>: The forging and weaving of lies.</li>
+        <li><b>Masks & Transformation</b>: Facilitating literal and metaphoric shape-shifting.</li>
+      </ul>
+    
+      <h3>Rites</h3>
+    
+      <ul>
+        <li><b>Veiling the truth</b>: Spies and informants gather under moonlight, each donning dual masks—half pristine,
+          half charred—to honor Silithus’s fractured face. A contract is written in disappearing ink; once read and bound,
+          participants whisper their secret lies into a copper bowl and burn the text, sealing their deceit.</li>
+    
+        <li><b>Trial by mirror</b>: Initiates stand before smoky mirrors recounting their greatest falsehood. The mirror’s
+          surface cracks if the deceit is profound, revealing a deeper hidden image beneath.</li>
+    
+        <li><b>Embrace the flames</b>: In sacred temples, acolytes hold live candles to half their own faces; the wax burns
+          symbolize solidarity with Silithus’s scarred half and devotion to truth’s darker twin.</li>
+    
+      </ul>
+    
+      <h3>Lore</h3>
+      <p>In his mortal life, Silithus was a nobleman renowned for beauty and charm, celebrated for his hypnotic eloquence.
+        But envy bred ambition — his hunger for influence led him to trafficing in court intrigue, spreading whispers that
+        toppled kings and built his own power.</p>
+    
+      <p>When Kaos observed these machinations, he deemed Silithus a kindred spirit and offered divinity. The ceremony was
+        brutal: the flames of Kaos engulfed half of his face, searing flesh and binding his soul to primordial deceit.
+        Though scarred, Silithus emerged divine, eyes now glimmering with infinite cunning.</p>
+    
+      <p>As a god, he built an empire of shadows: secret guilds, spy networks that stretch across realms, and hidden temples
+        behind false walls. His followers include intelligence brokers, master spies, illusionists, and those who thrive in
+        the murk between truth and lie.</p>
+    
+      <p>Yet Silithus remains a paradox. While he champions lies, he values honesty among his own — betrayal within his cult
+        is punished worse than death. They say he can read truth through silence, unraveling the most elaborate deceptions
+        with a single glance. His temples are silent labyrinths where whispered secrets echo eternally; those who wander in
+        uninvited often unravel their own minds.</p>
+    
+    
+    
+    
+    
+    </article>
+
+    <article>
+      <img src="assets/leonarah.jpg" alt="" />
+      <h2>Leonarah</h2>
+      <p class="sub">Goddess of war, conflict and battle. Patron to soldiers and gladiators.</p>
+      <p></p>
+    </article>
+
+    <article>
+      <img src="" alt="" />
+      <h2>Surrana</h2>
+      <p></p>
+    </article>
+
+    <article>
+      <img src="" alt="" />
+      <h2>Cormarin</h2>
+      <p></p>
+    </article>
+
+    <article>
+      <img src="" alt="" />
+      <h2>Sylka</h2>
+      <p></p>
+    </article>
+
+    <article>
+      <img src="assets/than.jpg" alt="" />
+      <h2>Than</h2>
+      <p class="sub">Champion of the wood and nature's avenger. Patron and protector of Ku'Than.</p>
+      <blockquote>"Let the trees bear witness, for those who scar the sacred earth shall find no mercy in my shadow." —
+        Than
+      </blockquote>
+      <p>Than, the ancient and enigmatic forest deity of Skazka, is a primal force of nature whose worship predates most
+        known religions in the world. Revered almost exclusively within the mysterious woodland realm of Ku’Than, Than
+        embodies the untamed spirit of the earth, meting out merciless vengeance on those who defile the sacred Elden
+        Wood.
+        Oft depicted as a horned figure with a face that communes through trees, Than’s presence is deeply felt rather
+        than
+        widely seen. Her priests and priestesses, known simply as Witches, are nurtured from childhood and tested
+        through a
+        brutal rite of survival before earning their place as guardians of the forest. Governed by the secretive Council
+        of
+        Than and led by High Witch Serona, the people of Ku’Than live in harmony with nature’s harsh order, believing
+        their
+        living forest to be both sanctuary and sentinel — perhaps even a prison to some ancient force. Outside their
+        dark
+        and
+        shifting woods, Than’s influence is rare, yet when a Witch emerges, it is a sign that something of great
+        consequence
+        stirs within the green heart of Skazka.</p>
+      <h3>Symbols</h3>
+      <ul>
+        <li><b>A Branched Tree with a Face</b>: Explicitly described as her holy symbol, this image captures her
+          communion
+          with followers through the forest itself and reflects her embodiment of the sentient wilderness.</li>
+
+        <li><b>Antlers</b>: Than is often depicted with antlered horns, symbolizing primal power, wilderness, and her
+          kinship with untamed creatures.</li>
+
+        <li><b>Twisted Vines or Roots</b>: Representing the deep, binding force of nature and the hidden strength
+          beneath
+          the surface, they may also reflect the inescapable reach of her influence.</li>
+
+        <li><b>The Forest Itself (Elden Wood)</b>: Not a traditional symbol, but emblematic of her essence—living,
+          shifting,
+          ancient, and sacred. Stylized forest motifs or silhouettes might appear in her iconography.</li>
+
+        <li><b>Tree Bark Mask</b>: Worn by her followers, this might symbolize the merging of identity
+          with the forest and Than's spirit.</li>
+
+        <li><b>Coven Rings or Interlocking Circles</b>: Representing the sacred bonds between witches and their
+          apprentices,
+          and the unity (and fatal link) within her faithful.</li>
+      </ul>
 
 
-<h3>Symbols</h3>
-<ul>
-  <li><b>A nod and a wink</b>: A blood-slick dagger plunged into a coin; this is the calling card of those who serve Mortifer.</li>
-  <li><b>A dire warning</b>: a severed hand clutching thirteen black threads; this is the symbol which indicates refuge is close-by for those who follow the Lord of Murder.</li>
-  <li><b>Guess whose coming to dinner</b>: a tarot card with a red crescent moon biting through darkness; a gift given to those a devotee intends on killing.</li>
-</ul>
+      <h3>domains</h3>
+      <ul>
+        <li>
+          <b>Nature</b>: Central to her worship, Than is deeply tied to the forest, the earth, and the preservation of
+          the
+          natural
+          world. Her followers revere untouched wilderness and act as its fierce protectors.
+        </li>
+        <li>
+          <b>Vengeance</b>: Than is described as uncompromising and intolerant of those who defile nature. Her Witches
+          actively seek
+          retribution against violators, suggesting this as a core aspect of her divine power.
+        </li>
+        <li>
+          <b>Mystery or Secrets</b>: The shrouded, ever-shifting forest and the little-known inner workings of Ku’Than
+          point
+          to a
+          domain over secrecy, hidden knowledge, or the unknown.
+        </li>
+        <li>
+          <b>Fate or Trials</b>: The demanding trials for becoming a Witch, and the idea that not all survive, may hint
+          that
+          Than
+          oversees tests of worth, destiny, or the forging of strength through adversity.
+        </li>
+      </ul>
 
-<h3>Domains</h3>
-<ul>
-  <li><b>Planned to perfection</b>: Mortifier is not just about murder, but murder which is planned immactulately.</li>
-  <li><b>Slay thy borother</b>: ambition above everything else. Even family should not be above scheming.</li>
-</ul>
+      <h3>Rites</h3>
+      <ul>
+        <li>
+          <b>Rite of the Verdant Covenant (Initiation of Witchlings)</b>: This rite begins when a child is accepted into
+          the
+          path of Than.
+          The Weird (mentor Witch) performs a secretive ritual
+          at a sacred glade, marking the child with earth and sap to symbolize their rebirth into the forest’s will. The
+          child
+          is introduced to the spirits of the woods, often through dream or trance induced by herbal smoke, and given a
+          seed
+          to
+          plant — their first pact with Than.
+        </li>
+        <li>
+          <b>Trial of Root and Shadow (Coming of Age)</b>
+          At the age of maturity, Witchlings undergo a solitary survival ordeal: one year and one day alone in the Elden
+          Wood.
+          During this time, they must endure its dangers, earn the forest’s respect, and avoid becoming prey to both
+          beast
+          and
+          spirit. Survival is seen as Than’s personal approval; failure often means death — or worse, transformation
+          into
+          something unnatural.
+        </li>
+        <li>
+          <b>Than'Dva (Witch-Pairing Ritual)</b>: Upon becoming a full Witch, the initiate is ritually bound to a
+          covenant-partner in a ceremony within a sacred cave known as the Sanctuary of Revelations.
+          The two Witches, naked and submerged in the pool, must share their most intimate secrets. They are then
+          visited by
+          the spirts of their ancestors who bless
+          and sponsor the bonding. Their fates are joined, their lives entwined — one cannot survive the other’s death.
+        </li>
+        <li>
+          <b>The Vengeance Harvest</b>: When someone defiles the forest, a coven may perform this rite under moonlight.
+          Witches gather around a tree bearing a
+          face of Than and invoke her fury through chanting, blood-letting, and binding effigies made from the
+          violator’s
+          discarded items. The rite often precedes a hunt — literal or spiritual — in which nature exacts retribution.
+        </li>
+        <li>
+          <b>Rite of the Twisting Paths (Divination)</b>: This secretive rite is used to commune with Than or seek
+          guidance.
+          A Witch enters the forest alone,
+          ingesting sacred herbs, and follows an animal or tree spirit until a vision is granted. The forest itself
+          becomes
+          the altar, the voice,
+          and the veil between worlds.
+        </li>
+        <li>
+          <b>Burial by the Roots</b>: When a Witch dies, their body is not burned or entombed but returned to the
+          forest.
+          They are buried in fetal position
+          beneath a young sapling, believed to carry their spirit forward. A mask or symbol of their covenant may be
+          hung
+          from
+          the branches, marking their passage and presence in the trees.
+        </li>
+      </ul>
 
-<h3>Rites</h3>
 
-<ul>
-  <li><b>The Rite of Thirteen</b>: A ritual killing involving thirteen symbolic elements — thirteen blades, thirteen heartbeats, thirteen names whispered. Said to draw Mortifer's gaze directly and confer dark favor or protection in exchange for the killer’s own soul fraying.</li>
-  
-  <li><b>Velkarian Marking</b>: Practitioners slice the rune of Mortifer — an angular glyph resembling a dagger through an eye — into their skin before committing a murder-for-power. Done properly, the mark never scars, only deepens.</li>
-  <img src="assets/mortifer_rune.jpg" alt="">
-  
-  <li><b>The Crimson Silence</b>: A vow taken by assassins, never to speak of the act once done. Each broken vow supposedly awakens a fragment of Mortifer within, leading to madness or worse — divine possession.</li>
-</ul>
+      <h3>lore</h3>
+      <ul>
+        <li>
+          <b>The Withering of Seroth Hollow:</b> Long ago, on the western edge of the Elden Wood, there was a thriving
+          lumber village called Seroth Hollow. Nestled
+          dangerously close to the border of Ku’Than, its people grew bold with their axes and trade, felling ancient
+          trees
+          whispered to be older than the gods. Despite warnings etched into bark, the villagers pressed deeper into the
+          sacred
+          groves.
+          One night, the forest went silent. No wind, no birds, no life. The next morning, Seroth Hollow was gone. Not
+          burned, not razed — gone.
+          In its place, a hollow depression in the earth stretched like a wound, filled with twisted roots that groaned
+          with
+          the
+          sounds of human voices. The only sign of the village was a single, towering tree in the center, its bark
+          etched
+          with
+          dozens of human faces frozen in expressions of terror. The Witches of Than call it The Tree of Regret, and
+          they
+          say
+          each face is a soul bound to bark for eternity — not dead, not alive, but listening, eternally aware, feeding
+          the
+          tree’s
+          hunger for vengeance.
+          To this day, no birds fly above that place, and no creature sets foot there. Familiars warn Witchlings never
+          to
+          approach it alone, for the tree whispers in the voice of those it has consumed, calling for help in familiar
+          tones. Some who
+          answer never return. Others do — hollow-eyed, their voices splintered and sap dripping from their mouths.
+          It is said that the Tree of Regret is a fragment of Than’s wrath made manifest — a punishment not for one
+          crime,
+          but
+          for forgetting that the forest is older, crueler, and more sacred than man will ever be.
+        </li>
+      </ul>
 
-<h3>Lore</h3>
-<ul>
-  <li><b>Mortifer was not born divine</b>: he proved himself divine. In the mercantile sprawl of Velkaria, where merchants bartered souls and family was priced in ledgers, he was a forgotten child: the seventh son, the unmentioned heir. But Mortifer did not beg for legacy. He seized it, body by body, crime by crime, blade by blade. His murders were not acts of madness — they were assertions of order, deliberate, ritualistic, inevitable.</li>
-  
-  <li><b>He rose by subtraction</b>: thinning the world of his rivals until only he remained. The gods took notice when mortals fled from his shadow rather than from theirs. They watched as he carved divinity into himself — not through worship, but through work.</li>
-  
-  <li><b>He has no temples, only scenes of crime</b></li>: His sermons are written in bloodstains. His hymns are final breaths.
-  
-  <li><b>The Ledger of Unspoken Names</b>: A tattered book said to list every name Mortifer has claimed. No ink, only impressions — names felt rather than read.</li>
-  
-  <li><b>The Dagger of Final Inheritance</b>: A black-bladed relic believed to be the very knife used to slay the merchant council. It thirsts audibly when near betrayal.</li>
-  
-  <li><b>The Silence-Bound Psalms</b>: Etched onto bone, readable only under blood-moonlight. Reciting one is said to hide a murderer from all gods — save Mortifer.</li>
-</ul>
-      </article>
+    </article>
 
-            <article>
-        <img src="" alt="" />
-        <h2>Agos</h2>
-        <p>Worshipped by the Sken: When the Sken migrated centuries ago from Skia to Kelos, they brought with them their reverence for Agos—a steadfast protector of fields and shepherd of the harvest. Over time, temples and open‑air shrines were built on farmlands and hilltops across Kelos</p>
-      </article>
+    <article>
+      <img src="" alt="" />
+      <h2>Ioun</h2>
+      <p></p>
+    </article>
 
-      <article>
-        <img src="" alt="" />
-        <h2>Silithus</h2>
-        <p></p>
-      </article>
+    <article>
+      <img src="" alt="" />
+      <h2>Lunica</h2>
+      <p></p>
+    </article>
 
-      <article>
-        <img src="" alt="" />
-        <h2>Leonarah</h2>
-        <p></p>
-      </article>
+    <article>
+      <img src="" alt="" />
+      <h2>Mani</h2>
+      <p></p>
+    </article>
 
-            <article>
-        <img src="" alt="" />
-        <h2>Surrana</h2>
-        <p></p>
-      </article>
+  </main>
 
-      <article>
-        <img src="" alt="" />
-        <h2>Cormarin</h2>
-        <p></p>
-      </article>
-
-      <article>
-        <img src="" alt="" />
-        <h2>Sylka</h2>
-        <p></p>
-      </article>
-
-            <article>
-              <img src="assets/than.jpg" alt="" />
-              <h2>Than</h2>
-              <blockquote>"Let the trees bear witness, for those who scar the sacred earth shall find no mercy in my shadow." — Than
-              </blockquote>
-              <p>Than, the ancient and enigmatic forest deity of Skazka, is a primal force of nature whose worship predates most
-                known religions in the world. Revered almost exclusively within the mysterious woodland realm of Ku’Than, Than
-                embodies the untamed spirit of the earth, meting out merciless vengeance on those who defile the sacred Elden Wood.
-                Oft depicted as a horned figure with a face that communes through trees, Than’s presence is deeply felt rather than
-                widely seen. Her priests and priestesses, known simply as Witches, are nurtured from childhood and tested through a
-                brutal rite of survival before earning their place as guardians of the forest. Governed by the secretive Council of
-                Than and led by High Witch Serona, the people of Ku’Than live in harmony with nature’s harsh order, believing their
-                living forest to be both sanctuary and sentinel — perhaps even a prison to some ancient force. Outside their dark
-                and
-                shifting woods, Than’s influence is rare, yet when a Witch emerges, it is a sign that something of great consequence
-                stirs within the green heart of Skazka.</p>
-              <h3>Symbols</h3>
-              <ul>
-                <li><b>A Branched Tree with a Face</b>: Explicitly described as her holy symbol, this image captures her communion
-                  with followers through the forest itself and reflects her embodiment of the sentient wilderness.</li>
-            
-                <li><b>Antlers</b>: Than is often depicted with antlered horns, symbolizing primal power, wilderness, and her
-                  kinship with untamed creatures.</li>
-            
-                <li><b>Twisted Vines or Roots</b>: Representing the deep, binding force of nature and the hidden strength beneath
-                  the surface, they may also reflect the inescapable reach of her influence.</li>
-            
-                <li><b>The Forest Itself (Elden Wood)</b>: Not a traditional symbol, but emblematic of her essence—living, shifting,
-                  ancient, and sacred. Stylized forest motifs or silhouettes might appear in her iconography.</li>
-            
-                <li><b>Tree Bark Mask</b>: Worn by her followers, this might symbolize the merging of identity
-                  with the forest and Than's spirit.</li>
-            
-                <li><b>Coven Rings or Interlocking Circles</b>: Representing the sacred bonds between witches and their apprentices,
-                  and the unity (and fatal link) within her faithful.</li>
-              </ul>
-            
-            
-              <h3>domains</h3>
-              <ul>
-                <li>
-                  <b>Nature</b>: Central to her worship, Than is deeply tied to the forest, the earth, and the preservation of the
-                  natural
-                  world. Her followers revere untouched wilderness and act as its fierce protectors.
-                </li>
-                <li>
-                  <b>Vengeance</b>: Than is described as uncompromising and intolerant of those who defile nature. Her Witches
-                  actively seek
-                  retribution against violators, suggesting this as a core aspect of her divine power.
-                </li>
-                <li>
-                  <b>Mystery or Secrets</b>: The shrouded, ever-shifting forest and the little-known inner workings of Ku’Than point
-                  to a
-                  domain over secrecy, hidden knowledge, or the unknown.
-                </li>
-                <li>
-                  <b>Fate or Trials</b>: The demanding trials for becoming a Witch, and the idea that not all survive, may hint that
-                  Than
-                  oversees tests of worth, destiny, or the forging of strength through adversity.
-                </li>
-              </ul>
-            
-              <h3>Rites</h3>
-              <ul>
-                <li>
-                  <b>Rite of the Verdant Covenant (Initiation of Witchlings)</b>: This rite begins when a child is accepted into the
-                  path of Than.
-                  The Weird (mentor Witch) performs a secretive ritual
-                  at a sacred glade, marking the child with earth and sap to symbolize their rebirth into the forest’s will. The
-                  child
-                  is introduced to the spirits of the woods, often through dream or trance induced by herbal smoke, and given a seed
-                  to
-                  plant — their first pact with Than.
-                </li>
-                <li>
-                  <b>Trial of Root and Shadow (Coming of Age)</b>
-                  At the age of maturity, Witchlings undergo a solitary survival ordeal: one year and one day alone in the Elden
-                  Wood.
-                  During this time, they must endure its dangers, earn the forest’s respect, and avoid becoming prey to both beast
-                  and
-                  spirit. Survival is seen as Than’s personal approval; failure often means death — or worse, transformation into
-                  something unnatural.
-                </li>
-                <li>
-                  <b>Than'Dva (Witch-Pairing Ritual)</b>: Upon becoming a full Witch, the initiate is ritually bound to a
-                  covenant-partner in a ceremony within a sacred cave known as the Sanctuary of Revelations.
-                  The two Witches, naked and submerged in the pool, must share their most intimate secrets. They are then visited by
-                  the spirts of their ancestors who bless
-                  and sponsor the bonding. Their fates are joined, their lives entwined — one cannot survive the other’s death.
-                </li>
-                <li>
-                  <b>The Vengeance Harvest</b>: When someone defiles the forest, a coven may perform this rite under moonlight.
-                  Witches gather around a tree bearing a
-                  face of Than and invoke her fury through chanting, blood-letting, and binding effigies made from the violator’s
-                  discarded items. The rite often precedes a hunt — literal or spiritual — in which nature exacts retribution.
-                </li>
-                <li>
-                  <b>Rite of the Twisting Paths (Divination)</b>: This secretive rite is used to commune with Than or seek guidance.
-                  A Witch enters the forest alone,
-                  ingesting sacred herbs, and follows an animal or tree spirit until a vision is granted. The forest itself becomes
-                  the altar, the voice,
-                  and the veil between worlds.
-                </li>
-                <li>
-                  <b>Burial by the Roots</b>: When a Witch dies, their body is not burned or entombed but returned to the forest.
-                  They are buried in fetal position
-                  beneath a young sapling, believed to carry their spirit forward. A mask or symbol of their covenant may be hung
-                  from
-                  the branches, marking their passage and presence in the trees.
-                </li>
-              </ul>
-            
-            
-              <h3>lore</h3>
-              <ul>
-                <li>
-                  <b>The Withering of Seroth Hollow:</b> Long ago, on the western edge of the Elden Wood, there was a thriving
-                  lumber village called Seroth Hollow. Nestled
-                  dangerously close to the border of Ku’Than, its people grew bold with their axes and trade, felling ancient trees
-                  whispered to be older than the gods. Despite warnings etched into bark, the villagers pressed deeper into the
-                  sacred
-                  groves.
-                  One night, the forest went silent. No wind, no birds, no life. The next morning, Seroth Hollow was gone. Not
-                  burned, not razed — gone.
-                  In its place, a hollow depression in the earth stretched like a wound, filled with twisted roots that groaned with
-                  the
-                  sounds of human voices. The only sign of the village was a single, towering tree in the center, its bark etched
-                  with
-                  dozens of human faces frozen in expressions of terror. The Witches of Than call it The Tree of Regret, and they
-                  say
-                  each face is a soul bound to bark for eternity — not dead, not alive, but listening, eternally aware, feeding the
-                  tree’s
-                  hunger for vengeance.
-                  To this day, no birds fly above that place, and no creature sets foot there. Familiars warn Witchlings never to
-                  approach it alone, for the tree whispers in the voice of those it has consumed, calling for help in familiar
-                  tones. Some who
-                  answer never return. Others do — hollow-eyed, their voices splintered and sap dripping from their mouths.
-                  It is said that the Tree of Regret is a fragment of Than’s wrath made manifest — a punishment not for one crime,
-                  but
-                  for forgetting that the forest is older, crueler, and more sacred than man will ever be.
-                </li>
-              </ul>
-            
-            </article>
-            
-            <article>
-        <img src="" alt="" />
-        <h2>Ioun</h2>
-        <p></p>
-      </article>
-
-      <article>
-        <img src="" alt="" />
-        <h2>Lunica</h2>
-        <p></p>
-      </article>
-
-            <article>
-        <img src="" alt="" />
-        <h2>Mani</h2>
-        <p></p>
-      </article>
-
-    </main>
-
-    <p
-      id="noResultsMessage"
-      style="
+  <p id="noResultsMessage" style="
         display: none;
         text-align: center;
         font-size: 1.5rem;
         color: #f88;
         margin-top: 20px;
-      "
-    >
-      No results found.
-    </p>
+      ">
+    No results found.
+  </p>
 
-    <footer class="footer">
-      <div class="footer-inner">
-        <img src="assets/logo.png" alt="Skazka Logo" />
-        <p class="footer-tagline">Where shadows speak and legends walk.</p>
-        <nav class="footer-nav">
-          <a href="contact.html">Contact</a>
-        </nav>
-        <p class="footer-copy">
-          &copy; 2025 SkazkaWorld. All stories reserved.
-        </p>
-      </div>
-    </footer>
+  <footer class="footer">
+    <div class="footer-inner">
+      <img src="assets/logo.png" alt="Skazka Logo" />
+      <p class="footer-tagline">Where shadows speak and legends walk.</p>
+      <nav class="footer-nav">
+        <a href="contact.html">Contact</a>
+      </nav>
+      <p class="footer-copy">
+        &copy; 2025 SkazkaWorld. All stories reserved.
+      </p>
+    </div>
+  </footer>
 
-    <script src="main.js"></script>
-  </body>
+  <script src="main.js"></script>
+</body>
+
 </html>
