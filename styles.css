@@ -426,3 +426,59 @@ article p, article h2, article ul, h3 {
     font-size: 1.2rem;
   }
 }
+
+.timeline {   
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 800px;
+    padding: 14px;
+    background: rgba(20, 20, 20, 0.85);
+    border: 10px solid transparent;
+    border-image-source: url('assets/rune-border-texture.png');
+    border-image-slice: 30;
+    border-image-repeat: round;
+    border-image-width: 1;
+    border-radius: 18px;
+    height: 80vh;
+    overflow: auto;
+  }
+  .event {
+    margin: 18px 0;
+    cursor: pointer;
+  }
+  .event-header {
+    display: flex;
+    align-items: center;
+  }
+  .rune {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    margin-right: 8px;
+    background: url('assets/rune-marker.png') center/contain no-repeat;
+    filter: grayscale(100%) brightness(0.9);
+    transition: filter 0.3s ease, transform 0.25s ease;
+  }
+  .rune.active {
+    filter: grayscale(0%) brightness(1.1);
+    transform: scale(1.12);
+  }
+  .event-details {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    padding-left: 36px;
+    font-size: 0.9em;
+    color: #ccc;
+  }
+  .event.open .event-details {
+    max-height: 200px; /* Enough for text; adjust as needed */
+    opacity: 1;
+    margin-top: 4px;
+  }
+
+   

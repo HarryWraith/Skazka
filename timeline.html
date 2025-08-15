@@ -125,27 +125,50 @@
           <p></p>
         </div>
       </article>
-
-      <article>
-        <img src="" alt="" />
-        <h2></h2>
-        <p></p>
-      </article>
-
-      <article>
-        <img src="" alt="" />
-        <h2></h2>
-        <p></p>
-      </article>
-
-      <article>
-        <img src="" alt="" />
-        <h2></h2>
-        <p></p>
-      </article>
-    </main>
-
-     <p id="noResultsMessage" style="display: none; text-align: center; font-size: 1.5rem; color: #f88; margin-top: 20px; ">
+       </main>
+    
+      <div class="timeline" id="timeline">
+        <div class="event" data-id="0">
+          <div class="event-header">
+            <span class="rune"></span>
+            <div>
+              <strong>1200 AE</strong><br>
+              Founding of the First Ascent
+            </div>
+          </div>
+          <div class="event-details">
+            The First Ascent arises atop the frozen peaks of Skazka, where mortals defied the giants.
+          </div>
+        </div>
+    
+        <div class="event" data-id="1">
+          <div class="event-header">
+            <span class="rune"></span>
+            <div>
+              <strong>1345 AE</strong><br>
+              The Rift of Molach
+            </div>
+          </div>
+          <div class="event-details">
+            A tear in the weave of reality as Molach’s fall tore open the land and spirits slipped through.
+          </div>
+        </div>
+    
+        <div class="event" data-id="2">
+          <div class="event-header">
+            <span class="rune"></span>
+            <div>
+              <strong>1502 AE</strong><br>
+              The Night of Whispering
+            </div>
+          </div>
+          <div class="event-details">
+            When every shadow spoke and the forests sang curses in voices not their own.
+          </div>
+        </div>
+      </div>
+   
+    <p id="noResultsMessage" style="display: none; text-align: center; font-size: 1.5rem; color: #f88; margin-top: 20px; ">
     No results found.
     </p>
 
@@ -163,5 +186,33 @@
     </footer>
 
     <script src="main.js"></script>
+    <script>
+  const events = document.querySelectorAll('.event');
+  const runes = document.querySelectorAll('.rune');
+
+  // Scroll-based rune activation
+  function onScroll() {
+    const scrollY = window.scrollY + window.innerHeight / 2;
+    events.forEach((evt, idx) => {
+      const rect = evt.getBoundingClientRect();
+      const absY = rect.top + window.scrollY;
+      if (absY < scrollY) {
+        runes[idx].classList.add('active');
+      } else {
+        runes[idx].classList.remove('active');
+      }
+    });
+  }
+
+  // Click to toggle details
+  events.forEach(evt => {
+    evt.addEventListener('click', () => {
+      evt.classList.toggle('open');
+    });
+  });
+
+  window.addEventListener('scroll', onScroll);
+  onScroll();
+</script>
   </body>
 </html>
