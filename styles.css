@@ -335,6 +335,12 @@ article p, article h2, article ul, h3 {
   margin: 20px 10px;
 }
 
+article li{
+  margin-bottom: 15px;
+}
+
+
+
 .footer {
   background-color: #14303b;
   color: #ccc;
@@ -481,4 +487,46 @@ article p, article h2, article ul, h3 {
     margin-top: 4px;
   }
 
+
+
+
+  img.popup {
+ 
+  cursor: zoom-in;
+  transition: transform .2s;
+}
+img.popup:hover {
+  transform: scale(1.05);
+}
+
+/* Lightbox overlay */
+#lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  display: none; /* hidden by default */
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Enlarged image */
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.5);
+  cursor: zoom-out;
+}
+
+/* Close button */
+#lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+  cursor: pointer;
+}
    

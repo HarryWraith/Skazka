@@ -146,10 +146,7 @@
       </article>
 
       <article>
-        <img
-          src="assets/veil.jpg"
-          alt="The Veil - a glowing mystical barrier between realms"
-        />
+        <img class="popup" src="assets/veil.jpg" alt="The Veil - a glowing mystical barrier between realms" />
         <h2>The Veil</h2>
         <p>
           Skazka is positioned in the multiverse in such a way that the barrier
@@ -161,7 +158,7 @@
       </article>
 
       <article>
-        <img src="assets/shadowwar.jpg" alt="" />
+        <img class="popup" src="assets/shadowwar.jpg" alt="" />
         <h2>The shadow war</h2>
         <p>
           This was a time of great turmoil when agents of Kaos sought to recover
@@ -172,6 +169,12 @@
           consequences such meddling may have on the world.
         </p>
       </article>
+
+      <!-- Lightbox container (hidden by default) -->
+  <div id="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-img" alt="">
+  </div>
     </main>
     <p
       id="noResultsMessage"
@@ -200,5 +203,6 @@
     </footer>
 
     <script src="main.js"></script>
+    <script src="popup.js"></script>
   </body>
 </html>

@@ -165,7 +165,7 @@
         </article>
 
         <article>
-            <img src="assets/warrior_intro.jpg" alt="an image of a warrior carrying the ashes of a fallen comrade">
+            <img class="popup" src="assets/warrior_intro.jpg" alt="an image of a warrior carrying the ashes of a fallen comrade">
             <h2>The Warlord</h2>
             <p>A lone adventurer steps off the longboat that has taken him to the necropolis of Dargav. The aging jetty
                 creaks underfoot and the forest seems to mimic the sound. A crow lands on a nearby branch to judge the
@@ -174,7 +174,7 @@
         </article>
 
         <article>
-              <img src="assets/skazka_intro.jpg" alt="image of a little girl thief">
+              <img class="popup" src="assets/skazka_intro.jpg" alt="image of a little girl thief">
             <h2>The Thief</h2>
             <p>Back where the soldier began his journey, the streets of Calarium are choked with the dust from passing
                 horses and carts. A small child weaves through a crowd of merchants and soft skinned gentry. Spotting
@@ -186,7 +186,7 @@
         </article>
 
         <article>
-            <img src="assets/kuthan_intro.jpg" alt="image of a young witch with a fairy in a bottle">
+            <img class="popup" src="assets/kuthan_intro.jpg" alt="image of a young witch with a fairy in a bottle">
             <h2>The Witchling</h2>
             <p>Far to the north and  east the beggar's sister stifles in the humidity of Ku'Than's forested canopy.
                 Insects constantly gnaw at her ankles and the sweat stings her eyes. Her companion, a small white owl,
@@ -195,6 +195,12 @@
                 Witchling wonders what will become of the fairy; her mistress and mentor is oft cruel. "I won't be like
                 that when I'm a full witch", she tells herself.</p>
         </article>
+
+        <!-- Lightbox container (hidden by default) -->
+  <div id="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-img" alt="">
+  </div>
     </main>
 
     <p id="noResultsMessage" style="display: none; text-align: center; font-size: 1.5rem; color: #f88; margin-top: 20px;">
@@ -214,6 +220,7 @@
 
 
     <script src="main.js"></script>
+    <script src="popup.js"></script>
 
 
 </body>

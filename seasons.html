@@ -154,7 +154,9 @@
       </article>
 
       <article>
-        <img src="assets/cal.jpg" alt="two moons rising over the horizon" />
+        <img 
+        class="popup"
+        src="assets/cal.jpg" alt="two moons rising over the horizon" />
         <h2>Calendar</h2>
         <p>
           The most commonly used calendar in Aeternia consists of a 360-day
@@ -180,6 +182,7 @@
 
       <article>
         <img
+          class="popup"
           src="assets/timekeeping.jpg"
           alt="two giants, perhaps gods, stand next to a large hour glass with sand pouring through it"
         />
@@ -193,19 +196,14 @@
           sun," "sundown," and "midnight."
         </p>
       </article>
+
+      <!-- Lightbox container (hidden by default) -->
+  <div id="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-img" alt="">
+  </div>
     </main>
-    <p
-      id="noResultsMessage"
-      style="
-        display: none;
-        text-align: center;
-        font-size: 1.5rem;
-        color: #f88;
-        margin-top: 20px;
-      "
-    >
-      No results found.
-    </p>
+    <p id="noResultsMessage" style="display: none; text-align: center; font-size: 1.5rem; color: #f88; margin-top: 20px;">No results found.</p>
 
     <footer class="footer">
       <div class="footer-inner">
@@ -221,5 +219,6 @@
     </footer>
 
     <script src="main.js"></script>
+    <script src="popup.js"></script>
   </body>
 </html>

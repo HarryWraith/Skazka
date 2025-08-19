@@ -125,7 +125,7 @@
     </article>
 
     <article>
-      <img src="assets/uzume.jpg" alt="the goddess uzume" />
+      <img class="popup" src="assets/uzume.jpg" alt="the goddess uzume" />
       <h2>Uzume</h2>
       <p>Uzume was one of the Three Primals — ancient beings whose wills shaped the foundations of existence. She was
         the
@@ -147,7 +147,7 @@
     </article>
 
     <article>
-      <img src="assets/kaos.jpg" alt="the god Kaos" />
+      <img class="popup" src="assets/kaos.jpg" alt="the god Kaos" />
       <h2>Kaos</h2>
       <p>Born from the depths of the abyss, Kaos is the living embodiment of entropy — the shadow to Uzume’s radiant
         light.
@@ -163,7 +163,7 @@
     </article>
 
     <article>
-      <img src="assets/cronos.jpg" alt="the god cronos" />
+      <img class="popup" src="assets/cronos.jpg" alt="the god cronos" />
       <h2>Cronos</h2>
        <blockquote>"Time is not your enemy. It is your debt. And I am its collector."<br>
         — Cronos
@@ -192,6 +192,12 @@
 
     </article>
 
+    <!-- Lightbox container (hidden by default) -->
+  <div id="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-img" alt="">
+  </div>
+
   </main>
 
   <p id="noResultsMessage" style="display: none; text-align: center; font-size: 1.5rem; color: #f88; margin-top: 20px;">
@@ -212,6 +218,7 @@
   </footer>
 
   <script src="main.js"></script>
+  <script src="popup.js"></script>
 </body>
 
 </html>

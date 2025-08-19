@@ -118,7 +118,7 @@
     <!-- Main Content Area -->
     <main class="grid-container">
       <article class="featured">
-        <img src="assets/pantheon.webp" alt="" />
+        <img class="popup" src="assets/pantheon.webp" alt="" />
         <div>
     <p>Beneath the obsidian veil of eternity, an endless astral sea sprawled — a blackened abyss that swallowed all light and
         hope. It was a void eternal and unmoving, where silence rotted in the bones of time. Yet, from the crushing depths
@@ -199,6 +199,12 @@
           Uzume’s gift lives on—in all things, except the gods who betrayed her.
         </p>
       </article>
+
+      <!-- Lightbox container (hidden by default) -->
+  <div id="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-img" alt="">
+  </div>
     </main>
 
     <p
@@ -228,5 +234,6 @@
     </footer>
 
     <script src="main.js"></script>
+    <script src="popup.js"></script>
   </body>
 </html>
