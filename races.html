@@ -1,0 +1,289 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skazka - Dark Fantasy Lore</title>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Google Font for a fantasy feel -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="assets/logo.png" />
+  </head>
+  <!--change folder name-->
+  <body>
+    <!-- Navigation Bar (sticky at top) -->
+    <nav class="navbar">
+      <div class="logo">
+        <img src="assets/logo.png" alt="Skazka Logo" />
+      </div>
+      <!-- Hamburger menu icon -->
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <!-- Navigation links with dropdown menus -->
+      <ul class="nav-links">
+        <li class="dropdown">
+          <a href="index.html">Home</a>
+          <ul class="dropdown-content"></ul>
+        </li>
+        <li class="dropdown">
+          <a href="world.html">World</a>
+          <ul class="dropdown-content">
+            <li><a href="overview.html">Overview</a></li>
+            <li><a href="multiverse.html">Multiverse</a></li>
+            <li><a href="seasons.html">Seasons & Time</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="beliefs.html">Beliefs</a>
+          <ul class="dropdown-content">
+            <li><a href="creation.html">Creation</a></li>
+            <li><a href="vek.html">The Vekya</a></li>
+            <li><a href="ann.html">The Annarr</a></li>
+            <li><a href="prir.html">The Prir</a></li>
+            <li><a href="pow.html">Lesser Powers</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="people.html">People</a>
+          <ul class="dropdown-content">
+            <li><a href="races.html">Races</a></li>
+            <li><a href="nations.html">Nations</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="places.html">Places</a>
+          <ul class="dropdown-content">
+            <li><a href="cities.html">Cities</a></li>
+            <li><a href="landmarks.html">Landmarks</a></li>
+            <li><a href="realms.html">Realms</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Groups</a>
+          <ul class="dropdown-content">
+            <li><a href="major.html">Major powers</a></li>
+            <li><a href="minor.html">Minor powers</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">History</a>
+          <ul class="dropdown-content">
+            <li><a href="timeline.html">Timeline</a></li>
+            <li><a href="events.html">Events</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Things</a>
+          <ul class="dropdown-content">
+            <li><a href="artefacts.html">Artefacts</a></li>
+            <li><a href="materials.html">Materials</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Players</a>
+          <ul class="dropdown-content">
+            <li><a href="cc.html">Character creation</a></li>
+            <li><a href="options.html">Player options</a></li>
+            <li><a href="cast.html">Cast</a></li>
+            <li><a href="scores.html">Statistics</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Other</a>
+          <ul class="dropdown-content">
+            <li><a href="#">Bestiary</a></li>
+          </ul>
+        </li>
+      </ul>
+      <!-- Search bar on the far right -->
+      <form class="search-container" id="searchForm">
+        <input
+          type="text"
+          id="searchInput"
+          name="query"
+          placeholder="Search..."
+        />
+        <button type="submit">Search</button>
+      </form>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="grid-container">
+      <article>
+        <img class="popup" src="assets/dragonborn.jpg" alt="" />
+        <h2>Dragonborn</h2>
+        <h4>Origins Shrouded in Mystery</h4>
+        <p>Dragonborn are mystical creatures whispered to be the offspring of dragons and mortals, born from unions that
+          defy the natural order of Skazka. The species did not walk the cursed realms until after the cataclysmic event
+          known as Starfall—that night when the very stars bled their secrets into the world and ancient powers stirred from
+          their slumber. This temporal coincidence implies they are either not native to Skazka's twisted landscape, or that
+          their sudden manifestation is directly linked to the awakening of the great wyrms that now cast their shadows
+          across the land.</p>
+        <p>The truth of their genesis remains as elusive as morning mist in the darkwood forests. Some scholars of forbidden
+          lore theorize that Starfall tore rifts between realms, allowing these hybrid beings to slip through from distant
+          planes. Others whisper that the event itself catalyzed some primordial magic, spontaneously birthing the
+          Dragonborn from places where dragon blood had long ago soaked into Skazka's haunted soil. None are more desperate
+          to unravel these mysteries than the Dragonborn themselves, for they carry within their very essence questions that
+          burn like embers in their souls.</p>
+        <h4>Physical Manifestations of Draconic Heritage</h4>
+        <p>The Dragonborn's appearance serves as a living testament to their otherworldly origins, with their coloring
+          spanning the entire spectrum of shadow and light. Their scales range from the pure, ghostly white of fresh snow on
+          the Snowpeak Mountains to the deep, abyssal black of moonless nights. Between these extremes lies every
+          conceivable hue: the crimson of spilled blood, the emerald of deep forest pools, the golden amber of dying
+          sunlight, and the silver of starlight on still water.</p>
+        <p>Their markings tell stories written in draconic script across their flesh. Some bear intricate speckles that
+          shimmer like constellations, while others display bold spots that pulse with inner fire. These patterns are as
+          unique as fingerprints, and learned individuals claim they can divine a Dragonborn's lineage—and sometimes their
+          destiny—from these natural tattoos.</p>
+        <p>The variety in their physical forms speaks to the diverse nature of their draconic ancestry. Some possess
+          elaborate frills that crown their heads like natural coronets, these delicate membranes often translucent and shot
+          through with veins that glow faintly in darkness. Others lack these ornaments entirely, their profiles clean and
+          predatory. Horns, when present, range from the elegant spirals reminiscent of ancient elven architecture to the
+          brutal, barbed protrusions that seem designed for war. Those who develop the latter often bear additional spines
+          along their skulls, creating a menacing silhouette that commands both respect and wariness.</p>
+        <p>Their eyes, perhaps more than any other feature, betray their supernatural nature. They burn with an inner light
+          that no purely mortal gaze could possess—sometimes the cold fire of winter stars, other times the warm glow of
+          hearthflames, but always something that speaks of power barely contained within flesh and bone.</p>
+        <h4>Cultural Integration and Divine Recognition</h4>
+        <p>Despite their mysterious origins and often fearsome appearance, Dragonborn have found acceptance among most of
+          Skazka's diverse peoples. Their integration into existing societies speaks to both their adaptability and the
+          pragmatic nature of those who dwell in these dangerous lands. In a realm where survival often depends on alliances
+          forged in necessity, the Dragonborn's obvious power and intelligence make them valuable allies rather than threats
+          to be eliminated.</p>
+        <p>Perhaps nowhere is their acceptance more pronounced than among the kobold tribes scattered throughout Skazka's
+          wildlands. These scaled humanoids have elevated many Dragonborn to the status of living deities, viewing them as
+          the next step in their own evolutionary journey. Kobold shamans preach that their people will one day ascend to
+          dragonborn status through acts of devotion and bravery, turning entire tribes into zealous followers who would
+          gladly die for their draconic champions.</p>
+        <p>In human settlements, Dragonborn often serve as mediators and advisors, their obvious connection to dragon-kind
+          lending weight to their words in matters of ancient lore and magical theory.</p>
+        <h4>The Nomadic Nature of a Scattered People</h4>
+        <p>Dragonborn have never established kingdoms or grand cities of their own, a fact that speaks to both their
+          independent nature and their relatively recent emergence in Skazka. They are wanderers by instinct, perhaps
+          carrying in their blood the migratory urges of their draconic progenitors. This nomadic tendency has led them to
+          integrate into existing communities as they see fit, bringing their unique skills and perspectives to enrich the
+          cultures they choose to call home.</p>
+        <h4>Winter: The Heart of Dragonborn Community</h4>
+        <p>The closest thing to a Dragonborn homeland can be found in the remote town of Winter, nestled in the
+          forbidding Snowpeak Mountains in Skazka's far north. Here, in this settlement where the very air carries the bite
+          of eternal cold, the largest concentration of their kind has gathered as if drawn by some invisible force.</p>
+        <p>The Dragonborn who call Winter home have developed their own unique subculture, one that blends the practical
+          necessities of surviving in such a harsh environment with the mystical traditions of their draconic heritage. They
+          serve as the town's guardians, their cold resistance and natural armor making them ideal defenders against the ice
+          trolls, frost giants, and worse things that emerge from the mountain's hidden caverns.</p>
+        <h4>The eternal question</h4>
+        <p>As Starfall's effects continue to ripple through Skazka's reality, the Dragonborn remain living questions mark
+          against the landscape of the known world. Each new individual born to their kind brings fresh mysteries, new
+          combinations of draconic traits that scholars struggle to catalog and understand. Some display abilities that even
+          the most learned dragon-lore experts cannot explain, suggesting that their true potential has yet to be fully
+          realized.</p>
+        <p>Their very existence serves as a bridge between the mortal realm and the vast, incomprehensible power of true
+          dragons. In a land where ancient secrets writhe beneath every shadow and forgotten magics stir with each passing
+          season, the Dragonborn stand as both harbingers of change and guardians of mysteries that may never be fully
+          unraveled.</p>
+        <p>Whether they are harbingers of a new age, living weapons forged by cosmic forces beyond mortal understanding, or
+          simply the next step in the evolution of Skazka's peoples, one truth remains constant: the Dragonborn have claimed
+          their place in this dark fantasy realm, and their story is far from finished.</p>
+      </article>
+    
+      <article>
+        <img class="popup" src="assets/dwarves.jpg" alt="" />
+        <h2>Dwarves</h2>
+<h4>Children of Stone and Fire: The Ancient Servants</h4>
+<p>In the deepest foundations of reality, where the roots of mountains drink from streams of molten metal and the very bones of the world sing with the rhythm of cosmic forges, the Dwarves came into being. They are the eldest of all mortal races that walk Skazka's cursed lands, their origins stretching back to an age when gods still walked among mortals and the boundaries between realms were as malleable as heated steel.</p>
+<p>The Dwarves once served as the divine metalsmiths and miners to the Gods themselves, their hammers shaping reality in the deepest forges of the Underworld. Much of their true history lies buried in the abyssal depths from whence they emerged, lost to time like ore veins played out and abandoned. What remains are fragments—half-remembered songs hammered into metal, stories carved in stone that few can still read, and the bitter taste of betrayal that lingers in their mouths like the aftertaste of poisoned ale.</p>
+<p>For millennia beyond counting, they toiled in those primordial forges, their skills unmatched in all the realms. They crafted weapons that could cleave through the fabric of reality itself, armor that could turn aside the wrath of dying stars, and works of art so beautiful that even the gods wept to behold them. Their hands shaped the very tools with which the divine reshaped creation, and in their labor, they found both purpose and a growing sense of their own worth.</p>
+<h4>The Pact of Jutus and the Price of Promise</h4>
+<p>It was Jutus, the swift-winged messenger to the gods, who first bound the Dwarven people to their eternal labor. He came to them not as a conqueror but as a bargainer, his silver tongue weaving promises as intricate as the finest dwarven chainmail. The compact he offered seemed fair: serve as smiths to the gods for five thousand years, and in return, the Dwarves would be granted their own kingdom—a realm to call their own in the depths they so cherished.</p>
+<p>Initially, the Dwarves accepted this bargain willingly, for Jutus painted visions of the magnificent city they would inherit: Kitezh, a jewel set upon the shores of a vast Underworld lake, its spires carved from living stone and its halls lit by eternal flames that never consumed their fuel. The promise seemed just, the timeframe, while long, not beyond the endurance of a people who measured their lives in centuries rather than decades.</p>
+<p>True to his word, Jutus did grant them Kitezh when their term of servitude was complete. The city was everything he had promised and more—a marvel of architecture that seamlessly blended divine inspiration with dwarven craftsmanship. Its foundations sank deep into the bedrock of reality itself, while its towers reached toward cavern ceilings painted with constellations of luminous crystals. The great lake that lapped at its shores was fed by underground rivers that carried minerals and magic in equal measure, creating waters that shimmered with otherworldly light.</p>
+<p>But when the five millennia had passed and the Dwarves came to claim their freedom, Jutus revealed the cruel twist in his bargain. He had promised them the city, yes, but he had never agreed to release them from servitude. They could live in Kitezh, he declared, but they would continue to serve the gods until the end of time. The messenger's laughter echoed through the great halls as he departed, leaving the Dwarves to contemplate the bitter truth: they had traded one form of bondage for another, prettier cage. But in truth, Jutus was bound to this bargain as much as the Dwarves: in truth, Jutus walked away and allowed the rebellion which would follow; an act he would later be punished for.</p>
+<h4>The Great Rebellion and the Rise of Nav'Golam</h4>
+<p>Devastation gave way to determination. The Dwarves' initial despair at Jutus's betrayal gradually transformed into something far more dangerous: righteous fury tempered in the forges of injustice. For a time, they continued their labor under their Troll overlords—massive, brutish creatures that the gods had installed as their wardens. But the spark of rebellion, once lit, could not be easily extinguished.</p>
+<p>The uprising, when it finally came, shook the very foundations of the Underworld. Dwarven hammers that had once shaped beauty now dealt destruction. Pickaxes that had mined precious metals carved through troll hide with equal efficiency. The forges that had created wonders for the gods now produced weapons of war, each blade inscribed with oaths of vengeance written in the ancient tongue of their people.</p>
+<p>The rebellion's crescendo came with an act of defiance so bold that it resonates through Dwarven legend to this day: they raised the entire city of Kitezh. Using techniques known only to their master engineers and architects, they literally lifted their promised kingdom from its foundations and sent it floating to the surface of the great underground lake, beyond the easy reach of divine retribution. The sight of their city—their city—drifting serenely on waters that had never known sunlight became a symbol of Dwarven ingenuity and indomitable will.</p>
+<p>But true freedom could not be found here, no matter how magnificent. The Dwarves understood that they needed to forge their own destiny entirely, away from the reach of treacherous gods and their brutish servants. So they set out into the darkness of the deep places, carrying with them the accumulated knowledge of ages and the burning desire to create something truly their own.</p>
+<p>The building of Nav'Golam took a thousand years, and every day of that millennium was a testament to Dwarven perseverance. Unlike Kitezh, which had been a divine gift with strings attached, Nav'Golam was built entirely by Dwarven hands for Dwarven purposes. Every stone was quarried by their pickaxes, every support beam carved by their chisels, every room designed according to their own architectural principles rather than divine decree.</p>
+<p>The city that emerged from this epic construction project was unlike anything seen in the Underworld before. Nav'Golam's design reflected the Dwarven soul: practical yet beautiful, mighty yet welcoming to friends, and absolutely impregnable to enemies. Its great gates, forged from metals unknown to surface dwellers, bear the scars of countless battles with those who would see the Dwarves return to bondage. Its halls echo with the sounds of industry and celebration in equal measure, while its deepest vaults contain treasures that would make dragon hoards seem like children's coin collections.</p>
+<p>Today, Nav'Golam stands as the undisputed center of Dwarven civilization, a beacon of independence shining in the darkness of the deep places. King Theldon rules from the Throne of Hammered Stars, a seat carved from a single massive gemstone and inlaid with metals from every realm the Dwarves have ever touched. His crown bears the weight not just of gold and jewels, but of his people's hard-won freedom and the responsibility to ensure it is never lost again.</p>
+<h4>The Dwarven Character: Fire in the Blood</h4>
+<p>To understand the Dwarves is to understand that they approach everything in life with the same intensity they bring to their forges. They play hard because they have earned the right to joy through suffering. They fight even harder because they know the price of freedom and refuse to pay it again. Every aspect of Dwarven culture has been shaped by their history of bondage and rebellion, creating a people who value loyalty above gold and independence above life itself.</p>
+<p>Their legendary hatred for Lolth and her minions runs deeper than the deepest mine shaft. The Spider Queen represents everything they despise: treachery disguised as wisdom, power gained through manipulation rather than honest labor, and the subjugation of others for personal gain. The eon of conflict between Dwarves and Lolth's servants has produced some of the bloodiest battles in Underworld history, with neither side willing to give quarter or accept anything less than total victory.</p>
+<p>Yet for all their capacity for wrath, Dwarven friendship is equally legendary. To earn the trust of a Dwarf is to gain an ally who will stand beside you when the very foundations of the world shake. Their loyalty, once given, is as enduring as the mountains they call home and as precious as the rarest metals they mine from the earth's heart. A Dwarven friend will share their last crust of bread, their final ale, and their dying breath if necessary.</p>
+<p>This duality—the capacity for both tremendous fury and unwavering loyalty—stems from their fundamental understanding that trust must be earned and, once betrayed, can never be fully restored. Jutus's deception taught them that pretty words and grand promises are worth less than copper coins, but it also showed them the value of those who prove themselves through actions rather than speeches.</p>
+<p>Their love of gambling reflects their philosophical approach to life: sometimes you win, sometimes you lose, but the real victory lies in being brave enough to make the wager in the first place. Their contests of strength and skill serve multiple purposes—they maintain the martial readiness necessary for survival in the Underworld's hostile environment while also providing outlets for competitive spirits that might otherwise turn destructive.</p>
+<p>Mining and metalwork remain central to Dwarven identity not merely as professions but as spiritual practices. Every swing of the pickaxe is a declaration of independence, every strike of the hammer on the anvil a reminder that they shape their own destiny. The treasures they extract from the earth serve not just as wealth but as proof of their mastery over the elements that once held them in bondage.</p>
+<h4>The Eternal Vigil</h4>
+<p>The Dwarves of Skazka remain a people shaped by their past but not imprisoned by it. They have transformed the betrayal they suffered into strength, their bondage into freedom, and their anger into purpose. Each new generation learns the old stories not as burdens to carry but as foundations upon which to build better futures.</p>
+<p>Their forges burn eternal in the depths of Nav'Golam, crafting wonders that surpass even the works they once made for ungrateful gods. Their hammers ring with the rhythm of free hearts, their songs echo through caverns that belong to them alone, and their laughter thunders like avalanches through halls they built with their own hands.</p>
+<p>In a world where ancient powers stir and old threats return, the Dwarves stand as living proof that even the mightiest chains can be broken and even the deepest betrayals can be overcome. They have paid the price of wisdom in blood and toil, and they guard their freedom with the same fierce dedication they once brought to their divine servitude.</p>
+<p>Whether delving in the deepest mines, crafting in the hottest forges, or standing guard on the farthest frontiers, the Dwarves remain what they have always been at heart: a people who have looked into the abyss of despair and chosen to kindle their own light instead of cursing the darkness.</p>
+<p>King Theldon's rule continues from his throne of hammered stars, but he knows, as all Dwarven leaders do, that true authority comes not from divine appointment but from the trust of free people freely given. In Nav'Golam's great halls, where the sounds of honest labor never cease and the light of independence never dims, the Dwarves forge their destiny one hammer blow at a time.</p>
+      </article>
+    
+      <article>
+        <img class="popup" src="" alt="" />
+        <h2>Elves</h2>
+        <p></p>
+      </article>
+    
+      <article>
+        <img class="popup" src="" alt="" />
+        <h2>Gnomes</h2>
+        <p></p>
+      </article>
+    
+      <article>
+        <img class="popup" src="" alt="" />
+        <h2>Humans</h2>
+        <p></p>
+      </article>
+    
+      <article>
+        <img class="popup" src="" alt="" />
+        <h2>Orcs</h2>
+        <p></p>
+      </article>
+    
+      <article>
+        <img class="popup" src="" alt="" />
+        <h2>Beast folk</h2>
+        <p></p>
+      </article>
+    
+      <!-- Lightbox container (hidden by default) -->
+      <div id="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-img" alt="">
+      </div>
+    </main>
+
+     <p id="noResultsMessage" style="display: none; text-align: center; font-size: 1.5rem; color: #f88; margin-top: 20px; ">
+    No results found.
+    </p>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <img src="assets/logo.png" alt="Skazka Logo" />
+        <p class="footer-tagline">Where shadows speak and legends walk.</p>
+        <nav class="footer-nav">
+          <a href="contact.html">Contact</a>
+        </nav>
+        <p class="footer-copy">
+          &copy; 2025 SkazkaWorld. All stories reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

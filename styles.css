@@ -88,6 +88,11 @@ h3 {
   font-weight: 900;
 }
 
+h4{
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+
 /* Sticky Navigation Bar */
 .navbar {
   position: fixed;
@@ -331,7 +336,7 @@ article.featured p {
   font-weight: 500;
 }
 
-article p, article h2, article ul, h3 {
+article p, article h2, article ul, h3, h4 {
   margin: 20px 10px;
 }
 
@@ -348,6 +353,7 @@ article li{
   font-family: 'Cinzel', serif;
   border-top: 2px solid #444;
 }
+
 
 .footer-inner {
   max-width: 1200px;
