@@ -78,6 +78,14 @@ blockquote{
   border-radius: 4px;
 }
 
+h1{
+  font-size: 3rem;
+  font-weight: 900;
+  background-color:rgba(53, 202, 231,0.4);
+  border: 2px solid rgba(0,0,0,0);
+  border-radius: 10px;
+}
+
 h2 {
   font-size: 2rem;
   font-weight: 900;
@@ -336,9 +344,10 @@ article.featured p {
   font-weight: 500;
 }
 
-article p, article h2, article ul, h3, h4 {
+article p, article h1, article h2, article ul, article h3, article h4 {
   margin: 20px 10px;
 }
+
 
 article li{
   margin-bottom: 15px;
