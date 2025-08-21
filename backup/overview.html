@@ -1,0 +1,222 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skazka - an overview</title>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Google Font for a fantasy feel -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="assets/logo.png" />
+  </head>
+  <!--change folder name-->
+  <body>
+    <!-- Navigation Bar (sticky at top) -->
+    <nav class="navbar">
+      <div class="logo">
+        <img src="assets/logo.png" alt="Skazka Logo" />
+      </div>
+      <!-- Hamburger menu icon -->
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <!-- Navigation links with dropdown menus -->
+      <ul class="nav-links">
+        <li class="dropdown">
+          <a href="index.html">Home</a>
+          <ul class="dropdown-content"></ul>
+        </li>
+        <li class="dropdown">
+          <a href="world.html">World</a>
+          <ul class="dropdown-content">
+            <li><a href="overview.html">Overview</a></li>
+            <li><a href="multiverse.html">Multiverse</a></li>
+            <li><a href="seasons.html">Seasons & Time</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="beliefs.html">Beliefs</a>
+          <ul class="dropdown-content">
+            <li><a href="creation.html">Creation</a></li>
+            <li><a href="vek.html">The Vekya</a></li>
+            <li><a href="ann.html">The Annarr</a></li>
+            <li><a href="prir.html">The Prir</a></li>
+            <li><a href="pow.html">Lesser Powers</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="people.html">People</a>
+          <ul class="dropdown-content">
+            <li><a href="races.html">Races</a></li>
+            <li><a href="nations.html">Nations</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="places.html">Places</a>
+          <ul class="dropdown-content">
+            <li><a href="cities.html">Cities</a></li>
+            <li><a href="landmarks.html">Landmarks</a></li>
+            <li><a href="realms.html">Realms</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Groups</a>
+          <ul class="dropdown-content">
+            <li><a href="major.html">Major powers</a></li>
+            <li><a href="minor.html">Minor powers</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">History</a>
+          <ul class="dropdown-content">
+            <li><a href="timeline.html">Timeline</a></li>
+            <li><a href="events.html">Events</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Things</a>
+          <ul class="dropdown-content">
+            <li><a href="artefacts.html">Artefacts</a></li>
+            <li><a href="materials.html">Materials</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Players</a>
+          <ul class="dropdown-content">
+            <li><a href="cc.html">Character creation</a></li>
+            <li><a href="options.html">Player options</a></li>
+            <li><a href="cast.html">Cast</a></li>
+            <li><a href="scores.html">Statistics</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Other</a>
+          <ul class="dropdown-content">
+            <li><a href="#">Bestiary</a></li>
+          </ul>
+        </li>
+      </ul>
+      <!-- Search bar on the far right -->
+      <form class="search-container" id="searchForm">
+        <input
+          type="text"
+          id="searchInput"
+          name="query"
+          placeholder="Search..."
+        />
+        <button type="submit">Search</button>
+      </form>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="grid-container">
+      <article class="featured">
+        <img
+          src="assets/overview.jpg"
+          alt="a great machine with bronze coggs"
+        />
+        <div>
+          <p>A land forged in myth, ruled by mystery, and whispered about in forgotten tongues. Here, ancient
+            creatures stir beneath moonlit forests, and the stars themselves bleed secrets into the night. This
+            is no place for the faint of heart.</p>
+          <p>Within these cursed realms, every tale is a trap, every wonder a warning. Yet those brave enough to
+            adventure here may uncover lost legends, forbidden magic, and truths too terrible to remain buried.
+          </p>
+          <p>But be warned - stories don't always have happy endings. </p>
+        </div>
+      </article>
+
+      <article>
+        <img class="popup" src="assets/skia.jpg" alt="the western continent of Skia" />
+        <h2>Western continent: Skia</h2>
+        <p>
+          Once remembered only in the oral traditions of the Sken, Skia was home
+          to humans enslaved by giants—the offspring of the ancient Gods. When
+          the Gods abandoned them, the giants waged war among themselves. Freed
+          from bondage, humanity cultivated the land, tended livestock, and
+          mined the earth. Their unquenchable curiosity drove them onward—across
+          hills, beneath mountains, into the unknown. Alarmed by humans’
+          ambition, the Gods debated intervention but ultimately stood by as
+          humans awakened a primeval force—greater than even the gods
+          themselves. Terrified, humanity fled eastward in search of a mythical
+          sanctuary.
+        </p>
+      </article>
+
+      <article>
+        <img class="popup" src="assets/kelos.jpg" alt="the eastern continent of Kelos" />
+        <h2>Eastern continent: Kelos</h2>
+        <p>
+          Spanning from temperate zones to the Arctic, Kelos offers a tapestry
+          of landscapes—from frozen tundras to scorching deserts. It hosts over
+          a dozen intelligent species: ancient Dwarves once favored by gods,
+          fierce Orc tribes bred for war, graceful Elves, cunning Goblins and
+          Kobolds, and a myriad of Beast Folk. Their cultures and histories
+          intertwine across thousands of years.
+        </p>
+      </article>
+
+      <article>
+        <img class="popup" src="assets/Sery.jpg" alt="The Serydina isles" />
+        <h2>The Serydina Isles</h2>
+        <p>
+          Just days’ sail west of Kelos lie the Serydina Isles, a small
+          archipelago centered on the island of Snuuflund. Several of its isles
+          are populated, while others serve as home to only sheep and goats.
+        </p>
+      </article>
+
+      <article>
+        <img class="popup" src="assets/oy.jpg" alt="the fabled island of the gods, Oy." />
+        <h2>Oy: the mythical island of the gods</h2>
+        <p>
+          Oy is whispered to be the long-lost abode of the first Gods—a place of
+          myth and mystery. Archaeologists and theolurgists argue heatedly over
+          its nature: whether it exists physically on Skazka, or lies beyond the
+          veil, only reachable by those who truly believe.
+        </p>
+      </article>
+
+      <!-- Lightbox container (hidden by default) -->
+  <div id="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-img" alt="">
+  </div>
+    </main>
+
+    <p
+      id="noResultsMessage"
+      style="
+        display: none;
+        text-align: center;
+        font-size: 1.5rem;
+        color: #f88;
+        margin-top: 20px;
+      "
+    >
+      No results found.
+    </p>
+    <footer class="footer">
+      <div class="footer-inner">
+        <img src="assets/logo.png" alt="Skazka Logo" />
+        <p class="footer-tagline">Where shadows speak and legends walk.</p>
+        <nav class="footer-nav">
+          <a href="contact.html">Contact</a>
+        </nav>
+        <p class="footer-copy">
+          &copy; 2025 SkazkaWorld. All stories reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

@@ -1,124 +1,28 @@
 <!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skazka - Dark Fantasy Lore</title>
     <!-- Link to external CSS -->
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css">
     <!-- Google Font for a fantasy feel -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="icon" type="image/png" href="assets/logo.png" />
-  </head>
-  <!--change folder name-->
-  <body>
-    <!-- Navigation Bar (sticky at top) -->
-    <nav class="navbar">
-      <div class="logo">
-        <img src="assets/logo.png" alt="Skazka Logo" />
-      </div>
-      <!-- Hamburger menu icon -->
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <!-- Navigation links with dropdown menus -->
-      <ul class="nav-links">
-        <li class="dropdown">
-          <a href="index.html">Home</a>
-          <ul class="dropdown-content"></ul>
-        </li>
-        <li class="dropdown">
-          <a href="world.html">World</a>
-          <ul class="dropdown-content">
-            <li><a href="overview.html">Overview</a></li>
-            <li><a href="multiverse.html">Multiverse</a></li>
-            <li><a href="seasons.html">Seasons & Time</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="beliefs.html">Beliefs</a>
-          <ul class="dropdown-content">
-            <li><a href="creation.html">Creation</a></li>
-            <li><a href="vek.html">The Vekya</a></li>
-            <li><a href="ann.html">The Annarr</a></li>
-            <li><a href="prir.html">The Prir</a></li>
-            <li><a href="pow.html">Lesser Powers</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="people.html">People</a>
-          <ul class="dropdown-content">
-            <li><a href="races.html">Races</a></li>
-            <li><a href="nations.html">Nations</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="places.html">Places</a>
-          <ul class="dropdown-content">
-            <li><a href="cities.html">Cities</a></li>
-            <li><a href="landmarks.html">Landmarks</a></li>
-            <li><a href="realms.html">Realms</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#">Groups</a>
-          <ul class="dropdown-content">
-            <li><a href="major.html">Major powers</a></li>
-            <li><a href="minor.html">Minor powers</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#">History</a>
-          <ul class="dropdown-content">
-            <li><a href="timeline.html">Timeline</a></li>
-            <li><a href="events.html">Events</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#">Things</a>
-          <ul class="dropdown-content">
-            <li><a href="artefacts.html">Artefacts</a></li>
-            <li><a href="materials.html">Materials</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#">Players</a>
-          <ul class="dropdown-content">
-            <li><a href="cc.html">Character creation</a></li>
-            <li><a href="options.html">Player options</a></li>
-            <li><a href="cast.html">Cast</a></li>
-            <li><a href="scores.html">Statistics</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#">Other</a>
-          <ul class="dropdown-content">
-            <li><a href="#">Bestiary</a></li>
-          </ul>
-        </li>
-      </ul>
-      <!-- Search bar on the far right -->
-      <form class="search-container" id="searchForm">
-        <input
-          type="text"
-          id="searchInput"
-          name="query"
-          placeholder="Search..."
-        />
-        <button type="submit">Search</button>
-      </form>
-    </nav>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+
+<body>
+    <div id="navbar"></div><!-- Navbar will be loaded here -->
 
     <!-- Main Content Area -->
-    <main class="grid-container">
-      <article class="featured">
-        <img class="popup" src="assets/pantheon.webp" alt="" />
+    <main class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
+        <article class="left-column"> <!-- LEFT -->
+        </article>
+
+        <article class="center-column"><!-- MIDDLE -->
+            <img class="popup" src="assets/pantheon.webp" alt="" />
         <div>
     <p>Beneath the obsidian veil of eternity, an endless astral sea sprawled — a blackened abyss that swallowed all light and
         hope. It was a void eternal and unmoving, where silence rotted in the bones of time. Yet, from the crushing depths
@@ -129,11 +33,15 @@
         cracking like shattered bone under an ethereal force. Splintered into countless jagged shards, the universe bled
         fragments into the dark expanse. Each shard, a realm cast into its own shadowed corner of time and
         space — birthplaces of realms both cursed and blessed, the fractured planes of existence.</p>
-        </div>
-      </article>
+        </article>
 
-      <article>
-        <h2>In the beginning...</h2>
+        <article class="right-column"> <!-- RIGHT -->
+        </article>
+    </main>
+
+    <main class="grid-even"><!-- 3 COLUMN EVEN -->
+        <article class="article-small">
+            <h2>In the beginning...</h2>
         <p>
           For an age, the planes roared with untamed fury — flames of creation and
           chaos alike — but eventually, the fire began to fade. From its embers
@@ -145,14 +53,14 @@
           There were three:<br />
           Uzume, goddess of creation,<br />
           Kaos, lord of disorder,<br />
-          and Cronos, keeper of cosmic time.
+          and Kronos, keeper of cosmic time.
         </p>
-      </article>
+        </article>
 
-      <article>
-        <h2>Daggers in the night...</h2>
+        <article class="article-small">
+            <h2>Daggers in the night...</h2>
         <p>
-          Uzume was alone, for both Cronos and and Kaos were relentless and unwavering 
+          Uzume was alone, for both Kronos and and Kaos were relentless and unwavering 
           in their task. Lonely in her divinity, Uzume tore a piece from her own essence 
           and formed wondrous beings to accompany her and carry out her will across
           the multiverse. These were the Annarr and their companions, the
@@ -162,7 +70,7 @@
         </p>
 
         <p>
-          Seeing Uzume’s creations, Kaos and Cronos grew bitter. Jealousy
+          Seeing Uzume’s creations, Kaos and Kronos grew bitter. Jealousy
           poisoned their thoughts, and they conspired to steal her power. Yet
           some cosmic force forbade them from harming her directly. So they
           turned to the Annarr and Annarr-kin. None would join them — save one.
@@ -175,14 +83,14 @@
         </p>
 
         <p>
-          Kaos and Cronos lured Uzume to the Celestial Forge, where the first
+          Kaos and Kronos lured Uzume to the Celestial Forge, where the first
           spark had been born. There, hidden in shadow, Fafnirog struck. He tore
           her open and scattered her essence.
         </p>
-      </article>
+        </article>
 
-      <article>
-        <h2>Rebirth...</h2>
+        <article class="article-small">
+            <h2>Rebirth...</h2>
         <p>
           As Uzume’s divine light faded, the remaining Vekya tried to consume
           what remained—but her essence had become poison to them. In her final
@@ -198,42 +106,50 @@
         <p>
           Uzume’s gift lives on—in all things, except the gods who betrayed her.
         </p>
-      </article>
-
-      <!-- Lightbox container (hidden by default) -->
-  <div id="lightbox">
-    <span class="close">&times;</span>
-    <img class="lightbox-img" alt="">
-  </div>
+        </article>
     </main>
 
-    <p
-      id="noResultsMessage"
-      style="
-        display: none;
-        text-align: center;
-        font-size: 1.5rem;
-        color: #f88;
-        margin-top: 20px;
-      "
-    >
-      No results found.
-    </p>
 
     <footer class="footer">
-      <div class="footer-inner">
-        <img src="assets/logo.png" alt="Skazka Logo" />
-        <p class="footer-tagline">Where shadows speak and legends walk.</p>
-        <nav class="footer-nav">
-          <a href="contact.html">Contact</a>
-        </nav>
-        <p class="footer-copy">
-          &copy; 2025 SkazkaWorld. All stories reserved.
-        </p>
-      </div>
+        <div class="footer-inner">
+            <img src="assets/logo.png" alt="Skazka Logo">
+            <p class="footer-tagline">Where shadows speak and legends walk.</p>
+            <nav class="footer-nav">
+                <a href="contact.html">Contact</a>
+            </nav>
+            <p class="footer-copy">&copy; 2025 SkazkaWorld. All stories reserved.</p>
+        </div>
     </footer>
+
+    <!-- Lightbox container (hidden by default) -->
+    <div id="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-img" alt="">
+    </div>
 
     <script src="main.js"></script>
     <script src="popup.js"></script>
-  </body>
+    <script>
+        // Load navbar.html dynamically        
+        fetch("navbar.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("navbar").innerHTML = data;
+
+                // Now that navbar is loaded, attach hamburger event
+                const hamburger = document.querySelector(".hamburger");
+                const navLinks = document.querySelector(".nav-links");
+
+                if (hamburger && navLinks) {
+                    hamburger.addEventListener("click", () => {
+                        navLinks.classList.toggle("active");
+                        hamburger.classList.toggle("open");
+                    });
+                }
+            });
+    </script>
+
+
+</body>
+
 </html>

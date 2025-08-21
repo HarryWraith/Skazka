@@ -1,135 +1,284 @@
 <!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skazka - Dark Fantasy Lore</title>
     <!-- Link to external CSS -->
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css">
     <!-- Google Font for a fantasy feel -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet" />
-
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/logo.png">
 </head>
+<!--change folder name-->
 <body>
     <!-- Navigation Bar (sticky at top) -->
     <nav class="navbar">
         <div class="logo">
-            <img src="assets/logo.png" alt="Skazka Logo" />
+            <a href="index.html"><img src="assets/logo.png" alt="Skazka Logo"></a>
+        </div>
+        <!-- Hamburger menu icon -->
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
         <!-- Navigation links with dropdown menus -->
         <ul class="nav-links">
-            <li class="dropdown">
-                <a href="#">Home</a>
+            <li class="dropdown"><a href="#">World</a>
                 <ul class="dropdown-content">
-                    <li><a href="#">Welcom</a></li>
+                    <li class="dropdown"><a href="overview.html">Overview</a></li>
+                    <li><a href="multiverse.html">Multiverse</a></li>
+                    <li><a href="seasons.html">Seasons & Time</a></li>
+                    <li><a href="maps.html">Maps</a></li>
                 </ul>
             </li>
-            <li class="dropdown">
-                <a href="#">World</a>
+            <li class="dropdown"><a href="#">Beliefs</a>
                 <ul class="dropdown-content">
-                    <li><a href="#">Skazka</a></li>
-                    <li><a href="#">Multiverse</a></li>
-                    <li><a href="#">Seasons & Time</a></li>
+                    <li><a href="creation.html">Creation</a></li>
+                    <li class="dropdown"><a href="#">The Vekya</a>
+                        <ul class="dropdown-submenu">
+                            <li><a href="primordials.html">The Primordials</a></li>
+                            <li><a href="uzume.html">Uzume</a></li>
+                            <li><a href="kaos.html">Kaos</a></li>
+                            <li><a href="Kronos.html">Kronos</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="#">The Annarr</a>
+                        <ul class="dropdown-submenu">
+                            <li><a href="highones.html">The High Ones</a></li>
+                            <li><a href="frur.html">Frur</a></li>
+                            <li><a href="skald.html">Skald</a></li>
+                            <li><a href="aeter.html">Aeter</a></li>
+                            <li><a href="njord.html">Njord</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="#">The Prir</a>
+                        <ul class="dropdown-submenu">
+                            <li><a href="walkinggods.html">The Walking Gods</a></li>
+                            <li><a href="chernabog.html">Chernabog</a></li>
+                            <li><a href="herukan.html">Herukan</a></li>
+                            <li><a href="mortifer.html">Mortifer</a></li>
+                            <li><a href="agos.html">Agos</a></li>
+                            <li><a href="silithus.html">Silithus</a></li>
+                            <li><a href="leonarah.html">Leonarah</a></li>
+                            <li><a href="surrana.html">Surrana</a></li>
+                            <li><a href="cormarin.html">Cormarin</a></li>
+                            <li><a href="sylka.html">Sylka</a></li>
+                            <li><a href="than.html">Than</a></li>
+                            <li><a href="ioun.html">Ioun</a></li>
+                            <li><a href="lunica.html">Lunica</a></li>
+                            <li><a href="mani.html">Mani</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="pow.html">Lesser Powers</a>
+                        <ul class="dropdown-submenu">
+                            <li><a href="lesserpowers.html">Lesser powers</a></li>
+                            <li><a href="fafnirog.html">Fafnirog</a></li>
+                            <li><a href="hags.html">The Hags</a></li>
+                            <li><a href="lolth.html">Lolth</a></li>
+                            <li><a href="jutus.html">Jutus</a></li>
+                            <li><a href="hunt.html">The Wild Hunt</a></li>
+                            <li><a href="agramaul.html">Agramaul</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </li>
-            <li class="dropdown">
-                <a href="#">Beliefs</a>
+            <li class="dropdown"><a href="#">People</a>
                 <ul class="dropdown-content">
-                    <li><a href="#">Creation</a></li>
-                    <li><a href="#">The Vekya</a></li>
-                    <li><a href="#">The Annarr</a></li>
-                    <li><a href="#">The Prir</a></li>
-                    <li><a href="#">Lesser Powers</a></li>
-                </ul>
-            </li>
-            <li class="dropdown">
-                <a href="#">Races</a>
-                <ul class="dropdown-content">
-                    <li><a href="#">Dragonborn</a></li>
-                    <li><a href="#">Dwarves</a></li>
-                    <li><a href="#">Elves</a></li>
-                    <li><a href="#">Gnomes</a></li>
-                    <li><a href="#">Humans</a></li>
-                    <li><a href="#">Orcs</a></li>
-                    <li><a href="#">Beast folk</a></li>
+                    <li class="dropdown"><a href="races.html">Races</a>
+                        <ul class="dropdown-submenu">
+                            <li><a href="dragonborn.html">Dragonborn</a></li>
+                            <li><a href="dwarves.html">Dwarves</a></li>
+                            <li><a href="elves.html">Elves</a></li>
+                            <li><a href="gnomes.html">Gnomes</a></li>
+                            <li><a href="orcs.html">Orcs</a></li>
+                            <li><a href="humans.html">Humans</a></li>
+                            <li><a href="beastraces.html">The Beast Races</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="#">Nations & States</a>
+                        <ul class="dropdown-submenu">
+                            <li><a href="Aeternia.html">Winter</a>
+                            <li><a href="caratania.html">Caratania</a></li>
+                            <li><a href="oldkaijistan.html">Old Kaijistan</a></li>
+                            <li><a href="serydina.html">Serydina</a></li>
+                            <li><a href="dargav.html">Necropolis of Dargav</a></li>
+                            <li><a href="kuthan.html">Ku'than</a></li>
+                            <li><a href="winter.html">Winter</a></li>
+                        </ul>                
+                    </li>
+
                 </ul>
             </li>
             <li class="dropdown">
                 <a href="#">Places</a>
                 <ul class="dropdown-content">
-                    <li><a href="#">Nations & States</a></li>
-                    <li><a href="#">Landmarks</a></li>
+                    <li><a href="ruins.html">Ruins</a></li>
+                    <li><a href="landmarks.html">Landmarks</a></li>
+                    <li><a href="realms.html">Strange Realms</a></li>
                 </ul>
             </li>
             <li class="dropdown">
                 <a href="#">Groups</a>
                 <ul class="dropdown-content">
-                    <li><a href="#">Guilds</a></li>
-                    <li><a href="#">Clans</a></li>
+                    <li><a href="ro.html">Religious orders</a></li>
+                    <li><a href="guilds.html">Guilds</a></li>
+                    <li><a href="cults.html">Societies & cults</a></li>
+                    <li><a href="academia.html">Academia</a></li>
+                    <li><a href="trade.html">Trade & Alliances</a></li>
                 </ul>
             </li>
             <li class="dropdown">
                 <a href="#">History</a>
                 <ul class="dropdown-content">
-                    <li><a href="#">Timeline</a></li>
-                    <li><a href="#">Lore</a></li>
+                    <li><a href="timeline.html">Timeline</a></li>
+                    <li><a href="events.html">Events</a></li>
                 </ul>
             </li>
             <li class="dropdown">
                 <a href="#">Things</a>
                 <ul class="dropdown-content">
-                    <li><a href="#">Artifacts</a></li>
-                    <li><a href="#">Magic Items</a></li>
+                    <li><a href="artefacts.html">Artefacts</a></li>
+                    <li><a href="materials.html">Materials</a></li>
                 </ul>
             </li>
             <li class="dropdown">
                 <a href="#">Players</a>
                 <ul class="dropdown-content">
-                    <li><a href="#">Character List</a></li>
-                    <li><a href="#">Player Guides</a></li>
+                    <li><a href="cc.html">Character creation</a></li>
+                    <li><a href="options.html">Player options</a></li>
+                    <li><a href="cast.html">Cast</a></li>
+                    <li><a href="scores.html">Statistics</a></li>
                 </ul>
             </li>
             <li class="dropdown">
                 <a href="#">Other</a>
                 <ul class="dropdown-content">
                     <li><a href="#">Bestiary</a></li>
-                    <li><a href="#">Glossary</a></li>
                 </ul>
             </li>
         </ul>
         <!-- Search bar on the far right -->
-        <div class="search-container">
-            <input type="text" placeholder="Search..." />
-        </div>
+        <form class="search-container" id="searchForm">
+            <input type="text" id="searchInput" name="query" placeholder="Search...">
+            <button type="submit">Search</button>
+        </form>
     </nav>
 
     <!-- Main Content Area -->
     <main class="grid-container">
-       <article class="featured">
-        <img src="Assets/cover.jpg" alt="">
-        <div>
-            <h2>Welcome to Skazka</h2>
-            <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, deleniti ab nesciunt sit tenetur, qui minus culpa quos laboriosam pariatur, unde mollitia eius quod ipsa voluptas ad! Fuga consequatur repudiandae rerum provident expedita, ducimus voluptatum modi deserunt velit quo iure alias architecto ut officiis commodi placeat sit recusandae, accusamus omnis aliquid necessitatibus dolor, saepe molestiae cupiditate. Voluptates suscipit molestiae aliquam ullam quaerat deserunt inventore quas! Totam quia iste voluptates incidunt repellendus distinctio sed sit dignissimos, nihil quas tenetur dolor. Optio cupiditate modi explicabo reprehenderit asperiores, quibusdam suscipit blanditiis sit unde iusto quae porro ipsum hic repellat praesentium. Quaerat rem ipsum voluptates facilis sequi repellendus, molestiae nisi blanditiis laudantium inventore debitis veniam dolores aspernatur quisquam suscipit libero nesciunt nemo fuga ut? Magni, voluptatum totam? Commodi sit culpa dolore enim ducimus exercitationem ex placeat porro eos dolor vitae ab autem, nostrum explicabo praesentium. In atque voluptates enim sed minus magnam illo, neque consequuntur molestiae autem? Fuga magni nisi magnam maxime, illum nihil beatae explicabo blanditiis repellendus eum incidunt dicta, perspiciatis molestias enim quasi delectus vero neque impedit? Laudantium incidunt provident praesentium commodi nisi, illo velit, accusantium facere autem, cumque modi voluptatem architecto hic natus! Eveniet optio ad possimus provident? Laudantium culpa tempora eligendi iusto commodi repellat? Animi obcaecati dolore debitis amet saepe error ex adipisci officia ipsa eligendi illum nulla tempora nemo eos rem ipsum reiciendis consectetur, cum ut molestias nihil temporibus sed expedita beatae. Impedit enim, porro sapiente quae voluptates, ab sunt exercitationem mollitia omnis recusandae fugiat laudantium voluptatem labore adipisci, ipsum dolor libero necessitatibus? Sequi laborum aliquid culpa consectetur est maiores dolor magnam sed enim soluta veniam qui ratione pariatur nostrum doloremque, voluptate ut perferendis facere eveniet voluptates optio labore nobis mollitia? Repellendus dolorem ipsam hic iure aut tempora doloremque facere nam voluptate eaque sequi, aspernatur sunt repellat. Magni similique maiores mollitia accusamus unde eos, quos tempora doloribus suscipit fugit esse quam repellendus consectetur ratione reiciendis eligendi sequi nihil voluptatem perferendis, alias eveniet possimus, assumenda iusto rerum. Vel, ipsam ipsum modi ut quis natus, eligendi consequatur perspiciatis possimus totam dolores beatae quisquam voluptate nostrum suscipit necessitatibus officia? Quidem, optio deleniti numquam beatae aut suscipit quia non sapiente assumenda perspiciatis repellendus vel eos culpa, totam architecto voluptatem! Quod officiis mollitia minus nostrum natus eligendi praesentium provident placeat dicta, soluta fugiat adipisci voluptates nesciunt. Aliquid, voluptates delectus natus dolore cum blanditiis possimus nam cumque, sapiente, illum deleniti eius facere quidem ipsam ullam doloribus molestias sint cupiditate maiores odit sit nostrum id modi! Facere nobis nemo voluptate accusamus temporibus nesciunt sint exercitationem, assumenda distinctio deleniti, quae perspiciatis dolores aliquid quibusdam quasi neque iste pariatur saepe praesentium ullam ut voluptatem. Ipsa magni error maxime ut harum corrupti, laboriosam tempora non nesciunt nam maiores deleniti debitis. Dolorum, exercitationem mollitia autem deleniti provident delectus veritatis fuga consequuntur, laborum rem harum debitis. Modi, veniam sint natus illum deleniti qui nihil delectus.
-            </p>
-        </div>
-       </article>
-
-       <article>
-        <img src="assets/skazka_intro.jpg" alt="">
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos vel nobis odit rerum tempore ab est officia quaerat repellat fuga harum, quisquam ipsa. Rem fugit facere alias modi voluptate aspernatur, at quasi est dolores architecto odit doloremque quisquam nobis amet suscipit quae reprehenderit distinctio iusto ratione totam quam nam impedit. Voluptatum fuga consectetur ab praesentium ullam laudantium delectus, dolores architecto laborum porro inventore atque quasi beatae eos! Pariatur dolores quidem est quasi enim provident voluptatibus non, architecto cupiditate eius consequatur accusantium quia nemo magni quas necessitatibus dolore culpa hic recusandae? Cumque iure ducimus, est doloribus dolorum ipsum animi optio distinctio molestiae dolore sint unde amet vitae eaque aliquam quasi nihil natus assumenda cum eius nisi quibusdam repudiandae accusantium a! Necessitatibus voluptatum facere ipsam eligendi maiores reiciendis facilis nam, beatae natus impedit atque iusto quasi error at molestias minima iste assumenda libero illum optio. Ducimus explicabo laboriosam aliquam quidem beatae impedit, rem illum excepturi laudantium quam consequatur est nulla maxime culpa assumenda deleniti odio atque dicta. Sit nam alias ducimus culpa voluptatem qui harum? Corporis facilis non voluptatibus minima consequuntur quos ex illo ab sed, nobis dolorem rem nulla? Et nostrum iste itaque libero facere tenetur modi minima suscipit molestiae cum!</p>
-       </article>
-
-       <article>
-        <img src="assets/kuthan_intro.jpg" alt="">
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos vel nobis odit rerum tempore ab est officia quaerat repellat fuga harum, quisquam ipsa. Rem fugit facere alias modi voluptate aspernatur, at quasi est dolores architecto odit doloremque quisquam nobis amet suscipit quae reprehenderit distinctio iusto ratione totam quam nam impedit. Voluptatum fuga consectetur ab praesentium ullam laudantium delectus, dolores architecto laborum porro inventore atque quasi beatae eos! Pariatur dolores quidem est quasi enim provident voluptatibus non, architecto cupiditate eius consequatur accusantium quia nemo magni quas necessitatibus dolore culpa hic recusandae? Cumque iure ducimus, est doloribus dolorum ipsum animi optio distinctio molestiae dolore sint unde amet vitae eaque aliquam quasi nihil natus assumenda cum eius nisi quibusdam repudiandae accusantium a! Necessitatibus voluptatum facere ipsam eligendi maiores reiciendis facilis nam, beatae natus impedit atque iusto quasi error at molestias minima iste assumenda libero illum optio. Ducimus explicabo laboriosam aliquam quidem beatae impedit, rem illum excepturi laudantium quam consequatur est nulla maxime culpa assumenda deleniti odio atque dicta. Sit nam alias ducimus culpa voluptatem qui harum? Corporis facilis non voluptatibus minima consequuntur quos ex illo ab sed, nobis dolorem rem nulla? Et nostrum iste itaque libero facere tenetur modi minima suscipit molestiae cum!</p>
-       </article>
+        <article class="featured">
+            <img src="assets/title_page.webp" alt="image of adventurers facing a ruined castle on a mountain">
+            <div>
+                <h2>Welcome to Skazka</h2>
+                <p>
+                    Skazka is a world shaped by forgotten myths, ruthless gods, and ancient magic. From haunted necropolises to
+                    whispering
+                    jungles, Skazka is a place where every shadow holds a story, and every path promises mystery, danger, and
+                    transformation.
+                </p>
+        
+                <p>
+                    At its core, Skazka is a living narrative: immersive, richly textured, and deeply atmospheric. The world
+                    blends
+                    Slavic, Norse, and original mythologies into something new—something strange, lyrical, and menacing. The
+                    name
+                    itself, "Skazka," is derived from the Russian word for "fairy tale," but the tales here are anything but
+                    comforting.
+                    Instead, they are blood-soaked, ironic, and often tragic, where happy endings are hard-won — if they come at
+                    all.
+                </p>
+        
+                <p>
+                    Players and readers enter Skazka through the eyes of complex characters — like the Thief, darting through
+                    city alleys in
+                    search of survival; the Witchling, bartering with spirits in the deep, enchanted woodlands; or the Warlord,
+                    weighed
+                    down by duty, standing before the bones of the dead. These individuals inhabit a world full of lore:
+                    sentient forests,
+                    cursed relics, crumbling empires, and gods that walk the earth.
+                </p>
+        
+                <p>
+                    But Skazka is not only a setting — it’s a tone, a philosophy of storytelling. It asks you to embrace
+                    ambiguity, to
+                    question what’s real, and to find beauty in the strange and the broken. It rewards those who pay attention
+                    to detail
+                    and aren't afraid to dive into morally gray choices.
+                </p>
+        
+                <p>
+                    Whether you're here to read its tales, play within its systems, or build your own stories in its shadowy
+                    corners,
+                    Skazka invites you in with a warning: in this world, magic has a price, and not every monster looks like
+                    one.
+                </p>
+        
+                <p>Dare to enter. Skazka awaits.</p>
+        
+            </div>
+        </article>
 
         <article>
-        <img src="assets/warrior_intro.jpg" alt="">
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos vel nobis odit rerum tempore ab est officia quaerat repellat fuga harum, quisquam ipsa. Rem fugit facere alias modi voluptate aspernatur, at quasi est dolores architecto odit doloremque quisquam nobis amet suscipit quae reprehenderit distinctio iusto ratione totam quam nam impedit. Voluptatum fuga consectetur ab praesentium ullam laudantium delectus, dolores architecto laborum porro inventore atque quasi beatae eos! Pariatur dolores quidem est quasi enim provident voluptatibus non, architecto cupiditate eius consequatur accusantium quia nemo magni quas necessitatibus dolore culpa hic recusandae? Cumque iure ducimus, est doloribus dolorum ipsum animi optio distinctio molestiae dolore sint unde amet vitae eaque aliquam quasi nihil natus assumenda cum eius nisi quibusdam repudiandae accusantium a! Necessitatibus voluptatum facere ipsam eligendi maiores reiciendis facilis nam, beatae natus impedit atque iusto quasi error at molestias minima iste assumenda libero illum optio. Ducimus explicabo laboriosam aliquam quidem beatae impedit, rem illum excepturi laudantium quam consequatur est nulla maxime culpa assumenda deleniti odio atque dicta. Sit nam alias ducimus culpa voluptatem qui harum? Corporis facilis non voluptatibus minima consequuntur quos ex illo ab sed, nobis dolorem rem nulla? Et nostrum iste itaque libero facere tenetur modi minima suscipit molestiae cum!</p>
-       </article>
+            <img class="popup" src="assets/warrior_intro.jpg" alt="an image of a warrior carrying the ashes of a fallen comrade">
+            <h2>The Warlord</h2>
+            <p>A lone adventurer steps off the longboat that has taken him to the necropolis of Dargav. The aging jetty
+                creaks underfoot and the forest seems to mimic the sound. A crow lands on a nearby branch to judge the
+                visitor. It caws, perhaps in approval? Clutching the urn he has brought here, the warrior takes a deep
+                breath and steps forward. This place is hallowed so he must tread carefully.</p>
+        </article>
+
+        <article>
+              <img class="popup" src="assets/skazka_intro.jpg" alt="image of a little girl thief">
+            <h2>The Thief</h2>
+            <p>Back where the soldier began his journey, the streets of Calarium are choked with the dust from passing
+                horses and carts. A small child weaves through a crowd of merchants and soft skinned gentry. Spotting
+                her mark, she approaches confidently. With practiced ease she feigns a trip and bumps into the
+                unsuspecting gem cutter. With an apology she pushes away from the man, but not empty handed. The
+                concealed blade in one hand has liberated a purse of its strings. Stepping casually away from the crowd
+                she slips into a darkened alleyway to assess her work. Only five gold coins. Not bad, but not enough to
+                get her to Ku'Than. That will have to wait, for now.</p>           
+        </article>
+
+        <article>
+            <img class="popup" src="assets/kuthan_intro.jpg" alt="image of a young witch with a fairy in a bottle">
+            <h2>The Witchling</h2>
+            <p>Far to the north and  east the beggar's sister stifles in the humidity of Ku'Than's forested canopy.
+                Insects constantly gnaw at her ankles and the sweat stings her eyes. Her companion, a small white owl,
+                hoots impatiently. She bends down to retrieve the bottle that is the focus of her task. Inside, a tiny
+                winged creature flutters and bashes the glass in frustration, its lips mouthing silent curses. The
+                Witchling wonders what will become of the fairy; her mistress and mentor is oft cruel. "I won't be like
+                that when I'm a full witch", she tells herself.</p>
+        </article>
+
+        <!-- Lightbox container (hidden by default) -->
+  <div id="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-img" alt="">
+  </div>
     </main>
+
+  
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <img src="assets/logo.png" alt="Skazka Logo">
+            <p class="footer-tagline">Where shadows speak and legends walk.</p>
+            <nav class="footer-nav">
+                <a href="contact.html">Contact</a>
+            </nav>
+            <p class="footer-copy">&copy; 2025 SkazkaWorld. All stories reserved.</p>
+        </div>
+    </footer>
+
+
+    <script src="main.js"></script>
+    <script src="popup.js"></script>
+
+
 </body>
+
 </html>

@@ -1,208 +1,122 @@
 <!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Skazka in the multiverse</title>
-    <!-- Link to external CSS -->
-    <link rel="stylesheet" href="styles.css" />
-    <!-- Google Font for a fantasy feel -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="icon" type="image/png" href="assets/logo.png" />
-  </head>
-  <!--change folder name-->
 
-  <body>
-    <!-- Navigation Bar (sticky at top) -->
-    <nav class="navbar">
-      <div class="logo">
-        <img src="assets/logo.png" alt="Skazka Logo" />
-      </div>
-      <!-- Hamburger menu icon -->
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <!-- Navigation links with dropdown menus -->
-      <ul class="nav-links">
-        <li class="dropdown">
-          <a href="index.html">Home</a>
-          <ul class="dropdown-content"></ul>
-        </li>
-        <li class="dropdown">
-          <a href="world.html">World</a>
-          <ul class="dropdown-content">
-            <li><a href="overview.html">Overview</a></li>
-            <li><a href="multiverse.html">Multiverse</a></li>
-            <li><a href="seasons.html">Seasons & Time</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="beliefs.html">Beliefs</a>
-          <ul class="dropdown-content">
-            <li><a href="creation.html">Creation</a></li>
-            <li><a href="vek.html">The Vekya</a></li>
-            <li><a href="ann.html">The Annarr</a></li>
-            <li><a href="prir.html">The Prir</a></li>
-            <li><a href="pow.html">Lesser Powers</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="people.html">People</a>
-          <ul class="dropdown-content">
-            <li><a href="races.html">Races</a></li>
-            <li><a href="nations.html">Nations</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="places.html">Places</a>
-          <ul class="dropdown-content">
-            <li><a href="cities.html">Cities</a></li>
-            <li><a href="landmarks.html">Landmarks</a></li>
-            <li><a href="realms.html">Realms</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#">Groups</a>
-          <ul class="dropdown-content">
-            <li><a href="major.html">Major powers</a></li>
-            <li><a href="minor.html">Minor powers</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#">History</a>
-          <ul class="dropdown-content">
-            <li><a href="timeline.html">Timeline</a></li>
-            <li><a href="events.html">Events</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#">Things</a>
-          <ul class="dropdown-content">
-            <li><a href="artefacts.html">Artefacts</a></li>
-            <li><a href="materials.html">Materials</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#">Players</a>
-          <ul class="dropdown-content">
-            <li><a href="cc.html">Character creation</a></li>
-            <li><a href="options.html">Player options</a></li>
-            <li><a href="cast.html">Cast</a></li>
-            <li><a href="scores.html">Statistics</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#">Other</a>
-          <ul class="dropdown-content">
-            <li><a href="#">Bestiary</a></li>
-          </ul>
-        </li>
-      </ul>
-      <!-- Search bar on the far right -->
-      <form class="search-container" id="searchForm">
-        <input
-          type="text"
-          id="searchInput"
-          name="query"
-          placeholder="Search..."
-        />
-        <button type="submit">Search</button>
-      </form>
-    </nav>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skazka - Dark Fantasy Lore</title>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Font for a fantasy feel -->
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+
+<body>
+    <div id="navbar"></div><!-- Navbar will be loaded here -->
 
     <!-- Main Content Area -->
-    <main class="grid-container">
-      <article class="featured">
-        <img src="assets/cosmos.jpg" alt="the vastness of the cosmos" />
-        <div>
-          <p>
-            Skazka is located on the Prime Material plane. It has two moons:
-            Lunica and Mani. Lunica is off white in colour and is the smaller of
-            the two celestial bodies. Mani is larger and green. Their
-            significance differs depending on cultural perspective, but their
-            influence on the races of Skazka is undeniable. The Aeternian
-            Calendar is based on the movement of these celestial bodies. The
-            Dwarves curse them and think of them as bad omens. Some Beast Races
-            worship them as Gods. The Orcs believe that Mani is a manifestation
-            of their God and creator, Chernobog.
-          </p>
-          <p>
-            In the cosmos, Skazka is perhaps quite unique. Creatures and people
-            not native to Skazka have been encountered many, many, times over
-            the centuries. The reason for this remained a mystery for a long
-            time. But during the time of Magical Prohibition academics turned
-            their attentions to this topic and discovered that Skazka's
-            separation from other realms is extremely weak in some places. This
-            can lead to brief tears in the substance that separates worlds and
-            dimensions, known as 'The Veil'.
-          </p>
-        </div>
-      </article>
+    <main class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
+        <article class="left-column"> <!-- LEFT -->
+        </article>
 
-      <article>
-        <img class="popup" src="assets/veil.jpg" alt="The Veil - a glowing mystical barrier between realms" />
-        <h2>The Veil</h2>
-        <p>
-          Skazka is positioned in the multiverse in such a way that the barrier
-          between it and other realms of existence is more fragile than on other
-          worlds. This barrier is known as the veil. Consequently, Skazka
-          frequently has visitors from other realms - some even make their home
-          here.
-        </p>
-      </article>
+        <article class="center-column"><!-- MIDDLE -->
+            <img src="assets/cosmos.jpg" alt="the vastness of the cosmos" />
+            <p>Skazka lies upon the Prime Material plane, a realm shadowed by twin moons that wheel through its night skies like watchful sentinels. Lunica, the smaller of the two, glows a pale, ghostly white, while Mani looms larger, a sickly green orb that chills the marrow of those who gaze upon it. Their significance shifts with the eyes that behold them: dwarves curse their light, muttering of misfortune and ill portents, while certain Beast Races kneel in reverent worship, calling them gods. The Aeternian Calendar, the measure of all mortal time in Skazka, bends to their inexorable movements, marking the passage of fate itself.</p>
+            <p>Skazka is strange even among the stars. Over countless centuries, beings foreign to its lands have appeared without warning, their origins cloaked in mystery. Scholars long puzzled over these intrusions, but it was only during the era of the Magical Prohibition that attention turned to their cause. They discovered a perilous truth: Skazka’s borders with other realms are fragile, threadbare in places. Here, the substance of worlds thins, torn by unseen forces. These rifts—whispered of in dread tones as ‘The Veil’—open fleetingly, allowing passage to creatures and horrors from beyond, and leaving the land ever more haunted by the shadows of other realities.</p>
+        </article>
 
-      <article>
-        <img class="popup" src="assets/shadowwar.jpg" alt="" />
-        <h2>The shadow war</h2>
-        <p>
-          This was a time of great turmoil when agents of Kaos sought to recover
-          the Shards of Uzume from Skazka. While those agents numbered few, they
-          possessed the ability to open rifts to other realms and call forth
-          servants of Kaos. After the Shadow War the Aeterian Empire banned the
-          study and practice of trans-dimensional travel, because it feared the
-          consequences such meddling may have on the world.
-        </p>
-      </article>
-
-      <!-- Lightbox container (hidden by default) -->
-  <div id="lightbox">
-    <span class="close">&times;</span>
-    <img class="lightbox-img" alt="">
-  </div>
+        <article class="right-column"> <!-- RIGHT -->
+        </article>
     </main>
-    <p
-      id="noResultsMessage"
-      style="
-        display: none;
-        text-align: center;
-        font-size: 1.5rem;
-        color: #f88;
-        margin-top: 20px;
-      "
-    >
-      No results found.
-    </p>
+
+    <main class="grid-even"><!-- 3 COLUMN EVEN -->
+        <article>
+            <img class="popup" src="assets/veil.jpg" alt="The Veil - a glowing mystical barrier between realms" />
+        </article>
+
+        <article>
+            <img class="popup" src="assets/shadowwar.jpg" alt="" />
+        </article>
+
+        <article>
+            <img class="popup" src="assets/starfall.jpg" alt="" />
+        </article>
+
+        <article>
+            <h2>The Veil</h2>
+            <p>
+                Skazka is positioned in the multiverse in such a way that the barrier
+                between it and other realms of existence is more fragile than on other
+                worlds. This barrier is known as the veil. Consequently, Skazka
+                frequently has visitors from other realms - some even make their home
+                here.
+            </p>
+        </article>
+        
+        <article>
+            <h2>The shadow war</h2>
+            <p>
+                This was a time of great turmoil when agents of Kaos sought to recover
+                the Shards of Uzume from Skazka. While those agents numbered few, they
+                possessed the ability to open rifts to other realms and call forth
+                servants of Kaos. After the Shadow War the Aeterian Empire banned the
+                study and practice of trans-dimensional travel, because it feared the
+                consequences such meddling may have on the world.
+            </p>
+        </article>
+
+        <article>
+            <h2>Starfall</h2>
+            <p>PCenturies ago, a mysterious star collided with Skazka, triggering a cataclysmic event known as the Starfall. The impact plunged the world into a mini ice age, reshaping lands, civilizations, and trade routes. Ancient dragons awoke from long slumber, reclaiming their dominion, while a new humanoid race—the Dragonborn—emerged, carrying the essence of dragons into the mortal realm.</p>
+            <p>PThe Starfall also severed direct divine influence. Priests and devotees found their prayers unanswered, forcing the gods to act through their most faithful followers. Today, the land still bears scars of the celestial collision, dragons roam the skies, and the Dragonborn walk among mortals—reminders of a cosmic event that forever changed Skazka’s fate.</p>
+        </article>
+    
+    </main>
+
+   
 
     <footer class="footer">
-      <div class="footer-inner">
-        <img src="assets/logo.png" alt="Skazka Logo" />
-        <p class="footer-tagline">Where shadows speak and legends walk.</p>
-        <nav class="footer-nav">
-          <a href="contact.html">Contact</a>
-        </nav>
-        <p class="footer-copy">
-          &copy; 2025 SkazkaWorld. All stories reserved.
-        </p>
-      </div>
+        <div class="footer-inner">
+            <img src="assets/logo.png" alt="Skazka Logo">
+            <p class="footer-tagline">Where shadows speak and legends walk.</p>
+            <nav class="footer-nav">
+                <a href="contact.html">Contact</a>
+            </nav>
+            <p class="footer-copy">&copy; 2025 SkazkaWorld. All stories reserved.</p>
+        </div>
     </footer>
+
+    <!-- Lightbox container (hidden by default) -->
+    <div id="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-img" alt="">
+    </div>
 
     <script src="main.js"></script>
     <script src="popup.js"></script>
-  </body>
+    <script>
+        // Load navbar.html dynamically        
+        fetch("navbar.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("navbar").innerHTML = data;
+
+                // Now that navbar is loaded, attach hamburger event
+                const hamburger = document.querySelector(".hamburger");
+                const navLinks = document.querySelector(".nav-links");
+
+                if (hamburger && navLinks) {
+                    hamburger.addEventListener("click", () => {
+                        navLinks.classList.toggle("active");
+                        hamburger.classList.toggle("open");
+                    });
+                }
+            });
+    </script>
+
+
+</body>
+
 </html>

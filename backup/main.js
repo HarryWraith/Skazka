@@ -1,26 +1,41 @@
- // Hamburger menu toggle
-  const hamburger = document.querySelector(".hamburger");
-  const navLinks = document.querySelector(".nav-links");
+// Hamburger menu toggle
+const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
 
-  hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-    hamburger.classList.toggle("open");
-  });
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+  hamburger.classList.toggle("open");
+});
 
-  // Search form behavior
-  const searchForm = document.getElementById("searchForm");
-  const searchInput = document.getElementById("searchInput");
+// Prevent form submission (optional, keeps page from reloading if user hits Enter)
+const searchForm = document.getElementById("searchForm");
+if (searchForm) {
+  searchForm.addEventListener("submit", (e) => e.preventDefault());
+}
 
-  if (searchForm && searchInput) {
-    searchForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-      const query = searchInput.value.trim();
+// Live search filtering
+const searchInput = document.getElementById("searchInput");
 
-      if (query) {
-        console.log("Searching for:", query);
-        // Example: redirect to search results page
-        // window.location.href = `/search.html?q=${encodeURIComponent(query)}`;
+if (searchInput) {
+  searchInput.addEventListener("input", function () {
+    const query = searchInput.value.trim().toLowerCase();
+    const articles = document.querySelectorAll("main article");
+    let resultsFound = false;
+
+    articles.forEach((article) => {
+      const textContent = article.innerText.toLowerCase();
+      if (textContent.includes(query)) {
+        article.style.display = ""; // default block/grid applies
+        resultsFound = true;
       } else {
-        alert("Please enter a search term.");
+        article.style.display = "none";
       }
-   } )}
+    });
+
+    // Toggle "No results found" message
+    const noResults = document.getElementById("noResultsMessage");
+    if (noResults) {
+      noResults.style.display = resultsFound ? "none" : "block";
+    }
+  });
+}
