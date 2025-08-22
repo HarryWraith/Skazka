@@ -1,0 +1,126 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skazka - Dark Fantasy Lore</title>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Font for a fantasy feel -->
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+
+<body>
+    <div id="navbar"></div><!-- Navbar will be loaded here -->
+
+    <!-- Main Content Area -->
+    <main class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
+        <article class="left-column, article-small"> <!-- LEFT -->
+            <h3>Symbols</h3>
+  <ul class="nodec">
+    <li><b>Crown of broken links</b>: A circlet made of snapped chain segments, signifying the weight of oppression and
+      the wrath that follows when bonds are shattered.</li>
+    <li><b>The stitched eyelid</b>: An eye sewn shut with black thread, emblem of curses that blind, bind, and silence —
+      and of the world’s refusal to see the downtrodden.</li>
+    <li><b>The ashen brand</b>: A ring of concentric scar-marks around a hollow center, like a burn that never heals;
+      used as a curse-seal pressed into wax, skin, or stone.</li>
+  </ul>
+        </article>
+
+        <article class="center-column"><!-- MIDDLE -->
+             <img class="popup" src="assets/mani.jpg" alt="" />
+  <p>Mani was once a man broken by betrayal — some say Lunica’s betrayal, others say the world’s. He was marked, cast
+    aside, left to die, but instead of death, the curses of the forsaken rose around him like a crown. He took them all
+    upon himself — the hatred of the abandoned, the rage of the maimed, the despair of the downtrodden — and with them,
+    he became something more than mortal. If Lunica ascended through the power of betrayal, Mani ascended through the
+    agony of survival. He is the eternal victim turned eternal avenger.</p>
+              <img class="noborder" src="assets/divider.png" alt="">
+        </article>
+
+        <article class="right-column"> <!-- RIGHT -->
+            <img src="assets/mani_symbol.jpg" alt="">
+        </article>
+    </main>
+
+    <main class="grid-even"><!-- 3 COLUMN EVEN -->
+        <article>
+              <h3>Rites</h3>
+  <ul class="nodec">
+    <li><b>The broken tongue</b>: A curse is carved or written onto an object, then shattered, releasing Mani’s spite
+      upon its target.</li>
+    <li><b>Chains of the forsaken</b>: Worshippers bind their own wrists with rope or iron while chanting their
+      grievances, offering their suffering as tribute.</li>
+    <li><b>The curse feast</b>: A ritual meal is left to rot deliberately, then buried or burned, symbolizing the
+      devotion of the lowly to Mani’s endless hunger.</li>
+  </ul>
+        </article>
+
+        <article>
+            <h3>Domains</h3>
+  <ul class="nodec">
+    <li><b>Curses and hexes</b>: the spoken word that poisons, the mark that lingers.</li>
+    <li><b>The damned</b>: patron of the broken, the chained, the betrayed.</li>
+    <li><b>Vengeance through suffering</b>: pain turned into power, affliction wielded as retribution.</li>
+  </ul>
+
+        </article>
+
+        <article> <h3>Lore</h3>
+  <ul class="nodec">
+    <li>Every scar and wound Mani bears is said to be the curse of a mortal made flesh, carried by him so their
+      suffering might echo forever.</li>
+    <li>He is locked in eternal war with Lunica, not only because she betrayed him, but because every betrayal feeds his
+      power.</li>
+    <li>Those who suffer injustice or cruelty whisper prayers to Mani, believing that curses spoken in his name always
+      find their mark.</li>
+  </ul>
+        </article>
+    </main>
+
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <img src="assets/logo.png" alt="Skazka Logo">
+            <p class="footer-tagline">Where shadows speak and legends walk.</p>
+            <nav class="footer-nav">
+                <a href="contact.html">Contact</a>
+            </nav>
+            <p class="footer-copy">&copy; 2025 SkazkaWorld. All stories reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox container (hidden by default) -->
+    <div id="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-img" alt="">
+    </div>
+
+    <script src="main.js"></script>
+    <script src="popup.js"></script>
+    <script>
+        // Load navbar.html dynamically        
+        fetch("navbar.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("navbar").innerHTML = data;
+
+                // Now that navbar is loaded, attach hamburger event
+                const hamburger = document.querySelector(".hamburger");
+                const navLinks = document.querySelector(".nav-links");
+
+                if (hamburger && navLinks) {
+                    hamburger.addEventListener("click", () => {
+                        navLinks.classList.toggle("active");
+                        hamburger.classList.toggle("open");
+                    });
+                }
+            });
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skazka - Dark Fantasy Lore</title>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Font for a fantasy feel -->
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+
+<body>
+    <div id="navbar"></div><!-- Navbar will be loaded here -->
+
+    <!-- Main Content Area -->
+    <main class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
+        <article class="left-column, article-small"> <!-- LEFT -->
+            <h3>Symbols</h3>
+      <ul class="nodec">
+        <li><b>A shadowed dagger entwined with a serpent</b>: representing silent strikes and hidden knowledge.</li>
+        <li><b>An open eye half-covered by a mask</b>: the duality of revelation and concealment.</li>
+        <li><b>Three interlocking keys, one black, one silver, one blood-red</b>: mastery over all secrets, mortal and divine.</li>
+      </ul>
+        </article>
+
+        <article class="center-column"><!-- MIDDLE -->
+            <img class="popup" src="assets/Sylka.jpg" alt="" />
+      <p>Once, she was a shadow among shadows, a mortal thief whose fingers stole coin and whispers with equal ease. One night, chasing a secret rumored to unmake kings, she found herself at the edge of a forgotten temple, where a dying god murmured riddles of power and oblivion. Desperate, she offered him her life in exchange for mastery over the unseen, and he laughed—knowing death alone could not bind her cunning. When she claimed his final breath, the world fractured beneath her will, and the shadows she had once walked through began to bend and whisper to her. In that fracture, mortals no longer bound her; she became the goddess of secrets and thievery, the patron of those who move unseen, her eyes always gleaming with the thrill of stolen truths.</p>
+              <img class="noborder" src="assets/divider.png" alt="">
+        </article>
+
+        <article class="right-column"> <!-- RIGHT -->
+            <img src="assets/sylka_symbol.jpg" alt="">
+        </article>
+    </main>
+
+    <main class="grid-even"><!-- 3 COLUMN EVEN -->
+        <article>
+            <h3>Rites</h3>
+      <ul class="nodec">
+        <li><b>The silent pilfer</b>: followers steal a single insignificant item at night, offering it to her altar to gain favor in secrecy or cunning.</li>
+        <li><b>Whispered pact</b>: a vow of silence spoken in a hidden place, sealed by the sharing of a personal secret with the goddess.</li>
+        <li><b>Shadow marking</b>: a ceremonial tattoo of her serpent-dagger symbol, inked under the moon, to mark a devotee as her chosen agent in the mortal world.</li>
+      </ul>
+        </article>
+
+        <article>
+            <h3>Domains</h3>
+      <ul class="nodec">
+        <li><b>Shadows and concealment</b>: the unseen places where truths hide and plans are forged.</li>
+        <li><b>Secrets and knowledge</b>: forbidden lore, hidden histories, and whispered promises.</li>
+        <li><b>Deception and theft</b>: the subtle art of taking what others cannot protect or perceive.</li>
+      </ul>
+        </article>
+
+        <article>
+            <h3>Lore</h3>
+      <ul class="nodec">
+        <li>It is said that the first coin she ever stole as a mortal glimmered with divine fire—an omen that she was destined to take more than mere gold.</li>
+        <li>Legends whisper that she sometimes appears as a beggar or masked merchant, quietly tipping the scales of fate for rogues and kings alike.</li>
+        <li>Those who betray her secrets or misuse the knowledge she grants often vanish into shadows, never to be seen again, their stories only whispered in fear.</li>
+      </ul>
+        </article>
+    </main>
+
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <img src="assets/logo.png" alt="Skazka Logo">
+            <p class="footer-tagline">Where shadows speak and legends walk.</p>
+            <nav class="footer-nav">
+                <a href="contact.html">Contact</a>
+            </nav>
+            <p class="footer-copy">&copy; 2025 SkazkaWorld. All stories reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox container (hidden by default) -->
+    <div id="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-img" alt="">
+    </div>
+
+    <script src="main.js"></script>
+    <script src="popup.js"></script>
+    <script>
+        // Load navbar.html dynamically        
+        fetch("navbar.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("navbar").innerHTML = data;
+
+                // Now that navbar is loaded, attach hamburger event
+                const hamburger = document.querySelector(".hamburger");
+                const navLinks = document.querySelector(".nav-links");
+
+                if (hamburger && navLinks) {
+                    hamburger.addEventListener("click", () => {
+                        navLinks.classList.toggle("active");
+                        hamburger.classList.toggle("open");
+                    });
+                }
+            });
+    </script>
+
+
+</body>
+
+</html>

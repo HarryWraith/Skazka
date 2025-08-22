@@ -88,8 +88,6 @@ h4 { font-size: 1.2rem; font-weight: 900; }
   max-width: 80%;
   margin: 2em auto 1em;
   align-items: start;
-
-
 }
 
 /* === THREE-COLUMN LAYOUT EVEN === */
@@ -146,6 +144,13 @@ button {
 .nodec{
   list-style: none;
 }
+
+article h3{
+  margin: 10px;
+  margin-left: 0;
+}
+
+
 
 article img {
   width: 100%;

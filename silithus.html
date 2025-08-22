@@ -1,0 +1,155 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skazka - Dark Fantasy Lore</title>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Font for a fantasy feel -->
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+
+<body>
+    <div id="navbar"></div><!-- Navbar will be loaded here -->
+
+    <!-- Main Content Area -->
+    <main class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
+        <article class="left-column"> <!-- LEFT -->
+             <h3>Symbols</h3>
+      <ul class="nodec">
+        <li><b>Two-faced mask</b>: One side smooth and serene, the other grotesquely burned—symbolizes duality of truth and
+          falsehood.</li>
+        <li><b>Burned Quill</b>: An inkwell’s feather scorched at the nib, emblematic of writing false deeds and signing
+          secret pacts.</li>
+        <li><b>Serpentine key</b>: A twisting key said to unlock doors of perception and deceit.</li>
+      </ul>
+        </article>
+
+        <article class="center-column"><!-- MIDDLE -->
+             <img class="popup" src="assets/silithus.jpg" alt="" />
+     
+      <p>Silithus, once a mortal of striking beauty and cunning wit, ascended to divinity through Kaos’s dark grace.
+        Whispers say his ambition caught the primordial’s eye — Kaos saw in him the perfect vessel for deception. Now known as
+        Silithus, God of Lies and Deception, he presides over secrets, illusions, and the art of masks. Though remarkably
+        charismatic, half of his visage is scarred by holy flame — a cruel reminder of his former humanity and the powers he
+        wields.</p>
+              <img class="noborder" src="assets/divider.png" alt="">
+        </article>
+
+        <article class="right-column"> <!-- RIGHT -->
+            <img src="assets/silithus_symbol.jpg" alt="">
+        </article>
+    </main>
+
+    <main class="grid-even"><!-- 3 COLUMN EVEN -->
+        <article>
+             <h3>Rites</h3>
+
+      <ul class="nodec">
+        <li><b>Veiling the truth</b>: Spies and informants gather under moonlight, each donning dual masks—half pristine,
+          half charred—to honor Silithus’s fractured face. A contract is written in disappearing ink; once read and bound,
+          participants whisper their secret lies into a copper bowl and burn the text, sealing their deceit.</li>
+    
+        <li><b>Trial by mirror</b>: Initiates stand before smoky mirrors recounting their greatest falsehood. The mirror’s
+          surface cracks if the deceit is profound, revealing a deeper hidden image beneath.</li>
+    
+        <li><b>Embrace the flames</b>: In sacred temples, acolytes hold live candles to half their own faces; the wax burns
+          symbolize solidarity with Silithus’s scarred half and devotion to truth’s darker twin.</li>
+    
+      </ul>
+        </article>
+
+        <article>
+             <h3>Domains</h3>
+      <ul class="nodec">
+        <li><b>Secrets & Espionage:</b>: Guardianship over hidden truths and clandestine networks.</li>
+        <li><b>Deception and illusion</b>: The forging and weaving of lies.</li>
+        <li><b>Masks & Transformation</b>: Facilitating literal and metaphoric shape-shifting.</li>
+      </ul>
+        </article>
+
+        <article>
+            <h3>Lore</h3>
+            <ul class="nodec">
+                <li>
+                    In his mortal life, Silithus was a nobleman renowned for beauty and charm, celebrated for his hypnotic
+                    eloquence.
+                    But envy bred ambition — his hunger for influence led him to trafficing in court intrigue, spreading
+                    whispers that
+                    toppled kings and built his own power.
+                </li>
+                <li>
+                    When Kaos observed these machinations, he deemed Silithus a kindred spirit and offered divinity. The
+                    ceremony was
+                    brutal: the flames of Kaos engulfed half of his face, searing flesh and binding his soul to primordial
+                    deceit.
+                    Though scarred, Silithus emerged divine, eyes now glimmering with infinite cunning.
+                </li>
+                <li>
+                    As a god, he built an empire of shadows: secret guilds, spy networks that stretch across realms, and hidden
+                    temples
+                    behind false walls. His followers include intelligence brokers, master spies, illusionists, and those who
+                    thrive in
+                    the murk between truth and lie.
+                </li>
+                <li>
+                    Yet Silithus remains a paradox. While he champions lies, he values honesty among his own — betrayal within
+                    his cult
+                    is punished worse than death. They say he can read truth through silence, unraveling the most elaborate
+                    deceptions
+                    with a single glance. His temples are silent labyrinths where whispered secrets echo eternally; those who
+                    wander in
+                    uninvited often unravel their own minds.
+                </li>
+            </ul>
+        </article>
+    </main>
+
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <img src="assets/logo.png" alt="Skazka Logo">
+            <p class="footer-tagline">Where shadows speak and legends walk.</p>
+            <nav class="footer-nav">
+                <a href="contact.html">Contact</a>
+            </nav>
+            <p class="footer-copy">&copy; 2025 SkazkaWorld. All stories reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox container (hidden by default) -->
+    <div id="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-img" alt="">
+    </div>
+
+    <script src="main.js"></script>
+    <script src="popup.js"></script>
+    <script>
+        // Load navbar.html dynamically        
+        fetch("navbar.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("navbar").innerHTML = data;
+
+                // Now that navbar is loaded, attach hamburger event
+                const hamburger = document.querySelector(".hamburger");
+                const navLinks = document.querySelector(".nav-links");
+
+                if (hamburger && navLinks) {
+                    hamburger.addEventListener("click", () => {
+                        navLinks.classList.toggle("active");
+                        hamburger.classList.toggle("open");
+                    });
+                }
+            });
+    </script>
+
+
+</body>
+
+</html>

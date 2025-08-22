@@ -1,0 +1,127 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skazka - Dark Fantasy Lore</title>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Font for a fantasy feel -->
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+
+<body>
+    <div id="navbar"></div><!-- Navbar will be loaded here -->
+
+    <!-- Main Content Area -->
+    <main class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
+        <article class="left-column, article-small"> <!-- LEFT -->
+            <h3>Symbols</h3>
+      <Ul class="nodec">
+        <li><b>A shattered mirror dripping black liquid</b>: representing self-loathing reflected outwards.</li>   
+        <li><b>A twisted thorned crown</b>: the bitter reward of ambition and pain.</li>
+        <li><b>A skeletal hand clutching a heart aflame</b>: the duality of suffering and obsession.</li>
+      </Ul>
+        </article>
+
+        <article class="center-column"><!-- MIDDLE -->
+            <img class="popup" src="assets/cormarin.jpg" alt="" />
+      <p>Once a cunning archdevil in the infernal hierarchy, Cormarin’s mortal origins are shrouded in rumor, whispered in
+        dark corners of the planes: he was a man who first tasted the sting of betrayal and, in that crucible, discovered a
+        hunger for power stronger than loyalty. In life, he wove schemes so intricate that even his infernal masters envied
+        them, but his ambition outstripped his cunning—he sought not servitude but dominion. Cast from the Nine Hells for
+        plotting to enslave a legion of devils, his soul, fragmented and burning with resentment, seeped into the dreamscape,
+        twisting itself around mortal fears and sorrows. Each whispered nightmare, each sleepless night, fed his essence until
+        mortals began to feel his presence even when asleep. Pain and self-loathing, once personal afflictions, became divine
+        instruments, and through the collective anguish of those who scorned his followers, Cormarin ascended—not through
+        worship, but through the very suffering he had mastered, forging a god from a devil and a man’s darkest torment.</p>
+              <img class="noborder" src="assets/divider.png" alt="">
+        </article>
+
+        <article class="right-column"> <!-- RIGHT -->
+            <img src="assets/cormarin_symbol.jpg" alt="">
+        </article>
+    </main>
+
+
+    <main class="grid-even"><!-- 3 COLUMN EVEN -->
+        <article>
+            <h3>Rites</h3>
+      <ul class="nodec">
+        <li><b>The Vigil of Shadows</b>: followers fast for three days while meditating in darkness, offering their personal regrets to him in whispered prayers.</li>
+        <li><b>Blooded Reflection</b>: initiates scratch a mark in the shape of a thorned crown onto their skin, channeling physical pain into spiritual devotion.</li>
+        <li><b>Nightmare Communion</b>: a ritual where worshippers sleep in a sacred circle, willingly inviting Cormarin into their dreams to glean visions of enemies’ weaknesses or truths about themselves.</li>
+      </ul>
+        </article>
+
+        <article>
+            <h3>Domains</h3>
+      <ul class="nodec">
+        <li><b>Pain</b>: both physical and emotional suffering, the core of his influence.</li>
+        <li><b>Nightmares</b>: control over dreams, visions, and the terror within sleep.</li>
+        <li><b>Betrayal</b>: the divine embodiment of broken trust and ambition turned inward.</li>
+      </ul>
+        </article>
+
+        <article>
+            <h3>Lore</h3>
+      <ul class="nodec">
+        <li>
+          It is said that anyone who dies in a state of self-loathing may find their soul pulled to the Nightmare Plane, where Cormarin offers them the choice to serve him or be eternally tormented by their own regrets.
+        </li>
+        <li>
+          Legends claim that entire cities once fell into despair because Cormarin cursed their dreams after their leaders betrayed his mortal followers, leaving waking terror as his silent, divine judgment.
+        </li>
+        <li>
+          Some scholars whisper that Cormarin still harbors a fragment of his mortal ambition, plotting through dreams to one day reforge himself into a being capable of returning to the material plane, not as a devil, but as a god of fear incarnate.
+      </ul>
+        </article>
+    </main>
+
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <img src="assets/logo.png" alt="Skazka Logo">
+            <p class="footer-tagline">Where shadows speak and legends walk.</p>
+            <nav class="footer-nav">
+                <a href="contact.html">Contact</a>
+            </nav>
+            <p class="footer-copy">&copy; 2025 SkazkaWorld. All stories reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox container (hidden by default) -->
+    <div id="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-img" alt="">
+    </div>
+
+    <script src="main.js"></script>
+    <script src="popup.js"></script>
+    <script>
+        // Load navbar.html dynamically        
+        fetch("navbar.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("navbar").innerHTML = data;
+
+                // Now that navbar is loaded, attach hamburger event
+                const hamburger = document.querySelector(".hamburger");
+                const navLinks = document.querySelector(".nav-links");
+
+                if (hamburger && navLinks) {
+                    hamburger.addEventListener("click", () => {
+                        navLinks.classList.toggle("active");
+                        hamburger.classList.toggle("open");
+                    });
+                }
+            });
+    </script>
+
+
+</body>
+
+</html>
