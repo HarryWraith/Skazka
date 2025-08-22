@@ -74,6 +74,9 @@ h2 { font-size: 2rem; font-weight: 900; }
 h3 { font-size: 1.6rem; font-weight: 900; }
 h4 { font-size: 1.2rem; font-weight: 900; }
 
+.noborder{
+  border:none;
+}
 
 /* Main content area */
 
@@ -85,7 +88,8 @@ h4 { font-size: 1.2rem; font-weight: 900; }
   max-width: 80%;
   margin: 2em auto 1em;
   align-items: start;
-  
+
+
 }
 
 /* === THREE-COLUMN LAYOUT EVEN === */
