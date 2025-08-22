@@ -1,0 +1,160 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skazka - Dark Fantasy Lore</title>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Font for a fantasy feel -->
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+
+<body>
+    <div id="navbar"></div><!-- Navbar will be loaded here -->
+
+    <!-- Main Content Area -->
+    <main class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
+        <article class="left-column, article-small"> <!-- LEFT -->
+            <h3>Symbols</h3>
+      <ul class="nodec">
+        <li><b>A nod and a wink</b>: A blood-slick dagger plunged into a coin; this is the calling card of those who
+          serve Mortifer.</li>
+        <li><b>A dire warning</b>: a severed hand clutching thirteen black threads; this is the symbol which indicates
+          refuge is close-by for those who follow the Lord of Murder.</li>
+        <li><b>Guess whose coming to dinner</b>: a tarot card with a red crescent moon biting through darkness; a gift
+          given to those a devotee intends on killing.</li>
+      </ul>
+        </article>
+
+        <article class="center-column"><!-- MIDDLE -->
+            <img class="popup" src="assets/mortifer.jpg" alt="" />
+      <p>Mortifer was born beneath the counting-houses of Velkaria, ignored even by his own lineage. He watched as
+        brothers
+        inherited, sisters were adored, and his father spoke only of legacy — never his. His first kill was not rage,
+        but
+        experiment. The next, calculation. Then came artistry. As the bodies fell and his family's line crumbled,
+        Mortifer’s
+        name rose like smoke over a ruined ledger. But even wealth and titles could not still his hunger. He turned to
+        the
+        forbidden: blood sorcery, exile-born rites, the carving of power into flesh.</p>
+
+      <p>On a night soaked in red moonlight, Mortifer killed the city’s entire merchant council — thirteen blades,
+        thirteen
+        names, thirteen deaths in one breath. When dawn broke, he stood alone amidst chaos, not merely feared but
+        revered. The
+        divine took notice — not to bless him, but to acknowledge him. With each murder done in ambition, his essence
+        deepened.
+        With each assassin’s whisper, his shadow lengthened.</p>
+
+      <p>He is now worshipped in silence, invoked without voice. No church dares claim him — and yet every assassin,
+        every
+        traitor, every power-hungry soul knows his mark. He is the god of murder not as madness, but as method.</p>
+              <img class="noborder" src="assets/divider.png" alt="">
+        </article>
+
+        <article class="right-column"> <!-- RIGHT -->
+            <img src="assets/mortifer_symbol.jpg" alt="">
+        </article>
+    </main>
+
+    <main class="grid-even"><!-- 3 COLUMN EVEN -->
+        <article>
+            <h3>Rites</h3>
+
+      <ul class="nodec">
+        <li><b>The Rite of Thirteen</b>: A ritual killing involving thirteen symbolic elements — thirteen blades,
+          thirteen heartbeats, thirteen names whispered. Said to draw Mortifer's gaze directly and confer dark favor or
+          protection in exchange for the killer’s own soul fraying.</li>
+        <li><b>Velkarian Marking</b>: Practitioners slice the rune of Mortifer — an angular glyph resembling a dagger
+          through an eye — into their skin before committing a murder-for-power. Done properly, the mark never scars,
+          only deepens.</li>
+        <li><b>The Crimson Silence</b>: A vow taken by assassins, never to speak of the act once done. Each broken vow
+          supposedly awakens a fragment of Mortifer within, leading to madness or worse — divine possession.</li>
+      </ul>
+        </article>
+
+        <article>
+            <h3>Domains</h3>
+      <ul class="nodec">
+        <li><b>Planned to perfection</b>: Mortifier is not just about murder, but murder which is planned immactulately.
+        </li>
+        <li><b>Slay thy borother</b>: ambition above everything else. Even family should not be above scheming.</li>
+      </ul>
+        </article>
+
+        <article>
+            <h3>Lore</h3>
+      <ul class="nodec">
+        <li>He proved himself divine. In the mercantile sprawl of Velkaria, where
+          merchants bartered souls and family was priced in ledgers, he was a forgotten child: the seventh son, the
+          unmentioned heir. But Mortifer did not beg for legacy. He seized it, body by body, crime by crime, blade by
+          blade. His murders were not acts of madness — they were assertions of order, deliberate, ritualistic,
+          inevitable.</li>
+
+        <li>Thinning the world of his rivals until only he remained. The gods took notice
+          when mortals fled from his shadow rather than from theirs. They watched as he carved divinity into himself —
+          not through worship, but through work.</li>
+
+        <li>His sermons are written in bloodstains. His hymns are
+        final breaths.</li>
+
+        <li>A tattered book said to list every name Mortifer has claimed. No ink,
+          only impressions — names felt rather than read.</li>
+
+        <li>A black-bladed relic believed to be the very knife used to slay the
+          merchant council. It thirsts audibly when near betrayal.</li>
+
+        <li>Etched onto bone, readable only under blood-moonlight. Reciting one is said
+          to hide a murderer from all gods — save Mortifer.</li>
+      </ul>
+        </article>
+    </main>
+
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <img src="assets/logo.png" alt="Skazka Logo">
+            <p class="footer-tagline">Where shadows speak and legends walk.</p>
+            <nav class="footer-nav">
+                <a href="contact.html">Contact</a>
+            </nav>
+            <p class="footer-copy">&copy; 2025 SkazkaWorld. All stories reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox container (hidden by default) -->
+    <div id="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-img" alt="">
+    </div>
+
+    <script src="main.js"></script>
+    <script src="popup.js"></script>
+    <script>
+        // Load navbar.html dynamically        
+        fetch("navbar.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("navbar").innerHTML = data;
+
+                // Now that navbar is loaded, attach hamburger event
+                const hamburger = document.querySelector(".hamburger");
+                const navLinks = document.querySelector(".nav-links");
+
+                if (hamburger && navLinks) {
+                    hamburger.addEventListener("click", () => {
+                        navLinks.classList.toggle("active");
+                        hamburger.classList.toggle("open");
+                    });
+                }
+            });
+    </script>
+
+
+</body>
+
+</html>

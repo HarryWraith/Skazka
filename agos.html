@@ -1,0 +1,146 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skazka - Dark Fantasy Lore</title>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Font for a fantasy feel -->
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+
+<body>
+    <div id="navbar"></div><!-- Navbar will be loaded here -->
+
+    <!-- Main Content Area -->
+    <main class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
+        <article class="left-column, article-small"> <!-- LEFT -->
+            <h3>Symbols</h3>
+      <ul class="nodec">
+        <li><b>Scythe</b>: A broad, curved blade used for harvesting, symbolizing both the cutting of ripe crops and the
+          severing of blight.</li>
+        <li><b>Cornucopia of Grain & Gourd</b>: Often seen at his feet, representing the harvest’s abundance and the
+          nourishing cycles of growth.</li>
+        <li><b>Oxen yoke</b>: Symbolic of strength, partnership between man and beast, and the burdens borne for a
+          fruitful yield.</li>
+        <li><b>Green-and-Brown Robes:</b>: His garments are dyed in the soil and sprout-green hues, a living tapestry of
+          earth and growth.</li>
+      </ul>
+        </article>
+
+        <article class="center-column"><!-- MIDDLE -->
+            <img class="popup" src="assets/agos.jpg" alt="" />
+      <p>Agos, the hulking god of farming and agriculture, stands as a sentinel over the soil and its stewards. Often
+        portrayed as a muscular, earth-streaked farmer wielding a broad scythe, he embodies the sweat and strength
+        required to coax bounty from the land. He was especially revered by the Sken, the hardy folk who migrated from Skia to Kelos
+        centuries ago, bringing with them veneration for Agos and integrating his worship deeply into their agrarian
+        culture.
+      </p>
+              <img class="noborder" src="assets/divider.png" alt="">
+        </article>
+
+        <article class="right-column"> <!-- RIGHT -->
+        </article>
+    </main>
+
+    <main class="grid-even"><!-- 3 COLUMN EVEN -->
+        <article>
+            <h3>Rites</h3>
+
+      <ul class="nodec">
+        <li><b>Breaking the first furrow</b>: At spring’s first plowing, farmers dedicate the fresh earth, sprinkling
+          seed and wine at Agos’s shrine, invoking his blessing.</li>
+
+        <li><b>Mid-Summer Scythe Blessing</b>: Villagers ceremonially sharpen scythes and pass them near a hearth fire,
+          offering tobacco or sweet grain to ensure a swift harvest.</li>
+
+        <li><b>Harvest Feast (“Agos’ Abundance”)</b>: A communal celebration at harvest’s end with bread shaped like
+          earthen mounds, singing of toil and thanks, and the first sheaf carried in procession to the temple.</li>
+        <li><b>Stubble blessing</b>: After harvest, participants leap over burned stubble while singing an old chant to
+          cleanse any lingering pestilence.</li>
+      </ul>
+        </article>
+
+        <article>
+            <h3>Domains</h3>
+      <ul class="nodec">
+        <li><b>Agriculture & Harvest:</b>: Patron of sowing, tending, and reaping—seasonal cycles are his domain.</li>
+        <li><b>Soil and growth</b>: Oversees fertility, irrigation, and the unseen work in the earth.</li>
+        <li><b>Labour and strength</b>: He honors toil, diligence, perseverance; the very bones of a farmer echo his
+          divine essence.</li>
+        <li><b>Cycles of decay and renewal</b>: Agos embraces that every harvest is tied to death and rebirth—stubble
+          fields feed renewal.</li>
+      </ul>
+        </article>
+
+        <article>
+            <h3>Lore</h3>
+      <ul class="nodec">
+        <li>Legend tells of a migration from Skia to Kelos, where floods and famine once
+          struck the early Sken settlements. A humble farmer named Khelan prayed to Agos, and by sunrise, the clouds parted,
+          revealing fertile land. The Sken built an altar on a grassy ridge where Khelan first sowed seed in Kelos, and
+          for generations, every new settlement began with that same rite.</li>
+
+        <li>A rich landowner, hoping to expand his domain, cursed a field, believing
+          he could control Agos’s bounty with iron spikes. Crops failed, cattle sickened, and his family fell into
+          despair — until a peasant girl, Marisa, removed the spikes and reburied them deep in the earth. With that act of
+          humility, Agos restored the field, teaching that reverence outweighs dominion over the land’s spirit.</li>
+
+        <li>Agos once walked as a mortal among farmers, testing their hearts. He
+          lent a green-hilted scythe to three brothers, instructing them to harvest their own plots. The first two
+          brothers ignored the soil’s needs and cut swiftly — the yield was poor and blighted. The youngest brother, however,
+          cleaned the field, prayed for the blade’s guidance, and worked patiently. When he finished, his scythe glowed
+          with verdant light and his yield overflowed. Agos revealed himself, granting the farmer lifelong
+          protection—and.</li>
+      </ul>
+        </article>
+    </main>
+
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <img src="assets/logo.png" alt="Skazka Logo">
+            <p class="footer-tagline">Where shadows speak and legends walk.</p>
+            <nav class="footer-nav">
+                <a href="contact.html">Contact</a>
+            </nav>
+            <p class="footer-copy">&copy; 2025 SkazkaWorld. All stories reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox container (hidden by default) -->
+    <div id="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-img" alt="">
+    </div>
+
+    <script src="main.js"></script>
+    <script src="popup.js"></script>
+    <script>
+        // Load navbar.html dynamically        
+        fetch("navbar.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("navbar").innerHTML = data;
+
+                // Now that navbar is loaded, attach hamburger event
+                const hamburger = document.querySelector(".hamburger");
+                const navLinks = document.querySelector(".nav-links");
+
+                if (hamburger && navLinks) {
+                    hamburger.addEventListener("click", () => {
+                        navLinks.classList.toggle("active");
+                        hamburger.classList.toggle("open");
+                    });
+                }
+            });
+    </script>
+
+
+</body>
+
+</html>

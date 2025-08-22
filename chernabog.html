@@ -1,0 +1,139 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skazka - Dark Fantasy Lore</title>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Font for a fantasy feel -->
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+
+<body>
+    <div id="navbar"></div><!-- Navbar will be loaded here -->
+
+    <!-- Main Content Area -->
+    <main class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
+        <article class="left-column, article-small"> <!-- LEFT -->
+            <h3>Symbols</h3>
+            <ul class="nodec">
+                <li><b>The Blighted Eye</b>: A cracked, blackened eye weeping ash—seen etched on cursed altars, hidden in
+                    desperate
+                    places.</li>
+                <li><b>Withered Tree</b>: Once lush, now hollow and lifeless. Often carved where misfortune lingers long.</li>
+                <li><b>The Eclipse Halo</b>: A black circle around a pale disc—an eternal reminder of his birth beneath a dying
+                    sun.
+                </li>
+            </ul>
+        </article>
+
+        <article class="center-column"><!-- MIDDLE -->
+            <img class="popup" src="assets/chernabog.jpg" alt="" />
+            <p>
+                Among all the Prir and twisted divines that haunt Skazka’s mythic past, Chernabog is the shadow cast by hope
+                itself. Once a forsaken mortal, cursed by fate or Kaos itself, he became god not by ascension, but through
+                corruption, hatred, and the mockery of divine pity. Chernabog is misfortune made incarnate: cold, inevitable,
+                and patient.
+            </p>
+            <img class="noborder" src="assets/divider.png" alt="">
+        </article>
+
+        <article class="right-column"> <!-- RIGHT -->
+            <img src="assets/chernabog_symbol.jpg" alt="">
+        </article>
+    </main>
+
+    <main class="grid-even"><!-- 3 COLUMN EVEN -->
+        <article>
+            <h3>Rites</h3>
+      <ul class="nodec">
+        <li><b>The Mask of Ruin</b>: Said to be worn by Chernabog when walking among mortals. It bears no eyes, only a
+          faint
+          smile. It is now a symbol worn by priests of this deity.</li>
+        <li><b>Ashblade</b>: A sword carried by his earliest orc warlords, forged from volcanic glass and regret. It
+          breaks
+          not bodies, but loyalty. Said to be used to ordain priests in to the ranks of Chernabog.</li>
+        <li><b>The Thousand Whispers</b>: A forbidden prayer spoken only by those who have lost everything. The prayer
+          does
+          not ask for aid — it asks for vengeance through entropy.</li>
+      </ul>
+        </article>
+
+        <article>
+            <h3>Domains</h3>
+      <ul class="nodec">
+        <li><b>Misfortune</b>: Wherever luck turns bitter and triumphs collapse, Chernabog walks unseen.</li>
+        <li><b>Despair</b>: Not raw destruction, but carefully sown ruin—turning hope to ash and bonds to blades.</li>
+        <li><b>Corruption</b>: He is not the chaos of Kaos, but its precision; a seed of rot planted in systems and
+          souls.
+        </li>
+        <li><b>Creation of Monsters</b>: From his rage, he forged the orcs—brutal reflections of his own exile.</li>
+      </ul>
+        </article>
+
+        <article>
+            <h3>Lore</h3>
+      <ul class="nodec">
+        <li>On a far off world, Chernabog shaped the first orc from stone, ash,
+          and raw will. He did not gift them purpose — he gave them anger. Their hearts burn with echoes of Chernabog’s
+          first scream.</li>
+        <li>When the orcs flooded from his sanctum, no god knew where the tide would end. Cities
+          vanished beneath choking smoke. Chernabog himself never lifted a blade — he whispered, and kings tore down
+          their own thrones.</li>
+        <li>Chernabog is not worshipped openly. His name is muttered only by the
+          broken—prisoners,
+          the plague-touched, exiled warlords. Secret cults called The Hollowed Eye plant despair deliberately,
+          believing
+          that only ruin brings truth.</li>
+      </ul>
+        </article>
+    </main>
+
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <img src="assets/logo.png" alt="Skazka Logo">
+            <p class="footer-tagline">Where shadows speak and legends walk.</p>
+            <nav class="footer-nav">
+                <a href="contact.html">Contact</a>
+            </nav>
+            <p class="footer-copy">&copy; 2025 SkazkaWorld. All stories reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox container (hidden by default) -->
+    <div id="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-img" alt="">
+    </div>
+
+    <script src="main.js"></script>
+    <script src="popup.js"></script>
+    <script>
+        // Load navbar.html dynamically        
+        fetch("navbar.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("navbar").innerHTML = data;
+
+                // Now that navbar is loaded, attach hamburger event
+                const hamburger = document.querySelector(".hamburger");
+                const navLinks = document.querySelector(".nav-links");
+
+                if (hamburger && navLinks) {
+                    hamburger.addEventListener("click", () => {
+                        navLinks.classList.toggle("active");
+                        hamburger.classList.toggle("open");
+                    });
+                }
+            });
+    </script>
+
+
+</body>
+
+</html>
