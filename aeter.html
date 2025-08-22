@@ -1,0 +1,85 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skazka - Dark Fantasy Lore</title>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Font for a fantasy feel -->
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+
+<body>
+    <div id="navbar"></div><!-- Navbar will be loaded here -->
+
+    <!-- Main Content Area -->
+    <main class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
+        <article class="left-column"> <!-- LEFT -->
+        </article>
+
+        <article class="center-column"><!-- MIDDLE -->
+        </article>
+
+        <article class="right-column"> <!-- RIGHT -->
+        </article>
+    </main>
+
+    <main class="grid-even"><!-- 3 COLUMN EVEN -->
+        <article>
+        </article>
+
+        <article>
+        </article>
+
+        <article>
+        </article>
+    </main>
+
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <img src="assets/logo.png" alt="Skazka Logo">
+            <p class="footer-tagline">Where shadows speak and legends walk.</p>
+            <nav class="footer-nav">
+                <a href="contact.html">Contact</a>
+            </nav>
+            <p class="footer-copy">&copy; 2025 SkazkaWorld. All stories reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox container (hidden by default) -->
+    <div id="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-img" alt="">
+    </div>
+
+    <script src="main.js"></script>
+    <script src="popup.js"></script>
+    <script>
+        // Load navbar.html dynamically        
+        fetch("navbar.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("navbar").innerHTML = data;
+
+                // Now that navbar is loaded, attach hamburger event
+                const hamburger = document.querySelector(".hamburger");
+                const navLinks = document.querySelector(".nav-links");
+
+                if (hamburger && navLinks) {
+                    hamburger.addEventListener("click", () => {
+                        navLinks.classList.toggle("active");
+                        hamburger.classList.toggle("open");
+                    });
+                }
+            });
+    </script>
+
+
+</body>
+
+</html>
