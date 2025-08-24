@@ -1,0 +1,109 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skazka - Dark Fantasy Lore</title>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Font for a fantasy feel -->
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+
+<body>
+    <div id="navbar"></div><!-- Navbar will be loaded here -->
+
+    <!-- Main Content Area -->
+    <main class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
+        <article class="left-column, article-small"> <!-- LEFT -->
+            <h4>Politics</h4>
+            <p>There is no state, no crown, no unified banner. The people of Kaijistan now live in small, nomadic tribes, each fiercely independent. Governance rests in the hands of elders, men or women whose age grants them both authority and caution. Elders rule by consensus, and disputes between tribes are often settled through barter, blood-price, or—when tensions boil too hot—sudden violence beneath the stars.</p>
+            <p>While ave no kings or councils, the tribes share one agreement: outsiders are unwelcome. Foreigners are treated with suspicion, and few are ever invited to sit by a Kaijistani fire unless they have proven themselves beyond doubt.</p>
+             <h4>Population</h4>
+            <P>The precise number of Kaijistan’s people is unknown. Tribes are scattered across vast stretches of desert, moving constantly between seasonal pastures, ruined cisterns, and secret oases. Some scholars suggest that only a few thousand true Kaijistanis remain. The tribes themselves care little for such numbers—what matters is survival, and blood ties that reach back to the fallen empire.</P>
+        </article>
+
+        <article class="center-column"><!-- MIDDLE -->
+            <img class="popup" src="assets/old_kaijistan.jpg" alt="">
+            <p>Once a great desert empire in the far south of Skazka, Kaijistan has been nothing more than a memory for the last thousand years. Its banners have long since turned to dust, its laws forgotten, and its cities swallowed by the sands. What remains are the whispers of its grandeur—legends of jeweled towers, lost waterworks, and its fabled capital Velkaria, “the Diamond of Kaijistan.” Though the empire is gone, its bloodline has not been entirely erased: the scattered descendants of Kaijistani nobility still wander the dunes, marked by their haunting violet eyes, said to glow faintly beneath the desert moon. These desert dwellers live among the ruins, surviving by herding goats, eking sustenance from hidden aquifers, and scavenging relics of the old world to trade with daring outsiders.
+              <img class="noborder" src="assets/divider.png" alt="">
+        </article>
+
+        <article class="right-column, article-small"> <!-- RIGHT -->
+            <img class="popup" src="assets/old_kaijistan_banner.jpg" alt="">
+        </article>
+    </main>
+
+    <main class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
+        <article class="left-column, article-small"> <!-- LEFT -->
+        <h2>The Ruins of Orishan</h2>
+        <p>The half-buried remnants of an ancient city, its toppled minarets said to conceal secret cisterns and catacombs where violet-eyed descendants still perform rites in memory of the old gods.</p>
+        <h2>The Glass Dunes</h2>
+        <p>A stretch of desert where the sand has been fused into sheets of black glass, as though seared by unimaginable fire. Legends speak of a final battle here, where Kaijistan’s sorcerer-kings unleashed weapons that scarred the land forever.</p>
+            
+
+        </article>
+
+        <article class="center-column"><!-- MIDDLE -->
+            <h2>Visiting Old Kaijistan</h2>
+            <p>The lands of Kaijistan are often called Caratania by outsiders, a word that conjures both wealth and peril. Treasure hunters, relic-seekers, and fortune-chasers regularly brave the endless sands, lured by the promise of lost riches from Velkaria and its sister cities. Few return with more than broken pottery and sun-bleached bones. Fewer still live to tell of the Sandsea of Zhal’Shaar, the cursed southern wastes where supernatural sandstorms rise without warning, swallowing entire caravans and grinding stone to powder. Tribal lore warns that the storms are the wrath of the empire itself, punishing those who dare seek its hidden diamond.</p>
+        </article>
+
+        <article class="right-column, article-small"> <!-- RIGHT -->
+            <h2>The Aquifers of Kaelir</h2>
+            <p>Cavernous underground reservoirs, accessed only by those who know the shifting paths through the dunes. Said to be haunted by pale, eyeless spirits that guard the water.</p>
+
+            <h2>Velkaria, The Lost Diamond</h2>
+            <p>The fabled capital. No one knows its true location, though the tribes whisper that it lies buried beneath the Sandsea of Zhal’Shaar, waiting for the worthy—or the damned—to find it.</p>
+        </article>
+    </main>
+
+    
+
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <img src="assets/logo.png" alt="Skazka Logo">
+            <p class="footer-tagline">Where shadows speak and legends walk.</p>
+            <nav class="footer-nav">
+                <a href="contact.html">Contact</a>
+            </nav>
+            <p class="footer-copy">&copy; 2025 SkazkaWorld. All stories reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox container (hidden by default) -->
+    <div id="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-img" alt="">
+    </div>
+
+    <script src="main.js"></script>
+    <script src="popup.js"></script>
+    <script>
+        // Load navbar.html dynamically        
+        fetch("navbar.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("navbar").innerHTML = data;
+
+                // Now that navbar is loaded, attach hamburger event
+                const hamburger = document.querySelector(".hamburger");
+                const navLinks = document.querySelector(".nav-links");
+
+                if (hamburger && navLinks) {
+                    hamburger.addEventListener("click", () => {
+                        navLinks.classList.toggle("active");
+                        hamburger.classList.toggle("open");
+                    });
+                }
+            });
+    </script>
+
+
+</body>
+
+</html>
