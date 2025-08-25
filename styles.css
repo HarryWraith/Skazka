@@ -102,6 +102,15 @@ h4 { font-size: 1.2rem; font-weight: 900; }
   align-items: start;
 }
 
+.grid-four {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; 
+  gap: 20px;
+  max-width: 80%;
+  margin: 2em auto 1em;
+  align-items: start;
+}
+
 /* Left column for images */
 .left-column {
   display: flex;
