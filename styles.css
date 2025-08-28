@@ -5,6 +5,13 @@
   box-sizing: border-box;
 }
 
+
+a { text-decoration: none; color: #DCFAFA; }
+a:visited { text-decoration: none; color: #DCFAFA; }
+a:hover { text-decoration: none; color: #DCFAFA; }
+a:focus { text-decoration: none; color: #DCFAFA; }
+a:hover, a:active { text-decoration: none; color: #DCFAFA; }
+
 body {
   font-family: 'Alegreya', serif;
   min-height: 100vh;
@@ -289,8 +296,8 @@ img.popup { cursor: zoom-in; transition: transform .2s; }
   z-index: 1000;
 }
 #lightbox img {
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 100%;
+  max-height: 100%;
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0,0,0,.5);
   cursor: zoom-out;
