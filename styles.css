@@ -264,16 +264,29 @@ article li {
   width: 28px; 
   height: 28px; 
   margin-right: 8px; 
-  background: url('assets/rune-marker.png') center/contain no-repeat; 
+  background: url("assets/rune-marker.png") center/contain no-repeat; 
   filter: grayscale(100%) brightness(0.9); 
-  transition: filter 0.3s ease, transform 0.25s ease; 
+  transition: filter 0.3s ease, transform 0.35s ease; 
 }
 
-.rune.active { filter: grayscale(0%) brightness(1.1); transform: scale(1.12); }
+.rune.active { filter: grayscale(0%) brightness(1.1); 
+  transform: scale(1.12); }
 
-.event-details { max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.4s ease, opacity 0.4s ease; padding-left: 36px; font-size: 0.9em; color: #ccc; }
+.event-details { 
+  max-height: 0; 
+  overflow: hidden; 
+  opacity: 0; 
+  transition: max-height 0.4s ease, opacity 0.4s ease; 
+  padding-left: 36px; 
+  font-size: 0.9em; 
+  color: #ccc; 
+}
 
-.event.open .event-details { max-height: 200px; opacity: 1; margin-top: 4px; }
+.event.open .event-details { 
+  max-height: 200px; 
+  opacity: 1; 
+  margin-top: 4px; 
+}
 
 /* Image popup/lightbox */
 img.popup { cursor: zoom-in; transition: transform .2s; }
