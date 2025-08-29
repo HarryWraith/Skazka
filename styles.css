@@ -243,14 +243,13 @@ article li {
   width: 800px;
   padding: 14px;
   background: rgba(20, 20, 20, 0.85);
-  border: 10px solid transparent;
-  border-image-source: url('assets/rune-border-texture.png');
-  border-image-slice: 30;
-  border-image-repeat: round;
-  border-image-width: 1;
-  border-radius: 18px;
   height: 80vh;
   overflow: auto;
+
+  background-image: url("assets/timeline.jpg"); /* replace with your image */
+  background-repeat: repeat-y; /* repeats vertically */
+  background-position: center top; /* centers it horizontally */
+  background-size:cover; /* adjust if needed, e.g., "contain" or specific width */
 }
 .event { margin: 18px 0; cursor: pointer; }
 .event-header { display: flex; align-items: center; }
@@ -263,6 +262,7 @@ article li {
   filter: grayscale(100%) brightness(0.9);
   transition: filter 0.3s ease, transform 0.25s ease;
 }
+
 .rune.active {
   filter: grayscale(0%) brightness(1.1);
   transform: scale(1.12);
