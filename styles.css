@@ -241,13 +241,12 @@ article li {
   margin: 100px auto 20px; 
   width: 800px; 
   padding: 14px; 
-  background: rgba(20, 20, 20, 0.85); 
   height: 80vh; 
   overflow: auto;
   background-image: url("assets/timeline.jpg"); /* replace with your image */ 
   background-repeat: repeat-y; /* repeats vertically */ 
   background-position: center top; /* centers it horizontally */ 
-  background-size:cover; /* adjust if needed, e.g., "contain" or specific width */ 
+  background-size:cover; 
 }
 
 .event { 
@@ -257,6 +256,27 @@ article li {
 } .event-header { 
   display: flex; 
   align-items: center; 
+}
+
+.event-year {
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: #d4af37; /* gold */
+}
+
+/* Style the title */
+.event-title {
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #97d8f4;
+}
+
+/* Style the details */
+.event.open .event-details {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  color: #c0ecf5;
 }
 
 .rune { 

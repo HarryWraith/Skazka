@@ -97,16 +97,16 @@ document.addEventListener("DOMContentLoaded", () => {
     eventDiv.innerHTML = `
       <div class="event-header">
         <span class="rune"></span>
-        <div>
-          <strong>${ev.year}</strong><br>
-          ${ev.title}
+        <div class="event-meta">
+          <span class="event-year">${ev.year}</span><br>
+          <span class="event-title">${ev.title}</span>
         </div>
       </div>
+
       <div class="event-details">
-        ${ev.details}
+        <div class="event-details-inner">${ev.details}</div>
       </div>
     `;
-
     timeline.appendChild(eventDiv);
   });
 
