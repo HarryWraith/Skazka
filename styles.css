@@ -236,51 +236,44 @@ article li {
   text-align: center;
 }
 
-/* Timeline */
-.timeline {   
-  display: block;
-  margin: 100px auto 20px;
-  width: 800px;
-  padding: 14px;
-  background: rgba(20, 20, 20, 0.85);
-  height: 80vh;
+/* Timeline */ .timeline { 
+  display: block; 
+  margin: 100px auto 20px; 
+  width: 800px; 
+  padding: 14px; 
+  background: rgba(20, 20, 20, 0.85); 
+  height: 80vh; 
   overflow: auto;
-
-  background-image: url("assets/timeline.jpg"); /* replace with your image */
-  background-repeat: repeat-y; /* repeats vertically */
-  background-position: center top; /* centers it horizontally */
-  background-size:cover; /* adjust if needed, e.g., "contain" or specific width */
-}
-.event { margin: 18px 0; cursor: pointer; }
-.event-header { display: flex; align-items: center; }
-.rune {
-  flex-shrink: 0;
-  width: 28px;
-  height: 28px;
-  margin-right: 8px;
-  background: url('assets/rune-marker.png') center/contain no-repeat;
-  filter: grayscale(100%) brightness(0.9);
-  transition: filter 0.3s ease, transform 0.25s ease;
+  background-image: url("assets/timeline.jpg"); /* replace with your image */ 
+  background-repeat: repeat-y; /* repeats vertically */ 
+  background-position: center top; /* centers it horizontally */ 
+  background-size:cover; /* adjust if needed, e.g., "contain" or specific width */ 
 }
 
-.rune.active {
-  filter: grayscale(0%) brightness(1.1);
-  transform: scale(1.12);
+.event { 
+  margin: 18px 0; 
+  cursor: pointer; 
+
+} .event-header { 
+  display: flex; 
+  align-items: center; 
 }
-.event-details {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.4s ease, opacity 0.4s ease;
-  padding-left: 36px;
-  font-size: 0.9em;
-  color: #ccc;
+
+.rune { 
+  flex-shrink: 0; 
+  width: 28px; 
+  height: 28px; 
+  margin-right: 8px; 
+  background: url('assets/rune-marker.png') center/contain no-repeat; 
+  filter: grayscale(100%) brightness(0.9); 
+  transition: filter 0.3s ease, transform 0.25s ease; 
 }
-.event.open .event-details {
-  max-height: 200px;
-  opacity: 1;
-  margin-top: 4px;
-}
+
+.rune.active { filter: grayscale(0%) brightness(1.1); transform: scale(1.12); }
+
+.event-details { max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.4s ease, opacity 0.4s ease; padding-left: 36px; font-size: 0.9em; color: #ccc; }
+
+.event.open .event-details { max-height: 200px; opacity: 1; margin-top: 4px; }
 
 /* Image popup/lightbox */
 img.popup { cursor: zoom-in; transition: transform .2s; }
