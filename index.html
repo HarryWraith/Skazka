@@ -127,20 +127,31 @@
             }
         });
 </script>
+<!-- Ko-fi overlay script -->
 <script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
+
+<!-- Global JS -->
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
+  function initKofiButton() {
     const kofiButton = document.getElementById('kofiButton');
     if (kofiButton) {
       kofiButton.addEventListener('click', function() {
-        kofiWidgetOverlay.draw('harrywraith', {
-          type: 'popup',
-          'popup.message': 'Support me!',
-          'popup.color': '#00b9fe'
-        });
+        if (typeof kofiWidgetOverlay !== 'undefined') {
+          kofiWidgetOverlay.draw('harrywraith', {
+            'type': 'popup',
+            'popup.message': 'Support me!',
+            'popup.color': '#00b9fe'
+          });
+        } else {
+          console.error('Ko-fi script not loaded yet.');
+        }
       });
     }
-  });
+  }
+
+  // If navbar is injected dynamically:
+  // call initKofiButton() AFTER inserting navbar HTML.
+  document.addEventListener('DOMContentLoaded', initKofiButton);
 </script>
 
 
