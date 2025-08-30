@@ -12,7 +12,7 @@
   {
     "year": "-3000",
     "title": "Divergence",
-    "details": "Over next thousand years groups of Sun Elves migrate. The largest group travels south and founds Everdusk, the realms of the Wood Elves. Some travelled east beyond the mountains and were never seen again."
+    "details": "Over next thousand years groups of Sun Elves migrate. The largest group travels south and founds Everdusk, and over time they become  the Wood Elves. Others travel east beyond the mountains and are  never seen nor heard of again."
   },
   {
     "year": "-2800",
@@ -22,32 +22,37 @@
   {
     "year": "-1800",
     "title": "Nav'Golam founded",
-    "details": "The dwarves, having wondered the Underforld for centuries, finally find a place to call home. They build the great underground city of Nav'Golam."
+    "details": "The dwarves, having wondered the Underworld for centuries, finally find a place to call home. They build the great underground city of Nav'Golam."
   },
   {
     "year": "-1800",
     "title": "Nav'Cherom founded",
-    "details": "The Dwarves, rich with the minerals found around Nav'Golam, found the second city of Nav'Cherom."
+    "details": "The Dwarves, rich with the minerals mined from around Nav'Golam, construct the second city of Nav'Cherom."
+  },
+  {
+    "year": "-1700",
+    "title": "The Orcs arrive on Skazka",
+    "details": "Hundreds of Orcs are brought to Skazka by the god Chernabog. They settle in the arid east - an area known as the Ghost Lands."
   },
   {
     "year": "-421",
     "title": "Exodus",
-    "details": "Humans traverse the great ocean between Skia and Kelos and settled on Snuuflund."
+    "details": "Humans traverse the great ocean between Skia and Kelos and settle on Snuuflund."
   },
   {
-    "year": "-421",
+    "year": "-320",
     "title": "Eastward",
-    "details": "The human settlers of Snuuflund have outgrown the Serydina Isles. Two groups set off east to the mainland of Kelos in search of new homes. One settles on the west coast. The other travels far to the east; they will eventually become the people of Caratania"
+    "details": "The human settlers of Snuuflund have outgrown the Serydina Isles.  Raiding parties set off east to the mainland of Kelos in search of new homes. One settles on the west coast. The other travels far to the east; they will eventually become the people of Caratania"
   },
   {
     "year": "0",
     "title": "Starfall",
-    "details": "Kelos is struck by a series of meteors. The impact iniates a cataclysmic event that begins a mini ice age."
+    "details": "Kelos is struck by a devastating meteor shower. The impact iniates a cataclysmic event that begins a mini ice age. Priests and others who rely on their deities as the source of their magic report a dimming of their divine connection. The Walking Gods, or Prir, are not seen on Skazka from this point onwards."
   },
   {
     "year": "2",
     "title": "There be dragons",
-    "details": "Dragons that have slumbers for an eon under the northern ice are awoken."
+    "details": "Dragons that have slumbered for an eon under the northern ice are awoken."
   },
   {
     "year": "12 - 27",
@@ -62,17 +67,17 @@
   {
     "year": "192",
     "title": "Fall of Grimspire",
-    "details": "Grimspire meets a sad ending. Encouraged by the Fire Witch Maldrath, a group of hunters attack Icethorn's mate, destroying her unhatched eggs. The ancient beast beast freezes the citadel, making it uninhabitable until this day."
+    "details": "Grimspire meets a tragic end. Encouraged by the Fire Witch Maldrath, a group of hunters attack Icethorn's mate, destroying her unhatched eggs. The ancient beast takes her revenge: she attacks Grimspire freezing the citadel, making it uninhabitable, even today."
   },
   {
-    "year": "351 - 391",
+    "year": "381 - 391",
     "title": "The Shadow War",
-    "details": "Civil war within the Order of the Word escalates widely and becomes The Shadow War. The Order is split into two factions: one lead by Ilistran Darkweaver who should be used to elevate magic wielders to a status above mortals; the other led by Arica Dreamforger who believes magic should be used to help all people. The war ends with Ilistran's defeat and disappearance."
+    "details": "Civil war within the Order of the Word escalates widely and becomes The Shadow War. The Order is split into two factions: one lead by Ilistran Darkweaver who believes magic should be used to elevate mages to a status above mortals; the other led by Arica Dreamforger, believe magic should be used to help all people. The war ends with Ilistran's defeat and disappearance."
   },
   {
     "year": "411 - 901",
     "title": "Magical Prohibition",
-    "details": "Despite the end of the Shadow War, the continued incursions from other dimensions forces the Aeternian Empire to ban the use of magic by anyone other than those approved to do so by The Empre. This continued for centuries. To this day the use of displacement and dimensional magic is still banned."
+    "details": "Despite the end of the Shadow War, the continued incursions from other dimensions forces the Aeternian Empire to ban the use of magic by anyone other than those approved to do so by the Emperor. This continued for centuries. To this day the use of displacement and dimensional magic is still banned within Aeternia and viewed with grave suspicion elsewhere."
   },
   {
     "year": "971",
