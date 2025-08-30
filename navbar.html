@@ -201,9 +201,42 @@
         <li><a href="insignia.html">Insignia</a></li>
       </ul>
     </li>
+    <li>
+       <button id="kofiButton" style="background:#00b9fe;color:#fff;padding:5px 10px;border:none;border-radius:5px;cursor:pointer;">
+    Support me
+  </button>
+    </li>
   </ul>
+  
 </nav>
 <main class="grid-container-blank"></main>
+<script>
+  // Only load the script if it's not already loaded
+  if (!window.kofiWidgetOverlay) {
+    const s = document.createElement('script');
+    s.src = 'https://storage.ko-fi.com/cdn/scripts/overlay-widget.js';
+    s.onload = function() {
+      setupKofiButton();
+    };
+    document.head.appendChild(s);
+  } else {
+    setupKofiButton();
+  }
+
+  function setupKofiButton() {
+    const btn = document.getElementById('kofiButton');
+    if (btn) {
+      btn.addEventListener('click', function() {
+        kofiWidgetOverlay.draw('harrywraith', {
+          type: 'popup',
+          'popup.message': 'Support me!',
+          'popup.color': '#00b9fe'
+        });
+      });
+    }
+  }
+</script>
+
 
 <style>
 /* Sticky Navigation Bar */
