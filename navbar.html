@@ -1,4 +1,17 @@
 <!-- Navigation Bar (sticky at top) -->
+ <html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skazka - Dark Fantasy Lore</title>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Font for a fantasy feel -->
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+ <body>
 <nav class="navbar">
   <div class="logo">
     <a href="index.html"><img src="assets/logo.png" alt="Skazka Logo"></a>
@@ -209,34 +222,18 @@
   </ul>
   
 </nav>
-<main class="grid-container-blank"></main>
+
+<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
 <script>
-  // Only load the script if it's not already loaded
-  if (!window.kofiWidgetOverlay) {
-    const s = document.createElement('script');
-    s.src = 'https://storage.ko-fi.com/cdn/scripts/overlay-widget.js';
-    s.onload = function() {
-      setupKofiButton();
-    };
-    document.head.appendChild(s);
-  } else {
-    setupKofiButton();
-  }
-
-  function setupKofiButton() {
-    const btn = document.getElementById('kofiButton');
-    if (btn) {
-      btn.addEventListener('click', function() {
-        kofiWidgetOverlay.draw('harrywraith', {
-          type: 'popup',
-          'popup.message': 'Support me!',
-          'popup.color': '#00b9fe'
-        });
-      });
-    }
-  }
+  document.getElementById('kofiButton').addEventListener('click', function() {
+    kofiWidgetOverlay.draw('harrywraith', {
+      'type': 'popup',   // popup instead of floating-chat
+      'popup.message': 'Support me!',
+      'popup.color': '#00b9fe'
+    });
+  });
 </script>
-
+</body>
 
 <style>
 /* Sticky Navigation Bar */
