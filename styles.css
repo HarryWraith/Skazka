@@ -259,7 +259,7 @@ article li {
 }
 
 .event-year {
-  font-weight: bold;
+  font-weight:bolder;
   font-size: 1.8rem;
   color: #d4af37; /* gold */
 }
@@ -274,9 +274,12 @@ article li {
 /* Style the details */
 .event.open .event-details {
   margin-top: 0.5rem;
+  margin-left: 0.8rem;
+  padding-left: 1.4rem;
   font-size: 1.2rem;
   line-height: 1.4;
   color: #c0ecf5;
+  border-left: 1px solid #97d8f4;
 }
 
 .rune { 
@@ -285,13 +288,14 @@ article li {
   height: 28px; 
   margin-right: 8px; 
   background: url("assets/rune-marker.png") center/contain no-repeat; 
-  filter: grayscale(100%) brightness(0.9); 
+  filter: grayscale(50%) brightness(0.9); 
   transition: filter 0.3s ease, transform 0.35s ease; 
 }
 
-.rune.active { filter: grayscale(0%) brightness(1.1); 
-  transform: scale(1.12); }
-
+.rune.open{
+  filter: grayscale(0%) brightness(2.0); 
+}
+ 
 .event-details { 
   max-height: 0; 
   overflow: hidden; 
