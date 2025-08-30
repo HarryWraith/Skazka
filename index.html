@@ -127,6 +127,21 @@
             }
         });
 </script>
+<script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const kofiButton = document.getElementById('kofiButton');
+    if (kofiButton) {
+      kofiButton.addEventListener('click', function() {
+        kofiWidgetOverlay.draw('harrywraith', {
+          type: 'popup',
+          'popup.message': 'Support me!',
+          'popup.color': '#00b9fe'
+        });
+      });
+    }
+  });
+</script>
 
 
 </body>
