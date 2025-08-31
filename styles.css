@@ -50,18 +50,6 @@ body p{
   margin-bottom: 1em;
 }
 
-/*buttons*/
-button.donate {
-  background-color: #d4af37;
-  border: none;
-  color: white;
-  text-align: center;
-  font-size: 20px;
-  height: 40px;
-  border-radius: 12px;
-  cursor: pointer;
-}
-
 @keyframes shimmerMove {
   0% { background-position: 0% 50%, 0% 50%, center; }
   50% { background-position: 100% 50%, 100% 50%, center; }
@@ -223,6 +211,7 @@ article li {
   margin-bottom: 1.5rem;
   text-align: center;
 }
+
 .footer-nav,
 .footer-socials {
   display: flex;
