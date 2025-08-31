@@ -312,9 +312,10 @@ article li {
 }
 
 
-/* Image popup/lightbox */
-img.popup { cursor: zoom-in; transition: transform .2s; }
-
+img.popup { 
+  cursor: zoom-in; 
+  transition: transform .2s; 
+}
 
 #lightbox {
   position: fixed;
@@ -324,14 +325,24 @@ img.popup { cursor: zoom-in; transition: transform .2s; }
   align-items: center;
   justify-content: center;
   z-index: 1000;
+  overflow: hidden; /* allow panning inside */
+  touch-action: none; /* prevent browser default pinch-zoom */
 }
+
 #lightbox img {
-  max-width: 100%;
-  max-height: 100%;
+  width: auto;
+  height: auto;
+  max-width: 600%; /* allow zoom beyond container */
+  max-height: 600%;
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0,0,0,.5);
-  cursor: zoom-out;
+  cursor: move;
+  transition: transform 0.1s ease-out;
+  transform-origin: center center;
+  user-select: none; /* prevent accidental selection */
+  -webkit-user-drag: none; /* disable dragging ghost image on mobile */
 }
+
 #lightbox .close {
   position: absolute;
   top: 20px;
@@ -340,7 +351,9 @@ img.popup { cursor: zoom-in; transition: transform .2s; }
   font-size: 36px;
   font-weight: bold;
   cursor: pointer;
+  z-index: 1100;
 }
+
 
 
 /* Responsive adjustments */
