@@ -50,7 +50,17 @@ body p{
   margin-bottom: 1em;
 }
 
-
+/*buttons*/
+button.donate {
+  background-color: #d4af37;
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  height: 40px;
+  border-radius: 12px;
+  cursor: pointer;
+}
 
 @keyframes shimmerMove {
   0% { background-position: 0% 50%, 0% 50%, center; }
@@ -311,6 +321,7 @@ article li {
   opacity: 1; 
   margin-top: 4px; 
 }
+
 
 /* Image popup/lightbox */
 img.popup { cursor: zoom-in; transition: transform .2s; }
