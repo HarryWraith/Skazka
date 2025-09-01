@@ -1,0 +1,385 @@
+/* dice-roller.css — Skazka World theme (dark + antique gold) */
+/* Scoped variables so only the dice/attributes panels change */
+:root {
+  /* Core palette */
+  --skz-bg: #0a0b0f;
+  --skz-panel: #12131a;
+  --skz-panel-2: #171922;
+  --skz-border: #2a2d36;
+  --skz-text: #e6dccb;          /* bone */
+  --skz-dim: #b9b09e;           /* dim bone */
+  --skz-accent: #c2a13a;        /* antique gold */
+  --skz-accent-strong: #e1b84d; /* brighter gold */
+  --skz-good: #2e7d57;          /* moss */
+  --skz-danger: #a33a3a;        /* dried blood */
+  --skz-shadow: rgba(0,0,0,.55);
+  --skz-chip: #20222b;
+
+  /* Sizing & radii */
+  --skz-radius: 14px;
+  --skz-radius-sm: 10px;
+  --skz-gap: 10px;
+  --skz-pad: 12px;
+
+  /* Typography */
+  --skz-font: "Alegreya", ui-serif, Georgia, serif;
+  --skz-mono: ui-monospace, Menlo, Consolas, monospace;
+}
+
+/* ---------- Common surface styling ---------- */
+#skz-dice-roller, #skz-attr-roller, #skz-history {
+  font-family: var(--skz-font);
+  color: var(--skz-text);
+}
+#skz-dice-roller, #skz-attr-roller {
+  background: linear-gradient(180deg, var(--skz-panel), var(--skz-panel-2));
+  border: 1px solid var(--skz-border);
+  border-radius: var(--skz-radius);
+  box-shadow: 0 12px 24px var(--skz-shadow), inset 0 1px 0 rgba(255,255,255,0.02);
+  padding: clamp(12px, 2.2vw, 18px);
+}
+
+/* Titles / headings */
+.skz-title, .skz-history-title {
+  color: var(--skz-accent-strong);
+  letter-spacing: .5px;
+  margin: 0 0 8px;
+}
+
+/* ---------- Buttons ---------- */
+.skz-btn {
+  background: linear-gradient(180deg, var(--skz-accent-strong), var(--skz-accent));
+  color: #0b0a07;
+  border: 1px solid color-mix(in oklab, var(--skz-accent) 70%, black);
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .06s ease, box-shadow .2s ease, filter .2s ease;
+}
+.skz-btn:hover { filter: brightness(1.05); box-shadow: 0 0 0 2px rgba(226,184,77,.25), 0 0 14px rgba(226,184,77,.35); }
+.skz-btn:active { transform: translateY(1px); }
+
+.skz-ghost-btn {
+  background: transparent;
+  color: var(--skz-accent-strong);
+  border: 1px solid var(--skz-accent);
+  border-radius: 10px;
+  padding: 7px 12px;
+  cursor: pointer;
+  transition: background .2s ease, box-shadow .2s ease;
+}
+.skz-ghost-btn:hover { background: rgba(226,184,77,.08); box-shadow: inset 0 0 0 1px rgba(226,184,77,.18); }
+
+/* ---------- Inputs / selects ---------- */
+.skz-input, .skz-select {
+  background: #0f1117;
+  color: var(--skz-text);
+  border: 1px solid var(--skz-border);
+  border-radius: 10px;
+  padding: 8px 10px;
+  outline: none;
+}
+.skz-input::placeholder { color: color-mix(in oklab, var(--skz-dim) 75%, black); }
+.skz-input:focus, .skz-select:focus {
+  border-color: var(--skz-accent-strong);
+  box-shadow: 0 0 0 2px rgba(226,184,77,.25);
+}
+
+/* ---------- Mode slider + centered label ---------- */
+.skz-slider-wrap {
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 6px;
+  margin: 8px 0 6px;
+}
+#skz-mode { width: 100%; }
+#skz-mode::-webkit-slider-thumb { background: var(--skz-accent-strong); border: 1px solid var(--skz-accent); }
+#skz-mode::-moz-range-thumb     { background: var(--skz-accent-strong); border: 1px solid var(--skz-accent); }
+#skz-mode::-webkit-slider-runnable-track { background: #1a1d26; border-radius: 999px; height: 6px; border: 1px solid var(--skz-border); }
+#skz-mode::-moz-range-track             { background: #1a1d26; border-radius: 999px; height: 6px; border: 1px solid var(--skz-border); }
+
+#skz-mode-label {
+  justify-self: center; /* centers “Normal/Adv/Dis” */
+  font-weight: 700;
+  color: var(--skz-good);
+}
+
+/* ---------- Dice grid & dice buttons ---------- */
+.skz-die-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(72px, 1fr));
+  gap: var(--skz-gap);
+}
+.skz-die {
+  position: relative;
+  background: linear-gradient(180deg, #1a1c24, #0f1117);
+  color: var(--skz-text);
+  border: 1px solid var(--skz-border);
+  border-radius: var(--skz-radius-sm);
+  padding: 10px 12px;
+  text-align: left;
+  cursor: pointer;
+  transition: box-shadow .2s ease, border-color .2s ease, transform .06s ease;
+}
+.skz-die small { display: block; opacity: .75; font-size: .85rem; }
+.skz-die:hover {
+  border-color: var(--skz-accent);
+  box-shadow: 0 0 0 1px rgba(226,184,77,.18) inset, 0 0 10px rgba(226,184,77,.25);
+}
+.skz-die:active { transform: translateY(1px); }
+
+/* Count badge for per-die planned counts */
+.skz-count-badge {
+  position: absolute;
+  top: 6px; right: 8px;
+  padding: 2px 6px;
+  font-size: .8rem;
+  border: 1px solid var(--skz-accent);
+  border-radius: 999px;
+  background: #0b0d12;
+  color: var(--skz-accent-strong);
+  pointer-events: none;
+}
+
+/* Instruction under dice row */
+.skz-help-tip {
+  margin-top: 4px;
+  font-size: .9rem;
+  color: var(--skz-dim);
+}
+
+/* ---------- “Last roll” panel ---------- */
+.skz-last {
+  background: #0f1117;
+  border: 1px solid var(--skz-border);
+  border-radius: var(--skz-radius);
+  padding: var(--skz-pad);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.02);
+}
+.skz-last strong { color: var(--skz-accent-strong); }
+.skz-last.skz-crit { box-shadow: 0 0 0 2px rgba(46,125,87,.35) inset, 0 0 16px rgba(46,125,87,.25); }
+.skz-last.skz-fumble { box-shadow: 0 0 0 2px rgba(163,58,58,.4) inset, 0 0 16px rgba(163,58,58,.25); }
+
+/* ---------- Toolbar & macros ---------- */
+.skz-toolbar {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: var(--skz-gap);
+  margin-top: 10px;
+}
+.skz-notation { display: grid; grid-template-columns: 1fr auto; gap: 8px; }
+
+.skz-macros { margin-top: 12px; }
+.skz-macro-item {
+  display: grid;
+  grid-template-columns: auto auto 1fr auto auto;
+  gap: 8px;
+  align-items: center;
+  background: #0f1117;
+  border: 1px solid var(--skz-border);
+  border-radius: 10px;
+  padding: 8px 10px;
+}
+.skz-macro-name { color: var(--skz-text); font-weight: 700; }
+
+/* ---------- Export bar ---------- */
+.skz-export {
+  display: flex; gap: 8px; flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+/* ---------- History (right column) ---------- */
+.skz-history {
+  background: linear-gradient(180deg, var(--skz-panel), var(--skz-panel-2));
+  border: 1px solid var(--skz-border);
+  border-radius: var(--skz-radius);
+  padding: 10px 12px;
+  box-shadow: 0 12px 24px var(--skz-shadow), inset 0 1px 0 rgba(255,255,255,0.02);
+}
+.skz-history-list {
+  margin: 8px 0 0; padding-left: 18px;
+  font-family: var(--skz-mono);
+  color: var(--skz-dim);
+}
+.skz-history-actions { margin-top: 10px; }
+
+/* ---------- Attribute roller (left column) ---------- */
+.skz-attr-head {
+  color: var(--skz-accent-strong);
+  margin: 0 0 6px;
+}
+.skz-attr-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 8px;
+}
+.skz-attr-table td {
+  background: #0f1117;
+  border: 1px solid var(--skz-border);
+  padding: 8px 10px;
+  vertical-align: middle;
+}
+.skz-attr-table td:first-child {
+  border-radius: 10px 0 0 10px;
+  color: var(--skz-dim);
+}
+.skz-attr-table td:last-child {
+  border-radius: 0 10px 10px 0;
+}
+.skz-attr-cell.dragover { outline: 2px dashed var(--skz-accent-strong); outline-offset: 2px; }
+
+.skz-lock {
+  margin-left: 8px;
+  background: transparent;
+  color: var(--skz-accent-strong);
+  border: 1px solid var(--skz-accent);
+  border-radius: 8px;
+  padding: 2px 6px;
+  cursor: pointer;
+}
+.skz-lock.is-locked { background: rgba(226,184,77,.12); }
+
+.skz-card {
+  display: grid; grid-auto-flow: column; gap: 8px; align-items: center;
+  background: #10131a;
+  border: 1px solid var(--skz-border);
+  border-radius: 10px;
+  padding: 8px 10px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.02);
+}
+.skz-card.selected { box-shadow: 0 0 0 2px rgba(226,184,77,.25), 0 0 12px rgba(226,184,77,.25); }
+.skz-card-total strong { color: var(--skz-accent-strong); }
+
+.skz-chip {
+  display: inline-block;
+  min-width: 24px;
+  text-align: center;
+  padding: 2px 6px;
+  border-radius: 8px;
+  background: var(--skz-chip);
+  border: 1px solid var(--skz-border);
+  color: var(--skz-text);
+  font-family: var(--skz-mono);
+  font-size: .9rem;
+}
+.skz-chip--dropped { color: var(--skz-danger); border-color: var(--skz-danger); }
+
+.skz-badge {
+  display: inline-block;
+  font-size: .85rem;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--skz-border);
+  background: #0f1117;
+  color: var(--skz-dim);
+}
+
+/* Pool area */
+#skz-attr-pool {
+  display: grid; grid-template-columns: repeat(auto-fit,minmax(90px,1fr)); gap: 8px;
+  margin-top: 8px;
+}
+.skz-pool-card {
+  background: #10131a;
+  border: 1px solid var(--skz-border);
+  border-radius: 10px;
+  padding: 8px 10px;
+  color: var(--skz-text);
+}
+.skz-placeholder {
+  color: var(--skz-dim);
+  border: 1px dashed var(--skz-border);
+  border-radius: 10px;
+  padding: 6px 8px;
+  text-align: center;
+}
+
+/* Reroll button on a score card */
+.skz-rebtn {
+  margin-left: auto;
+  background: transparent;
+  color: var(--skz-accent-strong);
+  border: 1px solid var(--skz-accent);
+  border-radius: 8px;
+  padding: 2px 6px;
+  cursor: pointer;
+}
+.skz-rebtn:hover { background: rgba(226,184,77,.12); }
+
+/* Copy-last action (small link-style) */
+#skz-copy-last {
+  margin-top: 8px;
+}
+
+/* Screen-reader only */
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,1px,1px); white-space: nowrap; border: 0;
+}
+
+/* Fix mode slider overflow + alignment (Skazka dice roller) */
+.skz-roller .skz-controls { max-width: 100%; }
+
+.skz-roller .skz-slider-wrap{
+  /* Make it a 3-column row: Dis | [slider] | Adv */
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  column-gap: 12px;
+  width: 100%;
+}
+
+.skz-roller .skz-slider-wrap .skz-tick{
+  white-space: nowrap;   /* keep "Dis"/"Adv" on one line */
+}
+
+.skz-roller .skz-slider-wrap #skz-mode{
+  width: 100%;
+  min-width: 0;          /* CRITICAL: allow the range to shrink inside grid */
+  box-sizing: border-box;
+}
+
+/* Center the green mode word underneath the entire slider row */
+.skz-roller .skz-mode-label{
+  grid-column: 1 / -1;   /* span all three columns */
+  justify-self: center;
+  margin-top: 8px;
+}
+
+/* Optional: safety net to prevent tiny horizontal scrolling */
+#skz-dice-roller{ overflow-x: hidden; }
+
+/* Modifier input styling (middle dice roller) */
+#skz-dice-roller .skz-mod-field { 
+  background: #0f1117;            /* field bg behind the input */
+  border: 1px solid var(--skz-border);
+  border-radius: 8px;
+}
+
+#skz-dice-roller .skz-mod-input{
+  background: #0f1117 !important; /* <- change this color */
+  color: var(--skz-text);
+  border: 0;                      /* the wrapper has the border */
+  padding: 8px 10px;
+  outline: none;
+  caret-color: var(--skz-text);
+}
+
+#skz-dice-roller .skz-mod-input::placeholder{
+  color: var(--skz-dim);
+}
+
+/* Tame browser autofill (Chrome/Safari) so it doesn't turn white/yellow */
+#skz-dice-roller .skz-mod-input:-webkit-autofill,
+#skz-dice-roller .skz-mod-input:-webkit-autofill:hover,
+#skz-dice-roller .skz-mod-input:-webkit-autofill:focus{
+  box-shadow: 0 0 0 1000px #0f1117 inset !important; /* match the background above */
+  -webkit-text-fill-color: var(--skz-text) !important;
+}
+
+/* Firefox autofill */
+#skz-dice-roller .skz-mod-input:-moz-autofill{
+  box-shadow: 0 0 0 1000px #0f1117 inset;
+  -moz-text-fill-color: var(--skz-text);
+}
