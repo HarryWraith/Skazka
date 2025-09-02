@@ -1,0 +1,83 @@
+[
+  {
+    "id": "uzume",
+    "type": "Deity",
+    "title": "Uzume",
+    "aliases": ["The Great Sky mother"],
+    "summary": "A playful primordial who kindles first light and unsettles tyrants with mirth.",
+    "image": "assets/uzume.jpg",
+    "url": "uzume.html",
+    "tags": ["Vekya", "Primordials"]
+  },
+  {
+    "id": "kaos",
+    "type": "Deity",
+    "title": "Kaos",
+    "aliases": ["Chaos", "The Unmaker"],
+    "summary": "The raw gulf before creation—whispered by sages as the hunger between stars.",
+    "image": "assets/kaos.jpg",
+    "url": "kaos.html",
+    "tags": ["Vekya", "Primordials"]
+  },
+  {
+    "id": "kronos",
+    "type": "Deity",
+    "title": "Kronos",
+    "aliases": ["Timefather"],
+    "summary": "Time’s architect, who wound the first hourglass and learned to fear its sand.",
+    "image": "assets/cronos.jpg",
+    "url": "Kronos.html",
+    "tags": ["Vekya"]
+  },
+  {
+    "id": "aeternia",
+    "type": "Place",
+    "title": "Aeternia",
+    "aliases": ["Empire of Aeternia"],
+    "summary": "Imperial heartland of scholars and marble law, now fissured by quiet wars.",
+    "image": "assets/aeternia_banner.jpg",
+    "url": "aeternia.html",
+    "tags": ["Nations & States"]
+  },
+  {
+    "id": "navgolam",
+    "type": "Place",
+    "title": "Nav’golam",
+    "aliases": ["City of Lamps"],
+    "summary": "Port of a thousand lanterns; its docks remember every storm by name.",
+    "image": "assets/nav-golam.jpg",
+    "url": "navgolam.html",
+    "tags": ["Nations & States"]
+  },
+  {
+    "id": "skazka",
+    "type": "Place",
+    "title": "Skazka",
+    "aliases": ["the world"],
+    "summary": "A dark fantasy world which forms the setting for a Dungeons & Dragons campaign.",
+    "image": "assets/mystery.jpg",
+    "url": "overview.html",
+    "tags": ["Multiverse"]
+  },
+  {
+    "id": "veil",
+    "type": "Metaphysical",
+    "title": "The Veil",
+    "aliases": ["the world","Great Barrier"],
+    "summary": "The boundary between worlds and dimensions. In some places on Skazka this veil is thin and post dimensional travel is relatively easy.",
+    "image": "assets/mystery.jpg",
+    "url": "multiverse.html",
+    "tags": ["Multiverse"]
+  },
+  {
+    "id": "shadowwar",
+    "type": "Event",
+    "title": "The Shadow War",
+    "aliases": ["Umbral Conflict"],
+    "summary": "A devastating intra guild war which took place between 381 - 391 which resulted in defeat for those who supported Ilistran Darkweaver and his ultimate disappearance.",
+    "image": "assets/shadowwar.jpg",
+    "url": "event-shadowwar.html",
+    "tags": ["conflict"]
+  }
+  
+]

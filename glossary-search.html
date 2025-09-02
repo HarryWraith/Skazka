@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search • Skazka</title>
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- MiniSearch for fast client-side search -->
+  <script src="https://cdn.jsdelivr.net/npm/minisearch@7/dist/umd/index.min.js"></script>
+
+  <style>
+    /* --- Glossary Search UI (fits your theme tokens) --- */
+    :root {
+      --card-w: min(360px, 100%);
+    }
+
+    .search-wrap {
+      max-width: 1100px;
+      margin: 0 auto 40px;
+      padding: 12px 12px 0;
+    }
+
+    .search-bar {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      align-items: center;
+      margin: 12px auto 18px;
+    }
+
+    .search-input {
+      background: #0f1117;
+      border: 1px solid var(--sb-border);
+      border-radius: 12px;
+      padding: 12px 14px;
+      color: var(--sb-text);
+      outline: none;
+      font-size: 1.2rem;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .02);
+    }
+
+    .search-input:focus {
+      border-color: var(--sb-gold-strong);
+      box-shadow: 0 0 0 2px rgba(226, 184, 77, .25);
+    }
+
+    .chip-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+
+    .chip {
+      background: var(--sb-chip, #20222b);
+      border: 1px solid var(--sb-border);
+      color: var(--sb-text);
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: .95rem;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .chip.is-on {
+      border-color: var(--sb-gold);
+      box-shadow: 0 0 0 2px rgba(226, 184, 77, .18);
+      color: var(--sb-gold-strong);
+    }
+
+    .g-filter {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 6px 0 10px;
+      flex-wrap: wrap;
+    }
+
+    .g-filter-label {
+      font-size: .9rem;
+      color: var(--sb-dim);
+      margin-right: 4px;
+    }
+
+    .g-chip-row {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    /* chips */
+    .chip {
+      font: 600 .85rem var(--sb-font, ui-sans-serif, system-ui);
+      padding: 3px 8px;
+      border: 1px solid var(--sb-border);
+      background: var(--sb-chip, #20222b);
+      color: var(--sb-text);
+      border-radius: 999px;
+      cursor: pointer;
+      line-height: 1.2;
+      user-select: none;
+      transition: background .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease;
+    }
+
+    .chip:hover {
+      background: rgba(226, 184, 77, .08);
+      border-color: color-mix(in oklab, var(--sb-gold) 35%, var(--sb-border));
+    }
+
+    .chip.is-on {
+      background: rgba(226, 184, 77, .12);
+      color: var(--sb-gold-strong);
+      border-color: var(--sb-gold);
+      box-shadow: inset 0 0 0 1px rgba(226, 184, 77, .15);
+    }
+
+    .chip--clear {
+      background: transparent;
+      border-style: dashed;
+      color: var(--sb-dim);
+    }
+
+    .chip--clear:hover {
+      color: var(--sb-gold-strong);
+      border-color: var(--sb-gold);
+      background: rgba(226, 184, 77, .06);
+    }
+
+    .results {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(var(--card-w), 1fr));
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .g-card {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 10px;
+      align-items: center;
+      background: linear-gradient(180deg, var(--sb-panel), var(--sb-panel2));
+      border: 1px solid var(--sb-border);
+      border-radius: 16px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, .35), inset 0 1px 0 rgba(255, 255, 255, .03);
+      padding: 10px;
+      transition: transform .06s ease, box-shadow .2s ease;
+    }
+
+    .g-card:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, .4);
+    }
+
+    .g-thumb {
+      width: 110px;
+      height: 110px;
+      border-radius: 12px;
+      object-fit: cover;
+      background: #0f1117;
+      border: 1px solid var(--sb-border);
+    }
+
+    .g-body {
+      min-width: 0;
+    }
+
+    .g-title {
+      font-weight: 900;
+      font-size: 1.2rem;
+      color: var(--sb-text);
+      margin: 0 0 4px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .g-meta {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 6px;
+      color: var(--sb-dim);
+      font-size: .95rem;
+    }
+
+    .g-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--sb-border);
+      background: #0f1117;
+      color: var(--sb-dim);
+      font-size: .85rem;
+    }
+
+    .g-summary {
+      color: var(--sb-dim);
+      font-size: 1.0rem;
+      line-height: 1.4;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    .g-actions {
+      margin-top: 8px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .sb-btn.small {
+      padding: 6px 10px;
+      border-radius: 10px;
+      font-weight: 700;
+    }
+
+    .sb-ghost-btn.small {
+      padding: 6px 10px;
+      border-radius: 10px;
+    }
+
+    /* Modal quick-view */
+    .modal {
+      position: fixed;
+      inset: 0;
+      display: none;
+      place-items: center;
+      background: rgba(0, 0, 0, .6);
+      z-index: 2000;
+    }
+
+    .modal.open {
+      display: grid;
+    }
+
+    .modal-card {
+      width: min(820px, 92vw);
+      background: linear-gradient(180deg, var(--sb-panel), var(--sb-panel2));
+      border: 1px solid var(--sb-border);
+      border-radius: 16px;
+      box-shadow: 0 20px 48px rgba(0, 0, 0, .5);
+      padding: 16px;
+    }
+
+    .modal-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .modal-title {
+      font-weight: 900;
+      font-size: 1.6rem;
+      color: var(--sb-text);
+    }
+
+    .modal-close {
+      background: transparent;
+      border: 1px solid var(--sb-border);
+      color: var(--sb-text);
+      padding: 6px 10px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .modal-grid {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 16px;
+      margin-top: 10px;
+    }
+
+    .modal-img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 1px solid var(--sb-border);
+      background: #0f1117;
+    }
+
+    .modal-summary {
+      color: var(--sb-dim);
+      line-height: 1.5;
+    }
+
+    .modal-links {
+      margin-top: 10px;
+      display: flex;
+      gap: 10px;
+    }
+
+    @media (max-width: 720px) {
+      .g-card {
+        grid-template-columns: 1fr;
+      }
+
+      .g-thumb {
+        width: 100%;
+        height: 180px;
+      }
+
+      .modal-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="navbar"></div>
+
+  <main class="search-wrap">
+    <h1 class="sb-title" style="text-align:center;">Search the Skazka Glossary</h1>
+
+    <div class="search-bar">
+      <input id="q" class="search-input" type="search" placeholder="Type a name, place, or keyword…">
+      <button id="clearBtn" class="sb-ghost-btn">Clear</button>
+    </div>
+
+    <section class="g-filter" aria-label="Filters">
+      <span class="g-filter-label">Filters:</span>
+      <div id="typeChips" class="g-chip-row"></div>
+      <button id="clearFilters" class="chip chip--clear" type="button" aria-label="Clear type filters">
+        Clear
+      </button>
+    </section>
+
+    <div id="count" class="sb-tip"></div>
+    <section id="results" class="results" aria-live="polite"></section>
+  </main>
+
+  <div id="footer"></div>
+
+  <!-- Quick-view modal -->
+  <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <div class="modal-head">
+        <div class="modal-title" id="modalTitle"></div>
+        <button class="modal-close" id="modalClose">Close</button>
+      </div>
+      <div class="modal-grid">
+        <img id="modalImg" class="modal-img" alt="" />
+        <div>
+          <div class="g-meta" id="modalMeta"></div>
+          <div class="modal-summary" id="modalSummary"></div>
+          <div class="modal-links" id="modalLinks"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+  <script>
+// glossary.js — A→Z search + small type chips (matches your HTML/CSS)
+
+(() => {
+  // ---------- DOM ----------
+  const $ = (s, r = document) => r.querySelector(s);
+  const els = {
+    q: $("#q"),
+    clearInput: $("#clearBtn"),
+    typeChips: $("#typeChips"),
+    clearFilters: $("#clearFilters"),
+    results: $("#results"),
+    count: $("#count"),
+  };
+
+  // ---------- Helpers ----------
+  const byTitle = (a, b) =>
+    (a.title || "").localeCompare(b.title || "", undefined, { sensitivity: "base", numeric: true });
+
+  const norm = (s) => (s || "").toLowerCase();
+
+  const matchesQuery = (item, q) => {
+    if (!q) return true;
+    const n = norm(q);
+    return (
+      norm(item.title).includes(n) ||
+      (item.aliases || []).some(x => norm(x).includes(n)) ||
+      norm(item.summary).includes(n) ||
+      (item.tags || []).some(x => norm(x).includes(n))
+    );
+  };
+
+  const escapeHTML = (s = "") =>
+    s.replace(/[&<>"']/g, ch => ({ "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;" }[ch]));
+
+  // Keep relative paths as-is for custom domain; allow absolute/http(s)
+  function resolveImg(src = "") {
+    if (!src) return "";
+    if (/^https?:\/\//i.test(src) || src.startsWith("/")) return src;
+    return src; // leave relative (e.g. "assets/kronos.jpg")
+  }
+
+  // ---------- State ----------
+  let ALL = [];
+  let activeType = ""; // empty = no type filter (All)
+
+  // ---------- Chips ----------
+  function renderTypeChips(types) {
+    if (!els.typeChips) return;
+    els.typeChips.innerHTML = ""; // reset
+    const frag = document.createDocumentFragment();
+
+    types.forEach(t => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "chip";
+      btn.textContent = t;
+
+      // active style
+      if (t === activeType) {
+        btn.classList.add("is-on");
+        btn.setAttribute("aria-pressed", "true");
+      } else {
+        btn.setAttribute("aria-pressed", "false");
+      }
+
+      btn.addEventListener("click", () => {
+        // toggle: clicking the same chip clears the filter
+        activeType = (activeType === t) ? "" : t;
+        // update chip styles
+        els.typeChips.querySelectorAll(".chip").forEach(c => {
+          const on = c.textContent === activeType && activeType !== "";
+          c.classList.toggle("is-on", on);
+          c.setAttribute("aria-pressed", on ? "true" : "false");
+        });
+        update();
+      });
+
+      frag.appendChild(btn);
+    });
+
+    els.typeChips.appendChild(frag);
+  }
+
+  // ---------- Cards ----------
+  function renderCard(item) {
+    const card = document.createElement("article");
+    card.className = "g-card";
+
+    const imgSrc = resolveImg(item.image || "");
+    const imgHTML = imgSrc
+      ? `<img class="g-thumb" src="${escapeHTML(imgSrc)}" alt="${escapeHTML(item.title)}"
+              onerror="this.style.display='none'; this.closest('.g-card').classList.add('no-img');">`
+      : "";
+
+    card.innerHTML = `
+      ${imgHTML}
+      <div class="g-body">
+        <div class="g-title">${escapeHTML(item.title)}</div>
+        <div class="g-meta">
+          ${item.type ? `<span class="g-badge">${escapeHTML(item.type)}</span>` : ""}
+          ${(item.aliases && item.aliases.length)
+            ? `<span class="g-badge" title="Also known as">${escapeHTML(item.aliases.join(", "))}</span>`
+            : ""}
+        </div>
+        <p class="g-summary">${escapeHTML(item.summary || "")}</p>
+        <div class="g-actions">
+          <a class="sb-ghost-btn small" href="${escapeHTML(item.url || "#")}" aria-label="Open ${escapeHTML(item.title)}">Open page</a>
+        </div>
+      </div>
+    `;
+    return card;
+  }
+
+  function render(list) {
+    els.results.innerHTML = "";
+    if (!list.length) {
+      els.count.textContent = "No results.";
+      return;
+    }
+    const frag = document.createDocumentFragment();
+    list.forEach(i => frag.appendChild(renderCard(i)));
+    els.results.appendChild(frag);
+    els.count.textContent = `${list.length} result${list.length === 1 ? "" : "s"}`;
+  }
+
+  // ---------- Data loading ----------
+  const CANDIDATE_URLS = [
+    "data/glossary.json",
+    "/data/glossary.json",
+    "glossary.json",
+    "/glossary.json",
+  ];
+
+  async function loadJSON() {
+    let lastErr;
+    for (const url of CANDIDATE_URLS) {
+      try {
+        const res = await fetch(url, { cache: "no-store" });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        console.info(`[glossary] Loaded ${url}`);
+        return await res.json();
+      } catch (e) {
+        lastErr = e;
+      }
+    }
+    throw lastErr || new Error("Failed to load glossary JSON.");
+  }
+
+  function toArrayShape(data) {
+    if (Array.isArray(data)) return data;
+    if (Array.isArray(data.items)) return data.items;
+    if (Array.isArray(data.entries)) return data.entries;
+    if (Array.isArray(data.glossary)) return data.glossary;
+    if (Array.isArray(data.data)) return data.data;
+    return [];
+  }
+
+  function normalizeItem(raw) {
+    const type = raw.type || raw.category || raw.kind || "";
+    return {
+      id: raw.id || raw.slug || "",
+      type,
+      title: raw.title || raw.name || "",
+      aliases: raw.aliases || [],
+      summary: raw.summary || raw.description || "",
+      image: raw.image || raw.img || "",
+      url: raw.url || raw.href || "#",
+      tags: raw.tags || [],
+    };
+  }
+
+  async function boot() {
+    try {
+      const raw = await loadJSON();
+      ALL = toArrayShape(raw).map(normalizeItem);
+
+      // Sort master list A→Z once
+      ALL.sort(byTitle);
+
+      // Build unique types (A→Z)
+      const types = Array.from(new Set(ALL.map(i => i.type).filter(Boolean)))
+        .sort((a, b) => a.localeCompare(b, undefined, { sensitivity: "base", numeric: true }));
+
+      renderTypeChips(types);
+      update();
+    } catch (err) {
+      console.error("Failed to initialize glossary:", err);
+      if (els.count) els.count.textContent = "Failed to load glossary.";
+    }
+  }
+
+  // ---------- Filter/search ----------
+  function update() {
+    const q = (els.q?.value || "").trim();
+
+    let list = ALL.filter(it =>
+      (activeType === "" || it.type === activeType) && matchesQuery(it, q)
+    );
+
+    list.sort(byTitle);
+    render(list);
+  }
+
+  // ---------- Wire up ----------
+  document.addEventListener("DOMContentLoaded", () => {
+    els.q?.addEventListener("input", update);
+
+    els.clearInput?.addEventListener("click", () => {
+      if (els.q) { els.q.value = ""; els.q.focus(); }
+      update();
+    });
+
+    els.clearFilters?.addEventListener("click", () => {
+      activeType = "";
+      // clear chip styles
+      els.typeChips?.querySelectorAll(".chip").forEach(c => {
+        c.classList.remove("is-on");
+        c.setAttribute("aria-pressed", "false");
+      });
+      update();
+    });
+
+    boot();
+  });
+})();
+</script>
+
+
+</body>
+
+</html>
