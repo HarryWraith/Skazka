@@ -1,0 +1,390 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skazka - Dark Fantasy Lore</title>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="monster-builder.css"/>
+    <!-- Google Font for a fantasy feel -->
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+
+<body>
+    <div id="navbar"></div><!-- Navbar will be loaded here -->
+
+    <!-- Main Content Area -->
+    <main class="grid-container">
+    <article class="left-column">
+      <section class="sb-panel">
+        <h2 class="sb-title">About</h2>
+        <p>
+          Build a D&amp;D 5e monster statblock and export it as WotC-style text for Foundry’s
+          <em>5e Statblock Importer</em>. Live preview to the right. Paste the exported text in Foundry to create an NPC.
+        </p>
+        <ul class="sb-bullets">
+          <li>Auto ability modifiers &amp; passive Perception</li>
+          <li>CR → Proficiency auto</li>
+          <li>Attack builder &amp; Spellcasting helper</li>
+          <li>Export: WotC text, Builder JSON, Open5e JSON</li>
+        </ul>
+      </section>
+
+      <section class="sb-panel">
+        <h3 class="sb-subtitle">Tips for Foundry import</h3>
+        <ul class="sb-bullets">
+          <li>Keep headings like <strong>Actions</strong>, <strong>Reactions</strong>, <strong>Legendary Actions</strong>.</li>
+          <li>Spell names should match SRD for auto-linking in Foundry.</li>
+          <li>“Hit Points” should include average and dice, e.g. <code>45 (6d8 + 18)</code>.</li>
+        </ul>
+      </section>
+    </article>
+
+    <article class="center-column">
+      <section id="sb-builder" class="sb-panel">
+        <h1 class="sb-title">Monster Statblock Builder</h1>
+
+        <!-- Header -->
+        <div class="sb-grid">
+          <label> Name
+            <input id="name" class="sb-input" placeholder="Gravewrought Myrmidon"/>
+          </label>
+
+          <label> Size
+            <select id="size" class="sb-select">
+              <option>Tiny</option><option>Small</option><option selected>Medium</option>
+              <option>Large</option><option>Huge</option><option>Gargantuan</option>
+            </select>
+          </label>
+
+          <label> Creature Type
+            <div class="sb-two-inline">
+              <select id="typeMain" class="sb-select">
+                <option>Aberration</option>
+                <option>Beast</option>
+                <option>Celestial</option>
+                <option>Construct</option>
+                <option>Dragon</option>
+                <option>Elemental</option>
+                <option>Fey</option>
+                <option>Fiend</option>
+                <option>Giant</option>
+                <option selected>Humanoid</option>
+                <option>Monstrosity</option>
+                <option>Ooze</option>
+                <option>Plant</option>
+                <option>Undead</option>
+                <option value="_custom_">Custom…</option>
+              </select>
+              <input id="typeCustom" class="sb-input" placeholder="Custom type" style="display:none"/>
+            </div>
+            <small class="sb-tip">Optional tags appear in parentheses (e.g., <em>shapechanger, demon</em>).</small>
+            <input id="typeTags" class="sb-input" placeholder="Tags (optional)"/>
+          </label>
+
+          <label> Alignment
+            <select id="alignMain" class="sb-select">
+              <option>lawful good</option>
+              <option>neutral good</option>
+              <option>chaotic good</option>
+              <option>lawful neutral</option>
+              <option selected>neutral</option>
+              <option>chaotic neutral</option>
+              <option>lawful evil</option>
+              <option>neutral evil</option>
+              <option>chaotic evil</option>
+              <option>unaligned</option>
+              <option>any alignment</option>
+            </select>
+          </label>
+        </div>
+
+        <!-- Defense / Vitality -->
+        <div class="sb-grid">
+          <label> Armor Class
+            <input id="ac" class="sb-input" placeholder="17 (plate, shield)"/>
+          </label>
+          <label> Hit Points (avg & dice)
+            <input id="hp" class="sb-input" placeholder="85 (10d8 + 40)"/>
+          </label>
+          <label> Speed
+            <input id="speed" class="sb-input" placeholder="30 ft., climb 20 ft."/>
+          </label>
+          <label> Challenge Rating
+            <input id="cr" class="sb-input" placeholder="5"/>
+          </label>
+        </div>
+
+        <!-- Abilities -->
+        <fieldset class="sb-ability">
+          <legend>Ability Scores</legend>
+          <div class="sb-ability-grid">
+            <label>STR <input id="str" class="sb-input sb-num" type="number" value="16"/></label>
+            <label>DEX <input id="dex" class="sb-input sb-num" type="number" value="12"/></label>
+            <label>CON <input id="con" class="sb-input sb-num" type="number" value="18"/></label>
+            <label>INT <input id="int" class="sb-input sb-num" type="number" value="8"/></label>
+            <label>WIS <input id="wis" class="sb-input sb-num" type="number" value="12"/></label>
+            <label>CHA <input id="cha" class="sb-input sb-num" type="number" value="10"/></label>
+          </div>
+          <label class="sb-inline">
+            <input type="checkbox" id="autoPassive" checked/>
+            Auto-compute Passive Perception (10 + Perception mod)
+          </label>
+        </fieldset>
+
+        <!-- Proficiencies & traits -->
+        <div class="sb-grid">
+          <!-- Saving Throws -->
+          <fieldset class="sb-ability">
+            <legend>Saving Throws</legend>
+
+            <div class="sb-ability-grid" style="margin-top:6px;">
+              <label>STR
+                <select id="save_str" class="sb-select">
+                  <option value="0" selected>None</option>
+                  <option value="1">Proficient</option>
+                  <option value="2">Expertise</option>
+                </select>
+              </label>
+              <label>DEX
+                <select id="save_dex" class="sb-select">
+                  <option value="0" selected>None</option>
+                  <option value="1">Proficient</option>
+                  <option value="2">Expertise</option>
+                </select>
+              </label>
+              <label>CON
+                <select id="save_con" class="sb-select">
+                  <option value="0" selected>None</option>
+                  <option value="1">Proficient</option>
+                  <option value="2">Expertise</option>
+                </select>
+              </label>
+              <label>INT
+                <select id="save_int" class="sb-select">
+                  <option value="0" selected>None</option>
+                  <option value="1">Proficient</option>
+                  <option value="2">Expertise</option>
+                </select>
+              </label>
+              <label>WIS
+                <select id="save_wis" class="sb-select">
+                  <option value="0" selected>None</option>
+                  <option value="1">Proficient</option>
+                  <option value="2">Expertise</option>
+                </select>
+              </label>
+              <label>CHA
+                <select id="save_cha" class="sb-select">
+                  <option value="0" selected>None</option>
+                  <option value="1">Proficient</option>
+                  <option value="2">Expertise</option>
+                </select>
+              </label>
+            </div>
+
+            <!-- NEW: override (auto-calc is default) -->
+            <label class="sb-inline" style="margin-top:6px;">
+              <input type="checkbox" id="saveOverride" />
+              Override saving throw calculation (use manual values below)
+            </label>
+
+            <label for="saves" class="sb-inline" style="margin-top:6px;">Manual overrides (optional)</label>
+            <input id="saves" class="sb-input" placeholder="e.g., Str +6, Dex +5"/>
+            <small class="sb-tip">When override is ON, the line uses only the manual values above.</small>
+          </fieldset>
+          <!-- /Saving Throws -->
+
+          <label> Skills
+            <input id="skills" class="sb-input" placeholder="Perception +5, Stealth +6"/>
+          </label>
+          <label> Damage Vulnerabilities
+            <input id="vuln" class="sb-input" placeholder="radiant"/>
+          </label>
+          <label> Damage Resistances
+            <input id="resist" class="sb-input" placeholder="cold; bludgeoning, piercing, and slashing from nonmagical attacks"/>
+          </label>
+          <label> Damage Immunities
+            <input id="imm" class="sb-input" placeholder="poison"/>
+          </label>
+          <label> Condition Immunities
+            <input id="condImm" class="sb-input" placeholder="charmed, poisoned"/>
+          </label>
+          <label> Senses
+            <input id="senses" class="sb-input" placeholder="darkvision 60 ft., tremorsense 30 ft., passive Perception 15"/>
+          </label>
+          <label> Languages
+            <input id="langs" class="sb-input" placeholder="Common, Infernal"/>
+          </label>
+        </div>
+
+        <!-- Helpers -->
+        <section class="sb-helper">
+          <h2 class="sb-subtitle">Quick Attack Builder</h2>
+          <div class="sb-mini-grid">
+            <label> Name <input id="atk_name" class="sb-input" placeholder="Longsword"/></label>
+            <label> Attack Kind
+              <select id="atk_kind" class="sb-select">
+                <option value="Melee Weapon Attack">Melee Weapon Attack</option>
+                <option value="Ranged Weapon Attack">Ranged Weapon Attack</option>
+                <option value="Melee or Ranged Weapon Attack">Melee or Ranged Weapon Attack</option>
+                <option value="Melee Spell Attack">Melee Spell Attack</option>
+                <option value="Ranged Spell Attack">Ranged Spell Attack</option>
+              </select>
+            </label>
+            <label> Ability
+              <select id="atk_ability" class="sb-select">
+                <option value="STR">STR</option><option value="DEX">DEX</option>
+                <option value="CON">CON</option><option value="INT">INT</option>
+                <option value="WIS">WIS</option><option value="CHA">CHA</option>
+              </select>
+            </label>
+            <label class="sb-inline"><input type="checkbox" id="atk_prof" checked/> Proficient</label>
+            <label> Extra to-hit <input id="atk_bonus_extra" class="sb-input sb-num" type="number" value="0"/></label>
+            <label> Reach / Range <input id="atk_range" class="sb-input" placeholder="reach 5 ft. / range 20/60 ft."/></label>
+            <label> Target(s) <input id="atk_targets" class="sb-input" placeholder="one target"/></label>
+            <label> Damage Dice <input id="atk_dice" class="sb-input" placeholder="1d8"/></label>
+            <label class="sb-inline"><input type="checkbox" id="atk_add_mod" checked/> add ability mod to damage</label>
+            <label> Damage Type <input id="atk_dtype" class="sb-input" placeholder="slashing"/></label>
+            <label> Rider (optional) <input id="atk_rider" class="sb-input" placeholder="and the target is knocked prone."/></label>
+          </div>
+          <div class="sb-export">
+            <button id="atk_add_action" class="sb-btn">Add as Action</button>
+            <button id="atk_preview" class="sb-ghost-btn">Preview Line</button>
+          </div>
+          <pre id="atk_preview_out" class="sb-pre sb-pre--small"></pre>
+        </section>
+
+        <section class="sb-helper">
+          <h2 class="sb-subtitle">Spellcasting Helper</h2>
+          <div class="sb-mini-grid">
+            <label> Mode
+              <select id="sc_mode" class="sb-select">
+                <option value="prepared">Spellcasting (prepared)</option>
+                <option value="innate">Innate Spellcasting</option>
+              </select>
+            </label>
+            <label> Ability
+              <select id="sc_ability" class="sb-select">
+                <option value="INT">INT</option><option value="WIS">WIS</option><option value="CHA" selected>CHA</option>
+              </select>
+            </label>
+            <label class="sb-inline"><input type="checkbox" id="sc_prof" checked/> Proficient (uses PB)</label>
+            <label> Caster level <input id="sc_level" class="sb-input sb-num" type="number" value="5"/></label>
+            <label> Class/Source <input id="sc_class" class="sb-input" placeholder="wizard / warlock / innate"/></label>
+          </div>
+
+          <!-- Prepared lists -->
+          <div id="sc_prepared" class="sb-spells">
+            <label> Cantrips (at will) <input id="sc_c0" class="sb-input" placeholder="fire bolt, mage hand"/></label>
+            <label> 1st (slots) <input id="sc_s1" class="sb-input" placeholder="4"/></label>
+            <label> 1st level spells <input id="sc_c1" class="sb-input" placeholder="shield, magic missile"/></label>
+            <label> 2nd (slots) <input id="sc_s2" class="sb-input" placeholder="3"/></label>
+            <label> 2nd level spells <input id="sc_c2" class="sb-input" placeholder="blur, misty step"/></label>
+            <label> 3rd (slots) <input id="sc_s3" class="sb-input" placeholder="2"/></label>
+            <label> 3rd level spells <input id="sc_c3" class="sb-input" placeholder="counterspell, fireball"/></label>
+            <label> Higher levels (optional) <textarea id="sc_higher" class="sb-input" placeholder="4th (3 slots): blight, dimension door&#10;5th (1 slot): cone of cold"></textarea></label>
+          </div>
+
+          <!-- Innate lists -->
+          <div id="sc_innate" class="sb-spells" style="display:none">
+            <label> At will <input id="si_atwill" class="sb-input" placeholder="detect magic, mage hand"/></label>
+            <label> 1/day each <input id="si_1" class="sb-input" placeholder="dimension door"/></label>
+            <label> 2/day each <input id="si_2" class="sb-input" placeholder="misty step"/></label>
+            <label> 3/day each <input id="si_3" class="sb-input" placeholder="shield"/></label>
+            <label> Other (free text) <textarea id="si_other" class="sb-input" placeholder="Truesight 60 ft. while concentrating on X"></textarea></label>
+          </div>
+
+          <div class="sb-export">
+            <button id="sc_insert_trait" class="sb-btn">Insert into Traits</button>
+            <button id="sc_preview" class="sb-ghost-btn">Preview Block</button>
+          </div>
+          <pre id="sc_preview_out" class="sb-pre sb-pre--small"></pre>
+        </section>
+
+        <!-- Traits / Actions / Reactions / Legendary -->
+        <section class="sb-repeaters">
+          <div class="sb-row">
+            <h3 class="sb-subtitle">Traits</h3>
+            <div id="traits" class="sb-list"></div>
+            <button type="button" class="sb-btn" data-add="traits">+ Add Trait</button>
+          </div>
+
+          <div class="sb-row">
+            <h3 class="sb-subtitle">Actions</h3>
+            <div id="actions" class="sb-list"></div>
+            <button type="button" class="sb-btn" data-add="actions">+ Add Action</button>
+          </div>
+
+          <div class="sb-row">
+            <h3 class="sb-subtitle">Reactions</h3>
+            <div id="reactions" class="sb-list"></div>
+            <button type="button" class="sb-btn" data-add="reactions">+ Add Reaction</button>
+          </div>
+
+          <div class="sb-row">
+            <h3 class="sb-subtitle">Legendary Actions</h3>
+            <p class="sb-tip">Add a preface line if needed, e.g. “The creature can take 3 legendary actions, choosing from the options below…”</p>
+            <div id="legendary" class="sb-list"></div>
+            <button type="button" class="sb-btn" data-add="legendary">+ Add Legendary Action</button>
+          </div>
+
+          <div class="sb-row">
+            <h3 class="sb-subtitle">Lair Actions (optional)</h3>
+            <div id="lair" class="sb-list"></div>
+            <button type="button" class="sb-btn" data-add="lair">+ Add Lair Action</button>
+          </div>
+
+          <div class="sb-row">
+            <h3 class="sb-subtitle">Bonus Actions</h3>
+            <div id="bonus" class="sb-list"></div>
+            <button type="button" class="sb-btn" data-add="bonus">+ Add Bonus Action</button>
+          </div>
+        </section>
+
+        <!-- Export -->
+        <div class="sb-export">
+          <button id="copyText" class="sb-btn">Copy WotC Text</button>
+          <button id="downloadTxt" class="sb-ghost-btn">Download .txt</button>
+          <button id="downloadJson" class="sb-ghost-btn">Download .json (builder)</button>
+          <button id="downloadO5e" class="sb-ghost-btn">Download .open5e.json</button>
+          <button id="importJsonBtn" class="sb-ghost-btn">Import .json</button>
+          <input id="importJsonFile" type="file" accept=".json,application/json" style="display:none" />
+        </div>
+      </section>
+    </article>
+
+    <article class="right-column">
+      <section id="sb-preview" class="sb-panel">
+        <h2 class="sb-title">Preview</h2>
+        <pre id="previewOut" class="sb-pre">Start typing on the left…</pre>
+      </section>
+    </article>
+  </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <img src="assets/logo.png" alt="Skazka Logo">
+            <p class="footer-tagline">Where shadows speak and legends walk.</p>
+            <nav class="footer-nav">
+                <a href="contact.html">Contact</a>
+            </nav>
+            <p class="footer-copy">&copy; 2025 SkazkaWorld. All stories reserved.</p>
+        </div>
+    </footer>
+
+    
+
+    <script src="main.js"></script>
+    
+   
+     <script src="monster-builder.js" defer></script>
+
+
+</body>
+
+</html>

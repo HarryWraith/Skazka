@@ -19,110 +19,115 @@
 
 
     <!-- Main Content Area -->
-   <main class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
-    <article class="left-column"> <!-- LEFT: Statistics + Macros -->
-      <!-- LEFT: Attribute Roller (4d6 drop lowest ×6) -->
-<section id="skz-attr-roller" class="skz-attr" aria-label="D&D Attribute Generator">
-  <header class="skz-attr-head">
-    <h2 class="skz-title">Attributes (4d6 drop lowest ×6)</h2>
-    <p class="skz-subtle">Order: Strength, Intelligence, Constitution, Dexterity, Wisdom, Charisma</p>
-    <div class="skz-attr-actions">
-      <button id="skz-attr-generate" class="skz-btn" type="button">Generate</button>
-      <button id="skz-attr-copy" class="skz-ghost-btn" type="button">Copy</button>
-      <button id="skz-attr-clear" class="skz-ghost-btn" type="button">Clear</button>
-    </div>
-  </header>
+    <main class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
+        <article class="left-column"> <!-- LEFT: Statistics + Macros -->
+            <!-- LEFT: Attribute Roller (4d6 drop lowest ×6) -->
+            <section id="skz-attr-roller" class="skz-attr" aria-label="D&D Attribute Generator">
+                <header class="skz-attr-head">
+                    <h2 class="skz-title">Attributes (4d6 drop lowest ×6)</h2>
+                    <p class="skz-subtle">Order: Strength, Intelligence, Constitution, Dexterity, Wisdom, Charisma</p>
+                    <div class="skz-attr-actions">
+                        <button id="skz-attr-generate" class="skz-btn" type="button">Generate</button>
+                        <button id="skz-attr-copy" class="skz-ghost-btn" type="button">Copy</button>
+                        <button id="skz-attr-clear" class="skz-ghost-btn" type="button">Clear</button>
+                    </div>
+                </header>
 
-  <div class="skz-attr-body">
-    <div class="skz-attr-tools">
-      <!-- JS injects: Sort, Standard Array, Export-with-mods -->
-    </div>
+                <div class="skz-attr-body">
+                    <div class="skz-attr-tools">
+                        <!-- JS injects: Sort, Standard Array, Export-with-mods -->
+                    </div>
 
-    <!-- Pool of scores (drag from here to abilities; drag back to unassign) -->
-    <div id="skz-attr-pool" class="skz-pool" aria-label="Score Pool (drag onto abilities)"></div>
+                    <!-- Pool of scores (drag from here to abilities; drag back to unassign) -->
+                    <div id="skz-attr-pool" class="skz-pool" aria-label="Score Pool (drag onto abilities)"></div>
 
-    <table class="skz-attr-table" aria-describedby="skz-attr-note">
-      <thead>
-        <tr>
-          <th scope="col">Ability</th>
-          <th scope="col">Score</th>
-        </tr>
-      </thead>
-      <tbody id="skz-attr-tbody"></tbody>
-    </table>
+                    <table class="skz-attr-table" aria-describedby="skz-attr-note">
+                        <thead>
+                            <tr>
+                                <th scope="col">Ability</th>
+                                <th scope="col">Score</th>
+                            </tr>
+                        </thead>
+                        <tbody id="skz-attr-tbody"></tbody>
+                    </table>
 
-    <p id="skz-attr-note" class="skz-subtle">
-      Each ability is 4d6, lowest die dropped, summed; done 6 times.
-    </p>
-    <div id="skz-attr-info" class="skz-info" role="note">
-      <strong>Tip:</strong> Drag a score to another ability to reassign. Drag to the pool to unassign.
-      You can also click one score, then another, to swap. Use the 🔒 lock to protect an ability.
-    </div>
-  </div>
-</section>
-    </article>
+                    <p id="skz-attr-note" class="skz-subtle">
+                        Each ability is 4d6, lowest die dropped, summed; done 6 times.
+                    </p>
+                    <div id="skz-attr-info" class="skz-info" role="note">
+                        <strong>Tip:</strong> Drag a score to another ability to reassign. Drag to the pool to unassign.
+                        You can also click one score, then another, to swap. Use the 🔒 lock to protect an ability.
+                    </div>
+                </div>
+            </section>
+        </article>
 
-    <article class="center-column"><!-- MIDDLE: Dice Roller -->
-    <section id="skz-dice-roller" class="skz-roller" aria-label="Advanced D&D Dice Roller">
-  <header class="skz-roller-head">
-    <h2 class="skz-title">Dice Roller</h2>
+        <article class="center-column"><!-- MIDDLE: Dice Roller -->
+            <section id="skz-dice-roller" class="skz-roller" aria-label="Advanced D&D Dice Roller">
+                <header class="skz-roller-head">
+                    <h2 class="skz-title">Dice Roller</h2>
 
-    <div class="skz-controls">
-      <div class="skz-mode">
-        <label for="skz-mode" class="skz-label">Mode</label>
-        <div class="skz-slider-wrap" data-mode="normal">
-          <span class="skz-tick" aria-hidden="true">Dis</span>
-          <input id="skz-mode" class="skz-slider" type="range" min="0" max="2" step="1" value="1" aria-valuemin="0" aria-valuemax="2" aria-valuenow="1" aria-valuetext="Normal">
-          <span class="skz-tick" aria-hidden="true">Adv</span>
-        </div>
-        <div id="skz-mode-label" class="skz-mode-label" aria-live="polite">Normal</div>
-      </div>
+                    <div class="skz-controls">
+                        <div class="skz-mode">
+                            <label for="skz-mode" class="skz-label">Mode</label>
+                            <div class="skz-slider-wrap" data-mode="normal">
+                                <span class="skz-tick" aria-hidden="true">Dis</span>
+                                <input id="skz-mode" class="skz-slider" type="range" min="0" max="2" step="1" value="1"
+                                    aria-valuemin="0" aria-valuemax="2" aria-valuenow="1" aria-valuetext="Normal">
+                                <span class="skz-tick" aria-hidden="true">Adv</span>
+                            </div>
+                            <div id="skz-mode-label" class="skz-mode-label" aria-live="polite">Normal</div>
+                        </div>
 
-      <div class="skz-mod">
-        <label for="skz-mod-input" class="skz-label">Modifier</label>
-        <div class="skz-mod-field">
-          <span class="skz-mod-prefix" aria-hidden="true">±</span>
-          <input id="skz-mod-input" class="skz-mod-input" type="text" inputmode="numeric" pattern="[-+]?\\d*" placeholder="+0" value="+0" aria-label="Modifier, like +2 or -1">
-        </div>
-      </div>
-    </div>
-  </header>
+                        <div class="skz-mod">
+                            <label for="skz-mod-input" class="skz-label">Modifier</label>
+                            <div class="skz-mod-field">
+                                <span class="skz-mod-prefix" aria-hidden="true">±</span>
+                                <!-- Use single backslashes OR just digit ranges -->
+                                <input id="skz-mod-input" class="skz-mod-input" type="text" inputmode="numeric"
+                                    pattern="[+\-]?[0-9]*" placeholder="+0" value="+0"
+                                    aria-label="Modifier, like +2 or -1">
+                            </div>
+                        </div>
+                    </div>
+                </header>
 
-  <div class="skz-die-grid" role="group" aria-label="Dice">
-    <button class="skz-die" data-die="4"  aria-label="Roll a d4">d4</button>
-    <button class="skz-die" data-die="6"  aria-label="Roll a d6">d6</button>
-    <button class="skz-die" data-die="8"  aria-label="Roll a d8">d8</button>
-    <button class="skz-die" data-die="10" aria-label="Roll a d10">d10</button>
-    <button class="skz-die" data-die="12" aria-label="Roll a d12">d12</button>
-    <button class="skz-die" data-die="20" aria-label="Roll a d20">d20</button>
-    <button class="skz-die" data-die="100" aria-label="Roll a d100">d100</button>
-  </div>
+                <div class="skz-die-grid" role="group" aria-label="Dice">
+                    <button class="skz-die" data-die="4" aria-label="Roll a d4">d4</button>
+                    <button class="skz-die" data-die="6" aria-label="Roll a d6">d6</button>
+                    <button class="skz-die" data-die="8" aria-label="Roll a d8">d8</button>
+                    <button class="skz-die" data-die="10" aria-label="Roll a d10">d10</button>
+                    <button class="skz-die" data-die="12" aria-label="Roll a d12">d12</button>
+                    <button class="skz-die" data-die="20" aria-label="Roll a d20">d20</button>
+                    <button class="skz-die" data-die="100" aria-label="Roll a d100">d100</button>
+                </div>
 
-  <section class="skz-output" aria-live="polite" aria-atomic="true">
-    <div class="skz-last">
-      <div class="skz-last-title">Last roll</div>
-      <div class="skz-last-body" id="skz-last-body">—</div>
-      <div class="skz-last-actions">
-        <button id="skz-copy-last" class="skz-ghost-btn" type="button" aria-label="Copy last roll">Copy</button>
-      </div>
-    </div>
-  </section>
-</section>
-    </article>
+                <section class="skz-output" aria-live="polite" aria-atomic="true">
+                    <div class="skz-last">
+                        <div class="skz-last-title">Last roll</div>
+                        <div class="skz-last-body" id="skz-last-body">—</div>
+                        <div class="skz-last-actions">
+                            <button id="skz-copy-last" class="skz-ghost-btn" type="button"
+                                aria-label="Copy last roll">Copy</button>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </article>
 
-    <article class="right-column"> <!-- RIGHT: History -->
-     <!-- RIGHT: History -->
-<section id="skz-history" class="skz-history">
-  <h2 class="skz-history-title">History</h2>
-  <ol id="skz-history-list" class="skz-history-list" reversed></ol>
-  <div class="skz-history-actions">
-    <button id="skz-clear-history" class="skz-ghost-btn" type="button">Clear</button>
-  </div>
-</section>
-    </article>
-  </main>
+        <article class="right-column"> <!-- RIGHT: History -->
+            <!-- RIGHT: History -->
+            <section id="skz-history" class="skz-history">
+                <h2 class="skz-history-title">History</h2>
+                <ol id="skz-history-list" class="skz-history-list" reversed></ol>
+                <div class="skz-history-actions">
+                    <button id="skz-clear-history" class="skz-ghost-btn" type="button">Clear</button>
+                </div>
+            </section>
+        </article>
+    </main>
 
-  
+
     <footer class="footer">
         <div class="footer-inner">
             <img src="assets/logo.png" alt="Skazka Logo">
@@ -134,30 +139,12 @@
         </div>
     </footer>
 
-   
+
 
     <script src="main.js"></script>
-    <script>
-        // Load navbar.html dynamically        
-        fetch("navbar.html")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById("navbar").innerHTML = data;
-
-                // Now that navbar is loaded, attach hamburger event
-                const hamburger = document.querySelector(".hamburger");
-                const navLinks = document.querySelector(".nav-links");
-
-                if (hamburger && navLinks) {
-                    hamburger.addEventListener("click", () => {
-                        navLinks.classList.toggle("active");
-                        hamburger.classList.toggle("open");
-                    });
-                }
-            });
-    </script>
+   
     <script defer src="dice-roller.js"></script>
-    
+
 
 </body>
 

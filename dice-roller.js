@@ -286,8 +286,8 @@
 
       // tooltip text
       const coreTip = tips[sides] ? ` • ${tips[sides]}` : "";
-      const setTitle = ()=> btn.title = `Left-click: add 1 (${counts[sides]}d${sides} planned)\nRight-click: set to 1${coreTip}`;
-      setTitle();
+      const setTitle = () =>
+        btn.title = `Left-click: add 1 (${counts[sides]}d${sides} planned)\nRight-click: −1 (min 0)${coreTip}`;
 
       // LEFT-CLICK: increment planned count
       btn.addEventListener("click", ()=>{
@@ -296,11 +296,14 @@
       });
 
       // RIGHT-CLICK: set planned count to 1 (no roll)
-      btn.addEventListener("contextmenu", (e)=>{
-        e.preventDefault();
-        counts[sides] = 1;
-        updateBadge(); setTitle();
-      });
+      // RIGHT-CLICK: decrement to 0 (no roll)
+btn.addEventListener("contextmenu", (e) => {
+  e.preventDefault();
+  counts[sides] = Math.max(0, counts[sides] - 1);  // <- was: counts[sides] = 1;
+  updateBadge();
+  setTitle();
+  if (typeof updateComposition === "function") updateComposition(); // safe if you added composition preview
+});
     });
 
     // Help tip (once)
@@ -522,8 +525,16 @@
   function attrLoad(){ try{ return JSON.parse(localStorage.getItem(LS_ATTR)||"null") }catch{ return null } }
 
   function renderAttr(){
-    const tbody=$("#skz-attr-tbody"); const pool=$("#skz-attr-pool"); const tools=$(".skz-attr-tools");
+    const tbody=$("#skz-attr-tbody"); 
+    const pool=$("#skz-attr-pool"); 
+    const tools=$(".skz-attr-tools");
     if(!tbody||!pool||!tools) return;
+
+    // ---- NEW: default empty state guards ----
+  if (!Array.isArray(attrState.assignment)) attrState.assignment = [null, null, null, null, null, null];
+  if (!Array.isArray(attrState.rolls))      attrState.rolls = [];
+  if (!Array.isArray(attrState.pool))       attrState.pool = [];
+  // -----
 
     // Tools (once)
     if(!tools.dataset.inited){

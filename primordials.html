@@ -69,25 +69,7 @@
 
     <script src="main.js"></script>
     <script src="popup.js"></script>
-    <script>
-        // Load navbar.html dynamically        
-        fetch("navbar.html")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById("navbar").innerHTML = data;
-
-                // Now that navbar is loaded, attach hamburger event
-                const hamburger = document.querySelector(".hamburger");
-                const navLinks = document.querySelector(".nav-links");
-
-                if (hamburger && navLinks) {
-                    hamburger.addEventListener("click", () => {
-                        navLinks.classList.toggle("active");
-                        hamburger.classList.toggle("open");
-                    });
-                }
-            });
-    </script>
+   
 
 
 </body>
