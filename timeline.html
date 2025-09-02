@@ -1,45 +1,70 @@
 <!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Skazka - Dark Fantasy Lore</title>
-    <!-- Link to external CSS -->
-    <link rel="stylesheet" href="styles.css" />
-    <!-- Google Font for a fantasy feel -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="icon" type="image/png" href="assets/logo.png" />
-  </head>
-  <!--change folder name-->
-  <body>
-    
-     
-      <div id="navbar"></div><!-- Navbar will be loaded here -->
-      <div class="timeline">
-      <div  id="timeline">
-        <h1>Timeline</h1>
-      </div>
-      </div>
 
-  <footer class="footer">
-    <div class="footer-inner">
-      <img src="assets/logo.png" alt="Skazka Logo" />
-      <p class="footer-tagline">Where shadows speak and legends walk.</p>
-      <nav class="footer-nav">
-        <a href="contact.html">Contact</a>
-      </nav>
-      <p class="footer-copy">&copy; 2025 SkazkaWorld. All stories reserved.</p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skazka - Dark Fantasy Lore</title>
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Google Font for a fantasy feel -->
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+</head>
+<!--change folder name-->
+
+<body>
+
+
+  <div id="navbar"></div><!-- Navbar will be loaded here -->
+  <div class="timeline">
+    <div id="timeline">
+      <h1>Timeline</h1>
     </div>
-   
+  </div>
 
-    <script src="main.js"></script>
-    <script src="timeline.js"></script>
-   
-    
- 
-  </body>
+  <div id="footer"></div>
+
+
+  <script src="main.js"></script>
+  <script src="timeline.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const tl = document.querySelector('.timeline');
+      if (!tl) return;
+
+      // Gate the CSS animations
+      tl.classList.add('reveal-ready');
+
+      // Click to expand/collapse
+      tl.querySelectorAll('.event').forEach(ev => {
+        const header = ev.querySelector('.event-header');
+        if (header) header.addEventListener('click', () => ev.classList.toggle('open'));
+      });
+
+      // Reveal on scroll
+      if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach(e => {
+            if (e.isIntersecting) {
+              e.target.classList.add('in-view');
+              io.unobserve(e.target);
+            }
+          });
+        }, { root: null, threshold: 0.15 });
+
+        tl.querySelectorAll('.event').forEach(ev => io.observe(ev));
+      } else {
+        // Fallback: just show them
+        tl.querySelectorAll('.event').forEach(ev => ev.classList.add('in-view'));
+      }
+    });
+  </script>
+
+
+
+
+</body>
+
 </html>

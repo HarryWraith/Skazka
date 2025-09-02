@@ -2,7 +2,8 @@
   {
     "year": "-10000",
     "title": "Ascent from darkness",
-    "details": "The first Dark Elves emerge from the Underworld and are given the gift of Everlight by Aeter."
+    "details": "The first Dark Elves emerge from the Underworld and are given the gift of Everlight by Aeter. Age of The Sun begins.",
+    "epoch": true
   },
   {
     "year": "-9000",
@@ -47,7 +48,8 @@
   {
     "year": "0",
     "title": "Starfall",
-    "details": "Kelos is struck by a devastating meteor shower. The impact iniates a cataclysmic event that begins a mini ice age. Priests and others who rely on their deities as the source of their magic report a dimming of their divine connection. The Walking Gods, or Prir, are not seen on Skazka from this point onwards."
+    "details": "Kelos is struck by a devastating meteor shower. The impact iniates a cataclysmic event that begins a mini ice age. Priests and others who rely on their deities as the source of their magic report a dimming of their divine connection. The Walking Gods, or Prir, are not seen on Skazka from this point onwards.",
+    "epoch": true
   },
   {
     "year": "2",

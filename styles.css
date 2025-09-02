@@ -255,33 +255,337 @@ article li{ margin-bottom:15px; text-align:justify; }
 }
 
 /* ===== Timeline ===== */
-.timeline{
-  display:block; margin:100px auto 20px; width:800px; padding:14px;
-  height:80vh; overflow:auto;
-  background:url("assets/timeline.jpg") center top / cover repeat-y;
-}
-.event{ margin:18px 0; cursor:pointer; }
-.event-header{ display:flex; align-items:center; }
-.event-year{ font-weight:bolder; font-size:1.8rem; color:var(--sb-gold); }
-.event-title{ font-style:italic; font-size:1.2rem; color:var(--sb-gold-strong); }
 
+.tl-title{
+  width: min(1100px, calc(100% - 32px));
+  margin: 0 auto 18px;
+  padding: 10px 16px;
+  text-align: center;
+  font-size: clamp(1.6rem, 2.2vw, 2.2rem);
+  font-weight: 900;
+  color: var(--sb-text, #e6dccb);
+  background: var(--sb-panel, #12131a);
+  border: 1px solid var(--sb-border, #2a2d36);
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.04);
+  position: relative;
+}
+.tl-title::after{
+  /* faint hairline aligned to the spine below */
+  content:"";
+  position:absolute; left:50%; top:100%;
+  width:1px; height:16px;
+  transform:translateX(-50%);
+  background: color-mix(in oklab, var(--sb-gold, #c2a13a) 60%, transparent);
+  opacity:.35;
+}
+
+/* ===== Timeline ===== */
+
+/* ============ Timeline (Skazka) ============ */
+
+/* Container + glowing spine */
+.timeline{
+  --title-clearance: 84px;       /* how far below the title the spine starts */
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto 40px;
+  padding: 24px 0;
+}
+
+/* Title inside the timeline */
+.timeline h1{
+  position: relative;
+  z-index: 1;
+  width: min(1100px, calc(100% - 32px));
+  margin: 0 auto 18px;
+  padding: 10px 16px;
+  text-align: center;
+  font-size: clamp(1.8rem, 2.2vw, 2.4rem);
+  font-weight: 900;
+  color: var(--sb-text, #e6dccb);
+  background: var(--sb-panel, #12131a);
+  border: 1px solid var(--sb-border, #2a2d36);
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.04);
+}
+
+/* Spine (centered), begins below the title */
+.timeline::before{
+  content:"";
+  position: absolute;
+  top: var(--title-clearance);
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(226,184,77,.65) 0%,
+      rgba(226,184,77,.28) 15%,
+      rgba(226,184,77,.20) 50%,
+      rgba(226,184,77,.28) 85%,
+      rgba(226,184,77,.65) 100%
+    );
+  box-shadow: 0 0 10px rgba(226,184,77,.22);
+  opacity: .8;
+  pointer-events: none;
+}
+
+/* Soft halo around the spine */
+.timeline::after{
+  content:"";
+  position: absolute;
+  top: var(--title-clearance);
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  background: radial-gradient(closest-side, rgba(226,184,77,.12), transparent 70%);
+  opacity: .35;
+  pointer-events: none;
+  filter: blur(.5px);
+}
+
+/* Epoch cards */
+.event--epoch .event-header{
+  border: 2px solid color-mix(in oklab, var(--sb-gold,#c2a13a) 78%, #000);
+  background-color: rgb(10, 118, 148);
+  box-shadow:
+    0 0 0 1px rgba(226,184,77,.16) inset,
+    0 0 22px rgba(226,184,77,.18);
+}
+
+/* subtle inner ring for a double-border feel */
+.event--epoch .event-header::after{
+  content:"";
+  position:absolute;
+  inset: 6px;
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 1px rgba(226,184,77,.22);
+  pointer-events:none;
+}
+
+/* tighten up the palette on epoch */
+.event--epoch .event-year{
+  color: var(--sb-gold-strong,#e1b84d);
+  text-shadow: 0 0 6px rgba(226,184,77,.25);
+}
+.event--epoch .event-title{
+  color: #faf5e5;
+  letter-spacing: .3px;
+}
+
+/* little rotated diamond corners (added via JS) */
+.event--epoch .ornament{
+  position:absolute;
+  top:-10px;
+  width:18px; height:18px;
+  transform: rotate(45deg);
+  background:#0f1117;
+  border:2px solid var(--sb-gold-strong,#e1b84d);
+  border-radius:2px;
+  box-shadow: 0 0 10px rgba(226,184,77,.28);
+}
+.event--epoch .ornament--left{ left:-10px; }
+.event--epoch .ornament--right{ right:-10px; }
+
+/* thicker/brighter branch for epoch entries */
+#tl-branches .branch--epoch{
+  stroke-width: 3.5;
+  opacity: 1;
+  filter: drop-shadow(0 0 8px rgba(226,184,77,.35));
+}
+
+/* If you still have a header dot somewhere, hide it for epoch cards */
+.event--epoch .event-header::before{ display:none; }
+
+/* Event blocks alternate left/right */
+.event{
+  position: relative;
+  width: min(540px, calc(50% - 48px));
+  padding: 0;
+  margin: 22px 0;
+  will-change: transform, filter;
+}
+.event:nth-child(even){ margin-left: auto; }
+
+/* Header card */
+.event-header{
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border: 1px solid var(--sb-border, #2a2d36);
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(18,19,26,.75), rgba(23,25,34,.75));
+  backdrop-filter: saturate(120%) blur(2px);
+  box-shadow: 0 3px 12px rgba(0,0,0,.32), inset 0 1px 0 rgba(255,255,255,.04);
+  cursor: pointer;
+  color: var(--sb-text, #e6dccb);
+}
+.event-header:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(226,184,77,.25), 0 4px 16px rgba(0,0,0,.4);
+}
+
+/* Remove legacy dots completely */
+.event::before,
+.event:nth-child(even)::before,
+.event-header::before{
+  content: none !important;
+  display: none !important;
+}
+
+/* Year + title text sizes */
+.event-year{
+  font-weight: bolder;
+  font-size: clamp(1.2rem, 0.7vw + 1rem, 1.6rem);
+  color: var(--sb-gold, #c2a13a);
+  margin-right: 6px;
+}
+.event-title{
+  color: var(--sb-text, #e6dccb);
+  font-size: clamp(1.25rem, 0.75vw + 1rem, 1.7rem);
+  letter-spacing: .2px;
+}
+
+/* Rune icon (keep or remove; if you want it gone, uncomment display:none) */
+.rune{
+  width: 28px; height: 28px;
+  filter: drop-shadow(0 0 6px rgba(226,184,77,.15));
+  transition: transform .25s ease, filter .25s ease;
+}
+/* .rune{ display:none !important; } */
+.event-header:hover .rune{
+  transform: rotate(-6deg) scale(1.03);
+  filter: drop-shadow(0 0 10px rgba(226,184,77,.25));
+}
+
+/* Details panel */
 .event-details{
-  max-height:0; overflow:hidden; opacity:0;
-  transition:max-height .4s, opacity .4s;
-  padding-left:36px; font-size:.9em; color:var(--sb-dim);
+  max-height: 0; overflow: hidden; opacity: 0;
+  transition: max-height .35s ease, opacity .35s ease, padding .25s ease;
+  padding: 0 14px;
+  border-left: 1px dashed var(--sb-border, #2a2d36);
+  margin-left: 10px;
+  color: var(--sb-dim, #b9b09e);
+  line-height: 1.6;
+  font-size: clamp(1.15rem, 0.6vw + 1rem, 1.3rem);
+  letter-spacing: .2px;
 }
 .event.open .event-details{
-  max-height:200px; opacity:1; margin-top:4px;
-  margin-left:.8rem; padding-left:1.4rem; font-size:1.2rem; line-height:1.4;
-  color:var(--sb-text); border-left:1px solid var(--sb-gold);
+  max-height: 480px;
+  opacity: 1;
+  padding: 10px 14px 8px;
 }
-.rune{
-  flex-shrink:0; width:28px; height:28px; margin-right:8px;
-  background:url("assets/rune-marker.png") center/contain no-repeat;
-  filter:grayscale(40%) brightness(1);
-  transition:filter .3s, transform .35s;
+
+/* Open accent/lift */
+.event.open{ transform: translateY(-2px); }
+.event.open .event-header{
+  border-color: color-mix(in oklab, var(--sb-gold,#c2a13a) 65%, var(--sb-border,#2a2d36));
+  box-shadow: 0 8px 24px rgba(0,0,0,.45), 0 0 0 1px rgba(226,184,77,.12) inset;
 }
-.rune.open{ filter:grayscale(0) brightness(1.35); }
+
+/* Reveal-on-scroll (JS-gated) */
+.event{ opacity: 1; transform: none; }                /* no-JS safe default */
+.timeline.reveal-ready .event{
+  opacity: 0;
+  transform: translateY(16px);
+}
+.timeline.reveal-ready .event.in-view{
+  opacity: 1;
+  transform: none;
+  transition: transform .5s cubic-bezier(.2,.7,.2,1), opacity .6s ease;
+}
+
+/* === SVG branch overlay (drawn by timeline.js) === */
+#tl-branches{
+  position: absolute;
+  inset: 0;                 /* cover the whole timeline */
+  pointer-events: none;     /* don’t block clicks */
+  z-index: 0;               /* behind the cards */
+}
+
+/* Make sure title + cards appear above the SVG */
+.timeline h1,
+.tl-title,
+.event{
+  position: relative;
+  z-index: 1;
+}
+
+/* Stroke style for branches (antique gold glow) */
+#tl-branches .branch {
+  fill: none;
+  stroke: color-mix(in oklab, var(--sb-gold, #c2a13a) 85%, #9a7b23);
+  stroke-width: 2.25;
+  stroke-linecap: butt;          /* <- square ends (no dot-like caps) */
+  filter: drop-shadow(0 0 6px rgba(226,184,77,.25));
+  opacity: .85;
+}
+
+/* Optional leaf node — not used now; keep for future */
+#tl-branches .leaf {
+  fill: var(--sb-gold, #c2a13a);
+  filter: drop-shadow(0 0 8px rgba(226,184,77,.35));
+  opacity: .95;
+}
+
+
+/* Respect Reduced Motion — keep exactly one */
+@media (prefers-reduced-motion: reduce){
+  .event,
+  .event-details,
+  .event-header,
+  .rune{
+    transition: none !important;
+  }
+}
+
+/* Mobile: single column, spine offset — keep exactly one */
+@media (max-width: 800px){
+  /* Title width on mobile */
+  .timeline h1,
+  .tl-title{
+    width: calc(100% - 24px);
+  }
+
+  .timeline{
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* Shift/soften spine + halo */
+  .timeline::before{
+    left: 20px;
+    transform: none;
+    opacity: .15;
+  }
+  .timeline::after{
+    left: 20px;
+    transform: none;
+    width: 70px;
+    opacity: .25;
+  }
+
+  /* Single column cards + flat details border */
+  .event{ width: 100%; }
+  .event-details{
+    border-left: none;
+    padding-left: 0;
+    margin-left: 0;
+  }
+
+  /* OPTIONAL: hide the curved branches on small screens.
+     If you want to KEEP branches on mobile, remove this line. */
+  /* #tl-branches{ display: none; } */
+}
+
+
 
 /* ===== Lightbox ===== */
 img.popup{ cursor:zoom-in; transition:transform .2s; }
