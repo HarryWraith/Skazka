@@ -26,8 +26,7 @@ body{
   color:var(--sb-text);
 
   /* Layer order: animated shimmer → vignette → grain → your image */
-   background-image:
-    /* 1) animated cool shimmer */
+  background-image:
     linear-gradient(45deg,
       rgba(8,26,36,.70) 5%,
       rgba(14,44,62,.70) 15%,
@@ -38,42 +37,21 @@ body{
       rgba(16,62,88,.70) 76%,
       rgba(14,44,62,.70) 88%,
       rgba(8,26,36,.70) 95%),
-    /* 2) soft vignette to keep edges dark */
     radial-gradient(120% 100% at 50% -10%,
       rgba(255,255,255,.05) 0%,
       rgba(0,0,0,.55) 55%,
       rgba(0,0,0,.85) 100%),
-    /* 3) subtle vertical grain */
     repeating-linear-gradient(90deg,
       rgba(255,255,255,.03) 0 1px, transparent 1px 3px),
-    /* 4) solid blue tint to recolor the photo */
     linear-gradient(180deg, rgba(50,130,180,.55), rgba(20,70,110,.55)),
-    /* 5) your artwork */
     url('assets/background_new.jpg');
 
-  /* Per-layer sizing & positioning */
-  background-size:
-    200% 200%,   /* shimmer animates */
-    100% 100%,   /* vignette */
-    auto,        /* grain */
-    100% 100%,   /* blue tint sheet */
-    cover;       /* image */
-  background-position:
-    0% 50%,
-    center,
-    center,
-    center,
-    center;
+  background-size: 200% 200%, 100% 100%, auto, 100% 100%, cover;
+  background-position: 0% 50%, center, center, center, center;
   background-repeat: no-repeat;
   background-attachment: fixed;
 
-  /* Blend so image keeps its luminance but takes on a blue hue */
-  background-blend-mode:
-    overlay,     /* shimmer */
-    multiply,    /* vignette */
-    overlay,     /* grain */
-    color,       /* <-- tint recolors the image */
-    normal;
+  background-blend-mode: overlay, multiply, overlay, color, normal;
 
   background-color: var(--sb-bg);
   animation: shimmerMove 20s ease-in-out infinite;
@@ -107,6 +85,11 @@ h4{ font-size:1.2rem; font-weight:900; }
 
 .h4c{ text-align:center; margin-top:6px; }
 .noborder{ border:none; }
+
+img.noborder[src*="divider"] {
+  display: block;
+  margin: 0 auto 12px;
+}
 
 body p{ text-align:justify; line-height:1.5; margin:1em 0; }
 
@@ -169,15 +152,12 @@ article li{ margin-bottom:15px; text-align:justify; }
   position: relative;
   background: var(--sb-panel2);
   color: var(--sb-dim);
-  border-top: 1px solid var(--sb-divider);      /* softer, thinner */
+  border-top: 1px solid var(--sb-divider);
   padding: 3rem 1rem;
   font-family: 'Cinzel', serif;
-  /* faint inner highlight so the edge doesn't look harsh */
   box-shadow: inset 0 1px 0 rgba(255,255,255,.03);
 }
-
 .footer::before{
-  /* subtle gold glint along the top edge */
   content:"";
   position:absolute; inset:0 auto auto 0;
   height: 8px; width:100%;
@@ -192,7 +172,6 @@ article li{ margin-bottom:15px; text-align:justify; }
   pointer-events:none;
   opacity:.6;
 }
-
 .footer-inner{
   max-width: 1200px;
   margin: 0 auto;
@@ -203,16 +182,13 @@ article li{ margin-bottom:15px; text-align:justify; }
   text-align: center;
   gap: .75rem;
 }
-
 .footer p{ text-align: center; margin: .25rem 0; }
 .footer-inner img{ height: 100px; display: block; filter: drop-shadow(0 2px 4px rgba(0,0,0,.35)); }
-
 .footer-nav,
 .footer-socials{
   display:flex; justify-content:center; align-items:center;
   flex-wrap:wrap; gap:.9rem 1.2rem; margin:.5rem 0 1rem;
 }
-
 .footer-nav a,
 .footer-socials a{
   color: var(--sb-dim);
@@ -221,8 +197,6 @@ article li{ margin-bottom:15px; text-align:justify; }
   border-radius: 8px;
   transition: color .25s ease, background .25s ease, box-shadow .25s ease;
 }
-
-/* hover + keyboard focus */
 .footer-nav a:hover,
 .footer-socials a:hover{ color: var(--sb-gold-strong); background: rgba(226,184,77,.08); }
 .footer-nav a:focus-visible,
@@ -231,7 +205,6 @@ article li{ margin-bottom:15px; text-align:justify; }
   box-shadow: 0 0 0 2px rgba(226,184,77,.25);
   color: var(--sb-gold-strong);
 }
-
 .footer-copy{ font-size:.95rem; color:#8d8576; margin-top:.5rem; opacity:.9; }
 
 @media (min-width: 920px){
@@ -247,8 +220,6 @@ article li{ margin-bottom:15px; text-align:justify; }
   .footer-inner.is-wide p,
   .footer-inner.is-wide .footer-copy{ text-align: right; }
 }
-
-/* Small screens */
 @media (max-width: 520px){
   .footer{ padding: 2.25rem 1rem; }
   .footer-inner img{ height: 84px; }
@@ -256,6 +227,7 @@ article li{ margin-bottom:15px; text-align:justify; }
 
 /* ===== Timeline ===== */
 
+/* Optional separate title helper */
 .tl-title{
   width: min(1100px, calc(100% - 32px));
   margin: 0 auto 18px;
@@ -271,7 +243,6 @@ article li{ margin-bottom:15px; text-align:justify; }
   position: relative;
 }
 .tl-title::after{
-  /* faint hairline aligned to the spine below */
   content:"";
   position:absolute; left:50%; top:100%;
   width:1px; height:16px;
@@ -280,20 +251,14 @@ article li{ margin-bottom:15px; text-align:justify; }
   opacity:.35;
 }
 
-/* ===== Timeline ===== */
-
-/* ============ Timeline (Skazka) ============ */
-
 /* Container + glowing spine */
 .timeline{
-  --title-clearance: 84px;       /* how far below the title the spine starts */
+  --title-clearance: 84px;
   position: relative;
   max-width: 1100px;
   margin: 0 auto 40px;
   padding: 24px 0;
 }
-
-/* Title inside the timeline */
 .timeline h1{
   position: relative;
   z-index: 1;
@@ -309,8 +274,6 @@ article li{ margin-bottom:15px; text-align:justify; }
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.04);
 }
-
-/* Spine (centered), begins below the title */
 .timeline::before{
   content:"";
   position: absolute;
@@ -332,8 +295,6 @@ article li{ margin-bottom:15px; text-align:justify; }
   opacity: .8;
   pointer-events: none;
 }
-
-/* Soft halo around the spine */
 .timeline::after{
   content:"";
   position: absolute;
@@ -348,7 +309,7 @@ article li{ margin-bottom:15px; text-align:justify; }
   filter: blur(.5px);
 }
 
-/* Epoch cards */
+/* Epoch highlight */
 .event--epoch .event-header{
   border: 2px solid color-mix(in oklab, var(--sb-gold,#c2a13a) 78%, #000);
   background-color: rgb(10, 118, 148);
@@ -356,8 +317,6 @@ article li{ margin-bottom:15px; text-align:justify; }
     0 0 0 1px rgba(226,184,77,.16) inset,
     0 0 22px rgba(226,184,77,.18);
 }
-
-/* subtle inner ring for a double-border feel */
 .event--epoch .event-header::after{
   content:"";
   position:absolute;
@@ -366,8 +325,6 @@ article li{ margin-bottom:15px; text-align:justify; }
   box-shadow: inset 0 0 0 1px rgba(226,184,77,.22);
   pointer-events:none;
 }
-
-/* tighten up the palette on epoch */
 .event--epoch .event-year{
   color: var(--sb-gold-strong,#e1b84d);
   text-shadow: 0 0 6px rgba(226,184,77,.25);
@@ -376,30 +333,12 @@ article li{ margin-bottom:15px; text-align:justify; }
   color: #faf5e5;
   letter-spacing: .3px;
 }
-
-/* little rotated diamond corners (added via JS) */
-.event--epoch .ornament{
-  position:absolute;
-  top:-10px;
-  width:18px; height:18px;
-  transform: rotate(45deg);
-  background:#0f1117;
-  border:2px solid var(--sb-gold-strong,#e1b84d);
-  border-radius:2px;
-  box-shadow: 0 0 10px rgba(226,184,77,.28);
-}
-.event--epoch .ornament--left{ left:-10px; }
-.event--epoch .ornament--right{ right:-10px; }
-
-/* thicker/brighter branch for epoch entries */
+/* thicker branch for epoch */
 #tl-branches .branch--epoch{
   stroke-width: 3.5;
   opacity: 1;
   filter: drop-shadow(0 0 8px rgba(226,184,77,.35));
 }
-
-/* If you still have a header dot somewhere, hide it for epoch cards */
-.event--epoch .event-header::before{ display:none; }
 
 /* Event blocks alternate left/right */
 .event{
@@ -440,7 +379,7 @@ article li{ margin-bottom:15px; text-align:justify; }
   display: none !important;
 }
 
-/* Year + title text sizes */
+/* Year + title */
 .event-year{
   font-weight: bolder;
   font-size: clamp(1.2rem, 0.7vw + 1rem, 1.6rem);
@@ -453,7 +392,7 @@ article li{ margin-bottom:15px; text-align:justify; }
   letter-spacing: .2px;
 }
 
-/* Rune icon (keep or remove; if you want it gone, uncomment display:none) */
+/* Rune */
 .rune{
   width: 28px; height: 28px;
   filter: drop-shadow(0 0 6px rgba(226,184,77,.15));
@@ -465,7 +404,7 @@ article li{ margin-bottom:15px; text-align:justify; }
   filter: drop-shadow(0 0 10px rgba(226,184,77,.25));
 }
 
-/* Details panel */
+/* Details */
 .event-details{
   max-height: 0; overflow: hidden; opacity: 0;
   transition: max-height .35s ease, opacity .35s ease, padding .25s ease;
@@ -483,7 +422,7 @@ article li{ margin-bottom:15px; text-align:justify; }
   padding: 10px 14px 8px;
 }
 
-/* Open accent/lift */
+/* Open accent */
 .event.open{ transform: translateY(-2px); }
 .event.open .event-header{
   border-color: color-mix(in oklab, var(--sb-gold,#c2a13a) 65%, var(--sb-border,#2a2d36));
@@ -491,7 +430,7 @@ article li{ margin-bottom:15px; text-align:justify; }
 }
 
 /* Reveal-on-scroll (JS-gated) */
-.event{ opacity: 1; transform: none; }                /* no-JS safe default */
+.event{ opacity: 1; transform: none; }
 .timeline.reveal-ready .event{
   opacity: 0;
   transform: translateY(16px);
@@ -502,90 +441,49 @@ article li{ margin-bottom:15px; text-align:justify; }
   transition: transform .5s cubic-bezier(.2,.7,.2,1), opacity .6s ease;
 }
 
-/* === SVG branch overlay (drawn by timeline.js) === */
+/* SVG branches (drawn by timeline.js) */
 #tl-branches{
   position: absolute;
-  inset: 0;                 /* cover the whole timeline */
-  pointer-events: none;     /* don’t block clicks */
-  z-index: 0;               /* behind the cards */
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
 }
-
-/* Make sure title + cards appear above the SVG */
 .timeline h1,
 .tl-title,
 .event{
   position: relative;
   z-index: 1;
 }
-
-/* Stroke style for branches (antique gold glow) */
 #tl-branches .branch {
   fill: none;
   stroke: color-mix(in oklab, var(--sb-gold, #c2a13a) 85%, #9a7b23);
   stroke-width: 2.25;
-  stroke-linecap: butt;          /* <- square ends (no dot-like caps) */
+  stroke-linecap: butt;
   filter: drop-shadow(0 0 6px rgba(226,184,77,.25));
   opacity: .85;
 }
-
-/* Optional leaf node — not used now; keep for future */
 #tl-branches .leaf {
   fill: var(--sb-gold, #c2a13a);
   filter: drop-shadow(0 0 8px rgba(226,184,77,.35));
   opacity: .95;
 }
 
-
-/* Respect Reduced Motion — keep exactly one */
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce){
-  .event,
-  .event-details,
-  .event-header,
-  .rune{
-    transition: none !important;
-  }
+  .event, .event-details, .event-header, .rune{ transition:none !important; }
 }
-
-/* Mobile: single column, spine offset — keep exactly one */
+/* Mobile timeline */
 @media (max-width: 800px){
-  /* Title width on mobile */
   .timeline h1,
-  .tl-title{
-    width: calc(100% - 24px);
-  }
-
-  .timeline{
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  /* Shift/soften spine + halo */
-  .timeline::before{
-    left: 20px;
-    transform: none;
-    opacity: .15;
-  }
-  .timeline::after{
-    left: 20px;
-    transform: none;
-    width: 70px;
-    opacity: .25;
-  }
-
-  /* Single column cards + flat details border */
+  .tl-title{ width: calc(100% - 24px); }
+  .timeline{ padding-left: 16px; padding-right: 16px; }
+  .timeline::before{ left: 20px; transform: none; opacity: .15; }
+  .timeline::after{ left: 20px; transform: none; width: 70px; opacity: .25; }
   .event{ width: 100%; }
-  .event-details{
-    border-left: none;
-    padding-left: 0;
-    margin-left: 0;
-  }
-
-  /* OPTIONAL: hide the curved branches on small screens.
-     If you want to KEEP branches on mobile, remove this line. */
-  /* #tl-branches{ display: none; } */
+  .event-details{ border-left: none; padding-left: 0; margin-left: 0; }
+  /* Optionally hide branches on mobile */
+  /* #tl-branches{ display:none; } */
 }
-
-
 
 /* ===== Lightbox ===== */
 img.popup{ cursor:zoom-in; transition:transform .2s; }
@@ -600,10 +498,183 @@ img.popup{ cursor:zoom-in; transition:transform .2s; }
   cursor:move; transition:transform .1s ease-out; transform-origin:center;
   user-select:none; -webkit-user-drag:none;
 }
-
 #lightbox .close{
   position:absolute; top:20px; right:30px; color:var(--sb-text);
   font-size:36px; font-weight:bold; cursor:pointer; z-index:1100;
+}
+
+/* ===== Voices of Skazka — Feature Carousel ===== */
+.skz-fc{
+  --gap: 12px;
+  --radius: 14px;
+  --pad: 12px;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto; /* prev • viewport • next */
+  align-items: center;
+  gap: var(--gap);
+  width: 100%;
+  margin: clamp(96px, 10vw, 200px) 0 18px;
+  position: relative;
+
+  /* Pull arrows in from page edges */
+  padding-inline: clamp(10px, 2vw, 28px);
+  z-index: 1;
+}
+
+.skz-fc-viewport{
+  position: relative;
+  width: 100%;
+  height: clamp(280px, 36vw, 440px);
+  overflow: visible; /* show peeks */
+}
+.skz-fc-stage{
+  position: absolute;
+  inset: 0;
+}
+
+/* Slide card */
+.skz-fc-slide{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(.9);
+  width: 60%;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+
+  background: linear-gradient(180deg, var(--sb-panel), var(--sb-panel2));
+  border: 1px solid var(--sb-border);
+  border-radius: var(--radius);
+  box-shadow: 0 12px 28px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.03);
+  overflow: hidden;
+  transition: transform .35s ease, opacity .25s ease, filter .25s ease, left .35s ease, width .35s ease;
+  cursor: pointer;
+}
+.skz-fc-slide .skz-fc-media{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #0f1117;
+  border-bottom: 1px solid var(--sb-border);
+}
+.skz-fc-slide .skz-fc-media img{
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.skz-fc-slide .skz-fc-body{
+  padding: var(--pad) calc(var(--pad) + 2px);
+}
+.skz-fc-title{
+  margin: 2px 0 6px;
+  font-weight: 900;
+  font-size: clamp(1.2rem, .9vw + 1rem, 1.6rem);
+  color: var(--sb-text);
+}
+.skz-fc-text{
+  color: var(--sb-dim);
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+/* Slide states */
+.skz-fc-slide.skz-active{
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  pointer-events: auto;
+  z-index: 3;
+}
+.skz-fc-slide.skz-prev{
+  left: 20%;
+  width: 35%;
+  opacity: .9;
+  transform: translate(-50%, -50%) scale(.92);
+  z-index: 2;
+  filter: saturate(.9) brightness(.95);
+}
+.skz-fc-slide.skz-next{
+  left: 80%;
+  width: 35%;
+  opacity: .9;
+  transform: translate(-50%, -50%) scale(.92);
+  z-index: 2;
+  filter: saturate(.9) brightness(.95);
+}
+
+/* Nav arrows (gold, inset) */
+.skz-fc-nav{
+  --size: clamp(44px, 4vw, 60px);
+  width: var(--size);
+  height: var(--size);
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklab, var(--sb-gold) 55%, black);
+  background: linear-gradient(180deg, var(--sb-gold-strong), var(--sb-gold));
+  color: #0b0a07;
+  box-shadow:
+    0 0 0 2px rgba(226,184,77,.18),
+    0 10px 24px rgba(0,0,0,.45),
+    inset 0 1px 0 rgba(255,255,255,.15);
+  cursor: pointer;
+  user-select: none;
+  transition: transform .08s ease, filter .2s ease, box-shadow .2s ease;
+  z-index: 2;
+  line-height: 1;
+  font-size: clamp(18px, 3.2vw, 28px);
+}
+.skz-fc-prev { justify-self: start; margin-left: clamp(2px, 0.8vw, 10px); }
+.skz-fc-next { justify-self: end;   margin-right: clamp(2px, 0.8vw, 10px); }
+.skz-fc-nav:hover{
+  filter: brightness(1.07);
+  transform: translateY(-1px);
+  box-shadow:
+    0 0 0 3px rgba(226,184,77,.22),
+    0 14px 30px rgba(0,0,0,.5),
+    inset 0 1px 0 rgba(255,255,255,.2);
+}
+.skz-fc-nav:active{ transform: translateY(0) scale(.98); }
+.skz-fc-nav:focus-visible{
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(226,184,77,.28),
+    0 0 0 6px rgba(226,184,77,.14),
+    0 10px 24px rgba(0,0,0,.45);
+}
+
+/* Divider: full row, centered, above the carousel */
+img.noborder[src*="divider"],
+.divider-img {
+  grid-column: 1 / -1;
+  display: block !important;
+  width: min(680px, 60%);
+  height: auto;
+  margin: 0 auto clamp(12px, 2.4vw, 28px);
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Mobile carousel */
+@media (max-width: 900px){
+  .skz-fc-viewport{ height: clamp(280px, 48vw, 420px); }
+  .skz-fc-slide{ width: 88%; }
+  .skz-fc-slide.skz-prev{ left: 8%; width: 0; opacity: 0; pointer-events: none; }
+  .skz-fc-slide.skz-next{ left: 92%; width: 0; opacity: 0; pointer-events: none; }
+}
+@media (max-width: 760px) {
+  .skz-fc { padding-inline: 12px; }
+  .skz-fc-nav { --size: 44px; }
+}
+
+/* No-JS / init fallback: show first slide */
+.skz-fc-stage:not(.is-ready) .skz-fc-slide:first-child{
+  opacity: 1 !important;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  width: 60%;
+  z-index: 3;
+  pointer-events: auto;
 }
 
 /* ===== Responsive ===== */
@@ -615,6 +686,3 @@ img.popup{ cursor:zoom-in; transition:transform .2s; }
   .grid-container{ grid-template-columns:1fr; max-width:90%; }
   .left-column,.center-column,.right-column{ margin-bottom:20px; }
 }
-
-
-

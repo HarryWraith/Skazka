@@ -27,7 +27,8 @@
         <article class="center-column"><!-- MIDDLE -->
             <img src="assets/title_page.webp" alt="image of adventurers facing a ruined castle on a mountain">
             <h2>About Skazka</h2>
-            <p>Skazka is a <b>Dungeons&Dragons</b> campaign setting shaped by forgotten myths, ruthless gods, and ancient magic. From haunted necropolises
+            <p>Skazka is a <b>Dungeons&Dragons</b> campaign setting shaped by forgotten myths, ruthless gods, and
+                ancient magic. From haunted necropolises
                 to whispering jungles, Skazka is a place where every shadow holds a story, and every path promises
                 mystery, danger, and transformation.</p>
             <p>At its core, Skazka is a living narrative: immersive, richly textured, and deeply atmospheric. The world
@@ -47,47 +48,88 @@
                 corners, Skazka invites you in with a warning: in this world, magic has a price, and not every monster
                 looks like one.</p>
             <p>Dare to enter. Skazka awaits.</p>
-              <img class="noborder" src="assets/divider.png" alt="">
+            <img class="noborder divider-image" src="assets/divider.png" alt="">
         </article>
 
         <article class="right-column"> <!-- RIGHT -->
         </article>
     </main>
 
-    <main class="grid-even"><!-- 3 COLUMN EVEN -->
-        <article>
-            <img class="popup" src="assets/warrior_intro.jpg"
-                alt="an image of a warrior carrying the ashes of a fallen comrade">
-            <h2>The Warlord</h2>
-            <p>A lone adventurer steps off the longboat that has taken him to the necropolis of Dargav. The aging jetty
-                creaks underfoot and the forest seems to mimic the sound. A crow lands on a nearby branch to judge the
-                visitor. It caws, perhaps in approval? Clutching the urn he has brought here, the warrior takes a deep
-                breath and steps forward. This place is hallowed so he must tread carefully.</p>
-        </article>
-        <article>
-            <img class="popup" src="assets/skazka_intro.jpg" alt="image of a little girl thief">
-            <h2>The Thief</h2>
-            <p>Back where the soldier began his journey, the streets of Calarium are choked with the dust from passing
-                horses and carts. A small child weaves through a crowd of merchants and soft skinned gentry. Spotting
-                her mark, she approaches confidently. With practiced ease she feigns a trip and bumps into the
-                unsuspecting gem cutter. With an apology she pushes away from the man, but not empty handed. The
-                concealed blade in one hand has liberated a purse of its strings. Stepping casually away from the crowd
-                she slips into a darkened alleyway to assess her work. Only five gold coins. Not bad, but not enough to
-                get her to Ku'Than. That will have to wait, for now.</p>
-        </article>
-        <article>
-            <img class="popup" src="assets/kuthan_intro.jpg" alt="image of a young witch with a fairy in a bottle">
-            <h2>The Witchling</h2>
-            <p>Far to the north and east the beggar's sister stifles in the humidity of Ku'Than's forested canopy.
-                Insects constantly gnaw at her ankles and the sweat stings her eyes. Her companion, a small white owl,
-                hoots impatiently. She bends down to retrieve the bottle that is the focus of her task. Inside, a tiny
-                winged creature flutters and bashes the glass in frustration, its lips mouthing silent curses. The
-                Witchling wonders what will become of the fairy; her mistress and mentor is oft cruel. "I won't be like
-                that when I'm a full witch", she tells herself.</p>
-        </article>
-    </main>
+    <section id="voicesCarousel" class="skz-fc" aria-label="Voices of Skazka">
+        <button class="skz-fc-nav skz-fc-prev" aria-label="Previous story" type="button">‹</button>
 
-<div id="footer"></div>
+        <div class="skz-fc-viewport">
+            <div class="skz-fc-stage" role="list">
+                <!-- Slide 1 — The Warlord -->
+                <article class="skz-fc-slide" role="listitem" data-href="dargav.html">
+                    <div class="skz-fc-media">
+                        <img src="assets/warrior_intro.jpg" alt="The Warlord" onerror="this.style.display='none'">
+                    </div>
+                    <div class="skz-fc-body">
+                        <h3 class="skz-fc-title">The Warlord</h3>
+                        <p class="skz-fc-text">A lone adventurer steps off the longboat that has taken him to the
+                            necropolis of Dargav. The aging jetty
+                            creaks underfoot and the forest seems to mimic the sound. A crow lands on a nearby branch to
+                            judge the
+                            visitor. It caws, perhaps in approval? Clutching the urn he has brought here, the warrior
+                            takes a deep
+                            breath and steps forward. This place is hallowed so he must tread carefully.</p>
+                        <a class="sb-ghost-btn small" href="dargav.html">Enter Dargav</a>
+                    </div>
+                </article>
+
+                <!-- Slide 2 — The Witchling -->
+                <article class="skz-fc-slide" role="listitem" data-href="kuthan.html">
+                    <div class="skz-fc-media">
+                        <img src="assets/kuthan_intro.jpg" alt="The Witchling" onerror="this.style.display='none'">
+                    </div>
+                    <div class="skz-fc-body">
+                        <h3 class="skz-fc-title">The Witchling</h3>
+                        <p class="skz-fc-text">Far to the north and east the beggar's sister stifles in the humidity of
+                            Ku'Than's forested canopy.
+                            Insects constantly gnaw at her ankles and the sweat stings her eyes. Her companion, a small
+                            white owl,
+                            hoots impatiently. She bends down to retrieve the bottle that is the focus of her task.
+                            Inside, a tiny
+                            winged creature flutters and bashes the glass in frustration, its lips mouthing silent
+                            curses. The
+                            Witchling wonders what will become of the fairy; her mistress and mentor is oft cruel. "I
+                            won't be like
+                            that when I'm a full witch", she tells herself</p>
+                        <a class="sb-ghost-btn small" href="kuthan.html">Into Ku’than</a>
+                    </div>
+                </article>
+
+                <!-- Slide 3 — The Thief -->
+                <article class="skz-fc-slide" role="listitem" data-href="calarium.html">
+                    <div class="skz-fc-media">
+                        <img src="assets/skazka_intro.jpg" alt="The Thief" onerror="this.style.display='none'">
+                    </div>
+                    <div class="skz-fc-body">
+                        <h3 class="skz-fc-title">The Thief</h3>
+                        <p class="skz-fc-text">Back where the soldier began his journey, the streets of Calarium are
+                            choked with the dust from passing
+                            horses and carts. A small child weaves through a crowd of merchants and soft skinned gentry.
+                            Spotting
+                            her mark, she approaches confidently. With practiced ease she feigns a trip and bumps into
+                            the
+                            unsuspecting gem cutter. With an apology she pushes away from the man, but not empty handed.
+                            The
+                            concealed blade in one hand has liberated a purse of its strings. Stepping casually away
+                            from the crowd
+                            she slips into a darkened alleyway to assess her work. Only five gold coins. Not bad, but
+                            not enough to
+                            get her to Ku'Than. That will have to wait, for now.</p>
+                        <a class="sb-ghost-btn small" href="calarium.html">To Calarium</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <button class="skz-fc-nav skz-fc-next" aria-label="Next story" type="button">›</button>
+    </section>
+
+    <div id="footer"></div>
 
     <!-- Lightbox container (hidden by default) -->
     <div id="lightbox">
@@ -97,27 +139,27 @@
 
     <script src="main.js"></script>
     <script src="popup.js"></script>
-   
 
-<script>
-    // Load navbar.html dynamically        
-    fetch("navbar.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("navbar").innerHTML = data;
 
-            // Now that navbar is loaded, attach hamburger event
-            const hamburger = document.querySelector(".hamburger");
-            const navLinks = document.querySelector(".nav-links");
+    <script>
+        // Load navbar.html dynamically        
+        fetch("navbar.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("navbar").innerHTML = data;
 
-            if (hamburger && navLinks) {
-                hamburger.addEventListener("click", () => {
-                    navLinks.classList.toggle("active");
-                    hamburger.classList.toggle("open");
-                });
-            }
-        });
-</script>
+                // Now that navbar is loaded, attach hamburger event
+                const hamburger = document.querySelector(".hamburger");
+                const navLinks = document.querySelector(".nav-links");
+
+                if (hamburger && navLinks) {
+                    hamburger.addEventListener("click", () => {
+                        navLinks.classList.toggle("active");
+                        hamburger.classList.toggle("open");
+                    });
+                }
+            });
+    </script>
 
 
 </body>
