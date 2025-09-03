@@ -587,7 +587,7 @@ img.popup{ cursor:zoom-in; transition:transform .2s; }
 .skz-fc-slide.skz-prev{
   left: 20%;
   width: 35%;
-  opacity: .9;
+  opacity: 0.7;
   transform: translate(-50%, -50%) scale(.92);
   z-index: 2;
   filter: saturate(.9) brightness(.95);
@@ -595,7 +595,7 @@ img.popup{ cursor:zoom-in; transition:transform .2s; }
 .skz-fc-slide.skz-next{
   left: 80%;
   width: 35%;
-  opacity: .9;
+  opacity: 0.7;
   transform: translate(-50%, -50%) scale(.92);
   z-index: 2;
   filter: saturate(.9) brightness(.95);
@@ -685,4 +685,21 @@ img.noborder[src*="divider"],
 @media (max-width:768px){
   .grid-container{ grid-template-columns:1fr; max-width:90%; }
   .left-column,.center-column,.right-column{ margin-bottom:20px; }
+}
+
+/* Kill background drift on mobile / iOS */
+@media (max-width: 900px), (hover: none) and (pointer: coarse) {
+  body {
+    background-attachment: scroll;                 /* no parallax on mobile */
+    animation: none;                                /* freeze shimmer */
+    background-position: center top, center, center, center, center;
+  }
+}
+
+/* Extra belt-and-braces for iOS Safari */
+@supports (-webkit-touch-callout: none) {
+  body {
+    background-attachment: scroll;
+    animation: none;
+  }
 }
