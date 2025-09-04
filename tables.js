@@ -135,6 +135,16 @@
       MAGIC_DATA = { items: [] };
     }
   })();
+// Debug helpers for the console
+window.magicDebug = () => MAGIC_READY.then(() => ({
+  path: "/data/magic-items.json",
+  count: MAGIC_DATA?.items?.length || 0,
+  sample: MAGIC_DATA?.items?.[0]?.name || null
+}));
+
+// Optional: expose the roller for testing
+window.rollTreasureDebug = (mode, band) =>
+  MAGIC_READY.then(() => rollTreasure(mode, band));
 //debug
 //  window.magicDebug = () => MAGIC_READY.then(() => ({
 //  count: MAGIC_DATA?.items?.length || 0,
@@ -181,12 +191,14 @@
 
   // Coin/gem counts per band (simple but serviceable)
   const COIN_BANDS = {
-    low:  { gp:[5,30],  sp:[20,120], cp:[50,200] },
-    mid:  { gp:[50,150], sp:[100,300], cp:[200,600] },
-    high: { gp:[200,600], sp:[300,900], cp:[500,1500] },
-    epic: { gp:[800,2000], sp:[1200,3000], cp:[2000,6000] }
-  };
-  const GEM_TABLE = ["agate","hematite","obsidian","garnet","pearl","amethyst","topaz","emerald shard","ruby sliver","sapphire chip","diamond shard"];
+  low:  { gp:[  50,  200], sp:[100, 400], cp:[  0, 200] },
+  mid:  { gp:[ 200,  800], sp:[200, 800], cp:[  0, 200] },
+  high: { gp:[ 800, 3000], sp:[500,2000], cp:[  0, 100] },
+  epic: { gp:[3000,10000], sp:[  0,3000], cp:[  0,   0] }
+};
+const GEM_TABLE   = ["agate","hematite","obsidian","garnet","pearl","amethyst","topaz","emerald shard","ruby sliver","sapphire chip","diamond shard"];
+const GEM_COUNTS  = { low:[0,1], mid:[1,4], high:[3,8], epic:[6,12] };
+const MAGIC_COUNTS= { low:[0,1], mid:[1,2], high:[2,4], epic:[3,6] };
 
  function rollMagicItemsForBand(band, count) {
   const b = getBuckets();
@@ -207,35 +219,27 @@
 }
 
   function rollTreasure(mode, band) {
-    // Individual: just coins (5e style), no magic rolls
-    if (mode === "individual") {
-      const gp = randint(2,12), sp = randint(5,30), cp = randint(10,60);
-      return { mode, band, coins: `${gp} gp, ${sp} sp, ${cp} cp`, gems: [], magic: [] };
-    }
-
-    // Hoard
-    const c = COIN_BANDS[band] || COIN_BANDS.mid;
-    const gp = randint(c.gp[0], c.gp[1]);
-    const sp = randint(c.sp[0], c.sp[1]);
-    const cp = randint(c.cp[0], c.cp[1]);
-
-    // Simple gem count scaling by band
-    const gemCount = band === "low" ? randint(0,1) :
-                     band === "mid" ? randint(1,3) :
-                     band === "high" ? randint(2,6) : randint(4,10);
-    const gems = Array.from({length: gemCount}, () => pick(GEM_TABLE));
-
-    // Magic item count per band (lightweight 5e-ish feel)
-    const magicCount = band === "low" ? randint(0,1) :
-                       band === "mid" ? randint(0,2) :
-                       band === "high" ? randint(1,3) : randint(2,4);
-    const magic = magicCount > 0 && Array.isArray(MAGIC_DATA?.items) && MAGIC_DATA.items.length
-      ? rollMagicItemsForBand(band, magicCount)
-      : [];
-
-    const coinStr = `${gp} gp, ${sp} sp, ${cp} cp`;
-    return { mode:"hoard", band, coins: coinStr, gems, magic };
+  if (mode === "individual") {
+    const gp = randint(2,12), sp = randint(5,30), cp = randint(10,60);
+    return { mode, band, coins: `${gp} gp, ${sp} sp, ${cp} cp`, gems: [], magic: [] };
   }
+
+  const c = COIN_BANDS[band] || COIN_BANDS.mid;
+  const gp = randint(c.gp[0], c.gp[1]);
+  const sp = randint(c.sp[0], c.sp[1]);
+  const cp = randint(c.cp[0], c.cp[1]);
+  const coins = `${gp} gp${sp?`, ${sp} sp`:''}${cp?`, ${cp} cp`:''}`;
+
+  const [gMin,gMax] = GEM_COUNTS[band] || GEM_COUNTS.mid;
+  const gemCount = randint(gMin, gMax);
+  const gems = Array.from({ length: gemCount }, () => pick(GEM_TABLE));
+
+  const [mMin,mMax] = MAGIC_COUNTS[band] || MAGIC_COUNTS.mid;
+  const magicCount = randint(mMin, mMax);
+  const magic = MAGIC_DATA?.items?.length ? rollMagicItemsForBand(band, magicCount) : [];
+
+  return { mode:"hoard", band, coins, gems, magic };
+}
 
   function renderTreasure(t) {
     if (!t) return "—";
