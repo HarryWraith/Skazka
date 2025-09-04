@@ -123,7 +123,6 @@
   // ===========================================
   const MAGIC_PATH = "/data/magic-items.json";
   let MAGIC_DATA = null;
-
   // Promise used by click-handler to wait for items
   const MAGIC_READY = (async () => {
     try {
@@ -135,49 +134,46 @@
       MAGIC_DATA = { items: [] };
     }
   })();
-//debug
-//  window.magicDebug = () => MAGIC_READY.then(() => ({
-//  count: MAGIC_DATA?.items?.length || 0,
-//  sample: MAGIC_DATA?.items?.[0]?.name
-// }));
 
   // Build rarity buckets from JSON (once loaded)
   function getBuckets() {
-  const buckets = {
-    common: [], uncommon: [], rare: [], "very rare": [], legendary: [], artifact: []
-  };
-  const items = Array.isArray(MAGIC_DATA?.items) ? MAGIC_DATA.items : [];
-  for (const it of items) {
-    const r = (it.rarity || "").toLowerCase();
-    if (r === "varies") continue;        // use explicit +1/+2/+3 entries instead
-    if (buckets[r]) buckets[r].push(it);
+    const buckets = {
+      common: [], uncommon: [], rare: [], "very rare": [], legendary: [], artifact: [], varies: []
+    };
+    const items = Array.isArray(MAGIC_DATA?.items) ? MAGIC_DATA.items : [];
+    for (const it of items) {
+      const r = (it.rarity || "varies").toLowerCase();
+      if (buckets[r]) buckets[r].push(it);
+      else buckets.varies.push(it);
+    }
+    // Treat "varies" as uncommon by default for rolling
+    if (buckets.varies.length) buckets.uncommon = buckets.uncommon.concat(buckets.varies);
+    return buckets;
   }
-  return buckets;
-}
 
   // 5e-ish rarity weights per treasure band (tunable)
   const RARITY_WEIGHTS = {
-  low: [
-    { v: "uncommon",  w: 80 },
-    { v: "rare",      w: 15 },
-    { v: "very rare", w: 5  }
-  ],
-  mid: [
-    { v: "uncommon",  w: 35 },
-    { v: "rare",      w: 45 },
-    { v: "very rare", w: 20 }
-  ],
-  high: [
-    { v: "rare",      w: 40 },
-    { v: "very rare", w: 45 },
-    { v: "legendary", w: 15 }
-  ],
-  epic: [
-    { v: "very rare", w: 30 },
-    { v: "legendary", w: 55 },
-    { v: "artifact",  w: 15 }
-  ]
-};
+    low: [
+      { v: "common",     w: 20 },
+      { v: "uncommon",   w: 70 },
+      { v: "rare",       w: 10 }
+    ],
+    mid: [
+      { v: "uncommon",   w: 40 },
+      { v: "rare",       w: 45 },
+      { v: "very rare",  w: 15 }
+    ],
+    high: [
+      { v: "rare",       w: 45 },
+      { v: "very rare",  w: 40 },
+      { v: "legendary",  w: 15 }
+    ],
+    epic: [
+      { v: "very rare",  w: 45 },
+      { v: "legendary",  w: 45 },
+      { v: "artifact",   w: 10 }
+    ]
+  };
 
   // Coin/gem counts per band (simple but serviceable)
   const COIN_BANDS = {
@@ -188,23 +184,18 @@
   };
   const GEM_TABLE = ["agate","hematite","obsidian","garnet","pearl","amethyst","topaz","emerald shard","ruby sliver","sapphire chip","diamond shard"];
 
- function rollMagicItemsForBand(band, count) {
-  const b = getBuckets();
-  const out = [];
-  for (let i = 0; i < count; i++) {
-    let rarity = pickWeighted(RARITY_WEIGHTS[band] || RARITY_WEIGHTS.mid);
-    let pool = b[rarity] || [];
-    // graceful fallback if that rarity is empty
-    if (!pool.length) {
-      const order = ["common","uncommon","rare","very rare","legendary","artifact"];
-      const idx = Math.max(0, order.indexOf(rarity));
-      pool = [...order.slice(idx).map(r=>b[r]).flat(), ...order.slice(0,idx).map(r=>b[r]).flat()]
-             .filter(Boolean);
+  function rollMagicItemsForBand(band, count){
+    const buckets = getBuckets();
+    const rar = pickWeighted(RARITY_WEIGHTS[band] || RARITY_WEIGHTS.mid);
+    const pool = buckets[rar] && buckets[rar].length ? buckets[rar] : [].concat(
+      buckets.uncommon, buckets.rare, buckets["very rare"], buckets.legendary, buckets.artifact
+    );
+    const out = [];
+    for (let i=0; i<count; i++){
+      out.push(pick(pool)?.name || "mystery item");
     }
-    out.push(pick(pool)?.name || "mystery item");
+    return out;
   }
-  return out;
-}
 
   function rollTreasure(mode, band) {
     // Individual: just coins (5e style), no magic rolls
