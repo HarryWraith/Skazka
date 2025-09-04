@@ -1,0 +1,293 @@
+<!-- tables.html-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skazka - Dark Fantasy Lore</title>
+
+  <!-- Site base styles -->
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Generators panel styles -->
+  <link rel="stylesheet" href="tables.css" />
+
+  <!-- Google Font (site uses Alegreya) -->
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+</head>
+
+<body>
+  <div id="navbar"></div><!-- Navbar will be loaded here -->
+
+  <main class="grid-even"><!--main 1-->
+    <article><!--article 1.1-->
+      <!-- Weather (kept for convenience) -->
+      <section class="tb-panel">
+        <h2 class="tb-title">Weather (by Zone × Season)</h2>
+        <div class="tb-grid">
+          <label class="tb-label">
+            Zone
+            <select id="zone" class="tb-select">
+              <option value="far_north">Far North</option>
+              <option value="north">North</option>
+              <option value="centre" selected>Central</option>
+              <option value="south">South</option>
+              <option value="far_south">Equitorial</option>
+            </select>
+          </label>
+          <label class="tb-label">
+            Season
+            <select id="season" class="tb-select">
+              <option value="spring">Spring</option>
+              <option value="summer">Summer</option>
+              <option value="autumn" selected>Autumn</option>
+              <option value="winter">Winter</option>
+            </select>
+          </label>
+        </div>
+        <div class="tb-grid"></div>
+        <div class="tb-actions">
+          <button id="rollWeather" class="tb-btn">Roll</button>
+          <button id="randWeather" class="tb-ghost-btn">Randomize</button>
+        </div>
+        </div>
+        <output id="weatherResult" class="tb-result" aria-live="polite">—</output>
+      </section>
+    </article>
+    <article><!--article 1.2-->
+      <!-- Traps -->
+      <section class="tb-panel">
+        <h2 class="tb-title">Traps (Simple/Complex)</h2>
+        <div class="tb-grid">
+          <label class="tb-label">
+            Tech
+            <select id="trapTech" class="tb-select">
+              <option value="clockwork" selected>Clockwork</option>
+              <option value="arcane">Arcane</option>
+              <option value="nature">Nature</option>
+            </select>
+          </label>
+          <label class="tb-label">
+            Lethality
+            <select id="trapLevel" class="tb-select">
+              <option value="low">Low</option>
+              <option value="medium" selected>Medium</option>
+              <option value="high">High</option>
+            </select>
+          </label>
+          <label class="tb-label">
+            Environment
+            <select id="trapEnv" class="tb-select">
+              <option value="dungeon" selected>Dungeon</option>
+              <option value="tomb">Tomb</option>
+              <option value="sewer">Sewer</option>
+              <option value="forest">Forest</option>
+              <option value="ruin">Ruin</option>
+              <option value="lair">Lair</option>
+              <option value="temple">Temple</option>
+            </select>
+          </label>
+        </div>
+        <div class="tb-grid"></div>
+        <div class="tb-actions">
+          <button id="rollTrap" class="tb-btn">Roll</button>
+          <button id="randTrap" class="tb-ghost-btn">Randomize</button>
+        </div>
+        </div>
+        <output id="trapResult" class="tb-result" aria-live="polite">—</output>
+      </section>
+    </article>
+    <article><!--article 1.3-->
+      <!--magic items-->
+      <section class="tb-panel">
+        <h2 class="tb-title">Treasure (Hoard / Individual)</h2>
+        <div class="tb-grid">
+          <label class="tb-label">
+            Mode
+            <select id="treasureMode" class="tb-select">
+              <option value="hoard" selected>Hoard</option>
+              <option value="individual">Individual</option>
+            </select>
+          </label>
+          <label class="tb-label">
+            Band / Tier
+            <select id="treasureBand" class="tb-select">
+              <option value="low">Low (CR 1–4 feel)</option>
+              <option value="mid" selected>Mid (CR 5–10 feel)</option>
+              <option value="high">High (CR 11–16 feel)</option>
+              <option value="epic">Epic (CR 17+ feel)</option>
+            </select>
+          </label>
+        </div>
+        <div class="tb-actions">
+          <button id="rollTreasure" class="tb-btn">Roll</button>
+          <button id="randTreasure" class="tb-ghost-btn">Randomize</button>
+        </div>
+        </div>
+        <output id="treasureResult" class="tb-result" aria-live="polite">—</output>
+      </section>
+    </article>
+  </main>
+
+  <main class="grid-even"><!--main 2-->
+    <article><!--article 2.1-->
+      <!-- Travel Complications -->
+      <section class="tb-panel">
+        <h2 class="tb-title">Travel Complications</h2>
+        <div class="tb-grid">
+          <label class="tb-label">
+            Terrain
+            <select id="travTerrain" class="tb-select">
+              <option value="plains" selected>Plains</option>
+              <option value="forest">Forest</option>
+              <option value="hills">Hills</option>
+              <option value="mountains">Mountains</option>
+              <option value="swamp">Swamp/Bog</option>
+              <option value="desert">Desert</option>
+              <option value="tundra">Tundra</option>
+              <option value="coast">Coast</option>
+              <option value="jungle">Jungle</option>
+              <option value="urban">Urban</option>
+            </select>
+          </label>
+          <label class="tb-label">
+            Season
+            <select id="travSeason" class="tb-select">
+              <option value="spring">Spring</option>
+              <option value="summer">Summer</option>
+              <option value="autumn" selected>Autumn</option>
+              <option value="winter">Winter</option>
+            </select>
+          </label>
+        </div>
+        <div class="tb-grid"></div>
+        <div class="tb-actions">
+          <button id="rollTravel" class="tb-btn">Roll</button>
+          <button id="randTravel" class="tb-ghost-btn">Randomize</button>
+        </div>
+        </div>
+        <output id="travelResult" class="tb-result" aria-live="polite">—</output>
+      </section>
+    </article>
+    <article><!--article 2.2-->
+      <!-- Road Events -->
+      <section class="tb-panel">
+        <h2 class="tb-title">Road Events</h2>
+        <div class="tb-grid">
+          <label class="tb-label">
+            Road Type
+            <select id="roadType" class="tb-select">
+              <option value="civilized" selected>Civilized</option>
+              <option value="frontier">Frontier</option>
+              <option value="wild">Wild</option>
+            </select>
+          </label>
+          <label class="tb-label">
+            Time
+            <select id="roadTime" class="tb-select">
+              <option value="day" selected>Day</option>
+              <option value="night">Night</option>
+            </select>
+          </label>
+        </div>
+        <div class="tb-grid"></div>
+        <div class="tb-actions">
+          <button id="rollRoad" class="tb-btn">Roll</button>
+          <button id="randRoad" class="tb-ghost-btn">Randomize</button>
+        </div>
+        </div>
+        <output id="roadResult" class="tb-result" aria-live="polite">—</output>
+      </section>
+    </article>
+    <article><!--article 2.3-->
+      <!-- Names -->
+      <section class="tb-panel">
+        <h2 class="tb-title">Names</h2>
+        <div class="tb-grid">
+          <label class="tb-label">
+            Type
+            <select id="nameType" class="tb-select">
+              <option value="person_any" selected>Person</option>
+              <option value="inn">Inn</option>
+              <option value="boat">Boat</option>
+              <option value="band">Band/Company</option>
+            </select>
+          </label>
+          <label class="tb-label">
+            Culture (flavour only)
+            <select id="nameCulture" class="tb-select">
+              <option value="common" selected>Common</option>
+              <option value="calarium">Calarium</option>
+              <option value="kuthan">Ku’Than</option>
+              <option value="dargav">Dargav</option>
+              <option value="oldkaijistan">Old Kaijistan</option>
+              <option value="northlands">Northlands</option>
+            </select>
+          </label>
+          <label class="tb-label">
+            Count
+            <input id="nameCount" type="number" min="1" max="10" value="3" class="tb-input" />
+          </label>
+        </div>
+        <div class="tb-grid"></div>
+        <div class="tb-actions">
+          <button id="rollName" class="tb-btn">Roll</button>
+          <button id="randName" class="tb-ghost-btn">Randomize</button>
+        </div>
+        </div>
+        <output id="nameResult" class="tb-result" aria-live="polite">—</output>
+      </section>
+    </article>
+  </main>
+
+  <main class="grid-even"><!--main 3-->
+    <article><!--article 3.1-->
+      <!-- Tavern Events -->
+      <section class="tb-panel">
+        <h2 class="tb-title">Tavern Events</h2>
+        <div class="tb-grid">
+          <label class="tb-label">
+            Mood
+            <select id="tavernMood" class="tb-select">
+              <option value="quiet" selected>Quiet</option>
+              <option value="rowdy">Rowdy</option>
+              <option value="tense">Tense</option>
+            </select>
+          </label>
+          <label class="tb-label">
+            Wealth
+            <select id="tavernWealth" class="tb-select">
+              <option value="poor">Poor</option>
+              <option value="average" selected>Average</option>
+              <option value="fine">Fine</option>
+            </select>
+          </label>
+        </div>
+        <div class="tb-grid"></div>
+        <div class="tb-actions">
+          <button id="rollTavern" class="tb-btn">Roll</button>
+          <button id="randTavern" class="tb-ghost-btn">Randomize</button>
+        </div>
+        </div>
+        <output id="tavernResult" class="tb-result" aria-live="polite">—</output>
+      </section>
+    </article>
+    <article><!--article 3.2-->
+
+    </article>
+    <article><!--article 3.3-->
+
+    </article>
+  </main>
+
+  <div id="footer"></div>
+
+
+
+  <script src="main.js"></script>
+  <script src="tables.js" defer></script>
+
+</body>
+
+</html>

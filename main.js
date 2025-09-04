@@ -13,7 +13,7 @@
   }
 
   document.addEventListener('DOMContentLoaded', () => {
-    // Navbar (you already have this wired — keep your hamburger binding here)
+    // Navbar (keep your hamburger binding here)
     inject('navbar.html', 'navbar', (mount) => {
       const hamburger = mount.querySelector('.hamburger');
       const navLinks  = mount.querySelector('.nav-links');
@@ -52,11 +52,33 @@
 })();
 
 // carousel
-
-
 (function(){
+  const MQ = '(max-width: 767px)';
+
+  function findVoicesRoot(){
+    const stage = document.querySelector('.skz-fc-stage');
+    if (!stage) return null;
+    return stage.closest('section, .skz-fc, [data-carousel], .container, main') || stage.parentElement || stage;
+  }
+
+  function teardownVoicesCarousel(root){
+    if (!root) return;
+    const stage  = root.querySelector('.skz-fc-stage') || document.querySelector('.skz-fc-stage');
+    const slides = root.querySelectorAll('.skz-fc-slide');
+    const navs   = root.querySelectorAll('.skz-fc-nav');
+
+    stage?.classList.remove('is-ready');
+    slides.forEach(s => s.classList.remove('skz-active','skz-prev','skz-next'));
+    navs.forEach(n => n.removeAttribute('disabled'));
+  }
+
   function initVoicesCarousel(root){
     if (!root) return;
+    if (window.matchMedia(MQ).matches) { // bail on mobile (as per your design)
+      teardownVoicesCarousel(root);
+      return;
+    }
+
     const stage  = root.querySelector('.skz-fc-stage');
     const slides = Array.from(root.querySelectorAll('.skz-fc-slide'));
     if (!slides.length) return;
@@ -74,11 +96,10 @@
       slides.forEach((s, idx) => {
         s.classList.remove('skz-active','skz-prev','skz-next');
         if (idx === i) s.classList.add('skz-active');
-        else if (idx === prev) s.classList.add('skz-prev');
-        else if (idx === next) s.classList.add('skz-next');
+        else if (idx === prev) s.classList.add('skz-prev'); // will be visually hidden by CSS
+        else if (idx === next) s.classList.add('skz-next'); // will be visually hidden by CSS
       });
 
-      // mark the stage as ready so the fallback stops applying
       stage?.classList.add('is-ready');
     }
 
@@ -91,17 +112,13 @@
     btnPrev?.addEventListener('click', () => go(-1));
     btnNext?.addEventListener('click', () => go(+1));
 
-    // Click on slide: peeks navigate, center follows link
+    // Click on active slide -> follow link
     root.addEventListener('click', (e) => {
       const slide = e.target.closest('.skz-fc-slide');
       if (!slide) return;
-
-      if (slide.classList.contains('skz-prev'))      go(-1);
-      else if (slide.classList.contains('skz-next')) go(+1);
-      else if (slide.classList.contains('skz-active')){
-        const href = slide.dataset.href || slide.querySelector('a')?.getAttribute('href');
-        if (href) window.location.href = href;
-      }
+      if (!slide.classList.contains('skz-active')) return;
+      const href = slide.dataset.href || slide.querySelector('a')?.getAttribute('href');
+      if (href) window.location.href = href;
     });
 
     // Keyboard
@@ -111,7 +128,7 @@
       if (e.key === 'ArrowRight'){ e.preventDefault(); go(+1); }
     });
 
-    // Wait for images/fonts to settle once, then apply again (prevents slight mispositions)
+    // Wait for fonts/images so sizing is perfect, then apply
     function settleThenApply(){
       apply();
       if (document.fonts?.ready) {
@@ -132,13 +149,22 @@
     settleThenApply();
   }
 
-  // Boot robustly (works if you place it in main.js too)
-  const start = () => initVoicesCarousel(document.getElementById('voicesCarousel'));
+  // Boot / responsive toggle
+  const start = () => {
+    const root = findVoicesRoot();
+    if (!root) return;
+    if (window.matchMedia(MQ).matches) {
+      teardownVoicesCarousel(root);
+    } else {
+      initVoicesCarousel(root);
+    }
+  };
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', start);
   } else {
     start();
   }
+
+  window.matchMedia(MQ).addEventListener('change', start);
 })();
-
-

@@ -1,167 +1,238 @@
 <!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skazka - Dark Fantasy Lore</title>
-    <!-- Link to external CSS -->
-    <link rel="stylesheet" href="styles.css">
-    <!-- Google Font for a fantasy feel -->
-    <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="assets/logo.png">
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  />
+  <title>Skazka - Dark Fantasy Lore</title>
+
+  <!-- Mobile: hide the carousel entirely (as in your current behavior) -->
+  <style>
+    @media (max-width: 767px){
+      .skz-fc-stage,
+      .skz-fc-slide,
+      .skz-fc-nav {
+        display: none !important;
+      }
+    }
+  </style>
+
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Google Font for a fantasy feel -->
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
 </head>
 
 <body>
-    <div id="navbar"></div><!-- Navbar will be loaded here -->
+  <div id="navbar"></div><!-- Navbar will be loaded here -->
 
+  <!-- Main Content Area -->
+  <main class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
+    <article class="left-column"><!-- LEFT --></article>
 
+    <article class="center-column"><!-- MIDDLE -->
+      <img src="assets/title_page.webp" alt="image of adventurers facing a ruined castle on a mountain" />
+      <h2>About Skazka</h2>
+      <p>Skazka is a <b>Dungeons&Dragons</b> campaign setting shaped by forgotten myths, ruthless gods, and
+        ancient magic. From haunted necropolises
+        to whispering jungles, Skazka is a place where every shadow holds a story, and every path promises
+        mystery, danger, and transformation.</p>
+      <p>At its core, Skazka is a living narrative: immersive, richly textured, and deeply atmospheric. The world
+        blends Slavic, Norse, and original mythologies into something new—something strange, lyrical, and
+        menacing. The name itself, "Skazka," is derived from the Russian word for "fairy tale," but the tales
+        here are anything but comforting. Instead, they are blood-soaked, ironic, and often tragic, where happy
+        endings are hard-won — if they come at all.</p>
+      <p>Players and readers enter Skazka through the eyes of complex characters — like the Thief, darting through
+        city alleys in search of survival; the Witchling, bartering with spirits in the deep, enchanted
+        woodlands; or the Warlord, weighed down by duty, standing before the bones of the dead. These
+        individuals inhabit a world full of lore: sentient forests, cursed relics, crumbling empires, and gods
+        that walk the earth.</p>
+      <p>But Skazka is not only a setting — it’s a tone, a philosophy of storytelling. It asks you to embrace
+        ambiguity, to question what’s real, and to find beauty in the strange and the broken. It rewards those
+        who pay attention to detail and aren't afraid to dive into morally gray choices.</p>
+      <p>Whether you're here to read its tales, play within its systems, or build your own stories in its shadowy
+        corners, Skazka invites you in with a warning: in this world, magic has a price, and not every monster
+        looks like one.</p>
+      <p>Dare to enter. Skazka awaits.</p>
+      <img class="noborder divider-image" src="assets/divider.png" alt="" />
+    </article>
 
-    <!-- Main Content Area -->
+    <article class="right-column"><!-- RIGHT --></article>
+  </main>
 
-    <main class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
-        <article class="left-column"> <!-- LEFT -->
+  <!-- Voices of Skazka — single-card carousel with arrows -->
+  <section id="voicesCarousel" class="skz-fc" aria-label="Voices of Skazka">
+    <button class="skz-fc-nav skz-fc-prev" aria-label="Previous story" type="button">‹</button>
+
+    <div class="skz-fc-viewport">
+      <div class="skz-fc-stage" role="list" aria-live="polite">
+        <!-- Slide 1 — The Warlord -->
+        <article class="skz-fc-slide" role="listitem" data-href="dargav.html">
+          <div class="skz-fc-media">
+            <img src="assets/warrior_intro.jpg" alt="The Warlord" onerror="this.style.display='none'" />
+          </div>
+          <div class="skz-fc-body">
+            <h3 class="skz-fc-title">The Warlord</h3>
+            <p class="skz-fc-text">A lone adventurer steps off the longboat that has taken him to the
+              necropolis of Dargav. The aging jetty
+              creaks underfoot and the forest seems to mimic the sound. A crow lands on a nearby branch to
+              judge the
+              visitor. It caws, perhaps in approval? Clutching the urn he has brought here, the warrior
+              takes a deep
+              breath and steps forward. This place is hallowed so he must tread carefully.</p>
+            <a class="sb-ghost-btn small" href="dargav.html">Enter Dargav</a>
+          </div>
         </article>
 
-        <article class="center-column"><!-- MIDDLE -->
-            <img src="assets/title_page.webp" alt="image of adventurers facing a ruined castle on a mountain">
-            <h2>About Skazka</h2>
-            <p>Skazka is a <b>Dungeons&Dragons</b> campaign setting shaped by forgotten myths, ruthless gods, and
-                ancient magic. From haunted necropolises
-                to whispering jungles, Skazka is a place where every shadow holds a story, and every path promises
-                mystery, danger, and transformation.</p>
-            <p>At its core, Skazka is a living narrative: immersive, richly textured, and deeply atmospheric. The world
-                blends Slavic, Norse, and original mythologies into something new—something strange, lyrical, and
-                menacing. The name itself, "Skazka," is derived from the Russian word for "fairy tale," but the tales
-                here are anything but comforting. Instead, they are blood-soaked, ironic, and often tragic, where happy
-                endings are hard-won — if they come at all.</p>
-            <p>Players and readers enter Skazka through the eyes of complex characters — like the Thief, darting through
-                city alleys in search of survival; the Witchling, bartering with spirits in the deep, enchanted
-                woodlands; or the Warlord, weighed down by duty, standing before the bones of the dead. These
-                individuals inhabit a world full of lore: sentient forests, cursed relics, crumbling empires, and gods
-                that walk the earth.</p>
-            <p>But Skazka is not only a setting — it’s a tone, a philosophy of storytelling. It asks you to embrace
-                ambiguity, to question what’s real, and to find beauty in the strange and the broken. It rewards those
-                who pay attention to detail and aren't afraid to dive into morally gray choices.</p>
-            <p>Whether you're here to read its tales, play within its systems, or build your own stories in its shadowy
-                corners, Skazka invites you in with a warning: in this world, magic has a price, and not every monster
-                looks like one.</p>
-            <p>Dare to enter. Skazka awaits.</p>
-            <img class="noborder divider-image" src="assets/divider.png" alt="">
+        <!-- Slide 2 — The Witchling -->
+        <article class="skz-fc-slide" role="listitem" data-href="kuthan.html">
+          <div class="skz-fc-media">
+            <img src="assets/kuthan_intro.jpg" alt="The Witchling" onerror="this.style.display='none'" />
+          </div>
+          <div class="skz-fc-body">
+            <h3 class="skz-fc-title">The Witchling</h3>
+            <p class="skz-fc-text">Far to the north and east the beggar's sister stifles in the humidity of
+              Ku'Than's forested canopy.
+              Insects constantly gnaw at her ankles and the sweat stings her eyes. Her companion, a small
+              white owl,
+              hoots impatiently. She bends down to retrieve the bottle that is the focus of her task.
+              Inside, a tiny
+              winged creature flutters and bashes the glass in frustration, its lips mouthing silent
+              curses. The
+              Witchling wonders what will become of the fairy; her mistress and mentor is oft cruel. "I
+              won't be like
+              that when I'm a full witch", she tells herself</p>
+            <a class="sb-ghost-btn small" href="kuthan.html">Into Ku’than</a>
+          </div>
         </article>
 
-        <article class="right-column"> <!-- RIGHT -->
+        <!-- Slide 3 — The Thief -->
+        <article class="skz-fc-slide" role="listitem" data-href="calarium.html">
+          <div class="skz-fc-media">
+            <img src="assets/skazka_intro.jpg" alt="The Thief" onerror="this.style.display='none'" />
+          </div>
+          <div class="skz-fc-body">
+            <h3 class="skz-fc-title">The Thief</h3>
+            <p class="skz-fc-text">Back where the soldier began his journey, the streets of Calarium are
+              choked with the dust from passing
+              horses and carts. A small child weaves through a crowd of merchants and soft skinned gentry.
+              Spotting
+              her mark, she approaches confidently. With practiced ease she feigns a trip and bumps into
+              the
+              unsuspecting gem cutter. With an apology she pushes away from the man, but not empty handed.
+              The
+              concealed blade in one hand has liberated a purse of its strings. Stepping casually away
+              from the crowd
+              she slips into a darkened alleyway to assess her work. Only five gold coins. Not bad, but
+              not enough to
+              get her to Ku'Than. That will have to wait, for now.</p>
+            <a class="sb-ghost-btn small" href="calarium.html">To Calarium</a>
+          </div>
         </article>
-    </main>
 
-    <section id="voicesCarousel" class="skz-fc" aria-label="Voices of Skazka">
-        <button class="skz-fc-nav skz-fc-prev" aria-label="Previous story" type="button">‹</button>
+        <!-- Slide 4 -->
+        <article class="skz-fc-slide" role="listitem" data-href="calarium.html">
+          <div class="skz-fc-media">
+            <img src="assets/priestess.jpg" alt="The Priestess" onerror="this.style.display='none'" />
+          </div>
+          <div class="skz-fc-body">
+            <h3 class="skz-fc-title">The Priestess</h3>
+            <p class="skz-fc-text">Within the half-forgotten circle of statues, the
+              Priestess kneels in the dust. Her fingertips graze the carved runes of Aeter, the Lightbringer, one of the revered
+              Annarr. She chants in a cracked tongue until a sliver of dawn pierces the mist. A single beam ignites the glyph, and
+              faint warmth spreads through her bones. In that moment, she is both shield and beacon—not in defiance of darkness,
+              but because she has invited light to guide it.</p>
+            <a class="sb-ghost-btn small" href="aeter.html">Worship Aeter</a>
+          </div>
+        </article>
 
-        <div class="skz-fc-viewport">
-            <div class="skz-fc-stage" role="list">
-                <!-- Slide 1 — The Warlord -->
-                <article class="skz-fc-slide" role="listitem" data-href="dargav.html">
-                    <div class="skz-fc-media">
-                        <img src="assets/warrior_intro.jpg" alt="The Warlord" onerror="this.style.display='none'">
-                    </div>
-                    <div class="skz-fc-body">
-                        <h3 class="skz-fc-title">The Warlord</h3>
-                        <p class="skz-fc-text">A lone adventurer steps off the longboat that has taken him to the
-                            necropolis of Dargav. The aging jetty
-                            creaks underfoot and the forest seems to mimic the sound. A crow lands on a nearby branch to
-                            judge the
-                            visitor. It caws, perhaps in approval? Clutching the urn he has brought here, the warrior
-                            takes a deep
-                            breath and steps forward. This place is hallowed so he must tread carefully.</p>
-                        <a class="sb-ghost-btn small" href="dargav.html">Enter Dargav</a>
-                    </div>
-                </article>
+        <!-- Slide 5 -->
+        <article class="skz-fc-slide" role="listitem" data-href="calarium.html">
+          <div class="skz-fc-media">
+            <img src="assets/beggar.jpg" alt="The Beggar" onerror="this.style.display='none'" />
+          </div>
+          <div class="skz-fc-body">
+            <h3 class="skz-fc-title">The Beggar</h3>
+            <p class="skz-fc-text">At the ragged edge of a ruined crossroads, the Beggar rests beside a shattered shrine dedicated
+              to Njord, the Stormlord, another name among the Annarr pantheon. Hidden in his ragged cloak is nothing but a handful
+              of cracked coins—and perhaps a dying spark. He prays to Njord in a whisper so low the wind nearly steals it. The
+              clouds stir. In the distance, thunder grumbles. A pale coin glows as if struck by lightning. The Beggar clutches it,
+              though it burns, and knows he has invited more than charity—perhaps fate’s thunder.</p>
+            <a class="sb-ghost-btn small" href="njord.html">Worship Njord</a>
+          </div>
+        </article>
 
-                <!-- Slide 2 — The Witchling -->
-                <article class="skz-fc-slide" role="listitem" data-href="kuthan.html">
-                    <div class="skz-fc-media">
-                        <img src="assets/kuthan_intro.jpg" alt="The Witchling" onerror="this.style.display='none'">
-                    </div>
-                    <div class="skz-fc-body">
-                        <h3 class="skz-fc-title">The Witchling</h3>
-                        <p class="skz-fc-text">Far to the north and east the beggar's sister stifles in the humidity of
-                            Ku'Than's forested canopy.
-                            Insects constantly gnaw at her ankles and the sweat stings her eyes. Her companion, a small
-                            white owl,
-                            hoots impatiently. She bends down to retrieve the bottle that is the focus of her task.
-                            Inside, a tiny
-                            winged creature flutters and bashes the glass in frustration, its lips mouthing silent
-                            curses. The
-                            Witchling wonders what will become of the fairy; her mistress and mentor is oft cruel. "I
-                            won't be like
-                            that when I'm a full witch", she tells herself</p>
-                        <a class="sb-ghost-btn small" href="kuthan.html">Into Ku’than</a>
-                    </div>
-                </article>
+        <!-- Slide 6 -->
+        <article class="skz-fc-slide" role="listitem" data-href="calarium.html">
+          <div class="skz-fc-media">
+            <img src="assets/king.jpg" alt="The cursed king" onerror="this.style.display='none'" />
+          </div>
+          <div class="skz-fc-body">
+            <h3 class="skz-fc-title">The cursed king</h3>
+            <p class="skz-fc-text">Beneath a roofless chamber in a long-lost keep, the King stands before a grand mural of Frur the Fertile, the gentle yet powerful goddess who tended fields, flocks, and famines. His throat closes as he remembers the fields that starved and the people who wept. He lays his crown at her stone feet, murmuring, “Reap what I have sown poorly.” In answer, the mural’s blossoms bloom in dust and cracks—feathered petals drifting downward like hope. It doesn’t feed his lands yet, but it reminds him what he must repair.</p>
+            <a class="sb-ghost-btn small" href="oldkaijistan.html">Breathe the history</a>
+          </div>
+        </article>
 
-                <!-- Slide 3 — The Thief -->
-                <article class="skz-fc-slide" role="listitem" data-href="calarium.html">
-                    <div class="skz-fc-media">
-                        <img src="assets/skazka_intro.jpg" alt="The Thief" onerror="this.style.display='none'">
-                    </div>
-                    <div class="skz-fc-body">
-                        <h3 class="skz-fc-title">The Thief</h3>
-                        <p class="skz-fc-text">Back where the soldier began his journey, the streets of Calarium are
-                            choked with the dust from passing
-                            horses and carts. A small child weaves through a crowd of merchants and soft skinned gentry.
-                            Spotting
-                            her mark, she approaches confidently. With practiced ease she feigns a trip and bumps into
-                            the
-                            unsuspecting gem cutter. With an apology she pushes away from the man, but not empty handed.
-                            The
-                            concealed blade in one hand has liberated a purse of its strings. Stepping casually away
-                            from the crowd
-                            she slips into a darkened alleyway to assess her work. Only five gold coins. Not bad, but
-                            not enough to
-                            get her to Ku'Than. That will have to wait, for now.</p>
-                        <a class="sb-ghost-btn small" href="calarium.html">To Calarium</a>
-                    </div>
-                </article>
-            </div>
-        </div>
+        <!-- Slide 7 -->
+        <article class="skz-fc-slide" role="listitem" data-href="calarium.html">
+          <div class="skz-fc-media">
+            <img src="assets/banished.jpg" alt="The banished man" onerror="this.style.display='none'" />
+          </div>
+          <div class="skz-fc-body">
+            <h3 class="skz-fc-title">The banished man</h3>
+            <p class="skz-fc-text">Exiled into the wasteland of frozen towers and haunted memories, the Banished Man stumbles across a half-buried relic inscribed with Skald, the cold-hearted Annarr whose name is both feared and revered. He presses his palm to the frost-carved syllables. A shiver races up his arm. In return, the relic breathes familiar bitterness into him—not to punish, but to sharpen. He stands straighter, his resolve tempered by regret, and turns back toward the world that cast him out.</p>
+            <a class="sb-ghost-btn small" href="grimspire_ruins.html">Seek adventure</a>
+          </div>
+        </article>
 
-        <button class="skz-fc-nav skz-fc-next" aria-label="Next story" type="button">›</button>
-    </section>
-
-    <div id="footer"></div>
-
-    <!-- Lightbox container (hidden by default) -->
-    <div id="lightbox">
-        <span class="close">&times;</span>
-        <img class="lightbox-img" alt="">
+        <!-- Slide 8 -->
+        <article class="skz-fc-slide" role="listitem" data-href="calarium.html">
+          <div class="skz-fc-media">
+            <img src="assets/prisoner.jpg" alt="The Prisoner" onerror="this.style.display='none'" />
+          </div>
+          <div class="skz-fc-body">
+            <h3 class="skz-fc-title">The Prisoner</h3>
+            <p class="skz-fc-text">Imprisoned in walls woven from damp moss and old regrets, the Prisoner traces fractal veins of green creeping across the stones—each line shaped by the ancient Annarr, immortal stories in living form. In the damp gloom, he closes his eyes and calls for Skazka’s old will—not a name, but the world itself. The moss quivers. From below, the ground trembles as if the land breathes. His chains rattle. He doesn’t escape—but the world listens.</p>
+            <a class="sb-ghost-btn small" href="everdusk.html">Pity not the wicked</a>
+          </div>
+        </article>
+      </div>
     </div>
 
-    <script src="main.js"></script>
-    <script src="popup.js"></script>
+    <button class="skz-fc-nav skz-fc-next" aria-label="Next story" type="button">›</button>
+  </section>
 
+  <div id="footer"></div>
 
-    <script>
-        // Load navbar.html dynamically        
-        fetch("navbar.html")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById("navbar").innerHTML = data;
+  <!-- Lightbox container (hidden by default) -->
+  <div id="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-img" alt="">
+  </div>
 
-                // Now that navbar is loaded, attach hamburger event
-                const hamburger = document.querySelector(".hamburger");
-                const navLinks = document.querySelector(".nav-links");
+  <script src="main.js"></script>
+  <script src="popup.js"></script>
 
-                if (hamburger && navLinks) {
-                    hamburger.addEventListener("click", () => {
-                        navLinks.classList.toggle("active");
-                        hamburger.classList.toggle("open");
-                    });
-                }
-            });
-    </script>
-
-
+  <!-- Keep your navbar loader for hamburger -->
+  <script>
+    fetch("navbar.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("navbar").innerHTML = data;
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+        if (hamburger && navLinks) {
+          hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+            hamburger.classList.toggle("open");
+          });
+        }
+      });
+  </script>
 </body>
-
 </html>

@@ -1,0 +1,134 @@
+/* tables.css — generator panels (match Skazka theme) */
+
+:root{
+  /* Uses your global vars from styles.css; fallback here for safety */
+  --sb-panel: var(--sb-panel, #12131a);
+  --sb-panel2: var(--sb-panel2, #171922);
+  --sb-border: var(--sb-border, #2a2d36);
+  --sb-text: var(--sb-text, #e6dccb);
+  --sb-dim: var(--sb-dim, #b9b09e);
+  --sb-gold: var(--sb-gold, #c2a13a);
+  --sb-gold-strong: var(--sb-gold-strong, #e1b84d);
+  --sb-radius: var(--sb-radius, 14px);
+}
+
+/* Panel */
+.tb-panel{
+  background: linear-gradient(180deg, var(--sb-panel), var(--sb-panel2));
+  border: 1px solid var(--sb-border);
+  border-radius: var(--sb-radius);
+  padding: clamp(12px, 2vw, 18px);
+  color: var(--sb-text);
+  box-shadow: 0 12px 24px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.02);
+  margin: 18px 0;
+}
+
+.tb-title{
+  margin: 0 0 10px;
+  color: var(--sb-gold-strong);
+  letter-spacing: .3px;
+  font-weight: 900;
+}
+
+/* Grid for controls */
+.tb-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  align-items: end;
+}
+
+.tb-label{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+
+/* Inputs/selects/buttons */
+.tb-input, .tb-select{
+  width: 100%;
+  background: #0f1117;
+  color: var(--sb-text);
+  border: 1px solid var(--sb-border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  min-height: 42px;
+  outline: none;
+}
+.tb-input:focus, .tb-select:focus{
+  border-color: var(--sb-gold-strong);
+  box-shadow: 0 0 0 2px rgba(226,184,77,.25);
+  background:#10131a;
+}
+
+.tb-actions{
+  display: flex;
+  margin-top: 8px;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tb-btn{
+  background: linear-gradient(180deg, var(--sb-gold-strong), var(--sb-gold));
+  color:#0b0a07;
+  border:1px solid color-mix(in oklab, var(--sb-gold) 70%, black);
+  border-radius:10px;
+  padding:10px 14px;
+  font-weight:700;
+  cursor:pointer;
+  transition: transform .06s ease, box-shadow .2s ease, filter .2s ease;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.15);
+}
+.tb-btn:hover{
+  filter:brightness(1.05);
+  box-shadow:0 0 0 2px rgba(226,184,77,.25),0 10px 24px rgba(226,184,77,.25);
+}
+.tb-btn:active{ transform: translateY(1px); }
+
+.tb-ghost-btn{
+  background: transparent;
+  color: var(--sb-gold-strong);
+  border:1px solid var(--sb-gold);
+  border-radius:10px;
+  padding:10px 14px;
+  cursor:pointer;
+  transition: background .2s ease, box-shadow .2s ease;
+}
+.tb-ghost-btn:hover{
+  background: rgba(226,184,77,.08);
+  box-shadow: inset 0 0 0 1px rgba(226,184,77,.18);
+}
+
+/* Result */
+.tb-result{
+  display: block;
+  margin-top: 10px;
+  padding: 10px 12px;
+  border: 1px dashed var(--sb-border);
+  border-radius: 10px;
+  color: var(--sb-text);
+  background: rgba(0,0,0,.14);
+  white-space: pre-wrap;
+  line-height: 1.55;
+}
+/* Traps: render multi-line nicely, with a bold label and readable spacing */
+#trapResult { white-space: normal; }             /* allow <div> lines to wrap */
+#trapResult .tb-line { margin: 2px 0; }
+#trapResult .tb-label { font-weight: 800; margin-right: 4px; }
+
+/* Divider image consistency on this page */
+.divider-image{
+  display:block !important;
+  width:min(680px, 60%);
+  height:auto;
+  margin: 0 auto clamp(8px, 2.4vw, 20px);
+}
+
+/* Treasure & Quirk results may include HTML lists */
+#treasureResult, #quirkResult { white-space: normal; }
+.tb-result ul { margin: 6px 0 0 1.1rem; padding: 0; }
+.tb-result li { margin: 2px 0; }
+.tb-kv { margin: 2px 0; }
+.tb-kv .k { font-weight: 800; margin-right: 6px; }

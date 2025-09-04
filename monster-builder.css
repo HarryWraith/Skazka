@@ -1,22 +1,28 @@
-/* Skazka theme variables (reuse your site/dice roller palette) */
+/* ===============================
+   Skazka Theme Variables
+================================ */
 :root{
   --sb-bg: #0a0b0f;
   --sb-panel: #12131a;
   --sb-panel2:#171922;
   --sb-border:#2a2d36;
-  --sb-text:#e6dccb;          /* warm bone */
-  --sb-dim:#b9b09e;           /* dim bone */
-  --sb-gold:#c2a13a;          /* antique gold */
-  --sb-gold-strong:#e1b84d;   /* brighter gold */
+  --sb-text:#e6dccb;
+  --sb-dim:#b9b09e;
+  --sb-gold:#c2a13a;
+  --sb-gold-strong:#e1b84d;
   --sb-chip:#20222b;
   --sb-radius:14px;
   --sb-radius-sm:10px;
   --sb-gap:10px;
   --sb-font:"Alegreya", ui-serif, Georgia, serif;
   --sb-mono:ui-monospace, Menlo, Consolas, monospace;
+  /* Optional equal height:
+     --sb-ability-minh: 280px; */
 }
 
-/* Panels */
+/* ===============================
+   Panels
+================================ */
 .sb-panel{
   background: linear-gradient(180deg, var(--sb-panel), var(--sb-panel2));
   border:1px solid var(--sb-border);
@@ -32,7 +38,9 @@
 .sb-tip{ color: var(--sb-dim); font-size:.95rem; margin:0 0 6px; }
 .sb-bullets{ margin:0; padding-left:16px; color:var(--sb-dim); }
 
-/* Grid */
+/* ===============================
+   Grid
+================================ */
 .sb-grid{
   display:grid;
   grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
@@ -40,15 +48,21 @@
   margin-top:8px;
 }
 
-/* Inputs / selects / textareas */
+/* ===============================
+   Inputs / Selects / Textareas
+================================ */
 .sb-input, .sb-select, textarea.sb-input{
   width:100%;
   background:#0f1117;
   color:var(--sb-text);
   border:1px solid var(--sb-border);
   border-radius:10px;
-  padding:8px 10px;
+  padding:10px 12px;
+  min-height:42px;
+  line-height:1.2;
   outline:none;
+  box-sizing:border-box;
+  font: 600 1rem var(--sb-font);
 }
 .sb-input::placeholder{ color: color-mix(in oklab, var(--sb-dim) 75%, black); }
 .sb-input:focus, .sb-select:focus, textarea.sb-input:focus{
@@ -57,29 +71,82 @@
   background:#10131a;
 }
 
-/* Fieldsets / inline helpers */
-.sb-ability{
-  border:1px dashed var(--sb-border);
+/* Number inputs: validator-friendly */
+input[type="number"].sb-num{ appearance:none; }
+input[type="number"].sb-num::-webkit-outer-spin-button,
+input[type="number"].sb-num::-webkit-inner-spin-button{ margin:0; }
+
+/* ===============================
+   Fieldsets / Ability Grids
+================================ */
+
+
+#sb-builder fieldset.sb-ability{
+  border:1px solid var(--sb-border);
   border-radius:10px;
-  padding:8px;
-  margin-top:10px;
+  padding:12px;
+  margin-top:14px;
   color:var(--sb-text);
+  position:relative;
+  overflow: visible;                 /* ensure legend is never clipped */
+  background: rgba(0,0,0,.12);
 }
-.sb-ability-grid{
+
+.sb-ability-title {
+  margin-top: 10px;
+  margin-bottom: -10px;
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--sb-text);
+  /* Your other styling */
+}
+
+/* LEGEND — in normal flow (no absolute positioning) */
+#sb-builder fieldset.sb-ability > legend{
+  display: inline-block;          /* shrink to fit */
+  margin: 0 0 6px 12px;              /* slight indent; gives a clean look */
+  padding: 0 .4em;
+  line-height: 1.1;
+  font-weight: 800;
+  color: var(--sb-text);
+  background: linear-gradient(180deg, var(--sb-panel), var(--sb-panel2));
+  border: 0;
+  border-radius: 2px;
+  text-shadow: none;
+  box-shadow: none;
+}
+
+/* tidy label layout so captions align over controls */
+.sb-ability-grid label,
+#sb-builder .sb-ability-grid label,
+#sb-builder .sb-grid > label{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:6px;
+  font-weight:800;
+  letter-spacing:.25px;
+}
+
+/* Six-pack grid */
+#sb-builder .sb-ability-grid{
   display:grid;
-  grid-template-columns: repeat(6,1fr);
+  grid-template-columns: repeat(6, minmax(88px,1fr));
   gap:8px;
-  margin-top:6px;
+  margin-top: 10px;                  /* consistent top gap under legend */
 }
+
 .sb-inline{
   display:flex;
   align-items:center;
   gap:8px;
-  margin-top:6px;
+  margin-top:10px;
   color:var(--sb-dim);
 }
 
-/* Helpers / mini grid */
+/* ===============================
+   Helpers / Mini Grid
+================================ */
 .sb-helper{
   margin-top:14px;
   padding-top:6px;
@@ -91,7 +158,9 @@
   gap:8px;
 }
 
-/* Repeaters */
+/* ===============================
+   Repeaters
+================================ */
 .sb-row{ margin-top:10px; }
 .sb-list{ display:grid; gap:8px; }
 .sb-item{
@@ -110,7 +179,9 @@
 }
 .sb-item textarea{ min-height:80px; resize:vertical; }
 
-/* Buttons */
+/* ===============================
+   Buttons
+================================ */
 .sb-btn{
   background: linear-gradient(180deg, var(--sb-gold-strong), var(--sb-gold));
   color:#0b0a07;
@@ -142,7 +213,9 @@
   box-shadow: inset 0 0 0 1px rgba(226,184,77,.18);
 }
 
-/* Export bar */
+/* ===============================
+   Export Bar
+================================ */
 .sb-export{
   display:flex;
   gap:8px;
@@ -150,7 +223,9 @@
   margin-top:10px;
 }
 
-/* Preview */
+/* ===============================
+   Preview
+================================ */
 #sb-preview .sb-pre, .sb-pre{
   white-space: pre-wrap;
   font-family: var(--sb-mono);
@@ -163,16 +238,18 @@
 }
 .sb-pre--small{ min-height:0; }
 
-/* Inline select + custom input (Creature Type) */
+/* ===============================
+   Inline select + custom input
+================================ */
 .sb-two-inline{
   display:grid;
   grid-template-columns: 220px 1fr;
   gap:8px;
 }
 
-/* ===== Monster Builder layout fixes (keep, color-consistent) ===== */
-
-/* Make the form grids breathe and align */
+/* ===============================
+   Monster Builder Layout Fixes
+================================ */
 #sb-builder .sb-grid{
   display:grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -180,44 +257,18 @@
   align-items:start;
 }
 
-/* Fieldsets should span the full grid width */
-#sb-builder fieldset.sb-ability{
-  grid-column: 1 / -1;
-  padding: 12px;
-  border: 1px solid var(--sb-border);
-  border-radius: 10px;
-  background: rgba(0,0,0,0.18);
-  margin: 0;
-}
-#sb-builder fieldset.sb-ability > legend{
-  padding: 0 6px;
-  font-weight: 600;
-  color: var(--sb-text);
-  opacity: .9;
-}
+/* Fieldsets span full grid width */
+#sb-builder fieldset.sb-ability{ grid-column: 1 / -1; }
 
-/* Six-pack ability/saving-throw grid */
-#sb-builder .sb-ability-grid{
-  display:grid;
-  grid-template-columns: repeat(6, minmax(88px, 1fr));
-  gap: 8px;
-}
-@media (max-width: 1100px){
-  #sb-builder .sb-ability-grid{ grid-template-columns: repeat(3, minmax(120px, 1fr)); }
-}
-@media (max-width: 640px){
-  #sb-builder .sb-ability-grid{ grid-template-columns: repeat(2, minmax(140px, 1fr)); }
-}
-
-/* Inputs/selects fill their column neatly */
+/* Inputs/selects sizing */
 #sb-builder .sb-input,
 #sb-builder .sb-select{
   width: 100%;
-  min-height: 36px;
+  min-height: 42px;
   box-sizing: border-box;
 }
 
-/* Two inline controls (Creature Type: select + custom) */
+/* Creature Type (two inline) */
 #sb-builder .sb-two-inline{
   display:grid;
   grid-template-columns: 1fr 1fr;
@@ -225,13 +276,6 @@
 }
 @media (max-width: 640px){
   #sb-builder .sb-two-inline{ grid-template-columns: 1fr; }
-}
-
-/* Inline labels (checkbox rows) line up nicely */
-#sb-builder .sb-inline{
-  display:flex;
-  align-items:center;
-  gap: 8px;
 }
 
 /* Helper text rhythm */
@@ -242,7 +286,7 @@
   margin-top:4px;
 }
 
-/* Visually mute disabled selects when "Override" is on */
+/* Disabled state */
 #sb-builder select:disabled,
 #sb-builder input:disabled,
 #sb-builder textarea:disabled{
@@ -250,14 +294,26 @@
   cursor:not-allowed;
 }
 
-/* Buttons area spacing (export, helpers) */
+/* Buttons area spacing */
 #sb-builder .sb-export{
   display:flex;
   flex-wrap:wrap;
   gap:8px;
 }
 
-/* Small screens */
+/* Optional equal height (enable var above) */
+@supports (height: min(1px, 1px)){
+  #sb-builder fieldset.sb-ability{
+    min-height: var(--sb-ability-minh, auto);
+  }
+}
+
+/* ===============================
+   Responsive
+================================ */
+@media (max-width: 900px){
+  /* legends remain correct */
+}
 @media (max-width: 720px){
   .sb-item .sb-two{ grid-template-columns: 1fr; }
   .sb-two-inline{ grid-template-columns: 1fr; }
