@@ -1,17 +1,17 @@
 {
   "dc_brackets": {
-    "very_easy": { "label": "Very easy 5–9", "min": 5, "max": 9 },
-    "easy": { "label": "Easy 10–14", "min": 10, "max": 14 },
-    "medium": { "label": "Medium 15–19", "min": 15, "max": 19 },
-    "hard": { "label": "Hard 20–24", "min": 20, "max": 24 },
-    "very_hard": { "label": "Very hard 25–29", "min": 25, "max": 29 },
-    "nearly_impossible": { "label": "Nearly impossible 30", "min": 30, "max": 30 }
+    "very_easy": { "min": 5, "max": 9 },
+    "easy": { "min": 10, "max": 14 },
+    "medium": { "min": 15, "max": 19 },
+    "hard": { "min": 20, "max": 24 },
+    "very_hard": { "min": 25, "max": 29 },
+    "nearly_impossible": { "min": 30, "max": 30 }
   },
 
   "damage_by_lethality": {
-    "low":    ["1d6", "1d8"],
-    "medium": ["2d6", "1d10", "1d12"],
-    "high":   ["3d6", "2d10", "2d12"]
+    "low":    ["1d6",  "1d8",  "1d10"],
+    "medium": ["2d6",  "2d8",  "1d12", "2d10"],
+    "high":   ["4d6",  "3d8",  "2d10", "2d12", "4d8"]
   },
 
   "default_damage_type_by_tech": {
@@ -21,18 +21,15 @@
   },
 
   "damage_type_keywords": [
-    { "type": "piercing",     "keywords": ["spear", "dart", "needle", "spike", "arrow", "bolt", "stinger"] },
-    { "type": "slashing",     "keywords": ["scythe", "blade", "saw", "axe", "razor", "slicer"] },
-    { "type": "bludgeoning",  "keywords": ["hammer", "mace", "club", "block", "boulder", "ram", "crush", "piston"] },
-    { "type": "fire",         "keywords": ["fire", "flame", "burn", "scorch", "napalm"] },
-    { "type": "cold",         "keywords": ["ice", "frost", "freezing"] },
-    { "type": "acid",         "keywords": ["acid", "corrode"] },
-    { "type": "poison",       "keywords": ["poison", "toxin", "venom", "gas"] },
-    { "type": "lightning",    "keywords": ["lightning", "shock", "electr"] },
-    { "type": "force",        "keywords": ["force"] },
-    { "type": "necrotic",     "keywords": ["necrotic"] },
-    { "type": "radiant",      "keywords": ["radiant", "holy"] },
-    { "type": "psychic",      "keywords": ["psychic", "mind"] },
-    { "type": "thunder",      "keywords": ["thunder", "sonic", "boom"] }
+    { "type": "piercing",   "keywords": ["spear","dart","needle","spike","arrow","bolt","stinger"] },
+    { "type": "slashing",   "keywords": ["scythe","blade","saw","axe","razor","slicer"] },
+    { "type": "bludgeoning","keywords": ["hammer","mace","club","block","boulder","ram","crush","piston"] },
+    { "type": "fire",       "keywords": ["fire","flame","burn","scorch"] },
+    { "type": "cold",       "keywords": ["ice","frost","freezing"] },
+    { "type": "acid",       "keywords": ["acid","corrode"] },
+    { "type": "poison",     "keywords": ["poison","toxin","venom","gas"] },
+    { "type": "lightning",  "keywords": ["lightning","shock","electr"] },
+    { "type": "force",      "keywords": ["force"] },
+    { "type": "thunder",    "keywords": ["thunder","sonic","boom"] }
   ]
 }

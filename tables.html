@@ -115,6 +115,15 @@
         <h2 class="tb-title">Treasure (Hoard / Individual)</h2>
         <div class="tb-grid">
           <label class="tb-label">
+            World magic prevalence
+            <select id="treasureLevel" class="tb-select">
+              <option value="levelNone">No magic</option>
+              <option value="levelLow">Low</option>
+              <option value="levelNormal" selected>Normal</option>
+              <option value="levelHigh">High</option>
+            </select>
+          </label>
+          <label class="tb-label">
             Mode
             <select id="treasureMode" class="tb-select">
               <option value="hoard" selected>Hoard</option>
@@ -144,7 +153,8 @@
   <main class="grid-even"><!--main 2-->
     <article><!--article 2.1-->
       <!-- Travel Complications -->
-      <section class="tb-panel">
+       
+      <!--<section class="tb-panel">
         <h2 class="tb-title">Travel Complications</h2>
         <div class="tb-grid">
           <label class="tb-label">
@@ -179,11 +189,11 @@
         </div>
         </div>
         <output id="travelResult" class="tb-result" aria-live="polite">—</output>
-      </section>
+      </section>-->
     </article>
     <article><!--article 2.2-->
       <!-- Road Events -->
-      <section class="tb-panel">
+      <!--<section class="tb-panel">
         <h2 class="tb-title">Road Events</h2>
         <div class="tb-grid">
           <label class="tb-label">
@@ -209,7 +219,7 @@
         </div>
         </div>
         <output id="roadResult" class="tb-result" aria-live="polite">—</output>
-      </section>
+      </section>-->
     </article>
     <article><!--article 2.3-->
       <!-- Names -->
@@ -217,28 +227,24 @@
         <h2 class="tb-title">Names</h2>
         <div class="tb-grid">
           <label class="tb-label">
-            Type
-            <select id="nameType" class="tb-select">
-              <option value="person_any" selected>Person</option>
-              <option value="inn">Inn</option>
-              <option value="boat">Boat</option>
-              <option value="band">Band/Company</option>
+            Race/Species
+            <select id="nameSpecies" class="tb-select">
+              <option value="human_sken" selected>Human, Sken</option>
+              <option value="human_kaij" selected>Human, Kaij</option>
+              <option value="human_caratania" selected>Human, Caratanian</option>
+              <option value="elf">Elven</option>
+              <option value="dwarf">Dwarven</option>
+              <option value="dragonborn">Dragonborn</option>
+              <option value="gnome">Gnomes</option>
+              <option value="goblin">Goblins</option>
             </select>
           </label>
           <label class="tb-label">
-            Culture (flavour only)
-            <select id="nameCulture" class="tb-select">
-              <option value="common" selected>Common</option>
-              <option value="calarium">Calarium</option>
-              <option value="kuthan">Ku’Than</option>
-              <option value="dargav">Dargav</option>
-              <option value="oldkaijistan">Old Kaijistan</option>
-              <option value="northlands">Northlands</option>
+            Gender
+            <select id="nameGender" class="tb-select">
+              <option value="male" selected>Male</option>
+              <option value="female">Female</option>     
             </select>
-          </label>
-          <label class="tb-label">
-            Count
-            <input id="nameCount" type="number" min="1" max="10" value="3" class="tb-input" />
           </label>
         </div>
         <div class="tb-grid"></div>
@@ -255,7 +261,7 @@
   <main class="grid-even"><!--main 3-->
     <article><!--article 3.1-->
       <!-- Tavern Events -->
-      <section class="tb-panel">
+      <!--<section class="tb-panel">
         <h2 class="tb-title">Tavern Events</h2>
         <div class="tb-grid">
           <label class="tb-label">
@@ -282,7 +288,7 @@
         </div>
         </div>
         <output id="tavernResult" class="tb-result" aria-live="polite">—</output>
-      </section>
+      </section>-->
     </article>
     <article><!--article 3.2-->
 

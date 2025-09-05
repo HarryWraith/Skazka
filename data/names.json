@@ -1,0 +1,38 @@
+{
+  "schema": "names.people.v1",
+  "updated": "2025-09-05T00:00:00Z",
+  "people": {
+    "human_sken": {
+      "male":    ["Arno","Berrin","Corvin","Darek","Edrin","Falko","Garrin","Hadrik","Isembor","Jarek","Korin","Lazlo","Marten","Nicol","Odran","Pavel","Quent","Rurik","Sorin","Tomas"],
+      "female":  ["Mira","Talia","Vessa","Anwen","Brina","Cerys","Dasha","Elka","Fiora","Galenna","Halia","Isolde","Jasna","Katia","Liora","Maren","Nadia","Olena","Raisa","Vera"]
+    },
+    "human_kaij": {
+      "male":    ["Akio","Daichi","Haru","Isamu","Jiro","Kaito","Masaru","Nobu","Riku","Taro","Yori","Kenji","Sora","Renji","Takao","Hideo","Yuma","Kazuo","Naoki","Shinji"],
+      "female":  ["Aiko","Emi","Hana","Kaori","Mika","Naomi","Rei","Saki","Yumi","Kiko","Nana","Rina","Sora","Aya","Chika","Hina","Kei","Miho","Noa","Yuna"]
+    },
+    "human_caratania": {
+      "male":    ["Adriano","Bastian","Cassio","Dario","Elias","Fabian","Giorgio","Hector","Isandro","Julius","Lucian","Marco","Nerio","Orfeo","Paolo","Quint","Rafael","Silvio","Tomaso","Valen"],
+      "female":  ["Adela","Bianca","Camila","Doria","Elena","Fabia","Giana","Helia","Isabetta","Livia","Marcella","Nerina","Oria","Paola","Renata","Sabina","Talia","Valeria","Vittoria","Zita"]
+    },
+    "elf": {
+      "male":    ["Aerith","Beluar","Caelion","Daerin","Eryndor","Faelar","Galan","Hathar","Irandir","Jhaeros","Kaelthas","Lathil","Mythan","Naerion","Olorin","Pharion","Quelen","Rhyll","Saelar","Theren"],
+      "female":  ["Aenwen","Brielle","Caelynn","Daelith","Elowen","Firael","Gwyneth","Halaera","Ilyana","Jhaera","Keyleth","Lirael","Maelys","Nymeria","Oloriel","Phaera","Quillathe","Rhiannon","Sylphene","Thiala"]
+    },
+    "dwarf": {
+      "male":    ["Borin","Durgan","Eldrik","Farin","Gundrik","Hargrom","Irgund","Jorik","Kardrum","Lodrin","Mardin","Nargrom","Orik","Ragrin","Storn","Thorin","Ulfgar","Vondal","Wulfram","Zarnir"],
+      "female":  ["Baela","Dagna","Edris","Frida","Gilda","Helga","Ingri","Janna","Kara","Lorna","Marga","Nora","Orla","Ragna","Sigrid","Thora","Ula","Vera","Wynna","Zora"]
+    },
+    "dragonborn": {
+      "male":    ["Arjhan","Balasar","Donaar","Ghesh","Heskan","Kriv","Medrash","Nadarr","Pandjed","Rhogar","Tarhun","Torinn","Vezzen","Yorik","Zorash"],
+      "female":  ["Akra","Biri","Daar","Harann","Farideh","Jheri","Kava","Korinn","Mishann","Nala","Nuthra","Pehdri","Raiann","Sora","Vezera"]
+    },
+    "gnome": {
+      "male":    ["Alston","Bodrin","Cramble","Dibble","Eldon","Fizzwick","Glim","Hobbin","Ippleby","Jimble","Kellen","Lorben","Merrin","Nib","Oblet","Perrin","Quibble","Rimple","Sprocket","Tibbin"],
+      "female":  ["Bimpnottin","Carri","Dilly","Ellyjobell","Fennel","Glimra","Hanni","Jilli","Kippa","Lilli","Merribelle","Nissa","Orri","Pinni","Qilli","Rilla","Tilli","Ulla","Vimmi","Zilli"]
+    },
+    "goblin": {
+      "male":    ["Azit","Brek","Crikk","Dreg","Ekk","Fritz","Grit","Hax","Ikkit","Jub","Krub","Lurt","Mogg","Nix","Ozrik","Pug","Rexx","Skab","Tritch","Zik"],
+      "female":  ["Akka","Bizza","Chig","Dizzi","Echa","Fikka","Giz","Hizza","Isha","Jikka","Kizzy","Likka","Miz","Nizzi","Ozzi","Paxxa","Rikka","Sazza","Tizzi","Zazza"]
+    }
+  }
+}
