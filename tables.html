@@ -20,7 +20,27 @@
 <body>
   <div id="navbar"></div><!-- Navbar will be loaded here -->
 
+  <main class="grid-even">
+    <article>
+      <h2>Contents</h2>
+      <ol class="toc-list">
+        <li>Weather</li>
+        <li>Traps</li>
+        <li>Treasure</li>
+        <li>Names</li>
+      </ol>
+    </article>
+    <article>
+      <h1>Random Generators</h1>
+      <p><b>Note</b>: the content of these tables is entirely AI generated. If anything resembles your work please
+        contact me. I'd be happy to credit you if the content is a direct cut and paste.</p>
+    </article>
+    <article></article>
+
+  </main>
+
   <main class="grid-even"><!--main 1-->
+
     <article><!--article 1.1-->
       <!-- Weather (kept for convenience) -->
       <section class="tb-panel">
@@ -67,7 +87,7 @@
               <option value="arcane">Arcane</option>
               <option value="nature">Nature</option>
             </select>
-          </label> 
+          </label>
           <label class="tb-label">
             Lethality
             <select id="trapLevel" class="tb-select">
@@ -88,7 +108,7 @@
               <option value="temple">Temple</option>
             </select>
           </label>
-           <label class="tb-label">
+          <label class="tb-label">
             Difficulty
             <select id="trapDcBracket" class="tb-select">
               <option value="very_easy" selected>Very easy</option>
@@ -152,77 +172,7 @@
 
   <main class="grid-even"><!--main 2-->
     <article><!--article 2.1-->
-      <!-- Travel Complications -->
-       
-      <!--<section class="tb-panel">
-        <h2 class="tb-title">Travel Complications</h2>
-        <div class="tb-grid">
-          <label class="tb-label">
-            Terrain
-            <select id="travTerrain" class="tb-select">
-              <option value="plains" selected>Plains</option>
-              <option value="forest">Forest</option>
-              <option value="hills">Hills</option>
-              <option value="mountains">Mountains</option>
-              <option value="swamp">Swamp/Bog</option>
-              <option value="desert">Desert</option>
-              <option value="tundra">Tundra</option>
-              <option value="coast">Coast</option>
-              <option value="jungle">Jungle</option>
-              <option value="urban">Urban</option>
-            </select>
-          </label>
-          <label class="tb-label">
-            Season
-            <select id="travSeason" class="tb-select">
-              <option value="spring">Spring</option>
-              <option value="summer">Summer</option>
-              <option value="autumn" selected>Autumn</option>
-              <option value="winter">Winter</option>
-            </select>
-          </label>
-        </div>
-        <div class="tb-grid"></div>
-        <div class="tb-actions">
-          <button id="rollTravel" class="tb-btn">Roll</button>
-          <button id="randTravel" class="tb-ghost-btn">Randomize</button>
-        </div>
-        </div>
-        <output id="travelResult" class="tb-result" aria-live="polite">—</output>
-      </section>-->
-    </article>
-    <article><!--article 2.2-->
-      <!-- Road Events -->
-      <!--<section class="tb-panel">
-        <h2 class="tb-title">Road Events</h2>
-        <div class="tb-grid">
-          <label class="tb-label">
-            Road Type
-            <select id="roadType" class="tb-select">
-              <option value="civilized" selected>Civilized</option>
-              <option value="frontier">Frontier</option>
-              <option value="wild">Wild</option>
-            </select>
-          </label>
-          <label class="tb-label">
-            Time
-            <select id="roadTime" class="tb-select">
-              <option value="day" selected>Day</option>
-              <option value="night">Night</option>
-            </select>
-          </label>
-        </div>
-        <div class="tb-grid"></div>
-        <div class="tb-actions">
-          <button id="rollRoad" class="tb-btn">Roll</button>
-          <button id="randRoad" class="tb-ghost-btn">Randomize</button>
-        </div>
-        </div>
-        <output id="roadResult" class="tb-result" aria-live="polite">—</output>
-      </section>-->
-    </article>
-    <article><!--article 2.3-->
-      <!-- Names -->
+      <!--names-->
       <section class="tb-panel">
         <h2 class="tb-title">Names</h2>
         <div class="tb-grid">
@@ -243,7 +193,7 @@
             Gender
             <select id="nameGender" class="tb-select">
               <option value="male" selected>Male</option>
-              <option value="female">Female</option>     
+              <option value="female">Female</option>
             </select>
           </label>
         </div>
@@ -256,10 +206,10 @@
         <output id="nameResult" class="tb-result" aria-live="polite">—</output>
       </section>
     </article>
-  </main>
+    <article><!--article 2.2-->
 
-  <main class="grid-even"><!--main 3-->
-    <article><!--article 3.1-->
+    </article>
+    <article><!--article 2.3-->
       <!-- Tavern Events -->
       <!--<section class="tb-panel">
         <h2 class="tb-title">Tavern Events</h2>
@@ -290,9 +240,45 @@
         <output id="tavernResult" class="tb-result" aria-live="polite">—</output>
       </section>-->
     </article>
+
+
+  </main>
+
+  <main class="grid-even"><!--main 3-->
+    <article><!--article 3.1-->
+      <!-- Road Events -->
+      <!--<section class="tb-panel">
+        <h2 class="tb-title">Road Events</h2>
+        <div class="tb-grid">
+          <label class="tb-label">
+            Road Type
+            <select id="roadType" class="tb-select">
+              <option value="civilized" selected>Civilized</option>
+              <option value="frontier">Frontier</option>
+              <option value="wild">Wild</option>
+            </select>
+          </label>
+          <label class="tb-label">
+            Time
+            <select id="roadTime" class="tb-select">
+              <option value="day" selected>Day</option>
+              <option value="night">Night</option>
+            </select>
+          </label>
+        </div>
+        <div class="tb-grid"></div>
+        <div class="tb-actions">
+          <button id="rollRoad" class="tb-btn">Roll</button>
+          <button id="randRoad" class="tb-ghost-btn">Randomize</button>
+        </div>
+        </div>
+        <output id="roadResult" class="tb-result" aria-live="polite">—</output>
+      </section>-->
+    </article>
     <article><!--article 3.2-->
 
     </article>
+
     <article><!--article 3.3-->
 
     </article>

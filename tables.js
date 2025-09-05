@@ -440,8 +440,15 @@ function renderTreasure(t) {
       sample: MAGIC_DATA?.items?.[0]?.name || null
     }));
 
-  window.rollTreasureDebug = (mode, band) =>
-    (MAGIC_READY || Promise.resolve()).then(() => rollTreasure(mode, band));
+  // ─── Treasure: debug helpers (OK to remove in prod) ─────────────────────────
+window.treasureDebug = (mode = "hoard", band = "mid", level = "levelNormal") =>
+  MAGIC_READY.then(() => rollTreasure(mode, band, level));
+
+window.magicDebug = () => MAGIC_READY.then(() => ({
+  path: "/data/magic-items.json",
+  count: MAGIC_DATA?.items?.length || 0,
+  sample: MAGIC_DATA?.items?.[0]?.name || null
+}));
 
   // ─────────────────────────────────────────────────────────────────────────────
   // CLICK HANDLER (only Weather, Traps, Names, Treasure)
