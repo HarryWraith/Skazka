@@ -111,6 +111,7 @@ body p { text-align:justify; line-height:1.5; margin:1em 0; }
   width:100%; font-size:2rem; font-weight:900;
   color:var(--sb-text); background:var(--sb-panel);
   border:1px solid var(--sb-border);
+  font-size: 1rem;
 }
 textarea.contact { height:300px; }
 
