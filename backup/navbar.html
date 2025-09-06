@@ -1,4 +1,4 @@
-<!-- navbar.html (updated, drop-in) -->
+<!-- navbar.html (fragment) -->
 <nav class="navbar">
   <style>
     :root {
@@ -56,8 +56,7 @@
       list-style: none;
     }
 
-    .nav-links>li>a,
-    .nav-links>li>button {
+    .nav-links>li>a {
       color: var(--sb-dim);
       text-decoration: none;
       font-size: 1.2rem;
@@ -68,14 +67,9 @@
       transition: color .3s, background .2s;
       margin: 0 10px;
       border-radius: 8px;
-      background: none;
-      border: 0;
-      cursor: pointer;
-      font: inherit;
     }
 
-    .nav-links>li>a:hover,
-    .nav-links>li>button:hover {
+    .nav-links>li>a:hover {
       color: var(--sb-gold-strong);
       font-weight: bolder;
     }
@@ -110,11 +104,9 @@
       position: relative;
     }
 
-    /* Links & buttons inside dropdowns */
+    /* Links inside dropdowns */
     .dropdown-content a,
-    .dropdown-content button,
-    .dropdown-submenu a,
-    .dropdown-submenu button {
+    .dropdown-submenu a {
       display: block;
       color: var(--sb-dim);
       text-decoration: none;
@@ -124,17 +116,10 @@
       margin: 0;
       border-radius: 0;
       white-space: nowrap;
-      background: none;
-      border: 0;
-      cursor: pointer;
-      text-align: left;
-      font: inherit;
     }
 
     .dropdown-content a:hover,
-    .dropdown-content button:hover,
-    .dropdown-submenu a:hover,
-    .dropdown-submenu button:hover {
+    .dropdown-submenu a:hover {
       color: var(--sb-gold-strong);
       background-color: var(--sb-chip);
       font-weight: bolder;
@@ -225,13 +210,17 @@
     }
 
     /* ───────────────────────────────────────────────
-       RUNES + ALIGNMENT FIX (TOP-LEVEL ONLY)
-       ───────────────────────────────────────────── */
+     RUNES + ALIGNMENT FIX (TOP-LEVEL ONLY)
+     ─────────────────────────────────────────────── */
+
+    /* Set badge space and anchor */
     .navbar .nav-links>li.dropdown {
       --badge-space: 52px;
+      /* keep in sync with rune size/offset */
       position: relative;
     }
 
+    /* make room for the badge on top-level links */
     .navbar .nav-links>li.dropdown>a,
     .navbar .nav-links>li.dropdown>button {
       position: relative;
@@ -241,12 +230,15 @@
       padding-left: var(--badge-space);
     }
 
+    /* align level-1 panel under the link text (not under the rune) */
     .navbar .nav-links>li.dropdown>.dropdown-content {
       left: var(--badge-space);
     }
 
+    /* the neon rune badge */
     .navbar .nav-links>li.dropdown::before {
       content: "ᚠ";
+      /* default; cycled below */
       position: absolute;
       left: 12px;
       top: 50%;
@@ -256,21 +248,26 @@
       border-radius: 50%;
       display: grid;
       place-items: center;
+
       --rune-blue: #2ee6ff;
       color: var(--rune-blue);
       background: rgba(46, 230, 255, .08);
       border: 1px solid rgba(46, 230, 255, .6);
-      box-shadow: 0 0 10px rgba(46, 230, 255, .45), 0 0 18px rgba(46, 230, 255, .25) inset;
-      text-shadow: 0 0 2px rgba(46, 230, 255, .85), 0 0 6px rgba(46, 230, 255, .65);
+      box-shadow: 0 0 10px rgba(46, 230, 255, .45),
+        0 0 18px rgba(46, 230, 255, .25) inset;
+      text-shadow: 0 0 2px rgba(46, 230, 255, .85),
+        0 0 6px rgba(46, 230, 255, .65);
       font-size: 1rem;
       line-height: 1;
       font-weight: 700;
     }
 
     .navbar .nav-links>li.dropdown:hover::before {
-      box-shadow: 0 0 12px rgba(46, 230, 255, .55), 0 0 22px rgba(46, 230, 255, .30) inset;
+      box-shadow: 0 0 12px rgba(46, 230, 255, .55),
+        0 0 22px rgba(46, 230, 255, .30) inset;
     }
 
+    /* cycle runes for TOP-LEVEL items only */
     .navbar .nav-links>li.dropdown:nth-child(12n+1)::before {
       content: "ᚠ";
     }
@@ -319,22 +316,24 @@
       content: "ᛉ";
     }
 
+    /* kill badges on ALL nested menu levels */
     .navbar .dropdown-content li::before,
     .navbar .dropdown-submenu li::before {
       content: none !important;
       display: none !important;
     }
 
+
+
+    /* ensure nested links don’t carry extra left padding */
     .navbar .dropdown-content a,
-    .navbar .dropdown-content button,
-    .navbar .dropdown-submenu a,
-    .navbar .dropdown-submenu button {
+    .navbar .dropdown-submenu a {
       padding-left: var(--submenu-pad-x);
     }
 
     /* ─────────────────────────────────────────────
-       RESPONSIVE
-       ───────────────────────────────────────────── */
+     RESPONSIVE
+     ───────────────────────────────────────────── */
     @media (max-width:980px) {
       .hamburger {
         display: flex;
@@ -362,8 +361,7 @@
         margin: 10px 0;
       }
 
-      .nav-links>li>a,
-      .nav-links>li>button {
+      .nav-links>li>a {
         padding: 10px 20px;
         line-height: normal;
         border-radius: 6px;
@@ -382,9 +380,7 @@
       }
 
       .dropdown-content a,
-      .dropdown-content button,
-      .dropdown-submenu a,
-      .dropdown-submenu button {
+      .dropdown-submenu a {
         padding: 10px 28px !important;
         font-size: 1.1rem;
         border-radius: 6px;
@@ -418,66 +414,37 @@
         display: none !important;
       }
 
+
+
       .navbar .nav-links>li.dropdown>a,
       .navbar .nav-links>li.dropdown>button {
         padding-left: 20px !important;
       }
 
+      /* Make level-1 dropdown sit flush under the label */
       .navbar .nav-links>li.dropdown>.dropdown-content {
         left: 0;
+        /* no offset on mobile */
         padding-left: 0;
+        /* container itself */
         margin-left: 0;
       }
-
-      /* ── MOBILE ONLY ADJUSTMENTS ───────────────────────── */
-
-      /* Make top-level headers (the main buttons) slightly bluer for hierarchy */
-      .nav-links>li.dropdown>.nav-toggle {
-        /* soft blue variant of your dim text */
-        color: #bcd7e5;
-        /* tweak this hex if you want it more/less blue */
-        font-weight: 600;
-      }
-
-      /* Slightly increase left padding for submenu items (level-1) */
-      .dropdown-content>li>a,
-      .dropdown-content>li>button {
-        padding-left: 36px !important;
-        /* was ~28px */
-      }
-
-      /* Indent level-2 items even more */
-      .dropdown-submenu>li>a,
-      .dropdown-submenu>li>button {
-        padding-left: 56px !important;
-      }
-
     }
 
     @media (max-width:480px) {
-
-      .nav-links>li>a,
-      .nav-links>li>button {
+      .nav-links>li>a {
         font-size: 1rem;
       }
     }
-
-    /* Scroll lock when mobile menu is open */
-    html.menu-open,
-    html.menu-open body {
-      overflow: hidden;
-    }
   </style>
-
   <div class="logo">
     <a href="index.html"><img src="assets/skazka_logo.png" alt="Skazka Logo"></a>
   </div>
 
-  <ul class="nav-links" id="nav-menu" aria-label="Primary">
+  <ul class="nav-links">
     <!-- World -->
-    <li class="dropdown">
-      <button class="nav-toggle" aria-expanded="false" aria-controls="submenu-world">World</button>
-      <ul class="dropdown-content" id="submenu-world" hidden>
+    <li class="dropdown"><a href="#">World</a>
+      <ul class="dropdown-content">
         <li><a href="overview.html">Overview</a></li>
         <li><a href="multiverse.html">Multiverse</a></li>
         <li><a href="seasons.html">Seasons & Time</a></li>
@@ -486,24 +453,19 @@
     </li>
 
     <!-- Beliefs -->
-    <li class="dropdown">
-      <button class="nav-toggle" aria-expanded="false" aria-controls="submenu-beliefs">Beliefs</button>
-      <ul class="dropdown-content" id="submenu-beliefs" hidden>
+    <li class="dropdown"><a href="#">Beliefs</a>
+      <ul class="dropdown-content">
         <li><a href="creation.html">Creation</a></li>
-
-        <li class="dropdown">
-          <button class="nav-toggle" aria-expanded="false" aria-controls="submenu-vekya">The Vekya</button>
-          <ul class="dropdown-submenu" id="submenu-vekya" hidden>
+        <li class="dropdown"><a href="#">The Vekya</a>
+          <ul class="dropdown-submenu">
             <li><a href="primordials.html">The Primordials</a></li>
             <li><a href="uzume.html">Uzume</a></li>
             <li><a href="kaos.html">Kaos</a></li>
             <li><a href="Kronos.html">Kronos</a></li>
           </ul>
         </li>
-
-        <li class="dropdown">
-          <button class="nav-toggle" aria-expanded="false" aria-controls="submenu-annarr">The Annarr</button>
-          <ul class="dropdown-submenu" id="submenu-annarr" hidden>
+        <li class="dropdown"><a href="#">The Annarr</a>
+          <ul class="dropdown-submenu">
             <li><a href="highones.html">The High Ones</a></li>
             <li><a href="frur.html">Frur</a></li>
             <li><a href="skald.html">Skald</a></li>
@@ -511,10 +473,8 @@
             <li><a href="njord.html">Njord</a></li>
           </ul>
         </li>
-
-        <li class="dropdown">
-          <button class="nav-toggle" aria-expanded="false" aria-controls="submenu-prir">The Prir</button>
-          <ul class="dropdown-submenu" id="submenu-prir" hidden>
+        <li class="dropdown"><a href="#">The Prir</a>
+          <ul class="dropdown-submenu">
             <li><a href="walkinggods.html">The Walking Gods</a></li>
             <li><a href="chernabog.html">Chernabog</a></li>
             <li><a href="herukan.html">Herukan</a></li>
@@ -531,10 +491,8 @@
             <li><a href="mani.html">Mani</a></li>
           </ul>
         </li>
-
-        <li class="dropdown">
-          <button class="nav-toggle" aria-expanded="false" aria-controls="submenu-lesser">Lesser Powers</button>
-          <ul class="dropdown-submenu" id="submenu-lesser" hidden>
+        <li class="dropdown"><a href="#">Lesser Powers</a>
+          <ul class="dropdown-submenu">
             <li><a href="lesserpowers.html">Lesser powers</a></li>
             <li><a href="fafnirog.html">Fafnirog</a></li>
             <li><a href="hags.html">The Hags</a></li>
@@ -549,12 +507,10 @@
     </li>
 
     <!-- People -->
-    <li class="dropdown">
-      <button class="nav-toggle" aria-expanded="false" aria-controls="submenu-people">People</button>
-      <ul class="dropdown-content" id="submenu-people" hidden>
-        <li class="dropdown">
-          <button class="nav-toggle" aria-expanded="false" aria-controls="submenu-races">Races</button>
-          <ul class="dropdown-submenu" id="submenu-races" hidden>
+    <li class="dropdown"><a href="#">People</a>
+      <ul class="dropdown-content">
+        <li class="dropdown"><a href="#">Races</a>
+          <ul class="dropdown-submenu">
             <li><a href="dragonborn.html">Dragonborn</a></li>
             <li><a href="dwarves.html">Dwarves</a></li>
             <li><a href="elves.html">Elves</a></li>
@@ -570,12 +526,10 @@
     </li>
 
     <!-- Places -->
-    <li class="dropdown">
-      <button class="nav-toggle" aria-expanded="false" aria-controls="submenu-places">Places</button>
-      <ul class="dropdown-content" id="submenu-places" hidden>
-        <li class="dropdown">
-          <button class="nav-toggle" aria-expanded="false" aria-controls="submenu-nations">Nations & States</button>
-          <ul class="dropdown-submenu" id="submenu-nations" hidden>
+    <li class="dropdown"><a href="#">Places</a>
+      <ul class="dropdown-content">
+        <li class="dropdown"><a href="#">Nations & States</a>
+          <ul class="dropdown-submenu">
             <li><a href="aeternia.html">Aeternia</a></li>
             <li><a href="caratania.html">Caratania</a></li>
             <li><a href="oldkaijistan.html">Old Kaijistan</a></li>
@@ -588,25 +542,22 @@
             <li><a href="everdusk.html">Everdusk</a></li>
           </ul>
         </li>
-        <li class="dropdown">
-          <button class="nav-toggle" aria-expanded="false" aria-controls="submenu-ruins">Ruins</button>
-          <ul class="dropdown-submenu" id="submenu-ruins" hidden>
+        <li class="dropdown"><a href="#">Ruins</a>
+          <ul class="dropdown-submenu">
             <li><a href="orishan.html">Orishan</a></li>
             <li><a href="kitezh.html">Kitezh</a></li>
             <li><a href="velkaria.html">Velkaria</a></li>
             <li><a href="grimspire_ruins.html">Grimspire</a></li>
           </ul>
         </li>
-        <li class="dropdown">
-          <button class="nav-toggle" aria-expanded="false" aria-controls="submenu-landmarks">Landmarks</button>
-          <ul class="dropdown-submenu" id="submenu-landmarks" hidden>
+        <li class="dropdown"><a href="#">Landmarks</a>
+          <ul class="dropdown-submenu">
             <li><a href="ZhalShaar.html">Zhal'Shaar</a></li>
             <li><a href="glassdunes.html">The Glass Dunes</a></li>
           </ul>
         </li>
-        <li class="dropdown">
-          <button class="nav-toggle" aria-expanded="false" aria-controls="submenu-realms">Strange Realms</button>
-          <ul class="dropdown-submenu" id="submenu-realms" hidden>
+        <li class="dropdown"><a href="#">Strange Realms</a>
+          <ul class="dropdown-submenu">
             <li><a href="rusalka.html">Rusalka</a></li>
             <li><a href="cerv.html">The Cerv Dominion</a></li>
           </ul>
@@ -615,42 +566,35 @@
     </li>
 
     <!-- Groups -->
-    <li class="dropdown">
-      <button class="nav-toggle" aria-expanded="false" aria-controls="submenu-groups">Groups</button>
-      <ul class="dropdown-content" id="submenu-groups" hidden>
-        <li class="dropdown">
-          <a href="ro.html">Cults</a>
-          <ul class="dropdown-submenu" id="submenu-cults">
+    <li class="dropdown"><a href="#">Groups</a>
+      <ul class="dropdown-content">
+        <li class="dropdown"><a href="ro.html">Cults</a>
+          <ul class="dropdown-submenu">
             <li><a href="#">The Black Coin Society</a></li>
           </ul>
         </li>
-        <li class="dropdown">
-          <a href="guilds.html">Guilds</a>
-          <ul class="dropdown-submenu" id="submenu-guilds">
+        <li class="dropdown"><a href="guilds.html">Guilds</a>
+          <ul class="dropdown-submenu">
             <li><a href="#">Guild Example</a></li>
           </ul>
         </li>
-        <li class="dropdown">
-          <a href="cults.html">Societies</a>
-          <ul class="dropdown-submenu" id="submenu-societies">
+        <li class="dropdown"><a href="cults.html">Societies</a>
+          <ul class="dropdown-submenu">
             <li><a href="#">Society Example</a></li>
           </ul>
         </li>
-        <li class="dropdown">
-          <a href="academia.html">Academia</a>
-          <ul class="dropdown-submenu" id="submenu-academia">
+        <li class="dropdown"><a href="academia.html">Academia</a>
+          <ul class="dropdown-submenu">
             <li><a href="#">Order of the Word</a></li>
           </ul>
         </li>
-        <li class="dropdown">
-          <a href="trade.html">Trade & Alliances</a>
-          <ul class="dropdown-submenu" id="submenu-trade">
+        <li class="dropdown"><a href="trade.html">Trade & Alliances</a>
+          <ul class="dropdown-submenu">
             <li><a href="#">Alliance Example</a></li>
           </ul>
         </li>
-        <li class="dropdown">
-          <a href="trade.html">Military</a>
-          <ul class="dropdown-submenu" id="submenu-military">
+        <li class="dropdown"><a href="trade.html">Military</a>
+          <ul class="dropdown-submenu">
             <li><a href="#">The Shield of Dawn</a></li>
           </ul>
         </li>
@@ -658,18 +602,16 @@
     </li>
 
     <!-- History -->
-    <li class="dropdown">
-      <button class="nav-toggle" aria-expanded="false" aria-controls="submenu-history">History</button>
-      <ul class="dropdown-content" id="submenu-history" hidden>
+    <li class="dropdown"><a href="#">History</a>
+      <ul class="dropdown-content">
         <li><a href="events.html">Events</a></li>
         <li><a href="timeline.html">Timeline</a></li>
       </ul>
     </li>
 
     <!-- Things -->
-    <li class="dropdown">
-      <button class="nav-toggle" aria-expanded="false" aria-controls="submenu-things">Things</button>
-      <ul class="dropdown-content" id="submenu-things" hidden>
+    <li class="dropdown"><a href="#">Things</a>
+      <ul class="dropdown-content">
         <li><a href="artefacts.html">Artefacts</a></li>
         <li><a href="materials.html">Materials</a></li>
         <li><a href="bestiary.html">Bestiary</a></li>
@@ -677,9 +619,8 @@
     </li>
 
     <!-- Players -->
-    <li class="dropdown">
-      <button class="nav-toggle" aria-expanded="false" aria-controls="submenu-players">Players</button>
-      <ul class="dropdown-content" id="submenu-players" hidden>
+    <li class="dropdown"><a href="#">Players</a>
+      <ul class="dropdown-content">
         <li><a href="cc.html">Character creation</a></li>
         <li><a href="options.html">Player options</a></li>
         <li><a href="cast.html">Cast</a></li>
@@ -688,9 +629,8 @@
     </li>
 
     <!-- Other -->
-    <li class="dropdown">
-      <button class="nav-toggle" aria-expanded="false" aria-controls="submenu-other">Other</button>
-      <ul class="dropdown-content" id="submenu-other" hidden>
+    <li class="dropdown"><a href="#">Other</a>
+      <ul class="dropdown-content">
         <li><a href="#">Bestiary</a></li>
         <li><a href="insignia.html">Insignia</a></li>
         <li><a href="dice.html">Dice Roller</a></li>
@@ -702,6 +642,8 @@
     <!-- stand alone search -->
     <li class="dropdown"><a href="glossary-search.html">Search</a></li>
 
+
+
     <!-- Mobile donate (hidden on desktop) -->
     <li><a href="https://buy.stripe.com/aFabJ10kD8BN8kL8mm1ZS03" target="_blank" class="donate-mobile">Donate</a></li>
   </ul>
@@ -710,107 +652,9 @@
     <a href="https://buy.stripe.com/aFabJ10kD8BN8kL8mm1ZS03" target="_blank">
       <button class="donate">Donate</button>
     </a>
-    <div class="hamburger" role="button" aria-label="Toggle menu" aria-expanded="false" tabindex="0" id="hamburger">
+    <!-- No inline onclick; JS attaches listener after injection -->
+    <div class="hamburger" role="button" aria-label="Toggle menu" aria-expanded="false" tabindex="0">
       <span></span><span></span><span></span>
     </div>
   </div>
-
-  <script>
-    (function () {
-      const mqMobile = () => window.matchMedia('(max-width:980px)').matches;
-      const html = document.documentElement;
-      const burger = document.getElementById('hamburger');
-      const menu = document.getElementById('nav-menu');
-
-      function openMenu() {
-        menu.classList.add('active');
-        burger.classList.add('open');
-        burger.setAttribute('aria-expanded', 'true');
-        html.classList.add('menu-open'); // scroll lock
-      }
-      function closeMenu() {
-        menu.classList.remove('active');
-        burger.classList.remove('open');
-        burger.setAttribute('aria-expanded', 'false');
-        html.classList.remove('menu-open');
-      }
-
-      // Burger click & keyboard
-      burger.addEventListener('click', () => {
-        const isOpen = burger.classList.contains('open');
-        isOpen ? closeMenu() : openMenu();
-      });
-      burger.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); burger.click(); }
-      });
-
-      // Prevent navigation on placeholder anchors (#) anywhere in menu
-      menu.addEventListener('click', (e) => {
-        const a = e.target.closest('a[href="#"]');
-        if (a) {
-          e.preventDefault();
-          // Don't close the menu for placeholders
-        }
-      });
-
-      // Mobile-only submenu toggles (buttons with aria-controls)
-      menu.addEventListener('click', (e) => {
-        const btn = e.target.closest('.nav-toggle');
-        if (!btn) return;
-        if (!mqMobile()) return; // desktop uses hover/focus CSS
-        const id = btn.getAttribute('aria-controls');
-        const panel = id && document.getElementById(id);
-        if (!panel) return;
-
-        const expanded = btn.getAttribute('aria-expanded') === 'true';
-        btn.setAttribute('aria-expanded', String(!expanded));
-        panel.hidden = expanded;
-        e.stopPropagation();
-      });
-
-      // Close menu on real navigation (mobile)
-      menu.addEventListener('click', (e) => {
-        if (!mqMobile()) return;
-        const link = e.target.closest('a[href]');
-        if (!link) return;
-        const href = link.getAttribute('href') || '';
-        if (href === '#' || href.startsWith('#')) {
-          // hash or placeholder → stay open
-          e.preventDefault();
-          return;
-        }
-        // real navigation → close
-        closeMenu();
-      });
-
-      // Collapse all submenus when leaving mobile
-      const resetSubmenus = () => {
-        if (!mqMobile()) {
-          // ensure hidden attribute doesn't interfere on desktop
-          document.querySelectorAll('#nav-menu .dropdown-content,[id^="submenu-"]').forEach(p => p.hidden = false);
-          document.querySelectorAll('#nav-menu .nav-toggle').forEach(b => b.setAttribute('aria-expanded', 'false'));
-        } else {
-          // start collapsed on mobile
-          document.querySelectorAll('#nav-menu .dropdown-content,[id^="submenu-"]').forEach(p => p.hidden = true);
-          document.querySelectorAll('#nav-menu .nav-toggle').forEach(b => b.setAttribute('aria-expanded', 'false'));
-        }
-      };
-      window.addEventListener('resize', resetSubmenus);
-      // initial
-      resetSubmenus();
-
-      // Close menu on Escape (mobile)
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && mqMobile()) closeMenu();
-      });
-
-      // Click outside to close (mobile)
-      document.addEventListener('click', (e) => {
-        if (!mqMobile()) return;
-        if (!menu.classList.contains('active')) return;
-        const inside = e.target.closest('.navbar');
-        if (!inside) closeMenu();
-      });
-    })();
-  </script>
 </nav>
