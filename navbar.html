@@ -332,6 +332,21 @@
       padding-left: var(--submenu-pad-x);
     }
 
+    /* Highlight current page link */
+    .nav-links a.active,
+    .nav-links button.active {
+      color: var(--sb-gold-strong);
+      /* brighter color */
+      font-weight: 700;
+      /* bolder text */
+      border-left: 3px solid var(--sb-gold-strong);
+      /* subtle marker */
+      padding-left: calc(20px - 3px);
+      /* keep alignment with marker */
+      background-color: rgba(255, 255, 255, 0.05);
+      /* faint background */
+    }
+
     /* ─────────────────────────────────────────────
        RESPONSIVE
        ───────────────────────────────────────────── */
@@ -381,6 +396,12 @@
         padding: 0;
       }
 
+      .nav-toggle[aria-expanded="true"]+ul {
+        opacity: 1;
+        max-height: 1000px;
+        /* large enough to fit contents */
+      }
+
       .dropdown-content a,
       .dropdown-content button,
       .dropdown-submenu a,
@@ -410,6 +431,11 @@
 
       .nav-links a.donate-mobile:hover {
         background: var(--sb-gold-strong);
+      }
+
+      .nav-links a:active,
+      .nav-links button:active {
+        background-color: rgba(255, 255, 255, 0.08);
       }
 
       /* MOBILE: remove rune badges + reset offset */
@@ -452,6 +478,12 @@
         padding-left: 56px !important;
       }
 
+      .dropdown-content a,
+      .dropdown-content button,
+      .dropdown-submenu a,
+      .dropdown-submenu button {
+        min-height: 44px;
+      }
     }
 
     @media (max-width:480px) {
@@ -616,46 +648,54 @@
 
     <!-- Groups -->
     <li class="dropdown">
-      <button class="nav-toggle" aria-expanded="false" aria-controls="submenu-groups">Groups</button>
-      <ul class="dropdown-content" id="submenu-groups" hidden>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="submenu-groups"
+        aria-haspopup="true">Groups</button>
+      <ul class="dropdown-content" id="submenu-groups">
         <li class="dropdown">
-          <a href="ro.html">Cults</a>
+          <button class="nav-toggle" aria-expanded="false" aria-controls="submenu-cults"
+            aria-haspopup="true">Cults</button>
           <ul class="dropdown-submenu" id="submenu-cults">
             <li><a href="#">The Black Coin Society</a></li>
           </ul>
         </li>
         <li class="dropdown">
-          <a href="guilds.html">Guilds</a>
+          <button class="nav-toggle" aria-expanded="false" aria-controls="submenu-guilds"
+            aria-haspopup="true">Guilds</button>
           <ul class="dropdown-submenu" id="submenu-guilds">
             <li><a href="#">Guild Example</a></li>
           </ul>
         </li>
         <li class="dropdown">
-          <a href="cults.html">Societies</a>
+          <button class="nav-toggle" aria-expanded="false" aria-controls="submenu-societies"
+            aria-haspopup="true">Societies</button>
           <ul class="dropdown-submenu" id="submenu-societies">
             <li><a href="#">Society Example</a></li>
           </ul>
         </li>
         <li class="dropdown">
-          <a href="academia.html">Academia</a>
+          <button class="nav-toggle" aria-expanded="false" aria-controls="submenu-academia"
+            aria-haspopup="true">Academia</button>
           <ul class="dropdown-submenu" id="submenu-academia">
             <li><a href="#">Order of the Word</a></li>
           </ul>
         </li>
         <li class="dropdown">
-          <a href="trade.html">Trade & Alliances</a>
+          <button class="nav-toggle" aria-expanded="false" aria-controls="submenu-trade" aria-haspopup="true">Trade
+            &amp; Alliances</button>
           <ul class="dropdown-submenu" id="submenu-trade">
-            <li><a href="#">Alliance Example</a></li>
+            <!-- empty for now -->
           </ul>
         </li>
         <li class="dropdown">
-          <a href="trade.html">Military</a>
+          <button class="nav-toggle" aria-expanded="false" aria-controls="submenu-military"
+            aria-haspopup="true">Military</button>
           <ul class="dropdown-submenu" id="submenu-military">
             <li><a href="#">The Shield of Dawn</a></li>
           </ul>
         </li>
       </ul>
     </li>
+
 
     <!-- History -->
     <li class="dropdown">
