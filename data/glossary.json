@@ -63,7 +63,7 @@
     "id": "veil",
     "type": "Metaphysical",
     "title": "The Veil",
-    "aliases": ["the world","Great Barrier"],
+    "aliases": ["the world", "Great Barrier"],
     "summary": "The boundary between worlds and dimensions. In some places on Skazka this veil is thin and post dimensional travel is relatively easy.",
     "image": "assets/mystery.jpg",
     "url": "multiverse.html",
@@ -78,6 +78,15 @@
     "image": "assets/shadowwar.jpg",
     "url": "event-shadowwar.html",
     "tags": ["conflict"]
+  },
+  {
+    "id": "koscheiboran_warbear",
+    "type": "Mount",
+    "title": "koscheiboran war bear",
+    "aliases": ["Elven bears"],
+    "summary": "A highly trained bear ridden by Sun Elf cavalry. Prized for its ferocity and ability to learn complex skills. Some say these bear possess the souls of elves who fell in battle.",
+    "image": "assets/warbear.jpg",
+    "url": "",
+    "tags": ["Aeternia", "Mount"]
   }
-  
 ]
