@@ -79,6 +79,9 @@ img.noborder[src*="divider"] {
 
 body p { text-align:justify; line-height:1.5; margin:1em 0; }
 
+.skz-quote-attribution{
+  color: var(--sb-dim);
+}
 /* ===============================
    Layout
 ================================ */
