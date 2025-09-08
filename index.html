@@ -4,26 +4,15 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Skazka - Dark Fantasy Lore</title>
-
-  <!-- Mobile: hide the carousel entirely (as in your current behavior) -->
-  <style>
-    @media (max-width: 767px) {
-
-      .skz-fc-stage,
-      .skz-fc-slide,
-      .skz-fc-nav {
-        display: none !important;
-      }
-    }
-  </style>
-
-  <!-- Link to external CSS -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Skazka - Dark fantasy D&D campaign</title>
+  <link rel="stylesheet" href="navbar.css?v=3">
   <link rel="stylesheet" href="styles.css" />
-  <!-- Google Font for a fantasy feel -->
+  <link rel="icon" type="image/png" href="assets/skazka_logo.png" />
   <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <script defer src="navbar.js?v=3"></script>
+  <script defer src="main.js?v=3"></script>
+  <script defer src="popup.js"></script>
 </head>
 
 <body>
@@ -234,25 +223,7 @@
     <img class="lightbox-img" alt="">
   </div>
 
-  <script src="main.js"></script>
-  <script src="popup.js"></script>
 
-  <!-- Keep your navbar loader for hamburger -->
-  <script>
-    fetch("navbar.html")
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("navbar").innerHTML = data;
-        const hamburger = document.querySelector(".hamburger");
-        const navLinks = document.querySelector(".nav-links");
-        if (hamburger && navLinks) {
-          hamburger.addEventListener("click", () => {
-            navLinks.classList.toggle("active");
-            hamburger.classList.toggle("open");
-          });
-        }
-      });
-  </script>
 </body>
 
 </html>

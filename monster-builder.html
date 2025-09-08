@@ -1,18 +1,20 @@
 <!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Skazka - Dark Fantasy Lore</title>
-
-  <!-- Site styles -->
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Skazka - Monster Builder</title>
+  <link rel="stylesheet" href="navbar.css?v=3">
   <link rel="stylesheet" href="monster-builder.css" />
-
-  <!-- Font + favicon -->
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="assets/skazka_logo.png" />
   <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <script defer src="navbar.js?v=3"></script>
+  <script defer src="main.js?v=3"></script>
+  <script defer src="monster-builder.js"></script>
 </head>
 
 <body>
@@ -25,7 +27,8 @@
         <h2 class="sb-title">About</h2>
         <p>
           Build a D&amp;D 5e monster statblock and export it as WotC-style text for Foundry’s
-          <em>5e Statblock Importer</em>. Live preview to the right. Paste the exported text in Foundry to create an NPC.
+          <em>5e Statblock Importer</em>. Live preview to the right. Paste the exported text in Foundry to create an
+          NPC.
         </p>
         <ul class="sb-bullets">
           <li>Auto ability modifiers &amp; passive Perception</li>
@@ -38,7 +41,8 @@
       <section class="sb-panel">
         <h3 class="sb-subtitle">Tips for Foundry import</h3>
         <ul class="sb-bullets">
-          <li>Keep headings like <strong>Actions</strong>, <strong>Reactions</strong>, <strong>Legendary Actions</strong>.</li>
+          <li>Keep headings like <strong>Actions</strong>, <strong>Reactions</strong>, <strong>Legendary
+              Actions</strong>.</li>
           <li>Spell names should match SRD for auto-linking in Foundry.</li>
           <li>“Hit Points” should include average and dice, e.g. <code>45 (6d8 + 18)</code>.</li>
         </ul>
@@ -57,8 +61,12 @@
 
           <label> Size
             <select id="size" class="sb-select">
-              <option>Tiny</option><option>Small</option><option selected>Medium</option>
-              <option>Large</option><option>Huge</option><option>Gargantuan</option>
+              <option>Tiny</option>
+              <option>Small</option>
+              <option selected>Medium</option>
+              <option>Large</option>
+              <option>Huge</option>
+              <option>Gargantuan</option>
             </select>
           </label>
 
@@ -123,7 +131,7 @@
         <!-- Abilities -->
         <h4 class="sb-ability-title">Ability Scores</h4>
         <fieldset class="sb-ability">
-          
+
           <div class="sb-ability-grid">
             <label>STR <input id="str" class="sb-input sb-num" type="number" value="16" /></label>
             <label>DEX <input id="dex" class="sb-input sb-num" type="number" value="12" /></label>
@@ -139,13 +147,13 @@
         </fieldset>
 
         <!-- Proficiencies & traits -->
-         <h4 class="sb-ability-title">Saving Throws</h4>
+        <h4 class="sb-ability-title">Saving Throws</h4>
         <div class="sb-grid">
           <!-- Saving Throws -->
 
-          
+
           <fieldset class="sb-ability">
-            
+
 
             <!-- FIX: removed inline style that caused misalignment -->
             <div class="sb-ability-grid">
@@ -212,7 +220,8 @@
             <input id="vuln" class="sb-input" placeholder="radiant" />
           </label>
           <label> Damage Resistances
-            <input id="resist" class="sb-input" placeholder="cold; bludgeoning, piercing, and slashing from nonmagical attacks" />
+            <input id="resist" class="sb-input"
+              placeholder="cold; bludgeoning, piercing, and slashing from nonmagical attacks" />
           </label>
           <label> Damage Immunities
             <input id="imm" class="sb-input" placeholder="poison" />
@@ -221,7 +230,8 @@
             <input id="condImm" class="sb-input" placeholder="charmed, poisoned" />
           </label>
           <label> Senses
-            <input id="senses" class="sb-input" placeholder="darkvision 60 ft., tremorsense 30 ft., passive Perception 15" />
+            <input id="senses" class="sb-input"
+              placeholder="darkvision 60 ft., tremorsense 30 ft., passive Perception 15" />
           </label>
           <label> Languages
             <input id="langs" class="sb-input" placeholder="Common, Infernal" />
@@ -244,19 +254,25 @@
             </label>
             <label> Ability
               <select id="atk_ability" class="sb-select">
-                <option value="STR">STR</option><option value="DEX">DEX</option>
-                <option value="CON">CON</option><option value="INT">INT</option>
-                <option value="WIS">WIS</option><option value="CHA">CHA</option>
+                <option value="STR">STR</option>
+                <option value="DEX">DEX</option>
+                <option value="CON">CON</option>
+                <option value="INT">INT</option>
+                <option value="WIS">WIS</option>
+                <option value="CHA">CHA</option>
               </select>
             </label>
             <label class="sb-inline"><input type="checkbox" id="atk_prof" checked /> Proficient</label>
             <label> Extra to-hit <input id="atk_bonus_extra" class="sb-input sb-num" type="number" value="0" /></label>
-            <label> Reach / Range <input id="atk_range" class="sb-input" placeholder="reach 5 ft. / range 20/60 ft." /></label>
+            <label> Reach / Range <input id="atk_range" class="sb-input"
+                placeholder="reach 5 ft. / range 20/60 ft." /></label>
             <label> Target(s) <input id="atk_targets" class="sb-input" placeholder="one target" /></label>
             <label> Damage Dice <input id="atk_dice" class="sb-input" placeholder="1d8" /></label>
-            <label class="sb-inline"><input type="checkbox" id="atk_add_mod" checked /> add ability mod to damage</label>
+            <label class="sb-inline"><input type="checkbox" id="atk_add_mod" checked /> add ability mod to
+              damage</label>
             <label> Damage Type <input id="atk_dtype" class="sb-input" placeholder="slashing" /></label>
-            <label> Rider (optional) <input id="atk_rider" class="sb-input" placeholder="and the target is knocked prone." /></label>
+            <label> Rider (optional) <input id="atk_rider" class="sb-input"
+                placeholder="and the target is knocked prone." /></label>
           </div>
           <div class="sb-export">
             <button id="atk_add_action" class="sb-btn">Add as Action</button>
@@ -276,12 +292,15 @@
             </label>
             <label> Ability
               <select id="sc_ability" class="sb-select">
-                <option value="INT">INT</option><option value="WIS">WIS</option><option value="CHA" selected>CHA</option>
+                <option value="INT">INT</option>
+                <option value="WIS">WIS</option>
+                <option value="CHA" selected>CHA</option>
               </select>
             </label>
             <label class="sb-inline"><input type="checkbox" id="sc_prof" checked /> Proficient (uses PB)</label>
             <label> Caster level <input id="sc_level" class="sb-input sb-num" type="number" value="5" /></label>
-            <label> Class/Source <input id="sc_class" class="sb-input" placeholder="wizard / warlock / innate" /></label>
+            <label> Class/Source <input id="sc_class" class="sb-input"
+                placeholder="wizard / warlock / innate" /></label>
           </div>
 
           <!-- Prepared lists -->
@@ -293,7 +312,8 @@
             <label> 2nd level spells <input id="sc_c2" class="sb-input" placeholder="blur, misty step" /></label>
             <label> 3rd (slots) <input id="sc_s3" class="sb-input" placeholder="2" /></label>
             <label> 3rd level spells <input id="sc_c3" class="sb-input" placeholder="counterspell, fireball" /></label>
-            <label> Higher levels (optional) <textarea id="sc_higher" class="sb-input" placeholder="4th (3 slots): blight, dimension door&#10;5th (1 slot): cone of cold"></textarea></label>
+            <label> Higher levels (optional) <textarea id="sc_higher" class="sb-input"
+                placeholder="4th (3 slots): blight, dimension door&#10;5th (1 slot): cone of cold"></textarea></label>
           </div>
 
           <!-- Innate lists -->
@@ -302,7 +322,8 @@
             <label> 1/day each <input id="si_1" class="sb-input" placeholder="dimension door" /></label>
             <label> 2/day each <input id="si_2" class="sb-input" placeholder="misty step" /></label>
             <label> 3/day each <input id="si_3" class="sb-input" placeholder="shield" /></label>
-            <label> Other (free text) <textarea id="si_other" class="sb-input" placeholder="Truesight 60 ft. while concentrating on X"></textarea></label>
+            <label> Other (free text) <textarea id="si_other" class="sb-input"
+                placeholder="Truesight 60 ft. while concentrating on X"></textarea></label>
           </div>
 
           <div class="sb-export">
@@ -334,7 +355,8 @@
 
           <div class="sb-row">
             <h3 class="sb-subtitle">Legendary Actions</h3>
-            <p class="sb-tip">Add a preface line if needed, e.g. “The creature can take 3 legendary actions, choosing from the options below…”</p>
+            <p class="sb-tip">Add a preface line if needed, e.g. “The creature can take 3 legendary actions, choosing
+              from the options below…”</p>
             <div id="legendary" class="sb-list"></div>
             <button type="button" class="sb-btn" data-add="legendary">+ Add Legendary Action</button>
           </div>
@@ -374,8 +396,6 @@
 
   <div id="footer"></div>
 
-  <!-- Scripts -->
-  <script src="main.js"></script>
-  <script src="monster-builder.js" defer></script>
 </body>
+
 </html>

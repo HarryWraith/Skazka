@@ -3,10 +3,16 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Search • Skazka</title>
-  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="stylesheet" href="navbar.css?v=3">
   <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="assets/skazka_logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet" />
+  <script defer src="navbar.js?v=3"></script>
+  <script defer src="main.js?v=3"></script>
+  <script defer src="popup.js"></script>
+
 
   <!-- MiniSearch for fast client-side search -->
   <script src="https://cdn.jsdelivr.net/npm/minisearch@7/dist/umd/index.min.js"></script>
@@ -356,103 +362,103 @@
     </div>
   </div>
 
-  <script src="main.js"></script>
+
   <script>
-// glossary.js — A→Z search + small type chips (matches your HTML/CSS)
+    // glossary.js — A→Z search + small type chips (matches your HTML/CSS)
 
-(() => {
-  // ---------- DOM ----------
-  const $ = (s, r = document) => r.querySelector(s);
-  const els = {
-    q: $("#q"),
-    clearInput: $("#clearBtn"),
-    typeChips: $("#typeChips"),
-    clearFilters: $("#clearFilters"),
-    results: $("#results"),
-    count: $("#count"),
-  };
+    (() => {
+      // ---------- DOM ----------
+      const $ = (s, r = document) => r.querySelector(s);
+      const els = {
+        q: $("#q"),
+        clearInput: $("#clearBtn"),
+        typeChips: $("#typeChips"),
+        clearFilters: $("#clearFilters"),
+        results: $("#results"),
+        count: $("#count"),
+      };
 
-  // ---------- Helpers ----------
-  const byTitle = (a, b) =>
-    (a.title || "").localeCompare(b.title || "", undefined, { sensitivity: "base", numeric: true });
+      // ---------- Helpers ----------
+      const byTitle = (a, b) =>
+        (a.title || "").localeCompare(b.title || "", undefined, { sensitivity: "base", numeric: true });
 
-  const norm = (s) => (s || "").toLowerCase();
+      const norm = (s) => (s || "").toLowerCase();
 
-  const matchesQuery = (item, q) => {
-    if (!q) return true;
-    const n = norm(q);
-    return (
-      norm(item.title).includes(n) ||
-      (item.aliases || []).some(x => norm(x).includes(n)) ||
-      norm(item.summary).includes(n) ||
-      (item.tags || []).some(x => norm(x).includes(n))
-    );
-  };
+      const matchesQuery = (item, q) => {
+        if (!q) return true;
+        const n = norm(q);
+        return (
+          norm(item.title).includes(n) ||
+          (item.aliases || []).some(x => norm(x).includes(n)) ||
+          norm(item.summary).includes(n) ||
+          (item.tags || []).some(x => norm(x).includes(n))
+        );
+      };
 
-  const escapeHTML = (s = "") =>
-    s.replace(/[&<>"']/g, ch => ({ "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;" }[ch]));
+      const escapeHTML = (s = "") =>
+        s.replace(/[&<>"']/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;" }[ch]));
 
-  // Keep relative paths as-is for custom domain; allow absolute/http(s)
-  function resolveImg(src = "") {
-    if (!src) return "";
-    if (/^https?:\/\//i.test(src) || src.startsWith("/")) return src;
-    return src; // leave relative (e.g. "assets/kronos.jpg")
-  }
-
-  // ---------- State ----------
-  let ALL = [];
-  let activeType = ""; // empty = no type filter (All)
-
-  // ---------- Chips ----------
-  function renderTypeChips(types) {
-    if (!els.typeChips) return;
-    els.typeChips.innerHTML = ""; // reset
-    const frag = document.createDocumentFragment();
-
-    types.forEach(t => {
-      const btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "chip";
-      btn.textContent = t;
-
-      // active style
-      if (t === activeType) {
-        btn.classList.add("is-on");
-        btn.setAttribute("aria-pressed", "true");
-      } else {
-        btn.setAttribute("aria-pressed", "false");
+      // Keep relative paths as-is for custom domain; allow absolute/http(s)
+      function resolveImg(src = "") {
+        if (!src) return "";
+        if (/^https?:\/\//i.test(src) || src.startsWith("/")) return src;
+        return src; // leave relative (e.g. "assets/kronos.jpg")
       }
 
-      btn.addEventListener("click", () => {
-        // toggle: clicking the same chip clears the filter
-        activeType = (activeType === t) ? "" : t;
-        // update chip styles
-        els.typeChips.querySelectorAll(".chip").forEach(c => {
-          const on = c.textContent === activeType && activeType !== "";
-          c.classList.toggle("is-on", on);
-          c.setAttribute("aria-pressed", on ? "true" : "false");
+      // ---------- State ----------
+      let ALL = [];
+      let activeType = ""; // empty = no type filter (All)
+
+      // ---------- Chips ----------
+      function renderTypeChips(types) {
+        if (!els.typeChips) return;
+        els.typeChips.innerHTML = ""; // reset
+        const frag = document.createDocumentFragment();
+
+        types.forEach(t => {
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "chip";
+          btn.textContent = t;
+
+          // active style
+          if (t === activeType) {
+            btn.classList.add("is-on");
+            btn.setAttribute("aria-pressed", "true");
+          } else {
+            btn.setAttribute("aria-pressed", "false");
+          }
+
+          btn.addEventListener("click", () => {
+            // toggle: clicking the same chip clears the filter
+            activeType = (activeType === t) ? "" : t;
+            // update chip styles
+            els.typeChips.querySelectorAll(".chip").forEach(c => {
+              const on = c.textContent === activeType && activeType !== "";
+              c.classList.toggle("is-on", on);
+              c.setAttribute("aria-pressed", on ? "true" : "false");
+            });
+            update();
+          });
+
+          frag.appendChild(btn);
         });
-        update();
-      });
 
-      frag.appendChild(btn);
-    });
+        els.typeChips.appendChild(frag);
+      }
 
-    els.typeChips.appendChild(frag);
-  }
+      // ---------- Cards ----------
+      function renderCard(item) {
+        const card = document.createElement("article");
+        card.className = "g-card";
 
-  // ---------- Cards ----------
-  function renderCard(item) {
-    const card = document.createElement("article");
-    card.className = "g-card";
-
-    const imgSrc = resolveImg(item.image || "");
-    const imgHTML = imgSrc
-      ? `<img class="g-thumb" src="${escapeHTML(imgSrc)}" alt="${escapeHTML(item.title)}"
+        const imgSrc = resolveImg(item.image || "");
+        const imgHTML = imgSrc
+          ? `<img class="g-thumb" src="${escapeHTML(imgSrc)}" alt="${escapeHTML(item.title)}"
               onerror="this.style.display='none'; this.closest('.g-card').classList.add('no-img');">`
-      : "";
+          : "";
 
-    card.innerHTML = `
+        card.innerHTML = `
       ${imgHTML}
       <div class="g-body">
         <div class="g-title">${escapeHTML(item.title)}</div>
@@ -468,122 +474,122 @@
         </div>
       </div>
     `;
-    return card;
-  }
-
-  function render(list) {
-    els.results.innerHTML = "";
-    if (!list.length) {
-      els.count.textContent = "No results.";
-      return;
-    }
-    const frag = document.createDocumentFragment();
-    list.forEach(i => frag.appendChild(renderCard(i)));
-    els.results.appendChild(frag);
-    els.count.textContent = `${list.length} result${list.length === 1 ? "" : "s"}`;
-  }
-
-  // ---------- Data loading ----------
-  const CANDIDATE_URLS = [
-    "data/glossary.json",
-    "/data/glossary.json",
-    "glossary.json",
-    "/glossary.json",
-  ];
-
-  async function loadJSON() {
-    let lastErr;
-    for (const url of CANDIDATE_URLS) {
-      try {
-        const res = await fetch(url, { cache: "no-store" });
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        console.info(`[glossary] Loaded ${url}`);
-        return await res.json();
-      } catch (e) {
-        lastErr = e;
+        return card;
       }
-    }
-    throw lastErr || new Error("Failed to load glossary JSON.");
-  }
 
-  function toArrayShape(data) {
-    if (Array.isArray(data)) return data;
-    if (Array.isArray(data.items)) return data.items;
-    if (Array.isArray(data.entries)) return data.entries;
-    if (Array.isArray(data.glossary)) return data.glossary;
-    if (Array.isArray(data.data)) return data.data;
-    return [];
-  }
+      function render(list) {
+        els.results.innerHTML = "";
+        if (!list.length) {
+          els.count.textContent = "No results.";
+          return;
+        }
+        const frag = document.createDocumentFragment();
+        list.forEach(i => frag.appendChild(renderCard(i)));
+        els.results.appendChild(frag);
+        els.count.textContent = `${list.length} result${list.length === 1 ? "" : "s"}`;
+      }
 
-  function normalizeItem(raw) {
-    const type = raw.type || raw.category || raw.kind || "";
-    return {
-      id: raw.id || raw.slug || "",
-      type,
-      title: raw.title || raw.name || "",
-      aliases: raw.aliases || [],
-      summary: raw.summary || raw.description || "",
-      image: raw.image || raw.img || "",
-      url: raw.url || raw.href || "#",
-      tags: raw.tags || [],
-    };
-  }
+      // ---------- Data loading ----------
+      const CANDIDATE_URLS = [
+        "data/glossary.json",
+        "/data/glossary.json",
+        "glossary.json",
+        "/glossary.json",
+      ];
 
-  async function boot() {
-    try {
-      const raw = await loadJSON();
-      ALL = toArrayShape(raw).map(normalizeItem);
+      async function loadJSON() {
+        let lastErr;
+        for (const url of CANDIDATE_URLS) {
+          try {
+            const res = await fetch(url, { cache: "no-store" });
+            if (!res.ok) throw new Error(`HTTP ${res.status}`);
+            console.info(`[glossary] Loaded ${url}`);
+            return await res.json();
+          } catch (e) {
+            lastErr = e;
+          }
+        }
+        throw lastErr || new Error("Failed to load glossary JSON.");
+      }
 
-      // Sort master list A→Z once
-      ALL.sort(byTitle);
+      function toArrayShape(data) {
+        if (Array.isArray(data)) return data;
+        if (Array.isArray(data.items)) return data.items;
+        if (Array.isArray(data.entries)) return data.entries;
+        if (Array.isArray(data.glossary)) return data.glossary;
+        if (Array.isArray(data.data)) return data.data;
+        return [];
+      }
 
-      // Build unique types (A→Z)
-      const types = Array.from(new Set(ALL.map(i => i.type).filter(Boolean)))
-        .sort((a, b) => a.localeCompare(b, undefined, { sensitivity: "base", numeric: true }));
+      function normalizeItem(raw) {
+        const type = raw.type || raw.category || raw.kind || "";
+        return {
+          id: raw.id || raw.slug || "",
+          type,
+          title: raw.title || raw.name || "",
+          aliases: raw.aliases || [],
+          summary: raw.summary || raw.description || "",
+          image: raw.image || raw.img || "",
+          url: raw.url || raw.href || "#",
+          tags: raw.tags || [],
+        };
+      }
 
-      renderTypeChips(types);
-      update();
-    } catch (err) {
-      console.error("Failed to initialize glossary:", err);
-      if (els.count) els.count.textContent = "Failed to load glossary.";
-    }
-  }
+      async function boot() {
+        try {
+          const raw = await loadJSON();
+          ALL = toArrayShape(raw).map(normalizeItem);
 
-  // ---------- Filter/search ----------
-  function update() {
-    const q = (els.q?.value || "").trim();
+          // Sort master list A→Z once
+          ALL.sort(byTitle);
 
-    let list = ALL.filter(it =>
-      (activeType === "" || it.type === activeType) && matchesQuery(it, q)
-    );
+          // Build unique types (A→Z)
+          const types = Array.from(new Set(ALL.map(i => i.type).filter(Boolean)))
+            .sort((a, b) => a.localeCompare(b, undefined, { sensitivity: "base", numeric: true }));
 
-    list.sort(byTitle);
-    render(list);
-  }
+          renderTypeChips(types);
+          update();
+        } catch (err) {
+          console.error("Failed to initialize glossary:", err);
+          if (els.count) els.count.textContent = "Failed to load glossary.";
+        }
+      }
 
-  // ---------- Wire up ----------
-  document.addEventListener("DOMContentLoaded", () => {
-    els.q?.addEventListener("input", update);
+      // ---------- Filter/search ----------
+      function update() {
+        const q = (els.q?.value || "").trim();
 
-    els.clearInput?.addEventListener("click", () => {
-      if (els.q) { els.q.value = ""; els.q.focus(); }
-      update();
-    });
+        let list = ALL.filter(it =>
+          (activeType === "" || it.type === activeType) && matchesQuery(it, q)
+        );
 
-    els.clearFilters?.addEventListener("click", () => {
-      activeType = "";
-      // clear chip styles
-      els.typeChips?.querySelectorAll(".chip").forEach(c => {
-        c.classList.remove("is-on");
-        c.setAttribute("aria-pressed", "false");
+        list.sort(byTitle);
+        render(list);
+      }
+
+      // ---------- Wire up ----------
+      document.addEventListener("DOMContentLoaded", () => {
+        els.q?.addEventListener("input", update);
+
+        els.clearInput?.addEventListener("click", () => {
+          if (els.q) { els.q.value = ""; els.q.focus(); }
+          update();
+        });
+
+        els.clearFilters?.addEventListener("click", () => {
+          activeType = "";
+          // clear chip styles
+          els.typeChips?.querySelectorAll(".chip").forEach(c => {
+            c.classList.remove("is-on");
+            c.setAttribute("aria-pressed", "false");
+          });
+          update();
+        });
+
+        boot();
       });
-      update();
-    });
-
-    boot();
-  });
-})();
-</script>
+    })();
+  </script>
 
 
 </body>
