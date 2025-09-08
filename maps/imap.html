@@ -2,301 +2,469 @@
 <html lang="en">
 
 <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Skazka — Map (Frozen Labels after Threshold)</title>
-        <link rel="preload" as="image" href="skazka_export.webp">
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-        <style>
-                html,
-                body,
-                #map {
-                        height: 100%;
-                        margin: 0;
-                }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Skazka — Map (Perf Tuned, Diamond Cities + POI)</title>
+  <link rel="preload" as="image" href="skazka_export.webp" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    html,
+    body,
+    #map {
+      height: 100%;
+      margin: 0;
+    }
 
-                .leaflet-container {
-                        background: #0b0e13;
-                }
+    .leaflet-container {
+      background: #0b0e13;
+    }
 
-                /* === Dark blue diamond icon (replaces coin) === */
-                .skz-divicon-diamond {
-                        width: 24px;
-                        height: 32px;
-                        filter: drop-shadow(0 2px 2px rgba(0, 0, 0, .45)) drop-shadow(0 6px 14px rgba(0, 0, 0, .25));
-                        position: relative;
-                        transform: translate(-12px, -30px);
-                        /* align anchor without extra math */
-                }
+    /* Promote heavy elements early */
+    .leaflet-image-layer,
+    .leaflet-pane,
+    .leaflet-zoom-animated,
+    .leaflet-marker-icon,
+    .leaflet-tooltip.skz-label {
+      will-change: transform;
+    }
 
-                .skz-divicon-diamond .gem {
-                        position: absolute;
-                        left: 50%;
-                        top: 6px;
-                        width: 18px;
-                        height: 18px;
-                        margin-left: -9px;
-                        /* center horizontally */
-                        transform: rotate(45deg);
-                        /* square → diamond */
-                        background: linear-gradient(135deg, #243a73, #0b1633);
-                        border: 2px solid #8aa2ff;
-                        /* rim light */
-                        border-radius: 2px;
-                        box-shadow:
-                                inset 0 1px 0 rgba(255, 255, 255, .15),
-                                inset 0 -8px 12px rgba(0, 0, 0, .35);
-                }
+    /* Permanent labels (counter-scaled after zoom) */
+    :root {
+      --skz-freeze-scale: 1;
+    }
 
-                .skz-divicon-diamond:hover .gem {
-                        filter: brightness(1.08);
-                }
+    .leaflet-tooltip.skz-label {
+      /* label */
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      color: black;
+      font-size: 0.8rem;
+      font-weight: bolder;
+      text-shadow:
+        0 0 2px #fff,
+        0 0 6px #fff,
+        0 0 12px rgba(255, 255, 255, .8);
+    }
 
-                /* Labels: we will counter-scale with a CSS variable set by JS */
-                :root {
-                        --skz-freeze-scale: 1;
-                }
+    .leaflet-zoom-anim .skz-label {
+      opacity: .12;
+      transition: opacity .12s linear;
+    }
 
-                .leaflet-tooltip.skz-label {
-                        background: rgba(18, 19, 25, .92);
-                        border: 1px solid rgba(255, 255, 255, .18);
-                        color: #efe9d8;
-                        font-weight: 600;
-                        padding: 2px 6px;
-                        border-radius: 6px;
-                        box-shadow: 0 6px 18px rgba(0, 0, 0, .4);
-                        font-size: 12px;
-                        line-height: 1.2;
-                        transform: scale(var(--skz-freeze-scale));
-                        transform-origin: 50% 100%;
-                        /* scale from bottom center */
-                }
+    .leaflet-tooltip-left::before,
+    .leaflet-tooltip-right::before,
+    .leaflet-tooltip-top::before,
+    .leaflet-tooltip-bottom::before {
+      border: none;
+    }
 
-                .leaflet-tooltip-left::before,
-                .leaflet-tooltip-right::before,
-                .leaflet-tooltip-top::before,
-                .leaflet-tooltip-bottom::before {
-                        border: none;
-                }
+    .leaflet-tooltip-top.skz-label {
+      margin-top: -1px;
+    }
 
-                /* Popup shell */
-                .leaflet-popup.skz-popup-wrap .leaflet-popup-content-wrapper {
-                        background: #11131a;
-                        color: #efe9d8;
-                        border: 1px solid rgba(255, 255, 255, .18);
-                        border-radius: 10px;
-                        box-shadow: 0 8px 24px rgba(0, 0, 0, .4);
-                }
+    /* Popup shell */
+    .leaflet-popup.skz-popup-wrap .leaflet-popup-content-wrapper {
+      background: #11131a;
+      color: #efe9d8;
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .4);
+    }
 
-                .leaflet-popup.skz-popup-wrap .leaflet-popup-tip {
-                        background: #11131a;
-                        border: 1px solid rgba(255, 255, 255, .18);
-                }
+    .leaflet-popup.skz-popup-wrap .leaflet-popup-tip {
+      background: #11131a;
+      border: 1px solid rgba(255, 255, 255, .18);
+    }
 
-                .skz-popup .t {
-                        font-weight: 700;
-                        margin-bottom: 4px;
-                        color: #efe9d8;
-                }
+    .skz-popup .t {
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: #efe9d8;
+    }
 
-                .skz-popup .d {
-                        color: #d4cdbb;
-                        opacity: .9;
-                        margin: 2px 0 6px;
-                }
+    .skz-popup .d {
+      color: #d4cdbb;
+      opacity: .9;
+      margin: 2px 0 6px;
+    }
 
-                .skz-popup a {
-                        color: #d7c38b;
-                        text-decoration: none;
-                }
+    .skz-popup a {
+      color: #d7c38b;
+      text-decoration: none;
+    }
 
-                .skz-popup a:hover {
-                        text-decoration: underline;
-                }
+    .skz-popup a:hover {
+      text-decoration: underline;
+    }
 
-                /* UI panel (kept for completeness) */
-                .skz-ui {
-                        position: absolute;
-                        right: 12px;
-                        top: 12px;
-                        z-index: 1000;
-                        width: 280px;
-                        max-height: calc(100% - 24px);
-                        overflow: auto;
-                        background: rgba(18, 19, 25, .88);
-                        color: #efe9d8;
-                        border: 1px solid rgba(255, 255, 255, .15);
-                        border-radius: 12px;
-                        padding: 10px;
-                        box-shadow: 0 8px 24px rgba(0, 0, 0, .4);
-                        backdrop-filter: blur(4px);
-                        font: 14px/1.45 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-                }
+    /* Blue diamond icon for Cities */
+    .skz-divicon-diamond {
+      width: 10px;
+      height: 10px;
+      position: relative;
+      /* no translate here — Leaflet handles anchoring via iconAnchor */
+      filter: drop-shadow(0 2px 2px rgba(0, 0, 0, .45)) drop-shadow(0 6px 14px rgba(0, 0, 0, .25));
+    }
 
-                .skz-search {
-                        width: 100%;
-                        padding: 8px 10px;
-                        border-radius: 8px;
-                        border: 1px solid rgba(255, 255, 255, .18);
-                        background: #0f1116;
-                        color: #efe9d8;
-                        outline: none;
-                }
+    .skz-divicon-diamond .gem {
+      position: absolute;
+      left: 50%;
+      top: 1px;
+      /* centers the 8×8 diamond inside 10×10 */
+      width: 8px;
+      height: 8px;
+      margin-left: -4px;
+      transform: rotate(45deg);
+      background: linear-gradient(135deg, #243a73, #0b1633);
+      border: 2px solid #8aa2ff;
+      border-radius: 2px;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), inset 0 -8px 12px rgba(0, 0, 0, .35);
+    }
 
-                .skz-list {
-                        list-style: none;
-                        margin: 10px 0 0;
-                        padding: 0;
-                }
+    .skz-divicon-diamond:hover .gem {
+      filter: brightness(1.08);
+    }
 
-                .skz-list li {
-                        padding: 6px 6px;
-                        border-radius: 8px;
-                        cursor: pointer;
-                        display: grid;
-                        grid-template-columns: 1fr auto;
-                        gap: 6px;
-                }
+    /* Town / Ruin / POI pins */
+    .pin {
+      width: 10px;
+      height: 10px;
+      /* no translate — anchor will center these */
+    }
 
-                .skz-list li:hover {
-                        background: rgba(255, 255, 255, .06);
-                }
+    .pin>span {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 2px solid rgba(0, 0, 0, .45);
+    }
 
-                .skz-list .n {
-                        font-weight: 700;
-                }
+    /* Town: small blue dot */
+    .pin.pin--town {
+      width: 10px;
+      height: 10px;
+    }
 
-                .skz-list .c {
-                        opacity: .8;
-                        font-size: 12px;
-                }
-        </style>
+    .pin--town>span {
+      background: linear-gradient(#8aa0a8, #2b3e4a);
+      border-color: #1c2a31;
+    }
+
+    /* Ruin: crimson diamond */
+    .pin.pin--ruin {
+      width: 10px;
+      height: 10px;
+    }
+
+    .pin--ruin>span {
+      background: linear-gradient(#6b3a3a, #2a1818);
+      border-color: #2a1818;
+      transform: rotate(45deg);
+    }
+
+    /* NEW: POI — gold ring */
+    .pin.pin--poi {
+      width: 10px;
+      height: 10px;
+    }
+
+    .pin--poi>span {
+      background: radial-gradient(circle, transparent 45%, #d7c38b 46% 60%, transparent 61%);
+      border-color: #d7c38b;
+    }
+
+    /* Bigger text for cities; tweak to taste */
+    .leaflet-tooltip.skz-label--city {
+      font-size: 15px;
+      color: red;
+      font-weight: 700;
+    }
+
+    /* Optional: keep others smaller for contrast */
+    .leaflet-tooltip.skz-label--town {
+      font-size: 12px;
+    }
+
+
+
+    .leaflet-tooltip.skz-label--poi {
+      font-size: 12px;
+    }
+
+    .leaflet-tooltip.skz-label--ruin {
+      font-size: 12px;
+    }
+
+    /* === Right-side UI (search/list) === */
+    .skz-ui {
+      position: absolute;
+      right: 12px;
+      top: 12px;
+      z-index: 1000;
+      width: 280px;
+      max-height: calc(100% - 24px);
+      overflow: auto;
+      background: rgba(18, 19, 25, .88);
+      color: #efe9d8;
+      border: 1px solid rgba(255, 255, 255, .15);
+      border-radius: 12px;
+      padding: 10px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .4);
+      backdrop-filter: blur(4px);
+      font: 14px/1.45 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    .skz-search {
+      width: 100%;
+      padding: 8px 10px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, .18);
+      background: #0f1116;
+      color: #efe9d8;
+      outline: none;
+    }
+
+    .skz-list {
+      list-style: none;
+      margin: 10px 0 0;
+      padding: 0;
+    }
+
+    .skz-list li {
+      padding: 6px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 6px;
+    }
+
+    .skz-list li:hover {
+      background: rgba(255, 255, 255, .06);
+    }
+
+    .skz-list .n {
+      font-weight: 700;
+    }
+
+    .skz-list .c {
+      opacity: .8;
+      font-size: 12px;
+    }
+
+    .skz-ui,
+    .skz-list {
+      overflow-x: hidden;
+    }
+
+    .skz-list li {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  </style>
 </head>
 
 <body>
-        <div id="map" role="application" aria-label="Interactive world map of Skazka"></div>
+  <div id="map" role="application" aria-label="Skazka map (perf tuned)"></div>
+  <div id="skz-ui" class="skz-ui">
+    <input id="skz-search" class="skz-search" placeholder="Find a place…">
+    <ul id="skz-list" class="skz-list"></ul>
+  </div>
 
-        <div id="skz-ui" class="skz-ui">
-                <input id="skz-search" class="skz-search" placeholder="Find a place…">
-                <ul id="skz-list" class="skz-list"></ul>
-        </div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    // Base image
+    const img = { url: "skazka_export.webp", width: 2047, height: 2047 };
+    const bounds = [[0, 0], [img.height, img.width]];
 
-        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-        <script>
-                // === Image-as-map ===
-                const img = { url: "skazka_export.webp", width: 2047, height: 2047 };
-                const bounds = [[0, 0], [img.height, img.width]];
-                const map = L.map('map', { crs: L.CRS.Simple, minZoom: -4, maxZoom: 2, zoomSnap: 0.5 });
-                L.imageOverlay(img.url, bounds).addTo(map);
-                map.fitBounds(bounds);
-                map.setMaxBounds([[-200, -200], [img.height + 200, img.width + 200]]);
+    const map = L.map('map', {
+      crs: L.CRS.Simple,
+      minZoom: -4,
+      maxZoom: 2,
+      zoomSnap: 0.5,
+      markerZoomAnimation: false,
+      fadeAnimation: false,
+      maxBoundsViscosity: 0.8
+    });
 
-                // === Dark blue diamond icon (DivIcon) ===
-                const DiamondIcon = L.DivIcon.extend({
-                        options: {
-                                className: "skz-divicon-diamond",
-                                html: "<span class='gem' aria-hidden='true'></span>",
-                                iconSize: [24, 32],
-                                iconAnchor: [12, 30],   // bottom point near the location
-                                popupAnchor: [0, -24]
-                        }
-                });
+    const overlay = L.imageOverlay(img.url, bounds).addTo(map);
+    map.fitBounds(bounds);
 
-                // === Layer groups + control ===
-                const groups = { Cities: L.layerGroup().addTo(map) };
-                L.control.layers(null, groups, { collapsed: false }).addTo(map);
+    function refreshMaxBounds() {
+      // pad by half the viewport so zoom-at-edge doesn't get clamped
+      const size = map.getSize();          // screen pixels
+      const padX = Math.ceil(size.x / 2);  // convert directly: CRS.Simple units == pixels
+      const padY = Math.ceil(size.y / 2);
 
-                // === Data ===
-                const places = [
-                        { id: "elduin", name: "Elduin", desc: "Imperial city, Aeternian Empire.", href: "../aeternia.html", x: 1175, y: 1455, layer: "Cities", label: true },
-                        { id: "everdusk", name: "Everdusk", desc: "Home of the Wood Elves.", href: "../everdusk.html", x: 1128, y: 769, layer: "Cities", label: true },
-                        { id: "snuuflund", name: "Snuuflund", desc: "Home of the Sken.", href: "../serydina.html", x: 491, y: 1582, layer: "Cities", label: true },
-                        { id: "excitavitsene", name: "excitavitsene", desc: "City of Beasts.", href: "../excitavitsene.html", x: 427, y: 1734, layer: "Cities", label: true }
-                ];
+      // coords are [y, x] in CRS.Simple
+      map.setMaxBounds([[-padY, -padX], [img.height + padY, img.width + padX]]);
+    }
 
-                // === Build markers ===
-                const markerById = new Map();
+    map.whenReady(refreshMaxBounds);
+    map.on('resize zoomend', refreshMaxBounds);
 
-                function addPlace({ id, name, desc, href, x, y, layer, label }) {
-                        const m = L.marker([y, x], { title: name, icon: new DiamondIcon() })
-                                .addTo(groups[layer] ?? map);
+    const el = overlay.getElement();
+    if (el) { el.decoding = 'sync'; el.loading = 'eager'; try { el.fetchPriority = 'high'; } catch (e) { } el.style.willChange = 'transform'; }
 
-                        m.bindPopup(
-                                `<div class="skz-popup">
-           <div class="t">${name}</div>
-           <div class="d">${desc}</div>
-           <a href="${href}" target="_blank" rel="noopener">Open page →</a>
-         </div>`,
-                                { className: "skz-popup-wrap", maxWidth: 280, keepInView: true }
-                        );
+    // Layers
+    const Cities = L.layerGroup().addTo(map);
+    const Towns = L.layerGroup().addTo(map);
+    const Ruins = L.layerGroup().addTo(map);
+    const POI = L.layerGroup().addTo(map);            // <-- NEW
 
-                        if (label) m.bindTooltip(name, { permanent: true, direction: "top", className: "skz-label" });
+    L.control.layers(null, { Cities, Towns, Ruins, POI },  // <-- added POI toggle
+      { collapsed: false, position: 'topleft' }).addTo(map);
 
-                        markerById.set(id, m);
-                        return m;
-                }
+    // Icons
+    const CityIcon = L.divIcon({
+      className: "skz-divicon-diamond",
+      html: "<span class='gem' aria-hidden='true'></span>",
+      iconSize: [10, 10], iconAnchor: [5, 9], popupAnchor: [0, -10]
+    });
+    const TownIcon = L.divIcon({
+      className: "pin pin--town", html: "<span></span>",
+      iconSize: [10, 10],
+      iconAnchor: [5, 5],
+      popupAnchor: [0, -8]
+    });
+    const RuinIcon = L.divIcon({
+      className: "pin pin--ruin", html: "<span></span>",
+      iconSize: [10, 10],
+      iconAnchor: [5, 5],
+      popupAnchor: [0, -8]
+    });
+    const POIIcon = L.divIcon({                      // <-- NEW icon
+      className: "pin pin--poi", html: "<span></span>",
+      iconSize: [10, 10],
+      iconAnchor: [5, 5],
+      popupAnchor: [0, -8]
+    });
 
-                places.forEach(addPlace);
+    const layersByName = { Cities, Towns, Ruins, POI };           // <-- add POI
+    const iconsByType = { city: CityIcon, town: TownIcon, ruin: RuinIcon, poi: POIIcon }; // <-- add poi
+    let places = []; // global data store used by fetch + search + list
 
-                // === Search/list wiring ===
-                const $search = document.getElementById("skz-search");
-                const $list = document.getElementById("skz-list");
+    async function loadPlaces() {
+      try {
+        const res = await fetch('../data/places.json', { cache: 'no-cache' });
+        if (!res.ok) throw new Error(res.status + ' ' + res.statusText);
+        const data = await res.json();
+        // support either an array or an object with { places: [...] }
+        places = Array.isArray(data) ? data : (data.places || []);
+        // place markers
+        places.forEach(addPlace);
+        // (re)build the search list, if you have the panel code
+        if (typeof renderList === 'function') renderList(places);
+      } catch (err) {
+        console.error('Failed to load ../data/places.json', err);
+      }
+    }
+    loadPlaces();
 
-                function renderList(items) {
-                        $list.innerHTML = items.map(p =>
-                                `<li data-id="${p.id}">
-           <span class="n">${p.name}</span>
-           <span class="c">${p.layer}</span>
-         </li>`
-                        ).join("");
-                }
-                renderList(places);
 
-                $list.addEventListener("click", (e) => {
-                        const li = e.target.closest("li[data-id]");
-                        if (!li) return;
-                        const p = places.find(x => x.id === li.dataset.id);
-                        if (!p) return;
-                        map.flyTo([p.y, p.x], Math.max(map.getZoom(), -1));
-                        markerById.get(p.id)?.openPopup();
-                });
+    // Markers
+    const markerById = new Map();
+    function addPlace(p) {
+      const layer = layersByName[p.layer] || map;
+      const icon = iconsByType[p.type] || CityIcon;
 
-                $search.addEventListener("input", () => {
-                        const q = $search.value.trim().toLowerCase();
-                        const filtered = !q ? places
-                                : places.filter(p => (p.name + " " + p.desc + " " + p.layer).toLowerCase().includes(q));
-                        renderList(filtered);
-                });
 
-                // === Freeze labels after a threshold ===
-                // Labels scale with the map normally until FREEZE_Z.
-                // Beyond that (zoomed out further), they keep a constant on-screen size of STATIC_SCALE (relative to their size at FREEZE_Z).
-                const FREEZE_Z = 2;     // start freezing at this zoom and below
-                const STATIC_SCALE = 0.7; // 70% of the label's size at FREEZE_Z
+      // real visual marker
+      const m = L.marker([p.y, p.x], { title: p.name, icon, riseOnHover: true }).addTo(layer);
 
-                function updateFrozenLabelScale() {
-                        const z = map.getZoom();
-                        let scale = 1;
-                        if (z < FREEZE_Z) {
-                                // Map shrinks by factor s when going from FREEZE_Z to z; counter it and apply STATIC_SCALE
-                                const mapScale = map.getZoomScale(z, FREEZE_Z); // < 1 when zoomed out
-                                scale = (STATIC_SCALE) / mapScale;
-                        }
-                        document.documentElement.style.setProperty('--skz-freeze-scale', scale.toFixed(3));
-                }
+      // popup (unchanged)
+      m.bindPopup(
+        '<div class="skz-popup">'
+        + '<div class="t">' + p.name + '</div>'
+        + '<div class="d">' + (p.desc || '') + '</div>'
+        + (p.href ? '<a href="' + p.href + '" target="_blank" rel="noopener">Open page →</a>' : '')
+        + '</div>',
+        { className: "skz-popup-wrap", maxWidth: 280, keepInView: true }
+      );
 
-                // Apply transform via CSS variable
-                const root = document.documentElement;
-                root.style.setProperty('--skz-freeze-scale', '1');
-                map.on('zoom', updateFrozenLabelScale);
-                map.whenReady(updateFrozenLabelScale);
+      // labels (keep your per-type size class)
+      const wantsLabel = p.label || p.type === "town" || p.type === "poi";
+      if (wantsLabel) {
+        const labelClass = `skz-label skz-label--${p.type || 'other'}`;
+        m.bindTooltip(p.name, { permanent: true, direction: "top", className: labelClass });
+      }
 
-                // Also pipe the variable into inline style of tooltips when created/opened (covers initial render)
-                map.on('tooltipopen', () => updateFrozenLabelScale());
+      // --- NEW: big invisible hit area for touch (radius ~ 16px => 32px diameter)
+      const hit = L.circleMarker([p.y, p.x], {
+        radius: 16,          // tweak to 14–18 as you like
+        stroke: false,
+        fillOpacity: 0,      // fully invisible
+        fillColor: '#000',
+        interactive: true
+      }).addTo(layer);
 
-                // Log x,y
-                map.on("click", e => console.log("x, y =", Math.round(e.latlng.lng), Math.round(e.latlng.lat)));
-        </script>
+      // forward events so it behaves like the marker
+      hit.on('click', () => m.openPopup());
+      hit.on('mouseover', () => m.fire('mouseover'));
+      hit.on('mouseout', () => m.fire('mouseout'));
+
+      markerById.set(p.id, m);
+      return m;
+    }
+
+
+    // === Search / list ===
+    const $search = document.getElementById('skz-search');
+    const $list = document.getElementById('skz-list');
+
+    function renderList(items) {
+      $list.innerHTML = items.map(p => `
+    <li data-id="${p.id}">
+      <span class="n">${p.name}</span>
+      <span class="c">${p.layer}</span>
+    </li>
+  `).join('');
+    }
+    renderList(places);
+
+    $list.addEventListener('click', (e) => {
+      const li = e.target.closest('li[data-id]');
+      if (!li) return;
+      const p = places.find(x => x.id === li.dataset.id);
+      if (!p) return;
+      map.flyTo([p.y, p.x], Math.max(map.getZoom(), -1));
+      markerById.get(p.id)?.openPopup();
+    });
+
+    $search.addEventListener('input', () => {
+      const q = $search.value.trim().toLowerCase();
+      const filtered = !q ? places
+        : places.filter(p => (p.name + ' ' + (p.desc || '') + ' ' + p.layer).toLowerCase().includes(q));
+      renderList(filtered);
+    });
+
+    // Freeze labels after zoom
+    const FREEZE_Z = 2, STATIC_SCALE = 0.7;
+    function updateFrozenLabelScale() {
+      const z = map.getZoom();
+      let scale = 1;
+      if (z < FREEZE_Z) {
+        const mapScale = map.getZoomScale(z, FREEZE_Z);
+        scale = (STATIC_SCALE) / mapScale;
+      }
+      document.documentElement.style.setProperty('--skz-freeze-scale', scale.toFixed(3));
+    }
+    map.on('zoomend viewreset', updateFrozenLabelScale);
+    map.whenReady(updateFrozenLabelScale);
+
+    // Pre-warm zoom pipeline (avoid first-zoom stutter)
+    map.whenReady(() => {
+      const z = map.getZoom(), step = 0.5;
+      map.setZoom(z + step, { animate: false });
+      map.setZoom(z, { animate: false });
+    });
+
+    // Helper: click to log coords
+    map.on("click", e => console.log("y, x =", Math.round(e.latlng.lat), Math.round(e.latlng.lng)));
+  </script>
 </body>
 
 </html>

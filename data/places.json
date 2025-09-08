@@ -1,0 +1,134 @@
+[
+  {
+    "id": "everdusk",
+    "name": "Everdusk",
+    "desc": "Home of the Wood Elves.",
+    "href": "../everdusk.html",
+    "x": 1128,
+    "y": 769,
+    "layer": "Cities",
+    "type": "city",
+    "label": true
+  },
+  {
+    "id": "snuuflund",
+    "name": "Snuuflund",
+    "desc": "Home of the Sken.",
+    "href": "../serydina.html",
+    "x": 491,
+    "y": 1582,
+    "layer": "Cities",
+    "type": "city",
+    "label": true
+  },
+  {
+    "id": "vitsenholm",
+    "name": "Vitsenholm",
+    "desc": "City of Beasts.",
+    "href": "../Vitsenholm.html",
+    "x": 1734,
+    "y": 427,
+    "layer": "Cities",
+    "type": "city",
+    "label": true
+  },
+  {
+    "id": "uwupsalla",
+    "name": "Uuwupsalla",
+    "desc": "Independent town.",
+    "href": "#",
+    "x": 1136,
+    "y": 866,
+    "layer": "Towns",
+    "type": "town",
+    "label": true
+  },
+  {
+    "id": "kauwapang",
+    "name": "Kauwapang",
+    "desc": "Independent town.",
+    "href": "#",
+    "x": 1129,
+    "y": 965,
+    "layer": "Towns",
+    "type": "town",
+    "label": true
+  },
+  {
+    "id": "talidris",
+    "name": "Talidris",
+    "desc": "Independent town.",
+    "href": "#",
+    "x": 1120,
+    "y": 1018,
+    "layer": "Towns",
+    "type": "town",
+    "label": true
+  },
+  {
+    "id": "riva",
+    "name": "Riva",
+    "desc": "Independent town.",
+    "href": "#",
+    "x": 1035,
+    "y": 1027,
+    "layer": "Towns",
+    "type": "town",
+    "label": true
+  },
+  {
+    "id": "sigta",
+    "name": "Sigta",
+    "desc": "Independent town.",
+    "href": "#",
+    "x": 940,
+    "y": 1045,
+    "layer": "Towns",
+    "type": "town",
+    "label": true
+  },
+  {
+    "id": "hofsgvar",
+    "name": "Hofsgvar",
+    "desc": "Independent town.",
+    "href": "#",
+    "x": 867,
+    "y": 1073,
+    "layer": "Towns",
+    "type": "town",
+    "label": true
+  },
+  {
+    "id": "grimspire",
+    "name": "Grimspire",
+    "desc": "Broken tower.",
+    "href": "#",
+    "x": 1747,
+    "y": 1650,
+    "layer": "Ruins",
+    "type": "ruin",
+    "label": true
+  },
+  {
+    "id": "test",
+    "name": "test",
+    "desc": "Broken tower.",
+    "href": "#",
+    "x": 1747,
+    "y": 1650,
+    "layer": "Ruins",
+    "type": "ruin",
+    "label": true
+  },
+  {
+    "id": "elduin",
+    "name": "Elduin",
+    "desc": "Imperial city, Aeternian Empire.",
+    "href": "../aeternia.html",
+    "x": 1175,
+    "y": 1455,
+    "layer": "Cities",
+    "type": "city",
+    "label": true
+  }
+]

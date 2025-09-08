@@ -336,15 +336,10 @@
     .nav-links a.active,
     .nav-links button.active {
       color: var(--sb-gold-strong);
-      /* brighter color */
       font-weight: 700;
-      /* bolder text */
       border-left: 3px solid var(--sb-gold-strong);
-      /* subtle marker */
       padding-left: calc(20px - 3px);
-      /* keep alignment with marker */
       background-color: rgba(255, 255, 255, 0.05);
-      /* faint background */
     }
 
     /* ─────────────────────────────────────────────
@@ -355,16 +350,28 @@
         display: flex;
       }
 
+      /* MOBILE PANEL: fixed, scrollable, with safe-area padding */
       .nav-links {
-        position: absolute;
+        position: fixed;
+        /* was absolute */
         top: 80px;
         left: 0;
         right: 0;
+        bottom: 0;
+        /* anchor to bottom for full panel */
         background: rgba(23, 25, 34, .96);
         flex-direction: column;
         display: none;
         padding: 20px 0;
         border-bottom: 1px solid var(--sb-border);
+        overflow-y: auto;
+        /* the panel scrolls */
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-y: contain;
+        padding-bottom: calc(env(safe-area-inset-bottom) + 24px);
+        scrollbar-gutter: stable both-edges;
+        z-index: 1350;
+        /* above page content */
       }
 
       .nav-links.active {
@@ -394,6 +401,8 @@
         box-shadow: none;
         width: auto;
         padding: 0;
+        display: block;
+        /* use hidden attribute to control visibility */
       }
 
       .nav-toggle[aria-expanded="true"]+ul {
@@ -410,6 +419,7 @@
         font-size: 1.1rem;
         border-radius: 6px;
         white-space: normal;
+        min-height: 44px;
       }
 
       /* hide desktop donate; show mobile donate */
@@ -459,9 +469,7 @@
 
       /* Make top-level headers (the main buttons) slightly bluer for hierarchy */
       .nav-links>li.dropdown>.nav-toggle {
-        /* soft blue variant of your dim text */
         color: #bcd7e5;
-        /* tweak this hex if you want it more/less blue */
         font-weight: 600;
       }
 
@@ -469,7 +477,6 @@
       .dropdown-content>li>a,
       .dropdown-content>li>button {
         padding-left: 36px !important;
-        /* was ~28px */
       }
 
       /* Indent level-2 items even more */
@@ -478,11 +485,18 @@
         padding-left: 56px !important;
       }
 
-      .dropdown-content a,
-      .dropdown-content button,
-      .dropdown-submenu a,
-      .dropdown-submenu button {
-        min-height: 44px;
+      /* Tap-safe spacer after LAST items so they aren’t flush with screen edge */
+      .nav-links>li:last-child::after,
+      .nav-links .dropdown-content>li:last-child::after,
+      .nav-links .dropdown-submenu>li:last-child::after {
+        content: "";
+        display: block;
+        height: calc(env(safe-area-inset-bottom) + 56px);
+      }
+
+      /* Hide hamburger while menu is open to avoid overlap/taps */
+      html.menu-open .hamburger {
+        visibility: hidden;
       }
     }
 
@@ -494,10 +508,11 @@
       }
     }
 
-    /* Scroll lock when mobile menu is open */
+    /* Scroll lock when mobile menu is open (page behind doesn’t move) */
     html.menu-open,
     html.menu-open body {
       overflow: hidden;
+      touch-action: none;
     }
   </style>
 
@@ -615,7 +630,7 @@
             <li><a href="dargav.html">Necropolis of Dargav</a></li>
             <li><a href="kuthan.html">Ku'than</a></li>
             <li><a href="winter.html">Winter</a></li>
-            <li><a href="Excitavitsene.html">Excitavitsene</a></li>
+            <li><a href="Vitsenholm.html">Vitsenholm</a></li>
             <li><a href="navgolam.html">Nav'golam</a></li>
             <li><a href="everdusk.html">Everdusk</a></li>
           </ul>
@@ -650,52 +665,51 @@
     <li class="dropdown">
       <button class="nav-toggle" aria-expanded="false" aria-controls="submenu-groups"
         aria-haspopup="true">Groups</button>
-      <ul class="dropdown-content" id="submenu-groups">
+      <ul class="dropdown-content" id="submenu-groups" hidden>
         <li class="dropdown">
           <button class="nav-toggle" aria-expanded="false" aria-controls="submenu-cults"
             aria-haspopup="true">Cults</button>
-          <ul class="dropdown-submenu" id="submenu-cults">
+          <ul class="dropdown-submenu" id="submenu-cults" hidden>
             <li><a href="#">The Black Coin Society</a></li>
           </ul>
         </li>
         <li class="dropdown">
           <button class="nav-toggle" aria-expanded="false" aria-controls="submenu-guilds"
             aria-haspopup="true">Guilds</button>
-          <ul class="dropdown-submenu" id="submenu-guilds">
+          <ul class="dropdown-submenu" id="submenu-guilds" hidden>
             <li><a href="#">Guild Example</a></li>
           </ul>
         </li>
         <li class="dropdown">
           <button class="nav-toggle" aria-expanded="false" aria-controls="submenu-societies"
             aria-haspopup="true">Societies</button>
-          <ul class="dropdown-submenu" id="submenu-societies">
+          <ul class="dropdown-submenu" id="submenu-societies" hidden>
             <li><a href="#">Society Example</a></li>
           </ul>
         </li>
         <li class="dropdown">
           <button class="nav-toggle" aria-expanded="false" aria-controls="submenu-academia"
             aria-haspopup="true">Academia</button>
-          <ul class="dropdown-submenu" id="submenu-academia">
+          <ul class="dropdown-submenu" id="submenu-academia" hidden>
             <li><a href="#">Order of the Word</a></li>
           </ul>
         </li>
         <li class="dropdown">
           <button class="nav-toggle" aria-expanded="false" aria-controls="submenu-trade" aria-haspopup="true">Trade
             &amp; Alliances</button>
-          <ul class="dropdown-submenu" id="submenu-trade">
+          <ul class="dropdown-submenu" id="submenu-trade" hidden>
             <!-- empty for now -->
           </ul>
         </li>
         <li class="dropdown">
           <button class="nav-toggle" aria-expanded="false" aria-controls="submenu-military"
             aria-haspopup="true">Military</button>
-          <ul class="dropdown-submenu" id="submenu-military">
+          <ul class="dropdown-submenu" id="submenu-military" hidden>
             <li><a href="#">The Shield of Dawn</a></li>
           </ul>
         </li>
       </ul>
     </li>
-
 
     <!-- History -->
     <li class="dropdown">
@@ -789,7 +803,6 @@
         const a = e.target.closest('a[href="#"]');
         if (a) {
           e.preventDefault();
-          // Don't close the menu for placeholders
         }
       });
 
@@ -815,7 +828,6 @@
         if (!link) return;
         const href = link.getAttribute('href') || '';
         if (href === '#' || href.startsWith('#')) {
-          // hash or placeholder → stay open
           e.preventDefault();
           return;
         }
@@ -823,7 +835,7 @@
         closeMenu();
       });
 
-      // Collapse all submenus when leaving mobile
+      // Collapse/restore submenus on viewport changes
       const resetSubmenus = () => {
         if (!mqMobile()) {
           // ensure hidden attribute doesn't interfere on desktop
