@@ -1,10 +1,14 @@
 <!doctype html>
 <html lang="en">
 
+
+
+
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Skazka — Map (Perf Tuned, Diamond Cities + POI)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Skazka — Interactive atlas</title>
+  <link rel="icon" type="image/png" href="assets/skazka_logo.png" />
   <link rel="preload" as="image" href="skazka_export.webp" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <style>
@@ -175,6 +179,15 @@
       border-color: #d7c38b;
     }
 
+    /* Kingdom labels: much bigger, wide tracking */
+    .leaflet-tooltip.skz-label--kingdom {
+      font-size: 20px;
+      letter-spacing: 0.2em;
+      /* wide spacing */
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
     /* Bigger text for cities; tweak to taste */
     .leaflet-tooltip.skz-label--city {
       font-size: 15px;
@@ -265,6 +278,9 @@
       text-overflow: ellipsis;
     }
   </style>
+  <link rel="stylesheet" href="https://unpkg.com/@geoman-io/leaflet-geoman-free@2.13.0/dist/leaflet-geoman.css">
+
+
 </head>
 
 <body>
@@ -274,7 +290,9 @@
     <ul id="skz-list" class="skz-list"></ul>
   </div>
 
+
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/@geoman-io/leaflet-geoman-free@2.13.0/dist/leaflet-geoman.min.js"></script>
   <script>
     // Base image
     const img = { url: "skazka_export.webp", width: 2047, height: 2047 };
@@ -286,39 +304,44 @@
       maxZoom: 2,
       zoomSnap: 0.5,
       markerZoomAnimation: false,
-      fadeAnimation: false,
-      maxBoundsViscosity: 0.8
+      fadeAnimation: false
+      // (add maxBoundsViscosity: 0.8 here if you're using it elsewhere)
     });
 
     const overlay = L.imageOverlay(img.url, bounds).addTo(map);
     map.fitBounds(bounds);
 
+    // --- Dynamic max bounds so zoom near edges doesn't get clamped
     function refreshMaxBounds() {
-      // pad by half the viewport so zoom-at-edge doesn't get clamped
-      const size = map.getSize();          // screen pixels
-      const padX = Math.ceil(size.x / 2);  // convert directly: CRS.Simple units == pixels
+      const size = map.getSize();
+      const padX = Math.ceil(size.x / 2);
       const padY = Math.ceil(size.y / 2);
-
-      // coords are [y, x] in CRS.Simple
       map.setMaxBounds([[-padY, -padX], [img.height + padY, img.width + padX]]);
     }
-
     map.whenReady(refreshMaxBounds);
     map.on('resize zoomend', refreshMaxBounds);
 
     const el = overlay.getElement();
     if (el) { el.decoding = 'sync'; el.loading = 'eager'; try { el.fetchPriority = 'high'; } catch (e) { } el.style.willChange = 'transform'; }
 
-    // Layers
+    // --- Pane for area polygons (drawn below markers)
+    map.createPane('areas');
+    map.getPane('areas').style.zIndex = 450; // markerPane is ~600
+
+    // --- Layers
     const Cities = L.layerGroup().addTo(map);
     const Towns = L.layerGroup().addTo(map);
     const Ruins = L.layerGroup().addTo(map);
-    const POI = L.layerGroup().addTo(map);            // <-- NEW
+    const POI = L.layerGroup().addTo(map);
+    const Kingdoms = L.layerGroup().addTo(map); // NEW
 
-    L.control.layers(null, { Cities, Towns, Ruins, POI },  // <-- added POI toggle
-      { collapsed: false, position: 'topleft' }).addTo(map);
+    L.control.layers(
+      null,
+      { Cities, Towns, Ruins, POI, Kingdoms }, // include Kingdoms in toggles
+      { collapsed: false, position: 'topleft' }
+    ).addTo(map);
 
-    // Icons
+    // --- Icons
     const CityIcon = L.divIcon({
       className: "skz-divicon-diamond",
       html: "<span class='gem' aria-hidden='true'></span>",
@@ -326,37 +349,53 @@
     });
     const TownIcon = L.divIcon({
       className: "pin pin--town", html: "<span></span>",
-      iconSize: [10, 10],
-      iconAnchor: [5, 5],
-      popupAnchor: [0, -8]
+      iconSize: [10, 10], iconAnchor: [5, 5], popupAnchor: [0, -8]
     });
     const RuinIcon = L.divIcon({
       className: "pin pin--ruin", html: "<span></span>",
-      iconSize: [10, 10],
-      iconAnchor: [5, 5],
-      popupAnchor: [0, -8]
+      iconSize: [10, 10], iconAnchor: [5, 5], popupAnchor: [0, -8]
     });
-    const POIIcon = L.divIcon({                      // <-- NEW icon
+    const POIIcon = L.divIcon({
       className: "pin pin--poi", html: "<span></span>",
-      iconSize: [10, 10],
-      iconAnchor: [5, 5],
-      popupAnchor: [0, -8]
+      iconSize: [10, 10], iconAnchor: [5, 5], popupAnchor: [0, -8]
+    });
+    const KingdomIcon = L.divIcon({              // NEW
+      className: "pin pin--kingdom", html: "<span></span>",
+      iconSize: [10, 10], iconAnchor: [5, 5], popupAnchor: [0, -8]
     });
 
-    const layersByName = { Cities, Towns, Ruins, POI };           // <-- add POI
-    const iconsByType = { city: CityIcon, town: TownIcon, ruin: RuinIcon, poi: POIIcon }; // <-- add poi
-    let places = []; // global data store used by fetch + search + list
+    // --- Lookups
+    const layersByName = { Cities, Towns, Ruins, POI, Kingdoms }; // NEW includes Kingdoms
+    const iconsByType = { city: CityIcon, town: TownIcon, ruin: RuinIcon, poi: POIIcon, kingdom: KingdomIcon }; // NEW
 
+    // --- Polygon storage + styles (for kingdoms)
+    const polygonById = new Map();
+    const AREA_BASE_STYLE = {
+      color: '#d7c38b',
+      weight: 2,
+      fillColor: '#d7c38b',
+      fillOpacity: 0,   // a bit stronger
+      pane: 'areas'
+    };
+    const AREA_HL_STYLE = {
+      color: '#e6cf97',
+      fillColor: '#e6cf97',
+      fillOpacity: 0.45
+    };
+
+    // --- Data load
+    let places = []; // global data store used by fetch + search + list
     async function loadPlaces() {
       try {
         const res = await fetch('../data/places.json', { cache: 'no-cache' });
         if (!res.ok) throw new Error(res.status + ' ' + res.statusText);
         const data = await res.json();
-        // support either an array or an object with { places: [...] }
         places = Array.isArray(data) ? data : (data.places || []);
-        // place markers
+
+        // Place markers
         places.forEach(addPlace);
-        // (re)build the search list, if you have the panel code
+
+        // Build list initially
         if (typeof renderList === 'function') renderList(places);
       } catch (err) {
         console.error('Failed to load ../data/places.json', err);
@@ -364,52 +403,67 @@
     }
     loadPlaces();
 
-
-    // Markers
+    // --- Markers
     const markerById = new Map();
+
     function addPlace(p) {
       const layer = layersByName[p.layer] || map;
       const icon = iconsByType[p.type] || CityIcon;
 
-
-      // real visual marker
+      // visual marker
       const m = L.marker([p.y, p.x], { title: p.name, icon, riseOnHover: true }).addTo(layer);
 
-      // popup (unchanged)
+      // popup (safe link resolution)
+      const url = (p.href && p.href !== '#') ? new URL(p.href, document.baseURI).href : null;
       m.bindPopup(
         '<div class="skz-popup">'
         + '<div class="t">' + p.name + '</div>'
         + '<div class="d">' + (p.desc || '') + '</div>'
-        + (p.href ? '<a href="' + p.href + '" target="_blank" rel="noopener">Open page →</a>' : '')
+        + (url ? '<a href="' + url + '" target="_blank" rel="noopener">Open page →</a>' : '')
         + '</div>',
         { className: "skz-popup-wrap", maxWidth: 280, keepInView: true }
       );
 
-      // labels (keep your per-type size class)
-      const wantsLabel = p.label || p.type === "town" || p.type === "poi";
+      // labels — also label kingdoms by default (your CSS sizes them up)
+      const wantsLabel = p.label || p.type === "town" || p.type === "poi" || p.type === "kingdom";
       if (wantsLabel) {
         const labelClass = `skz-label skz-label--${p.type || 'other'}`;
         m.bindTooltip(p.name, { permanent: true, direction: "top", className: labelClass });
       }
 
-      // --- NEW: big invisible hit area for touch (radius ~ 16px => 32px diameter)
+      // big invisible hit area for touch
       const hit = L.circleMarker([p.y, p.x], {
-        radius: 16,          // tweak to 14–18 as you like
-        stroke: false,
-        fillOpacity: 0,      // fully invisible
-        fillColor: '#000',
-        interactive: true
+        radius: 16, stroke: false, fillOpacity: 0, fillColor: '#000', interactive: true
       }).addTo(layer);
-
-      // forward events so it behaves like the marker
       hit.on('click', () => m.openPopup());
       hit.on('mouseover', () => m.fire('mouseover'));
       hit.on('mouseout', () => m.fire('mouseout'));
 
+      // --- NEW: draw & wire up the kingdom polygon (if provided)
+      let poly = null;
+      if (p.type === 'kingdom' && Array.isArray(p.area) && p.area.length >= 3) {
+        poly = L.polygon(p.area, AREA_BASE_STYLE).addTo(Kingdoms);
+        polygonById.set(p.id, poly);
+        console.log('Kingdom polygon created:', p.id, poly.getBounds());
+
+        const hlOn = () => poly && poly.setStyle(AREA_HL_STYLE);
+        const hlOff = () => poly && poly.setStyle(AREA_BASE_STYLE);
+
+        m.on('mouseover', hlOn);
+        m.on('focus', hlOn);
+        m.on('popupopen', hlOn);
+        m.on('mouseout', hlOff);
+        m.on('blur', hlOff);
+        m.on('popupclose', hlOff);
+
+        // Also react if you hover the polygon itself
+        poly.on('mouseover', hlOn);
+        poly.on('mouseout', hlOff);
+      }
+
       markerById.set(p.id, m);
       return m;
     }
-
 
     // === Search / list ===
     const $search = document.getElementById('skz-search');
@@ -417,11 +471,11 @@
 
     function renderList(items) {
       $list.innerHTML = items.map(p => `
-    <li data-id="${p.id}">
-      <span class="n">${p.name}</span>
-      <span class="c">${p.layer}</span>
-    </li>
-  `).join('');
+      <li data-id="${p.id}">
+        <span class="n">${p.name}</span>
+        <span class="c">${p.layer}</span>
+      </li>
+    `).join('');
     }
     renderList(places);
 
@@ -464,7 +518,48 @@
 
     // Helper: click to log coords
     map.on("click", e => console.log("y, x =", Math.round(e.latlng.lat), Math.round(e.latlng.lng)));
+
+    // Show only the polygon tool (top-left by default)
+    map.whenReady(() => {
+      if (map.pm && typeof map.pm.addControls === 'function') {
+        map.pm.addControls({
+          position: 'topleft',
+          drawPolygon: true,
+          drawMarker: false,
+          drawPolyline: false,
+          drawCircle: false,
+          drawCircleMarker: false,
+          drawRectangle: false,
+          cutPolygon: false,
+          editMode: true,
+          dragMode: false,
+          removalMode: true
+        });
+      } else {
+        console.error('Leaflet-Geoman failed to load: map.pm is undefined.');
+      }
+    });
+
+    // When a polygon is finished, capture coords (CRS.Simple -> [y,x]),
+    // copy JSON to clipboard, and add a styled Kingdom polygon to your layer.
+    map.on('pm:create', (e) => {
+      if (e.shape !== 'Polygon') return;
+
+      const latlngs = e.layer.getLatLngs()[0];            // first ring
+      const coordsYX = latlngs.map(ll => [Math.round(ll.lat), Math.round(ll.lng)]); // [y,x]
+      const json = JSON.stringify(coordsYX);
+
+      console.log('Kingdom area coords [y,x]:', json);
+      if (navigator.clipboard) navigator.clipboard.writeText(json).catch(() => { });
+
+      // Replace the editable layer with your normal kingdom polygon (in 'areas' pane)
+      e.layer.remove();
+      const poly = L.polygon(latlngs, AREA_BASE_STYLE).addTo(Kingdoms);
+      poly.on('mouseover', () => poly.setStyle(AREA_HL_STYLE));
+      poly.on('mouseout', () => poly.setStyle(AREA_BASE_STYLE));
+    });
   </script>
+
 </body>
 
 </html>
