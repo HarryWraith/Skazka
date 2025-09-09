@@ -22,15 +22,11 @@
   }
 
   // ---------- boot (navbar + footer) ----------
-  document.addEventListener("DOMContentLoaded", () => {
-    // NAVBAR
-    inject("/navbar.html", "navbar", () => {
-      if (window.initNavbar) window.initNavbar();
-    });
-
-    // FOOTER
-    inject("/footer.html", "footer");
-  })();
+  // ---------- boot (navbar + footer) ----------
+  inject("/navbar.html", "navbar", () => {
+    if (window.initNavbar) window.initNavbar();
+  });
+  inject("/footer.html", "footer");
 })();
 
 // ---------- Voices of Skazka carousel ----------
