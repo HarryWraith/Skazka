@@ -133,6 +133,7 @@ body.skz-page {
   text-decoration: underline;
 }
 
+/* City icon: solid blue star (10×10) */
 .skz-divicon-diamond {
   width: 10px;
   height: 10px;
@@ -142,16 +143,21 @@ body.skz-page {
 
 .skz-divicon-diamond .gem {
   position: absolute;
-  left: 50%;
-  top: 1px;
-  width: 8px;
-  height: 8px;
-  margin-left: -4px;
-  transform: rotate(45deg);
-  background: linear-gradient(135deg, #243a73, #0b1633);
-  border: 2px solid #8aa2ff;
-  border-radius: 2px;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), inset 0 -8px 12px rgba(0, 0, 0, .35);
+  inset: 0;
+  /* fill the 10×10 box */
+  margin: 0;
+  background: #243a73;
+  /* solid blue fill (tweak if you want brighter) */
+  transform: none;
+  /* no rotation */
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  /* 5-point star */
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%,
+      68% 57%, 79% 91%, 50% 70%,
+      21% 91%, 32% 57%, 2% 35%,
+      39% 35%);
 }
 
 .skz-divicon-diamond:hover .gem {
@@ -159,8 +165,8 @@ body.skz-page {
 }
 
 .pin {
-  width: 10px;
-  height: 10px;
+  width: 15px;
+  height: 15px;
 }
 
 .pin>span {
@@ -172,18 +178,18 @@ body.skz-page {
 }
 
 .pin.pin--town>span {
-  background: linear-gradient(#8aa0a8, #2b3e4a);
+  background-color: #2b3e4a;
   border-color: #1c2a31;
 }
 
 .pin.pin--ruin>span {
-  background: linear-gradient(#6b3a3a, #2a1818);
+  background-color: #6b3a3a;
   border-color: #2a1818;
   transform: rotate(45deg);
 }
 
 .pin.pin--poi>span {
-  background: radial-gradient(circle, transparent 45%, #d4a627 46% 60%, transparent 61%);
+  background-color: #d4a627;
   border-color: #594409;
 }
 
@@ -285,4 +291,52 @@ body.skz-page {
   width: 0 !important;
   height: 0 !important;
   display: none !important;
+}
+
+/* ===== Spotlight pulse effect (NEW) ===== */
+.leaflet-effects-pane {
+  pointer-events: none;
+  /* never block clicks */
+  z-index: 650;
+  /* above markers (~600), below popups (~700) */
+}
+
+.skz-spotlight {
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+
+.skz-spotlight .fx,
+.skz-spotlight .fx::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 22px;
+  /* base ring size */
+  height: 22px;
+  transform: translate(-50%, -50%) scale(0.6);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px rgba(255, 215, 128, 0.85);
+  /* warm gold ring */
+  animation: skz-pulse 1.5s ease-out forwards;
+}
+
+.skz-spotlight .fx::after {
+  animation-delay: .25s;
+  /* second ring slightly later */
+  box-shadow: 0 0 0 2px rgb(247, 243, 3);
+}
+
+@keyframes skz-pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.6);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(2.3);
+    opacity: 0;
+  }
 }

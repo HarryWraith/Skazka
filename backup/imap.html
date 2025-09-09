@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Skazka — Interactive atlas</title>
+
+  <!-- Your site styles/scripts -->
+  <link rel="stylesheet" href="imap.css">
+  <link rel="stylesheet" href="navbar.css?v=3">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="assets/skazka_logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+  <script defer src="navbar.js?v=3"></script>
+  <script defer src="main.js?v=3"></script>
+
+  <!-- Map libs -->
+  <link rel="preload" as="image" href="skazka_export.webp">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="https://unpkg.com/@geoman-io/leaflet-geoman-free@2.13.0/dist/leaflet-geoman.css">
+</head>
+
+<body>
+  <!-- Your header/nav -->
+  <div id="navbar"></div>
+
+  <!-- Map area -->
+  <div id="map-wrap">
+    <div id="map" role="application" aria-label="Skazka map"></div>
+
+    <!-- Search/list overlay sits on top of the map -->
+    <div id="skz-ui" class="skz-ui">
+      <input id="skz-search" class="skz-search" placeholder="Find a place…">
+      <ul id="skz-list" class="skz-list"></ul>
+    </div>
+  </div>
+
+  <!-- Your footer -->
+  <div id="footer"></div>
+
+  <!-- Libraries -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/@geoman-io/leaflet-geoman-free@2.13.0/dist/leaflet-geoman.min.js"></script>
+  <!--<script src="https://unpkg.com/leaflet-polylinedecorator@1.7.0/dist/leaflet.polylineDecorator.min.js"></script>-->
+  <script defer src="imap.js"></script>
+
+</body>
+
+</html>

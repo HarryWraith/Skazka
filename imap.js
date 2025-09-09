@@ -1,4 +1,4 @@
-// imap.js — cleaned + polylines re-enabled
+// imap.js — backup baseline + SPOTLIGHT (only additions where marked)
 
 // Base image
 const img = { url: "skazka_export.webp", width: 2047, height: 2047 };
@@ -79,12 +79,13 @@ if (el) {
 map.createPane("areas");
 map.getPane("areas").style.zIndex = 450;
 
-// Pane for area polygons (drawn below markers)
-map.createPane("areas");
-map.getPane("areas").style.zIndex = 450; // markerPane is ~600
-
 // Use a single Canvas for all kingdom polygons in that pane
 const areasRenderer = L.canvas({ pane: "areas", padding: 0.5 });
+
+/* === SPOTLIGHT pane (NEW) === */
+map.createPane("effects");
+map.getPane("effects").style.zIndex = 650; // above markers (~600), below popups (~700)
+map.getPane("effects").style.pointerEvents = "none";
 
 // Layers
 const Cities = L.layerGroup().addTo(map);
@@ -107,7 +108,7 @@ map.whenReady(() => {
     map.pm.addControls({
       position: "topleft",
       drawPolygon: true,
-      drawPolyline: true, // ✅ re-enabled
+      drawPolyline: true,
       drawRectangle: true,
       drawMarker: false,
       drawCircle: false,
@@ -155,28 +156,28 @@ map.on("pm:drawend", () => {
 const CityIcon = L.divIcon({
   className: "skz-divicon-diamond",
   html: "<span class='gem' aria-hidden='true'></span>",
-  iconSize: [10, 10],
+  iconSize: [25, 25],
   iconAnchor: [5, 9],
   popupAnchor: [0, -10],
 });
 const TownIcon = L.divIcon({
   className: "pin pin--town",
   html: "<span></span>",
-  iconSize: [10, 10],
+  iconSize: [15, 15],
   iconAnchor: [5, 5],
   popupAnchor: [0, -8],
 });
 const RuinIcon = L.divIcon({
   className: "pin pin--ruin",
   html: "<span></span>",
-  iconSize: [10, 10],
+  iconSize: [15, 15],
   iconAnchor: [5, 5],
   popupAnchor: [0, -8],
 });
 const POIIcon = L.divIcon({
   className: "pin pin--poi",
   html: "<span></span>",
-  iconSize: [10, 10],
+  iconSize: [15, 15],
   iconAnchor: [5, 5],
   popupAnchor: [0, -8],
 });
@@ -186,6 +187,14 @@ const KingdomIcon = L.divIcon({
   iconSize: [10, 10],
   iconAnchor: [5, 5],
   popupAnchor: [0, -8],
+});
+
+/* === SPOTLIGHT icon (NEW) — unchanged === */
+const SpotIcon = L.divIcon({
+  className: "skz-spotlight",
+  html: '<span class="fx"></span>',
+  iconSize: [24, 24],
+  iconAnchor: [12, 12],
 });
 
 // Lookups
@@ -277,7 +286,13 @@ function addPlace(p) {
         ? '<a href="' + url + '" target="_blank" rel="noopener">Open page →</a>'
         : "") +
       "</div>",
-    { className: "skz-popup-wrap", maxWidth: 280, keepInView: true }
+    {
+      className: "skz-popup-wrap",
+      maxWidth: 280,
+      // UPDATED: prevent Leaflet from bumping the map after zoom
+      autoPan: false,
+      // (removed keepInView)
+    }
   );
 
   const wantsLabel =
@@ -312,26 +327,23 @@ function addPlace(p) {
     const poly = L.polygon(p.area, {
       ...baseStyle,
       renderer: areasRenderer,
-      smoothFactor: 1.5, // reduce vertices at draw time
-      interactive: false, // big perf win; we still highlight via the marker
-      pmIgnore: true, // don't let Geoman attach handlers unless editing
+      smoothFactor: 1.5,
+      interactive: false,
+      pmIgnore: true,
       bubblingMouseEvents: false,
     }).addTo(Kingdoms);
 
     polygonById.set(p.id, poly);
 
-    // Keep the highlight wired from the MARKER only
+    // highlight via the marker/popup
     const hlOn = () => poly.setStyle(hoverStyle);
     const hlOff = () => poly.setStyle(baseStyle);
-
     m.on("mouseover", hlOn);
     m.on("focus", hlOn);
     m.on("popupopen", hlOn);
     m.on("mouseout", hlOff);
     m.on("blur", hlOff);
     m.on("popupclose", hlOff);
-
-    // (No polygon mouseover/mouseout listeners — we set interactive:false)
   }
 
   markerById.set(p.id, m);
@@ -404,7 +416,7 @@ function renderList(items) {
 }
 renderList(places);
 
-// Pick a zoom inside the kingdom band; otherwise type min
+// Helper: pick a zoom inside the kingdom band; otherwise type min
 function requiredZoomFor(p) {
   if (p.type === "kingdom") {
     const { pinMin, pinMax } = KV_Z;
@@ -414,7 +426,38 @@ function requiredZoomFor(p) {
   return z == null ? map.getZoom() : z;
 }
 
-// Search click → ensure layer on, zoom, open popup
+/* === SPOTLIGHT spawner (NEW) === */
+let _spotMarker = null;
+function spawnSpotlight(latlng) {
+  if (_spotMarker) {
+    map.removeLayer(_spotMarker);
+    _spotMarker = null;
+  }
+  _spotMarker = L.marker(latlng, {
+    icon: SpotIcon,
+    interactive: false,
+    pane: "effects",
+  }).addTo(map);
+  setTimeout(() => {
+    if (_spotMarker) {
+      map.removeLayer(_spotMarker);
+      _spotMarker = null;
+    }
+  }, 1200);
+}
+
+/* === NEW: fly with headroom so popup won't bounce at top edge === */
+function flyToWithHeadroom(latlng, zoom) {
+  const z = zoom ?? map.getZoom();
+  // ~22% of viewport height; clamped to a sensible range
+  const px = Math.min(220, Math.max(120, Math.round(map.getSize().y * 0.22)));
+  const pt = map.project(latlng, z);
+  const adjusted = L.point(pt.x, pt.y + px); // center slightly below the pin
+  const ll = map.unproject(adjusted, z);
+  map.flyTo(ll, z);
+}
+
+// Search click → ensure layer on, zoom, open popup, spotlight (with headroom)
 $list.addEventListener("click", (e) => {
   const li = e.target.closest("li[data-id]");
   if (!li) return;
@@ -429,12 +472,15 @@ $list.addEventListener("click", (e) => {
 
   setPlaceVisible(p, targetZ);
 
-  const openAfterMove = () => {
-    map.off("moveend", openAfterMove);
+  const afterMove = () => {
+    map.off("moveend", afterMove);
     markerById.get(p.id)?.openPopup();
+    spawnSpotlight(target);
   };
-  map.once("moveend", openAfterMove);
-  map.flyTo(target, targetZ);
+  map.once("moveend", afterMove);
+
+  // UPDATED: use headroom so popup has space above and doesn't auto-pan
+  flyToWithHeadroom(target, targetZ);
 });
 
 $search.addEventListener("input", () => {

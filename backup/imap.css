@@ -1,0 +1,294 @@
+:root {
+  --nav-h: 0px;
+  --foot-h: 0px;
+}
+
+#map-wrap {
+  height: calc(100dvh - var(--nav-h) - var(--foot-h));
+}
+
+/* --- Layout: header | map | footer --- */
+html,
+body {
+  height: 100%;
+}
+
+
+body.skz-page {
+  min-height: 100vh;
+  /* or 100dvh for mobile browsers */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar & footer keep natural height */
+#navbar,
+#footer {
+  flex: 0 0 auto;
+}
+
+/* Middle container fills the rest */
+.skz-container {
+  flex: 1 1 auto;
+  min-height: 0;
+  /* lets child overflow control scrolling instead of body */
+  display: flex;
+}
+
+/* Map wrapper fills remaining height; map sits absolutely inside */
+#map-wrap {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  /* allow map to shrink without forcing page scroll */
+
+}
+
+#map {
+  position: absolute;
+  inset: 0;
+
+}
+
+/* Keep Geoman above the layer control but below anything you want on top */
+.leaflet-pm-toolbar {
+  z-index: 2000;
+}
+
+.leaflet-container {
+  background: #0b0e13;
+}
+
+/* ====== (all your existing map UI styles below) ====== */
+
+.leaflet-image-layer,
+.leaflet-pane,
+.leaflet-zoom-animated,
+.leaflet-marker-icon,
+.leaflet-tooltip.skz-label {
+  will-change: transform;
+}
+
+:root {
+  --skz-freeze-scale: 1;
+}
+
+.leaflet-tooltip.skz-label {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  color: black;
+  font-size: .8rem;
+  font-weight: bolder;
+  text-shadow: 0 0 2px #fff, 0 0 6px #fff, 0 0 12px rgba(255, 255, 255, .8);
+}
+
+.leaflet-zoom-anim .skz-label {
+  opacity: .12;
+  transition: opacity .12s linear;
+}
+
+.leaflet-tooltip-left::before,
+.leaflet-tooltip-right::before,
+.leaflet-tooltip-top::before,
+.leaflet-tooltip-bottom::before {
+  border: none;
+}
+
+.leaflet-tooltip-top.skz-label {
+  margin-top: -1px;
+}
+
+.leaflet-popup.skz-popup-wrap .leaflet-popup-content-wrapper {
+  background: #11131a;
+  color: #efe9d8;
+  border: 1px solid rgba(255, 255, 255, .18);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .4);
+}
+
+.leaflet-popup.skz-popup-wrap .leaflet-popup-tip {
+  background: #11131a;
+  border: 1px solid rgba(255, 255, 255, .18);
+}
+
+.skz-popup .t {
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: #efe9d8;
+}
+
+.skz-popup .d {
+  color: #d4cdbb;
+  opacity: .9;
+  margin: 2px 0 6px;
+}
+
+.skz-popup a {
+  color: #d7c38b;
+  text-decoration: none;
+}
+
+.skz-popup a:hover {
+  text-decoration: underline;
+}
+
+/* City icon: solid blue star (10×10) */
+.skz-divicon-diamond {
+  width: 10px;
+  height: 10px;
+  position: relative;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, .45)) drop-shadow(0 6px 14px rgba(0, 0, 0, .25));
+}
+
+.skz-divicon-diamond .gem {
+  position: absolute;
+  inset: 0;
+  /* fill the 10×10 box */
+  margin: 0;
+  background: #243a73;
+  /* solid blue fill (tweak if you want brighter) */
+  transform: none;
+  /* no rotation */
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  /* 5-point star */
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%,
+      68% 57%, 79% 91%, 50% 70%,
+      21% 91%, 32% 57%, 2% 35%,
+      39% 35%);
+}
+
+.skz-divicon-diamond:hover .gem {
+  filter: brightness(1.08);
+}
+
+.pin {
+  width: 15px;
+  height: 15px;
+}
+
+.pin>span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, .45);
+}
+
+.pin.pin--town>span {
+  background-color: #2b3e4a;
+  border-color: #1c2a31;
+}
+
+.pin.pin--ruin>span {
+  background-color: #6b3a3a;
+  border-color: #2a1818;
+  transform: rotate(45deg);
+}
+
+.pin.pin--poi>span {
+  background-color: #d4a627;
+  border-color: #594409;
+}
+
+.leaflet-tooltip.skz-label--kingdom {
+  font-size: 20px;
+  letter-spacing: .2em;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.leaflet-tooltip.skz-label--city {
+  font-size: 15px;
+  color: red;
+  font-weight: 700;
+}
+
+.leaflet-tooltip.skz-label--town,
+.leaflet-tooltip.skz-label--poi,
+.leaflet-tooltip.skz-label--ruin {
+  font-size: 12px;
+}
+
+/* Search/list panel: place it INSIDE the map wrapper so it overlays the map */
+.skz-ui {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  z-index: 1500;
+  width: 280px;
+  max-height: calc(100% - 24px);
+  overflow: auto;
+  background: rgba(18, 19, 25, .88);
+  color: #efe9d8;
+  border: 1px solid rgba(255, 255, 255, .15);
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .4);
+  backdrop-filter: blur(4px);
+  font: 14px/1.45 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.skz-ui::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.skz-search {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, .18);
+  background: #0f1116;
+  color: #efe9d8;
+  outline: none;
+}
+
+.skz-list {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+}
+
+.skz-list li {
+  padding: 6px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.skz-list li:hover {
+  background: rgba(255, 255, 255, .06);
+}
+
+.skz-list .n {
+  font-weight: 700;
+}
+
+.skz-list .c {
+  opacity: .8;
+  font-size: 12px;
+}
+
+/* Hard kill ALL Leaflet tooltip pointers, any side/state */
+.leaflet-tooltip::before,
+.leaflet-tooltip:before,
+.leaflet-tooltip-left::before,
+.leaflet-tooltip-right::before,
+.leaflet-tooltip-top::before,
+.leaflet-tooltip-bottom::before {
+  content: none !important;
+  border: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+}
