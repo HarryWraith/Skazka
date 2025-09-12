@@ -761,6 +761,72 @@ const MeasureControl = L.Control.extend({
 });
 map.addControl(new MeasureControl());
 
+// == Fixed-width scalebar: constant pixels, changing value ==
+const ScaleBar = L.Control.extend({
+  options: {
+    position: "bottomleft",
+    pxWidth: 200, // << fixed visual width in CSS pixels
+    maxFracDigitsSmall: 2, // formatting for small numbers
+    maxFracDigitsMedium: 1, // formatting for mid-range numbers
+  },
+  onAdd(map) {
+    this._map = map;
+    this._el = L.DomUtil.create("div", "leaflet-control skz-scale");
+    this._bar = L.DomUtil.create("div", "skz-scale__bar", this._el);
+    this._lab = L.DomUtil.create("div", "skz-scale__label", this._el);
+
+    // fixed visual width
+    this._bar.style.width = this.options.pxWidth + "px";
+
+    L.DomEvent.disableClickPropagation(this._el);
+    map.on("zoomend viewreset resize", () => this._update());
+    this._update();
+    return this._el;
+  },
+  _update() {
+    // units per *image* pixel (your custom scale)
+    const uPerImgPx = RM.scale?.unitsPerPx ?? 1;
+
+    // how many CSS screen px per image px at current zoom
+    const screenPerImg = this._map.getZoomScale(this._map.getZoom(), 0);
+
+    // units per CSS screen px
+    const uPerScreenPx = uPerImgPx / screenPerImg;
+
+    // total units represented by the fixed-width bar
+    const units = this.options.pxWidth * uPerScreenPx;
+
+    this._lab.textContent = `${formatUnits(units, this.options)} ${
+      RM.scale?.unit || "units"
+    }`;
+  },
+});
+
+// friendly formatting with ~2–3 sig figs (no scientific notation)
+function formatUnits(value, opts) {
+  const abs = Math.abs(value);
+  const nf = (maxFrac) =>
+    new Intl.NumberFormat(undefined, {
+      maximumFractionDigits: maxFrac,
+      useGrouping: true,
+    });
+
+  if (abs < 1) return nf(3).format(value);
+  if (abs < 10) return nf(opts.maxFracDigitsSmall).format(value); // e.g., 2.34
+  if (abs < 100) return nf(opts.maxFracDigitsMedium).format(value); // e.g., 23.4
+  return nf(0).format(value); // e.g., 234
+}
+
+const scaleBar = new ScaleBar().addTo(map);
+
+// Keep this hook so changing your custom ruler scale updates the bar immediately.
+const _oldSetScale = window.Skazka?.setRulerScale || rmSetScale;
+window.Skazka = window.Skazka || {};
+window.Skazka.setRulerScale = function (uPerPx, unit) {
+  _oldSetScale(uPerPx, unit);
+  scaleBar._update();
+};
+
 // (Optional) expose programmatic setter
 window.Skazka = window.Skazka || {};
 window.Skazka.setRulerScale = rmSetScale;

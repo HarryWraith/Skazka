@@ -1,62 +1,35 @@
 :root {
   --nav-h: 0px;
   --foot-h: 0px;
+  --skz-freeze-scale: 1;
+  /* used by label-freeze */
 }
 
+/* Map wrapper fills viewport between navbar/footer */
 #map-wrap {
   height: calc(100dvh - var(--nav-h) - var(--foot-h));
 }
 
-/* --- Layout: header | map | footer --- */
+/* Base document sizing (no custom page layout classes needed here) */
 html,
 body {
   height: 100%;
 }
 
-
-
-
-body.skz-page {
-  min-height: 100vh;
-  /* or 100dvh for mobile browsers */
-  display: flex;
-  flex-direction: column;
-
-}
-
-/* Navbar & footer keep natural height */
+/* Keep navbar/footer on top of Leaflet UIs */
 #navbar,
 #footer {
   flex: 0 0 auto;
   position: relative;
-  /* create a stacking context */
   z-index: 5000;
-  /* higher than any Leaflet/Geoman panel */
+  /* above Leaflet/Geoman panels */
 }
 
-/* Middle container fills the rest */
-.skz-container {
-  flex: 1 1 auto;
-  min-height: 0;
-  /* lets child overflow control scrolling instead of body */
-  display: flex;
-
-}
-
+/* Map + background */
 #map-wrap,
 #map {
   position: relative;
-  /* stacking context for children */
   z-index: 1;
-}
-
-
-/* Map wrapper fills remaining height; map sits absolutely inside */
-#map-wrap {
-  position: relative;
-  flex: 1 1 auto;
-  min-height: 0;
-  /* allow map to shrink without forcing page scroll */
 }
 
 #map {
@@ -78,18 +51,13 @@ body.skz-page {
   background-repeat: repeat, repeat, no-repeat, no-repeat, no-repeat;
   background-size: 160px 160px, 420px 420px, 100% 100%, 100% 100%, 100% 100%;
   background-position: 0 0, 0 0, center, center, center;
-  background-attachment: scroll, scroll, scroll, scroll, scroll;
-}
-
-/* Keep Geoman above the layer control but below anything you want on top */
-.leaflet-pm-toolbar {
-  z-index: 2000;
 }
 
 .leaflet-container {
   background: #0b0e13;
 }
 
+/* Perf hints */
 .leaflet-image-layer,
 .leaflet-pane,
 .leaflet-zoom-animated,
@@ -98,18 +66,17 @@ body.skz-page {
   will-change: transform;
 }
 
-:root {
-  --skz-freeze-scale: 1;
-}
-
+/* Labels + freeze scaling actually applied */
 .leaflet-tooltip.skz-label {
   background: transparent;
   border: none;
   box-shadow: none;
   color: black;
   font-size: .8rem;
-  font-weight: bolder;
+  font-weight: 800;
   text-shadow: 0 0 2px #fff, 0 0 6px #fff, 0 0 12px rgba(255, 255, 255, .8);
+  transform: scale(var(--skz-freeze-scale));
+  transform-origin: bottom center;
 }
 
 .leaflet-zoom-anim .skz-label {
@@ -117,17 +84,41 @@ body.skz-page {
   transition: opacity .12s linear;
 }
 
+/* Kill all Leaflet tooltip pointers */
+.leaflet-tooltip::before,
+.leaflet-tooltip:before,
 .leaflet-tooltip-left::before,
 .leaflet-tooltip-right::before,
 .leaflet-tooltip-top::before,
 .leaflet-tooltip-bottom::before {
-  border: none;
+  content: none !important;
+  border: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
 }
 
-.leaflet-tooltip-top.skz-label {
-  margin-top: -1px;
+/* Label sizes per type */
+.leaflet-tooltip.skz-label--kingdom {
+  font-size: 20px;
+  letter-spacing: .2em;
+  font-weight: 800;
+  text-transform: uppercase;
 }
 
+.leaflet-tooltip.skz-label--city {
+  font-size: 15px;
+  color: red;
+  font-weight: 700;
+}
+
+.leaflet-tooltip.skz-label--town,
+.leaflet-tooltip.skz-label--poi,
+.leaflet-tooltip.skz-label--ruin {
+  font-size: 12px;
+}
+
+/* Popup styling */
 .leaflet-popup.skz-popup-wrap .leaflet-popup-content-wrapper {
   background: #11131a;
   color: #efe9d8;
@@ -162,7 +153,7 @@ body.skz-page {
   text-decoration: underline;
 }
 
-/* City icon: solid blue star (10×10) */
+/* Icons */
 .skz-divicon-diamond {
   width: 10px;
   height: 10px;
@@ -173,20 +164,9 @@ body.skz-page {
 .skz-divicon-diamond .gem {
   position: absolute;
   inset: 0;
-  /* fill the 10×10 box */
   margin: 0;
   background: #243a73;
-  /* solid blue fill (tweak if you want brighter) */
-  transform: none;
-  /* no rotation */
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
-  /* 5-point star */
-  clip-path: polygon(50% 0%, 61% 35%, 98% 35%,
-      68% 57%, 79% 91%, 50% 70%,
-      21% 91%, 32% 57%, 2% 35%,
-      39% 35%);
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
 }
 
 .skz-divicon-diamond:hover .gem {
@@ -222,26 +202,14 @@ body.skz-page {
   border-color: #594409;
 }
 
-.leaflet-tooltip.skz-label--kingdom {
-  font-size: 20px;
-  letter-spacing: .2em;
-  font-weight: 800;
-  text-transform: uppercase;
+
+/* add visibility for kingdom pins used in JS */
+.pin.pin--kingdom>span {
+  background-color: #3a2b4a;
+  border-color: #1f1630;
 }
 
-.leaflet-tooltip.skz-label--city {
-  font-size: 15px;
-  color: red;
-  font-weight: 700;
-}
-
-.leaflet-tooltip.skz-label--town,
-.leaflet-tooltip.skz-label--poi,
-.leaflet-tooltip.skz-label--ruin {
-  font-size: 12px;
-}
-
-/* Search/list panel: place it INSIDE the map wrapper so it overlays the map */
+/* Search/list overlay */
 .skz-ui {
   position: absolute;
   right: 12px;
@@ -249,12 +217,9 @@ body.skz-page {
   z-index: 1500;
   width: 280px;
   max-height: calc(100% - 24px);
-
-  /* show a vertical scrollbar */
   overflow-y: auto;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
-
   background: rgba(18, 19, 25, .88);
   color: #efe9d8;
   border: 1px solid rgba(255, 255, 255, .15);
@@ -267,7 +232,7 @@ body.skz-page {
   scrollbar-color: rgba(255, 255, 255, .35) transparent;
 }
 
-/* Chrome / Edge / Safari */
+/* WebKit scrollbars */
 .skz-ui::-webkit-scrollbar {
   width: 10px;
 }
@@ -280,7 +245,6 @@ body.skz-page {
   background: rgba(255, 255, 255, .25);
   border-radius: 8px;
   border: 2px solid transparent;
-  /* creates inset effect */
   background-clip: padding-box;
 }
 
@@ -298,12 +262,8 @@ body.skz-page {
   outline: none;
   position: sticky;
   top: 0;
-  /* sticks to the top edge of .skz-ui */
   z-index: 2;
-  /* stays above the list items as they scroll under */
   margin-top: 0;
-  /* avoid a gap when stuck */
-  /* optional: subtle separation while content scrolls under */
   box-shadow: 0 4px 8px rgba(0, 0, 0, .25);
 }
 
@@ -338,32 +298,7 @@ body.skz-page {
   font-size: 12px;
 }
 
-/* Hard kill ALL Leaflet tooltip pointers, any side/state */
-.leaflet-tooltip::before,
-.leaflet-tooltip:before,
-.leaflet-tooltip-left::before,
-.leaflet-tooltip-right::before,
-.leaflet-tooltip-top::before,
-.leaflet-tooltip-bottom::before {
-  content: none !important;
-  border: 0 !important;
-  width: 0 !important;
-  height: 0 !important;
-  display: none !important;
-}
-
-/* ===== Spotlight pulse effect (NEW) ===== */
-.leaflet-effects-pane {
-  pointer-events: none;
-  /* never block clicks */
-  z-index: 650;
-  /* above markers (~600), below popups (~700) */
-}
-
-
-
-
-/* ===== Sunburst effect (more obvious) ===== */
+/* Effect pane (sunburst spotlight) */
 .leaflet-effects-pane {
   pointer-events: none;
   z-index: 650;
@@ -381,12 +316,10 @@ body.skz-page {
   top: 50%;
   width: 96px;
   height: 96px;
-  /* bigger than before */
   transform: translate(-50%, -50%) scale(1);
   overflow: visible;
 }
 
-/* Rays (12 spokes) */
 .skz-burst .rays {
   animation: skz-burst-rays 2500ms ease-out forwards;
   transform-origin: 50% 50%;
@@ -396,7 +329,6 @@ body.skz-page {
   fill: rgba(255, 215, 128, 1);
 }
 
-/* Ring flash */
 .skz-burst .ring {
   fill: none;
   stroke: rgba(255, 230, 160, 1);
@@ -405,7 +337,6 @@ body.skz-page {
   transform-origin: 50% 50%;
 }
 
-/* Small central pop */
 .skz-burst .flash {
   fill: rgba(255, 245, 200, 1);
   animation: skz-burst-flash 1800ms ease-out forwards;
@@ -452,11 +383,25 @@ body.skz-page {
   }
 }
 
-/* Push ALL top-aligned Leaflet controls (zoom, layers, Geoman, etc.) below the navbar */
+/* Keep controls below navbar; keep search panel tucked too */
 #map .leaflet-top {
   top: calc(var(--nav-height, 64px) + 8px);
 }
 
+#skz-ui {
+  top: calc(var(--nav-height, 64px) + 12px);
+}
+
+/* Z-index harmonization (below header/footer; above tiles) */
+.leaflet-control-container,
+.leaflet-top,
+.leaflet-bottom,
+.leaflet-pm-toolbar,
+.skz-ui {
+  z-index: 1500 !important;
+}
+
+/* Measuring mode visuals */
 #map.is-measuring,
 #map.is-measuring .leaflet-pane,
 #map.is-measuring .leaflet-control,
@@ -465,20 +410,7 @@ body.skz-page {
   cursor: crosshair !important;
 }
 
-/* (optional) keep the search panel under the navbar */
-#skz-ui {
-  top: calc(var(--nav-height, 64px) + 12px);
-}
-
-.leaflet-control-container,
-.leaflet-top,
-.leaflet-bottom,
-.leaflet-pm-toolbar,
-.skz-ui {
-  z-index: 1500 !important;
-  /* comfortably below #navbar/#footer (5000) */
-}
-
+/* Ruler UI */
 .rm-label.leaflet-tooltip {
   background: rgba(18, 19, 25, .9);
   color: #efe9d8;
@@ -494,8 +426,73 @@ body.skz-page {
   color: #ffd780;
 }
 
-/* Crosshair cursor when measuring */
-.leaflet-container.skz-measuring,
-.leaflet-container.skz-measuring * {
-  cursor: crosshair !important;
+/* base circle for all pins (safe even if already present) */
+.leaflet-marker-icon.pin>span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, .45);
+}
+
+/* kingdom-specific — higher specificity to win any cascade */
+.leaflet-marker-icon.pin.pin--kingdom>span {
+  background-color: red;
+  opacity: 0.1;
+  /* your intended fill */
+  border-color: #1f1630;
+  /* your intended border */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .35);
+}
+
+/* simple,unobtrusive scalebar */
+.skz-scale__bar {
+  height: 8px;
+  margin-bottom: 6px;
+  border-radius: 4px;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.5) 0 50%, rgba(255, 255, 255, 0.75) 50% 100%);
+  background-size: 24px 100%;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .35));
+}
+
+.skz-scale__label {
+  text-align: right;
+  color: red;
+  opacity: .95;
+  font-weight: 600;
+  letter-spacing: .02em;
+}
+
+/* Let the bottom-left corner span the full map width */
+.leaflet-bottom.leaflet-left {
+  width: 100%;
+  pointer-events: none;
+}
+
+/* Re-enable interaction for normal controls in that corner */
+.leaflet-bottom.leaflet-left .leaflet-control {
+  pointer-events: auto;
+}
+
+/* Center the scalebar inside that full-width corner */
+.leaflet-bottom.leaflet-left .skz-scale {
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 18px;
+  /* or whatever offset you prefer */
+  pointer-events: none;
+  /* keeps drag/zoom working through it */
+  z-index: 2000;
+}
+
+.leaflet-bottom.leaflet-left .skz-scale__label {
+  text-align: center;
+  /* overrides the old right align */
+  white-space: nowrap;
+  /* avoid wrapping */
+  font-variant-numeric: tabular-nums;
+  /* steadier number widths */
 }
