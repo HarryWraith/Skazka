@@ -29,6 +29,8 @@
         <li>Traps</li>
         <li>Treasure</li>
         <li>Names</li>
+        <li>Random Encounters</li>
+        <li>Door generator</li>
       </ol>
     </article>
     <article>
@@ -87,9 +89,9 @@
           <label class="tb-label">
             Tech
             <select id="trapTech" class="tb-select">
-              <option value="clockwork" selected>Clockwork</option>
-              <option value="arcane">Arcane</option>
-              <option value="nature">Nature</option>
+              <option value="mechanical">Mechanical</option>
+              <option value="magical">Magical</option>
+              <option value="environmental">Environmental</option>
             </select>
           </label>
           <label class="tb-label">
@@ -103,13 +105,14 @@
           <label class="tb-label">
             Environment
             <select id="trapEnv" class="tb-select">
-              <option value="dungeon" selected>Dungeon</option>
+              <option value="dungeon">Dungeon</option>
               <option value="tomb">Tomb</option>
               <option value="sewer">Sewer</option>
               <option value="forest">Forest</option>
               <option value="ruin">Ruin</option>
               <option value="lair">Lair</option>
               <option value="temple">Temple</option>
+              <option value="arctic">Arctic</option>
             </select>
           </label>
           <label class="tb-label">
@@ -210,39 +213,60 @@
         <output id="nameResult" class="tb-result" aria-live="polite">—</output>
       </section>
     </article>
-    <article><!--article 2.2-->
 
-    </article>
-    <article><!--article 2.3-->
-      <!-- Tavern Events -->
-      <!--<section class="tb-panel">
-        <h2 class="tb-title">Tavern Events</h2>
+    <article>
+      <section class="tb-panel">
+        <h2 class="tb-title">Random Encounters</h2>
         <div class="tb-grid">
           <label class="tb-label">
-            Mood
-            <select id="tavernMood" class="tb-select">
-              <option value="quiet" selected>Quiet</option>
-              <option value="rowdy">Rowdy</option>
-              <option value="tense">Tense</option>
+            Zone
+            <select id="encounterZone" class="tb-select">
+              <!-- You can also populate this dynamically (see JS), but here are static options that match your JSON -->
+              <option value="forest" selected>Forest</option>
+              <option value="plains">Plains</option>
+              <option value="mountains">Mountains</option>
+              <option value="desert">Desert</option>
+              <option value="swamp">Swamp</option>
+              <option value="coast">Coast</option>
+              <option value="underground">Underground</option>
+              <option value="ruins">Ruins</option>
+              <option value="arctic">Arctic</option>
+              <option value="populated_city">Populated — City</option>
+              <option value="populated_village">Populated — Village</option>
+              <option value="populated_frontier">Populated — Frontier</option>
             </select>
           </label>
+
           <label class="tb-label">
-            Wealth
-            <select id="tavernWealth" class="tb-select">
-              <option value="poor">Poor</option>
-              <option value="average" selected>Average</option>
-              <option value="fine">Fine</option>
+            Risk Level
+            <select id="encounterRisk" class="tb-select">
+              <option value="safe">Safe</option>
+              <option value="low" selected>Low</option>
+              <option value="moderate">Moderate</option>
+              <option value="high">High</option>
+              <option value="deadly">Deadly</option>
             </select>
           </label>
         </div>
+
         <div class="tb-grid"></div>
         <div class="tb-actions">
-          <button id="rollTavern" class="tb-btn">Roll</button>
-          <button id="randTavern" class="tb-ghost-btn">Randomize</button>
+          <button id="rollEncounter" class="tb-btn">Roll</button>
+          <button id="randEncounter" class="tb-ghost-btn">Randomize</button>
         </div>
+        <output id="encounterResult" class="tb-result" aria-live="polite">—</output>
+      </section>
+    </article>
+
+    <article>
+      <section class="tb-panel">
+        <h2 class="tb-title">Door Generator</h2>
+        <div class="tb-grid"></div>
+        <div class="tb-actions">
+          <button id="rollDoor" class="tb-btn">Roll</button>
         </div>
-        <output id="tavernResult" class="tb-result" aria-live="polite">—</output>
-      </section>-->
+        <output id="doorResult" class="tb-result" aria-live="polite">—</output>
+      </section>
     </article>
 
 

@@ -1,0 +1,95 @@
+{
+  "schema": "doors.v1",
+
+  "dc_brackets": {
+    "very_easy": { "min": 5, "max": 9 },
+    "easy": { "min": 10, "max": 14 },
+    "medium": { "min": 15, "max": 19 },
+    "hard": { "min": 20, "max": 24 },
+    "very_hard": { "min": 25, "max": 29 },
+    "nearly_impossible": { "min": 30, "max": 30 }
+  },
+
+  "lock_types": [
+    { "v": "std door key", "w": 4 },
+    { "v": "padlock", "w": 3 },
+    { "v": "deadbolt", "w": 3 },
+    { "v": "obstruction", "w": 2 },
+    { "v": "no lock", "w": 2 }
+  ],
+
+  "lock_qualities": [
+    { "v": "common", "w": 6 },
+    { "v": "fine", "w": 3 },
+    { "v": "exquisite", "w": 1 }
+  ],
+
+  "locked_weights_by_type": {
+    "std door key": [
+      { "v": true, "w": 6 },
+      { "v": false, "w": 4 }
+    ],
+    "padlock": [
+      { "v": true, "w": 7 },
+      { "v": false, "w": 3 }
+    ],
+    "deadbolt": [
+      { "v": true, "w": 7 },
+      { "v": false, "w": 3 }
+    ],
+    "obstruction": [{ "v": "", "w": 1 }],
+    "no lock": [{ "v": "", "w": 1 }]
+  },
+
+  "locked_from_weights": [
+    { "v": "this side", "w": 7 },
+    { "v": "other side", "w": 3 }
+  ],
+
+  "lockpick_possible_weights_by_quality": {
+    "common": [
+      { "v": true, "w": 99 },
+      { "v": false, "w": 1 }
+    ],
+    "fine": [
+      { "v": true, "w": 98 },
+      { "v": false, "w": 2 }
+    ],
+    "exquisite": [
+      { "v": true, "w": 95 },
+      { "v": false, "w": 5 }
+    ]
+  },
+
+  "lockpick_dc_by_quality": {
+    "common": "easy",
+    "fine": "medium",
+    "exquisite": "hard"
+  },
+
+  "materials": [
+    { "v": "softwood", "hp": [10, 14], "break_dc": "easy" },
+    { "v": "reinforced softwood", "hp": [15, 18], "break_dc": "medium" },
+    { "v": "hardwood", "hp": [18, 22], "break_dc": "medium" },
+    { "v": "reinforced hardwood", "hp": [22, 28], "break_dc": "hard" },
+    { "v": "iron", "hp": [30, 40], "break_dc": "hard" },
+    { "v": "stone", "hp": [40, 55], "break_dc": "very_hard" }
+  ],
+
+  "trap_chance": { "true": 30, "false": 70 },
+
+  "damage_effect": {
+    "hp_multiplier": 0.5,
+    "dc_modifier": -3
+  },
+
+  "obstruction_examples": [
+    "furniture shoved against it",
+    "barred with a beam",
+    "collapsed rubble blocking the frame",
+    "nailed planks across the panels",
+    "Hinges jammed with pitons",
+    "frame swollen by damp",
+    "blocked by dead body"
+  ]
+}
