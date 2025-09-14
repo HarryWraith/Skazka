@@ -168,3 +168,42 @@
   font-weight: 800;
   margin-right: 6px;
 }
+
+/* Simple table for shop results */
+.tb-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tb-table thead th {
+  text-align: left;
+  color: var(--sb-gold-strong);
+  font-weight: 900;
+}
+
+.tb-table th,
+.tb-table td {
+  padding: 6px 8px;
+  border-bottom: 1px dashed var(--sb-border);
+}
+
+.tb-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.tb-seg {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.tb-segbtn[aria-pressed="true"] {
+  outline: 2px solid var(--sb-gold-strong);
+  filter: saturate(1.2) brightness(2);
+}
+
+.tb-help {
+  opacity: .8;
+  font-size: .9rem;
+  margin-top: .25rem;
+}

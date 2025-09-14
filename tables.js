@@ -562,6 +562,423 @@
   window.doors = { load: loadDoorsData, roll: rollDoor, render: renderDoor };
 
   // ─────────────────────────────────────────────────────────────────────────────
+  // SHOP (data: /data/shop.json) — lists items + adjusts price via two dropdowns
+  // ─────────────────────────────────────────────────────────────────────────────
+  // ─────────────────────────────────────────────────────────────────────────────
+  // SHOP (data: /data/shop.json) — price adjuster with demand, rep, persuasion
+  // ─────────────────────────────────────────────────────────────────────────────
+  const SHOP_PATH = "/data/shop.json";
+  let SHOP_DATA = null,
+    SHOP_READY = null;
+
+  // Factors (multiplicative pipeline): Demand × Reputation × Persuasion
+  const DEMAND_FACTORS = {
+    normal: 1.0,
+    low_stock_high_demand: 1.15,
+    overstock_low_demand: 0.85,
+  };
+  const REP_FACTORS = {
+    disfavoured: 1.25,
+    neutral: 1.0,
+    favoured: 0.9,
+  };
+  // Persuasion discount state (×0.95 / ×0.90 / ×0.85). 1.0 = none
+  let SHOP_HAGGLE = { factor: 1.0 };
+
+  /* ------------------------- Data hygiene utilities ------------------------- */
+  function round2(x) {
+    return Math.round((Number(x) || 0) * 100) / 100;
+  }
+
+  function slugifyId(s) {
+    return String(s || "")
+      .toLowerCase()
+      .normalize("NFKD")
+      .replace(/[^\w]+/g, "_")
+      .replace(/^_+|_+$/g, "");
+  }
+
+  function escapeHtml(str) {
+    return String(str).replace(
+      /[&<>"']/g,
+      (ch) =>
+        ({
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#39;",
+        }[ch])
+    );
+  }
+
+  // Accept: 10, "10", "10 gp", "75 sp", "1 gp 5 sp", "12cp"
+  function parsePriceGP(v) {
+    if (typeof v === "number") return v;
+    if (v == null) return NaN;
+    let s = String(v).toLowerCase().replace(/,/g, " ").trim();
+
+    // Tokenized form (e.g., "1 gp 5 sp 3 cp")
+    let gp = 0,
+      sp = 0,
+      cp = 0,
+      found = false;
+    const re = /(\d+(?:\.\d+)?)\s*(gp|sp|cp)\b/g;
+    let m;
+    while ((m = re.exec(s))) {
+      found = true;
+      const n = parseFloat(m[1]);
+      if (m[2] === "gp") gp += n;
+      else if (m[2] === "sp") sp += n;
+      else if (m[2] === "cp") cp += n;
+    }
+    if (found) return gp + sp / 10 + cp / 100;
+
+    // Plain number
+    const num = parseFloat(s);
+    return isNaN(num) ? NaN : num;
+  }
+
+  // Normalise incoming JSON (coerces names/categories/prices, dedupes, safe labels)
+  function sanitizeShopData(data) {
+    const out = {
+      schema: String(data?.schema || "shop.v1"),
+      categories: [],
+      items: [],
+    };
+    const catMap = new Map();
+
+    // Categories (normalise ids + labels)
+    for (const c of data?.categories || []) {
+      const id = slugifyId(c?.id || c?.label);
+      if (!id) continue;
+      const label = (
+        c?.label ? String(c.label).trim() : id.replace(/_/g, " ")
+      ).replace(/\b\w/g, (ch) => ch.toUpperCase());
+      if (!catMap.has(id)) catMap.set(id, label);
+    }
+
+    // Items (coerce names, categories, prices; drop dupes/invalid)
+    const itemMap = new Map();
+    for (const raw of data?.items || []) {
+      const name = String(raw?.name || "")
+        .replace(/\s+/g, " ")
+        .trim();
+      let catId = slugifyId(raw?.category || raw?.cat || "misc");
+      if (!catId) catId = "misc";
+
+      // Resolve/convert price to gp
+      let price = parsePriceGP(raw?.price_gp ?? raw?.price ?? raw?.gp);
+      if (!isFinite(price)) {
+        const sp = parsePriceGP(raw?.price_sp ?? raw?.sp);
+        const cp = parsePriceGP(raw?.price_cp ?? raw?.cp);
+        price = (isFinite(sp) ? sp / 10 : 0) + (isFinite(cp) ? cp / 100 : 0);
+      }
+      if (!name || !isFinite(price) || price < 0) continue;
+
+      // Ensure category exists
+      if (!catMap.has(catId)) {
+        const label = catId
+          .replace(/_/g, " ")
+          .replace(/\b\w/g, (ch) => ch.toUpperCase());
+        catMap.set(catId, label);
+      }
+
+      // Deduplicate by name+category (first wins)
+      const key = name.toLowerCase() + "::" + catId;
+      if (itemMap.has(key)) continue;
+
+      itemMap.set(key, {
+        name,
+        category: catId,
+        price_gp: round2(price),
+        rarity: raw?.rarity || undefined,
+      });
+    }
+
+    out.categories = [...catMap].map(([id, label]) => ({ id, label }));
+    out.items = [...itemMap.values()];
+    return out;
+  }
+
+  /* ------------------------ Load + basic helpers ------------------------ */
+  function loadShopData() {
+    if (SHOP_READY) return SHOP_READY;
+    SHOP_READY = (async () => {
+      try {
+        const res = await fetch(SHOP_PATH, { cache: "no-store" });
+        if (!res.ok) throw new Error(`Fetch ${SHOP_PATH} → ${res.status}`);
+        const raw = await res.json();
+        SHOP_DATA = sanitizeShopData(raw);
+      } catch (err) {
+        console.error("Failed to load shop.json:", err);
+        // Minimal fallback (sanitized) so the UI still works
+        SHOP_DATA = sanitizeShopData({
+          schema: "shop.v1",
+          categories: [
+            { id: "weapons", label: "Weapons" },
+            { id: "armor", label: "Armor" },
+            { id: "food_beverages", label: "Food & beverages" },
+            { id: "stable_supplies", label: "Stable supplies" },
+            { id: "magical_potions", label: "Magical potions" },
+          ],
+          items: [
+            { name: "Longsword", category: "weapons", price_gp: 15 },
+            { name: "Shield", category: "armor", price_gp: 10 },
+            {
+              name: "Rations (1 day)",
+              category: "food_beverages",
+              price_gp: "5 sp",
+            },
+            {
+              name: "Saddle, riding",
+              category: "stable_supplies",
+              price_gp: 10,
+            },
+            {
+              name: "Potion of Healing",
+              category: "magical_potions",
+              price_gp: 50,
+            },
+          ],
+        });
+      }
+    })();
+    return SHOP_READY;
+  }
+  // Preload (non-blocking)
+  loadShopData();
+
+  function fmtGp(gp) {
+    return `${(Number(gp) || 0).toFixed(2)} gp`;
+  }
+  function coinsBreakdown(gp) {
+    const totalCp = Math.round((Number(gp) || 0) * 100); // 1 gp = 10 sp = 100 cp
+    const gpWhole = Math.floor(totalCp / 100);
+    const sp = Math.floor((totalCp % 100) / 10);
+    const cp = totalCp % 10;
+    const parts = [];
+    if (gpWhole) parts.push(`${gpWhole} gp`);
+    if (sp) parts.push(`${sp} sp`);
+    if (cp) parts.push(`${cp} cp`);
+    return parts.join(" ") || "0 gp";
+  }
+
+  function adjustPriceGP(base, demandKey, repKey, haggleFactor = 1) {
+    const d = DEMAND_FACTORS[demandKey] ?? 1;
+    const r = REP_FACTORS[repKey] ?? 1;
+    return (Number(base) || 0) * d * r * (Number(haggleFactor) || 1);
+  }
+
+  /* ------------------------- Rendering + filters ------------------------- */
+  function shopCategories() {
+    const explicit = SHOP_DATA?.categories;
+    if (Array.isArray(explicit) && explicit.length) return explicit;
+    // Derive from items if categories array is missing
+    const map = new Map();
+    for (const it of SHOP_DATA?.items || []) {
+      const id = it.category || "misc";
+      if (!map.has(id)) {
+        const label = id
+          .replace(/_/g, " ")
+          .replace(/\b\w/g, (c) => c.toUpperCase());
+        map.set(id, { id, label });
+      }
+    }
+    return [...map.values()];
+  }
+
+  function hydrateShopCategorySelect() {
+    const sel = get("#shopCategory");
+    if (!sel || !SHOP_DATA) return;
+    const cats = shopCategories();
+    const current = sel.value;
+    sel.innerHTML = [
+      `<option value="__all__">All categories</option>`,
+      ...cats.map(
+        (c) => `<option value="${c.id}">${escapeHtml(c.label)}</option>`
+      ),
+    ].join("");
+    if (cats.some((c) => c.id === current)) sel.value = current;
+  }
+
+  function filterAndSortShop(items, { cat, q, sort }) {
+    let list = items;
+    if (cat && cat !== "__all__")
+      list = list.filter((it) => it.category === cat);
+    if (q) {
+      const s = String(q).trim().toLowerCase();
+      if (s) list = list.filter((it) => it.name.toLowerCase().includes(s));
+    }
+    switch (sort) {
+      case "price_asc":
+        list.sort((a, b) => a._adj - b._adj);
+        break;
+      case "price_desc":
+        list.sort((a, b) => b._adj - a._adj);
+        break;
+      default:
+        list.sort((a, b) => a.name.localeCompare(b.name));
+    }
+    return list;
+  }
+
+  function renderShop(demandKey, repKey) {
+    const q = get("#shopSearch")?.value || "";
+    const cat = get("#shopCategory")?.value || "__all__";
+    const sort = get("#shopSort")?.value || "name";
+    const showCoins = !!get("#shopCoins")?.checked;
+
+    const items = (SHOP_DATA?.items || []).map((it) => {
+      const adj = adjustPriceGP(
+        it.price_gp,
+        demandKey,
+        repKey,
+        SHOP_HAGGLE.factor
+      );
+      return { ...it, _adj: adj };
+    });
+    const list = filterAndSortShop(items, { cat, q, sort });
+
+    if (!list.length) return "<div>No items match your filters.</div>";
+
+    const catMap = new Map(shopCategories().map((c) => [c.id, c.label]));
+    const rows = list
+      .map((it) => {
+        const base = fmtGp(it.price_gp);
+        const adj = showCoins ? coinsBreakdown(it._adj) : fmtGp(it._adj);
+        const catLabel = catMap.get(it.category) || it.category;
+        return `<tr><td>${escapeHtml(it.name)}</td><td>${escapeHtml(
+          catLabel
+        )}</td><td>${base}</td><td>${adj}</td></tr>`;
+      })
+      .join("");
+
+    return `
+    <table class="tb-table">
+      <thead><tr><th>Item</th><th>Category</th><th>Base</th><th>Adjusted</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>`;
+  }
+
+  /* ----------------------------- UI wiring ----------------------------- */
+  // Hydrate category list + initial render if auto-show is desired
+  document.addEventListener("DOMContentLoaded", () => {
+    (SHOP_READY || loadShopData()).then(() => {
+      hydrateShopCategorySelect();
+    });
+  });
+
+  // Live re-render on filter changes
+  document.addEventListener("input", (e) => {
+    const id = e.target?.id;
+    if (!id) return;
+    if (
+      [
+        "shopSearch",
+        "shopCategory",
+        "shopSort",
+        "shopCoins",
+        "shopDemand",
+        "shopRep",
+      ].includes(id)
+    ) {
+      const demand = get("#shopDemand")?.value || "normal";
+      const rep = get("#shopRep")?.value || "neutral";
+      setHTML("#shopResult", renderShop(demand, rep));
+    }
+  });
+
+  // Persuasion buttons (5%, 10%, 15%) — toggle on/off
+  function setHaggle(percent) {
+    const selected = Math.max(0, Math.min(15, Number(percent) || 0));
+    const currentPct = Math.round((1 - (SHOP_HAGGLE.factor || 1)) * 100);
+    const toggledOff = selected && selected === currentPct;
+
+    SHOP_HAGGLE.factor = toggledOff ? 1.0 : selected ? 1 - selected / 100 : 1.0;
+    const msg = toggledOff ? "No discount." : `Discount applied: ${selected}%`;
+    if (get("#persuasionOutcome")) setHTML("#persuasionOutcome", msg);
+
+    // Update aria-pressed state if buttons exist
+    for (const id of ["haggle5", "haggle10", "haggle15"]) {
+      const el = get("#" + id);
+      if (!el) continue;
+      const p = parseInt(el.dataset.disc || el.textContent, 10);
+      el.setAttribute(
+        "aria-pressed",
+        !toggledOff && selected === p ? "true" : "false"
+      );
+    }
+
+    // Re-render
+    const demand = get("#shopDemand")?.value || "normal";
+    const rep = get("#shopRep")?.value || "neutral";
+    setHTML("#shopResult", renderShop(demand, rep));
+  }
+
+  // Own click handler just for Shop buttons (no need to edit your big switch)
+  document.addEventListener("click", async (e) => {
+    const btn = e.target.closest("button");
+    if (!btn) return;
+
+    switch (btn.id) {
+      case "rollShop": {
+        await loadShopData();
+        const demand = get("#shopDemand")?.value || "normal";
+        const rep = get("#shopRep")?.value || "neutral";
+        setHTML("#shopResult", renderShop(demand, rep));
+        break;
+      }
+      case "exportShop": {
+        await loadShopData();
+        const demand = get("#shopDemand")?.value || "normal";
+        const rep = get("#shopRep")?.value || "neutral";
+        const q = get("#shopSearch")?.value || "";
+        const cat = get("#shopCategory")?.value || "__all__";
+        const sort = get("#shopSort")?.value || "name";
+
+        const items = (SHOP_DATA?.items || []).map((it) => ({
+          ...it,
+          _adj: adjustPriceGP(it.price_gp, demand, rep, SHOP_HAGGLE.factor),
+        }));
+        const list = filterAndSortShop(items, { cat, q, sort });
+
+        const lines = [
+          ["Item", "Category", "Base (gp)", "Adjusted (gp)"],
+          ...list.map((it) => [
+            it.name,
+            it.category,
+            (Number(it.price_gp) || 0).toFixed(2),
+            (Number(it._adj) || 0).toFixed(2),
+          ]),
+        ]
+          .map((row) =>
+            row.map((x) => `"${String(x).replace(/"/g, '""')}"`).join(",")
+          )
+          .join("\n");
+
+        const blob = new Blob([lines], { type: "text/csv" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "shop.csv";
+        a.click();
+        setTimeout(() => URL.revokeObjectURL(url), 1500);
+        break;
+      }
+      case "haggle5":
+        setHaggle(5);
+        break;
+      case "haggle10":
+        setHaggle(10);
+        break;
+      case "haggle15":
+        setHaggle(15);
+        break;
+    }
+  });
+
+  // ─────────────────────────────────────────────────────────────────────────────
   // NAMES (people-only)  (data: /data/names.json)
   // ─────────────────────────────────────────────────────────────────────────────
   const NAMES_PATH = "/data/names.json";
@@ -1043,6 +1460,15 @@
       };
     });
 
+  // shop
+  window.shopDebug = () =>
+    (SHOP_READY || Promise.resolve()).then(() => ({
+      path: SHOP_PATH,
+      cats: shopCategories().map((c) => c.id),
+      count: SHOP_DATA?.items?.length || 0,
+      sample: SHOP_DATA?.items?.slice(0, 3) || [],
+    }));
+
   // ─────────────────────────────────────────────────────────────────────────────
   // CLICK HANDLER (Weather, Traps v3, Names, Treasure, Encounters)
   // ─────────────────────────────────────────────────────────────────────────────
@@ -1068,6 +1494,50 @@
         setVal("#zone", z);
         setVal("#season", s);
         setText("#weatherResult", rollWeather(z, s));
+        break;
+      }
+      //shop
+      case "rollShop": {
+        await loadShopData();
+        const demand = get("#shopDemand")?.value || "normal";
+        const rep = get("#shopRep")?.value || "neutral";
+        setHTML("#shopResult", renderShop(demand, rep));
+        break;
+      }
+      case "exportShop": {
+        await loadShopData();
+        const demand = get("#shopDemand")?.value || "normal";
+        const rep = get("#shopRep")?.value || "neutral";
+        const q = get("#shopSearch")?.value || "";
+        const cat = get("#shopCategory")?.value || "__all__";
+        const sort = get("#shopSort")?.value || "name";
+
+        const items = (SHOP_DATA?.items || []).map((it) => ({
+          ...it,
+          _adj: adjustPriceGP(it.price_gp, demand, rep),
+        }));
+        const list = filterAndSortShop(items, { cat, q, sort });
+        const lines = [
+          ["Item", "Category", "Base (gp)", "Adjusted (gp)"],
+          ...list.map((it) => [
+            it.name,
+            it.category,
+            (Number(it.price_gp) || 0).toFixed(2),
+            (Number(it._adj) || 0).toFixed(2),
+          ]),
+        ]
+          .map((row) =>
+            row.map((x) => `"${String(x).replace(/"/g, '""')}"`).join(",")
+          )
+          .join("\n");
+
+        const blob = new Blob([lines], { type: "text/csv" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "shop.csv";
+        a.click();
+        setTimeout(() => URL.revokeObjectURL(url), 1500);
         break;
       }
 

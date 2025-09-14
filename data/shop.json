@@ -1,0 +1,3219 @@
+{
+  "schema": "shop.v1",
+  "generated": "2025-09-13T20:41:12.649449Z",
+  "license": "CC-BY-4.0",
+  "attribution": "Contains material from the D&D 5e System Reference Document (SRD 5.1) by Wizards of the Coast LLC, licensed under Creative Commons Attribution 4.0 International.",
+  "categories": [
+    {
+      "id": "arms_armor",
+      "label": "Arms & Armor"
+    },
+    {
+      "id": "adventuring_gear",
+      "label": "Adventuring Gear"
+    },
+    {
+      "id": "tools_kits_instruments",
+      "label": "Tools, Kits & Instruments"
+    },
+    {
+      "id": "clothing_accessories",
+      "label": "Clothing & Accessories"
+    },
+    {
+      "id": "containers_storage",
+      "label": "Containers & Storage"
+    },
+    {
+      "id": "vehicles_mounts_animals",
+      "label": "Vehicles, Mounts & Animals"
+    },
+    {
+      "id": "food_drink_rations",
+      "label": "Food, Drink & Rations"
+    },
+    {
+      "id": "lodging_services",
+      "label": "Lodging & Services"
+    },
+    {
+      "id": "materials_trade_goods_valuables",
+      "label": "Materials, Trade Goods & Valuables"
+    },
+    {
+      "id": "books_maps_writing",
+      "label": "Books, Maps & Writing"
+    },
+    {
+      "id": "magic_consumables_scrolls",
+      "label": "Magic: Consumables & Scrolls"
+    },
+    {
+      "id": "magic_arms_armor",
+      "label": "Magic: Arms & Armor"
+    },
+    {
+      "id": "magic_wands_rings_wondrous",
+      "label": "Magic: Wands, Rings & Wondrous"
+    },
+    {
+      "id": "black_market",
+      "label": "Black Market (Poisons & Illicit Goods)"
+    }
+  ],
+  "items": [
+    {
+      "name": "Club",
+      "category": "arms_armor",
+      "price_gp": 0.1,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Dagger",
+      "category": "arms_armor",
+      "price_gp": 2,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Greatclub",
+      "category": "arms_armor",
+      "price_gp": 0.2,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Handaxe",
+      "category": "arms_armor",
+      "price_gp": 5,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Javelin",
+      "category": "arms_armor",
+      "price_gp": 0.5,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Light hammer",
+      "category": "arms_armor",
+      "price_gp": 2,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Mace",
+      "category": "arms_armor",
+      "price_gp": 5,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Quarterstaff",
+      "category": "arms_armor",
+      "price_gp": 0.2,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Sickle",
+      "category": "arms_armor",
+      "price_gp": 1,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Spear",
+      "category": "arms_armor",
+      "price_gp": 1,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Light crossbow",
+      "category": "arms_armor",
+      "price_gp": 25,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Dart",
+      "category": "arms_armor",
+      "price_gp": 0.05,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Shortbow",
+      "category": "arms_armor",
+      "price_gp": 25,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Sling",
+      "category": "arms_armor",
+      "price_gp": 0.1,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Battleaxe",
+      "category": "arms_armor",
+      "price_gp": 10,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Flail",
+      "category": "arms_armor",
+      "price_gp": 10,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Glaive",
+      "category": "arms_armor",
+      "price_gp": 20,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Greataxe",
+      "category": "arms_armor",
+      "price_gp": 30,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Greatsword",
+      "category": "arms_armor",
+      "price_gp": 50,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Halberd",
+      "category": "arms_armor",
+      "price_gp": 20,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Lance",
+      "category": "arms_armor",
+      "price_gp": 10,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Longsword",
+      "category": "arms_armor",
+      "price_gp": 15,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Maul",
+      "category": "arms_armor",
+      "price_gp": 10,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Morningstar",
+      "category": "arms_armor",
+      "price_gp": 15,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Pike",
+      "category": "arms_armor",
+      "price_gp": 5,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Rapier",
+      "category": "arms_armor",
+      "price_gp": 25,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Scimitar",
+      "category": "arms_armor",
+      "price_gp": 25,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Shortsword",
+      "category": "arms_armor",
+      "price_gp": 10,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Trident",
+      "category": "arms_armor",
+      "price_gp": 5,
+      "source": "srd5.1"
+    },
+    {
+      "name": "War pick",
+      "category": "arms_armor",
+      "price_gp": 5,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Warhammer",
+      "category": "arms_armor",
+      "price_gp": 15,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Whip",
+      "category": "arms_armor",
+      "price_gp": 2,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Blowgun",
+      "category": "arms_armor",
+      "price_gp": 10,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Hand crossbow",
+      "category": "arms_armor",
+      "price_gp": 75,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Heavy crossbow",
+      "category": "arms_armor",
+      "price_gp": 50,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Longbow",
+      "category": "arms_armor",
+      "price_gp": 50,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Net",
+      "category": "arms_armor",
+      "price_gp": 1,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Padded armor",
+      "category": "arms_armor",
+      "price_gp": 5,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Leather armor",
+      "category": "arms_armor",
+      "price_gp": 10,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Studded leather armor",
+      "category": "arms_armor",
+      "price_gp": 45,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Hide armor",
+      "category": "arms_armor",
+      "price_gp": 10,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Chain shirt",
+      "category": "arms_armor",
+      "price_gp": 50,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Scale mail",
+      "category": "arms_armor",
+      "price_gp": 50,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Breastplate",
+      "category": "arms_armor",
+      "price_gp": 400,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Half plate",
+      "category": "arms_armor",
+      "price_gp": 750,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Ring mail",
+      "category": "arms_armor",
+      "price_gp": 30,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Chain mail",
+      "category": "arms_armor",
+      "price_gp": 75,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Splint armor",
+      "category": "arms_armor",
+      "price_gp": 200,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Plate armor",
+      "category": "arms_armor",
+      "price_gp": 1500,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Shield",
+      "category": "arms_armor",
+      "price_gp": 10,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Arrows (20)",
+      "category": "arms_armor",
+      "price_gp": 1,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Crossbow bolts (20)",
+      "category": "arms_armor",
+      "price_gp": 1,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Sling bullets (20)",
+      "category": "arms_armor",
+      "price_gp": 0.04,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Blowgun needles (50)",
+      "category": "arms_armor",
+      "price_gp": 1,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Abacus",
+      "category": "adventuring_gear",
+      "price_gp": 2,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Acid (vial)",
+      "category": "adventuring_gear",
+      "price_gp": 25,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Alchemist’s fire (flask)",
+      "category": "adventuring_gear",
+      "price_gp": 50,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Antitoxin (vial)",
+      "category": "adventuring_gear",
+      "price_gp": 50,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Ball bearings (bag of 1000)",
+      "category": "adventuring_gear",
+      "price_gp": 1,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Backpack",
+      "category": "adventuring_gear",
+      "price_gp": 2,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Bedroll",
+      "category": "adventuring_gear",
+      "price_gp": 1,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Bell",
+      "category": "adventuring_gear",
+      "price_gp": 1,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Blanket",
+      "category": "adventuring_gear",
+      "price_gp": 0.5,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Block and tackle",
+      "category": "adventuring_gear",
+      "price_gp": 1,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Book (blank)",
+      "category": "adventuring_gear",
+      "price_gp": 25,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Caltrops (bag of 20)",
+      "category": "adventuring_gear",
+      "price_gp": 1,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Candle",
+      "category": "adventuring_gear",
+      "price_gp": 0.01,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Chain (10 feet)",
+      "category": "adventuring_gear",
+      "price_gp": 5,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Chalk (1 piece)",
+      "category": "adventuring_gear",
+      "price_gp": 0.01,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Climber’s kit",
+      "category": "adventuring_gear",
+      "price_gp": 25,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Crowbar",
+      "category": "adventuring_gear",
+      "price_gp": 2,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Fishing tackle",
+      "category": "adventuring_gear",
+      "price_gp": 1,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Flask or tankard",
+      "category": "adventuring_gear",
+      "price_gp": 0.02,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Grappling hook",
+      "category": "adventuring_gear",
+      "price_gp": 2,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Hammer",
+      "category": "adventuring_gear",
+      "price_gp": 1,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Sledge hammer",
+      "category": "adventuring_gear",
+      "price_gp": 2,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Healer’s kit",
+      "category": "adventuring_gear",
+      "price_gp": 5,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Holy water (flask)",
+      "category": "adventuring_gear",
+      "price_gp": 25,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Hourglass",
+      "category": "adventuring_gear",
+      "price_gp": 25,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Hunting trap",
+      "category": "adventuring_gear",
+      "price_gp": 5,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Ladder (10-foot)",
+      "category": "adventuring_gear",
+      "price_gp": 0.1,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Lamp",
+      "category": "adventuring_gear",
+      "price_gp": 0.5,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Lantern, bullseye",
+      "category": "adventuring_gear",
+      "price_gp": 10,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Lantern, hooded",
+      "category": "adventuring_gear",
+      "price_gp": 5,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Lock",
+      "category": "adventuring_gear",
+      "price_gp": 10,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Magnifying glass",
+      "category": "adventuring_gear",
+      "price_gp": 100,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Manacles",
+      "category": "adventuring_gear",
+      "price_gp": 2,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Mess kit",
+      "category": "adventuring_gear",
+      "price_gp": 0.2,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Mirror, steel",
+      "category": "adventuring_gear",
+      "price_gp": 5,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Oil (flask)",
+      "category": "adventuring_gear",
+      "price_gp": 0.1,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Perfume (vial)",
+      "category": "adventuring_gear",
+      "price_gp": 5,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Piton",
+      "category": "adventuring_gear",
+      "price_gp": 0.05,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Pole (10-foot)",
+      "category": "adventuring_gear",
+      "price_gp": 0.05,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Pot, iron",
+      "category": "adventuring_gear",
+      "price_gp": 2,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Pouch",
+      "category": "adventuring_gear",
+      "price_gp": 0.5,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Quiver",
+      "category": "adventuring_gear",
+      "price_gp": 1,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Ram, portable",
+      "category": "adventuring_gear",
+      "price_gp": 4,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Rations (1 day)",
+      "category": "adventuring_gear",
+      "price_gp": 0.5,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Rope, hempen (50 feet)",
+      "category": "adventuring_gear",
+      "price_gp": 1,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Rope, silk (50 feet)",
+      "category": "adventuring_gear",
+      "price_gp": 10,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Sack",
+      "category": "adventuring_gear",
+      "price_gp": 0.01,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Scale, merchant’s",
+      "category": "adventuring_gear",
+      "price_gp": 5,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Sealing wax",
+      "category": "adventuring_gear",
+      "price_gp": 0.5,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Shovel",
+      "category": "adventuring_gear",
+      "price_gp": 2,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Signal whistle",
+      "category": "adventuring_gear",
+      "price_gp": 0.05,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Signet ring",
+      "category": "adventuring_gear",
+      "price_gp": 5,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Soap",
+      "category": "adventuring_gear",
+      "price_gp": 0.02,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Spikes, iron (10)",
+      "category": "adventuring_gear",
+      "price_gp": 1,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Spyglass",
+      "category": "adventuring_gear",
+      "price_gp": 1000,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Tent, two-person",
+      "category": "adventuring_gear",
+      "price_gp": 2,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Tinderbox",
+      "category": "adventuring_gear",
+      "price_gp": 0.5,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Torch",
+      "category": "adventuring_gear",
+      "price_gp": 0.01,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Vial",
+      "category": "adventuring_gear",
+      "price_gp": 1,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Whetstone",
+      "category": "adventuring_gear",
+      "price_gp": 0.01,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Component pouch",
+      "category": "adventuring_gear",
+      "price_gp": 25,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Arcane focus (crystal)",
+      "category": "adventuring_gear",
+      "price_gp": 10,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Arcane focus (orb)",
+      "category": "adventuring_gear",
+      "price_gp": 20,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Arcane focus (rod)",
+      "category": "adventuring_gear",
+      "price_gp": 10,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Arcane focus (staff)",
+      "category": "adventuring_gear",
+      "price_gp": 5,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Arcane focus (wand)",
+      "category": "adventuring_gear",
+      "price_gp": 10,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Druidic focus (sprig of mistletoe)",
+      "category": "adventuring_gear",
+      "price_gp": 1,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Druidic focus (totem)",
+      "category": "adventuring_gear",
+      "price_gp": 1,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Druidic focus (wooden staff)",
+      "category": "adventuring_gear",
+      "price_gp": 5,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Druidic focus (yew wand)",
+      "category": "adventuring_gear",
+      "price_gp": 10,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Holy symbol (amulet)",
+      "category": "adventuring_gear",
+      "price_gp": 5,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Holy symbol (emblem)",
+      "category": "adventuring_gear",
+      "price_gp": 5,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Holy symbol (reliquary)",
+      "category": "adventuring_gear",
+      "price_gp": 5,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Alchemist’s supplies",
+      "category": "tools_kits_instruments",
+      "price_gp": 50,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Brewer’s supplies",
+      "category": "tools_kits_instruments",
+      "price_gp": 20,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Calligrapher’s supplies",
+      "category": "tools_kits_instruments",
+      "price_gp": 10,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Carpenter’s tools",
+      "category": "tools_kits_instruments",
+      "price_gp": 8,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Cartographer’s tools",
+      "category": "tools_kits_instruments",
+      "price_gp": 15,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Cobbler’s tools",
+      "category": "tools_kits_instruments",
+      "price_gp": 5,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Cook’s utensils",
+      "category": "tools_kits_instruments",
+      "price_gp": 1,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Glassblower’s tools",
+      "category": "tools_kits_instruments",
+      "price_gp": 30,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Jeweler’s tools",
+      "category": "tools_kits_instruments",
+      "price_gp": 25,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Leatherworker’s tools",
+      "category": "tools_kits_instruments",
+      "price_gp": 5,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Mason’s tools",
+      "category": "tools_kits_instruments",
+      "price_gp": 10,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Painter’s supplies",
+      "category": "tools_kits_instruments",
+      "price_gp": 10,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Potter’s tools",
+      "category": "tools_kits_instruments",
+      "price_gp": 10,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Smith’s tools",
+      "category": "tools_kits_instruments",
+      "price_gp": 20,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Tinker’s tools",
+      "category": "tools_kits_instruments",
+      "price_gp": 50,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Weaver’s tools",
+      "category": "tools_kits_instruments",
+      "price_gp": 1,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Woodcarver’s tools",
+      "category": "tools_kits_instruments",
+      "price_gp": 1,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Disguise kit",
+      "category": "tools_kits_instruments",
+      "price_gp": 25,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Forgery kit",
+      "category": "tools_kits_instruments",
+      "price_gp": 15,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Gaming set (dice)",
+      "category": "tools_kits_instruments",
+      "price_gp": 0.1,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Gaming set (cards)",
+      "category": "tools_kits_instruments",
+      "price_gp": 0.5,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Herbalism kit",
+      "category": "tools_kits_instruments",
+      "price_gp": 5,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Navigator’s tools",
+      "category": "tools_kits_instruments",
+      "price_gp": 25,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Poisoner’s kit",
+      "category": "tools_kits_instruments",
+      "price_gp": 50,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Thieves’ tools",
+      "category": "tools_kits_instruments",
+      "price_gp": 25,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Bagpipes",
+      "category": "tools_kits_instruments",
+      "price_gp": 30,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Drum",
+      "category": "tools_kits_instruments",
+      "price_gp": 6,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Dulcimer",
+      "category": "tools_kits_instruments",
+      "price_gp": 25,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Flute",
+      "category": "tools_kits_instruments",
+      "price_gp": 2,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Lute",
+      "category": "tools_kits_instruments",
+      "price_gp": 35,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Lyre",
+      "category": "tools_kits_instruments",
+      "price_gp": 30,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Horn",
+      "category": "tools_kits_instruments",
+      "price_gp": 3,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Pan flute",
+      "category": "tools_kits_instruments",
+      "price_gp": 12,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Shawm",
+      "category": "tools_kits_instruments",
+      "price_gp": 2,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Viol",
+      "category": "tools_kits_instruments",
+      "price_gp": 30,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Clothes, common",
+      "category": "clothing_accessories",
+      "price_gp": 0.5,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Clothes, costume",
+      "category": "clothing_accessories",
+      "price_gp": 5,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Clothes, fine",
+      "category": "clothing_accessories",
+      "price_gp": 15,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Clothes, traveler’s",
+      "category": "clothing_accessories",
+      "price_gp": 2,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Robes",
+      "category": "clothing_accessories",
+      "price_gp": 1,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Boots (pair)",
+      "category": "clothing_accessories",
+      "price_gp": 1,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Cloak",
+      "category": "clothing_accessories",
+      "price_gp": 1,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Belt pouch",
+      "category": "clothing_accessories",
+      "price_gp": 0.5,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Hat",
+      "category": "clothing_accessories",
+      "price_gp": 1,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Gloves (pair)",
+      "category": "clothing_accessories",
+      "price_gp": 0.2,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Barrel",
+      "category": "containers_storage",
+      "price_gp": 2,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Basket",
+      "category": "containers_storage",
+      "price_gp": 0.4,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Bottle, glass",
+      "category": "containers_storage",
+      "price_gp": 2,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Bucket",
+      "category": "containers_storage",
+      "price_gp": 0.05,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Case, crossbow bolt",
+      "category": "containers_storage",
+      "price_gp": 1,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Chest",
+      "category": "containers_storage",
+      "price_gp": 5,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Crate",
+      "category": "containers_storage",
+      "price_gp": 0.2,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Jug or pitcher",
+      "category": "containers_storage",
+      "price_gp": 0.02,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Waterskin",
+      "category": "containers_storage",
+      "price_gp": 0.2,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Camel",
+      "category": "vehicles_mounts_animals",
+      "price_gp": 50,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Donkey or mule",
+      "category": "vehicles_mounts_animals",
+      "price_gp": 8,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Draft horse",
+      "category": "vehicles_mounts_animals",
+      "price_gp": 50,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Riding horse",
+      "category": "vehicles_mounts_animals",
+      "price_gp": 75,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Warhorse",
+      "category": "vehicles_mounts_animals",
+      "price_gp": 400,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Mastiff",
+      "category": "vehicles_mounts_animals",
+      "price_gp": 25,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Pony",
+      "category": "vehicles_mounts_animals",
+      "price_gp": 30,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Bit and bridle",
+      "category": "vehicles_mounts_animals",
+      "price_gp": 2,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Saddle, riding",
+      "category": "vehicles_mounts_animals",
+      "price_gp": 10,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Saddle, military",
+      "category": "vehicles_mounts_animals",
+      "price_gp": 20,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Saddle, pack",
+      "category": "vehicles_mounts_animals",
+      "price_gp": 5,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Saddlebags",
+      "category": "vehicles_mounts_animals",
+      "price_gp": 4,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Cart",
+      "category": "vehicles_mounts_animals",
+      "price_gp": 15,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Wagon",
+      "category": "vehicles_mounts_animals",
+      "price_gp": 35,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Carriage",
+      "category": "vehicles_mounts_animals",
+      "price_gp": 100,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Chariot",
+      "category": "vehicles_mounts_animals",
+      "price_gp": 250,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Rowboat",
+      "category": "vehicles_mounts_animals",
+      "price_gp": 50,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Keelboat",
+      "category": "vehicles_mounts_animals",
+      "price_gp": 3000,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Longship",
+      "category": "vehicles_mounts_animals",
+      "price_gp": 10000,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Sailing ship",
+      "category": "vehicles_mounts_animals",
+      "price_gp": 10000,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Warship",
+      "category": "vehicles_mounts_animals",
+      "price_gp": 25000,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Galley",
+      "category": "vehicles_mounts_animals",
+      "price_gp": 30000,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Feed (per day)",
+      "category": "vehicles_mounts_animals",
+      "price_gp": 0.05,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Stable (per day)",
+      "category": "vehicles_mounts_animals",
+      "price_gp": 0.5,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Ale (mug)",
+      "category": "food_drink_rations",
+      "price_gp": 0.04,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Ale (gallon)",
+      "category": "food_drink_rations",
+      "price_gp": 0.2,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Banquet (per person)",
+      "category": "food_drink_rations",
+      "price_gp": 10,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Bread (loaf)",
+      "category": "food_drink_rations",
+      "price_gp": 0.02,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Cheese (hunk)",
+      "category": "food_drink_rations",
+      "price_gp": 0.1,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Meat (chunk)",
+      "category": "food_drink_rations",
+      "price_gp": 0.3,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Wine, common (bottle)",
+      "category": "food_drink_rations",
+      "price_gp": 0.2,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Wine, fine (bottle)",
+      "category": "food_drink_rations",
+      "price_gp": 10,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Meal (squalid)",
+      "category": "food_drink_rations",
+      "price_gp": 0.03,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Meal (poor)",
+      "category": "food_drink_rations",
+      "price_gp": 0.06,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Meal (modest)",
+      "category": "food_drink_rations",
+      "price_gp": 0.3,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Meal (comfortable)",
+      "category": "food_drink_rations",
+      "price_gp": 0.5,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Meal (wealthy)",
+      "category": "food_drink_rations",
+      "price_gp": 0.8,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Meal (aristocratic)",
+      "category": "food_drink_rations",
+      "price_gp": 2,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Rations (1 day)",
+      "category": "food_drink_rations",
+      "price_gp": 0.5,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Inn stay (squalid, per day)",
+      "category": "lodging_services",
+      "price_gp": 0.07,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Inn stay (poor, per day)",
+      "category": "lodging_services",
+      "price_gp": 0.1,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Inn stay (modest, per day)",
+      "category": "lodging_services",
+      "price_gp": 0.5,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Inn stay (comfortable, per day)",
+      "category": "lodging_services",
+      "price_gp": 0.8,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Inn stay (wealthy, per day)",
+      "category": "lodging_services",
+      "price_gp": 2,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Inn stay (aristocratic, per day)",
+      "category": "lodging_services",
+      "price_gp": 4,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Bath",
+      "category": "lodging_services",
+      "price_gp": 0.1,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Messenger (per mile)",
+      "category": "lodging_services",
+      "price_gp": 0.02,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Hireling (unskilled, per day)",
+      "category": "lodging_services",
+      "price_gp": 0.2,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Hireling (skilled, per day)",
+      "category": "lodging_services",
+      "price_gp": 2,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Wheat (1 lb)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 0.01,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Flour (1 lb)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 0.02,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Salt (1 lb)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 0.5,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Iron (1 lb)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 0.1,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Copper (1 lb)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 0.5,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Diamond (50 gp focus)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 50,
+      "tags": ["spell_component", "focus"],
+      "consumed": false
+    },
+    {
+      "name": "Diamond dust (25 gp pinch)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 25,
+      "tags": ["spell_component", "reagent"],
+      "consumed": true
+    },
+    {
+      "name": "Diamond dust (100 gp casting)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 100,
+      "tags": ["spell_component", "reagent"],
+      "consumed": true
+    },
+    {
+      "name": "Powdered diamond (200 gp kit)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 200,
+      "tags": ["spell_component", "reagent"],
+      "consumed": true
+    },
+    {
+      "name": "Diamonds (300 gp worth)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 300,
+      "tags": ["spell_component"],
+      "consumed": true
+    },
+    {
+      "name": "Diamond (500 gp)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 500,
+      "tags": ["spell_component"],
+      "consumed": true
+    },
+    {
+      "name": "Diamond (1,000 gp)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 1000,
+      "tags": ["spell_component"],
+      "consumed": true
+    },
+    {
+      "name": "Diamonds (25,000 gp worth)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 25000,
+      "tags": ["spell_component"],
+      "consumed": true
+    },
+    {
+      "name": "Ruby dust (50 gp)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 50,
+      "tags": ["spell_component", "reagent"],
+      "consumed": true
+    },
+    {
+      "name": "Jade dust (10 gp)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 10,
+      "tags": ["spell_component", "reagent"],
+      "consumed": true
+    },
+    {
+      "name": "Reagent kit: powdered silver & iron (100 gp)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 100,
+      "tags": ["spell_component", "reagent"],
+      "consumed": true
+    },
+    {
+      "name": "Reagent kit: rare chalks & inks (50 gp)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 50,
+      "tags": ["spell_component", "reagent"],
+      "consumed": true
+    },
+    {
+      "name": "Ritual kit: incense and offering (25 gp)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 25,
+      "tags": ["spell_component", "reagent"],
+      "consumed": true
+    },
+    {
+      "name": "Rare oils & unguents (1,000 gp)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 1000,
+      "tags": ["spell_component", "reagent"],
+      "consumed": true
+    },
+    {
+      "name": "Scrying focus (mirror/crystal/font, 1,000 gp)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 1000,
+      "tags": ["spell_component", "focus"],
+      "consumed": false
+    },
+    {
+      "name": "Exquisite chest (5,000 gp)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 5000,
+      "tags": ["spell_component", "focus"],
+      "consumed": false
+    },
+    {
+      "name": "Miniature replica chest (50 gp)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 50,
+      "tags": ["spell_component", "focus"],
+      "consumed": false
+    },
+    {
+      "name": "Vessel for clone (2,000 gp)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 2000,
+      "tags": ["spell_component", "focus"],
+      "consumed": false
+    },
+    {
+      "name": "Gem/crystal vessel (500 gp)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 500,
+      "tags": ["spell_component", "focus"],
+      "consumed": false
+    },
+    {
+      "name": "Augury tokens (bones or sticks, set)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 25,
+      "tags": ["spell_component"],
+      "consumed": true
+    },
+    {
+      "name": "Lead-based ink (10 gp)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 10,
+      "tags": ["spell_component", "reagent"],
+      "consumed": true
+    },
+
+    {
+      "name": "Linen (1 sq. yd.)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 0.5,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Silk (1 sq. yd.)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 10,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Agate (banded)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 10,
+      "tags": ["gem"],
+      "notes": "Cabochon; 5–15 carats"
+    },
+    {
+      "name": "Azurite",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 10,
+      "tags": ["gem"],
+      "notes": "Opaque blue"
+    },
+    {
+      "name": "Hematite",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 10,
+      "tags": ["gem"],
+      "notes": "Iron-gray metallic"
+    },
+    {
+      "name": "Lapis Lazuli",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 10,
+      "tags": ["gem"],
+      "notes": "Blue with pyrite"
+    },
+    {
+      "name": "Malachite",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 10,
+      "tags": ["gem"],
+      "notes": "Green, banded"
+    },
+    {
+      "name": "Obsidian",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 10,
+      "tags": ["gem"],
+      "notes": "Volcanic glass"
+    },
+    {
+      "name": "Quartz (rose)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 10,
+      "tags": ["gem"],
+      "notes": "Translucent pink"
+    },
+    {
+      "name": "Quartz (smoky)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 10,
+      "tags": ["gem"],
+      "notes": "Translucent brown-gray"
+    },
+    {
+      "name": "Tiger’s Eye",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 10,
+      "tags": ["gem"],
+      "notes": "Chatoyant banding"
+    },
+    {
+      "name": "Turquoise",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 10,
+      "tags": ["gem"],
+      "notes": "Opaque blue-green"
+    },
+
+    {
+      "name": "Bloodstone",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 50,
+      "tags": ["gem"],
+      "notes": "Dark green with red flecks"
+    },
+    {
+      "name": "Carnelian",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 50,
+      "tags": ["gem"],
+      "notes": "Orange chalcedony"
+    },
+    {
+      "name": "Chalcedony",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 50,
+      "tags": ["gem"],
+      "notes": "Translucent, various hues"
+    },
+    {
+      "name": "Chrysoprase",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 50,
+      "tags": ["gem"],
+      "notes": "Apple-green chalcedony"
+    },
+    {
+      "name": "Citrine",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 50,
+      "tags": ["gem"],
+      "notes": "Golden quartz"
+    },
+    {
+      "name": "Jasper (red)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 50,
+      "tags": ["gem"],
+      "notes": "Opaque red"
+    },
+    {
+      "name": "Moonstone",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 50,
+      "tags": ["gem"],
+      "notes": "Blue sheen"
+    },
+    {
+      "name": "Onyx",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 50,
+      "tags": ["gem"],
+      "notes": "Black/white banded"
+    },
+    {
+      "name": "Sardonyx",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 50,
+      "tags": ["gem"],
+      "notes": "Reddish onyx"
+    },
+    {
+      "name": "Rock Crystal (clear quartz)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 50,
+      "tags": ["gem"],
+      "notes": "Colorless quartz"
+    },
+    {
+      "name": "Zircon (common)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 50,
+      "tags": ["gem"],
+      "notes": "Various colors"
+    },
+    {
+      "name": "Serpentine",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 50,
+      "tags": ["gem"],
+      "notes": "Green, mottled"
+    },
+
+    {
+      "name": "Amber",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 100,
+      "tags": ["gem"],
+      "notes": "Fossil resin"
+    },
+    {
+      "name": "Amethyst",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 100,
+      "tags": ["gem"],
+      "notes": "Purple quartz"
+    },
+    {
+      "name": "Coral (red)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 100,
+      "tags": ["gem"],
+      "notes": "Branching, organic"
+    },
+    {
+      "name": "Garnet",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 100,
+      "tags": ["gem"],
+      "notes": "Red to green"
+    },
+    {
+      "name": "Jade (green)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 100,
+      "tags": ["gem"],
+      "notes": "Nephrite/jadeite"
+    },
+    {
+      "name": "Jet",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 100,
+      "tags": ["gem"],
+      "notes": "Deep black lignite"
+    },
+    {
+      "name": "Pearl (common)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 100,
+      "tags": ["gem"],
+      "notes": "Cream/white, small"
+    },
+    {
+      "name": "Spinel (red)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 100,
+      "tags": ["gem"],
+      "notes": "Often ruby-like"
+    },
+    {
+      "name": "Tourmaline (green)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 100,
+      "tags": ["gem"],
+      "notes": "Elbaite variety"
+    },
+
+    {
+      "name": "Alexandrite",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 500,
+      "tags": ["gem"],
+      "notes": "Color-change"
+    },
+    {
+      "name": "Aquamarine",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 500,
+      "tags": ["gem"],
+      "notes": "Blue beryl"
+    },
+    {
+      "name": "Black Pearl",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 500,
+      "tags": ["gem"],
+      "notes": "Dark/iridescent"
+    },
+    {
+      "name": "Peridot",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 500,
+      "tags": ["gem"],
+      "notes": "Olive-green olivine"
+    },
+    {
+      "name": "Topaz (imperial)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 500,
+      "tags": ["gem"],
+      "notes": "Golden to pink"
+    },
+
+    {
+      "name": "Black Opal",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 1000,
+      "tags": ["gem"],
+      "notes": "Dark body with fire"
+    },
+    {
+      "name": "Blue Sapphire",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 1000,
+      "tags": ["gem"],
+      "notes": "Corundum"
+    },
+    {
+      "name": "Emerald",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 1000,
+      "tags": ["gem"],
+      "notes": "Green beryl"
+    },
+    {
+      "name": "Fire Opal",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 1000,
+      "tags": ["gem"],
+      "notes": "Orange-red opal"
+    },
+    {
+      "name": "Opal (white)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 1000,
+      "tags": ["gem"],
+      "notes": "Play-of-color"
+    },
+    {
+      "name": "Ruby",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 1000,
+      "tags": ["gem"],
+      "notes": "Red corundum"
+    },
+
+    {
+      "name": "Diamond",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 5000,
+      "tags": ["gem"],
+      "notes": "Colorless, faceted"
+    },
+    {
+      "name": "Jacinth",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 5000,
+      "tags": ["gem"],
+      "notes": "Fiery orange zircon"
+    },
+    {
+      "name": "Star Ruby",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 5000,
+      "tags": ["gem"],
+      "notes": "Asterism"
+    },
+    {
+      "name": "Star Sapphire",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 5000,
+      "tags": ["gem"],
+      "notes": "Asterism"
+    },
+    {
+      "name": "Art object (25 gp)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 25,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Art object (250 gp)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 250,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Art object (750 gp)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 750,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Paper (one sheet)",
+      "category": "books_maps_writing",
+      "price_gp": 0.2,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Parchment (one sheet)",
+      "category": "books_maps_writing",
+      "price_gp": 0.1,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Ink (1 oz. vial)",
+      "category": "books_maps_writing",
+      "price_gp": 10,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Ink pen",
+      "category": "books_maps_writing",
+      "price_gp": 0.02,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Journal (blank book)",
+      "category": "books_maps_writing",
+      "price_gp": 25,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Map, local area",
+      "category": "books_maps_writing",
+      "price_gp": 5,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Scroll case (map case)",
+      "category": "books_maps_writing",
+      "price_gp": 1,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Spellbook",
+      "category": "books_maps_writing",
+      "price_gp": 50,
+      "source": "srd5.1"
+    },
+    {
+      "name": "Potion of Healing",
+      "category": "magic_consumables_scrolls",
+      "price_gp": 50,
+      "rarity": "common",
+      "consumable": true,
+      "notes": "SRD item; 50 gp widely used.",
+      "source": "srd5.1"
+    },
+    {
+      "name": "Spell scroll (cantrip)",
+      "category": "magic_consumables_scrolls",
+      "price_gp": 25,
+      "rarity": "common",
+      "consumable": true,
+      "notes": "House rule baseline; adjust per table.",
+      "source": "srd5.1"
+    },
+    {
+      "name": "Spell scroll (1st level)",
+      "category": "magic_consumables_scrolls",
+      "price_gp": 75,
+      "rarity": "common",
+      "consumable": true,
+      "notes": "House rule baseline; adjust per table.",
+      "source": "srd5.1"
+    },
+    {
+      "name": "Spell scroll (2nd level)",
+      "category": "magic_consumables_scrolls",
+      "price_gp": 150,
+      "rarity": "uncommon",
+      "consumable": true,
+      "notes": "House rule baseline; adjust per table.",
+      "source": "srd5.1"
+    },
+    {
+      "name": "Spell scroll (3rd level)",
+      "category": "magic_consumables_scrolls",
+      "price_gp": 300,
+      "rarity": "uncommon",
+      "consumable": true,
+      "notes": "House rule baseline; adjust per table.",
+      "source": "srd5.1"
+    },
+    {
+      "name": "Spell scroll (4th level)",
+      "category": "magic_consumables_scrolls",
+      "price_gp": 500,
+      "rarity": "rare",
+      "consumable": true,
+      "notes": "House rule baseline; adjust per table.",
+      "source": "srd5.1"
+    },
+    {
+      "name": "Spell scroll (5th level)",
+      "category": "magic_consumables_scrolls",
+      "price_gp": 1000,
+      "rarity": "rare",
+      "consumable": true,
+      "notes": "House rule baseline; adjust per table.",
+      "source": "srd5.1"
+    },
+    {
+      "name": "Basic poison (vial)",
+      "category": "black_market",
+      "price_gp": 100,
+      "tags": ["poison", "illegal"],
+      "source": "srd5.1"
+    },
+    {
+      "name": "Potion of Invulnerability",
+      "category": "magic_consumables_scrolls",
+      "price_gp": 500,
+      "source": "srd5.2",
+      "rarity": "rare",
+      "notes": "Auto-priced by rarity policy"
+    },
+    {
+      "name": "Potion of Longevity",
+      "category": "magic_consumables_scrolls",
+      "price_gp": 2500,
+      "source": "srd5.2",
+      "rarity": "very_rare",
+      "notes": "Auto-priced by rarity policy"
+    },
+    {
+      "name": "Potion of Vitality",
+      "category": "magic_consumables_scrolls",
+      "price_gp": 2500,
+      "source": "srd5.2",
+      "rarity": "very_rare",
+      "notes": "Auto-priced by rarity policy"
+    },
+    {
+      "name": "Energy Bow",
+      "category": "magic_arms_armor",
+      "price_gp": 25000,
+      "source": "srd5.2",
+      "rarity": "very_rare",
+      "notes": "Auto-priced by rarity policy"
+    },
+    {
+      "name": "Quarterstaff of the Acrobat",
+      "category": "magic_arms_armor",
+      "price_gp": 25000,
+      "source": "srd5.2",
+      "rarity": "very_rare",
+      "notes": "Auto-priced by rarity policy"
+    },
+    {
+      "name": "Sentinel Shield",
+      "category": "magic_arms_armor",
+      "price_gp": 1000,
+      "source": "srd5.2",
+      "rarity": "uncommon",
+      "notes": "Auto-priced by rarity policy"
+    },
+    {
+      "name": "Shield of the Cavalier",
+      "category": "magic_arms_armor",
+      "price_gp": 25000,
+      "source": "srd5.2",
+      "rarity": "very_rare",
+      "notes": "Auto-priced by rarity policy"
+    },
+    {
+      "name": "Thunderous Greatclub",
+      "category": "magic_arms_armor",
+      "price_gp": 25000,
+      "source": "srd5.2",
+      "rarity": "very_rare",
+      "notes": "Auto-priced by rarity policy"
+    },
+    {
+      "name": "Bead of Nourishment",
+      "category": "magic_consumables_scrolls",
+      "price_gp": 50,
+      "source": "srd5.2",
+      "rarity": "common",
+      "notes": "Auto-priced by rarity policy"
+    },
+    {
+      "name": "Cloak of Invisibility",
+      "category": "magic_wands_rings_wondrous",
+      "price_gp": 100000,
+      "source": "srd5.2",
+      "rarity": "legendary",
+      "notes": "Auto-priced by rarity policy"
+    },
+    {
+      "name": "Elixir of Health",
+      "category": "magic_consumables_scrolls",
+      "price_gp": 500,
+      "source": "srd5.2",
+      "rarity": "rare",
+      "notes": "Auto-priced by rarity policy"
+    },
+    {
+      "name": "Gloves of Thievery",
+      "category": "magic_wands_rings_wondrous",
+      "price_gp": 1000,
+      "source": "srd5.2",
+      "rarity": "uncommon",
+      "notes": "Auto-priced by rarity policy"
+    },
+    {
+      "name": "Hat of Many Spells",
+      "category": "magic_wands_rings_wondrous",
+      "price_gp": 25000,
+      "source": "srd5.2",
+      "rarity": "very_rare",
+      "notes": "Auto-priced by rarity policy"
+    },
+    {
+      "name": "Rod of Resurrection",
+      "category": "magic_wands_rings_wondrous",
+      "price_gp": 100000,
+      "source": "srd5.2",
+      "rarity": "legendary",
+      "notes": "Auto-priced by rarity policy"
+    },
+    {
+      "name": "Sending Stones",
+      "category": "magic_wands_rings_wondrous",
+      "price_gp": 1000,
+      "source": "srd5.2",
+      "rarity": "uncommon",
+      "notes": "Auto-priced by rarity policy"
+    },
+    {
+      "name": "Winter clothing (set)",
+      "category": "clothing_accessories",
+      "price_gp": 10,
+      "tags": ["clothing", "weather"]
+    },
+    {
+      "name": "Raincloak (oiled)",
+      "category": "clothing_accessories",
+      "price_gp": 2,
+      "tags": ["clothing", "weather"]
+    },
+    {
+      "name": "Cloak pin (bronze)",
+      "category": "clothing_accessories",
+      "price_gp": 0.2,
+      "tags": ["accessory"]
+    },
+    {
+      "name": "Wide-brim hat",
+      "category": "clothing_accessories",
+      "price_gp": 0.5,
+      "tags": ["accessory"]
+    },
+    {
+      "name": "Coach fare (per mile)",
+      "category": "lodging_services",
+      "price_gp": 0.05,
+      "tags": ["travel", "fare"]
+    },
+    {
+      "name": "Ferry fare (per crossing)",
+      "category": "lodging_services",
+      "price_gp": 0.2,
+      "tags": ["travel", "fare"]
+    },
+    {
+      "name": "Ship passage (steerage, per day)",
+      "category": "lodging_services",
+      "price_gp": 0.5,
+      "tags": ["travel", "passage"]
+    },
+    {
+      "name": "Ship passage (cabin, per day)",
+      "category": "lodging_services",
+      "price_gp": 2,
+      "tags": ["travel", "passage"]
+    },
+    {
+      "name": "Laundry (per outfit)",
+      "category": "lodging_services",
+      "price_gp": 0.05,
+      "tags": ["service"]
+    },
+    {
+      "name": "Locksmithing (simple job)",
+      "category": "lodging_services",
+      "price_gp": 5,
+      "tags": ["service", "craft"]
+    },
+    {
+      "name": "Barding, leather",
+      "category": "vehicles_mounts_animals",
+      "price_gp": 40,
+      "tags": ["barding", "mount_armor"]
+    },
+    {
+      "name": "Barding, chain mail",
+      "category": "vehicles_mounts_animals",
+      "price_gp": 300,
+      "tags": ["barding", "mount_armor"]
+    },
+    {
+      "name": "Barding, plate",
+      "category": "vehicles_mounts_animals",
+      "price_gp": 6000,
+      "tags": ["barding", "mount_armor"]
+    },
+    {
+      "name": "Wax tablet & stylus",
+      "category": "books_maps_writing",
+      "price_gp": 0.2,
+      "tags": ["writing", "reusable"]
+    },
+    {
+      "name": "Charcoal sticks (12)",
+      "category": "books_maps_writing",
+      "price_gp": 0.05,
+      "tags": ["writing"]
+    },
+    {
+      "name": "Map, regional",
+      "category": "books_maps_writing",
+      "price_gp": 25,
+      "tags": ["map"]
+    },
+    {
+      "name": "Atlas of trade routes",
+      "category": "books_maps_writing",
+      "price_gp": 50,
+      "tags": ["book", "trade"]
+    },
+    {
+      "name": "Incense (block, 1 hour)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 1,
+      "tags": ["incense", "ritual"]
+    },
+    {
+      "name": "Powdered silver (1 oz)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 25,
+      "tags": ["component", "silver"]
+    },
+    {
+      "name": "Leather (tanned, 1 sq. yd.)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 1,
+      "tags": ["material"]
+    },
+    {
+      "name": "Lumber (10-ft board)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 0.5,
+      "tags": ["material"]
+    },
+    {
+      "name": "Alchemical reagents (1 lb)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 20,
+      "tags": ["material", "alchemical"]
+    },
+    {
+      "name": "Spell scroll (6th level)",
+      "category": "magic_consumables_scrolls",
+      "price_gp": 2000,
+      "rarity": "very_rare",
+      "consumable": true,
+      "notes": "Table policy (auto-priced)"
+    },
+    {
+      "name": "Spell scroll (7th level)",
+      "category": "magic_consumables_scrolls",
+      "price_gp": 5000,
+      "rarity": "very_rare",
+      "consumable": true,
+      "notes": "Table policy (auto-priced)"
+    },
+    {
+      "name": "Spell scroll (8th level)",
+      "category": "magic_consumables_scrolls",
+      "price_gp": 10000,
+      "rarity": "legendary",
+      "consumable": true,
+      "notes": "Table policy (auto-priced)"
+    },
+    {
+      "name": "Spell scroll (9th level)",
+      "category": "magic_consumables_scrolls",
+      "price_gp": 25000,
+      "rarity": "legendary",
+      "consumable": true,
+      "notes": "Table policy (auto-priced)"
+    },
+    {
+      "name": "Weapon +1 (specify type)",
+      "category": "magic_arms_armor",
+      "price_gp": 1000,
+      "rarity": "uncommon",
+      "notes": "Table policy default"
+    },
+    {
+      "name": "Weapon +2 (specify type)",
+      "category": "magic_arms_armor",
+      "price_gp": 6000,
+      "rarity": "rare",
+      "notes": "Table policy default"
+    },
+    {
+      "name": "Weapon +3 (specify type)",
+      "category": "magic_arms_armor",
+      "price_gp": 25000,
+      "rarity": "very_rare",
+      "notes": "Table policy default"
+    },
+    {
+      "name": "Armor/Shield +1 (specify type)",
+      "category": "magic_arms_armor",
+      "price_gp": 1000,
+      "rarity": "uncommon",
+      "notes": "Table policy default"
+    },
+    {
+      "name": "Armor/Shield +2 (specify type)",
+      "category": "magic_arms_armor",
+      "price_gp": 6000,
+      "rarity": "rare",
+      "notes": "Table policy default"
+    },
+    {
+      "name": "Armor/Shield +3 (specify type)",
+      "category": "magic_arms_armor",
+      "price_gp": 25000,
+      "rarity": "very_rare",
+      "notes": "Table policy default"
+    },
+    {
+      "name": "Ammunition +1 (per piece)",
+      "category": "magic_arms_armor",
+      "price_gp": 50,
+      "rarity": "uncommon",
+      "notes": "≈5% of +1 weapon default"
+    },
+    {
+      "name": "Ammunition +2 (per piece)",
+      "category": "magic_arms_armor",
+      "price_gp": 300,
+      "rarity": "rare",
+      "notes": "≈5% of +2 weapon default"
+    },
+    {
+      "name": "Ammunition +3 (per piece)",
+      "category": "magic_arms_armor",
+      "price_gp": 1250,
+      "rarity": "very_rare",
+      "notes": "≈5% of +3 weapon default"
+    },
+    {
+      "name": "Ring (defensive, table policy)",
+      "category": "magic_wands_rings_wondrous",
+      "price_gp": 6000,
+      "rarity": "rare",
+      "notes": "Generic rare ring"
+    },
+    {
+      "name": "Wand (utility, table policy)",
+      "category": "magic_wands_rings_wondrous",
+      "price_gp": 1000,
+      "rarity": "uncommon",
+      "notes": "Generic uncommon wand"
+    },
+    {
+      "name": "Cloak (protective, table policy)",
+      "category": "magic_wands_rings_wondrous",
+      "price_gp": 1000,
+      "rarity": "uncommon",
+      "notes": "Generic uncommon cloak"
+    },
+    {
+      "name": "Boots (mobility, table policy)",
+      "category": "magic_wands_rings_wondrous",
+      "price_gp": 6000,
+      "rarity": "rare",
+      "notes": "Generic rare boots"
+    },
+    {
+      "name": "Sleep toxin (injury)",
+      "category": "black_market",
+      "price_gp": 150,
+      "rarity": "uncommon",
+      "tags": ["poison", "illegal"]
+    },
+
+    {
+      "name": "Aventurine",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 10,
+      "tags": ["gem"],
+      "notes": "Green quartz with shimmer"
+    },
+    {
+      "name": "Sodalite",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 10,
+      "tags": ["gem"],
+      "notes": "Royal blue, white veining"
+    },
+    {
+      "name": "Howlite",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 10,
+      "tags": ["gem"],
+      "notes": "White, webbed gray"
+    },
+    {
+      "name": "Rhodonite",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 10,
+      "tags": ["gem"],
+      "notes": "Pink with black veining"
+    },
+    {
+      "name": "Unakite",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 10,
+      "tags": ["gem"],
+      "notes": "Green/pink mottled"
+    },
+    {
+      "name": "Amazonite",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 10,
+      "tags": ["gem"],
+      "notes": "Blue-green feldspar"
+    },
+    {
+      "name": "Fluorite",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 10,
+      "tags": ["gem"],
+      "notes": "Bands of purple/green"
+    },
+    {
+      "name": "Jasper (brecciated)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 10,
+      "tags": ["gem"],
+      "notes": "Fragmented red/cream"
+    },
+    {
+      "name": "Agate (moss)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 10,
+      "tags": ["gem"],
+      "notes": "Dendritic inclusions"
+    },
+    {
+      "name": "Sard",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 10,
+      "tags": ["gem"],
+      "notes": "Brownish red chalcedony"
+    },
+
+    {
+      "name": "Blue Lace Agate",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 50,
+      "tags": ["gem"],
+      "notes": "Pale blue banding"
+    },
+    {
+      "name": "Labradorite",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 50,
+      "tags": ["gem"],
+      "notes": "Iridescent flash"
+    },
+    {
+      "name": "Sunstone",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 50,
+      "tags": ["gem"],
+      "notes": "Coppery aventurescence"
+    },
+    {
+      "name": "Chrysocolla",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 50,
+      "tags": ["gem"],
+      "notes": "Blue-green copper silicate"
+    },
+    {
+      "name": "Rhodochrosite",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 50,
+      "tags": ["gem"],
+      "notes": "Pink bands"
+    },
+    {
+      "name": "Prehnite",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 50,
+      "tags": ["gem"],
+      "notes": "Apple-green translucent"
+    },
+    {
+      "name": "Hawk’s Eye",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 50,
+      "tags": ["gem"],
+      "notes": "Blue tiger’s eye"
+    },
+    {
+      "name": "Kyanite",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 50,
+      "tags": ["gem"],
+      "notes": "Blue bladed crystals"
+    },
+    {
+      "name": "Seraphinite",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 50,
+      "tags": ["gem"],
+      "notes": "Feathery chatoyance"
+    },
+    {
+      "name": "Jasper (picture)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 50,
+      "tags": ["gem"],
+      "notes": "Landscape patterns"
+    },
+
+    {
+      "name": "Ametrine",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 100,
+      "tags": ["gem"],
+      "notes": "Amethyst-citrine bicolor"
+    },
+    {
+      "name": "Iolite",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 100,
+      "tags": ["gem"],
+      "notes": "Violet-blue cordierite"
+    },
+    {
+      "name": "Jade (white)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 100,
+      "tags": ["gem"],
+      "notes": "White nephrite/jadeite"
+    },
+    {
+      "name": "Topaz (blue)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 100,
+      "tags": ["gem"],
+      "notes": "Sky to London blue"
+    },
+    {
+      "name": "Opal (hyalite)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 100,
+      "tags": ["gem"],
+      "notes": "Colorless, glassy opal"
+    },
+    {
+      "name": "Andalusite",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 100,
+      "tags": ["gem"],
+      "notes": "Pleochroic brown-green"
+    },
+
+    {
+      "name": "Morganite",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 500,
+      "tags": ["gem"],
+      "notes": "Pink beryl"
+    },
+    {
+      "name": "Heliodor",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 500,
+      "tags": ["gem"],
+      "notes": "Golden beryl"
+    },
+    {
+      "name": "Kunzite",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 500,
+      "tags": ["gem"],
+      "notes": "Lilac spodumene"
+    },
+    {
+      "name": "Tanzanite",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 500,
+      "tags": ["gem"],
+      "notes": "Blue-violet zoisite"
+    },
+    {
+      "name": "Tourmaline (indicolite)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 500,
+      "tags": ["gem"],
+      "notes": "Blue tourmaline"
+    },
+    {
+      "name": "Tourmaline (rubellite)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 500,
+      "tags": ["gem"],
+      "notes": "Red tourmaline"
+    },
+    {
+      "name": "Chrysoberyl",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 500,
+      "tags": ["gem"],
+      "notes": "Yellow-green"
+    },
+    {
+      "name": "Garnet (spessartine)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 500,
+      "tags": ["gem"],
+      "notes": "Mandarin orange"
+    },
+    {
+      "name": "Ammolite",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 500,
+      "tags": ["gem"],
+      "notes": "Opalized ammonite"
+    },
+    {
+      "name": "Sphene (titanite)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 500,
+      "tags": ["gem"],
+      "notes": "High fire, soft"
+    },
+
+    {
+      "name": "Sapphire (yellow)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 1000,
+      "tags": ["gem"],
+      "notes": "Corundum"
+    },
+    {
+      "name": "Sapphire (green)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 1000,
+      "tags": ["gem"],
+      "notes": "Corundum"
+    },
+    {
+      "name": "Sapphire (white)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 1000,
+      "tags": ["gem"],
+      "notes": "Colorless corundum"
+    },
+    {
+      "name": "Chrysoberyl (cat’s eye)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 1000,
+      "tags": ["gem"],
+      "notes": "Chatoyant"
+    },
+    {
+      "name": "Garnet (demantoid)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 1000,
+      "tags": ["gem"],
+      "notes": "Brilliant green"
+    },
+    {
+      "name": "Spinel (blue)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 1000,
+      "tags": ["gem"],
+      "notes": "Cobalt-tinged"
+    },
+    {
+      "name": "Zircon (fine)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 1000,
+      "tags": ["gem"],
+      "notes": "High brilliance"
+    },
+
+    {
+      "name": "Tourmaline (paraíba)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 5000,
+      "tags": ["gem"],
+      "notes": "Electric neon blue"
+    },
+    {
+      "name": "Diamond (pink)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 5000,
+      "tags": ["gem"],
+      "notes": "Fancy colored"
+    },
+    {
+      "name": "Diamond (blue)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 5000,
+      "tags": ["gem"],
+      "notes": "Fancy colored"
+    },
+    {
+      "name": "Diamond (canary)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 5000,
+      "tags": ["gem"],
+      "notes": "Fancy yellow"
+    },
+    {
+      "name": "Red Beryl (bixbite)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 5000,
+      "tags": ["gem"],
+      "notes": "Ultra-rare"
+    },
+    {
+      "name": "Benitoite",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 5000,
+      "tags": ["gem"],
+      "notes": "Sapphire-blue"
+    },
+    {
+      "name": "Musgravite",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 5000,
+      "tags": ["gem"],
+      "notes": "Extremely rare"
+    },
+    {
+      "name": "Taaffeite",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 5000,
+      "tags": ["gem"],
+      "notes": "Rare spinel twin"
+    },
+    {
+      "name": "Jadeite (imperial)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 5000,
+      "tags": ["gem"],
+      "notes": "Fine emerald-green"
+    },
+    {
+      "name": "Sapphire (Kashmir)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 5000,
+      "tags": ["gem"],
+      "notes": "Velvety blue"
+    },
+    {
+      "name": "Sapphire (padparadscha)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 5000,
+      "tags": ["gem"],
+      "notes": "Pink-orange"
+    },
+    {
+      "name": "Iron ingot (1 lb)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 0.1,
+      "tags": ["ingot"]
+    },
+    {
+      "name": "Iron ingot (5 lb)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 0.5,
+      "tags": ["ingot"]
+    },
+    {
+      "name": "Copper ingot (1 lb)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 0.5,
+      "tags": ["ingot"]
+    },
+    {
+      "name": "Copper ingot (5 lb)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 2.5,
+      "tags": ["ingot"]
+    },
+    {
+      "name": "Tin ingot (1 lb)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 1.0,
+      "tags": ["ingot"]
+    },
+    {
+      "name": "Tin ingot (5 lb)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 5.0,
+      "tags": ["ingot"]
+    },
+    {
+      "name": "Lead ingot (1 lb)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 0.2,
+      "tags": ["ingot"]
+    },
+    {
+      "name": "Lead ingot (5 lb)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 1.0,
+      "tags": ["ingot"]
+    },
+    {
+      "name": "Zinc ingot (1 lb)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 0.3,
+      "tags": ["ingot"]
+    },
+    {
+      "name": "Zinc ingot (5 lb)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 1.5,
+      "tags": ["ingot"]
+    },
+    {
+      "name": "Bronze ingot (1 lb)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 0.8,
+      "tags": ["ingot"]
+    },
+    {
+      "name": "Bronze ingot (5 lb)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 4.0,
+      "tags": ["ingot"]
+    },
+    {
+      "name": "Electrum ingot (1 lb)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 25.0,
+      "tags": ["ingot"]
+    },
+    {
+      "name": "Electrum ingot (5 lb)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 125.0,
+      "tags": ["ingot"]
+    },
+    {
+      "name": "Silver ingot (1 lb)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 5.0,
+      "tags": ["ingot"]
+    },
+    {
+      "name": "Silver ingot (5 lb)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 25.0,
+      "tags": ["ingot"]
+    },
+    {
+      "name": "Gold ingot (1 lb)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 50.0,
+      "tags": ["ingot"]
+    },
+    {
+      "name": "Gold ingot (5 lb)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 250.0,
+      "tags": ["ingot"]
+    },
+    {
+      "name": "Platinum ingot (1 lb)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 500.0,
+      "tags": ["ingot"]
+    },
+    {
+      "name": "Platinum ingot (5 lb)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 2500.0,
+      "tags": ["ingot"]
+    },
+    {
+      "name": "Mithral ingot (1 lb)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 500.0,
+      "tags": ["ingot"]
+    },
+    {
+      "name": "Mithral ingot (5 lb)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 2500.0,
+      "tags": ["ingot"]
+    },
+    {
+      "name": "Adamantine ingot (1 lb)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 1000.0,
+      "tags": ["ingot"]
+    },
+    {
+      "name": "Adamantine ingot (5 lb)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 5000.0,
+      "tags": ["ingot"]
+    },
+    {
+      "name": "Iron filings (1 oz)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 0.01,
+      "tags": ["powder", "raw"]
+    },
+    {
+      "name": "Copper dust (1 oz)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 0.03,
+      "tags": ["powder", "raw"]
+    },
+    {
+      "name": "Tin filings (1 oz)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 0.06,
+      "tags": ["powder", "raw"]
+    },
+    {
+      "name": "Lead filings (1 oz)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 0.01,
+      "tags": ["powder", "raw"]
+    },
+    {
+      "name": "Zinc filings (1 oz)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 0.02,
+      "tags": ["powder", "raw"]
+    },
+    {
+      "name": "Bronze filings (1 oz)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 0.05,
+      "tags": ["powder", "raw"]
+    },
+    {
+      "name": "Electrum dust (1 oz)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 1.56,
+      "tags": ["powder", "raw"]
+    },
+    {
+      "name": "Silver dust (1 oz)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 0.31,
+      "tags": ["powder", "raw"]
+    },
+    {
+      "name": "Gold dust (1 oz)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 3.12,
+      "tags": ["powder", "raw"]
+    },
+    {
+      "name": "Platinum dust (1 oz)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 31.25,
+      "tags": ["powder", "raw"]
+    },
+    {
+      "name": "Mithral filings (1 oz)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 31.25,
+      "tags": ["powder", "raw"]
+    },
+    {
+      "name": "Adamantine filings (1 oz)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 62.5,
+      "tags": ["powder", "raw"]
+    },
+    {
+      "name": "Gold dust (reagent-grade, 1 oz)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 25,
+      "tags": ["powder", "reagent"]
+    },
+    {
+      "name": "Electrum dust (reagent-grade, 1 oz)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 10,
+      "tags": ["powder", "reagent"]
+    },
+    {
+      "name": "Platinum dust (reagent-grade, 1 oz)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 100,
+      "tags": ["powder", "reagent"]
+    },
+    {
+      "name": "Mithral flakes (reagent-grade, 1 oz)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 50,
+      "tags": ["powder", "reagent"]
+    },
+    {
+      "name": "Adamantine filings (reagent-grade, 1 oz)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 100,
+      "tags": ["powder", "reagent"]
+    },
+    {
+      "name": "Mercury (quicksilver, flask ~1 lb)",
+      "category": "materials_trade_goods_valuables",
+      "price_gp": 10,
+      "tags": ["liquid", "metal"]
+    },
+
+    {
+      "name": "Paralytic venom (injury)",
+      "category": "black_market",
+      "price_gp": 500,
+      "rarity": "rare",
+      "tags": ["poison", "illegal"]
+    },
+    {
+      "name": "Truth serum (ingested)",
+      "category": "black_market",
+      "price_gp": 150,
+      "rarity": "uncommon",
+      "tags": ["poison", "illegal"]
+    },
+
+    {
+      "name": "Coin purse (drawstring)",
+      "category": "containers_storage",
+      "price_gp": 0.5,
+      "notes": "Alias of pouch; different name to avoid duplicate",
+      "tags": ["carry"]
+    },
+    {
+      "name": "Coffer (lockable)",
+      "category": "containers_storage",
+      "price_gp": 25,
+      "notes": "Strongbox-style; homebrew",
+      "tags": ["secure"]
+    },
+    {
+      "name": "Strongbox (iron)",
+      "category": "containers_storage",
+      "price_gp": 25,
+      "notes": "Homebrew",
+      "tags": ["secure"]
+    },
+    {
+      "name": "Cask (5 gal)",
+      "category": "containers_storage",
+      "price_gp": 2,
+      "notes": "Homebrew small barrel"
+    },
+    {
+      "name": "Amphora",
+      "category": "containers_storage",
+      "price_gp": 2,
+      "notes": "Ceramic vessel; homebrew"
+    },
+    {
+      "name": "Bottle, ceramic",
+      "category": "containers_storage",
+      "price_gp": 0.2,
+      "notes": "Homebrew"
+    },
+    {
+      "name": "Satchel",
+      "category": "containers_storage",
+      "price_gp": 0.8,
+      "notes": "Shoulder bag",
+      "tags": ["carry"]
+    },
+    {
+      "name": "Scroll tube (watertight)",
+      "category": "containers_storage",
+      "price_gp": 2,
+      "notes": "Upgrade of map/scroll case",
+      "tags": ["watertight"]
+    }
+  ],
+
+  "sources": [
+    {
+      "id": "srd5.1",
+      "title": "System Reference Document 5.1",
+      "license": "CC-BY 4.0",
+      "url": "https://media.wizards.com/2016/downloads/DND/SRD-OGL_V5.1.pdf"
+    },
+    {
+      "id": "srd5.2",
+      "title": "System Reference Document 5.2 / 5.2.1",
+      "license": "CC-BY 4.0",
+      "url": "https://www.dndbeyond.com/srd"
+    }
+  ],
+  "pricing_policy": {
+    "permanent_defaults_gp": {
+      "common": 200,
+      "uncommon": 1000,
+      "rare": 6000,
+      "very_rare": 25000,
+      "legendary": 100000,
+      "artifact": 250000
+    },
+    "consumable_defaults_gp": {
+      "common": 50,
+      "uncommon": 150,
+      "rare": 500,
+      "very_rare": 2500,
+      "legendary": 10000,
+      "artifact": 250000
+    }
+  }
+}

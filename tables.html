@@ -273,35 +273,73 @@
   </main>
 
   <main class="grid-even"><!--main 3-->
-    <article><!--article 3.1-->
-      <!-- Road Events -->
-      <!--<section class="tb-panel">
-        <h2 class="tb-title">Road Events</h2>
+    <article>
+      <section class="tb-panel">
+        <h2 class="tb-title">Shop & Price Adjuster</h2>
+
         <div class="tb-grid">
           <label class="tb-label">
-            Road Type
-            <select id="roadType" class="tb-select">
-              <option value="civilized" selected>Civilized</option>
-              <option value="frontier">Frontier</option>
-              <option value="wild">Wild</option>
+            Demand and supply
+            <select id="shopDemand" class="tb-select">
+              <option value="normal" selected>Normal stock and demand</option>
+              <option value="low_stock_high_demand">Low stock or high demand (+15%)</option>
+              <option value="overstock_low_demand">Overstock or low demand (-15%)</option>
             </select>
           </label>
+
           <label class="tb-label">
-            Time
-            <select id="roadTime" class="tb-select">
-              <option value="day" selected>Day</option>
-              <option value="night">Night</option>
+            PC reputation
+            <select id="shopRep" class="tb-select">
+              <option value="disfavoured">Disfavoured (+25%)</option>
+              <option value="neutral" selected>Neutral</option>
+              <option value="favoured">Favoured (-10%)</option>
             </select>
           </label>
+
+          <div class="tb-grid" id="haggleControls">
+            <div class="tb-label">Persuasion discount</div>
+            <div class="tb-seg" role="group" aria-label="Persuasion discount">
+              <button id="haggle5" class="tb-btn tb-segbtn" aria-pressed="false" data-disc="5">5%</button>
+              <button id="haggle10" class="tb-btn tb-segbtn" aria-pressed="false" data-disc="10">10%</button>
+              <button id="haggle15" class="tb-btn tb-segbtn" aria-pressed="false" data-disc="15">15%</button>
+            </div>
+          </div>
+
+          <div id="persuasionOutcome" class="tb-help">No discount.</div>
+
+          <label class="tb-label">
+            Category
+            <select id="shopCategory" class="tb-select">
+              <option value="__all__">All categories</option>
+            </select>
+          </label>
+
+          <label class="tb-label">
+            Search
+            <input id="shopSearch" class="tb-input" placeholder="e.g., longsword, saddle, potion">
+          </label>
+
+          <label class="tb-label">
+            Sort by
+            <select id="shopSort" class="tb-select">
+              <option value="name" selected>Name (A–Z)</option>
+              <option value="price_asc">Price (low → high)</option>
+              <option value="price_desc">Price (high → low)</option>
+            </select>
+          </label>
+
+          <label class="tb-label" style="flex-direction:row;align-items:center;gap:8px">
+            <input type="checkbox" id="shopCoins"> Show coin breakdown
+          </label>
         </div>
-        <div class="tb-grid"></div>
+
         <div class="tb-actions">
-          <button id="rollRoad" class="tb-btn">Roll</button>
-          <button id="randRoad" class="tb-ghost-btn">Randomize</button>
+          <button id="rollShop" class="tb-btn">Show</button>
+          <button id="exportShop" class="tb-ghost-btn">Export CSV</button>
         </div>
-        </div>
-        <output id="roadResult" class="tb-result" aria-live="polite">—</output>
-      </section>-->
+
+        <output id="shopResult" class="tb-result" aria-live="polite">—</output>
+      </section>
     </article>
     <article><!--article 3.2-->
 
