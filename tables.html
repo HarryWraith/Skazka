@@ -31,6 +31,7 @@
         <li>Names</li>
         <li>Random Encounters</li>
         <li>Door generator</li>
+        <li>Shop & price adjuster</li>
       </ol>
     </article>
     <article>
@@ -276,7 +277,13 @@
     <article>
       <section class="tb-panel">
         <h2 class="tb-title">Shop & Price Adjuster</h2>
+        <div class="tb-privacy">
+          <span class="tb-privacy-label">Public</span>
+          <input id="privacySlider" class="tb-privacy-slider" type="range" min="0" max="1" step="1" value="0"
+            aria-label="Privacy mode slider: 0=Public, 1=Private">
+          <span class="tb-privacy-label">Private</span>
 
+        </div>
         <div class="tb-grid">
           <label class="tb-label">
             Demand and supply
@@ -341,18 +348,33 @@
         <output id="shopResult" class="tb-result" aria-live="polite">—</output>
       </section>
     </article>
-    <article><!--article 3.2-->
 
+    <article class="shop_view"><!--RESERVED FOR SHOP DETAILS-->
     </article>
 
-    <article><!--article 3.3-->
+    <article id="forgeCheats">
+      <section class="tb-panel">
+        <h2 class="tb-title">Magic Item Crafting — Cheat Sheets</h2>
 
+        <div class="tb-grid">
+          <label class="tb-label">
+            Source
+            <select id="forgeSource" class="tb-select" aria-label="Choose rules source">
+              <option value="srd" selected>SRD</option>
+              <option value="xgte">XGtE</option>
+              <option value="skazka">Skazka</option>
+            </select>
+          </label>
+        </div>
+
+        <output id="forgeSheet" class="tb-result" aria-live="polite"></output>
+      </section>
     </article>
   </main>
 
   <div id="footer"></div>
 
-
+  <script src="forge.js" defer></script>
 </body>
 
 </html>

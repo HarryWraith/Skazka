@@ -359,6 +359,33 @@
     return parts.join("");
   }
 
+  //shop helpers
+  function clampShopResult(maxRows = 10) {
+    const out = document.querySelector("#shopResult");
+    const table = out?.querySelector("table");
+    if (!out || !table) return;
+
+    // Wait for layout to settle (fonts, etc.)
+    requestAnimationFrame(() => {
+      const theadH = table.tHead
+        ? table.tHead.getBoundingClientRect().height
+        : 0;
+      const firstRow = table.tBodies?.[0]?.rows?.[0];
+      let rowH = firstRow ? firstRow.getBoundingClientRect().height : 0;
+
+      // Fallback estimate if we couldn't measure a row
+      if (!rowH) {
+        const fs = parseFloat(getComputedStyle(table).fontSize) || 14;
+        rowH = fs * 2.4;
+      }
+
+      const borderH = 2; // tiny buffer
+      const max = Math.round(theadH + rowH * maxRows + borderH);
+      out.style.setProperty("--shop-max", `${max}px`);
+      out.style.overflow = "auto";
+    });
+  }
+
   // ─────────────────────────────────────────────────────────────────────────────
   // DOORS (data: /data/doors.json)
   // ─────────────────────────────────────────────────────────────────────────────
@@ -561,422 +588,773 @@
   // Allow console/debug access
   window.doors = { load: loadDoorsData, roll: rollDoor, render: renderDoor };
 
-  // ─────────────────────────────────────────────────────────────────────────────
-  // SHOP (data: /data/shop.json) — lists items + adjusts price via two dropdowns
-  // ─────────────────────────────────────────────────────────────────────────────
-  // ─────────────────────────────────────────────────────────────────────────────
-  // SHOP (data: /data/shop.json) — price adjuster with demand, rep, persuasion
-  // ─────────────────────────────────────────────────────────────────────────────
-  const SHOP_PATH = "/data/shop.json";
-  let SHOP_DATA = null,
-    SHOP_READY = null;
+  // ──────────────────────────────────────────────────────────────
+  // SHOP (complete replacement, with privacy slider + SRD/homebrew gate)
+  // ──────────────────────────────────────────────────────────────
+  (function ShopUI() {
+    "use strict";
 
-  // Factors (multiplicative pipeline): Demand × Reputation × Persuasion
-  const DEMAND_FACTORS = {
-    normal: 1.0,
-    low_stock_high_demand: 1.15,
-    overstock_low_demand: 0.85,
-  };
-  const REP_FACTORS = {
-    disfavoured: 1.25,
-    neutral: 1.0,
-    favoured: 0.9,
-  };
-  // Persuasion discount state (×0.95 / ×0.90 / ×0.85). 1.0 = none
-  let SHOP_HAGGLE = { factor: 1.0 };
-
-  /* ------------------------- Data hygiene utilities ------------------------- */
-  function round2(x) {
-    return Math.round((Number(x) || 0) * 100) / 100;
-  }
-
-  function slugifyId(s) {
-    return String(s || "")
-      .toLowerCase()
-      .normalize("NFKD")
-      .replace(/[^\w]+/g, "_")
-      .replace(/^_+|_+$/g, "");
-  }
-
-  function escapeHtml(str) {
-    return String(str).replace(
-      /[&<>"']/g,
-      (ch) =>
-        ({
-          "&": "&amp;",
-          "<": "&lt;",
-          ">": "&gt;",
-          '"': "&quot;",
-          "'": "&#39;",
-        }[ch])
-    );
-  }
-
-  // Accept: 10, "10", "10 gp", "75 sp", "1 gp 5 sp", "12cp"
-  function parsePriceGP(v) {
-    if (typeof v === "number") return v;
-    if (v == null) return NaN;
-    let s = String(v).toLowerCase().replace(/,/g, " ").trim();
-
-    // Tokenized form (e.g., "1 gp 5 sp 3 cp")
-    let gp = 0,
-      sp = 0,
-      cp = 0,
-      found = false;
-    const re = /(\d+(?:\.\d+)?)\s*(gp|sp|cp)\b/g;
-    let m;
-    while ((m = re.exec(s))) {
-      found = true;
-      const n = parseFloat(m[1]);
-      if (m[2] === "gp") gp += n;
-      else if (m[2] === "sp") sp += n;
-      else if (m[2] === "cp") cp += n;
-    }
-    if (found) return gp + sp / 10 + cp / 100;
-
-    // Plain number
-    const num = parseFloat(s);
-    return isNaN(num) ? NaN : num;
-  }
-
-  // Normalise incoming JSON (coerces names/categories/prices, dedupes, safe labels)
-  function sanitizeShopData(data) {
-    const out = {
-      schema: String(data?.schema || "shop.v1"),
-      categories: [],
-      items: [],
+    // ---------- tiny DOM helpers ----------
+    const $ = (s, r = document) => r.querySelector(s);
+    const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+    const setHTML = (selOrEl, html) => {
+      const el = typeof selOrEl === "string" ? $(selOrEl) : selOrEl;
+      if (el) el.innerHTML = html;
     };
-    const catMap = new Map();
+    const escapeHtml = (str) =>
+      String(str).replace(
+        /[&<>"']/g,
+        (ch) =>
+          ({
+            "&": "&amp;",
+            "<": "&lt;",
+            ">": "&gt;",
+            '"': "&quot;",
+            "'": "&#39;",
+          }[ch])
+      );
 
-    // Categories (normalise ids + labels)
-    for (const c of data?.categories || []) {
-      const id = slugifyId(c?.id || c?.label);
-      if (!id) continue;
-      const label = (
-        c?.label ? String(c.label).trim() : id.replace(/_/g, " ")
-      ).replace(/\b\w/g, (ch) => ch.toUpperCase());
-      if (!catMap.has(id)) catMap.set(id, label);
+    // ---------- config & state ----------
+    const SHOP_PATH = window.SHOP_PATH || "/data/shop.json";
+    const DEMAND = {
+      normal: 1.0,
+      low_stock_high_demand: 1.15,
+      overstock_low_demand: 0.85,
+    };
+    const REP = { disfavoured: 1.25, neutral: 1.0, favoured: 0.9 };
+
+    const PUBLIC_PUBLICATIONS = new Set(["srd", "homebrew"]);
+    const PRIV_KEY = "tb_shop_privacy_mode"; // "public" | "private"
+    const PRIV_PASSWORD = "harrywraith";
+
+    const state = {
+      data: null, // sanitized data
+      ready: null, // loading promise
+      results: [], // filtered+adjusted list (last render)
+      selectedIdx: 0, // selected row index within results
+      hagglePct: 0, // 0 / 5 / 10 / 15
+    };
+
+    // ---------- utils ----------
+    const round2 = (x) => Math.round((Number(x) || 0) * 100) / 100;
+    const fmtGp = (gp) => `${(Number(gp) || 0).toFixed(2)} gp`;
+    const cap = (s) =>
+      s == null
+        ? s
+        : String(s)
+            .replace(/_/g, " ")
+            .replace(/\b\w/g, (c) => c.toUpperCase());
+    const setText = (sel, txt) => {
+      const o = $(sel);
+      if (o) o.textContent = txt;
+    };
+    const setVal = (sel, val) => {
+      const el = $(sel);
+      if (el) el.value = val;
+    };
+
+    function coinsBreakdown(gp) {
+      const totalCp = Math.round((Number(gp) || 0) * 100); // 1 gp = 10 sp = 100 cp
+      const gpWhole = Math.floor(totalCp / 100);
+      const sp = Math.floor((totalCp % 100) / 10);
+      const cp = totalCp % 10;
+      const parts = [];
+      if (gpWhole) parts.push(`${gpWhole} gp`);
+      if (sp) parts.push(`${sp} sp`);
+      if (cp) parts.push(`${cp} cp`);
+      return parts.join(" ") || "0 gp";
+    }
+    function slugifyId(s) {
+      return String(s || "")
+        .toLowerCase()
+        .normalize("NFKD")
+        .replace(/[^\w]+/g, "_")
+        .replace(/^_+|_+$/g, "");
     }
 
-    // Items (coerce names, categories, prices; drop dupes/invalid)
-    const itemMap = new Map();
-    for (const raw of data?.items || []) {
-      const name = String(raw?.name || "")
-        .replace(/\s+/g, " ")
-        .trim();
-      let catId = slugifyId(raw?.category || raw?.cat || "misc");
-      if (!catId) catId = "misc";
+    // Accepts: 10, "10 gp", "75 sp", "1 gp 5 sp", "12cp"
+    function parsePriceGP(v) {
+      if (typeof v === "number") return v;
+      if (v == null) return NaN;
+      let s = String(v).toLowerCase().replace(/,/g, " ").trim();
 
-      // Resolve/convert price to gp
-      let price = parsePriceGP(raw?.price_gp ?? raw?.price ?? raw?.gp);
-      if (!isFinite(price)) {
-        const sp = parsePriceGP(raw?.price_sp ?? raw?.sp);
-        const cp = parsePriceGP(raw?.price_cp ?? raw?.cp);
-        price = (isFinite(sp) ? sp / 10 : 0) + (isFinite(cp) ? cp / 100 : 0);
+      // tokenized "1 gp 5 sp"
+      let gp = 0,
+        sp = 0,
+        cp = 0,
+        found = false,
+        m;
+      const re = /(\d+(?:\.\d+)?)\s*(gp|sp|cp)\b/g;
+      while ((m = re.exec(s))) {
+        found = true;
+        const n = parseFloat(m[1]);
+        if (m[2] === "gp") gp += n;
+        else if (m[2] === "sp") sp += n;
+        else cp += n;
       }
-      if (!name || !isFinite(price) || price < 0) continue;
+      if (found) return gp + sp / 10 + cp / 100;
 
-      // Ensure category exists
-      if (!catMap.has(catId)) {
-        const label = catId
-          .replace(/_/g, " ")
-          .replace(/\b\w/g, (ch) => ch.toUpperCase());
-        catMap.set(catId, label);
-      }
-
-      // Deduplicate by name+category (first wins)
-      const key = name.toLowerCase() + "::" + catId;
-      if (itemMap.has(key)) continue;
-
-      itemMap.set(key, {
-        name,
-        category: catId,
-        price_gp: round2(price),
-        rarity: raw?.rarity || undefined,
-      });
+      const num = parseFloat(s);
+      return isNaN(num) ? NaN : num;
     }
 
-    out.categories = [...catMap].map(([id, label]) => ({ id, label }));
-    out.items = [...itemMap.values()];
-    return out;
-  }
+    // ---------- sanitize data (preserves useful extra fields, incl. publication) ----------
+    function sanitizeShopData(data) {
+      const out = {
+        schema: String(data?.schema || "shop.v1"),
+        categories: [],
+        items: [],
+      };
+      const catMap = new Map();
 
-  /* ------------------------ Load + basic helpers ------------------------ */
-  function loadShopData() {
-    if (SHOP_READY) return SHOP_READY;
-    SHOP_READY = (async () => {
-      try {
-        const res = await fetch(SHOP_PATH, { cache: "no-store" });
-        if (!res.ok) throw new Error(`Fetch ${SHOP_PATH} → ${res.status}`);
-        const raw = await res.json();
-        SHOP_DATA = sanitizeShopData(raw);
-      } catch (err) {
-        console.error("Failed to load shop.json:", err);
-        // Minimal fallback (sanitized) so the UI still works
-        SHOP_DATA = sanitizeShopData({
-          schema: "shop.v1",
-          categories: [
-            { id: "weapons", label: "Weapons" },
-            { id: "armor", label: "Armor" },
-            { id: "food_beverages", label: "Food & beverages" },
-            { id: "stable_supplies", label: "Stable supplies" },
-            { id: "magical_potions", label: "Magical potions" },
-          ],
-          items: [
-            { name: "Longsword", category: "weapons", price_gp: 15 },
-            { name: "Shield", category: "armor", price_gp: 10 },
-            {
-              name: "Rations (1 day)",
-              category: "food_beverages",
-              price_gp: "5 sp",
-            },
-            {
-              name: "Saddle, riding",
-              category: "stable_supplies",
-              price_gp: 10,
-            },
-            {
-              name: "Potion of Healing",
-              category: "magical_potions",
-              price_gp: 50,
-            },
-          ],
+      // categories
+      for (const c of data?.categories || []) {
+        const id = slugifyId(c?.id || c?.label);
+        if (!id) continue;
+        const label = (
+          c?.label ? String(c.label).trim() : id.replace(/_/g, " ")
+        ).replace(/\b\w/g, (ch) => ch.toUpperCase());
+        if (!catMap.has(id)) catMap.set(id, label);
+      }
+
+      // items
+      const itemMap = new Map();
+      for (const raw of data?.items || []) {
+        const name = String(raw?.name || "")
+          .replace(/\s+/g, " ")
+          .trim();
+        if (!name) continue;
+        let catId = slugifyId(raw?.category || raw?.cat || "misc") || "misc";
+
+        let price = parsePriceGP(raw?.price_gp ?? raw?.price ?? raw?.gp);
+        if (!isFinite(price)) {
+          const sp = parsePriceGP(raw?.price_sp ?? raw?.sp);
+          const cp = parsePriceGP(raw?.price_cp ?? raw?.cp);
+          price = (isFinite(sp) ? sp / 10 : 0) + (isFinite(cp) ? cp / 100 : 0);
+        }
+        if (!isFinite(price) || price < 0) continue;
+
+        if (!catMap.has(catId)) {
+          const label = catId
+            .replace(/_/g, " ")
+            .replace(/\b\w/g, (ch) => ch.toUpperCase());
+          catMap.set(catId, label);
+        }
+
+        // keep selected extra fields (added publication here)
+        const keep = {};
+        for (const k of [
+          "rarity",
+          "consumable",
+          "tags",
+          "source",
+          "delivery",
+          "save",
+          "notes",
+          "unit",
+          "description",
+          "legal_status",
+          "availability",
+          "aliases",
+          "weight_lb",
+          "stock",
+          "publication", // <-- important
+        ]) {
+          if (raw[k] !== undefined) keep[k] = raw[k];
+        }
+
+        const key = name.toLowerCase() + "::" + catId;
+        if (itemMap.has(key)) continue;
+        itemMap.set(key, {
+          id: slugifyId(raw?.id || name),
+          name,
+          category: catId,
+          price_gp: round2(price),
+          publication: raw?.publication || "homebrew", // default for safety
+          ...keep,
         });
       }
-    })();
-    return SHOP_READY;
-  }
-  // Preload (non-blocking)
-  loadShopData();
 
-  function fmtGp(gp) {
-    return `${(Number(gp) || 0).toFixed(2)} gp`;
-  }
-  function coinsBreakdown(gp) {
-    const totalCp = Math.round((Number(gp) || 0) * 100); // 1 gp = 10 sp = 100 cp
-    const gpWhole = Math.floor(totalCp / 100);
-    const sp = Math.floor((totalCp % 100) / 10);
-    const cp = totalCp % 10;
-    const parts = [];
-    if (gpWhole) parts.push(`${gpWhole} gp`);
-    if (sp) parts.push(`${sp} sp`);
-    if (cp) parts.push(`${cp} cp`);
-    return parts.join(" ") || "0 gp";
-  }
+      out.categories = [...catMap].map(([id, label]) => ({ id, label }));
+      out.items = [...itemMap.values()];
+      return out;
+    }
 
-  function adjustPriceGP(base, demandKey, repKey, haggleFactor = 1) {
-    const d = DEMAND_FACTORS[demandKey] ?? 1;
-    const r = REP_FACTORS[repKey] ?? 1;
-    return (Number(base) || 0) * d * r * (Number(haggleFactor) || 1);
-  }
+    // ---------- load ----------
+    function loadShopData() {
+      if (state.ready) return state.ready;
+      state.ready = (async () => {
+        try {
+          const res = await fetch(SHOP_PATH, { cache: "no-store" });
+          if (!res.ok) throw new Error(`Fetch ${SHOP_PATH} → ${res.status}`);
+          state.data = sanitizeShopData(await res.json());
+        } catch (err) {
+          console.error("Failed to load shop.json:", err);
+          // minimal fallback
+          state.data = sanitizeShopData({
+            categories: [{ id: "black_market", label: "Black Market" }],
+            items: [
+              {
+                name: "Sunmote Elixir",
+                category: "black_market",
+                price_gp: 50,
+                tags: ["illegal", "narcotic"],
+                notes: "Stimulant",
+                description:
+                  "Brief pick-me-up favored by carters and dockhands.",
+                legal_status: "restricted",
+                availability: "uncommon",
+                publication: "homebrew",
+              },
+            ],
+          });
+        }
+      })();
+      return state.ready;
+    }
+    loadShopData(); // prefetch
 
-  /* ------------------------- Rendering + filters ------------------------- */
-  function shopCategories() {
-    const explicit = SHOP_DATA?.categories;
-    if (Array.isArray(explicit) && explicit.length) return explicit;
-    // Derive from items if categories array is missing
-    const map = new Map();
-    for (const it of SHOP_DATA?.items || []) {
-      const id = it.category || "misc";
-      if (!map.has(id)) {
-        const label = id
-          .replace(/_/g, " ")
-          .replace(/\b\w/g, (c) => c.toUpperCase());
-        map.set(id, { id, label });
+    // ---------- privacy (Public ⇄ Private slider) ----------
+    function getPrivacyMode() {
+      const v = sessionStorage.getItem(PRIV_KEY);
+      return v === "private" ? "private" : "public";
+    }
+    function setPrivacyMode(mode) {
+      const m = mode === "private" ? "private" : "public";
+      sessionStorage.setItem(PRIV_KEY, m);
+      const status = $("#shopPrivacyStatus");
+      if (status) status.textContent = m === "private" ? "Private" : "Public";
+      const slider = $("#privacySlider");
+      if (slider) slider.value = m === "private" ? "1" : "0";
+    }
+    function isItemVisibleByPrivacy(it) {
+      const mode = getPrivacyMode();
+      if (mode === "private") return true;
+      const pub = String(it.publication || "homebrew").toLowerCase();
+      return PUBLIC_PUBLICATIONS.has(pub);
+    }
+
+    // Create/inject the slider UI if your HTML doesn't have it
+    function ensurePrivacySlider() {
+      if ($("#privacySlider")) {
+        setPrivacyMode(getPrivacyMode()); // sync initial
+        return;
       }
+      // Prefer to mount next to #shopSort or #shopCategory; else put at the top of main
+      const anchor =
+        $("#shopSort")?.parentElement ||
+        $("#shopCategory")?.parentElement ||
+        $("main") ||
+        document.body;
+      const wrap = document.createElement("div");
+      wrap.className = "tb-privacy";
+      wrap.style.display = "inline-flex";
+      wrap.style.alignItems = "center";
+      wrap.style.gap = ".5rem";
+      wrap.innerHTML = `
+      <span class="tb-privacy-label" style="font-size:.9rem;opacity:.8">Public</span>
+      <input id="privacySlider" class="tb-privacy-slider" type="range" min="0" max="1" step="1" value="0"
+             aria-label="Privacy mode slider: 0=Public, 1=Private"
+             style="width:72px;height:28px;appearance:none;background:transparent">
+      <span class="tb-privacy-label" style="font-size:.9rem;opacity:.8">Private</span>
+      <small id="shopPrivacyStatus" class="tb-privacy-status" style="margin-left:.5rem;opacity:.75">Public</small>
+    `;
+      anchor.prepend(wrap);
+
+      // Minimal inline styles for track/thumb (webkit + moz)
+      const style = document.createElement("style");
+      style.textContent = `
+      .tb-privacy-slider::-webkit-slider-runnable-track {
+        height: 28px; border-radius: 999px;
+        background: linear-gradient(90deg, #3aa655 0 50%, #a33 50% 100%);
+      }
+      .tb-privacy-slider::-moz-range-track {
+        height: 28px; border-radius: 999px;
+        background: linear-gradient(90deg, #3aa655 0 50%, #a33 50% 100%);
+      }
+      .tb-privacy-slider::-webkit-slider-thumb {
+        -webkit-appearance: none; appearance: none;
+        width: 26px; height: 26px; border-radius: 50%;
+        background: #fff; border: 2px solid rgba(0,0,0,.15);
+        margin-top: 1px; box-shadow: 0 1px 2px rgba(0,0,0,.2);
+      }
+      .tb-privacy-slider::-moz-range-thumb {
+        width: 26px; height: 26px; border-radius: 50%;
+        background: #fff; border: 2px solid rgba(0,0,0,.15);
+        box-shadow: 0 1px 2px rgba(0,0,0,.2);
+      }
+      .tb-privacy-slider:focus-visible { outline: 2px solid #4a90e2; outline-offset: 2px; }
+    `;
+      document.head.appendChild(style);
+
+      setPrivacyMode(getPrivacyMode());
     }
-    return [...map.values()];
-  }
 
-  function hydrateShopCategorySelect() {
-    const sel = get("#shopCategory");
-    if (!sel || !SHOP_DATA) return;
-    const cats = shopCategories();
-    const current = sel.value;
-    sel.innerHTML = [
-      `<option value="__all__">All categories</option>`,
-      ...cats.map(
-        (c) => `<option value="${c.id}">${escapeHtml(c.label)}</option>`
-      ),
-    ].join("");
-    if (cats.some((c) => c.id === current)) sel.value = current;
-  }
-
-  function filterAndSortShop(items, { cat, q, sort }) {
-    let list = items;
-    if (cat && cat !== "__all__")
-      list = list.filter((it) => it.category === cat);
-    if (q) {
-      const s = String(q).trim().toLowerCase();
-      if (s) list = list.filter((it) => it.name.toLowerCase().includes(s));
+    // ---------- categories ----------
+    function shopCategories() {
+      const explicit = state.data?.categories;
+      if (Array.isArray(explicit) && explicit.length) return explicit;
+      const map = new Map();
+      for (const it of state.data?.items || []) {
+        const id = it.category || "misc";
+        if (!map.has(id)) {
+          const label = id
+            .replace(/_/g, " ")
+            .replace(/\b\w/g, (c) => c.toUpperCase());
+          map.set(id, { id, label });
+        }
+      }
+      return [...map.values()];
     }
-    switch (sort) {
-      case "price_asc":
-        list.sort((a, b) => a._adj - b._adj);
-        break;
-      case "price_desc":
-        list.sort((a, b) => b._adj - a._adj);
-        break;
-      default:
-        list.sort((a, b) => a.name.localeCompare(b.name));
+    function hydrateShopCategorySelect() {
+      const sel = $("#shopCategory");
+      if (!sel || !state.data) return;
+      const cats = shopCategories();
+      const current = sel.value;
+      sel.innerHTML = [
+        `<option value="__all__">All categories</option>`,
+        ...cats.map(
+          (c) => `<option value="${c.id}">${escapeHtml(c.label)}</option>`
+        ),
+      ].join("");
+      if (cats.some((c) => c.id === current)) sel.value = current;
     }
-    return list;
-  }
 
-  function renderShop(demandKey, repKey) {
-    const q = get("#shopSearch")?.value || "";
-    const cat = get("#shopCategory")?.value || "__all__";
-    const sort = get("#shopSort")?.value || "name";
-    const showCoins = !!get("#shopCoins")?.checked;
+    // ---------- pricing ----------
+    function adjustedPrice(base) {
+      const demandKey = $("#shopDemand")?.value || "normal";
+      const repKey = $("#shopRep")?.value || "neutral";
+      const m =
+        (DEMAND[demandKey] ?? 1) *
+        (REP[repKey] ?? 1) *
+        (1 - state.hagglePct / 100);
+      return (Number(base) || 0) * m;
+    }
 
-    const items = (SHOP_DATA?.items || []).map((it) => {
-      const adj = adjustPriceGP(
-        it.price_gp,
-        demandKey,
-        repKey,
-        SHOP_HAGGLE.factor
-      );
-      return { ...it, _adj: adj };
-    });
-    const list = filterAndSortShop(items, { cat, q, sort });
+    // ---------- filter/sort + table render ----------
+    function filterAndSort(items, { cat, q, sort }) {
+      let list = items;
+      if (cat && cat !== "__all__")
+        list = list.filter((it) => it.category === cat);
+      if (q) {
+        const s = String(q).trim().toLowerCase();
+        if (s) {
+          list = list.filter(
+            (it) =>
+              it.name.toLowerCase().includes(s) ||
+              (Array.isArray(it.tags) &&
+                it.tags.join(" ").toLowerCase().includes(s)) ||
+              (it.notes && String(it.notes).toLowerCase().includes(s)) ||
+              (it.description &&
+                String(it.description).toLowerCase().includes(s)) ||
+              (it.legal_status &&
+                String(it.legal_status).toLowerCase().includes(s)) ||
+              (it.availability &&
+                String(it.availability).toLowerCase().includes(s))
+          );
+        }
+      }
+      switch (sort) {
+        case "price_asc":
+          list.sort((a, b) => a._adj - b._adj);
+          break;
+        case "price_desc":
+          list.sort((a, b) => b._adj - a._adj);
+          break;
+        default:
+          list.sort((a, b) => a.name.localeCompare(b.name));
+      }
+      return list;
+    }
 
-    if (!list.length) return "<div>No items match your filters.</div>";
+    function renderShopTable() {
+      const q = $("#shopSearch")?.value || "";
+      const cat = $("#shopCategory")?.value || "__all__";
+      const sort = $("#shopSort")?.value || "name";
+      const showCoins = !!$("#shopCoins")?.checked;
 
-    const catMap = new Map(shopCategories().map((c) => [c.id, c.label]));
-    const rows = list
-      .map((it) => {
-        const base = fmtGp(it.price_gp);
-        const adj = showCoins ? coinsBreakdown(it._adj) : fmtGp(it._adj);
-        const catLabel = catMap.get(it.category) || it.category;
-        return `<tr><td>${escapeHtml(it.name)}</td><td>${escapeHtml(
-          catLabel
-        )}</td><td>${base}</td><td>${adj}</td></tr>`;
-      })
-      .join("");
+      const items = (state.data?.items || []).map((it) => ({
+        ...it,
+        _adj: round2(adjustedPrice(it.price_gp)),
+      }));
+      // Privacy gate first
+      const privacyFiltered = items.filter(isItemVisibleByPrivacy);
+      const list = filterAndSort(privacyFiltered, { cat, q, sort });
+      state.results = list;
 
-    return `
-    <table class="tb-table">
+      if (!list.length) return `<div>No items match your filters.</div>`;
+
+      const catMap = new Map(shopCategories().map((c) => [c.id, c.label]));
+      const rows = list
+        .map((it, idx) => {
+          const base = fmtGp(it.price_gp);
+          const adj = showCoins ? coinsBreakdown(it._adj) : fmtGp(it._adj);
+          const catLabel = catMap.get(it.category) || it.category;
+          const sel = idx === state.selectedIdx ? " is-selected" : "";
+          return `<tr class="js-shop-row${sel}" data-idx="${idx}" tabindex="0">
+        <td>${escapeHtml(it.name)}</td>
+        <td>${escapeHtml(catLabel)}</td>
+        <td>${base}</td>
+        <td>${adj}</td>
+      </tr>`;
+        })
+        .join("");
+
+      return `<table class="tb-table">
       <thead><tr><th>Item</th><th>Category</th><th>Base</th><th>Adjusted</th></tr></thead>
       <tbody>${rows}</tbody>
     </table>`;
-  }
-
-  /* ----------------------------- UI wiring ----------------------------- */
-  // Hydrate category list + initial render if auto-show is desired
-  document.addEventListener("DOMContentLoaded", () => {
-    (SHOP_READY || loadShopData()).then(() => {
-      hydrateShopCategorySelect();
-    });
-  });
-
-  // Live re-render on filter changes
-  document.addEventListener("input", (e) => {
-    const id = e.target?.id;
-    if (!id) return;
-    if (
-      [
-        "shopSearch",
-        "shopCategory",
-        "shopSort",
-        "shopCoins",
-        "shopDemand",
-        "shopRep",
-      ].includes(id)
-    ) {
-      const demand = get("#shopDemand")?.value || "normal";
-      const rep = get("#shopRep")?.value || "neutral";
-      setHTML("#shopResult", renderShop(demand, rep));
     }
-  });
 
-  // Persuasion buttons (5%, 10%, 15%) — toggle on/off
-  function setHaggle(percent) {
-    const selected = Math.max(0, Math.min(15, Number(percent) || 0));
-    const currentPct = Math.round((1 - (SHOP_HAGGLE.factor || 1)) * 100);
-    const toggledOff = selected && selected === currentPct;
+    // ---------- details panel ----------
+    function ensureDetailPane() {
+      const preferred =
+        document.querySelector("main.grid-even > article.shop_view") ||
+        document.querySelector("main.grid-even > article:nth-of-type(2)") ||
+        document.querySelector("main.grid-even > article");
 
-    SHOP_HAGGLE.factor = toggledOff ? 1.0 : selected ? 1 - selected / 100 : 1.0;
-    const msg = toggledOff ? "No discount." : `Discount applied: ${selected}%`;
-    if (get("#persuasionOutcome")) setHTML("#persuasionOutcome", msg);
+      if (!preferred) return null;
 
-    // Update aria-pressed state if buttons exist
-    for (const id of ["haggle5", "haggle10", "haggle15"]) {
-      const el = get("#" + id);
-      if (!el) continue;
-      const p = parseInt(el.dataset.disc || el.textContent, 10);
-      el.setAttribute(
-        "aria-pressed",
-        !toggledOff && selected === p ? "true" : "false"
+      const allPanels = Array.from(
+        document.querySelectorAll("#shopDetailPanel")
+      );
+      let panel = allPanels.find((p) => preferred.contains(p)) || allPanels[0];
+
+      if (!panel) {
+        panel = document.createElement("section");
+        panel.className = "tb-panel";
+        panel.id = "shopDetailPanel";
+        panel.innerHTML = `
+        <h2 class="tb-title">Selected Item Details</h2>
+        <output id="shopDetail" class="tb-result" aria-live="polite">
+          Click an item on the left (or press Show) to see details.
+        </output>`;
+        preferred.appendChild(panel);
+      } else if (!preferred.contains(panel)) {
+        preferred.appendChild(panel);
+      }
+      allPanels.forEach((p) => {
+        if (p !== panel) p.remove();
+      });
+
+      let out = panel.querySelector("#shopDetail");
+      if (!out) {
+        out = document.createElement("output");
+        out.id = "shopDetail";
+        out.className = "tb-result";
+        out.setAttribute("aria-live", "polite");
+        out.textContent =
+          "Click an item on the left (or press Show) to see details.";
+        panel.appendChild(out);
+      }
+      Array.from(document.querySelectorAll("#shopDetail")).forEach((n) => {
+        if (n !== out) n.remove();
+      });
+
+      return panel;
+    }
+
+    function formatVal(v) {
+      if (v == null || v === "") return "—";
+      if (typeof v === "boolean") return v ? "True" : "False";
+      if (Array.isArray(v)) return v.join(", ");
+      if (typeof v === "object") {
+        try {
+          return JSON.stringify(v);
+        } catch {
+          return String(v);
+        }
+      }
+      return String(v);
+    }
+
+    function renderDetail(idx) {
+      ensureDetailPane();
+      const box = $("#shopDetail");
+      const item = state.results[idx];
+      if (!box || !item) return;
+
+      const catMap = new Map(shopCategories().map((c) => [c.id, c.label]));
+      const cat = catMap.get(item.category) || item.category || "—";
+      const showCoins = !!$("#shopCoins")?.checked;
+      const adj = round2(item._adj ?? item.price_gp ?? 0);
+      const coins = showCoins ? coinsBreakdown(adj) : null;
+
+      const rows = [
+        ["Category", cat],
+        [
+          "Availability",
+          item.availability != null ? cap(item.availability) : null,
+        ],
+        [
+          "Legal status",
+          item.legal_status != null ? cap(item.legal_status) : null,
+        ],
+        ["Base price (gp)", item.price_gp != null ? item.price_gp : "—"],
+        ["Adjusted price (gp)", adj != null ? adj : "—"],
+        ...(coins ? [["Adjusted (coins)", coins]] : []),
+        ["Rarity", item.rarity != null ? cap(item.rarity) : null],
+        ["Consumable", item.consumable ?? null],
+        ["Tags", item.tags ?? null],
+        ["Source", item.source ?? null],
+        ["Unit", item.unit ?? null],
+        ["Notes", item.notes ?? null],
+        ["Publication", item.publication ?? null],
+        ["ID", item.id ?? null],
+      ].filter(([, v]) => v != null && String(v) !== "");
+
+      setHTML(
+        box,
+        `
+      <div class="tb-detail">
+        <div class="tb-detail-header">
+          <div class="tb-detail-name">${escapeHtml(item.name)}</div>
+          <div class="tb-badges">
+            ${
+              item.rarity
+                ? `<span class="tb-badge">${escapeHtml(
+                    cap(item.rarity)
+                  )}</span>`
+                : ""
+            }
+            ${item.consumable ? `<span class="tb-badge">Consumable</span>` : ""}
+            ${
+              (Array.isArray(item.tags) && item.tags.includes("illegal")) ||
+              String(item.legal_status || "").toLowerCase() === "illegal"
+                ? `<span class="tb-badge tb-badge-warn">Black Market</span>`
+                : ""
+            }
+          </div>
+        </div>
+        ${
+          item.description
+            ? `<p class="tb-detail-desc">${escapeHtml(
+                String(item.description)
+              )}</p>`
+            : ""
+        }
+        <div class="tb-kv">
+          ${rows
+            .map(
+              ([k, v]) => `
+            <div class="tb-kv-row">
+              <div class="tb-kv-key">${escapeHtml(k)}</div>
+              <div class="tb-kv-val">${escapeHtml(formatVal(v))}</div>
+            </div>`
+            )
+            .join("")}
+        </div>
+      </div>
+    `
       );
     }
 
-    // Re-render
-    const demand = get("#shopDemand")?.value || "normal";
-    const rep = get("#shopRep")?.value || "neutral";
-    setHTML("#shopResult", renderShop(demand, rep));
-  }
+    // ---------- delegated row handlers (click + keyboard) ----------
+    function bindDelegatedRowHandlers() {
+      const container = $("#shopResult");
+      if (!container || container.__delegated) return;
+      container.__delegated = true;
 
-  // Own click handler just for Shop buttons (no need to edit your big switch)
-  document.addEventListener("click", async (e) => {
-    const btn = e.target.closest("button");
-    if (!btn) return;
+      const activateRow = (row) => {
+        if (!row || !container.contains(row)) return;
+        ensureDetailPane();
+        state.selectedIdx = Number(row.dataset.idx ?? -1);
+        if (state.selectedIdx < 0) return;
 
-    switch (btn.id) {
-      case "rollShop": {
-        await loadShopData();
-        const demand = get("#shopDemand")?.value || "normal";
-        const rep = get("#shopRep")?.value || "neutral";
-        setHTML("#shopResult", renderShop(demand, rep));
-        break;
-      }
-      case "exportShop": {
-        await loadShopData();
-        const demand = get("#shopDemand")?.value || "normal";
-        const rep = get("#shopRep")?.value || "neutral";
-        const q = get("#shopSearch")?.value || "";
-        const cat = get("#shopCategory")?.value || "__all__";
-        const sort = get("#shopSort")?.value || "name";
+        $$("#shopResult tbody tr.js-shop-row").forEach((r) =>
+          r.classList.toggle("is-selected", r === row)
+        );
+        row.scrollIntoView({ block: "nearest" });
+        renderDetail(state.selectedIdx);
+      };
 
-        const items = (SHOP_DATA?.items || []).map((it) => ({
-          ...it,
-          _adj: adjustPriceGP(it.price_gp, demand, rep, SHOP_HAGGLE.factor),
-        }));
-        const list = filterAndSortShop(items, { cat, q, sort });
+      container.addEventListener("click", (e) => {
+        const row = e.target.closest("tr.js-shop-row");
+        activateRow(row);
+      });
 
-        const lines = [
-          ["Item", "Category", "Base (gp)", "Adjusted (gp)"],
-          ...list.map((it) => [
-            it.name,
-            it.category,
-            (Number(it.price_gp) || 0).toFixed(2),
-            (Number(it._adj) || 0).toFixed(2),
-          ]),
-        ]
-          .map((row) =>
-            row.map((x) => `"${String(x).replace(/"/g, '""')}"`).join(",")
-          )
-          .join("\n");
-
-        const blob = new Blob([lines], { type: "text/csv" });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = "shop.csv";
-        a.click();
-        setTimeout(() => URL.revokeObjectURL(url), 1500);
-        break;
-      }
-      case "haggle5":
-        setHaggle(5);
-        break;
-      case "haggle10":
-        setHaggle(10);
-        break;
-      case "haggle15":
-        setHaggle(15);
-        break;
+      container.addEventListener("keydown", (e) => {
+        const row = e.target.closest("tr.js-shop-row");
+        if (!row || !container.contains(row)) return;
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          activateRow(row);
+        }
+        if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+          e.preventDefault();
+          const rows = $$("#shopResult tbody tr.js-shop-row");
+          let i = rows.indexOf(row);
+          i += e.key === "ArrowDown" ? 1 : -1;
+          i = (i + rows.length) % rows.length;
+          rows[i].focus();
+          activateRow(rows[i]);
+        }
+      });
     }
-  });
+
+    // ---------- render + wire ----------
+    function clampShopResult(maxRows = 10) {
+      const out = document.querySelector("#shopResult");
+      const table = out?.querySelector("table");
+      if (!out || !table) return;
+      requestAnimationFrame(() => {
+        const theadH = table.tHead
+          ? table.tHead.getBoundingClientRect().height
+          : 0;
+        const firstRow = table.tBodies?.[0]?.rows?.[0];
+        let rowH = firstRow ? firstRow.getBoundingClientRect().height : 0;
+        if (!rowH) {
+          const fs = parseFloat(getComputedStyle(table).fontSize) || 14;
+          rowH = fs * 2.4;
+        }
+        const max = Math.round(theadH + rowH * maxRows + 2);
+        out.style.setProperty("--shop-max", `${max}px`);
+        out.style.overflow = "auto";
+      });
+    }
+
+    async function renderNow(autoSelect) {
+      await (state.ready || loadShopData());
+      if (state.selectedIdx >= state.results.length) state.selectedIdx = 0;
+
+      setHTML("#shopResult", renderShopTable());
+      bindDelegatedRowHandlers();
+      clampShopResult(10);
+
+      if (autoSelect && state.results.length) {
+        state.selectedIdx = 0;
+        renderDetail(0);
+        const first = $("#shopResult tbody tr.js-shop-row");
+        if (first) first.classList.add("is-selected");
+      }
+    }
+
+    function wireControls() {
+      // Mount/inject slider UI (if not present)
+      ensurePrivacySlider();
+
+      // Change/select controls
+      [
+        "#shopDemand",
+        "#shopRep",
+        "#shopSort",
+        "#shopCoins",
+        "#shopCategory",
+      ].forEach((sel) => {
+        $(sel)?.addEventListener("change", () => renderNow(false));
+      });
+
+      // Privacy slider (0=Public, 1=Private) + password prompt
+      const privacySlider = $("#privacySlider");
+      if (privacySlider) {
+        // Init from session (default public)
+        setPrivacyMode(getPrivacyMode());
+
+        privacySlider.addEventListener("change", () => {
+          const wantPrivate = privacySlider.value === "1";
+          if (wantPrivate) {
+            const pw = window.prompt("Enter password to switch to Private:");
+            if (pw === PRIV_PASSWORD) {
+              setPrivacyMode("private");
+            } else {
+              setPrivacyMode("public");
+              alert("Incorrect password. Staying in Public mode.");
+            }
+          } else {
+            setPrivacyMode("public");
+          }
+          renderNow(false);
+        });
+      } else {
+        setPrivacyMode("public");
+      }
+
+      // Search (debounced)
+      const s = $("#shopSearch");
+      if (s) {
+        s.addEventListener("input", () => {
+          clearTimeout(s.__t);
+          s.__t = setTimeout(() => renderNow(false), 150);
+        });
+      }
+
+      // Buttons
+      $("#rollShop")?.addEventListener("click", (e) => {
+        e.stopPropagation();
+        renderNow(true);
+      });
+      $("#exportShop")?.addEventListener("click", (e) => {
+        e.stopPropagation();
+        exportCSV();
+      });
+
+      // Haggle buttons (segment toggle)
+      const setPressed = () => {
+        ["haggle5", "haggle10", "haggle15"].forEach((id) => {
+          const b = $("#" + id);
+          if (!b) return;
+          const p = Number(b.dataset.disc || 0);
+          b.setAttribute(
+            "aria-pressed",
+            state.hagglePct === p ? "true" : "false"
+          );
+        });
+        $("#persuasionOutcome") &&
+          ($("#persuasionOutcome").textContent = state.hagglePct
+            ? `Persuasion discount: ${state.hagglePct}%`
+            : "No discount.");
+      };
+      ["haggle5", "haggle10", "haggle15"].forEach((id) => {
+        $("#" + id)?.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const pct = Number($("#" + id).dataset.disc || 0);
+          state.hagglePct = state.hagglePct === pct ? 0 : pct; // toggle off if same
+          setPressed();
+          renderNow(false);
+        });
+      });
+      setPressed();
+    }
+
+    function exportCSV() {
+      const lines = [
+        ["Item", "Category", "Base (gp)", "Adjusted (gp)"],
+        ...state.results.map((it) => [
+          it.name,
+          it.category,
+          (+it.price_gp || 0).toFixed(2),
+          (+it._adj || 0).toFixed(2),
+        ]),
+      ]
+        .map((row) =>
+          row.map((x) => `"${String(x).replace(/"/g, '""')}"`).join(",")
+        )
+        .join("\n");
+
+      const blob = new Blob([lines], { type: "text/csv" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "shop.csv";
+      a.click();
+      setTimeout(() => URL.revokeObjectURL(url), 1200);
+    }
+
+    // ---------- init ----------
+    document.addEventListener("DOMContentLoaded", () => {
+      loadShopData().then(() => {
+        // Ensure slider is present + in sync before first render
+        ensurePrivacySlider();
+        setPrivacyMode(getPrivacyMode());
+
+        hydrateShopCategorySelect();
+        ensureDetailPane(); // mount/move details panel into <article class="shop_view">
+        wireControls();
+        // re-calc scroll height when viewport changes
+        window.addEventListener("resize", () => clampShopResult(10));
+      });
+    });
+  })();
 
   // ─────────────────────────────────────────────────────────────────────────────
   // NAMES (people-only)  (data: /data/names.json)
@@ -1460,15 +1838,6 @@
       };
     });
 
-  // shop
-  window.shopDebug = () =>
-    (SHOP_READY || Promise.resolve()).then(() => ({
-      path: SHOP_PATH,
-      cats: shopCategories().map((c) => c.id),
-      count: SHOP_DATA?.items?.length || 0,
-      sample: SHOP_DATA?.items?.slice(0, 3) || [],
-    }));
-
   // ─────────────────────────────────────────────────────────────────────────────
   // CLICK HANDLER (Weather, Traps v3, Names, Treasure, Encounters)
   // ─────────────────────────────────────────────────────────────────────────────
@@ -1494,50 +1863,6 @@
         setVal("#zone", z);
         setVal("#season", s);
         setText("#weatherResult", rollWeather(z, s));
-        break;
-      }
-      //shop
-      case "rollShop": {
-        await loadShopData();
-        const demand = get("#shopDemand")?.value || "normal";
-        const rep = get("#shopRep")?.value || "neutral";
-        setHTML("#shopResult", renderShop(demand, rep));
-        break;
-      }
-      case "exportShop": {
-        await loadShopData();
-        const demand = get("#shopDemand")?.value || "normal";
-        const rep = get("#shopRep")?.value || "neutral";
-        const q = get("#shopSearch")?.value || "";
-        const cat = get("#shopCategory")?.value || "__all__";
-        const sort = get("#shopSort")?.value || "name";
-
-        const items = (SHOP_DATA?.items || []).map((it) => ({
-          ...it,
-          _adj: adjustPriceGP(it.price_gp, demand, rep),
-        }));
-        const list = filterAndSortShop(items, { cat, q, sort });
-        const lines = [
-          ["Item", "Category", "Base (gp)", "Adjusted (gp)"],
-          ...list.map((it) => [
-            it.name,
-            it.category,
-            (Number(it.price_gp) || 0).toFixed(2),
-            (Number(it._adj) || 0).toFixed(2),
-          ]),
-        ]
-          .map((row) =>
-            row.map((x) => `"${String(x).replace(/"/g, '""')}"`).join(",")
-          )
-          .join("\n");
-
-        const blob = new Blob([lines], { type: "text/csv" });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = "shop.csv";
-        a.click();
-        setTimeout(() => URL.revokeObjectURL(url), 1500);
         break;
       }
 
