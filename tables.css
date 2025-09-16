@@ -621,3 +621,307 @@
   font-size: .92rem;
   opacity: .95;
 }
+
+
+/* optional: make the options look clickable and ensure it floats over content */
+#preset-list {
+  z-index: 20;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .35);
+}
+
+#preset-list .tb-option:hover,
+#preset-list .tb-option:focus {
+  outline: none;
+  filter: brightness(1.1);
+}
+
+/* ============================
+   NPC GENERATOR — SCOPED STYLES
+   ============================ */
+
+/* Controls row: Occupation + Setting side-by-side; stack on small screens */
+#npc-controls {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  gap: .6rem;
+  align-items: start;
+}
+
+@media (max-width: 680px) {
+  #npc-controls {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Combobox + dropdown (scoped) */
+#npc-panel .tb-combobox {
+  position: relative;
+  display: block;
+}
+
+#npc-panel .tb-combobox .tb-input {
+  padding-right: 36px;
+  /* room for the clear button */
+}
+
+#npc-panel .tb-input {
+  width: 100%;
+  display: block;
+}
+
+#npc-panel .tb-list {
+  position: absolute;
+  left: 0;
+  right: 0;
+  max-height: 240px;
+  overflow-y: auto;
+  display: none;
+  z-index: 20;
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, .12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .35);
+}
+
+#npc-panel .tb-option {
+  padding: .4rem .6rem;
+  cursor: pointer;
+}
+
+#npc-panel .tb-option:hover,
+#npc-panel .tb-option:focus {
+  background: rgba(255, 255, 255, .06);
+  outline: none;
+}
+
+/* Result wrapper itself shouldn’t add big gaps */
+#npc-pretty.tb-result {
+  margin: 8px 0 0;
+  padding: 8px 10px;
+}
+
+/* Compact NPC card (scoped to output) */
+#npc-pretty .npc-card {
+  line-height: 1.28;
+  margin: 0;
+}
+
+#npc-pretty .npc-card * {
+  box-sizing: border-box;
+}
+
+/* Nuke default margins that cause tall gaps—only inside the card */
+#npc-pretty .npc-card h1,
+#npc-pretty .npc-card h2,
+#npc-pretty .npc-card h3,
+#npc-pretty .npc-card h4,
+#npc-pretty .npc-card p,
+#npc-pretty .npc-card ul,
+#npc-pretty .npc-card li,
+#npc-pretty .npc-card blockquote {
+  margin: 0;
+}
+
+/* Header */
+#npc-pretty .npc-header {
+  margin-bottom: .22rem;
+}
+
+#npc-pretty .npc-name {
+  font-weight: 700;
+  font-size: 1.06rem;
+}
+
+#npc-pretty .npc-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .3rem;
+  margin-top: .12rem;
+}
+
+#npc-pretty .npc-card .tb-badge {
+  padding: .08rem .4rem;
+  font-size: .84em;
+}
+
+/* Key/Value rows */
+#npc-pretty .npc-meta {
+  margin: .12rem 0 .24rem;
+}
+
+#npc-pretty .npc-meta .row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  column-gap: .6rem;
+  align-items: baseline;
+  padding: .03rem 0;
+  /* tight rows */
+}
+
+#npc-pretty .npc-meta .k {
+  font-weight: 700;
+}
+
+/* Hooks */
+#npc-pretty .npc-hooks {
+  margin: .22rem 0 .18rem;
+}
+
+#npc-pretty .npc-hooks h4 {
+  font-size: .92rem;
+  font-weight: 700;
+  margin-bottom: .14rem;
+}
+
+#npc-pretty .npc-hooks .hooks {
+  list-style: disc;
+  padding-left: .9rem;
+}
+
+#npc-pretty .npc-hooks .hooks li {
+  margin: .06rem 0;
+  line-height: 1.28;
+}
+
+/* Opener quote */
+#npc-pretty .npc-opener {
+  margin: .26rem 0 0;
+  padding: .32rem .56rem;
+  border-left: 2px solid currentColor;
+  background: rgba(255, 255, 255, .06);
+  border-radius: .32rem;
+  opacity: .92;
+}
+
+/* NPC panel: neutralize the global .tb-result spacing behavior */
+#npc-panel #npc-pretty {
+  white-space: normal;
+  /* stop preserving template newlines */
+  line-height: 1.32;
+  /* tighter than the global 1.55 */
+  margin-top: 8px;
+  padding: 8px 10px;
+}
+
+/* Keep the card compact (restates the tight rules, but scoped) */
+#npc-panel #npc-pretty .npc-card {
+  line-height: 1.28;
+}
+
+#npc-panel #npc-pretty .npc-card h1,
+#npc-panel #npc-pretty .npc-card h2,
+#npc-panel #npc-pretty .npc-card h3,
+#npc-panel #npc-pretty .npc-card h4,
+#npc-panel #npc-pretty .npc-card p,
+#npc-panel #npc-pretty .npc-card ul,
+#npc-panel #npc-pretty .npc-card li,
+#npc-panel #npc-pretty .npc-card blockquote {
+  margin: 0;
+}
+
+#npc-panel #npc-pretty .npc-header {
+  margin-bottom: .2rem;
+}
+
+#npc-panel #npc-pretty .npc-name {
+  font-weight: 700;
+  font-size: 1.06rem;
+}
+
+#npc-panel #npc-pretty .npc-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .3rem;
+  margin-top: .12rem;
+}
+
+#npc-panel #npc-pretty .npc-card .tb-badge {
+  padding: .08rem .4rem;
+  font-size: .84em;
+}
+
+#npc-panel #npc-pretty .npc-meta {
+  margin: .1rem 0 .22rem;
+}
+
+#npc-panel #npc-pretty .npc-meta .row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  column-gap: .6rem;
+  align-items: baseline;
+  padding: .02rem 0;
+}
+
+#npc-panel #npc-pretty .npc-meta .k {
+  font-weight: 700;
+}
+
+#npc-panel #npc-pretty .npc-hooks {
+  margin: .2rem 0 .16rem;
+}
+
+#npc-panel #npc-pretty .npc-hooks h4 {
+  font-size: .92rem;
+  font-weight: 700;
+  margin-bottom: .12rem;
+}
+
+#npc-panel #npc-pretty .npc-hooks .hooks {
+  list-style: disc;
+  padding-left: .9rem;
+}
+
+#npc-panel #npc-pretty .npc-hooks .hooks li {
+  margin: .05rem 0;
+  line-height: 1.28;
+}
+
+#npc-panel #npc-pretty .npc-opener {
+  margin: .24rem 0 0;
+  padding: .3rem .56rem;
+  border-left: 2px solid currentColor;
+  background: rgba(255, 255, 255, .06);
+  border-radius: .32rem;
+  opacity: .92;
+}
+
+/* Clear (×) button inside inputs */
+#npc-panel .tb-combobox .tb-clear {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  /* center vertically */
+  height: 22px;
+  width: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--sb-dim);
+  cursor: pointer;
+  z-index: 21;
+  /* above the input */
+  padding: 0;
+  line-height: 1;
+}
+
+#npc-panel .tb-combobox .tb-clear:hover {
+  background: rgba(255, 255, 255, .08);
+  color: var(--sb-text);
+}
+
+#npc-panel .tb-combobox .tb-clear:hover,
+#npc-panel .tb-combobox .tb-clear:focus-visible {
+  background: rgba(255, 255, 255, .08);
+  color: var(--sb-text);
+  outline: none;
+}
+
+/* Safari: ensure button isn't shifted by line-height quirks */
+@supports (-webkit-touch-callout: none) {
+  #npc-panel .tb-combobox .tb-clear {
+    line-height: 1;
+  }
+}

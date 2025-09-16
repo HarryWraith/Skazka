@@ -32,16 +32,17 @@
         <li>Random Encounters</li>
         <li>Door generator</li>
         <li>Shop & price adjuster</li>
+        <li>Magic Forge</li>
       </ol>
     </article>
     <article>
       <h1 class="skz-viking">Random Generators</h1>
-      <p>Below are a selection of random generators. While the Skazka campaign setting is based on the Dungeons &
+      <p>Below are some generators that I have created. While the Skazka campaign setting is based on the Dungeons &
         Dragons 5E rules (2014) many of the generators could be used for other RPG games or settings too.</p>
     </article>
     <article class="article-small">
       <p>Please report issues you find <a href="contact.html"><b>here</b></a>. I'd also welcome your homebrew
-        subbmissions for traps and magic items. </p>
+        subbmissions. If you can't code, don't worry; I can take your idea and make it a reality.</p>
     </article>
 
   </main>
@@ -372,9 +373,29 @@
     </article>
   </main>
 
+  <main class="grid-even">
+    <article>
+      <section class="tb-panel" id="npc-panel">
+        <h3 class="tb-title">NPC Generator</h3>
+        <div id="npc-controls"></div>
+
+        <div class="tb-actions">
+          <button id="npc-reroll" class="tb-btn" type="button">Reroll</button>
+          <button id="npc-copy-text" class="tb-btn" type="button">Copy text</button>
+          <span id="npc-debug" class="tb-debug" style="opacity:.85;"></span>
+        </div>
+
+        <div id="npc-pretty" class="tb-result" aria-live="polite"></div>
+      </section>
+    </article>
+    <article></article>
+    <article></article>
+  </main>
+
   <div id="footer"></div>
 
   <script src="forge.js" defer></script>
+  <script defer src="npc.js"></script>
 </body>
 
 </html>

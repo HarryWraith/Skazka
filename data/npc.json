@@ -1,0 +1,1450 @@
+{
+  "version": "2.1.0",
+  "meta": {
+    "license": "CC-BY-4.0",
+    "notes": "Data-driven NPC tables for Skazka World (no pronouns). Occupations + Contexts in JSON. Names removed (handled by names.json)."
+  },
+
+  "defaults": {
+    "ancestry_bias": [
+      "human:8",
+      "dwarf:2",
+      "elf:3",
+      "halfling:1",
+      "gnome:1",
+      "half_elf:1",
+      "half_orc:1",
+      "dragonborn:1",
+      "goblin:1",
+      "aarakocra:0.2",
+      "aasimar:0.2",
+      "bugbear:0.2",
+      "centaur:0.2",
+      "changeling:0.2",
+      "duergar:0.2",
+      "fairy:0.2",
+      "firbolg:0.2",
+      "genasi:0.2",
+      "goliath:0.2",
+      "harengon:0.2",
+      "hobgoblin:0.2",
+      "kalashtar:0.2",
+      "kenku:0.2",
+      "kobold:0.2",
+      "leonin:0.2",
+      "lizardfolk:0.2",
+      "locathah:0.2",
+      "loxodon:0.2",
+      "minotaur:0.2",
+      "owlin:0.2",
+      "satyr:0.2",
+      "tabaxi:0.2",
+      "tiefling:0.2",
+      "tortle:0.1",
+      "triton:0.1",
+      "vedalken:0.2",
+      "verdan:0.2",
+      "warforged:0.2",
+      "yuan_ti:0.05"
+    ],
+    "lifespans": {
+      "human": {
+        "adult": 16,
+        "elderly": 60,
+        "max": 90,
+        "stage_weights": [50, 35, 15]
+      },
+      "dwarf": {
+        "adult": 30,
+        "elderly": 160,
+        "max": 220,
+        "stage_weights": [30, 50, 20]
+      },
+      "elf": {
+        "adult": 60,
+        "elderly": 350,
+        "max": 550,
+        "stage_weights": [25, 55, 20]
+      },
+
+      "halfling": {
+        "adult": 20,
+        "elderly": 100,
+        "max": 150,
+        "stage_weights": [40, 45, 15]
+      },
+      "gnome": {
+        "adult": 40,
+        "elderly": 250,
+        "max": 500,
+        "stage_weights": [35, 50, 15]
+      },
+      "half_elf": {
+        "adult": 20,
+        "elderly": 110,
+        "max": 180,
+        "stage_weights": [45, 40, 15]
+      },
+      "half_orc": {
+        "adult": 14,
+        "elderly": 45,
+        "max": 75,
+        "stage_weights": [55, 35, 10]
+      },
+      "dragonborn": {
+        "adult": 15,
+        "elderly": 50,
+        "max": 80,
+        "stage_weights": [55, 35, 10]
+      },
+      "tiefling": {
+        "adult": 18,
+        "elderly": 85,
+        "max": 120,
+        "stage_weights": [50, 35, 15]
+      },
+
+      "goliath": {
+        "adult": 18,
+        "elderly": 60,
+        "max": 100,
+        "stage_weights": [50, 35, 15]
+      },
+      "aasimar": {
+        "adult": 18,
+        "elderly": 100,
+        "max": 160,
+        "stage_weights": [45, 40, 15]
+      },
+
+      "aarakocra": {
+        "adult": 3,
+        "elderly": 20,
+        "max": 30,
+        "stage_weights": [55, 35, 10]
+      },
+      "bugbear": {
+        "adult": 16,
+        "elderly": 55,
+        "max": 80,
+        "stage_weights": [55, 35, 10]
+      },
+      "centaur": {
+        "adult": 18,
+        "elderly": 60,
+        "max": 90,
+        "stage_weights": [50, 35, 15]
+      },
+      "changeling": {
+        "adult": 18,
+        "elderly": 70,
+        "max": 90,
+        "stage_weights": [50, 35, 15]
+      },
+      "duergar": {
+        "adult": 30,
+        "elderly": 160,
+        "max": 220,
+        "stage_weights": [30, 50, 20]
+      },
+
+      "fairy": {
+        "adult": 20,
+        "elderly": 180,
+        "max": 300,
+        "stage_weights": [40, 45, 15]
+      },
+      "firbolg": {
+        "adult": 30,
+        "elderly": 300,
+        "max": 500,
+        "stage_weights": [30, 50, 20]
+      },
+      "genasi": {
+        "adult": 18,
+        "elderly": 90,
+        "max": 120,
+        "stage_weights": [50, 35, 15]
+      },
+
+      "goblin": {
+        "adult": 8,
+        "elderly": 40,
+        "max": 60,
+        "stage_weights": [55, 35, 10]
+      },
+      "harengon": {
+        "adult": 18,
+        "elderly": 65,
+        "max": 90,
+        "stage_weights": [50, 35, 15]
+      },
+      "hobgoblin": {
+        "adult": 16,
+        "elderly": 60,
+        "max": 80,
+        "stage_weights": [55, 35, 10]
+      },
+      "kalashtar": {
+        "adult": 18,
+        "elderly": 85,
+        "max": 120,
+        "stage_weights": [50, 35, 15]
+      },
+      "kenku": {
+        "adult": 12,
+        "elderly": 45,
+        "max": 60,
+        "stage_weights": [55, 35, 10]
+      },
+      "kobold": {
+        "adult": 6,
+        "elderly": 80,
+        "max": 120,
+        "stage_weights": [55, 35, 10]
+      },
+
+      "leonin": {
+        "adult": 18,
+        "elderly": 65,
+        "max": 90,
+        "stage_weights": [50, 35, 15]
+      },
+      "lizardfolk": {
+        "adult": 14,
+        "elderly": 45,
+        "max": 60,
+        "stage_weights": [55, 35, 10]
+      },
+
+      "locathah": {
+        "adult": 15,
+        "elderly": 60,
+        "max": 80,
+        "stage_weights": [50, 35, 15]
+      },
+      "lokathah": {
+        "adult": 15,
+        "elderly": 60,
+        "max": 80,
+        "stage_weights": [50, 35, 15]
+      },
+
+      "loxodon": {
+        "adult": 18,
+        "elderly": 300,
+        "max": 450,
+        "stage_weights": [25, 55, 20]
+      },
+      "minotaur": {
+        "adult": 18,
+        "elderly": 65,
+        "max": 90,
+        "stage_weights": [50, 35, 15]
+      },
+      "owlin": {
+        "adult": 18,
+        "elderly": 85,
+        "max": 120,
+        "stage_weights": [50, 35, 15]
+      },
+      "satyr": {
+        "adult": 18,
+        "elderly": 70,
+        "max": 90,
+        "stage_weights": [50, 35, 15]
+      },
+
+      "tabaxi": {
+        "adult": 18,
+        "elderly": 65,
+        "max": 90,
+        "stage_weights": [50, 35, 15]
+      },
+      "tortle": {
+        "adult": 15,
+        "elderly": 35,
+        "max": 50,
+        "stage_weights": [55, 35, 10]
+      },
+      "triton": {
+        "adult": 18,
+        "elderly": 140,
+        "max": 200,
+        "stage_weights": [40, 45, 15]
+      },
+      "vedalken": {
+        "adult": 20,
+        "elderly": 240,
+        "max": 350,
+        "stage_weights": [30, 55, 15]
+      },
+      "verdan": {
+        "adult": 18,
+        "elderly": 120,
+        "max": 200,
+        "stage_weights": [45, 40, 15]
+      },
+      "warforged": {
+        "adult": 1,
+        "elderly": 200,
+        "max": 300,
+        "stage_weights": [45, 45, 10]
+      },
+      "yuan_ti": {
+        "adult": 18,
+        "elderly": 100,
+        "max": 150,
+        "stage_weights": [45, 40, 15]
+      }
+    }
+  },
+
+  "tables": {
+    "contexts": [
+      { "label": "Village / Rural", "tags": ["village", "rural"] },
+      { "label": "Town", "tags": ["town", "urban"] },
+      { "label": "City", "tags": ["city", "urban"] },
+      { "label": "Dockside (City)", "tags": ["city", "dockside", "riverport"] },
+      { "label": "Seaport", "tags": ["seaport", "dockside"] },
+      { "label": "Frontier", "tags": ["frontier"] },
+      { "label": "Ruins / Low Magic", "tags": ["ruins", "low_magic"] },
+      { "label": "Temple District", "tags": ["city", "pious"] },
+      {
+        "label": "Noble Quarter",
+        "tags": ["city", "nobility", "luxury", "law"]
+      },
+      { "label": "Poor Quarter", "tags": ["city", "crime", "dockside"] },
+      { "label": "Workhouses", "tags": ["city", "poverty"] },
+      { "label": "Tourney Grounds", "tags": ["city", "martial", "nobility"] }
+    ],
+
+    "temperaments": [
+      {
+        "id": "tp_phlegmatic",
+        "label": "Phlegmatic",
+        "weight": 4,
+        "hint": "Calm and steady; slow to anger."
+      },
+      {
+        "id": "tp_choleric",
+        "label": "Choleric",
+        "weight": 3,
+        "hint": "Driven and decisive; quick-tempered."
+      },
+      {
+        "id": "tp_melancholic",
+        "label": "Melancholic",
+        "weight": 3,
+        "hint": "Thoughtful and cautious; prone to worry."
+      },
+      {
+        "id": "tp_sanguine",
+        "label": "Sanguine",
+        "weight": 4,
+        "hint": "Cheerful and sociable; impulsive."
+      },
+
+      {
+        "id": "tp_cynical",
+        "label": "Cynical",
+        "weight": 2,
+        "hint": "Distrustful; assumes the worst."
+      },
+      {
+        "id": "tp_fanatical",
+        "label": "Fanatical",
+        "weight": 1,
+        "hint": "Zealous devotion to a cause."
+      },
+      {
+        "id": "tp_stoic",
+        "label": "Stoic",
+        "weight": 3,
+        "hint": "Endures hardship without complaint."
+      },
+      {
+        "id": "tp_amiable",
+        "label": "Amiable",
+        "weight": 3,
+        "hint": "Warm and easy to get along with."
+      },
+      {
+        "id": "tp_surly",
+        "label": "Surly",
+        "weight": 2,
+        "hint": "Ill-tempered and curt."
+      },
+      {
+        "id": "tp_ambitious",
+        "label": "Ambitious",
+        "weight": 3,
+        "hint": "Hungry for status or power."
+      },
+      {
+        "id": "tp_pious",
+        "label": "Pious",
+        "weight": 2,
+        "hint": "Devout; guided by faith."
+      },
+      {
+        "id": "tp_opportunist",
+        "label": "Opportunist",
+        "weight": 2,
+        "hint": "Takes advantage of chance gains."
+      }
+    ],
+
+    "personality_traits": [
+      {
+        "id": "pt_careful",
+        "label": "Careful",
+        "weight": 5,
+        "tags": ["cautious"]
+      },
+      {
+        "id": "pt_gullible",
+        "label": "Gullible",
+        "weight": 2,
+        "tags": ["naive"]
+      },
+      { "id": "pt_stoic", "label": "Stoic", "weight": 4 },
+      {
+        "id": "pt_boastful",
+        "label": "Boastful",
+        "weight": 2,
+        "tags": ["loud"]
+      },
+      { "id": "pt_generous", "label": "Generous", "weight": 3 },
+      { "id": "pt_secretive", "label": "Secretive", "weight": 4 },
+      { "id": "pt_paranoid", "label": "Paranoid", "weight": 2 },
+      { "id": "pt_ambitious", "label": "Ambitious", "weight": 4 },
+      {
+        "id": "pt_punctual",
+        "label": "Punctual",
+        "weight": 3,
+        "tags": ["merchant", "law"]
+      },
+      {
+        "id": "pt_gregarious",
+        "label": "Gregarious",
+        "weight": 3,
+        "tags": ["hospitality"]
+      },
+      {
+        "id": "pt_vindictive",
+        "label": "Vindictive",
+        "weight": 1,
+        "tags": ["crime"]
+      },
+      { "id": "pt_compassion", "label": "Compassionate", "weight": 3 },
+      {
+        "id": "pt_iron_will",
+        "label": "Iron-willed",
+        "weight": 2,
+        "tags": ["martial"]
+      },
+      {
+        "id": "pt_superstitious",
+        "label": "Superstitious",
+        "weight": 2,
+        "tags": ["rural", "dockside"]
+      }
+    ],
+
+    "occupations": [
+      {
+        "id": "oc_baker",
+        "label": "Baker",
+        "weight": 7,
+        "tags": ["urban", "merchant", "food", "craft"],
+        "requiresAny": ["town", "city", "village"],
+        "details": {
+          "workplaces": [
+            "warm brick bakery",
+            "market stall near ovens",
+            "guild bakehouse"
+          ],
+          "tools": ["peel", "flour sacks", "proofing baskets"]
+        }
+      },
+      {
+        "id": "oc_banker",
+        "label": "Banker",
+        "weight": 3,
+        "tags": ["urban", "finance", "merchant", "law"],
+        "requiresAny": ["city"],
+        "details": {
+          "workplaces": [
+            "counting house",
+            "guildhall office",
+            "noble quarter bureau"
+          ],
+          "tools": ["ledgers", "seals", "abacus"]
+        }
+      },
+      {
+        "id": "oc_enchanter_low",
+        "label": "Enchanter (Low Magic)",
+        "weight": 2,
+        "tags": ["arcane", "craft", "low_magic"],
+        "requiresAny": ["town", "city"],
+        "details": {
+          "workplaces": ["incense-hazed workshop", "temple annex workbench"]
+        }
+      },
+      {
+        "id": "oc_barber_surgeon",
+        "label": "Barber-Surgeon",
+        "weight": 4,
+        "tags": ["urban", "healing", "craft"],
+        "requiresAny": ["town", "city"],
+        "details": {
+          "workplaces": [
+            "striped pole storefront",
+            "traveling chair under awning"
+          ]
+        }
+      },
+      {
+        "id": "oc_blacksmith",
+        "label": "Blacksmith",
+        "weight": 6,
+        "tags": ["craft", "metal", "heat"],
+        "requiresAny": ["village", "town", "city"],
+        "details": {
+          "workplaces": [
+            "street-front forge",
+            "village smithy",
+            "military armory"
+          ]
+        }
+      },
+      {
+        "id": "oc_bookseller",
+        "label": "Bookseller / Scribe",
+        "weight": 3,
+        "tags": ["urban", "scribe", "merchant"],
+        "requiresAny": ["city", "town"],
+        "details": {
+          "workplaces": ["ink-scented bookshop", "scriptorium alcove"]
+        }
+      },
+      {
+        "id": "oc_bounty_hunter",
+        "label": "Bounty Hunter",
+        "weight": 2,
+        "tags": ["frontier", "crime", "law"],
+        "requiresAny": ["frontier", "wilderness", "city", "town"]
+      },
+      {
+        "id": "oc_brewer",
+        "label": "Brewer",
+        "weight": 5,
+        "tags": ["merchant", "food", "craft"],
+        "requiresAny": ["village", "town", "city"]
+      },
+      {
+        "id": "oc_chandler",
+        "label": "Chandler (Candlemaker)",
+        "weight": 3,
+        "tags": ["urban", "craft"],
+        "requiresAny": ["town", "city"]
+      },
+      {
+        "id": "oc_city_guard",
+        "label": "City Watch (Guard)",
+        "weight": 7,
+        "tags": ["urban", "law"],
+        "requiresAny": ["town", "city"]
+      },
+      {
+        "id": "oc_court_clerk",
+        "label": "Court Clerk",
+        "weight": 2,
+        "tags": ["urban", "nobility", "law"],
+        "requiresAny": ["city"]
+      },
+      {
+        "id": "oc_dockworker",
+        "label": "Dockworker",
+        "weight": 6,
+        "tags": ["dockside", "labor"],
+        "requiresAny": ["riverport", "seaport"]
+      },
+      {
+        "id": "oc_fence",
+        "label": "Fence (Illicit Merchant)",
+        "weight": 2,
+        "tags": ["crime", "merchant", "dockside"],
+        "requiresAny": ["city", "riverport", "seaport"],
+        "excludesAny": ["lawful_strict"]
+      },
+      {
+        "id": "oc_fisher",
+        "label": "Fisher",
+        "weight": 5,
+        "tags": ["rural", "food"],
+        "requiresAny": ["riverport", "seaport", "village"]
+      },
+      {
+        "id": "oc_herbalist",
+        "label": "Herbalist",
+        "weight": 4,
+        "tags": ["rural", "healing"],
+        "requiresAny": ["village", "frontier", "town"]
+      },
+      {
+        "id": "oc_innkeeper",
+        "label": "Innkeeper",
+        "weight": 6,
+        "tags": ["merchant", "hospitality"],
+        "requiresAny": ["village", "town", "city"]
+      },
+      {
+        "id": "oc_jeweler",
+        "label": "Jeweler",
+        "weight": 3,
+        "tags": ["urban", "craft", "luxury", "merchant"],
+        "requiresAny": ["city", "town"]
+      },
+      {
+        "id": "oc_mercenary",
+        "label": "Mercenary",
+        "weight": 3,
+        "tags": ["frontier", "wilderness", "martial"],
+        "requiresAny": ["frontier", "town", "city"]
+      },
+      {
+        "id": "oc_miller",
+        "label": "Miller",
+        "weight": 4,
+        "tags": ["rural", "food", "craft"],
+        "requiresAny": ["village", "town"]
+      },
+      {
+        "id": "oc_navigator",
+        "label": "Navigator / Pilot",
+        "weight": 3,
+        "tags": ["dockside", "merchant"],
+        "requiresAny": ["seaport", "riverport"]
+      },
+      {
+        "id": "oc_necromancer_rumor",
+        "label": "Necromancer (Rumored)",
+        "weight": 1,
+        "tags": ["low_magic", "ruins", "forbidden"],
+        "requiresAny": ["frontier", "ruins", "city", "town"]
+      },
+      {
+        "id": "oc_steward",
+        "label": "Noble’s Steward",
+        "weight": 2,
+        "tags": ["nobility", "urban", "lawful_strict"],
+        "requiresAny": ["city", "town"]
+      },
+      {
+        "id": "oc_outfitter",
+        "label": "Outfitter (Adventuring Goods)",
+        "weight": 4,
+        "tags": ["merchant", "frontier"],
+        "requiresAny": ["town", "city", "frontier"]
+      },
+      {
+        "id": "oc_potter",
+        "label": "Potter",
+        "weight": 3,
+        "tags": ["rural", "craft", "wood"],
+        "requiresAny": ["village", "town"]
+      },
+      {
+        "id": "oc_smuggler",
+        "label": "Smuggler",
+        "weight": 2,
+        "tags": ["dockside", "crime"],
+        "requiresAny": ["riverport", "seaport"],
+        "excludesAny": ["lawful_strict"]
+      },
+      {
+        "id": "oc_stablemaster",
+        "label": "Stablemaster",
+        "weight": 4,
+        "tags": ["merchant", "animals"],
+        "requiresAny": ["village", "town", "city"]
+      },
+      {
+        "id": "oc_tanner",
+        "label": "Tanner",
+        "weight": 3,
+        "tags": ["rural", "craft", "odor"],
+        "requiresAny": ["village", "town"]
+      },
+      {
+        "id": "oc_teamster",
+        "label": "Teamster / Caravaneer",
+        "weight": 5,
+        "tags": ["merchant", "trade_route", "labor"],
+        "requiresAny": ["town", "city", "frontier"]
+      },
+      {
+        "id": "oc_temple_acolyte",
+        "label": "Temple Acolyte",
+        "weight": 4,
+        "tags": ["pious", "urban"],
+        "requiresAny": ["town", "city"]
+      },
+      {
+        "id": "oc_wainwright",
+        "label": "Wainwright (Wagonwright)",
+        "weight": 3,
+        "tags": ["craft", "wood"],
+        "requiresAny": ["village", "town"]
+      },
+      {
+        "id": "oc_wizard_for_hire",
+        "label": "Wizard-for-Hire (Low-Key)",
+        "weight": 2,
+        "tags": ["arcane", "low_magic", "contract"],
+        "requiresAny": ["town", "city"]
+      },
+      {
+        "id": "oc_beggar",
+        "label": "Beggar",
+        "weight": 6,
+        "tags": ["urban", "poverty", "crime", "naive"],
+        "requiresAny": ["town", "city"],
+        "details": {
+          "workplaces": [
+            "market steps",
+            "bridge approach",
+            "cathedral square",
+            "alley mouth"
+          ],
+          "tools": ["tin cup", "ragged cloak", "pathetic tale"]
+        }
+      },
+      {
+        "id": "oc_pickpocket",
+        "label": "Pickpocket",
+        "weight": 4,
+        "tags": ["urban", "crime"],
+        "requiresAny": ["town", "city"],
+        "details": {
+          "workplaces": [
+            "crowded bazaar",
+            "festival press",
+            "procession route",
+            "ferry queue"
+          ],
+          "tools": ["small knife", "loose sleeves", "decoy purse"]
+        }
+      },
+      {
+        "id": "oc_footpad",
+        "label": "Footpad (Mugger)",
+        "weight": 3,
+        "tags": ["urban", "crime", "rough"],
+        "requiresAny": ["town", "city"],
+        "details": {
+          "workplaces": ["unlit lane", "tenement courtyard", "abandoned yard"],
+          "tools": ["sap", "club", "hooded cloak"]
+        }
+      },
+      {
+        "id": "oc_thug",
+        "label": "Thug / Ruffian",
+        "weight": 4,
+        "tags": ["dockside", "crime", "rough"],
+        "requiresAny": ["city", "town", "riverport", "seaport"],
+        "details": {
+          "workplaces": ["quayside tavern", "warehouse row", "fish market"],
+          "tools": ["knuckle-duster", "broken bottle", "thick belt"]
+        }
+      },
+      {
+        "id": "oc_bodyguard",
+        "label": "Bodyguard (Hired Muscle)",
+        "weight": 3,
+        "tags": ["urban", "martial", "law"],
+        "requiresAny": ["town", "city"],
+        "details": {
+          "workplaces": [
+            "merchant house door",
+            "noble’s retinue",
+            "gaming hall entrance"
+          ],
+          "tools": ["cudgel", "short sword", "cloak pin badge"]
+        }
+      },
+      {
+        "id": "oc_lookout",
+        "label": "Lookout / Spotter",
+        "weight": 3,
+        "tags": ["urban", "crime"],
+        "requiresAny": ["town", "city"],
+        "details": {
+          "workplaces": ["street corner", "roofline perch", "alley bend"],
+          "tools": ["whistle", "signal taps", "fast feet"]
+        }
+      },
+      {
+        "id": "oc_confidence_trickster",
+        "label": "Confidence Trickster",
+        "weight": 2,
+        "tags": ["urban", "crime", "merchant"],
+        "requiresAny": ["town", "city"],
+        "details": {
+          "workplaces": ["gaming table", "auction crowd", "pilgrim road"],
+          "tools": ["marked cards", "oily charm", "false seals"]
+        }
+      },
+      {
+        "id": "oc_forger",
+        "label": "Forger / Scribe Gone Bad",
+        "weight": 2,
+        "tags": ["urban", "crime", "scribe"],
+        "requiresAny": ["city"],
+        "details": {
+          "workplaces": [
+            "attic scriptorium",
+            "back-room desk",
+            "ink-stained loft"
+          ],
+          "tools": ["inks & pigments", "scrap wax seals", "reference ledgers"]
+        }
+      },
+      {
+        "id": "oc_courtesan",
+        "label": "Courtesan (Salon)",
+        "weight": 1,
+        "tags": ["urban", "luxury", "nobility", "crime"],
+        "requiresAny": ["city"],
+        "details": {
+          "workplaces": [
+            "perfumed salon",
+            "private garden pavilion",
+            "silk-draped parlor"
+          ],
+          "tools": ["fine perfumes", "masked ball invitations", "patron list"]
+        }
+      },
+      {
+        "id": "oc_madam",
+        "label": "Madam / House Manager",
+        "weight": 1,
+        "tags": ["urban", "merchant", "crime", "luxury"],
+        "requiresAny": ["city"],
+        "details": {
+          "workplaces": [
+            "lantern-lit house",
+            "quiet cul-de-sac",
+            "upper-floor salon"
+          ],
+          "tools": ["ledger of clients", "house rules rod", "doorman"]
+        }
+      },
+      {
+        "id": "oc_entertainer_street",
+        "label": "Entertainer (Street Musician)",
+        "weight": 4,
+        "tags": ["urban", "hospitality"],
+        "requiresAny": ["town", "city"],
+        "details": {
+          "workplaces": ["fountain steps", "market ring", "tavern threshold"],
+          "tools": ["hurdy-gurdy", "fiddle", "hat for coins"]
+        }
+      },
+      {
+        "id": "oc_minor_noble",
+        "label": "Minor Noble",
+        "weight": 1,
+        "tags": ["urban", "nobility", "luxury", "lawful_strict"],
+        "requiresAny": ["city"],
+        "details": {
+          "workplaces": [
+            "townhouse salon",
+            "court antechamber",
+            "private box at theater"
+          ],
+          "tools": ["signet", "retainers", "credit with bankers"]
+        }
+      },
+      {
+        "id": "oc_apothecary",
+        "label": "Apothecary",
+        "weight": 3,
+        "tags": ["urban", "healing", "merchant"],
+        "requiresAny": ["town", "city"]
+      },
+      {
+        "id": "oc_alchemist",
+        "label": "Alchemist",
+        "weight": 2,
+        "tags": ["arcane", "craft"],
+        "requiresAny": ["town", "city"]
+      },
+      {
+        "id": "oc_gravedigger",
+        "label": "Gravedigger",
+        "weight": 3,
+        "tags": ["pious", "ruins"],
+        "requiresAny": ["village", "town", "city"]
+      },
+      {
+        "id": "oc_farmer",
+        "label": "Farmer",
+        "weight": 7,
+        "tags": ["rural", "food", "labor"],
+        "requiresAny": ["village", "rural"]
+      },
+      {
+        "id": "oc_mason",
+        "label": "Mason",
+        "weight": 3,
+        "tags": ["craft", "stone"],
+        "requiresAny": ["town", "city"]
+      },
+      {
+        "id": "oc_carpenter",
+        "label": "Carpenter",
+        "weight": 4,
+        "tags": ["craft", "wood"],
+        "requiresAny": ["village", "town", "city"]
+      },
+      {
+        "id": "oc_scribe",
+        "label": "Scribe (Court or Guild)",
+        "weight": 2,
+        "tags": ["scribe", "law"],
+        "requiresAny": ["city", "town"]
+      },
+      {
+        "id": "oc_cartwright",
+        "label": "Cartwright",
+        "weight": 2,
+        "tags": ["craft", "wood"],
+        "requiresAny": ["village", "town"]
+      },
+      {
+        "id": "oc_charcoal_burner",
+        "label": "Charcoal Burner",
+        "weight": 2,
+        "tags": ["rural", "wood", "odor"],
+        "requiresAny": ["village", "frontier"]
+      },
+      {
+        "id": "oc_salt_boiler",
+        "label": "Salt Boiler",
+        "weight": 1,
+        "tags": ["dockside", "odor", "craft"],
+        "requiresAny": ["riverport", "seaport", "city"]
+      },
+      {
+        "id": "oc_guard_sergeant",
+        "label": "City Watch Sergeant",
+        "weight": 2,
+        "tags": ["urban", "law", "martial"],
+        "requiresAny": ["city"]
+      },
+      {
+        "id": "oc_torturer",
+        "label": "Questioner / Torturer",
+        "weight": 1,
+        "tags": ["law", "forbidden"],
+        "requiresAny": ["city"],
+        "excludesAny": ["pious"]
+      },
+      {
+        "id": "oc_assassin",
+        "label": "Assassin (Whisper-Knife)",
+        "weight": 1,
+        "tags": ["crime", "forbidden"],
+        "requiresAny": ["city"]
+      },
+      {
+        "id": "oc_midwife",
+        "label": "Midwife",
+        "weight": 3,
+        "tags": ["healing", "rural"],
+        "requiresAny": ["village", "town", "city"]
+      },
+      {
+        "id": "oc_hunter",
+        "label": "Hunter / Trapper",
+        "weight": 4,
+        "tags": ["frontier", "rural"],
+        "requiresAny": ["frontier", "village"]
+      },
+      {
+        "id": "oc_cultist",
+        "label": "Cultist (Hidden)",
+        "weight": 1,
+        "tags": ["forbidden", "ruins", "low_magic"],
+        "requiresAny": ["city", "town", "ruins"]
+      },
+      {
+        "id": "oc_sailor",
+        "label": "Sailor / Deckhand",
+        "weight": 5,
+        "tags": ["dockside", "labor"],
+        "requiresAny": ["riverport", "seaport"]
+      },
+      {
+        "id": "oc_shipwright",
+        "label": "Shipwright",
+        "weight": 2,
+        "tags": ["dockside", "craft", "wood"],
+        "requiresAny": ["seaport", "riverport"]
+      },
+      {
+        "id": "oc_falconer",
+        "label": "Falconer (Noble Service)",
+        "weight": 1,
+        "tags": ["nobility", "animals"],
+        "requiresAny": ["city", "town"]
+      },
+      {
+        "id": "oc_cook",
+        "label": "Cook / Kitchen Boss",
+        "weight": 4,
+        "tags": ["food", "hospitality"],
+        "requiresAny": ["village", "town", "city"]
+      },
+      {
+        "id": "oc_carpeteer",
+        "label": "Tapestry Weaver",
+        "weight": 1,
+        "tags": ["craft", "luxury"],
+        "requiresAny": ["city"]
+      },
+      {
+        "id": "oc_tinker",
+        "label": "Tinker / Fixer",
+        "weight": 3,
+        "tags": ["merchant", "craft"],
+        "requiresAny": ["village", "town"]
+      },
+      {
+        "id": "oc_glassblower",
+        "label": "Glassblower",
+        "weight": 1,
+        "tags": ["craft", "luxury", "heat"],
+        "requiresAny": ["city"]
+      },
+      {
+        "id": "oc_bellfounder",
+        "label": "Bellfounder",
+        "weight": 1,
+        "tags": ["craft", "metal", "heat"],
+        "requiresAny": ["city", "town"]
+      },
+      {
+        "id": "oc_sellsword_captain",
+        "label": "Sellsword Captain",
+        "weight": 1,
+        "tags": ["martial", "frontier"],
+        "requiresAny": ["city", "frontier"]
+      },
+      {
+        "id": "oc_sage",
+        "label": "Sage / Scholar",
+        "weight": 2,
+        "tags": ["scribe", "arcane"],
+        "requiresAny": ["city", "town"]
+      },
+      {
+        "id": "oc_exorcist",
+        "label": "Exorcist",
+        "weight": 1,
+        "tags": ["pious", "forbidden"],
+        "requiresAny": ["town", "city"]
+      }
+    ],
+
+    "motivations": [
+      {
+        "id": "mo_clear_debt",
+        "label": "Clear crushing debt",
+        "weight": 5,
+        "tags": ["urban", "crime"]
+      },
+      {
+        "id": "mo_restore_relic",
+        "label": "Restore a desecrated relic",
+        "weight": 3,
+        "tags": ["pious", "ruins"]
+      },
+      { "id": "mo_family_honor", "label": "Reclaim family honor", "weight": 4 },
+      {
+        "id": "mo_secure_route",
+        "label": "Secure a safer trade route",
+        "weight": 3,
+        "tags": ["merchant", "frontier"]
+      },
+      {
+        "id": "mo_expand_shop",
+        "label": "Expand shop and hire apprentices",
+        "weight": 4,
+        "tags": ["merchant", "craft"]
+      },
+      {
+        "id": "mo_quiet_life",
+        "label": "Live quietly and avoid notice",
+        "weight": 3
+      },
+      {
+        "id": "mo_protect_patrons",
+        "label": "Protect lucrative patrons",
+        "weight": 2,
+        "tags": ["nobility", "luxury"]
+      },
+      {
+        "id": "mo_take_territory",
+        "label": "Take control of a lucrative corner",
+        "weight": 2,
+        "tags": ["crime", "dockside"]
+      },
+      {
+        "id": "mo_break_curse",
+        "label": "Break a family curse",
+        "weight": 2,
+        "tags": ["low_magic", "ruins"]
+      },
+      {
+        "id": "mo_join_guild",
+        "label": "Gain entry to a powerful guild",
+        "weight": 3,
+        "tags": ["urban"]
+      }
+    ],
+
+    "secrets": [
+      {
+        "id": "se_blackmail",
+        "label": "Being blackmailed by a minor noble",
+        "weight": 4,
+        "tags": ["urban", "nobility"]
+      },
+      {
+        "id": "se_forbidden_tome",
+        "label": "Hides a forbidden tome",
+        "weight": 2,
+        "tags": ["low_magic", "ruins"]
+      },
+      {
+        "id": "se_fake_goods",
+        "label": "Peddles watered or adulterated goods",
+        "weight": 3,
+        "tags": ["merchant"]
+      },
+      {
+        "id": "se_wanted_elsewhere",
+        "label": "Wanted in a distant city",
+        "weight": 2
+      },
+      {
+        "id": "se_smuggling_side",
+        "label": "Quietly runs a smuggling sideline",
+        "weight": 2,
+        "tags": ["dockside", "crime"]
+      },
+      {
+        "id": "se_illegitimate_heir",
+        "label": "Illegitimate heir to a minor title",
+        "weight": 1,
+        "tags": ["nobility"]
+      },
+      {
+        "id": "se_black_book",
+        "label": "Keeps a ‘black book’ of clients and bribes",
+        "weight": 2,
+        "tags": ["crime", "luxury", "finance"]
+      },
+      {
+        "id": "se_debt_to_demon",
+        "label": "Signed away something vital for power",
+        "weight": 1,
+        "tags": ["forbidden", "low_magic"]
+      }
+    ],
+
+    "quirks": [
+      {
+        "id": "q_ledger",
+        "label": "Writes everything into a tiny ledger",
+        "weight": 3,
+        "tags": ["merchant"]
+      },
+      {
+        "id": "q_whistles",
+        "label": "Whistles between sentences",
+        "weight": 2
+      },
+      {
+        "id": "q_exact_change",
+        "label": "Insists on exact change",
+        "weight": 2,
+        "tags": ["merchant", "law"]
+      },
+      {
+        "id": "q_stares_distance",
+        "label": "Stares into the middle distance mid-talk",
+        "weight": 2
+      },
+      {
+        "id": "q_flour_dusted",
+        "label": "Always a little dusted with flour or dust",
+        "weight": 2,
+        "tags": ["craft", "food"]
+      },
+      {
+        "id": "q_coin_flick",
+        "label": "Flicks a coin while thinking",
+        "weight": 2,
+        "tags": ["finance", "merchant"]
+      },
+      {
+        "id": "q_salt_slang",
+        "label": "Sprinkles in salty dock slang",
+        "weight": 2,
+        "tags": ["dockside"]
+      },
+      {
+        "id": "q_counts_steps",
+        "label": "Counts steps under their breath",
+        "weight": 1
+      },
+      {
+        "id": "q_herb_pouches",
+        "label": "Keeps mystery herb pouches on a cord",
+        "weight": 1,
+        "tags": ["healing", "rural"]
+      }
+    ],
+
+    "speech_patterns": [
+      {
+        "id": "sp_circular",
+        "label": "Speaks in circular stories",
+        "weight": 3
+      },
+      {
+        "id": "sp_clipped",
+        "label": "Clipped, official tone",
+        "weight": 4,
+        "tags": ["law"]
+      },
+      {
+        "id": "sp_proverbs",
+        "label": "Uses rustic proverbs constantly",
+        "weight": 3,
+        "tags": ["rural"]
+      },
+      {
+        "id": "sp_murmurs",
+        "label": "Murmurs and avoids names",
+        "weight": 2,
+        "tags": ["crime"]
+      },
+      {
+        "id": "sp_honeyed",
+        "label": "Honeyed flattery conceals barbs",
+        "weight": 2,
+        "tags": ["nobility", "luxury"]
+      },
+      {
+        "id": "sp_ominous",
+        "label": "Lowers voice on ominous words",
+        "weight": 1,
+        "tags": ["forbidden", "ruins"]
+      }
+    ],
+
+    "appearance_hooks": [
+      {
+        "id": "ah_scar_brow",
+        "label": "Hairline scar across eyebrow",
+        "weight": 4
+      },
+      {
+        "id": "ah_ink_stains",
+        "label": "Ink-stained fingers",
+        "weight": 3,
+        "tags": ["scribe", "merchant", "finance"]
+      },
+      {
+        "id": "ah_patched_cloak",
+        "label": "Cloak patched with careful stitches",
+        "weight": 3
+      },
+      {
+        "id": "ah_burn_scars",
+        "label": "Old burn scars on forearms",
+        "weight": 3,
+        "tags": ["blacksmith", "heat", "craft"]
+      },
+      {
+        "id": "ah_telltale_ash",
+        "label": "Ash-dusted boots, always",
+        "weight": 2,
+        "tags": ["low_magic", "forbidden"]
+      },
+      {
+        "id": "ah_fine_signet",
+        "label": "Fine signet ring polished daily",
+        "weight": 2,
+        "tags": ["nobility", "finance"]
+      }
+    ],
+
+    "attitudes": [
+      { "id": "at_wary", "label": "Wary but persuadable", "weight": 6 },
+      { "id": "at_brisk", "label": "Brisk and no-nonsense", "weight": 4 },
+      { "id": "at_suspicious", "label": "Suspicious and probing", "weight": 3 },
+      {
+        "id": "at_genial",
+        "label": "Genial and welcoming",
+        "weight": 4,
+        "tags": ["hospitality", "merchant"]
+      },
+      {
+        "id": "at_proud",
+        "label": "Proud and easily slighted",
+        "weight": 2,
+        "tags": ["nobility"]
+      }
+    ],
+
+    "factions": [
+      {
+        "id": "fa_teamsters",
+        "label": "Teamsters’ Guild",
+        "weight": 4,
+        "tags": ["urban", "labor", "trade_route"]
+      },
+      {
+        "id": "fa_city_watch",
+        "label": "City Watch",
+        "weight": 6,
+        "tags": ["urban", "law"]
+      },
+      {
+        "id": "fa_river_clan",
+        "label": "River Clan",
+        "weight": 3,
+        "tags": ["riverport", "seaport", "dockside"]
+      },
+      {
+        "id": "fa_bakers_guild",
+        "label": "Bakers’ Guild",
+        "weight": 4,
+        "tags": ["urban", "merchant", "food"]
+      },
+      {
+        "id": "fa_bankers_guild",
+        "label": "Bankers’ Guild",
+        "weight": 3,
+        "tags": ["urban", "finance", "law"]
+      },
+      {
+        "id": "fa_salon_circle",
+        "label": "Salon Circle",
+        "weight": 1,
+        "tags": ["city", "luxury", "nobility"]
+      },
+      {
+        "id": "fa_thieves",
+        "label": "Quiet Knives",
+        "weight": 2,
+        "tags": ["city", "crime"]
+      },
+      {
+        "id": "fa_long_shadows",
+        "label": "Long Shadows",
+        "weight": 1,
+        "tags": ["forbidden", "ruins"]
+      }
+    ],
+
+    "micro_hooks": [
+      {
+        "id": "mh_late_shipment",
+        "label": "Their shipment is late; suspects sabotage",
+        "weight": 4,
+        "tags": ["merchant", "dockside"]
+      },
+      {
+        "id": "mh_bog_body",
+        "label": "Shepherd found a preserved bog body",
+        "weight": 2,
+        "tags": ["frontier", "ruins"]
+      },
+      {
+        "id": "mh_noble_decree",
+        "label": "New noble decree angers the market",
+        "weight": 3,
+        "tags": ["urban", "nobility"]
+      },
+      {
+        "id": "mh_stolen_ledger",
+        "label": "A ledger went missing the same night a rival prospered",
+        "weight": 3,
+        "tags": ["merchant", "finance"]
+      },
+      {
+        "id": "mh_sick_batch",
+        "label": "A batch made people ill; was it sabotage?",
+        "weight": 3,
+        "tags": ["food", "craft"]
+      },
+      {
+        "id": "mh_protection",
+        "label": "Someone demands 'protection' money",
+        "weight": 3,
+        "tags": ["crime", "dockside"]
+      },
+      {
+        "id": "mh_haunted_tools",
+        "label": "Tools scream or rattle at night, witnesses swear",
+        "weight": 1,
+        "tags": ["low_magic", "ruins"]
+      }
+    ],
+
+    "complications": [
+      {
+        "id": "co_innocent",
+        "label": "The presumed villain is actually innocent",
+        "weight": 3
+      },
+      {
+        "id": "co_false_rumor",
+        "label": "Local rumor is deliberately planted",
+        "weight": 3
+      },
+      {
+        "id": "co_hidden_patron",
+        "label": "A hidden patron manipulates events",
+        "weight": 2
+      },
+      {
+        "id": "co_quiet_bribes",
+        "label": "Quiet bribes keep matters from open court",
+        "weight": 2,
+        "tags": ["finance", "law"]
+      },
+      {
+        "id": "co_double_cross",
+        "label": "An ally intends a double-cross",
+        "weight": 2,
+        "tags": ["crime"]
+      },
+      {
+        "id": "co_infernal_clauses",
+        "label": "A contract has infernal small print",
+        "weight": 1,
+        "tags": ["forbidden", "law"]
+      }
+    ]
+  }
+}
