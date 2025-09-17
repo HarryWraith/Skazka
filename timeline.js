@@ -2,23 +2,34 @@
 
 /* ---------------- Utilities ---------------- */
 const escapeHTML = (s = "") =>
-  s.replace(/[&<>"']/g, ch =>
-    ({ "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;" }[ch])
+  s.replace(
+    /[&<>"']/g,
+    (ch) =>
+      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[
+        ch
+      ])
   );
 
 // Accept array or {events:[...]} or {timeline:[...]}
 function normalizeData(raw) {
-  const list = Array.isArray(raw) ? raw
-             : Array.isArray(raw?.events) ? raw.events
-             : Array.isArray(raw?.timeline) ? raw.timeline
-             : [];
-  return list.map(i => ({
-    year:   i.year   ?? i.date ?? i.when ?? "",
-    title:  i.title  ?? i.name ?? i.heading ?? "",
+  const list = Array.isArray(raw)
+    ? raw
+    : Array.isArray(raw?.events)
+    ? raw.events
+    : Array.isArray(raw?.timeline)
+    ? raw.timeline
+    : [];
+  return list.map((i) => ({
+    year: i.year ?? i.date ?? i.when ?? "",
+    title: i.title ?? i.name ?? i.heading ?? "",
     detail: i.detail ?? i.details ?? i.text ?? i.description ?? "",
-    html:   !!i.html,
+    html: !!i.html,
     // epoch flags we’ll recognize
-    epoch:  !!(i.epoch || i.is_epoch || (typeof i.kind === "string" && i.kind.toLowerCase() === "epoch"))
+    epoch: !!(
+      i.epoch ||
+      i.is_epoch ||
+      (typeof i.kind === "string" && i.kind.toLowerCase() === "epoch")
+    ),
   }));
 }
 
@@ -29,7 +40,7 @@ function makeEvent({ year, title, detail, html, epoch }, idx) {
   if (epoch) ev.classList.add("event--epoch");
   ev.dataset.id = idx;
 
-  const safeYear  = escapeHTML(String(year));
+  const safeYear = escapeHTML(String(year));
   const safeTitle = escapeHTML(String(title));
 
   ev.innerHTML = `
@@ -50,13 +61,14 @@ function makeEvent({ year, title, detail, html, epoch }, idx) {
     const right = document.createElement("span");
     left.className = "ornament ornament--left";
     right.className = "ornament ornament--right";
-    left.setAttribute("aria-hidden","true");
-    right.setAttribute("aria-hidden","true");
+    left.setAttribute("aria-hidden", "true");
+    right.setAttribute("aria-hidden", "true");
     header.append(left, right);
   }
 
-  detailsEl.innerHTML = html ? String(detail)
-                             : escapeHTML(String(detail)).replace(/\n/g,"<br>");
+  detailsEl.innerHTML = html
+    ? String(detail)
+    : escapeHTML(String(detail)).replace(/\n/g, "<br>");
 
   // Default OPEN
   ev.classList.add("open");
@@ -81,8 +93,11 @@ function makeEvent({ year, title, detail, html, epoch }, idx) {
     Branches.scheduleBurst();
   };
   header.addEventListener("click", toggle);
-  header.addEventListener("keydown", e => {
-    if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); }
+  header.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      toggle();
+    }
   });
 
   return ev;
@@ -93,7 +108,7 @@ function renderTimeline(list) {
   const host = document.getElementById("timeline");
   if (!host) return;
 
-  host.querySelectorAll(".event").forEach(n => n.remove());
+  host.querySelectorAll(".event").forEach((n) => n.remove());
   const frag = document.createDocumentFragment();
   list.forEach((item, i) => frag.appendChild(makeEvent(item, i)));
   host.appendChild(frag);
@@ -103,19 +118,25 @@ function renderTimeline(list) {
 
   const cards = host.querySelectorAll(".event");
   if ("IntersectionObserver" in window) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add("in-view"); io.unobserve(e.target); }
-      });
-    }, { threshold: 0.15 });
-    cards.forEach(c => io.observe(c));
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("in-view");
+            io.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    cards.forEach((c) => io.observe(c));
   } else {
-    cards.forEach(c => c.classList.add("in-view"));
+    cards.forEach((c) => c.classList.add("in-view"));
   }
 
   if ("MutationObserver" in window) {
     const mo = new MutationObserver(() => Branches.scheduleBurst());
-    mo.observe(host, { childList:true, subtree:true, characterData:true });
+    mo.observe(host, { childList: true, subtree: true, characterData: true });
   }
 
   Branches.scheduleBurst();
@@ -128,9 +149,9 @@ const Branches = (() => {
   function ensureSvg(tl) {
     let svg = tl.querySelector("#tl-branches");
     if (!svg) {
-      svg = document.createElementNS("http://www.w3.org/2000/svg","svg");
+      svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
       svg.id = "tl-branches";
-      svg.setAttribute("preserveAspectRatio","none");
+      svg.setAttribute("preserveAspectRatio", "none");
       tl.prepend(svg);
     }
     return svg;
@@ -144,7 +165,11 @@ const Branches = (() => {
 
     const rect = tl.getBoundingClientRect();
     const W = Math.round(tl.clientWidth || rect.width || 0);
-    const H = Math.max(tl.scrollHeight, tl.clientHeight, Math.round(rect.height));
+    const H = Math.max(
+      tl.scrollHeight,
+      tl.clientHeight,
+      Math.round(rect.height)
+    );
     svg.setAttribute("width", W);
     svg.setAttribute("height", H);
     svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
@@ -155,19 +180,21 @@ const Branches = (() => {
     const headers = tl.querySelectorAll(".event .event-header");
 
     const rectTL = tl.getBoundingClientRect();
-    headers.forEach(header => {
+    headers.forEach((header) => {
       const hRect = header.getBoundingClientRect();
       const titleEl = header.querySelector(".event-title");
 
       const y = titleEl
-        ? (titleEl.getBoundingClientRect().top - rectTL.top) + (titleEl.getBoundingClientRect().height / 2)
-        : (hRect.top - rectTL.top) + (hRect.height / 2);
+        ? titleEl.getBoundingClientRect().top -
+          rectTL.top +
+          titleEl.getBoundingClientRect().height / 2
+        : hRect.top - rectTL.top + hRect.height / 2;
 
-      const left  = (hRect.left  - rectTL.left);
-      const right = (hRect.right - rectTL.left);
-      const onRight = ((left + right) / 2) > centerX;
+      const left = hRect.left - rectTL.left;
+      const right = hRect.right - rectTL.left;
+      const onRight = (left + right) / 2 > centerX;
 
-      const endX   = onRight ? left : right;
+      const endX = onRight ? left : right;
       const startX = centerX;
 
       const dx = Math.abs(endX - startX);
@@ -175,16 +202,22 @@ const Branches = (() => {
       const s = onRight ? 1 : -1;
 
       const c1x = startX + s * CURVE * 0.55;
-      const c2x = endX   - s * CURVE * 0.25;
+      const c2x = endX - s * CURVE * 0.25;
 
-      const path = document.createElementNS("http://www.w3.org/2000/svg","path");
-      path.setAttribute("d", `M ${startX},${y} C ${c1x},${y} ${c2x},${y} ${endX},${y}`);
+      const path = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "path"
+      );
+      path.setAttribute(
+        "d",
+        `M ${startX},${y} C ${c1x},${y} ${c2x},${y} ${endX},${y}`
+      );
 
       // Make epoch branches thicker/brighter
       if (header.closest(".event")?.classList.contains("event--epoch")) {
-        path.setAttribute("class","branch branch--epoch");
+        path.setAttribute("class", "branch branch--epoch");
       } else {
-        path.setAttribute("class","branch");
+        path.setAttribute("class", "branch");
       }
       svg.appendChild(path);
     });
@@ -213,7 +246,9 @@ const Branches = (() => {
     if (!tl) return;
     tl.addEventListener("tl:rendered", scheduleBurst);
     window.addEventListener("load", scheduleBurst);
-    document.addEventListener("visibilitychange", () => { if (!document.hidden) scheduleBurst(); });
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden) scheduleBurst();
+    });
     window.addEventListener("resize", scheduleBurst);
     window.addEventListener("scroll", scheduleBurst, { passive: true });
     if ("ResizeObserver" in window) {
@@ -230,7 +265,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   Branches.watch();
 
   try {
-    const res = await fetch("timeline.json", { cache: "no-store" });
+    const res = await fetch("data/timeline.json", { cache: "no-store" });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = normalizeData(await res.json());
     renderTimeline(data);
