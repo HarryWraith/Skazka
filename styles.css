@@ -78,14 +78,10 @@ html {
 /* Title/heading style (unchanged) */
 .skz-vk-th {
   padding: 14px 0;
-  font-family: "Jura", system-ui, Segoe UI, Roboto, Arial, sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: .08em;
   color: var(--sb-gold-strong);
-  text-shadow:
-    0 0 0.5px rgba(0, 0, 0, .5),
-    0 0 10px color-mix(in srgb, var(--sb-gold-strong) 18%, transparent);
   position: relative;
 }
 
@@ -272,7 +268,6 @@ button {
   --skz-accent: var(--sb-gold-strong, #d6b36a);
   --skz-text: var(--sb-text, #e6dccb);
   --skz-muted: var(--sb-dim, #b9b09e);
-
   margin: 0;
   padding: 0;
   list-style: none;
@@ -288,10 +283,11 @@ button {
   grid-template-columns: auto 1fr;
   align-items: baseline;
   column-gap: 0.75rem;
-
   margin: 0.25rem 0;
   padding: 0.35rem 0.75rem 0.35rem 0;
   border-left: 2px solid color-mix(in srgb, var(--skz-accent) 75%, transparent);
+  color: var(--sb-dim);
+  font-size: 1.3rem;
 }
 
 .toc-list>li::before {

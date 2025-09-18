@@ -1,0 +1,2183 @@
+[
+  {
+    "name": "Glowshelf",
+    "description": "Bioluminescent bracket fungus forming tiered shelves along damp cavern walls; edges glow with a steady pearl-blue light.",
+    "rarity": "Uncommon",
+    "type": ["medicinal", "enhancer"],
+    "habitats": { "Underdark": 100 }
+  },
+  {
+    "name": "Umbercap",
+    "description": "Thick-stemmed, umber-brown mushroom with a matte, velvety cap and pale gills; often clustered in ringlets.",
+    "rarity": "Uncommon",
+    "type": ["medicinal", "enhancer"],
+    "habitats": { "Underdark": 100 }
+  },
+  {
+    "name": "Whispermold",
+    "description": "Thin gray, felt-like mold that drapes over stone in veils; surface shows fine concentric ripples.",
+    "rarity": "Rare",
+    "type": ["toxin", "enhancer"],
+    "habitats": { "Underdark": 100 }
+  },
+  {
+    "name": "Blacklace Moss",
+    "description": "Delicate moss like dark filigree, weaving lacework patterns over stalagmites; fronds split into intricate nets.",
+    "rarity": "Uncommon",
+    "type": ["medicinal"],
+    "habitats": { "Underdark": 100 }
+  },
+  {
+    "name": "Fangsprout",
+    "description": "Pale sprig studded with toothlike thorns; nodes bead with milky sap that crusts into chalky flecks.",
+    "rarity": "Rare",
+    "type": ["toxin", "enhancer"],
+    "habitats": { "Underdark": 100 }
+  },
+  {
+    "name": "Veinbloom",
+    "description": "Translucent petals veined like marble, each petal faintly luminous; blooms hang in drooping clusters.",
+    "rarity": "Very Rare",
+    "type": ["medicinal"],
+    "habitats": { "Underdark": 100 }
+  },
+  {
+    "name": "Shiverstalk",
+    "description": "Slender porcelain-white toadstool with frost-flecked gills and a glassy, brittle stem.",
+    "rarity": "Rare",
+    "type": ["toxin", "enhancer"],
+    "habitats": { "Underdark": 100 }
+  },
+  {
+    "name": "Mycon Lace",
+    "description": "Fine fungal threads spanning gaps like cobwebs; strands glisten with dew-like droplets.",
+    "rarity": "Very Rare",
+    "type": ["medicinal", "enhancer"],
+    "habitats": { "Underdark": 100 }
+  },
+  {
+    "name": "Griefspore",
+    "description": "Dusky puffballs with a sooty bloom; the slightest touch sends up a thin cloud of gray dust.",
+    "rarity": "Rare",
+    "type": ["toxin"],
+    "habitats": { "Underdark": 100 }
+  },
+  {
+    "name": "Stonewort",
+    "description": "Tiny, gritty herb with pebble-like nodes and stubby leaves rooting in calcified cracks.",
+    "rarity": "Uncommon",
+    "type": ["medicinal", "enhancer"],
+    "habitats": { "Underdark": 100 }
+  },
+  {
+    "name": "Ebontruffle",
+    "description": "Knobbly black truffle with faint metallic sheen; flesh marbled charcoal and slate.",
+    "rarity": "Very Rare",
+    "type": ["medicinal", "enhancer"],
+    "habitats": { "Underdark": 100 }
+  },
+  {
+    "name": "Lurker’s Ivy",
+    "description": "Colorless vine with translucent, sucker-like pads; trails across ceilings in looping swags.",
+    "rarity": "Rare",
+    "type": ["medicinal", "enhancer"],
+    "habitats": { "Underdark": 100 }
+  },
+
+  {
+    "name": "CrystalVine",
+    "description": "Creeping vine with translucent, shardlike leaves that catch and scatter light.",
+    "rarity": "Uncommon",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Forest": 25,
+      "Mountain": 35,
+      "Plains": 10,
+      "Desert": 20,
+      "Swamp": 10
+    }
+  },
+  {
+    "name": "BeechNettle",
+    "description": "Serrated green leaves beneath beech canopies; stems lined with fine, glassy hairs.",
+    "rarity": "Common",
+    "type": ["medicinal"],
+    "habitats": {
+      "Forest": 55,
+      "Plains": 20,
+      "Swamp": 10,
+      "Mountain": 10,
+      "Coast": 5
+    }
+  },
+  {
+    "name": "DreamThorn",
+    "description": "Tall, thorny stalks crowned with velvet-purple blossoms; petals curl inward at dusk.",
+    "rarity": "Rare",
+    "type": ["toxin", "enhancer"],
+    "habitats": {
+      "Forest": 20,
+      "Mountain": 20,
+      "Plains": 10,
+      "Swamp": 30,
+      "Coast": 20
+    }
+  },
+  {
+    "name": "SkyVine",
+    "description": "Silvery-blue vine clinging to crags; leaves are narrow and wind-frayed.",
+    "rarity": "Uncommon",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Mountain": 40,
+      "Coast": 30,
+      "Plains": 10,
+      "Forest": 10,
+      "Desert": 10
+    }
+  },
+  {
+    "name": "StarMist",
+    "description": "Night-luminous flower with a soft, shimmering haze; stamens sparkle in low light.",
+    "rarity": "Very Rare",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Mountain": 25,
+      "Plains": 25,
+      "Desert": 25,
+      "Coast": 15,
+      "Forest": 10
+    }
+  },
+  {
+    "name": "NightMist",
+    "description": "Creeping moss with bluish fronds that deepen in color as evening falls.",
+    "rarity": "Uncommon",
+    "type": ["medicinal"],
+    "habitats": {
+      "Swamp": 35,
+      "Forest": 30,
+      "Coast": 20,
+      "Mountain": 10,
+      "Plains": 5
+    }
+  },
+  {
+    "name": "ThunderShroom",
+    "description": "Stout mushroom with ragged gills splayed like lightning forks; cap pitted and matte.",
+    "rarity": "Rare",
+    "type": ["medicinal", "enhancer"],
+    "habitats": { "Mountain": 35, "Plains": 25, "Forest": 15, "Coast": 25 }
+  },
+  {
+    "name": "FeyBerries",
+    "description": "Small berries that glow faintly, shifting through hues beneath shaded boughs.",
+    "rarity": "Very Rare",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Forest": 55,
+      "Plains": 10,
+      "Swamp": 20,
+      "Coast": 5,
+      "Mountain": 10
+    }
+  },
+  {
+    "name": "SirenBloom",
+    "description": "Seafoam-green blossoms with hollow, fluted petals that whistle in strong coastal wind.",
+    "rarity": "Rare",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Coast": 55,
+      "Forest": 20,
+      "Plains": 10,
+      "Swamp": 10,
+      "Mountain": 5
+    }
+  },
+  {
+    "name": "CinderFlower",
+    "description": "Charcoal-gray blooms in ashy soil; petals edged with ember-like speckling.",
+    "rarity": "Uncommon",
+    "type": ["medicinal"],
+    "habitats": { "Mountain": 40, "Desert": 30, "Plains": 20, "Forest": 10 }
+  },
+  {
+    "name": "VenomMushroom",
+    "description": "Pale, cream cap dappled with olive spots; a waxy sheen coats the gills.",
+    "rarity": "Rare",
+    "type": ["toxin", "enhancer"],
+    "habitats": {
+      "Swamp": 45,
+      "Forest": 30,
+      "Plains": 10,
+      "Mountain": 10,
+      "Coast": 5
+    }
+  },
+  {
+    "name": "OrchidRoot",
+    "description": "Gnarled, knuckled root beneath delicate woodland orchids; rings pale and concentric.",
+    "rarity": "Uncommon",
+    "type": ["medicinal"],
+    "habitats": { "Forest": 65, "Swamp": 20, "Coast": 10, "Plains": 5 }
+  },
+  {
+    "name": "EmeraldBerries",
+    "description": "Clusters of glossy emerald-green berries with faceted skins like cut glass.",
+    "rarity": "Rare",
+    "type": ["medicinal"],
+    "habitats": {
+      "Forest": 45,
+      "Plains": 20,
+      "Swamp": 20,
+      "Mountain": 10,
+      "Coast": 5
+    }
+  },
+  {
+    "name": "TwilightFern",
+    "description": "Fern with dusky purple fronds that curl inward at sundown into tight scrolls.",
+    "rarity": "Uncommon",
+    "type": ["medicinal"],
+    "habitats": { "Forest": 55, "Swamp": 30, "Plains": 10, "Mountain": 5 }
+  },
+  {
+    "name": "SpecterBloom",
+    "description": "Ghost-white petals on a thin, upright stem; blooms hold a faint, opaline glaze.",
+    "rarity": "Very Rare",
+    "type": ["toxin", "enhancer"],
+    "habitats": { "Swamp": 30, "Forest": 25, "Plains": 25, "Mountain": 20 }
+  },
+  {
+    "name": "LightLeaf",
+    "description": "Bright green leaves laced with faintly glowing veins; edges serrated and soft.",
+    "rarity": "Common",
+    "type": ["medicinal"],
+    "habitats": {
+      "Plains": 35,
+      "Forest": 35,
+      "Mountain": 15,
+      "Swamp": 10,
+      "Coast": 5
+    }
+  },
+  {
+    "name": "PoisonRoot",
+    "description": "Dark, tarry root that bleeds inky sap when sliced; skin rough and ridged.",
+    "rarity": "Rare",
+    "type": ["toxin"],
+    "habitats": {
+      "Swamp": 35,
+      "Forest": 25,
+      "Mountain": 20,
+      "Plains": 15,
+      "Coast": 5
+    }
+  },
+  {
+    "name": "DuskLeaf",
+    "description": "Soft, blue-tinged leaves on low steppe shrubs; undersides powdered with silver bloom.",
+    "rarity": "Uncommon",
+    "type": ["medicinal"],
+    "habitats": {
+      "Forest": 40,
+      "Plains": 35,
+      "Swamp": 10,
+      "Coast": 10,
+      "Mountain": 5
+    }
+  },
+  {
+    "name": "MiasmaMoss",
+    "description": "Thick, olive mat of moss clinging to swamp roots; gives off a pungent, peaty odor.",
+    "rarity": "Rare",
+    "type": ["toxin"],
+    "habitats": { "Swamp": 55, "Coast": 20, "Forest": 15, "Mountain": 10 }
+  },
+  {
+    "name": "Witchthorn",
+    "description": "Twisted shrub threaded with long black thorns; berries glow a faint amber at night.",
+    "rarity": "Rare",
+    "type": ["toxin", "enhancer"],
+    "habitats": {
+      "Forest": 45,
+      "Swamp": 20,
+      "Mountain": 15,
+      "Plains": 10,
+      "Coast": 10
+    }
+  },
+  {
+    "name": "GhostLily",
+    "description": "Moon-pale lily with long, drooping petals; pollen dusts fingertips silver.",
+    "rarity": "Very Rare",
+    "type": ["toxin", "enhancer"],
+    "habitats": { "Swamp": 55, "Forest": 20, "Plains": 10, "Mountain": 15 }
+  },
+  {
+    "name": "BloodIvy",
+    "description": "Crimson ivy that stains skin on contact; leaves shaped like arrowheads.",
+    "rarity": "Rare",
+    "type": ["toxin", "enhancer"],
+    "habitats": {
+      "Forest": 35,
+      "Plains": 20,
+      "Mountain": 20,
+      "Swamp": 15,
+      "Coast": 10
+    }
+  },
+  {
+    "name": "EmberFern",
+    "description": "Sturdy fronds veined like banked coals; frond tips char at the edges.",
+    "rarity": "Uncommon",
+    "type": ["medicinal"],
+    "habitats": { "Mountain": 45, "Desert": 30, "Plains": 20, "Forest": 5 }
+  },
+  {
+    "name": "Moonpetal",
+    "description": "Silvery-blue blossom that unfurls only under a full moon; petals mirror the night sky.",
+    "rarity": "Legendary",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Forest": 30,
+      "Plains": 20,
+      "Swamp": 20,
+      "Mountain": 20,
+      "Desert": 10
+    }
+  },
+  {
+    "name": "Sunfern",
+    "description": "Golden fronds that arc toward the sun; stems ridged and sun-warm to the touch.",
+    "rarity": "Common",
+    "type": ["medicinal"],
+    "habitats": {
+      "Plains": 35,
+      "Desert": 30,
+      "Coast": 15,
+      "Forest": 10,
+      "Mountain": 10
+    }
+  },
+
+  {
+    "name": "Honeycap",
+    "description": "Amber-capped mushroom with a slight translucence; gills arranged in tidy, radiating lines.",
+    "rarity": "Common",
+    "type": ["medicinal"],
+    "habitats": { "Forest": 50, "Plains": 25, "Swamp": 15, "Coast": 10 }
+  },
+  {
+    "name": "Bitterroot",
+    "description": "Knotted, ochre root with fibrous rings and a flaky outer skin.",
+    "rarity": "Uncommon",
+    "type": ["medicinal"],
+    "habitats": { "Plains": 40, "Forest": 25, "Mountain": 20, "Desert": 15 }
+  },
+  {
+    "name": "Stormmorel",
+    "description": "Pitted morel with tall honeycomb cap; stems pale and hollow.",
+    "rarity": "Rare",
+    "type": ["medicinal", "enhancer"],
+    "habitats": { "Plains": 35, "Forest": 35, "Coast": 20, "Mountain": 10 }
+  },
+  {
+    "name": "Blightcap",
+    "description": "Sooty, brittle mushroom whose cap flakes like charcoal.",
+    "rarity": "Uncommon",
+    "type": ["toxin"],
+    "habitats": { "Swamp": 45, "Forest": 35, "Plains": 20 }
+  },
+  {
+    "name": "Seawhip Kelp",
+    "description": "Long, whiplike fronds with bubble-like floats; fronds tangle into braided ribbons.",
+    "rarity": "Uncommon",
+    "type": ["medicinal", "enhancer"],
+    "habitats": { "Coast": 100 }
+  },
+  {
+    "name": "Glassroot",
+    "description": "Translucent root with prismatic fibers; segments snap with a clean, glassy break.",
+    "rarity": "Rare",
+    "type": ["medicinal"],
+    "habitats": { "Desert": 55, "Plains": 25, "Mountain": 20 }
+  },
+  {
+    "name": "Frostbeard Lichen",
+    "description": "Pale, icy lichen that bristles like a frozen beard along high stone faces.",
+    "rarity": "Uncommon",
+    "type": ["medicinal"],
+    "habitats": { "Mountain": 70, "Forest": 15, "Plains": 15 }
+  },
+  {
+    "name": "Serpent Truffle",
+    "description": "Green-marbled truffle with sinuous striations; firm, springy flesh.",
+    "rarity": "Very Rare",
+    "type": ["medicinal", "enhancer"],
+    "habitats": { "Forest": 50, "Swamp": 30, "Plains": 20 }
+  },
+  {
+    "name": "Ashen Puff",
+    "description": "Round puffball filled with fine ash-gray spores; outer skin thin and papery.",
+    "rarity": "Uncommon",
+    "type": ["toxin", "enhancer"],
+    "habitats": { "Desert": 40, "Mountain": 30, "Plains": 30 }
+  },
+  {
+    "name": "Marshsnare Root",
+    "description": "Fibrous swamp root with long, ribbon-like strands that coil around nearby reeds.",
+    "rarity": "Common",
+    "type": ["medicinal"],
+    "habitats": { "Swamp": 70, "Forest": 20, "Coast": 10 }
+  },
+  {
+    "name": "Gullscream Fungus",
+    "description": "White shore fungus with blade-thin caps that vibrate in gusting sea wind.",
+    "rarity": "Rare",
+    "type": ["toxin", "enhancer"],
+    "habitats": { "Coast": 80, "Forest": 10, "Plains": 10 }
+  },
+  {
+    "name": "Saffron Bulb",
+    "description": "Golden bulbs splaying crimson threads from their centers; skins papery and thin.",
+    "rarity": "Uncommon",
+    "type": ["medicinal"],
+    "habitats": { "Plains": 60, "Desert": 25, "Forest": 15 }
+  },
+  {
+    "name": "Needlecap",
+    "description": "Tall, narrow mushroom with a pinched tip and straight, tightly packed gills.",
+    "rarity": "Common",
+    "type": ["medicinal", "enhancer"],
+    "habitats": { "Forest": 45, "Plains": 35, "Coast": 20 }
+  },
+  {
+    "name": "Saltshade",
+    "description": "Shadowy, low succulent dusted with salt; leaves thick, triangular, and mottled.",
+    "rarity": "Rare",
+    "type": ["toxin"],
+    "habitats": { "Desert": 60, "Coast": 40 }
+  },
+  {
+    "name": "Honey root",
+    "description": "Twisted roots with glassy, russet surfaces and fan-shaped forms, commonly found along fallen logs.",
+    "rarity": "Common",
+    "type": ["medicinal"],
+    "habitats": {
+      "Forest": 59,
+      "Plains": 16,
+      "Swamp": 12,
+      "Mountain": 9,
+      "Coast": 4
+    }
+  },
+  {
+    "name": "Moss fern",
+    "description": "Fern fronds with fibrous, amber surfaces and ridged forms, commonly found under leaf litter.",
+    "rarity": "Uncommon",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Forest": 59,
+      "Plains": 16,
+      "Swamp": 15,
+      "Mountain": 6,
+      "Coast": 4
+    }
+  },
+  {
+    "name": "Shadow truffle",
+    "description": "Knobbed truffles with ribbed, amber surfaces and scrolling forms, commonly found on shaded trunks.",
+    "rarity": "Common",
+    "type": ["medicinal"],
+    "habitats": {
+      "Forest": 63,
+      "Plains": 15,
+      "Swamp": 13,
+      "Mountain": 5,
+      "Coast": 4
+    }
+  },
+  {
+    "name": "Thorn-bramble",
+    "description": "Brambly canes with glassy, dappled surfaces and broad forms, commonly found beneath evergreen boughs.",
+    "rarity": "Uncommon",
+    "type": ["toxin", "enhancer"],
+    "habitats": {
+      "Forest": 59,
+      "Plains": 13,
+      "Swamp": 17,
+      "Mountain": 7,
+      "Coast": 5
+    }
+  },
+  {
+    "name": "Briar moss",
+    "description": "Low moss mats with spiny, moss-green surfaces and fan-shaped forms, commonly found on shaded trunks.",
+    "rarity": "Legendary",
+    "type": ["toxin", "enhancer"],
+    "habitats": {
+      "Forest": 61,
+      "Plains": 13,
+      "Swamp": 16,
+      "Mountain": 7,
+      "Coast": 4
+    }
+  },
+  {
+    "name": "HoneyBramble",
+    "description": "Brambly canes with matte, ivy-dark surfaces and fan-shaped forms, commonly found on shaded trunks.",
+    "rarity": "Rare",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Forest": 58,
+      "Plains": 17,
+      "Swamp": 14,
+      "Mountain": 9,
+      "Coast": 2
+    }
+  },
+  {
+    "name": "LeafSeed",
+    "description": "Ridged seeds with spiny, ivy-dark surfaces and ridged forms, commonly found along fallen logs.",
+    "rarity": "Rare",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Forest": 64,
+      "Plains": 13,
+      "Swamp": 14,
+      "Mountain": 5,
+      "Coast": 3
+    }
+  },
+  {
+    "name": "Whisper truffle",
+    "description": "Knobbed truffles with marbled, amber surfaces and clustered forms, commonly found along fallen logs.",
+    "rarity": "Uncommon",
+    "type": ["medicinal"],
+    "habitats": {
+      "Forest": 61,
+      "Plains": 16,
+      "Swamp": 14,
+      "Mountain": 7,
+      "Coast": 2
+    }
+  },
+  {
+    "name": "Dapple-thorn",
+    "description": "Hooked thorns with marbled, russet surfaces and scrolling forms, commonly found beneath evergreen boughs.",
+    "rarity": "Uncommon",
+    "type": ["toxin", "enhancer"],
+    "habitats": {
+      "Forest": 60,
+      "Plains": 18,
+      "Swamp": 16,
+      "Mountain": 5,
+      "Coast": 1
+    }
+  },
+  {
+    "name": "ThornBerry",
+    "description": "Small berries with shaggy, russet surfaces and thorny forms, commonly found under leaf litter.",
+    "rarity": "Uncommon",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Forest": 59,
+      "Plains": 17,
+      "Swamp": 15,
+      "Mountain": 9,
+      "Coast": 1
+    }
+  },
+  {
+    "name": "Crown-root",
+    "description": "Twisted roots with matte, russet surfaces and needle-thin forms, commonly found on shaded trunks.",
+    "rarity": "Uncommon",
+    "type": ["toxin"],
+    "habitats": {
+      "Forest": 59,
+      "Plains": 14,
+      "Swamp": 16,
+      "Mountain": 6,
+      "Coast": 5
+    }
+  },
+  {
+    "name": "ThornIvy",
+    "description": "Clinging tendrils with matte, amber surfaces and bell-shaped forms, commonly found under leaf litter.",
+    "rarity": "Uncommon",
+    "type": ["toxin"],
+    "habitats": {
+      "Forest": 61,
+      "Plains": 16,
+      "Swamp": 16,
+      "Mountain": 6,
+      "Coast": 1
+    }
+  },
+  {
+    "name": "Dapple bark",
+    "description": "Peeling bark with speckled, russet surfaces and needle-thin forms, commonly found along fallen logs.",
+    "rarity": "Common",
+    "type": ["toxin"],
+    "habitats": {
+      "Forest": 59,
+      "Plains": 13,
+      "Swamp": 14,
+      "Mountain": 9,
+      "Coast": 5
+    }
+  },
+  {
+    "name": "GlimmerMoss",
+    "description": "Low moss mats with glassy, russet surfaces and scrolling forms, commonly found on shaded trunks.",
+    "rarity": "Uncommon",
+    "type": ["toxin"],
+    "habitats": {
+      "Forest": 61,
+      "Plains": 15,
+      "Swamp": 15,
+      "Mountain": 5,
+      "Coast": 3
+    }
+  },
+  {
+    "name": "AmberThorn",
+    "description": "Hooked thorns with fibrous, dappled surfaces and broad forms, commonly found under leaf litter.",
+    "rarity": "Rare",
+    "type": ["medicinal"],
+    "habitats": {
+      "Forest": 60,
+      "Plains": 14,
+      "Swamp": 16,
+      "Mountain": 5,
+      "Coast": 5
+    }
+  },
+  {
+    "name": "DappleTruffle",
+    "description": "Knobbed truffles with banded, amber surfaces and bell-shaped forms, commonly found beneath evergreen boughs.",
+    "rarity": "Common",
+    "type": ["toxin"],
+    "habitats": {
+      "Forest": 62,
+      "Plains": 15,
+      "Swamp": 14,
+      "Mountain": 5,
+      "Coast": 4
+    }
+  },
+  {
+    "name": "BriarBud",
+    "description": "Tight buds with downy, verdant surfaces and broad forms, commonly found under leaf litter.",
+    "rarity": "Common",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Forest": 64,
+      "Plains": 13,
+      "Swamp": 14,
+      "Mountain": 6,
+      "Coast": 2
+    }
+  },
+  {
+    "name": "SilkSeed",
+    "description": "Ridged seeds with papery, verdant surfaces and tufted forms, commonly found beneath evergreen boughs.",
+    "rarity": "Common",
+    "type": ["toxin", "enhancer"],
+    "habitats": {
+      "Forest": 60,
+      "Plains": 17,
+      "Swamp": 13,
+      "Mountain": 5,
+      "Coast": 5
+    }
+  },
+  {
+    "name": "AmberBark",
+    "description": "Peeling bark with shaggy, amber surfaces and lobed forms, commonly found beneath evergreen boughs.",
+    "rarity": "Common",
+    "type": ["toxin"],
+    "habitats": {
+      "Forest": 59,
+      "Plains": 15,
+      "Swamp": 17,
+      "Mountain": 5,
+      "Coast": 4
+    }
+  },
+  {
+    "name": "Stag-seed",
+    "description": "Ridged seeds with ribbed, verdant surfaces and ridged forms, commonly found beneath evergreen boughs.",
+    "rarity": "Common",
+    "type": ["medicinal"],
+    "habitats": {
+      "Forest": 58,
+      "Plains": 17,
+      "Swamp": 17,
+      "Mountain": 5,
+      "Coast": 3
+    }
+  },
+  {
+    "name": "StoneLichen",
+    "description": "Crusty lichen plates with downy, glacier-pale surfaces and ridged forms, commonly found on wind-scoured ledges.",
+    "rarity": "Common",
+    "type": ["toxin"],
+    "habitats": {
+      "Mountain": 58,
+      "Forest": 19,
+      "Desert": 13,
+      "Plains": 9,
+      "Coast": 1
+    }
+  },
+  {
+    "name": "Gale moss",
+    "description": "Low moss mats with fibrous, glacier-pale surfaces and thorny forms, commonly found in scree cracks.",
+    "rarity": "Uncommon",
+    "type": ["toxin"],
+    "habitats": {
+      "Mountain": 53,
+      "Forest": 21,
+      "Desert": 16,
+      "Plains": 7,
+      "Coast": 3
+    }
+  },
+  {
+    "name": "High-tuft",
+    "description": "Tufted crowns with glassy, frost-white surfaces and scrolling forms, commonly found on wind-scoured ledges.",
+    "rarity": "Rare",
+    "type": ["medicinal"],
+    "habitats": {
+      "Mountain": 55,
+      "Forest": 18,
+      "Desert": 13,
+      "Plains": 8,
+      "Coast": 5
+    }
+  },
+  {
+    "name": "Slate cap",
+    "description": "Domed caps with fibrous, glacier-pale surfaces and ridged forms, commonly found beneath overhangs.",
+    "rarity": "Common",
+    "type": ["medicinal"],
+    "habitats": {
+      "Mountain": 55,
+      "Forest": 20,
+      "Desert": 16,
+      "Plains": 7,
+      "Coast": 2
+    }
+  },
+  {
+    "name": "Shard-truffle",
+    "description": "Knobbed truffles with silken, glacier-pale surfaces and honeycombed forms, commonly found in scree cracks.",
+    "rarity": "Rare",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Mountain": 59,
+      "Forest": 19,
+      "Desert": 14,
+      "Plains": 7,
+      "Coast": 1
+    }
+  },
+  {
+    "name": "RimeCress",
+    "description": "Low rosettes with glassy, steel-blue surfaces and thorny forms, commonly found on wind-scoured ledges.",
+    "rarity": "Rare",
+    "type": ["medicinal"],
+    "habitats": {
+      "Mountain": 54,
+      "Forest": 19,
+      "Desert": 16,
+      "Plains": 8,
+      "Coast": 3
+    }
+  },
+  {
+    "name": "StoneCap",
+    "description": "Domed caps with velvety, steel-blue surfaces and broad forms, commonly found beneath overhangs.",
+    "rarity": "Rare",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Mountain": 53,
+      "Forest": 19,
+      "Desert": 16,
+      "Plains": 9,
+      "Coast": 4
+    }
+  },
+  {
+    "name": "Crystal lichen",
+    "description": "Crusty lichen plates with ribbed, slate-gray surfaces and bell-shaped forms, commonly found in scree cracks.",
+    "rarity": "Rare",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Mountain": 55,
+      "Forest": 22,
+      "Desert": 15,
+      "Plains": 5,
+      "Coast": 3
+    }
+  },
+  {
+    "name": "Skylit leaf",
+    "description": "Broad leaves with fibrous, steel-blue surfaces and honeycombed forms, commonly found on wind-scoured ledges.",
+    "rarity": "Rare",
+    "type": ["medicinal"],
+    "habitats": {
+      "Mountain": 55,
+      "Forest": 21,
+      "Desert": 17,
+      "Plains": 6,
+      "Coast": 2
+    }
+  },
+  {
+    "name": "CliffPuff",
+    "description": "Puffball spheres with velvety, granite-gray surfaces and bell-shaped forms, commonly found beneath overhangs.",
+    "rarity": "Rare",
+    "type": ["toxin"],
+    "habitats": {
+      "Mountain": 58,
+      "Forest": 19,
+      "Desert": 15,
+      "Plains": 6,
+      "Coast": 1
+    }
+  },
+  {
+    "name": "Glacier truffle",
+    "description": "Knobbed truffles with fibrous, granite-gray surfaces and fan-shaped forms, commonly found among alpine stones.",
+    "rarity": "Uncommon",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Mountain": 59,
+      "Forest": 19,
+      "Desert": 14,
+      "Plains": 5,
+      "Coast": 2
+    }
+  },
+  {
+    "name": "Glacier-needle",
+    "description": "Needle fans with silken, slate-gray surfaces and tufted forms, commonly found beneath overhangs.",
+    "rarity": "Uncommon",
+    "type": ["medicinal"],
+    "habitats": {
+      "Mountain": 57,
+      "Forest": 22,
+      "Desert": 15,
+      "Plains": 5,
+      "Coast": 1
+    }
+  },
+  {
+    "name": "Icicle-bloom",
+    "description": "Petaled blooms with waxy, slate-gray surfaces and thorny forms, commonly found among alpine stones.",
+    "rarity": "Uncommon",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Mountain": 53,
+      "Forest": 21,
+      "Desert": 17,
+      "Plains": 5,
+      "Coast": 4
+    }
+  },
+  {
+    "name": "Slate-root",
+    "description": "Twisted roots with ribbed, slate-gray surfaces and scrolling forms, commonly found in scree cracks.",
+    "rarity": "Uncommon",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Mountain": 57,
+      "Forest": 19,
+      "Desert": 15,
+      "Plains": 8,
+      "Coast": 1
+    }
+  },
+  {
+    "name": "Cloud-crown",
+    "description": "Plant structures with ribbed, slate-gray surfaces and tufted forms, commonly found beneath overhangs.",
+    "rarity": "Rare",
+    "type": ["medicinal"],
+    "habitats": {
+      "Mountain": 56,
+      "Forest": 20,
+      "Desert": 17,
+      "Plains": 6,
+      "Coast": 2
+    }
+  },
+  {
+    "name": "GraniteTuft",
+    "description": "Tufted crowns with marbled, frost-white surfaces and thorny forms, commonly found beneath overhangs.",
+    "rarity": "Uncommon",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Mountain": 53,
+      "Forest": 20,
+      "Desert": 14,
+      "Plains": 8,
+      "Coast": 5
+    }
+  },
+  {
+    "name": "Iron-tuft",
+    "description": "Tufted crowns with speckled, granite-gray surfaces and lobed forms, commonly found on wind-scoured ledges.",
+    "rarity": "Uncommon",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Mountain": 57,
+      "Forest": 19,
+      "Desert": 13,
+      "Plains": 7,
+      "Coast": 5
+    }
+  },
+  {
+    "name": "Iron needle",
+    "description": "Needle fans with spiny, frost-white surfaces and tufted forms, commonly found on wind-scoured ledges.",
+    "rarity": "Rare",
+    "type": ["medicinal"],
+    "habitats": {
+      "Mountain": 54,
+      "Forest": 20,
+      "Desert": 16,
+      "Plains": 9,
+      "Coast": 1
+    }
+  },
+  {
+    "name": "ShardMoss",
+    "description": "Low moss mats with speckled, granite-gray surfaces and scrolling forms, commonly found on wind-scoured ledges.",
+    "rarity": "Common",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Mountain": 58,
+      "Forest": 18,
+      "Desert": 16,
+      "Plains": 6,
+      "Coast": 2
+    }
+  },
+  {
+    "name": "Eagle berry",
+    "description": "Small berries with fibrous, glacier-pale surfaces and needle-thin forms, commonly found among alpine stones.",
+    "rarity": "Common",
+    "type": ["toxin"],
+    "habitats": {
+      "Mountain": 53,
+      "Forest": 21,
+      "Desert": 16,
+      "Plains": 7,
+      "Coast": 4
+    }
+  },
+  {
+    "name": "SickleBulb",
+    "description": "Bulbous hearts with ribbed, sage-green surfaces and lobed forms, commonly found among wind-bent reeds.",
+    "rarity": "Common",
+    "type": ["medicinal"],
+    "habitats": {
+      "Plains": 55,
+      "Forest": 19,
+      "Coast": 12,
+      "Desert": 11,
+      "Mountain": 4
+    }
+  },
+  {
+    "name": "Sun tuft",
+    "description": "Tufted crowns with fibrous, sun-bleached surfaces and tufted forms, commonly found in open meadows.",
+    "rarity": "Common",
+    "type": ["toxin"],
+    "habitats": {
+      "Plains": 55,
+      "Forest": 20,
+      "Coast": 9,
+      "Desert": 11,
+      "Mountain": 4
+    }
+  },
+  {
+    "name": "BuffReed",
+    "description": "Hollow reeds with matte, tan surfaces and ridged forms, commonly found among wind-bent reeds.",
+    "rarity": "Uncommon",
+    "type": ["medicinal"],
+    "habitats": {
+      "Plains": 53,
+      "Forest": 20,
+      "Coast": 12,
+      "Desert": 8,
+      "Mountain": 7
+    }
+  },
+  {
+    "name": "Dawn tuft",
+    "description": "Tufted crowns with glassy, sun-bleached surfaces and scrolling forms, commonly found among wind-bent reeds.",
+    "rarity": "Uncommon",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Plains": 56,
+      "Forest": 21,
+      "Coast": 9,
+      "Desert": 11,
+      "Mountain": 4
+    }
+  },
+  {
+    "name": "SunBulb",
+    "description": "Bulbous hearts with shaggy, straw-gold surfaces and clustered forms, commonly found among wind-bent reeds.",
+    "rarity": "Rare",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Plains": 52,
+      "Forest": 22,
+      "Coast": 12,
+      "Desert": 8,
+      "Mountain": 6
+    }
+  },
+  {
+    "name": "WindReed",
+    "description": "Hollow reeds with downy, sage-green surfaces and lobed forms, commonly found along field margins.",
+    "rarity": "Common",
+    "type": ["medicinal"],
+    "habitats": {
+      "Plains": 53,
+      "Forest": 21,
+      "Coast": 10,
+      "Desert": 10,
+      "Mountain": 6
+    }
+  },
+  {
+    "name": "SunBarley",
+    "description": "Plant structures with downy, sun-bleached surfaces and needle-thin forms, commonly found among wind-bent reeds.",
+    "rarity": "Common",
+    "type": ["toxin"],
+    "habitats": {
+      "Plains": 59,
+      "Forest": 21,
+      "Coast": 9,
+      "Desert": 9,
+      "Mountain": 3
+    }
+  },
+  {
+    "name": "Gold flower",
+    "description": "Open flowers with papery, wheat-gold surfaces and fan-shaped forms, commonly found along field margins.",
+    "rarity": "Uncommon",
+    "type": ["medicinal"],
+    "habitats": {
+      "Plains": 54,
+      "Forest": 21,
+      "Coast": 10,
+      "Desert": 10,
+      "Mountain": 4
+    }
+  },
+  {
+    "name": "WhistleBarley",
+    "description": "Plant structures with waxy, sun-bleached surfaces and thorny forms, commonly found in tall grasses.",
+    "rarity": "Very Rare",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Plains": 55,
+      "Forest": 21,
+      "Coast": 9,
+      "Desert": 8,
+      "Mountain": 7
+    }
+  },
+  {
+    "name": "Gold-reed",
+    "description": "Hollow reeds with silken, wheat-gold surfaces and needle-thin forms, commonly found in tall grasses.",
+    "rarity": "Uncommon",
+    "type": ["toxin"],
+    "habitats": {
+      "Plains": 56,
+      "Forest": 19,
+      "Coast": 12,
+      "Desert": 10,
+      "Mountain": 3
+    }
+  },
+  {
+    "name": "FieldBark",
+    "description": "Peeling bark with shaggy, straw-gold surfaces and clustered forms, commonly found among wind-bent reeds.",
+    "rarity": "Rare",
+    "type": ["toxin"],
+    "habitats": {
+      "Plains": 53,
+      "Forest": 20,
+      "Coast": 9,
+      "Desert": 11,
+      "Mountain": 6
+    }
+  },
+  {
+    "name": "WheatTuft",
+    "description": "Tufted crowns with glassy, wheat-gold surfaces and clustered forms, commonly found along field margins.",
+    "rarity": "Rare",
+    "type": ["medicinal"],
+    "habitats": {
+      "Plains": 53,
+      "Forest": 18,
+      "Coast": 11,
+      "Desert": 12,
+      "Mountain": 7
+    }
+  },
+  {
+    "name": "Dawn root",
+    "description": "Twisted roots with downy, tan surfaces and clustered forms, commonly found along field margins.",
+    "rarity": "Uncommon",
+    "type": ["medicinal"],
+    "habitats": {
+      "Plains": 53,
+      "Forest": 20,
+      "Coast": 10,
+      "Desert": 12,
+      "Mountain": 5
+    }
+  },
+  {
+    "name": "WanderGrass",
+    "description": "Arching blades with fibrous, straw-gold surfaces and scrolling forms, commonly found among wind-bent reeds.",
+    "rarity": "Uncommon",
+    "type": ["medicinal"],
+    "habitats": {
+      "Plains": 56,
+      "Forest": 21,
+      "Coast": 11,
+      "Desert": 8,
+      "Mountain": 3
+    }
+  },
+  {
+    "name": "PrairieFlower",
+    "description": "Open flowers with glassy, sage-green surfaces and honeycombed forms, commonly found in open meadows.",
+    "rarity": "Uncommon",
+    "type": ["toxin"],
+    "habitats": {
+      "Plains": 53,
+      "Forest": 21,
+      "Coast": 10,
+      "Desert": 10,
+      "Mountain": 6
+    }
+  },
+  {
+    "name": "Sun-bloom",
+    "description": "Petaled blooms with waxy, sage-green surfaces and fan-shaped forms, commonly found in open meadows.",
+    "rarity": "Common",
+    "type": ["toxin"],
+    "habitats": {
+      "Plains": 57,
+      "Forest": 19,
+      "Coast": 9,
+      "Desert": 9,
+      "Mountain": 6
+    }
+  },
+  {
+    "name": "Sun-thatch",
+    "description": "Plant structures with downy, straw-gold surfaces and fan-shaped forms, commonly found in open meadows.",
+    "rarity": "Common",
+    "type": ["medicinal"],
+    "habitats": {
+      "Plains": 54,
+      "Forest": 23,
+      "Coast": 9,
+      "Desert": 10,
+      "Mountain": 3
+    }
+  },
+  {
+    "name": "Steppe-moss",
+    "description": "Low moss mats with spiny, sage-green surfaces and lobed forms, commonly found in tall grasses.",
+    "rarity": "Very Rare",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Plains": 54,
+      "Forest": 21,
+      "Coast": 11,
+      "Desert": 10,
+      "Mountain": 4
+    }
+  },
+  {
+    "name": "SteppeBloom",
+    "description": "Petaled blooms with downy, straw-gold surfaces and needle-thin forms, commonly found among wind-bent reeds.",
+    "rarity": "Uncommon",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Plains": 57,
+      "Forest": 18,
+      "Coast": 9,
+      "Desert": 9,
+      "Mountain": 7
+    }
+  },
+  {
+    "name": "PrairieReed",
+    "description": "Hollow reeds with banded, straw-gold surfaces and scrolling forms, commonly found along field margins.",
+    "rarity": "Rare",
+    "type": ["medicinal"],
+    "habitats": {
+      "Plains": 53,
+      "Forest": 19,
+      "Coast": 12,
+      "Desert": 11,
+      "Mountain": 5
+    }
+  },
+  {
+    "name": "Black algae",
+    "description": "Stringy fronds with ribbed, black-green surfaces and needle-thin forms, commonly found along waterlogged roots.",
+    "rarity": "Uncommon",
+    "type": ["medicinal"],
+    "habitats": {
+      "Swamp": 61,
+      "Forest": 20,
+      "Coast": 12,
+      "Plains": 7
+    }
+  },
+  {
+    "name": "DripCap",
+    "description": "Domed caps with shaggy, olive surfaces and lobed forms, commonly found on spongy hummocks.",
+    "rarity": "Common",
+    "type": ["medicinal"],
+    "habitats": {
+      "Swamp": 61,
+      "Forest": 20,
+      "Coast": 13,
+      "Plains": 6
+    }
+  },
+  {
+    "name": "SoddenReed",
+    "description": "Hollow reeds with waxy, sodden umber surfaces and ridged forms, commonly found along waterlogged roots.",
+    "rarity": "Uncommon",
+    "type": ["toxin", "enhancer"],
+    "habitats": {
+      "Swamp": 64,
+      "Forest": 19,
+      "Coast": 10,
+      "Plains": 6
+    }
+  },
+  {
+    "name": "Peat-bark",
+    "description": "Peeling bark with ribbed, black-green surfaces and thorny forms, commonly found in reed-choked shallows.",
+    "rarity": "Uncommon",
+    "type": ["toxin"],
+    "habitats": {
+      "Swamp": 58,
+      "Forest": 21,
+      "Coast": 12,
+      "Plains": 10
+    }
+  },
+  {
+    "name": "DripBloom",
+    "description": "Petaled blooms with marbled, olive surfaces and broad forms, commonly found on spongy hummocks.",
+    "rarity": "Rare",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Swamp": 59,
+      "Forest": 19,
+      "Coast": 11,
+      "Plains": 10
+    }
+  },
+  {
+    "name": "Black-moss",
+    "description": "Low moss mats with velvety, black-green surfaces and bell-shaped forms, commonly found on spongy hummocks.",
+    "rarity": "Uncommon",
+    "type": ["toxin"],
+    "habitats": {
+      "Swamp": 58,
+      "Forest": 19,
+      "Coast": 14,
+      "Plains": 9
+    }
+  },
+  {
+    "name": "MarshCap",
+    "description": "Domed caps with shaggy, murky green surfaces and clustered forms, commonly found in reed-choked shallows.",
+    "rarity": "Rare",
+    "type": ["toxin", "enhancer"],
+    "habitats": {
+      "Swamp": 58,
+      "Forest": 21,
+      "Coast": 13,
+      "Plains": 8
+    }
+  },
+  {
+    "name": "Murk knot",
+    "description": "Gnarled knots with waxy, sodden umber surfaces and clustered forms, commonly found in reed-choked shallows.",
+    "rarity": "Uncommon",
+    "type": ["toxin", "enhancer"],
+    "habitats": {
+      "Swamp": 59,
+      "Forest": 22,
+      "Coast": 10,
+      "Plains": 10
+    }
+  },
+  {
+    "name": "Stink root",
+    "description": "Twisted roots with banded, peat-brown surfaces and clustered forms, commonly found on spongy hummocks.",
+    "rarity": "Uncommon",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Swamp": 59,
+      "Forest": 20,
+      "Coast": 14,
+      "Plains": 7
+    }
+  },
+  {
+    "name": "WillowBloom",
+    "description": "Petaled blooms with velvety, olive surfaces and honeycombed forms, commonly found along waterlogged roots.",
+    "rarity": "Rare",
+    "type": ["medicinal"],
+    "habitats": {
+      "Swamp": 58,
+      "Forest": 22,
+      "Coast": 13,
+      "Plains": 6
+    }
+  },
+  {
+    "name": "Sodden knot",
+    "description": "Gnarled knots with waxy, sodden umber surfaces and honeycombed forms, commonly found along waterlogged roots.",
+    "rarity": "Uncommon",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Swamp": 59,
+      "Forest": 19,
+      "Coast": 13,
+      "Plains": 9
+    }
+  },
+  {
+    "name": "MarshFungus",
+    "description": "Plant structures with papery, black-green surfaces and scrolling forms, commonly found along waterlogged roots.",
+    "rarity": "Very Rare",
+    "type": ["toxin"],
+    "habitats": {
+      "Swamp": 60,
+      "Forest": 19,
+      "Coast": 12,
+      "Plains": 9
+    }
+  },
+  {
+    "name": "Stagnant-bark",
+    "description": "Peeling bark with glassy, olive surfaces and tufted forms, commonly found on spongy hummocks.",
+    "rarity": "Very Rare",
+    "type": ["toxin"],
+    "habitats": {
+      "Swamp": 59,
+      "Forest": 20,
+      "Coast": 12,
+      "Plains": 10
+    }
+  },
+  {
+    "name": "DripRoot",
+    "description": "Twisted roots with downy, murky green surfaces and fan-shaped forms, commonly found along waterlogged roots.",
+    "rarity": "Uncommon",
+    "type": ["medicinal"],
+    "habitats": {
+      "Swamp": 62,
+      "Forest": 21,
+      "Coast": 10,
+      "Plains": 8
+    }
+  },
+  {
+    "name": "MarshThatch",
+    "description": "Plant structures with spiny, sodden umber surfaces and honeycombed forms, commonly found along waterlogged roots.",
+    "rarity": "Uncommon",
+    "type": ["medicinal"],
+    "habitats": {
+      "Swamp": 60,
+      "Forest": 22,
+      "Coast": 12,
+      "Plains": 6
+    }
+  },
+  {
+    "name": "StinkCap",
+    "description": "Domed caps with ribbed, olive surfaces and bell-shaped forms, commonly found on spongy hummocks.",
+    "rarity": "Very Rare",
+    "type": ["toxin", "enhancer"],
+    "habitats": {
+      "Swamp": 58,
+      "Forest": 21,
+      "Coast": 12,
+      "Plains": 8
+    }
+  },
+  {
+    "name": "Murk lily",
+    "description": "Broad lily pads with downy, murky green surfaces and honeycombed forms, commonly found on spongy hummocks.",
+    "rarity": "Very Rare",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Swamp": 61,
+      "Forest": 20,
+      "Coast": 13,
+      "Plains": 6
+    }
+  },
+  {
+    "name": "Reed-fungus",
+    "description": "Plant structures with ribbed, peat-brown surfaces and needle-thin forms, commonly found on spongy hummocks.",
+    "rarity": "Legendary",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Swamp": 62,
+      "Forest": 18,
+      "Coast": 13,
+      "Plains": 7
+    }
+  },
+  {
+    "name": "Willow moss",
+    "description": "Low moss mats with silken, murky green surfaces and broad forms, commonly found in reed-choked shallows.",
+    "rarity": "Uncommon",
+    "type": ["toxin"],
+    "habitats": {
+      "Swamp": 56,
+      "Forest": 21,
+      "Coast": 13,
+      "Plains": 10
+    }
+  },
+  {
+    "name": "PeatPuff",
+    "description": "Puffball spheres with marbled, olive surfaces and scrolling forms, commonly found along waterlogged roots.",
+    "rarity": "Uncommon",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Swamp": 58,
+      "Forest": 21,
+      "Coast": 12,
+      "Plains": 9
+    }
+  },
+  {
+    "name": "Spine root",
+    "description": "Twisted roots with glassy, dust-red surfaces and honeycombed forms, commonly found in dry washes.",
+    "rarity": "Common",
+    "type": ["toxin", "enhancer"],
+    "habitats": {
+      "Desert": 59,
+      "Plains": 15,
+      "Mountain": 16,
+      "Coast": 5,
+      "Forest": 6
+    }
+  },
+  {
+    "name": "FlareBark",
+    "description": "Peeling bark with waxy, dust-red surfaces and fan-shaped forms, commonly found on cracked flats.",
+    "rarity": "Uncommon",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Desert": 61,
+      "Plains": 15,
+      "Mountain": 13,
+      "Coast": 6,
+      "Forest": 5
+    }
+  },
+  {
+    "name": "Dune seed",
+    "description": "Ridged seeds with ribbed, sun-bleached surfaces and lobed forms, commonly found at dune bases.",
+    "rarity": "Rare",
+    "type": ["medicinal"],
+    "habitats": {
+      "Desert": 61,
+      "Plains": 15,
+      "Mountain": 14,
+      "Coast": 4,
+      "Forest": 7
+    }
+  },
+  {
+    "name": "SpineRoot",
+    "description": "Twisted roots with spiny, sand-gold surfaces and honeycombed forms, commonly found between sun-baked stones.",
+    "rarity": "Common",
+    "type": ["toxin"],
+    "habitats": {
+      "Desert": 62,
+      "Plains": 15,
+      "Mountain": 14,
+      "Coast": 3,
+      "Forest": 5
+    }
+  },
+  {
+    "name": "CinderTuft",
+    "description": "Tufted crowns with fibrous, copper surfaces and bell-shaped forms, commonly found at dune bases.",
+    "rarity": "Uncommon",
+    "type": ["toxin", "enhancer"],
+    "habitats": {
+      "Desert": 61,
+      "Plains": 14,
+      "Mountain": 15,
+      "Coast": 6,
+      "Forest": 5
+    }
+  },
+  {
+    "name": "Cinder cactus",
+    "description": "Ribbed columns with waxy, dust-red surfaces and bell-shaped forms, commonly found in dry washes.",
+    "rarity": "Very Rare",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Desert": 59,
+      "Plains": 17,
+      "Mountain": 15,
+      "Coast": 3,
+      "Forest": 6
+    }
+  },
+  {
+    "name": "Dune bloom",
+    "description": "Petaled blooms with matte, dust-red surfaces and honeycombed forms, commonly found at dune bases.",
+    "rarity": "Uncommon",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Desert": 62,
+      "Plains": 14,
+      "Mountain": 15,
+      "Coast": 6,
+      "Forest": 3
+    }
+  },
+  {
+    "name": "BarrenCrown",
+    "description": "Plant structures with spiny, sand-gold surfaces and lobed forms, commonly found at dune bases.",
+    "rarity": "Uncommon",
+    "type": ["medicinal"],
+    "habitats": {
+      "Desert": 61,
+      "Plains": 14,
+      "Mountain": 16,
+      "Coast": 6,
+      "Forest": 3
+    }
+  },
+  {
+    "name": "ScorchBark",
+    "description": "Peeling bark with speckled, dust-red surfaces and clustered forms, commonly found on cracked flats.",
+    "rarity": "Uncommon",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Desert": 59,
+      "Plains": 13,
+      "Mountain": 16,
+      "Coast": 7,
+      "Forest": 6
+    }
+  },
+  {
+    "name": "Spine-thorn",
+    "description": "Hooked thorns with speckled, copper surfaces and lobed forms, commonly found in dry washes.",
+    "rarity": "Rare",
+    "type": ["medicinal"],
+    "habitats": {
+      "Desert": 61,
+      "Plains": 15,
+      "Mountain": 17,
+      "Coast": 5,
+      "Forest": 3
+    }
+  },
+  {
+    "name": "OpalBloom",
+    "description": "Petaled blooms with downy, sand-gold surfaces and lobed forms, commonly found between sun-baked stones.",
+    "rarity": "Rare",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Desert": 64,
+      "Plains": 14,
+      "Mountain": 14,
+      "Coast": 5,
+      "Forest": 4
+    }
+  },
+  {
+    "name": "SaltCactus",
+    "description": "Ribbed columns with downy, sand-gold surfaces and ridged forms, commonly found in dry washes.",
+    "rarity": "Uncommon",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Desert": 60,
+      "Plains": 15,
+      "Mountain": 14,
+      "Coast": 7,
+      "Forest": 3
+    }
+  },
+  {
+    "name": "SpineMoss",
+    "description": "Low moss mats with banded, copper surfaces and tufted forms, commonly found in dry washes.",
+    "rarity": "Common",
+    "type": ["toxin", "enhancer"],
+    "habitats": {
+      "Desert": 60,
+      "Plains": 13,
+      "Mountain": 15,
+      "Coast": 4,
+      "Forest": 7
+    }
+  },
+  {
+    "name": "CinderThorn",
+    "description": "Hooked thorns with velvety, opaline surfaces and bell-shaped forms, commonly found on cracked flats.",
+    "rarity": "Uncommon",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Desert": 57,
+      "Plains": 15,
+      "Mountain": 14,
+      "Coast": 7,
+      "Forest": 7
+    }
+  },
+  {
+    "name": "ScorchKnot",
+    "description": "Gnarled knots with velvety, sun-bleached surfaces and honeycombed forms, commonly found at dune bases.",
+    "rarity": "Uncommon",
+    "type": ["toxin", "enhancer"],
+    "habitats": {
+      "Desert": 58,
+      "Plains": 16,
+      "Mountain": 16,
+      "Coast": 6,
+      "Forest": 3
+    }
+  },
+  {
+    "name": "AloeTuft",
+    "description": "Tufted crowns with waxy, sand-gold surfaces and clustered forms, commonly found in dry washes.",
+    "rarity": "Common",
+    "type": ["medicinal"],
+    "habitats": {
+      "Desert": 58,
+      "Plains": 16,
+      "Mountain": 16,
+      "Coast": 5,
+      "Forest": 6
+    }
+  },
+  {
+    "name": "SereBloom",
+    "description": "Petaled blooms with marbled, sun-bleached surfaces and scrolling forms, commonly found between sun-baked stones.",
+    "rarity": "Rare",
+    "type": ["medicinal"],
+    "habitats": {
+      "Desert": 59,
+      "Plains": 16,
+      "Mountain": 13,
+      "Coast": 6,
+      "Forest": 6
+    }
+  },
+  {
+    "name": "Mirage-spine",
+    "description": "Plant structures with shaggy, dust-red surfaces and scrolling forms, commonly found between sun-baked stones.",
+    "rarity": "Common",
+    "type": ["medicinal"],
+    "habitats": {
+      "Desert": 61,
+      "Plains": 15,
+      "Mountain": 14,
+      "Coast": 6,
+      "Forest": 3
+    }
+  },
+  {
+    "name": "Sun moss",
+    "description": "Low moss mats with shaggy, sand-gold surfaces and needle-thin forms, commonly found at dune bases.",
+    "rarity": "Rare",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Desert": 59,
+      "Plains": 17,
+      "Mountain": 17,
+      "Coast": 5,
+      "Forest": 3
+    }
+  },
+  {
+    "name": "SandCrown",
+    "description": "Plant structures with glassy, sand-gold surfaces and thorny forms, commonly found at dune bases.",
+    "rarity": "Uncommon",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Desert": 61,
+      "Plains": 15,
+      "Mountain": 17,
+      "Coast": 4,
+      "Forest": 3
+    }
+  },
+  {
+    "name": "Siren-tube",
+    "description": "Tube clusters with silken, sea-green surfaces and tufted forms, commonly found on driftwood.",
+    "rarity": "Rare",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Coast": 59,
+      "Swamp": 16,
+      "Plains": 11,
+      "Forest": 11,
+      "Mountain": 3
+    }
+  },
+  {
+    "name": "SprayKelp",
+    "description": "Ribboning kelp with ribbed, azure surfaces and tufted forms, commonly found among salt-sprayed rocks.",
+    "rarity": "Uncommon",
+    "type": ["medicinal"],
+    "habitats": {
+      "Coast": 59,
+      "Swamp": 17,
+      "Plains": 11,
+      "Forest": 8,
+      "Mountain": 4
+    }
+  },
+  {
+    "name": "BrineWeed",
+    "description": "Flat weeds with shaggy, kelp-brown surfaces and lobed forms, commonly found among salt-sprayed rocks.",
+    "rarity": "Common",
+    "type": ["medicinal"],
+    "habitats": {
+      "Coast": 60,
+      "Swamp": 17,
+      "Plains": 12,
+      "Forest": 8,
+      "Mountain": 3
+    }
+  },
+  {
+    "name": "Drift reed",
+    "description": "Hollow reeds with glassy, sea-green surfaces and lobed forms, commonly found along brackish shallows.",
+    "rarity": "Uncommon",
+    "type": ["toxin"],
+    "habitats": {
+      "Coast": 60,
+      "Swamp": 14,
+      "Plains": 12,
+      "Forest": 8,
+      "Mountain": 5
+    }
+  },
+  {
+    "name": "Shell-weed",
+    "description": "Flat weeds with speckled, pearl-gray surfaces and ridged forms, commonly found among salt-sprayed rocks.",
+    "rarity": "Common",
+    "type": ["medicinal"],
+    "habitats": {
+      "Coast": 64,
+      "Swamp": 14,
+      "Plains": 8,
+      "Forest": 9,
+      "Mountain": 5
+    }
+  },
+  {
+    "name": "ReefPod",
+    "description": "Segmented pods with glassy, azure surfaces and clustered forms, commonly found in tidepools.",
+    "rarity": "Common",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Coast": 59,
+      "Swamp": 14,
+      "Plains": 11,
+      "Forest": 12,
+      "Mountain": 4
+    }
+  },
+  {
+    "name": "Mistral-cap",
+    "description": "Domed caps with shaggy, sea-green surfaces and broad forms, commonly found along brackish shallows.",
+    "rarity": "Common",
+    "type": ["toxin", "enhancer"],
+    "habitats": {
+      "Coast": 58,
+      "Swamp": 14,
+      "Plains": 11,
+      "Forest": 10,
+      "Mountain": 6
+    }
+  },
+  {
+    "name": "CoralSeafern",
+    "description": "Feathered seaferns with waxy, azure surfaces and scrolling forms, commonly found in tidepools.",
+    "rarity": "Very Rare",
+    "type": ["medicinal"],
+    "habitats": {
+      "Coast": 60,
+      "Swamp": 16,
+      "Plains": 10,
+      "Forest": 8,
+      "Mountain": 6
+    }
+  },
+  {
+    "name": "FoamBloom",
+    "description": "Petaled blooms with shaggy, pearl-gray surfaces and ridged forms, commonly found in tidepools.",
+    "rarity": "Uncommon",
+    "type": ["medicinal"],
+    "habitats": {
+      "Coast": 62,
+      "Swamp": 15,
+      "Plains": 11,
+      "Forest": 9,
+      "Mountain": 3
+    }
+  },
+  {
+    "name": "Mistral saltbark",
+    "description": "Plant structures with banded, pearl-gray surfaces and fan-shaped forms, commonly found among salt-sprayed rocks.",
+    "rarity": "Uncommon",
+    "type": ["toxin", "enhancer"],
+    "habitats": {
+      "Coast": 64,
+      "Swamp": 14,
+      "Plains": 9,
+      "Forest": 8,
+      "Mountain": 4
+    }
+  },
+  {
+    "name": "SprayBloom",
+    "description": "Petaled blooms with papery, pearl-gray surfaces and honeycombed forms, commonly found in tidepools.",
+    "rarity": "Common",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Coast": 57,
+      "Swamp": 15,
+      "Plains": 11,
+      "Forest": 11,
+      "Mountain": 6
+    }
+  },
+  {
+    "name": "Storm-saltbark",
+    "description": "Plant structures with papery, azure surfaces and lobed forms, commonly found in tidepools.",
+    "rarity": "Uncommon",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Coast": 61,
+      "Swamp": 15,
+      "Plains": 12,
+      "Forest": 8,
+      "Mountain": 5
+    }
+  },
+  {
+    "name": "Mistral-weed",
+    "description": "Flat weeds with speckled, kelp-brown surfaces and broad forms, commonly found in tidepools.",
+    "rarity": "Uncommon",
+    "type": ["medicinal"],
+    "habitats": {
+      "Coast": 58,
+      "Swamp": 12,
+      "Plains": 11,
+      "Forest": 11,
+      "Mountain": 7
+    }
+  },
+  {
+    "name": "Coral moss",
+    "description": "Low moss mats with silken, kelp-brown surfaces and thorny forms, commonly found on driftwood.",
+    "rarity": "Uncommon",
+    "type": ["toxin"],
+    "habitats": {
+      "Coast": 61,
+      "Swamp": 14,
+      "Plains": 12,
+      "Forest": 8,
+      "Mountain": 5
+    }
+  },
+  {
+    "name": "TideCap",
+    "description": "Domed caps with fibrous, sea-green surfaces and lobed forms, commonly found along brackish shallows.",
+    "rarity": "Uncommon",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Coast": 58,
+      "Swamp": 15,
+      "Plains": 10,
+      "Forest": 11,
+      "Mountain": 6
+    }
+  },
+  {
+    "name": "Gull saltbark",
+    "description": "Plant structures with waxy, azure surfaces and clustered forms, commonly found in tidepools.",
+    "rarity": "Uncommon",
+    "type": ["medicinal"],
+    "habitats": {
+      "Coast": 60,
+      "Swamp": 17,
+      "Plains": 9,
+      "Forest": 10,
+      "Mountain": 3
+    }
+  },
+  {
+    "name": "StormSaltbark",
+    "description": "Plant structures with glassy, azure surfaces and honeycombed forms, commonly found along brackish shallows.",
+    "rarity": "Common",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Coast": 57,
+      "Swamp": 15,
+      "Plains": 12,
+      "Forest": 11,
+      "Mountain": 5
+    }
+  },
+  {
+    "name": "Drift saltbark",
+    "description": "Plant structures with banded, kelp-brown surfaces and clustered forms, commonly found in tidepools.",
+    "rarity": "Uncommon",
+    "type": ["medicinal"],
+    "habitats": {
+      "Coast": 60,
+      "Swamp": 15,
+      "Plains": 11,
+      "Forest": 9,
+      "Mountain": 4
+    }
+  },
+  {
+    "name": "Azure tube",
+    "description": "Tube clusters with silken, pearl-gray surfaces and ridged forms, commonly found in tidepools.",
+    "rarity": "Rare",
+    "type": ["toxin", "enhancer"],
+    "habitats": {
+      "Coast": 60,
+      "Swamp": 14,
+      "Plains": 12,
+      "Forest": 11,
+      "Mountain": 4
+    }
+  },
+  {
+    "name": "KelpReed",
+    "description": "Hollow reeds with velvety, kelp-brown surfaces and scrolling forms, commonly found among salt-sprayed rocks.",
+    "rarity": "Rare",
+    "type": ["medicinal"],
+    "habitats": {
+      "Coast": 59,
+      "Swamp": 17,
+      "Plains": 10,
+      "Forest": 11,
+      "Mountain": 4
+    }
+  },
+  {
+    "name": "Nether-moss",
+    "description": "Low moss mats with downy, ashen surfaces and fan-shaped forms, commonly found in mineral-crusted cracks.",
+    "rarity": "Rare",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Lantern-ivy",
+    "description": "Clinging tendrils with banded, ashen surfaces and ridged forms, commonly found beside underground streams.",
+    "rarity": "Very Rare",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Stal-puff",
+    "description": "Puffball spheres with spiny, pearl-blue surfaces and lobed forms, commonly found in mineral-crusted cracks.",
+    "rarity": "Uncommon",
+    "type": ["medicinal"],
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Whisper vine",
+    "description": "Ropey vines with waxy, soot-black surfaces and bell-shaped forms, commonly found in mineral-crusted cracks.",
+    "rarity": "Uncommon",
+    "type": ["toxin"],
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "CaveShelf",
+    "description": "Tiered shelves with matte, ashen surfaces and broad forms, commonly found beside underground streams.",
+    "rarity": "Common",
+    "type": ["toxin"],
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Spore truffle",
+    "description": "Knobbed truffles with fibrous, soot-black surfaces and broad forms, commonly found in mineral-crusted cracks.",
+    "rarity": "Very Rare",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "ShadeRoot",
+    "description": "Twisted roots with velvety, ghost-pale surfaces and tufted forms, commonly found beside underground streams.",
+    "rarity": "Rare",
+    "type": ["medicinal"],
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Shiver ivy",
+    "description": "Clinging tendrils with velvety, pearl-blue surfaces and tufted forms, commonly found at stalagmite bases.",
+    "rarity": "Rare",
+    "type": ["toxin"],
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "StalLace",
+    "description": "Lace-like threads with silken, pearl-blue surfaces and tufted forms, commonly found at stalagmite bases.",
+    "rarity": "Common",
+    "type": ["medicinal"],
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "CaveNode",
+    "description": "Pebblelike nodes with waxy, pearl-blue surfaces and lobed forms, commonly found on damp cavern walls.",
+    "rarity": "Uncommon",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "VeilMold",
+    "description": "Powdery films with marbled, pearl-blue surfaces and clustered forms, commonly found at stalagmite bases.",
+    "rarity": "Uncommon",
+    "type": ["medicinal"],
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Gloam-lace",
+    "description": "Lace-like threads with banded, pearl-blue surfaces and ridged forms, commonly found on damp cavern walls.",
+    "rarity": "Uncommon",
+    "type": ["toxin"],
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Pale-toadstool",
+    "description": "Tall toadstools with matte, pearl-blue surfaces and needle-thin forms, commonly found in mineral-crusted cracks.",
+    "rarity": "Common",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Umbral-root",
+    "description": "Twisted roots with velvety, ghost-pale surfaces and clustered forms, commonly found in mineral-crusted cracks.",
+    "rarity": "Rare",
+    "type": ["medicinal"],
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "LanternBulb",
+    "description": "Bulbous hearts with silken, ghost-pale surfaces and bell-shaped forms, commonly found on damp cavern walls.",
+    "rarity": "Rare",
+    "type": ["toxin", "enhancer"],
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "GloomMold",
+    "description": "Powdery films with silken, pearl-blue surfaces and fan-shaped forms, commonly found on damp cavern walls.",
+    "rarity": "Common",
+    "type": ["medicinal"],
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "PaleVine",
+    "description": "Ropey vines with velvety, soot-black surfaces and honeycombed forms, commonly found at stalagmite bases.",
+    "rarity": "Common",
+    "type": ["toxin", "enhancer"],
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Gloom-vine",
+    "description": "Ropey vines with waxy, soot-black surfaces and clustered forms, commonly found beside underground streams.",
+    "rarity": "Very Rare",
+    "type": ["medicinal", "enhancer"],
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "PaleToadstool",
+    "description": "Tall toadstools with ribbed, ashen surfaces and lobed forms, commonly found in mineral-crusted cracks.",
+    "rarity": "Very Rare",
+    "type": ["toxin"],
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "GloamBulb",
+    "description": "Bulbous hearts with shaggy, pearl-blue surfaces and thorny forms, commonly found at stalagmite bases.",
+    "rarity": "Uncommon",
+    "type": ["medicinal"],
+    "habitats": {
+      "Underdark": 100
+    }
+  }
+]
