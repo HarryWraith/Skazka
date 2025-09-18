@@ -1,21 +1,22 @@
-/* gathering.js — Herb/Fungi Generator (DnD 5e)
-   - Loads data from one or more JSON files
-   - Enforces ecology sanity (e.g., kelp = Coast-only, cactus = Desert-only, lichens/frost/glacier = Mountain-only)
-   - Preserves Underdark exclusivity
-   - Enforces valid type combos (never just "enhancer")
-   - Picks results by habitat-weight × rarity-weight
-   - Renders a compact card using your Skazka table styles
+/* gathering.js — Herbs + Foraging + Hunting Generators (DnD 5e)
+   - Loads herbs.json, foraging.json, hunting.json
+   - Ecology sanity for data items (coast-only kelp/shellfish, desert succulents, mountain lichens)
+   - Herbs: enforces valid type combos (no "enhancer" alone; no toxin+medicinal conflict)
+   - Foraging: category tag
+   - Hunting: adds 'hideType' and rarity filter
+   - Selection = habitat weight × rarity weight (with optional rarity filter = exact match)
 */
 
 document.addEventListener("DOMContentLoaded", () => {
   // -------------------------
   // Config
   // -------------------------
-  const DATA_FILES = [
+  const HERB_FILES = [
     "data/herbs.json",
-    // Add more packs here if you use them (optional):
-    // "data/herbs_expansion_pack_A.json",
+    // "data/herbs_expansion_pack_A.json", // optional
   ];
+  const FORAGE_FILES = ["data/foraging.json"];
+  const HUNT_FILES = ["data/hunting.json"];
 
   // Rarity weights (higher = more common)
   const RARITY_WEIGHTS = {
@@ -26,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     Legendary: 1,
   };
 
-  // Allowed type sets (order-agnostic)
+  // Allowed herb type sets (order-agnostic)
   const ALLOWED_TYPES = new Set([
     "medicinal",
     "toxin",
@@ -37,62 +38,41 @@ document.addEventListener("DOMContentLoaded", () => {
   // -------------------------
   // DOM refs
   // -------------------------
-  const elResult = document.getElementById("gatherResult");
-  const elGather = document.getElementById("gatherBtn");
-  const elReroll = document.getElementById("rerollBtn");
-  const elHabitat = document.getElementById("habitatSelect");
+  // HERBS
+  const elHerbResult = document.getElementById("gatherResult");
+  const elHerbGather = document.getElementById("gatherBtn");
+  const elHerbReroll = document.getElementById("rerollBtn");
+  const elHerbHabitat = document.getElementById("habitatSelect");
+
+  // FORAGING
+  const elForResult = document.getElementById("forageResult");
+  const elForGather = document.getElementById("forageBtn");
+  const elForReroll = document.getElementById("forageRerollBtn");
+  const elForHabitat = document.getElementById("forageHabitatSelect");
+
+  // HUNTING
+  const elHuntResult = document.getElementById("huntResult");
+  const elHuntGather = document.getElementById("huntBtn");
+  const elHuntReroll = document.getElementById("huntRerollBtn");
+  const elHuntHabitat = document.getElementById("huntHabitatSelect");
+  const elHuntRarity = document.getElementById("huntRaritySelect");
 
   let HERBS = [];
-  let lastHabitat = null;
+  let FORAGE = [];
+  let HUNT = [];
+
+  let lastHerbHabitat = null;
+  let lastForageHabitat = null;
+  let lastHuntHabitat = null;
+  let lastHuntRarity = "Any";
 
   // -------------------------
   // Utilities
   // -------------------------
-  function safeJoin(arr, sep = ", ") {
-    return (Array.isArray(arr) ? arr : [arr]).filter(Boolean).join(sep);
-  }
+  const safeJoin = (arr, sep = ", ") =>
+    (Array.isArray(arr) ? arr : [arr]).filter(Boolean).join(sep);
 
-  function okJSON(resp) {
-    // Returns null on 404-like errors so we can ignore optional packs gracefully.
-    if (!resp.ok) return null;
-    return resp.json();
-  }
-
-  function normalizeTypes(types) {
-    // Ensure array, lowercased unique
-    const t = (Array.isArray(types) ? types : [types])
-      .filter(Boolean)
-      .map((s) => String(s).trim().toLowerCase());
-    const uniq = Array.from(new Set(t));
-
-    // Never allow just "enhancer"
-    if (uniq.length === 1 && uniq[0] === "enhancer") {
-      return ["medicinal", "enhancer"];
-    }
-
-    // If both medicinal and toxin present, coerce to valid set
-    const hasMed = uniq.includes("medicinal");
-    const hasTox = uniq.includes("toxin");
-    const hasEnh = uniq.includes("enhancer");
-
-    if (hasMed && hasTox) {
-      // Prefer toxin-only or toxin+enhancer to keep schema valid
-      return hasEnh ? ["toxin", "enhancer"] : ["toxin"];
-    }
-
-    // Build final and validate against allowed combos
-    const final = [];
-    if (hasMed) final.push("medicinal");
-    if (hasTox) final.push("toxin");
-    if (hasEnh) final.push("enhancer");
-
-    const key = final.join(",");
-    if (!ALLOWED_TYPES.has(key)) {
-      // Fallback to medicinal if empty/invalid
-      return ["medicinal"];
-    }
-    return final;
-  }
+  const okJSON = (resp) => (resp && resp.ok ? resp.json() : null);
 
   function rescaleWeights(weights) {
     const entries = Object.entries(weights || {}).filter(([, v]) => v > 0);
@@ -104,156 +84,281 @@ document.addEventListener("DOMContentLoaded", () => {
       const val = Math.round((v / total) * 100);
       scaled[k] = val;
       acc += val;
-      if (i === entries.length - 1 && acc !== 100) {
-        // fix rounding drift on last key
-        scaled[k] += 100 - acc;
-      }
+      if (i === entries.length - 1 && acc !== 100) scaled[k] += 100 - acc;
     });
     return scaled;
   }
 
-  function sanitizeHerbHabitats(list) {
+  // ---------- HERB-SPECIFIC ----------
+  function normalizeHerbTypes(types) {
+    const t = (Array.isArray(types) ? types : [types])
+      .filter(Boolean)
+      .map((s) => String(s).trim().toLowerCase());
+    const uniq = Array.from(new Set(t));
+    if (uniq.length === 1 && uniq[0] === "enhancer")
+      return ["medicinal", "enhancer"];
+    const hasMed = uniq.includes("medicinal");
+    const hasTox = uniq.includes("toxin");
+    const hasEnh = uniq.includes("enhancer");
+    if (hasMed && hasTox) return hasEnh ? ["toxin", "enhancer"] : ["toxin"];
+    const final = [];
+    if (hasMed) final.push("medicinal");
+    if (hasTox) final.push("toxin");
+    if (hasEnh) final.push("enhancer");
+    const key = final.join(",");
+    return ALLOWED_TYPES.has(key) ? final : ["medicinal"];
+  }
+
+  // Applies to both herbs and foraging (simple keyword ecology)
+  function sanitizeHabitatsAndEcology(item, isUnderdarkExclusive) {
+    const ud = item?.habitats?.Underdark || 0;
+    if (ud > 0 || isUnderdarkExclusive) {
+      item.habitats = { Underdark: 100 };
+      return item;
+    }
+    if (item.habitats && "Underdark" in item.habitats) {
+      delete item.habitats.Underdark;
+    }
+
+    const blob = `${item.name ?? ""} ${item.description ?? ""}`;
+
+    // Coast-only cues
+    if (
+      /kelp|wrack|eelgrass|samphire|barnacle|mussel|clam|limpet|lobster|mackerel|herring|salmon|eider|cormorant|gull/i.test(
+        blob
+      )
+    ) {
+      item.habitats = { Coast: 100 };
+    }
+
+    // Desert-only cues
+    if (
+      /cactus|succulent|aloe|agave|camel|oryx|addax|rattlesnake|jerboa|sandgrouse|bustard|monitor/i.test(
+        blob
+      )
+    ) {
+      item.habitats = { Desert: 100 };
+    }
+
+    // Mountain-only cues
+    if (
+      /lichen|alpine|ibex|tahr|bighorn|ptarmigan|marmot|snowshoe|glacier|rime/i.test(
+        blob
+      )
+    ) {
+      item.habitats = { Mountain: 100 };
+    }
+
+    // Swamp/brackish cues
+    if (
+      /cattail|lotus|crawfish|beaver|muskrat|nutria|heron|rail|alligator|snapping turtle|watercress/i.test(
+        blob
+      )
+    ) {
+      item.habitats = { Swamp: 100 };
+    }
+
+    item.habitats = rescaleWeights(item.habitats || {});
+    return item;
+  }
+
+  function sanitizeHerbs(list) {
     for (const h of list) {
-      // Always keep Underdark exclusivity strict
-      const ud = h?.habitats?.Underdark || 0;
-      if (ud > 0) {
-        h.habitats = { Underdark: 100 };
-      } else if (h.habitats && "Underdark" in h.habitats) {
-        delete h.habitats.Underdark;
-      }
-
-      // Ecology sanity locks (name/description search)
-      const blob = `${h.name ?? ""} ${h.description ?? ""}`;
-
-      // Coast-only: kelp, wrack, eelgrass, seaweed, algae, seafern, barnacle
-      if (
-        /kelp|wrack|eelgrass|seafern|barnacle|sea[-\s]?weed|algae/i.test(blob)
-      ) {
-        h.habitats = { Coast: 100 };
-      }
-
-      // Desert-only: cactus, succulent, aloe
-      if (/cactus|succulent|aloe/i.test(blob)) {
-        h.habitats = { Desert: 100 };
-      }
-
-      // Mountain-only: lichen, alpine, frost, glacier, rime
-      if (/lichen|alpine|frost|glacier|rime/i.test(blob)) {
-        h.habitats = { Mountain: 100 };
-      }
-
-      // Brackish split: mangrove / salt-marsh
-      if (/mangrove|salt[-\s]?marsh|brackish/i.test(blob)) {
-        h.habitats = { Coast: 60, Swamp: 40 };
-      }
-
-      // Normalize weights back to 100
-      if (h.habitats) {
-        h.habitats = rescaleWeights(h.habitats);
-      }
-
-      // Enforce valid type sets
-      h.type = normalizeTypes(h.type);
+      const isUD = !!(h?.habitats?.Underdark > 0);
+      sanitizeHabitatsAndEcology(h, isUD);
+      h.type = normalizeHerbTypes(h.type);
     }
     return list;
   }
 
-  function weightedPickByHabitat(entries, habitat) {
+  function sanitizeForage(list) {
+    for (const f of list) {
+      const isUD = !!(f?.habitats?.Underdark > 0);
+      sanitizeHabitatsAndEcology(f, isUD);
+      if (!f.category) f.category = "edible";
+    }
+    return list;
+  }
+
+  function sanitizeHunt(list) {
+    for (const a of list) {
+      const isUD = !!(a?.habitats?.Underdark > 0);
+      sanitizeHabitatsAndEcology(a, isUD);
+      a.hideType = a.hideType || "leather";
+      a.rarity = a.rarity || "Common";
+    }
+    return list;
+  }
+
+  function weightedPickByHabitat(entries, habitat, rarityFilter = "Any") {
     const pool = [];
     let total = 0;
-
-    for (const h of entries) {
-      const wHab = h.habitats?.[habitat] || 0;
+    for (const it of entries) {
+      if (rarityFilter && rarityFilter !== "Any" && it.rarity !== rarityFilter)
+        continue;
+      const wHab = it.habitats?.[habitat] || 0;
       if (wHab <= 0) continue;
-      const wRar = RARITY_WEIGHTS[h.rarity] ?? 1;
+      const wRar = RARITY_WEIGHTS[it.rarity] ?? 1;
       const weight = wHab * wRar;
       if (weight > 0) {
-        pool.push({ h, weight });
         total += weight;
+        pool.push({ it, weight });
       }
     }
     if (!pool.length) return null;
-
     let roll = Math.random() * total;
-    for (const entry of pool) {
-      roll -= entry.weight;
-      if (roll <= 0) return entry.h;
+    for (const e of pool) {
+      roll -= e.weight;
+      if (roll <= 0) return e.it;
     }
-    return pool[pool.length - 1].h; // fallback
+    return pool[pool.length - 1].it;
   }
 
+  // ---------- Renderers ----------
   function renderHerb(h) {
     const tags = `${h.rarity}${h.type?.length ? " • " + safeJoin(h.type) : ""}`;
-    elResult.innerHTML = `<div class="tb-detail">
+    elHerbResult &&
+      (elHerbResult.innerHTML = `<div class="tb-detail">
         <div class="tb-detail-header">
           <div class="tb-detail-name">${h.name}</div>
-          <div class="tb-badges">
-            <span class="tb-badge">${tags}</span>
-          </div>
+          <div class="tb-badges"><span class="tb-badge">${tags}</span></div>
         </div>
         <div class="tb-detail-desc">${h.description}</div>
-      </div>`;
+      </div>`);
   }
 
-  function showMessage(msg) {
-    elResult.textContent = msg;
+  function renderForage(f) {
+    const tags = `${f.rarity}${f.category ? " • " + f.category : ""}`;
+    elForResult &&
+      (elForResult.innerHTML = `<div class="tb-detail">
+        <div class="tb-detail-header">
+          <div class="tb-detail-name">${f.name}</div>
+          <div class="tb-badges"><span class="tb-badge">${tags}</span></div>
+        </div>
+        <div class="tb-detail-desc">${f.description}</div>
+      </div>`);
   }
 
-  function gather(habitat) {
-    lastHabitat = habitat;
+  function renderHunt(a) {
+    const tags = `${a.rarity}${a.hideType ? " • " + a.hideType : ""}`;
+    elHuntResult &&
+      (elHuntResult.innerHTML = `<div class="tb-detail">
+        <div class="tb-detail-header">
+          <div class="tb-detail-name">${a.name}</div>
+          <div class="tb-badges"><span class="tb-badge">${tags}</span></div>
+        </div>
+        <div class="tb-detail-desc">${a.description}</div>
+      </div>`);
+  }
+
+  const showHerbMsg = (msg) => elHerbResult && (elHerbResult.textContent = msg);
+  const showForageMsg = (msg) => elForResult && (elForResult.textContent = msg);
+  const showHuntMsg = (msg) => elHuntResult && (elHuntResult.textContent = msg);
+
+  // ---------- Actions ----------
+  function gatherHerb(habitat) {
+    lastHerbHabitat = habitat;
     const eligible = HERBS.filter((h) => (h.habitats?.[habitat] || 0) > 0);
-    if (!eligible.length) {
-      showMessage("No herb or fungus is known to grow here.");
-      return;
-    }
+    if (!eligible.length)
+      return showHerbMsg("No herb or fungus is known to grow here.");
     const choice = weightedPickByHabitat(eligible, habitat);
-    if (!choice) {
-      showMessage("You find nothing of note.");
-      return;
-    }
+    if (!choice) return showHerbMsg("You find nothing of note.");
     renderHerb(choice);
   }
 
-  // -------------------------
-  // Load + wire up
-  // -------------------------
-  Promise.allSettled(
-    DATA_FILES.map((url) =>
+  function forageFood(habitat) {
+    lastForageHabitat = habitat;
+    const eligible = FORAGE.filter((f) => (f.habitats?.[habitat] || 0) > 0);
+    if (!eligible.length)
+      return showForageMsg("You find no edible forage here.");
+    const choice = weightedPickByHabitat(eligible, habitat);
+    if (!choice) return showForageMsg("You gather nothing of note.");
+    renderForage(choice);
+  }
+
+  function huntAnimal(habitat, rarityFilter = "Any") {
+    lastHuntHabitat = habitat;
+    lastHuntRarity = rarityFilter;
+    const eligible = HUNT.filter((a) => (a.habitats?.[habitat] || 0) > 0);
+    if (!eligible.length)
+      return showHuntMsg("You find no huntable animals here.");
+    const choice = weightedPickByHabitat(eligible, habitat, rarityFilter);
+    if (!choice) return showHuntMsg("You spot nothing of note.");
+    renderHunt(choice);
+  }
+
+  // ---------- Load everything ----------
+  Promise.allSettled([
+    // Herbs
+    ...HERB_FILES.map((url) =>
       fetch(url)
         .then(okJSON)
         .catch(() => null)
-    )
-  )
+    ),
+    // Foraging
+    ...FORAGE_FILES.map((url) =>
+      fetch(url)
+        .then(okJSON)
+        .catch(() => null)
+    ),
+    // Hunting
+    ...HUNT_FILES.map((url) =>
+      fetch(url)
+        .then(okJSON)
+        .catch(() => null)
+    ),
+  ])
     .then((results) => {
-      const all = [];
-      for (const r of results) {
-        if (r.status === "fulfilled" && Array.isArray(r.value)) {
-          all.push(...r.value);
-        }
-      }
-      if (!all.length) throw new Error("No data loaded");
+      const arrays = results
+        .filter((r) => r.status === "fulfilled" && Array.isArray(r.value))
+        .map((r) => r.value);
 
-      HERBS = sanitizeHerbHabitats(all);
+      const herbCount = HERB_FILES.length;
+      const forageCount = FORAGE_FILES.length;
+      const herbArrays = arrays.slice(0, herbCount);
+      const forageArrays = arrays.slice(herbCount, herbCount + forageCount);
+      const huntArrays = arrays.slice(herbCount + forageCount);
 
-      // If you want to pre-roll once on load, uncomment:
-      // gather(elHabitat?.value || "Forest");
+      HERBS = sanitizeHerbs(herbArrays.flat());
+      FORAGE = sanitizeForage(forageArrays.flat());
+      HUNT = sanitizeHunt(huntArrays.flat());
     })
     .catch((err) => {
       console.error(err);
-      showMessage("Could not load herb data.");
+      showHerbMsg("Could not load herb data.");
+      showForageMsg("Could not load foraging data.");
+      showHuntMsg("Could not load hunting data.");
     });
 
-  if (elGather) {
-    elGather.addEventListener("click", () => {
-      const habitat = elHabitat?.value || "Forest";
-      gather(habitat);
-    });
-  }
+  // Wire up buttons
+  elHerbGather &&
+    elHerbGather.addEventListener("click", () =>
+      gatherHerb(elHerbHabitat?.value || "Forest")
+    );
+  elHerbReroll &&
+    elHerbReroll.addEventListener("click", () =>
+      gatherHerb(lastHerbHabitat || elHerbHabitat?.value || "Forest")
+    );
 
-  if (elReroll) {
-    elReroll.addEventListener("click", () => {
-      const habitat = lastHabitat || elHabitat?.value || "Forest";
-      gather(habitat);
+  elForGather &&
+    elForGather.addEventListener("click", () =>
+      forageFood(elForHabitat?.value || "Forest")
+    );
+  elForReroll &&
+    elForReroll.addEventListener("click", () =>
+      forageFood(lastForageHabitat || elForHabitat?.value || "Forest")
+    );
+
+  elHuntGather &&
+    elHuntGather.addEventListener("click", () => {
+      const habitat = elHuntHabitat?.value || "Forest";
+      const rarity = elHuntRarity?.value || "Any";
+      huntAnimal(habitat, rarity);
     });
-  }
+  elHuntReroll &&
+    elHuntReroll.addEventListener("click", () => {
+      const habitat = lastHuntHabitat || elHuntHabitat?.value || "Forest";
+      const rarity = lastHuntRarity || elHuntRarity?.value || "Any";
+      huntAnimal(habitat, rarity);
+    });
 });

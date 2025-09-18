@@ -389,7 +389,7 @@
       </section>
     </article>
     <article class="tb-panel">
-      <h3 class="tb-title">Herb & Fungi Gathering</h3>
+      <h3 class="tb-title">Herbalism</h3>
       <div class="tb-grid">
         <label class="tb-label">Habitat
           <select class="tb-select" id="habitatSelect">
@@ -409,6 +409,66 @@
       </div>
       <div id="gatherResult" class="tb-result" aria-live="polite"></div>
     </article>
+    <article class="tb-panel" id="forage-panel">
+      <h3 class="tb-title">Foraging</h3>
+      <div class="tb-grid">
+        <label class="tb-label">Habitat
+          <select class="tb-select" id="forageHabitatSelect">
+            <option value="Forest">Forest</option>
+            <option value="Mountain">Mountain</option>
+            <option value="Plains">Plains</option>
+            <option value="Swamp">Swamp</option>
+            <option value="Desert">Desert</option>
+            <option value="Coast">Coast</option>
+            <option value="Underdark">Underdark</option>
+          </select>
+        </label>
+        <div class="tb-actions">
+          <button class="tb-btn" id="forageBtn">Forage</button>
+          <button class="tb-ghost-btn" id="forageRerollBtn" title="Reroll the last habitat">Reroll</button>
+        </div>
+      </div>
+      <div id="forageResult" class="tb-result" aria-live="polite"></div>
+    </article>
+  </main>
+
+  <main class="grid-even">
+    <article>
+      <article class="tb-panel" id="hunting-panel">
+        <h3 class="tb-title">Hunting</h3>
+        <div class="tb-grid">
+          <label class="tb-label">Habitat
+            <select class="tb-select" id="huntHabitatSelect">
+              <option value="Forest">Forest</option>
+              <option value="Mountain">Mountain</option>
+              <option value="Plains">Plains</option>
+              <option value="Swamp">Swamp</option>
+              <option value="Desert">Desert</option>
+              <option value="Coast">Coast</option>
+              <option value="Underdark">Underdark</option>
+            </select>
+          </label>
+
+          <label class="tb-label">Rarity
+            <select class="tb-select" id="huntRaritySelect">
+              <option value="Any">Any</option>
+              <option value="Common">Common</option>
+              <option value="Uncommon">Uncommon</option>
+              <option value="Rare">Rare</option>
+              <option value="Very Rare">Very Rare</option>
+              <option value="Legendary">Legendary</option>
+            </select>
+          </label>
+
+          <div class="tb-actions">
+            <button class="tb-btn" id="huntBtn">Hunt</button>
+            <button class="tb-ghost-btn" id="huntRerollBtn" title="Reroll the last hunt">Reroll</button>
+          </div>
+        </div>
+        <div id="huntResult" class="tb-result" aria-live="polite"></div>
+      </article>
+    </article>
+    <article></article>
     <article></article>
   </main>
 

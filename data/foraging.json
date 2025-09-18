@@ -1,0 +1,3627 @@
+[
+  {
+    "name": "Acorn",
+    "description": "A small, oval brown nut with a smooth cap and tapered tip, often found in clusters on oak trees.",
+    "rarity": "Common",
+    "category": "nut",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Chestnut",
+    "description": "A shiny, mahogany-brown nut encased in a spiky green burr, often found on deciduous forest floors in autumn.",
+    "rarity": "Common",
+    "category": "nut",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Walnut",
+    "description": "A wrinkled, hard-shelled nut with a ridge down its length and light brown coloration, nestled in a green husk.",
+    "rarity": "Common",
+    "category": "nut",
+    "habitats": {
+      "Forest": 80,
+      "Plains": 20
+    }
+  },
+  {
+    "name": "Hazelnut",
+    "description": "A round, smooth nut about the size of a marble, tan-brown in color and encased in leafy, husky bracts.",
+    "rarity": "Common",
+    "category": "nut",
+    "habitats": {
+      "Forest": 60,
+      "Plains": 40
+    }
+  },
+  {
+    "name": "Pine Nut",
+    "description": "A small, elongated ivory seed harvested from pine cones, with a smooth texture and mild resinous aroma.",
+    "rarity": "Common",
+    "category": "nut",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Blackberry",
+    "description": "A cluster of plump, shiny black-purple berries on thorny vines, often found trailing along the edges of forest paths.",
+    "rarity": "Common",
+    "category": "fruit",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Blueberry",
+    "description": "Small, round berries with a dusty blue-gray color, often found in rippling clusters among green-leafed shrubs.",
+    "rarity": "Common",
+    "category": "fruit",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Raspberry",
+    "description": "Bright red or golden delicate berries growing on thorny bushes, each berry composed of many tiny drupelets.",
+    "rarity": "Common",
+    "category": "fruit",
+    "habitats": {
+      "Forest": 70,
+      "Plains": 30
+    }
+  },
+  {
+    "name": "Strawberry",
+    "description": "Heart-shaped red berries dotted with tiny seeds, nestled close to the forest floor among broad green leaves.",
+    "rarity": "Common",
+    "category": "fruit",
+    "habitats": {
+      "Forest": 50,
+      "Plains": 50
+    }
+  },
+  {
+    "name": "Wild Apple",
+    "description": "A round fruit with mottled red and yellow skin, growing among twisting branches of old wild apple trees.",
+    "rarity": "Common",
+    "category": "fruit",
+    "habitats": {
+      "Forest": 70,
+      "Plains": 30
+    }
+  },
+  {
+    "name": "Wild Pear",
+    "description": "A teardrop-shaped fruit with speckled greenish-yellow skin, hanging from the branches of scraggly pear trees.",
+    "rarity": "Common",
+    "category": "fruit",
+    "habitats": {
+      "Forest": 60,
+      "Plains": 40
+    }
+  },
+  {
+    "name": "Elderberry",
+    "description": "Tiny glossy black berries in umbrella-shaped clusters on reddish stems, often found on the edges of wetlands and forests.",
+    "rarity": "Common",
+    "category": "fruit",
+    "habitats": {
+      "Forest": 50,
+      "Swamp": 50
+    }
+  },
+  {
+    "name": "Cranberry",
+    "description": "Small, round red berries with a glossy sheen, often peeking through swampy bog moss and wetland grasses.",
+    "rarity": "Common",
+    "category": "fruit",
+    "habitats": {
+      "Swamp": 80,
+      "Forest": 20
+    }
+  },
+  {
+    "name": "Lingonberry",
+    "description": "Bright red berries roughly the size of peas, growing among low evergreen shrubs in cool, mountainous forests.",
+    "rarity": "Uncommon",
+    "category": "fruit",
+    "habitats": {
+      "Mountain": 70,
+      "Forest": 30
+    }
+  },
+  {
+    "name": "Cloudberry",
+    "description": "A soft, orange-yellow cluster of drupelets resembling a raspberry, found nestled in boggy mosses of cold highlands.",
+    "rarity": "Rare",
+    "category": "fruit",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Gooseberry",
+    "description": "Round green berries often striped or spotted, hanging from thorny bush branches.",
+    "rarity": "Uncommon",
+    "category": "fruit",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Chanterelle Mushroom",
+    "description": "A funnel-shaped mushroom with a bright golden-yellow cap and wavy edges, often found scattered on the forest floor.",
+    "rarity": "Common",
+    "category": "fungi",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Morel Mushroom",
+    "description": "A tall, sponge-like mushroom with a honeycomb-patterned cap of earthy brown, prized among springtime woods.",
+    "rarity": "Uncommon",
+    "category": "fungi",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Puffball Mushroom",
+    "description": "A round, white or tan mushroom that resembles a soft ball of cotton, often puffing out a cloud of spores when disturbed.",
+    "rarity": "Common",
+    "category": "fungi",
+    "habitats": {
+      "Forest": 80,
+      "Plains": 20
+    }
+  },
+  {
+    "name": "Oyster Mushroom",
+    "description": "A cluster of thin, delicate mushrooms with smooth, pale gray to white caps resembling oyster shells, growing on decaying logs.",
+    "rarity": "Common",
+    "category": "fungi",
+    "habitats": {
+      "Forest": 70,
+      "Swamp": 30
+    }
+  },
+  {
+    "name": "Chicken of the Woods",
+    "description": "A bright orange and yellow shelf mushroom with overlapping brackets that peel away easily from the log it grows on.",
+    "rarity": "Uncommon",
+    "category": "fungi",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Porcini Mushroom",
+    "description": "A stout mushroom with a thick, creamy-white stalk and a broad brown cap with velvety texture, often found at the base of pine trees.",
+    "rarity": "Common",
+    "category": "fungi",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Truffle",
+    "description": "A round, lumpy knobbly tuber-like fungus with rough dark brown skin, hidden underground among the roots of oak or hazel trees.",
+    "rarity": "Rare",
+    "category": "fungi",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Enoki Mushroom",
+    "description": "A cluster of long, thin white mushrooms with tiny caps, often found in dense clumps on dead wood in cooler climates.",
+    "rarity": "Uncommon",
+    "category": "fungi",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Glowcap Mushroom",
+    "description": "A bioluminescent mushroom with a pale cap that glows softly in dark caverns, its underside dotted with tiny luminescent speckles.",
+    "rarity": "Rare",
+    "category": "fungi",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Crystalcap Mushroom",
+    "description": "A translucent, crystal-like mushroom that refracts any light into rainbow patterns, found deep in the Underdark.",
+    "rarity": "Rare",
+    "category": "fungi",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Starlight Mushroom",
+    "description": "A pale mushroom cap with fine white speckles that resemble stars, often found glowing faintly in subterranean caverns.",
+    "rarity": "Very Rare",
+    "category": "fungi",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Dandelion Greens",
+    "description": "Long, jagged-edged green leaves with a slightly ruffled appearance, often found in open meadows and lawns.",
+    "rarity": "Common",
+    "category": "leafy",
+    "habitats": {
+      "Plains": 60,
+      "Forest": 40
+    }
+  },
+  {
+    "name": "Wild Spinach",
+    "description": "Tender, dark green leaves with a mild flavor, growing in loose rosettes from the ground.",
+    "rarity": "Common",
+    "category": "leafy",
+    "habitats": {
+      "Forest": 70,
+      "Plains": 30
+    }
+  },
+  {
+    "name": "Watercress",
+    "description": "Small vibrant green leaves with a peppery taste, growing in thick mats in slow-moving streams or wetlands.",
+    "rarity": "Common",
+    "category": "leafy",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Sorrel",
+    "description": "Bright green, arrowhead-shaped leaves with a sharp lemony tang, often found in damp meadows.",
+    "rarity": "Common",
+    "category": "leafy",
+    "habitats": {
+      "Plains": 60,
+      "Forest": 40
+    }
+  },
+  {
+    "name": "Wild Leek",
+    "description": "A long green stalk with a white bulb, smelling faintly of onion and garlic, pushing up through forest leaf litter in spring.",
+    "rarity": "Common",
+    "category": "vegetable",
+    "habitats": {
+      "Forest": 80,
+      "Plains": 20
+    }
+  },
+  {
+    "name": "Cattail Shoot",
+    "description": "A long, slender spear of pale green, emerging from underwater mats of cattails in marshy areas.",
+    "rarity": "Common",
+    "category": "vegetable",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Wild Carrot",
+    "description": "A slender plant with lacy green foliage and a thin, tapered orange root, often found in temperate fields.",
+    "rarity": "Common",
+    "category": "vegetable",
+    "habitats": {
+      "Plains": 80,
+      "Forest": 20
+    }
+  },
+  {
+    "name": "Parsnip",
+    "description": "A pale, long root vegetable resembling a carrot but cream-colored, growing in open grassland soils.",
+    "rarity": "Common",
+    "category": "vegetable",
+    "habitats": {
+      "Plains": 70,
+      "Forest": 30
+    }
+  },
+  {
+    "name": "Lotus Root",
+    "description": "A long cylindrical root with a series of holes through its center, covered in brown fibrous skin, found buried in muddy pond bottoms.",
+    "rarity": "Uncommon",
+    "category": "vegetable",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Wild Yam",
+    "description": "A rough, brown-skinned tuber with a creamy white interior, attached to vines in dense, shaded undergrowth.",
+    "rarity": "Uncommon",
+    "category": "tuber",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Ginger Root",
+    "description": "A knobbly beige root with pale yellow interior flesh, springing from leafy stalks in warm woodland soil.",
+    "rarity": "Uncommon",
+    "category": "tuber",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Water Chestnut",
+    "description": "A flat, round tuber with a dark, leathery skin and crisp white interior, found in muddy bottoms of shallow freshwater.",
+    "rarity": "Uncommon",
+    "category": "tuber",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Sunflower Seeds",
+    "description": "Small grayish-green seeds harvested from the center of a bright yellow sunflower head.",
+    "rarity": "Common",
+    "category": "seed",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Pumpkin Seeds",
+    "description": "Flat, oval ivory seeds removed from the stringy interior of a large orange pumpkin or squash.",
+    "rarity": "Common",
+    "category": "seed",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Lotus Seeds",
+    "description": "Round seeds with a translucent greenish coat, encased in round pods above murky waters.",
+    "rarity": "Rare",
+    "category": "seed",
+    "habitats": {
+      "Swamp": 80,
+      "Coast": 20
+    }
+  },
+  {
+    "name": "Flax Seeds",
+    "description": "Tiny shiny brown seeds produced in rippled pods on tall flax plants swaying in open fields.",
+    "rarity": "Uncommon",
+    "category": "seed",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Chia Seeds",
+    "description": "Small black and white speckled seeds from a fuzzy flowering herb found in dry, open terrains.",
+    "rarity": "Uncommon",
+    "category": "seed",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Mustard Seeds",
+    "description": "Round, hard yellow-brown seeds from a tall flowering plant common in meadows and roadsides.",
+    "rarity": "Common",
+    "category": "seed",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Oyster",
+    "description": "A rough, irregularly-shaped shell containing a soft, off-white mollusk inside; the shells are often encrusted with barnacles.",
+    "rarity": "Common",
+    "category": "shellfish",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Clam",
+    "description": "A smooth, symmetrical shell bivalve, usually creamy white or tan, hiding its soft flesh within sand at tidal flats.",
+    "rarity": "Common",
+    "category": "shellfish",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Mussel",
+    "description": "A sleek, oblong black-blue shell that clamps tightly shut, commonly found attached to rocks in intertidal zones.",
+    "rarity": "Common",
+    "category": "shellfish",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Scallop",
+    "description": "A fan-shaped shell with radiating ridges, often colorful, housing a round, white muscle inside.",
+    "rarity": "Uncommon",
+    "category": "shellfish",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Abalone",
+    "description": "A flattened, ear-shaped shell that is pearlescent inside, clinging to rocks; its meat is beneath the single shell.",
+    "rarity": "Rare",
+    "category": "shellfish",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Sea Snail",
+    "description": "A spiral or cone-shaped shell often patterned or rough, housing a snail that crawls along rocky shores or tide pools.",
+    "rarity": "Common",
+    "category": "shellfish",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Kelp",
+    "description": "Long brown-green fronds with paddle-like blades, often growing in underwater forests off rocky coasts.",
+    "rarity": "Common",
+    "category": "seaweed",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Nori",
+    "description": "Thin, paper-like sheets of deep purple-red seaweed that crumble easily, found washed ashore or harvested from tidal zones.",
+    "rarity": "Common",
+    "category": "seaweed",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Sea Lettuce",
+    "description": "Thin, bright-green sheets that ripple like banners across tidal stones.",
+    "rarity": "Common",
+    "category": "seaweed",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Bladderwrack",
+    "description": "A brown seaweed with branching fronds dotted with tiny round air bladders, floating in tide pools and coastal shallows.",
+    "rarity": "Common",
+    "category": "seaweed",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Sea Grapes",
+    "description": "Tiny green bubble-like orbs that grow on trailing seaweed vines, resembling clusters of translucent grapes.",
+    "rarity": "Uncommon",
+    "category": "seaweed",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Prickly Pear Fruit",
+    "description": "A fleshy, oval fruit with yellow-orange skin covered in small spines, found atop flat cactus pads.",
+    "rarity": "Common",
+    "category": "fruit",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Aloe Leaf",
+    "description": "A thick triangular succulent leaf containing a translucent gel, green with whitish speckles.",
+    "rarity": "Common",
+    "category": "succulent",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Agave Heart",
+    "description": "The dense, fibrous core of an agave plant with leaf bases peeled back, glistening with sweet sap.",
+    "rarity": "Rare",
+    "category": "succulent",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Barrel Cactus Fruit",
+    "description": "A round, bright red fruit perched atop a barrel-shaped cactus with tight ribs.",
+    "rarity": "Rare",
+    "category": "fruit",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Coconut",
+    "description": "A large, hard brown shell covered in coarse fibers, containing white flesh and clear liquid inside.",
+    "rarity": "Common",
+    "category": "fruit",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Mango",
+    "description": "A golden-orange oval fruit with smooth skin, dangling from broad-leafed trees in warm groves.",
+    "rarity": "Uncommon",
+    "category": "fruit",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Banana",
+    "description": "A long, curved fruit with yellow peel hiding soft pale flesh, hanging in large clusters.",
+    "rarity": "Uncommon",
+    "category": "fruit",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Pineapple",
+    "description": "A spiky cylindrical fruit with rough diamond-patterned skin and a tuft of green leaves atop its golden body.",
+    "rarity": "Rare",
+    "category": "fruit",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Dragonfruit",
+    "description": "A bright pink, oblong fruit with green leaf-like scales dotting its skin, growing on night-blooming cactus.",
+    "rarity": "Rare",
+    "category": "fruit",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Date",
+    "description": "An oblong, brownish-red fruit with sweet, chewy flesh, found on tall palms in arid oases.",
+    "rarity": "Uncommon",
+    "category": "fruit",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Olive",
+    "description": "A small oval fruit, green or turning black when ripe, with smooth skin clustered on gnarled evergreen trees.",
+    "rarity": "Common",
+    "category": "fruit",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Fig",
+    "description": "A soft, pear-shaped fruit with mottled purple-green skin and a sweet, seedy interior, hanging from low branches.",
+    "rarity": "Uncommon",
+    "category": "fruit",
+    "habitats": {
+      "Forest": 60,
+      "Plains": 40
+    }
+  },
+  {
+    "name": "Mulberry",
+    "description": "A fruit that starts red and ripens to deep purple-black, growing in clusters on leafy branches.",
+    "rarity": "Common",
+    "category": "fruit",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Wild Nettle",
+    "description": "A tall plant with serrated leaves covered in tiny stinging hairs; leaves appear dark green and jagged.",
+    "rarity": "Common",
+    "category": "leafy",
+    "habitats": {
+      "Forest": 50,
+      "Swamp": 50
+    }
+  },
+  {
+    "name": "Wild Lettuce",
+    "description": "A leafy green with multiple lobed leaves in a rosette, resembling a wild salad green sprouting from the earth.",
+    "rarity": "Common",
+    "category": "leafy",
+    "habitats": {
+      "Plains": 70,
+      "Forest": 30
+    }
+  },
+  {
+    "name": "Burdock Root",
+    "description": "A thick, long root with rough brown skin, belonging to a tall plant topped with burr-like seed heads.",
+    "rarity": "Uncommon",
+    "category": "tuber",
+    "habitats": {
+      "Plains": 60,
+      "Forest": 40
+    }
+  },
+  {
+    "name": "Horseradish Root",
+    "description": "A coarse, knobby white root with a pungent aroma, typically found among damp woodlands.",
+    "rarity": "Uncommon",
+    "category": "vegetable",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Fiddlehead Fern",
+    "description": "The tight young coiled frond of a fern, deep green and fuzzy, often found in moist forest undergrowth.",
+    "rarity": "Common",
+    "category": "leafy",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Reishi Mushroom",
+    "description": "A kidney-shaped mushroom with a shiny red-brown surface and white edges, usually growing on fallen logs.",
+    "rarity": "Rare",
+    "category": "fungi",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Reindeer Moss",
+    "description": "A pale grayish-green lichen that forms dense carpet-like mats across cold, open ground.",
+    "rarity": "Rare",
+    "category": "leafy",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Mountain Lichen",
+    "description": "A crusty, dull-gray or greenish lichen that clings to rocky mountainsides and tree bark.",
+    "rarity": "Uncommon",
+    "category": "leafy",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Wild Grape",
+    "description": "Clusters of small round purple or green grapes hanging from twisting vines, with broad lobed leaves.",
+    "rarity": "Common",
+    "category": "fruit",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Sunberry",
+    "description": "A rare golden-yellow berry that seems to softly gleam in strong daylight, found in open highland clearings.",
+    "rarity": "Legendary",
+    "category": "fruit",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Fey Apple",
+    "description": "A strangely perfect apple with shimmering skin in hues of pink and gold, hanging on ancient trees in hidden groves.",
+    "rarity": "Legendary",
+    "category": "fruit",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Frostcap Mushroom",
+    "description": "A tough, pale-white mushroom with a frosty sheen on its cap, found clinging to snowmelt streams in alpine areas.",
+    "rarity": "Rare",
+    "category": "fungi",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Ghost Mushroom",
+    "description": "A translucent, pale-white mushroom that gleams faintly in dim light, growing in secretive forest corners.",
+    "rarity": "Rare",
+    "category": "fungi",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Snowberry",
+    "description": "A cluster of small, round, frosty-white berries on a red-twigged shrub, often found in cold northern thickets.",
+    "rarity": "Rare",
+    "category": "fruit",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Hawthorn Berry",
+    "description": "Small round red berries that grow in clusters on thorny hawthorn bushes, common in hedgerows and woods.",
+    "rarity": "Common",
+    "category": "fruit",
+    "habitats": {
+      "Forest": 70,
+      "Plains": 30
+    }
+  },
+  {
+    "name": "Hickory Nut",
+    "description": "A smooth, hard brown nut with a slightly square shape, often found inside green husks under tall hickory trees.",
+    "rarity": "Common",
+    "category": "nut",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Pecan",
+    "description": "An oblong, ridged brown nut often found in clusters beneath stately pecan trees.",
+    "rarity": "Uncommon",
+    "category": "nut",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Taro Stem",
+    "description": "A thick, green stalk from an aquatic taro plant, with a bulbous joint and coarse texture.",
+    "rarity": "Uncommon",
+    "category": "vegetable",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Wild Rice",
+    "description": "Long slender grains with a glossy dark husk, found sprouting from the tips of tall aquatic grass blades.",
+    "rarity": "Common",
+    "category": "seed",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Barley Grain",
+    "description": "A stalk of golden spiked grain with small tan kernels, waving gently in fields of wild barley.",
+    "rarity": "Common",
+    "category": "seed",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Rosehip",
+    "description": "A bright red or orange oval fruit, with a waxy sheen, found where wild roses have bloomed and withered.",
+    "rarity": "Common",
+    "category": "fruit",
+    "habitats": {
+      "Plains": 50,
+      "Forest": 50
+    }
+  },
+  {
+    "name": "Wild Cucumber",
+    "description": "A small, green, spiky vine fruit that looks like a tiny cucumber, often found climbing on shrubs.",
+    "rarity": "Common",
+    "category": "fruit",
+    "habitats": {
+      "Forest": 60,
+      "Plains": 40
+    }
+  },
+  {
+    "name": "Ambrosia Melon",
+    "description": "A perfectly round melon with a soft golden rind and faint floral scent, found in warm, open fields.",
+    "rarity": "Legendary",
+    "category": "fruit",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Stag nut",
+    "description": "Hard-shelled nut showing a leaf-littered hue, found beneath shady boughs.",
+    "rarity": "Common",
+    "category": "nut",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Fern cap",
+    "description": "Gilled cap showing a dappled green hue, found at glade edges.",
+    "rarity": "Uncommon",
+    "category": "fungi",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Moss pear",
+    "description": "Plump pear showing a dappled green hue, found at glade edges.",
+    "rarity": "Rare",
+    "category": "fruit",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Rowan-pear",
+    "description": "Plump pear showing a shadowed hue, found beneath shady boughs.",
+    "rarity": "Uncommon",
+    "category": "fruit",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Sweet-trumpet",
+    "description": "Shelf-like trumpet showing a russet hue, found on leaf-littered ground.",
+    "rarity": "Common",
+    "category": "fungi",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Beech-onion",
+    "description": "Fiber-veined onion showing a dappled green hue, found beneath shady boughs.",
+    "rarity": "Common",
+    "category": "vegetable",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Moss-carrot",
+    "description": "Pale-stalked carrot showing a mossy brown hue, found beneath shady boughs.",
+    "rarity": "Uncommon",
+    "category": "vegetable",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Oak-pear",
+    "description": "Plump pear showing a mossy brown hue, found on leaf-littered ground.",
+    "rarity": "Rare",
+    "category": "fruit",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Maple-acorn",
+    "description": "Hard-shelled acorn showing a shadowed hue, found at glade edges.",
+    "rarity": "Common",
+    "category": "nut",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "SweetMushroom",
+    "description": "Domed mushroom showing a russet hue, found at glade edges.",
+    "rarity": "Common",
+    "category": "fungi",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "HazelLeaf",
+    "description": "Ripple-edged leaf showing a leaf-littered hue, found at glade edges.",
+    "rarity": "Common",
+    "category": "leafy",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Grove barley",
+    "description": "Papery barley showing a leaf-littered hue, found on leaf-littered ground.",
+    "rarity": "Common",
+    "category": "seed",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "OakSorrel",
+    "description": "Rosette sorrel showing a dappled green hue, found beneath shady boughs.",
+    "rarity": "Rare",
+    "category": "leafy",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Grove-greens",
+    "description": "Crisp greens showing a mossy brown hue, found beneath shady boughs.",
+    "rarity": "Uncommon",
+    "category": "leafy",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "OakSeed",
+    "description": "Papery seed showing a russet hue, found beneath shady boughs.",
+    "rarity": "Common",
+    "category": "seed",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "BeechApple",
+    "description": "Glossy apple showing a dappled green hue, found beneath shady boughs.",
+    "rarity": "Rare",
+    "category": "fruit",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "HoneyChanterelle",
+    "description": "Gilled chanterelle showing a leaf-littered hue, found beneath shady boughs.",
+    "rarity": "Uncommon",
+    "category": "fungi",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "BeechNut",
+    "description": "Brown-shelled nut showing a shadowed hue, found along fallen logs.",
+    "rarity": "Rare",
+    "category": "nut",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Fern-oyster",
+    "description": "Domed oyster showing a shadowed hue, found along fallen logs.",
+    "rarity": "Common",
+    "category": "fungi",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Fern yam",
+    "description": "Stubby yam showing a leaf-littered hue, found on leaf-littered ground.",
+    "rarity": "Common",
+    "category": "tuber",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Sweet barley",
+    "description": "Small barley showing a leaf-littered hue, found on leaf-littered ground.",
+    "rarity": "Common",
+    "category": "seed",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Sweet pear",
+    "description": "Dangling pear showing a dappled green hue, found at glade edges.",
+    "rarity": "Uncommon",
+    "category": "fruit",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "BeechGreens",
+    "description": "Ripple-edged greens showing a russet hue, found on leaf-littered ground.",
+    "rarity": "Uncommon",
+    "category": "leafy",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Moss yam",
+    "description": "Earthy yam showing a russet hue, found at glade edges.",
+    "rarity": "Common",
+    "category": "tuber",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Pine-trumpet",
+    "description": "Gilled trumpet showing a shadowed hue, found along fallen logs.",
+    "rarity": "Common",
+    "category": "fungi",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Pine greens",
+    "description": "Tender greens showing a shadowed hue, found at glade edges.",
+    "rarity": "Common",
+    "category": "leafy",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Dapple berry",
+    "description": "Dangling berry showing a shadowed hue, found along fallen logs.",
+    "rarity": "Common",
+    "category": "fruit",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "GroveMushroom",
+    "description": "Clustered mushroom showing a russet hue, found on leaf-littered ground.",
+    "rarity": "Common",
+    "category": "fungi",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "MapleSeed",
+    "description": "Small seed showing a shadowed hue, found at glade edges.",
+    "rarity": "Uncommon",
+    "category": "seed",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "BrambleBerry",
+    "description": "Plump berry showing a shadowed hue, found along fallen logs.",
+    "rarity": "Rare",
+    "category": "fruit",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "PineVine",
+    "description": "Speckled vine showing a russet hue, found on leaf-littered ground.",
+    "rarity": "Uncommon",
+    "category": "fruit",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Dapple seed",
+    "description": "Small seed showing a russet hue, found along fallen logs.",
+    "rarity": "Common",
+    "category": "seed",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "HoneyVine",
+    "description": "Clustered vine showing a dappled green hue, found beneath shady boughs.",
+    "rarity": "Rare",
+    "category": "fruit",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Thorn leaf",
+    "description": "Ripple-edged leaf showing a dappled green hue, found beneath shady boughs.",
+    "rarity": "Uncommon",
+    "category": "leafy",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Sweet-oyster",
+    "description": "Clustered oyster showing a russet hue, found on leaf-littered ground.",
+    "rarity": "Common",
+    "category": "fungi",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "MaplePear",
+    "description": "Clustered pear showing a shadowed hue, found along fallen logs.",
+    "rarity": "Common",
+    "category": "fruit",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Shade-berry",
+    "description": "Glossy berry showing a leaf-littered hue, found along fallen logs.",
+    "rarity": "Uncommon",
+    "category": "fruit",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Moss-yam",
+    "description": "Oval yam showing a dappled green hue, found along fallen logs.",
+    "rarity": "Uncommon",
+    "category": "tuber",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Maple-root",
+    "description": "Earthy root showing a shadowed hue, found along fallen logs.",
+    "rarity": "Uncommon",
+    "category": "tuber",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Ash-seed",
+    "description": "Papery seed showing a leaf-littered hue, found beneath shady boughs.",
+    "rarity": "Common",
+    "category": "seed",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Fern sorrel",
+    "description": "Broad-leafed sorrel showing a leaf-littered hue, found on leaf-littered ground.",
+    "rarity": "Common",
+    "category": "leafy",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Beech-leaf",
+    "description": "Rosette leaf showing a shadowed hue, found at glade edges.",
+    "rarity": "Very Rare",
+    "category": "leafy",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Wild onion",
+    "description": "Jointed onion showing a russet hue, found on leaf-littered ground.",
+    "rarity": "Common",
+    "category": "vegetable",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Rowan-berry",
+    "description": "Glossy berry showing a shadowed hue, found beneath shady boughs.",
+    "rarity": "Uncommon",
+    "category": "fruit",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Slate needle",
+    "description": "Rosette needle showing a frost-pale hue, found on chilly ledges.",
+    "rarity": "Uncommon",
+    "category": "leafy",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "High-trumpet",
+    "description": "Shelf-like trumpet showing a sun-bleached hue, found beneath overhangs.",
+    "rarity": "Uncommon",
+    "category": "fungi",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "SnowNut",
+    "description": "Ridged nut showing a granite mottled hue, found beneath overhangs.",
+    "rarity": "Common",
+    "category": "nut",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "GoatMorel",
+    "description": "Clustered morel showing a sun-bleached hue, found among stony pockets.",
+    "rarity": "Rare",
+    "category": "fruit",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Cloud-morel",
+    "description": "Glossy morel showing a sun-bleached hue, found beneath overhangs.",
+    "rarity": "Common",
+    "category": "fungi",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "High-tuft",
+    "description": "Broad-leafed tuft showing a frost-pale hue, found in thin alpine soil.",
+    "rarity": "Common",
+    "category": "leafy",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Cliff-nut",
+    "description": "Brown-shelled nut showing a granite mottled hue, found in thin alpine soil.",
+    "rarity": "Uncommon",
+    "category": "nut",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "GlacierLichen",
+    "description": "Crisp lichen showing a wind-scoured hue, found among stony pockets.",
+    "rarity": "Uncommon",
+    "category": "leafy",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "WindLichen",
+    "description": "Ripple-edged leaf showing a wind-scoured hue, found among stony pockets.",
+    "rarity": "Uncommon",
+    "category": "leafy",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "PeakNeedle",
+    "description": "Crisp needle showing a slate-gray hue, found in thin alpine soil.",
+    "rarity": "Very Rare",
+    "category": "leafy",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "WindPinecone",
+    "description": "Dense pinecone showing a frost-pale hue, found in thin alpine soil.",
+    "rarity": "Uncommon",
+    "category": "seed",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "CliffPinecone",
+    "description": "Dense pinecone showing a slate-gray hue, found in thin alpine soil.",
+    "rarity": "Common",
+    "category": "seed",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Slate-bilberry",
+    "description": "Speckled bilberry showing a wind-scoured hue, found on chilly ledges.",
+    "rarity": "Common",
+    "category": "fruit",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "GraniteTrumpet",
+    "description": "Fan-shaped trumpet showing a slate-gray hue, found among stony pockets.",
+    "rarity": "Rare",
+    "category": "fungi",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "HighSeed",
+    "description": "Dense seed showing a granite mottled hue, found in thin alpine soil.",
+    "rarity": "Uncommon",
+    "category": "seed",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "GraniteSeed",
+    "description": "Dense seed showing a granite mottled hue, found beneath overhangs.",
+    "rarity": "Very Rare",
+    "category": "seed",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Goat-lichen",
+    "description": "Rosette leaf showing a frost-pale hue, found in thin alpine soil.",
+    "rarity": "Uncommon",
+    "category": "leafy",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "ColdCaps",
+    "description": "Shelf-like caps showing a granite mottled hue, found in thin alpine soil.",
+    "rarity": "Common",
+    "category": "fungi",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "IcicleLeaf",
+    "description": "Tender leaf showing a wind-scoured hue, found among stony pockets.",
+    "rarity": "Common",
+    "category": "leafy",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Cloud-pinecone",
+    "description": "Papery pinecone showing a frost-pale hue, found in thin alpine soil.",
+    "rarity": "Common",
+    "category": "seed",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Sky needle",
+    "description": "Ripple-edged needle showing a frost-pale hue, found in thin alpine soil.",
+    "rarity": "Common",
+    "category": "leafy",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "IcicleTuft",
+    "description": "Rosette tuft showing a sun-bleached hue, found in thin alpine soil.",
+    "rarity": "Rare",
+    "category": "leafy",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Stone nut",
+    "description": "Ridged nut showing a frost-pale hue, found on chilly ledges.",
+    "rarity": "Common",
+    "category": "nut",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Granite caps",
+    "description": "Shelf-like caps showing a slate-gray hue, found beneath overhangs.",
+    "rarity": "Uncommon",
+    "category": "fungi",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "HighLichen",
+    "description": "Tender leaf showing a granite mottled hue, found among stony pockets.",
+    "rarity": "Rare",
+    "category": "leafy",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Icicle lichen",
+    "description": "Tender lichen showing a granite mottled hue, found beneath overhangs.",
+    "rarity": "Common",
+    "category": "leafy",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Sky lingon",
+    "description": "Glossy lingon showing a sun-bleached hue, found on chilly ledges.",
+    "rarity": "Common",
+    "category": "fruit",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Cold trumpet",
+    "description": "Domed trumpet showing a granite mottled hue, found on chilly ledges.",
+    "rarity": "Rare",
+    "category": "fungi",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "FrostBerry",
+    "description": "Plump berry showing a frost-pale hue, found in thin alpine soil.",
+    "rarity": "Common",
+    "category": "fruit",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Cold-pinecone",
+    "description": "Beaded pinecone showing a sun-bleached hue, found in thin alpine soil.",
+    "rarity": "Common",
+    "category": "seed",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Glacier berry",
+    "description": "Dangling berry showing a slate-gray hue, found on chilly ledges.",
+    "rarity": "Common",
+    "category": "fruit",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "SlateBerry",
+    "description": "Dangling berry showing a slate-gray hue, found on chilly ledges.",
+    "rarity": "Rare",
+    "category": "fruit",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Stone-needle",
+    "description": "Broad-leafed needle showing a frost-pale hue, found in thin alpine soil.",
+    "rarity": "Common",
+    "category": "leafy",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Frost-pinecone",
+    "description": "Dense pinecone showing a granite mottled hue, found among stony pockets.",
+    "rarity": "Very Rare",
+    "category": "seed",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Cold lichen",
+    "description": "Tender lichen showing a frost-pale hue, found in thin alpine soil.",
+    "rarity": "Uncommon",
+    "category": "leafy",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "EagleLingon",
+    "description": "Speckled lingon showing a frost-pale hue, found on chilly ledges.",
+    "rarity": "Common",
+    "category": "fruit",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Eagle caps",
+    "description": "Clustered caps showing a granite mottled hue, found on chilly ledges.",
+    "rarity": "Very Rare",
+    "category": "fungi",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "AlpineTrumpet",
+    "description": "Fan-shaped trumpet showing a wind-scoured hue, found in thin alpine soil.",
+    "rarity": "Common",
+    "category": "fungi",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Rime-crowberry",
+    "description": "Clustered crowberry showing a granite mottled hue, found among stony pockets.",
+    "rarity": "Uncommon",
+    "category": "fruit",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Cold-lichen",
+    "description": "Broad-leafed lichen showing a wind-scoured hue, found beneath overhangs.",
+    "rarity": "Uncommon",
+    "category": "leafy",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Wind caps",
+    "description": "Shelf-like caps showing a slate-gray hue, found among stony pockets.",
+    "rarity": "Common",
+    "category": "fungi",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Wind-bilberry",
+    "description": "Clustered bilberry showing a granite mottled hue, found in thin alpine soil.",
+    "rarity": "Common",
+    "category": "fruit",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Stone-crowberry",
+    "description": "Speckled crowberry showing a slate-gray hue, found among stony pockets.",
+    "rarity": "Uncommon",
+    "category": "fruit",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Slate-crowberry",
+    "description": "Clustered crowberry showing a frost-pale hue, found among stony pockets.",
+    "rarity": "Common",
+    "category": "fruit",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Hare-carrot",
+    "description": "Fiber-veined carrot showing a straw-gold hue, found in tall grasses.",
+    "rarity": "Rare",
+    "category": "vegetable",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Prairie rye",
+    "description": "Small rye showing a sage green hue, found in tall grasses.",
+    "rarity": "Common",
+    "category": "seed",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "FieldBerry",
+    "description": "Speckled berry showing a sunlit hue, found by meandering brooks.",
+    "rarity": "Uncommon",
+    "category": "fruit",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "WindLettuce",
+    "description": "Broad-leafed lettuce showing a sage green hue, found in tall grasses.",
+    "rarity": "Uncommon",
+    "category": "leafy",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "AmberLettuce",
+    "description": "Broad-leafed lettuce showing a straw-gold hue, found along hedgerows.",
+    "rarity": "Common",
+    "category": "leafy",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Amber barley",
+    "description": "Dense barley showing a open-sky hue, found along hedgerows.",
+    "rarity": "Common",
+    "category": "seed",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Prairie-nut",
+    "description": "Husky nut showing a sunlit hue, found in tall grasses.",
+    "rarity": "Rare",
+    "category": "nut",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Brook turnip",
+    "description": "Fiber-veined turnip showing a sage green hue, found along hedgerows.",
+    "rarity": "Uncommon",
+    "category": "vegetable",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Sun-mushroom",
+    "description": "Shelf-like mushroom showing a sage green hue, found by meandering brooks.",
+    "rarity": "Uncommon",
+    "category": "fungi",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Open tuber",
+    "description": "Earthy tuber showing a sage green hue, found in tall grasses.",
+    "rarity": "Common",
+    "category": "tuber",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Sun-barley",
+    "description": "Papery barley showing a sunlit hue, found across open fields.",
+    "rarity": "Common",
+    "category": "seed",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "AmberApple",
+    "description": "Clustered apple showing a straw-gold hue, found across open fields.",
+    "rarity": "Common",
+    "category": "fruit",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "TallRye",
+    "description": "Striped rye showing a wind-bent hue, found in tall grasses.",
+    "rarity": "Legendary",
+    "category": "seed",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "WildLettuce",
+    "description": "Rosette lettuce showing a wind-bent hue, found across open fields.",
+    "rarity": "Very Rare",
+    "category": "leafy",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Prairie tuber",
+    "description": "Stubby tuber showing a straw-gold hue, found in tall grasses.",
+    "rarity": "Common",
+    "category": "tuber",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "TallLettuce",
+    "description": "Crisp lettuce showing a open-sky hue, found along hedgerows.",
+    "rarity": "Uncommon",
+    "category": "leafy",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Amber-rye",
+    "description": "Small rye showing a sage green hue, found by meandering brooks.",
+    "rarity": "Uncommon",
+    "category": "seed",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "BarleyOnion",
+    "description": "Jointed onion showing a open-sky hue, found in tall grasses.",
+    "rarity": "Common",
+    "category": "vegetable",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "WildPuff",
+    "description": "Domed puff showing a straw-gold hue, found in tall grasses.",
+    "rarity": "Common",
+    "category": "fungi",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "BreezeTuber",
+    "description": "Oval tuber showing a straw-gold hue, found by meandering brooks.",
+    "rarity": "Rare",
+    "category": "tuber",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Meadow-apple",
+    "description": "Dangling apple showing a sage green hue, found along hedgerows.",
+    "rarity": "Common",
+    "category": "fruit",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Field rye",
+    "description": "Striped rye showing a open-sky hue, found along hedgerows.",
+    "rarity": "Uncommon",
+    "category": "seed",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Brook nut",
+    "description": "Brown-shelled nut showing a sunlit hue, found by meandering brooks.",
+    "rarity": "Very Rare",
+    "category": "nut",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Gold-oat",
+    "description": "Small oat showing a straw-gold hue, found along hedgerows.",
+    "rarity": "Legendary",
+    "category": "seed",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "GoldNut",
+    "description": "Hard-shelled nut showing a sunlit hue, found across open fields.",
+    "rarity": "Rare",
+    "category": "nut",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "WheatBarley",
+    "description": "Dense barley showing a open-sky hue, found by meandering brooks.",
+    "rarity": "Uncommon",
+    "category": "seed",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "TallGreens",
+    "description": "Crisp greens showing a straw-gold hue, found across open fields.",
+    "rarity": "Common",
+    "category": "leafy",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Tall-lettuce",
+    "description": "Ripple-edged lettuce showing a sunlit hue, found in tall grasses.",
+    "rarity": "Common",
+    "category": "leafy",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "SunOat",
+    "description": "Small oat showing a straw-gold hue, found in tall grasses.",
+    "rarity": "Rare",
+    "category": "seed",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "PrairieGreens",
+    "description": "Broad-leafed greens showing a wind-bent hue, found in tall grasses.",
+    "rarity": "Uncommon",
+    "category": "leafy",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Dawn-grain",
+    "description": "Papery grain showing a sage green hue, found in tall grasses.",
+    "rarity": "Uncommon",
+    "category": "seed",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Meadow lettuce",
+    "description": "Tender lettuce showing a straw-gold hue, found across open fields.",
+    "rarity": "Uncommon",
+    "category": "leafy",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "DawnGreens",
+    "description": "Broad-leafed greens showing a wind-bent hue, found across open fields.",
+    "rarity": "Common",
+    "category": "leafy",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Wind-onion",
+    "description": "Tapered onion showing a wind-bent hue, found along hedgerows.",
+    "rarity": "Common",
+    "category": "vegetable",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Tall seed",
+    "description": "Striped seed showing a sunlit hue, found in tall grasses.",
+    "rarity": "Uncommon",
+    "category": "seed",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "PrairieMushroom",
+    "description": "Shelf-like mushroom showing a straw-gold hue, found by meandering brooks.",
+    "rarity": "Uncommon",
+    "category": "fungi",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Wheat tuber",
+    "description": "Smooth-skinned tuber showing a wind-bent hue, found across open fields.",
+    "rarity": "Uncommon",
+    "category": "tuber",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Open-mushroom",
+    "description": "Fan-shaped mushroom showing a sunlit hue, found by meandering brooks.",
+    "rarity": "Common",
+    "category": "fungi",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Field puff",
+    "description": "Domed puff showing a straw-gold hue, found across open fields.",
+    "rarity": "Common",
+    "category": "fungi",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "WheatLettuce",
+    "description": "Tender lettuce showing a straw-gold hue, found along hedgerows.",
+    "rarity": "Uncommon",
+    "category": "leafy",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Prairie-grain",
+    "description": "Small grain showing a straw-gold hue, found by meandering brooks.",
+    "rarity": "Rare",
+    "category": "seed",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Wheat-lettuce",
+    "description": "Crisp lettuce showing a sage green hue, found in tall grasses.",
+    "rarity": "Common",
+    "category": "leafy",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "BrookMushroom",
+    "description": "Shelf-like mushroom showing a sage green hue, found by meandering brooks.",
+    "rarity": "Uncommon",
+    "category": "fungi",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Amber-turnip",
+    "description": "Jointed turnip showing a open-sky hue, found across open fields.",
+    "rarity": "Rare",
+    "category": "vegetable",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "PeatMushroom",
+    "description": "Fan-shaped mushroom showing a slick green hue, found on waterlogged roots.",
+    "rarity": "Common",
+    "category": "fungi",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "MarshLotus",
+    "description": "Fiber-veined lotus showing a mud-dark hue, found among reeds.",
+    "rarity": "Common",
+    "category": "vegetable",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Fen-mushroom",
+    "description": "Clustered mushroom showing a mud-dark hue, found beside still water.",
+    "rarity": "Very Rare",
+    "category": "fungi",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Fen bulb",
+    "description": "Pale-stalked bulb showing a peat-brown hue, found on spongy mats.",
+    "rarity": "Rare",
+    "category": "vegetable",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "LeechBerry",
+    "description": "Glossy berry showing a slick green hue, found on waterlogged roots.",
+    "rarity": "Rare",
+    "category": "fruit",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "LeechRoot",
+    "description": "Knobbed root showing a mud-dark hue, found on spongy mats.",
+    "rarity": "Very Rare",
+    "category": "tuber",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Still cress",
+    "description": "Tender cress showing a slick green hue, found among reeds.",
+    "rarity": "Uncommon",
+    "category": "leafy",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Still-shoot",
+    "description": "Jointed shoot showing a slick green hue, found beside still water.",
+    "rarity": "Uncommon",
+    "category": "vegetable",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Reed stem",
+    "description": "Pale-stalked stem showing a mud-dark hue, found on spongy mats.",
+    "rarity": "Uncommon",
+    "category": "vegetable",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "MudCranberry",
+    "description": "Plump cranberry showing a slick green hue, found on spongy mats.",
+    "rarity": "Very Rare",
+    "category": "fruit",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Fen-oyster",
+    "description": "Domed oyster showing a slick green hue, found on spongy mats.",
+    "rarity": "Common",
+    "category": "fungi",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "DriftSeed",
+    "description": "Papery seed showing a olive hue, found beside still water.",
+    "rarity": "Common",
+    "category": "seed",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Marsh-greens",
+    "description": "Rosette greens showing a peat-brown hue, found on spongy mats.",
+    "rarity": "Common",
+    "category": "leafy",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Gator seed",
+    "description": "Beaded seed showing a olive hue, found on waterlogged roots.",
+    "rarity": "Common",
+    "category": "seed",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Marsh berry",
+    "description": "Glossy berry showing a waterlogged hue, found on waterlogged roots.",
+    "rarity": "Common",
+    "category": "fruit",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "SoddenTuber",
+    "description": "Oval tuber showing a mud-dark hue, found on waterlogged roots.",
+    "rarity": "Rare",
+    "category": "tuber",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Still mushroom",
+    "description": "Domed mushroom showing a slick green hue, found on waterlogged roots.",
+    "rarity": "Uncommon",
+    "category": "fungi",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "LilypadRoot",
+    "description": "Oval root showing a olive hue, found beside still water.",
+    "rarity": "Common",
+    "category": "tuber",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "LeechCranberry",
+    "description": "Clustered cranberry showing a olive hue, found on spongy mats.",
+    "rarity": "Common",
+    "category": "fruit",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "GatorCranberry",
+    "description": "Speckled cranberry showing a slick green hue, found on waterlogged roots.",
+    "rarity": "Common",
+    "category": "fruit",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "SedgeTuber",
+    "description": "Earthy tuber showing a mud-dark hue, found on spongy mats.",
+    "rarity": "Common",
+    "category": "tuber",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Gator greens",
+    "description": "Rosette greens showing a slick green hue, found beside still water.",
+    "rarity": "Very Rare",
+    "category": "leafy",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Marsh berries",
+    "description": "Glossy berry showing a slick green hue, found among reeds.",
+    "rarity": "Common",
+    "category": "fruit",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "ReedGreens",
+    "description": "Crisp greens showing a peat-brown hue, found among reeds.",
+    "rarity": "Common",
+    "category": "leafy",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Lilypad puff",
+    "description": "Fan-shaped puff showing a mud-dark hue, found on spongy mats.",
+    "rarity": "Common",
+    "category": "fungi",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Drift berry",
+    "description": "Glossy berry showing a peat-brown hue, found on waterlogged roots.",
+    "rarity": "Uncommon",
+    "category": "fruit",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "BogReedheart",
+    "description": "Pale-stalked reedheart showing a olive hue, found on waterlogged roots.",
+    "rarity": "Common",
+    "category": "vegetable",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Sedge-cranberry",
+    "description": "Speckled cranberry showing a peat-brown hue, found among reeds.",
+    "rarity": "Uncommon",
+    "category": "fruit",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Gator root",
+    "description": "Earthy root showing a slick green hue, found on spongy mats.",
+    "rarity": "Rare",
+    "category": "tuber",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Reed cress",
+    "description": "Broad-leafed cress showing a waterlogged hue, found on waterlogged roots.",
+    "rarity": "Common",
+    "category": "leafy",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Lilypad-oyster",
+    "description": "Gilled oyster showing a waterlogged hue, found on spongy mats.",
+    "rarity": "Uncommon",
+    "category": "fungi",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "StillLotus",
+    "description": "Fiber-veined lotus showing a waterlogged hue, found on waterlogged roots.",
+    "rarity": "Common",
+    "category": "vegetable",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "LeechPuff",
+    "description": "Clustered puff showing a slick green hue, found on spongy mats.",
+    "rarity": "Common",
+    "category": "fungi",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Mire berry",
+    "description": "Dangling berry showing a mud-dark hue, found among reeds.",
+    "rarity": "Common",
+    "category": "fruit",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Leech seed",
+    "description": "Striped seed showing a mud-dark hue, found among reeds.",
+    "rarity": "Rare",
+    "category": "seed",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Marsh-mushroom",
+    "description": "Gilled mushroom showing a waterlogged hue, found among reeds.",
+    "rarity": "Uncommon",
+    "category": "fungi",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Cypress-puff",
+    "description": "Gilled puff showing a mud-dark hue, found among reeds.",
+    "rarity": "Very Rare",
+    "category": "fungi",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Fen-root",
+    "description": "Stubby root showing a slick green hue, found on waterlogged roots.",
+    "rarity": "Uncommon",
+    "category": "tuber",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Bog berry",
+    "description": "Plump berry showing a slick green hue, found on waterlogged roots.",
+    "rarity": "Common",
+    "category": "fruit",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Still bulb",
+    "description": "Tapered bulb showing a waterlogged hue, found among reeds.",
+    "rarity": "Common",
+    "category": "vegetable",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "GatorStem",
+    "description": "Bulbous stem showing a olive hue, found on spongy mats.",
+    "rarity": "Rare",
+    "category": "vegetable",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Drift-lotus",
+    "description": "Fiber-veined lotus showing a slick green hue, found among reeds.",
+    "rarity": "Uncommon",
+    "category": "vegetable",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Leech-oyster",
+    "description": "Gilled oyster showing a olive hue, found on waterlogged roots.",
+    "rarity": "Rare",
+    "category": "fungi",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Marsh reedheart",
+    "description": "Tapered reedheart showing a slick green hue, found beside still water.",
+    "rarity": "Common",
+    "category": "vegetable",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Oasis-mesquite",
+    "description": "Papery mesquite showing a coppery hue, found at dune bases.",
+    "rarity": "Rare",
+    "category": "seed",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "SunFruit",
+    "description": "Dangling fruit showing a parched hue, found near dry washes.",
+    "rarity": "Very Rare",
+    "category": "vegetable",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Mirage-tuber",
+    "description": "Oval tuber showing a coppery hue, found between hot stones.",
+    "rarity": "Rare",
+    "category": "tuber",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Cinder pod",
+    "description": "Papery pod showing a parched hue, found between hot stones.",
+    "rarity": "Rare",
+    "category": "seed",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "CopperBean",
+    "description": "Papery bean showing a sand-gold hue, found in sparse scrub.",
+    "rarity": "Uncommon",
+    "category": "seed",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Sun-pear",
+    "description": "Plump pear showing a sun-baked hue, found near dry washes.",
+    "rarity": "Uncommon",
+    "category": "fruit",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "SereCactus",
+    "description": "Thick-padded cactus showing a parched hue, found at dune bases.",
+    "rarity": "Uncommon",
+    "category": "succulent",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Opal-pod",
+    "description": "Small pod showing a sun-baked hue, found in sparse scrub.",
+    "rarity": "Uncommon",
+    "category": "seed",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "CopperPear",
+    "description": "Glossy pear showing a coppery hue, found between hot stones.",
+    "rarity": "Uncommon",
+    "category": "fruit",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "SereAgave",
+    "description": "Ribbed agave showing a dust-red hue, found near dry washes.",
+    "rarity": "Common",
+    "category": "succulent",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Agave fig",
+    "description": "Clustered fig showing a sun-baked hue, found near dry washes.",
+    "rarity": "Uncommon",
+    "category": "fruit",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "SpineAgave",
+    "description": "Thick-padded agave showing a parched hue, found at dune bases.",
+    "rarity": "Very Rare",
+    "category": "succulent",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Scorch-pear",
+    "description": "Speckled pear showing a sand-gold hue, found at dune bases.",
+    "rarity": "Common",
+    "category": "fruit",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Sun seed",
+    "description": "Small seed showing a sand-gold hue, found in sparse scrub.",
+    "rarity": "Rare",
+    "category": "seed",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Oasis-seed",
+    "description": "Papery seed showing a dust-red hue, found at dune bases.",
+    "rarity": "Uncommon",
+    "category": "seed",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Scorch-seed",
+    "description": "Striped seed showing a coppery hue, found between hot stones.",
+    "rarity": "Very Rare",
+    "category": "seed",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Scorch pear",
+    "description": "Dangling pear showing a parched hue, found near dry washes.",
+    "rarity": "Very Rare",
+    "category": "fruit",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "CinderMesquite",
+    "description": "Papery mesquite showing a dust-red hue, found in sparse scrub.",
+    "rarity": "Common",
+    "category": "seed",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Cinder-mesquite",
+    "description": "Dense mesquite showing a parched hue, found at dune bases.",
+    "rarity": "Uncommon",
+    "category": "seed",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "GlassCactus",
+    "description": "Ribbed cactus showing a sand-gold hue, found near dry washes.",
+    "rarity": "Common",
+    "category": "succulent",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Scorch onion",
+    "description": "Jointed onion showing a parched hue, found between hot stones.",
+    "rarity": "Uncommon",
+    "category": "vegetable",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Agave-agave",
+    "description": "Spined agave showing a sand-gold hue, found in sparse scrub.",
+    "rarity": "Common",
+    "category": "succulent",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Salt-cactus",
+    "description": "Thick-padded cactus showing a sand-gold hue, found in sparse scrub.",
+    "rarity": "Common",
+    "category": "succulent",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Salt-onion",
+    "description": "Tapered onion showing a sand-gold hue, found near dry washes.",
+    "rarity": "Common",
+    "category": "vegetable",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Salt-fruit",
+    "description": "Clustered fruit showing a sand-gold hue, found between hot stones.",
+    "rarity": "Uncommon",
+    "category": "tuber",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Flare pad",
+    "description": "Ribbed pad showing a sun-baked hue, found in sparse scrub.",
+    "rarity": "Common",
+    "category": "succulent",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Salt-seed",
+    "description": "Striped seed showing a sun-baked hue, found at dune bases.",
+    "rarity": "Common",
+    "category": "seed",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "SunAgave",
+    "description": "Fleshy agave showing a parched hue, found between hot stones.",
+    "rarity": "Uncommon",
+    "category": "succulent",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Agave heart",
+    "description": "Gel-filled heart showing a dust-red hue, found in sparse scrub.",
+    "rarity": "Rare",
+    "category": "succulent",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Dust-bean",
+    "description": "Small bean showing a coppery hue, found in sparse scrub.",
+    "rarity": "Common",
+    "category": "seed",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Salt-heart",
+    "description": "Ribbed heart showing a sun-baked hue, found near dry washes.",
+    "rarity": "Uncommon",
+    "category": "succulent",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Thorn pear",
+    "description": "Dangling pear showing a sand-gold hue, found in sparse scrub.",
+    "rarity": "Common",
+    "category": "fruit",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "FlareOnion",
+    "description": "Bulbous onion showing a sun-baked hue, found at dune bases.",
+    "rarity": "Common",
+    "category": "vegetable",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Opal-mesquite",
+    "description": "Striped mesquite showing a parched hue, found between hot stones.",
+    "rarity": "Common",
+    "category": "seed",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "ScorchBean",
+    "description": "Papery bean showing a sun-baked hue, found between hot stones.",
+    "rarity": "Rare",
+    "category": "seed",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "CinderPad",
+    "description": "Fleshy pad showing a dust-red hue, found between hot stones.",
+    "rarity": "Rare",
+    "category": "succulent",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "SunPear",
+    "description": "Glossy pear showing a coppery hue, found near dry washes.",
+    "rarity": "Common",
+    "category": "fruit",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Dust cactus",
+    "description": "Gel-filled cactus showing a coppery hue, found near dry washes.",
+    "rarity": "Common",
+    "category": "succulent",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Opal-heart",
+    "description": "Spined heart showing a dust-red hue, found in sparse scrub.",
+    "rarity": "Common",
+    "category": "succulent",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Saguaro-aloe",
+    "description": "Gel-filled aloe showing a sand-gold hue, found in sparse scrub.",
+    "rarity": "Uncommon",
+    "category": "succulent",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Agave-tuber",
+    "description": "Stubby tuber showing a coppery hue, found between hot stones.",
+    "rarity": "Common",
+    "category": "tuber",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "DustCactus",
+    "description": "Thick-padded cactus showing a sun-baked hue, found near dry washes.",
+    "rarity": "Rare",
+    "category": "succulent",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Barren-pad",
+    "description": "Gel-filled pad showing a parched hue, found between hot stones.",
+    "rarity": "Rare",
+    "category": "succulent",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "DuneTuber",
+    "description": "Knobbed tuber showing a sand-gold hue, found in sparse scrub.",
+    "rarity": "Uncommon",
+    "category": "tuber",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Azure mussel",
+    "description": "Cone-shelled mussel showing a kelp-brown hue, found in shallow pools.",
+    "rarity": "Common",
+    "category": "shellfish",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Gull whelk",
+    "description": "Ridged-shell whelk showing a kelp-brown hue, found in shallow pools.",
+    "rarity": "Common",
+    "category": "shellfish",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "AzureSnail",
+    "description": "Slate-banded snail showing a sea-green hue, found on tide-wet rocks.",
+    "rarity": "Common",
+    "category": "shellfish",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Salt fern",
+    "description": "Ripple-edged fern showing a kelp-brown hue, found among salt-sprayed stones.",
+    "rarity": "Common",
+    "category": "leafy",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Kelp-kelp",
+    "description": "Ribboning kelp showing a salt-sheened hue, found in shallow pools.",
+    "rarity": "Common",
+    "category": "seaweed",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "CoralFern",
+    "description": "Crisp fern showing a pearl-gray hue, found among salt-sprayed stones.",
+    "rarity": "Common",
+    "category": "leafy",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Azure-lettuce",
+    "description": "Tender lettuce showing a kelp-brown hue, found in shallow pools.",
+    "rarity": "Common",
+    "category": "leafy",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Reef-eelgrass",
+    "description": "Straplike eelgrass showing a pearl-gray hue, found in shallow pools.",
+    "rarity": "Common",
+    "category": "seaweed",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "ReefKelp",
+    "description": "Feathery kelp showing a sea-green hue, found among salt-sprayed stones.",
+    "rarity": "Rare",
+    "category": "seaweed",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "SaltWrack",
+    "description": "Bubble-dotted wrack showing a salt-sheened hue, found along drift lines.",
+    "rarity": "Very Rare",
+    "category": "seaweed",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Sea-limpet",
+    "description": "Ridged-shell limpet showing a pearl-gray hue, found along drift lines.",
+    "rarity": "Common",
+    "category": "shellfish",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Azure weed",
+    "description": "Bubble-dotted weed showing a foam-white hue, found among salt-sprayed stones.",
+    "rarity": "Common",
+    "category": "seaweed",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Coral samphire",
+    "description": "Jointed samphire showing a sea-green hue, found on tide-wet rocks.",
+    "rarity": "Common",
+    "category": "vegetable",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Wave whelk",
+    "description": "Iridescent whelk showing a kelp-brown hue, found in shallow pools.",
+    "rarity": "Common",
+    "category": "shellfish",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Spray-lettuce",
+    "description": "Crisp lettuce showing a foam-white hue, found along drift lines.",
+    "rarity": "Very Rare",
+    "category": "leafy",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "FoamSamphire",
+    "description": "Jointed samphire showing a foam-white hue, found on tide-wet rocks.",
+    "rarity": "Common",
+    "category": "vegetable",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Reef samphire",
+    "description": "Pale-stalked samphire showing a sea-green hue, found on tide-wet rocks.",
+    "rarity": "Very Rare",
+    "category": "vegetable",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Foam-lettuce",
+    "description": "Rosette lettuce showing a foam-white hue, found among salt-sprayed stones.",
+    "rarity": "Uncommon",
+    "category": "leafy",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Sea snail",
+    "description": "Pearl-lipped snail showing a pearl-gray hue, found along drift lines.",
+    "rarity": "Very Rare",
+    "category": "shellfish",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Foam eelgrass",
+    "description": "Feathery eelgrass showing a kelp-brown hue, found on tide-wet rocks.",
+    "rarity": "Legendary",
+    "category": "seaweed",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Foam-wrack",
+    "description": "Feathery wrack showing a kelp-brown hue, found in shallow pools.",
+    "rarity": "Uncommon",
+    "category": "seaweed",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Wave-lettuce",
+    "description": "Rosette lettuce showing a pearl-gray hue, found in shallow pools.",
+    "rarity": "Rare",
+    "category": "leafy",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Gull mussel",
+    "description": "Slate-banded mussel showing a pearl-gray hue, found along drift lines.",
+    "rarity": "Uncommon",
+    "category": "shellfish",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "SaltEelgrass",
+    "description": "Feathery eelgrass showing a foam-white hue, found among salt-sprayed stones.",
+    "rarity": "Common",
+    "category": "seaweed",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "AzureWeed",
+    "description": "Straplike weed showing a pearl-gray hue, found in shallow pools.",
+    "rarity": "Rare",
+    "category": "seaweed",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Reef-berry",
+    "description": "Dangling berry showing a kelp-brown hue, found along drift lines.",
+    "rarity": "Uncommon",
+    "category": "fruit",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Rock weed",
+    "description": "Sheet-thin weed showing a foam-white hue, found in shallow pools.",
+    "rarity": "Common",
+    "category": "seaweed",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Coral berry",
+    "description": "Glossy berry showing a salt-sheened hue, found among salt-sprayed stones.",
+    "rarity": "Uncommon",
+    "category": "fruit",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "KelpKelp",
+    "description": "Ribboning kelp showing a foam-white hue, found along drift lines.",
+    "rarity": "Uncommon",
+    "category": "seaweed",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "BrineBerry",
+    "description": "Dangling berry showing a foam-white hue, found in shallow pools.",
+    "rarity": "Uncommon",
+    "category": "fruit",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Drift algae",
+    "description": "Feathery algae showing a salt-sheened hue, found among salt-sprayed stones.",
+    "rarity": "Common",
+    "category": "seaweed",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "GullLimpet",
+    "description": "Cone-shelled limpet showing a foam-white hue, found along drift lines.",
+    "rarity": "Uncommon",
+    "category": "shellfish",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Brine clam",
+    "description": "Cone-shelled clam showing a foam-white hue, found in shallow pools.",
+    "rarity": "Uncommon",
+    "category": "shellfish",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Kelp weed",
+    "description": "Straplike weed showing a salt-sheened hue, found along drift lines.",
+    "rarity": "Uncommon",
+    "category": "seaweed",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Lagoon lettuce",
+    "description": "Rosette lettuce showing a salt-sheened hue, found along drift lines.",
+    "rarity": "Common",
+    "category": "leafy",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "TideEelgrass",
+    "description": "Bubble-dotted eelgrass showing a sea-green hue, found along drift lines.",
+    "rarity": "Uncommon",
+    "category": "seaweed",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Rock whelk",
+    "description": "Ridged-shell whelk showing a salt-sheened hue, found along drift lines.",
+    "rarity": "Rare",
+    "category": "shellfish",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Sea-eelgrass",
+    "description": "Straplike eelgrass showing a sea-green hue, found on tide-wet rocks.",
+    "rarity": "Common",
+    "category": "seaweed",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Sea-kelp",
+    "description": "Feathery kelp showing a sea-green hue, found in shallow pools.",
+    "rarity": "Common",
+    "category": "seaweed",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Drift oyster",
+    "description": "Shelf-like oyster showing a sea-green hue, found among salt-sprayed stones.",
+    "rarity": "Common",
+    "category": "fungi",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Pearl-seed",
+    "description": "Dense seed showing a kelp-brown hue, found in shallow pools.",
+    "rarity": "Common",
+    "category": "seed",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Foam mussel",
+    "description": "Pearl-lipped mussel showing a salt-sheened hue, found among salt-sprayed stones.",
+    "rarity": "Uncommon",
+    "category": "shellfish",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Salt-eelgrass",
+    "description": "Straplike eelgrass showing a pearl-gray hue, found on tide-wet rocks.",
+    "rarity": "Uncommon",
+    "category": "seaweed",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Foam wrack",
+    "description": "Sheet-thin wrack showing a sea-green hue, found among salt-sprayed stones.",
+    "rarity": "Very Rare",
+    "category": "seaweed",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "GloamOyster",
+    "description": "Clustered oyster showing a pearl-blue hue, found at stalagmite bases.",
+    "rarity": "Common",
+    "category": "fungi",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "EbonMoss",
+    "description": "Plump moss showing a dimly luminous hue, found on damp cavern walls.",
+    "rarity": "Uncommon",
+    "category": "fruit",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "GraveMoss",
+    "description": "Glossy moss showing a ghost-pale hue, found near trickling rills.",
+    "rarity": "Uncommon",
+    "category": "fungi",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Echo oyster",
+    "description": "Gilled oyster showing a soot-black hue, found on damp cavern walls.",
+    "rarity": "Common",
+    "category": "fungi",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "StalShelf",
+    "description": "Glossy shelf showing a ashen hue, found at stalagmite bases.",
+    "rarity": "Common",
+    "category": "fruit",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Cave-leaf",
+    "description": "Ripple-edged leaf showing a ghost-pale hue, found at stalagmite bases.",
+    "rarity": "Common",
+    "category": "leafy",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Whisper leaf",
+    "description": "Broad-leafed leaf showing a soot-black hue, found at stalagmite bases.",
+    "rarity": "Common",
+    "category": "leafy",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Shade truffle",
+    "description": "Clustered truffle showing a ghost-pale hue, found in mineral cracks.",
+    "rarity": "Uncommon",
+    "category": "fungi",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Gloam-tuber",
+    "description": "Smooth-skinned tuber showing a ashen hue, found on damp cavern walls.",
+    "rarity": "Rare",
+    "category": "tuber",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Lantern-tuber",
+    "description": "Smooth-skinned tuber showing a dimly luminous hue, found near trickling rills.",
+    "rarity": "Common",
+    "category": "tuber",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "EbonPuff",
+    "description": "Clustered puff showing a soot-black hue, found at stalagmite bases.",
+    "rarity": "Rare",
+    "category": "fungi",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Echo-grape",
+    "description": "Clustered grape showing a ashen hue, found in mineral cracks.",
+    "rarity": "Uncommon",
+    "category": "tuber",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Umbral-leaf",
+    "description": "Broad-leafed leaf showing a ghost-pale hue, found in mineral cracks.",
+    "rarity": "Uncommon",
+    "category": "leafy",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Shiver puff",
+    "description": "Shelf-like puff showing a soot-black hue, found in mineral cracks.",
+    "rarity": "Common",
+    "category": "fungi",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Lantern-lamella",
+    "description": "Clustered lamella showing a dimly luminous hue, found in mineral cracks.",
+    "rarity": "Rare",
+    "category": "leafy",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Shiver-tuber",
+    "description": "Earthy tuber showing a pearl-blue hue, found in mineral cracks.",
+    "rarity": "Very Rare",
+    "category": "tuber",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Shiver button",
+    "description": "Clustered button showing a pearl-blue hue, found near trickling rills.",
+    "rarity": "Common",
+    "category": "fruit",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "EchoTuber",
+    "description": "Knobbed tuber showing a ghost-pale hue, found on damp cavern walls.",
+    "rarity": "Uncommon",
+    "category": "tuber",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Umbral-grape",
+    "description": "Glossy grape showing a dimly luminous hue, found on damp cavern walls.",
+    "rarity": "Very Rare",
+    "category": "fruit",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Glass leaf",
+    "description": "Rosette leaf showing a ashen hue, found near trickling rills.",
+    "rarity": "Common",
+    "category": "leafy",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "GloamVine",
+    "description": "Speckled vine showing a soot-black hue, found near trickling rills.",
+    "rarity": "Common",
+    "category": "fruit",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Veil moss",
+    "description": "Dangling moss showing a dimly luminous hue, found at stalagmite bases.",
+    "rarity": "Common",
+    "category": "tuber",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Veil shelf",
+    "description": "Speckled shelf showing a dimly luminous hue, found in mineral cracks.",
+    "rarity": "Rare",
+    "category": "fruit",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Pale grape",
+    "description": "Speckled grape showing a dimly luminous hue, found near trickling rills.",
+    "rarity": "Uncommon",
+    "category": "leafy",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Veil root",
+    "description": "Oval root showing a pearl-blue hue, found in mineral cracks.",
+    "rarity": "Common",
+    "category": "tuber",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "ShiverButton",
+    "description": "Dangling button showing a dimly luminous hue, found on damp cavern walls.",
+    "rarity": "Common",
+    "category": "fungi",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "GloamTuber",
+    "description": "Knobbed tuber showing a dimly luminous hue, found near trickling rills.",
+    "rarity": "Rare",
+    "category": "tuber",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Gloam-leaf",
+    "description": "Ripple-edged leaf showing a ghost-pale hue, found in mineral cracks.",
+    "rarity": "Uncommon",
+    "category": "leafy",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "LanternShelf",
+    "description": "Clustered shelf showing a dimly luminous hue, found in mineral cracks.",
+    "rarity": "Very Rare",
+    "category": "tuber",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Glass root",
+    "description": "Knobbed root showing a ghost-pale hue, found at stalagmite bases.",
+    "rarity": "Uncommon",
+    "category": "tuber",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Shade-greens",
+    "description": "Crisp greens showing a soot-black hue, found in mineral cracks.",
+    "rarity": "Uncommon",
+    "category": "leafy",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Shade-lamella",
+    "description": "Dangling lamella showing a ashen hue, found near trickling rills.",
+    "rarity": "Common",
+    "category": "leafy",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Lantern gill",
+    "description": "Glossy gill showing a dimly luminous hue, found at stalagmite bases.",
+    "rarity": "Very Rare",
+    "category": "tuber",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Cave-vine",
+    "description": "Speckled vine showing a pearl-blue hue, found near trickling rills.",
+    "rarity": "Uncommon",
+    "category": "fruit",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Glow-root",
+    "description": "Oval root showing a soot-black hue, found near trickling rills.",
+    "rarity": "Common",
+    "category": "tuber",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Glow-vine",
+    "description": "Dangling vine showing a pearl-blue hue, found in mineral cracks.",
+    "rarity": "Very Rare",
+    "category": "fruit",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Spore oyster",
+    "description": "Clustered oyster showing a pearl-blue hue, found on damp cavern walls.",
+    "rarity": "Uncommon",
+    "category": "fungi",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Echo berry",
+    "description": "Speckled berry showing a soot-black hue, found at stalagmite bases.",
+    "rarity": "Uncommon",
+    "category": "fruit",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "ShiverTruffle",
+    "description": "Clustered truffle showing a soot-black hue, found in mineral cracks.",
+    "rarity": "Uncommon",
+    "category": "leafy",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Shade-leaf",
+    "description": "Rosette leaf showing a dimly luminous hue, found in mineral cracks.",
+    "rarity": "Rare",
+    "category": "leafy",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Stal greens",
+    "description": "Ripple-edged greens showing a pearl-blue hue, found near trickling rills.",
+    "rarity": "Uncommon",
+    "category": "leafy",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Stal berries",
+    "description": "Clustered berry showing a soot-black hue, found at stalagmite bases.",
+    "rarity": "Very Rare",
+    "category": "fruit",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "ShadeGrape",
+    "description": "Plump grape showing a pearl-blue hue, found near trickling rills.",
+    "rarity": "Common",
+    "category": "leafy",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Cave puff",
+    "description": "Clustered puff showing a ashen hue, found at stalagmite bases.",
+    "rarity": "Rare",
+    "category": "fungi",
+    "habitats": {
+      "Underdark": 100
+    }
+  }
+]

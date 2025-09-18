@@ -1,0 +1,1450 @@
+[
+  {
+    "name": "White‑tailed Deer",
+    "description": "A medium deer with tan coat and a white flagging tail; slim legs and alert ears beneath broadleaf canopy.",
+    "rarity": "Uncommon",
+    "hideType": "leather",
+    "habitats": {
+      "Forest": 80,
+      "Plains": 20
+    }
+  },
+  {
+    "name": "Red Deer",
+    "description": "A large, russet‑brown stag with branching antlers, moving in small herds among tall trunks.",
+    "rarity": "Uncommon",
+    "hideType": "leather",
+    "habitats": {
+      "Forest": 85,
+      "Mountain": 15
+    }
+  },
+  {
+    "name": "Wild Boar",
+    "description": "A low, barrel‑bodied pig with coarse dark bristles and curved tusks, rooting through leaf litter.",
+    "rarity": "Uncommon",
+    "hideType": "leather",
+    "habitats": {
+      "Forest": 90,
+      "Swamp": 10
+    }
+  },
+  {
+    "name": "European Hare",
+    "description": "A long‑limbed hare with mottled brown fur and tall black‑tipped ears, poised on forest edge paths.",
+    "rarity": "Common",
+    "hideType": "fur",
+    "habitats": {
+      "Forest": 60,
+      "Plains": 40
+    }
+  },
+  {
+    "name": "Cottontail Rabbit",
+    "description": "A small rabbit with gray‑brown coat and a puff of white tail, flicking through underbrush.",
+    "rarity": "Common",
+    "hideType": "fur",
+    "habitats": {
+      "Forest": 70,
+      "Plains": 30
+    }
+  },
+  {
+    "name": "Gray Squirrel",
+    "description": "A nimble tree‑squirrel with slate‑gray coat and plumed tail, leaping between low branches.",
+    "rarity": "Common",
+    "hideType": "fur",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Red Fox",
+    "description": "A slender canid with rust‑red coat, white throat, and black stockings; a brush tail tipped in white.",
+    "rarity": "Uncommon",
+    "hideType": "fur",
+    "habitats": {
+      "Forest": 80,
+      "Plains": 20
+    }
+  },
+  {
+    "name": "Wild Turkey",
+    "description": "A broad‑breasted ground bird with bronze iridescent feathers and a fanned tail.",
+    "rarity": "Uncommon",
+    "hideType": "feathers",
+    "habitats": {
+      "Forest": 85,
+      "Plains": 15
+    }
+  },
+  {
+    "name": "Common Pheasant",
+    "description": "A long‑tailed gamebird; cocks wear emerald heads and barred bronze bodies.",
+    "rarity": "Common",
+    "hideType": "feathers",
+    "habitats": {
+      "Forest": 60,
+      "Plains": 40
+    }
+  },
+  {
+    "name": "Ruffed Grouse",
+    "description": "A mottled brown grouse with a short crest; bursts from leaf litter in a whir of wings.",
+    "rarity": "Common",
+    "hideType": "feathers",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Black Bear",
+    "description": "A thick‑set bear with glossy black coat and small ears, foraging along berry thickets.",
+    "rarity": "Rare",
+    "hideType": "fur",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Gray Wolf",
+    "description": "A rangy wolf with grizzled coat and keen amber eyes, padding along game trails.",
+    "rarity": "Rare",
+    "hideType": "fur",
+    "habitats": {
+      "Forest": 80,
+      "Plains": 20
+    }
+  },
+  {
+    "name": "Bison",
+    "description": "A massive, dark‑brown bovine with shaggy forequarters and a humped shoulder.",
+    "rarity": "Rare",
+    "hideType": "leather",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Pronghorn",
+    "description": "A tan‑and‑white fleet ungulate with black cheek bars and short pronged horns.",
+    "rarity": "Uncommon",
+    "hideType": "leather",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Wild Horse",
+    "description": "A muscular, dun‑coated horse with dark mane and tail, grazing in open steppe.",
+    "rarity": "Uncommon",
+    "hideType": "leather",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Coyote",
+    "description": "A lean canid with tawny‑gray coat and narrow muzzle, trotting with tail low across grasslands.",
+    "rarity": "Common",
+    "hideType": "fur",
+    "habitats": {
+      "Plains": 80,
+      "Desert": 20
+    }
+  },
+  {
+    "name": "Black‑tailed Jackrabbit",
+    "description": "A long‑eared hare with dark tail and sandy coat, sprinting in zigzags across open ground.",
+    "rarity": "Common",
+    "hideType": "fur",
+    "habitats": {
+      "Plains": 85,
+      "Desert": 15
+    }
+  },
+  {
+    "name": "Greater Prairie‑Chicken",
+    "description": "A stout, barred grouse with rounded tail and orange air sacs on the neck.",
+    "rarity": "Uncommon",
+    "hideType": "feathers",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Northern Bobwhite Quail",
+    "description": "A small, round quail with short tail and crisp facial stripe; coveys burst from cover.",
+    "rarity": "Common",
+    "hideType": "feathers",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Canada Goose",
+    "description": "A large goose with black head and white chinstrap, grazing stubble fields.",
+    "rarity": "Common",
+    "hideType": "feathers",
+    "habitats": {
+      "Plains": 70,
+      "Coast": 30
+    }
+  },
+  {
+    "name": "Mallard Duck",
+    "description": "A medium duck; drakes with green heads and curled tail feathers, dabbling in ponds.",
+    "rarity": "Common",
+    "hideType": "feathers",
+    "habitats": {
+      "Plains": 50,
+      "Swamp": 50
+    }
+  },
+  {
+    "name": "Sandhill Crane",
+    "description": "A tall, gray crane with crimson crown, striding through wide marshy flats.",
+    "rarity": "Uncommon",
+    "hideType": "feathers",
+    "habitats": {
+      "Plains": 60,
+      "Swamp": 40
+    }
+  },
+  {
+    "name": "Mountain Goat",
+    "description": "A stocky goat with shaggy white coat and black horns, clinging to near‑vertical crags.",
+    "rarity": "Uncommon",
+    "hideType": "leather",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Bighorn Sheep",
+    "description": "A heavy sheep with massive curled horns and brown coat, moving along ledges.",
+    "rarity": "Uncommon",
+    "hideType": "leather",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Alpine Ibex",
+    "description": "A thick‑set wild goat with long scimitar horns and chocolate coat mottled with gray.",
+    "rarity": "Rare",
+    "hideType": "leather",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Chamois",
+    "description": "A sleek, tan‑brown antelope‑goat with contrasting face mask and hooked horns.",
+    "rarity": "Uncommon",
+    "hideType": "leather",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Alpine Marmot",
+    "description": "A stout, low rodent with thick brown fur and blunt nose, whistling from burrow lips.",
+    "rarity": "Common",
+    "hideType": "fur",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Snowshoe Hare",
+    "description": "A compact hare with seasonally pale coat and oversized hind feet for snow.",
+    "rarity": "Common",
+    "hideType": "fur",
+    "habitats": {
+      "Mountain": 80,
+      "Forest": 20
+    }
+  },
+  {
+    "name": "Rock Ptarmigan",
+    "description": "A plump grouse turning white in winter; mottled brown in summer among rocks.",
+    "rarity": "Common",
+    "hideType": "feathers",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Willow Ptarmigan",
+    "description": "A red‑brown grouse that whitens in winter, sheltering in dwarf willows.",
+    "rarity": "Uncommon",
+    "hideType": "feathers",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Himalayan Tahr",
+    "description": "A long‑haired wild goat with dark mane draping the shoulders.",
+    "rarity": "Rare",
+    "hideType": "leather",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Blue Sheep (Bharal)",
+    "description": "A slate‑gray wild sheep with pale saddle and sweeping horns.",
+    "rarity": "Rare",
+    "hideType": "leather",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Alligator",
+    "description": "A broad‑snouted reptile armored in dark scales, drifting in still backwaters.",
+    "rarity": "Rare",
+    "hideType": "scales",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Snapping Turtle",
+    "description": "A heavy, ridged‑shelled turtle with powerful beak and long tail, resting in murk.",
+    "rarity": "Uncommon",
+    "hideType": "scales",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Beaver",
+    "description": "A stout, brown mammal with blunt muzzle and broad flat tail; lodges rim quiet channels.",
+    "rarity": "Uncommon",
+    "hideType": "fur",
+    "habitats": {
+      "Swamp": 80,
+      "Forest": 20
+    }
+  },
+  {
+    "name": "Muskrat",
+    "description": "A small, glossy‑brown rodent with laterally flattened tail, weaving bank burrows.",
+    "rarity": "Common",
+    "hideType": "fur",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Nutria",
+    "description": "A large, orange‑toothed rodent with shaggy brown coat and long round tail.",
+    "rarity": "Common",
+    "hideType": "fur",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Feral Hog",
+    "description": "A bristled, dark‑coated pig with low shoulders and slashing tusks, wallowing in mud.",
+    "rarity": "Uncommon",
+    "hideType": "leather",
+    "habitats": {
+      "Swamp": 70,
+      "Forest": 30
+    }
+  },
+  {
+    "name": "Great Blue Heron",
+    "description": "A tall, blue‑gray heron with dagger bill and slow, deliberate wingbeats.",
+    "rarity": "Uncommon",
+    "hideType": "feathers",
+    "habitats": {
+      "Swamp": 90,
+      "Coast": 10
+    }
+  },
+  {
+    "name": "Mottled Duck",
+    "description": "A mottled brown duck with pale face and bright orange legs, dabbling in marsh shallows.",
+    "rarity": "Common",
+    "hideType": "feathers",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Crawfish",
+    "description": "A small, brown‑green crustacean with raised claws and segmented tail, backing under roots.",
+    "rarity": "Common",
+    "hideType": "chitin",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "King Rail",
+    "description": "A slender rail with rich rufous body and long bill, slipping through reed beds.",
+    "rarity": "Uncommon",
+    "hideType": "feathers",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Dromedary Camel",
+    "description": "A tall camel with a single high hump and sandy coat; long lashes shade calm eyes.",
+    "rarity": "Rare",
+    "hideType": "leather",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Arabian Oryx",
+    "description": "A pale antelope with long, straight black‑tipped horns and dark mask.",
+    "rarity": "Very Rare",
+    "hideType": "leather",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Addax",
+    "description": "A spiral‑horned antelope with pale sandy coat and splayed hooves for dunes.",
+    "rarity": "Very Rare",
+    "hideType": "leather",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Fennec Fox",
+    "description": "A small fox with enormous ears and pale sandy fur, bounding between shrubs.",
+    "rarity": "Uncommon",
+    "hideType": "fur",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Desert Hare",
+    "description": "A light, long‑eared hare with sandy coat and dark ear tips, crouched by shrubs.",
+    "rarity": "Common",
+    "hideType": "fur",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Sandgrouse",
+    "description": "A compact, swift bird with cryptic barred plumage and narrow tail.",
+    "rarity": "Uncommon",
+    "hideType": "feathers",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Desert Monitor Lizard",
+    "description": "A heavy, tan lizard with beadlike scales and low swaggering gait.",
+    "rarity": "Uncommon",
+    "hideType": "scales",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Rattlesnake",
+    "description": "A thick, diamond‑patterned viper with a keratin rattle at the tail tip.",
+    "rarity": "Uncommon",
+    "hideType": "scales",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Jerboa",
+    "description": "A tiny, long‑tailed rodent with elongated hind legs and tufted tail tip.",
+    "rarity": "Common",
+    "hideType": "fur",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Houbara Bustard",
+    "description": "A tall, sandy bird with wispy neck plumes; wary in open flats.",
+    "rarity": "Rare",
+    "hideType": "feathers",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Harbor Seal",
+    "description": "A sleek, spotted gray seal with large dark eyes, hauled out on kelp‑strewn rocks.",
+    "rarity": "Uncommon",
+    "hideType": "fur",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "California Sea Lion",
+    "description": "A robust sea lion with dog‑like head and chocolate coat, barking on jetties.",
+    "rarity": "Uncommon",
+    "hideType": "fur",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Common Eider",
+    "description": "A large sea duck; drakes with black‑and‑white pattern and sloping green nape.",
+    "rarity": "Common",
+    "hideType": "feathers",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Cormorant",
+    "description": "A dark, long‑necked seabird with hooked bill, holding wings out to dry on pilings.",
+    "rarity": "Common",
+    "hideType": "feathers",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Herring Gull",
+    "description": "A pale gray‑backed gull with yellow bill and pink legs, milling along surf lines.",
+    "rarity": "Common",
+    "hideType": "feathers",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Blue Crab",
+    "description": "A broad, blue‑green crab with spined shell and paddle‑shaped rear legs.",
+    "rarity": "Common",
+    "hideType": "chitin",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Shallow Lobster",
+    "description": "A heavy, dark lobster with large asymmetrical claws and ridged carapace.",
+    "rarity": "Uncommon",
+    "hideType": "chitin",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Atlantic Mackerel",
+    "description": "A sleek, iridescent fish with wavy dark bars along the back.",
+    "rarity": "Common",
+    "hideType": "scales",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Atlantic Herring",
+    "description": "A silver‑sided fish flashing in tight schools just off shore.",
+    "rarity": "Common",
+    "hideType": "scales",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Chinook Salmon",
+    "description": "A large, powerful salmon with bluish back and silver sides, staging near river mouths.",
+    "rarity": "Uncommon",
+    "hideType": "scales",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Cave Bat",
+    "description": "A small, soot‑brown bat clustering in ceiling roosts; fine fur and delicate wings.",
+    "rarity": "Common",
+    "hideType": "fur",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Greater Cave Bat",
+    "description": "A larger, long‑eared bat with dusk‑gray fur and broad wings, circling slow pools.",
+    "rarity": "Uncommon",
+    "hideType": "fur",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Blind Cave Fish",
+    "description": "A pale, eyeless fish with smooth scales and faintly pink fins.",
+    "rarity": "Rare",
+    "hideType": "scales",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Cave Crayfish",
+    "description": "A colorless crayfish with elongated antennae and narrow claws, lurking under stones.",
+    "rarity": "Uncommon",
+    "hideType": "chitin",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Olm (Cave Salamander)",
+    "description": "A slender, pallid salamander with frilled external gills and tiny limbs.",
+    "rarity": "Rare",
+    "hideType": "leather",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Cave Beetle",
+    "description": "A matte‑black beetle with thick carapace and slow, deliberate gait.",
+    "rarity": "Common",
+    "hideType": "chitin",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Cave Rat",
+    "description": "A lean, long‑whiskered rat with pale gray coat and large eyes adapted to dim light.",
+    "rarity": "Common",
+    "hideType": "fur",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Cave Newt",
+    "description": "A smooth‑skinned, pale newt with wide tail and delicate toes, gliding in pools.",
+    "rarity": "Uncommon",
+    "hideType": "leather",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Raccoon",
+    "description": "A stout, ring‑tailed scavenger with gray coat and black mask, padding along creek banks.",
+    "rarity": "Common",
+    "hideType": "fur",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "European Badger",
+    "description": "A low, broad mustelid with silver‑gray back and bold black‑and‑white facial stripes.",
+    "rarity": "Uncommon",
+    "hideType": "fur",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Pine Marten",
+    "description": "A slender tree‑hunter with rich chestnut coat and creamy throat patch, flowing over branches.",
+    "rarity": "Uncommon",
+    "hideType": "fur",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Porcupine",
+    "description": "A round‑bodied rodent cloaked in quills over a dark undercoat, waddling between trees.",
+    "rarity": "Uncommon",
+    "hideType": "quills",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Hedgehog",
+    "description": "A small, brown insect‑eater curled under a mantle of short spines.",
+    "rarity": "Common",
+    "hideType": "quills",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Wood Pigeon",
+    "description": "A plump, blue‑gray pigeon with white neck crescent and pinkish breast.",
+    "rarity": "Common",
+    "hideType": "feathers",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Woodcock",
+    "description": "A short‑billed, leaf‑brown wader ghosting through dusk beneath low boughs.",
+    "rarity": "Uncommon",
+    "hideType": "feathers",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "European Robin",
+    "description": "A tiny, round bird with brick‑red face and breast, flicking through brambles.",
+    "rarity": "Common",
+    "hideType": "feathers",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Song Thrush",
+    "description": "A speckled, warm‑brown thrush with clear, ringing calls from shaded perches.",
+    "rarity": "Common",
+    "hideType": "feathers",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Red Squirrel",
+    "description": "A russet tree‑squirrel with tufted ears and airy tail, leaping needle‑to‑needle.",
+    "rarity": "Common",
+    "hideType": "fur",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Dormouse",
+    "description": "A golden‑brown mouse with large dark eyes and a feathery tail, curled in nests of leaves.",
+    "rarity": "Uncommon",
+    "hideType": "fur",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Ring‑necked Dove",
+    "description": "A soft gray dove with black collar and pink legs, cooing from hedgerows.",
+    "rarity": "Common",
+    "hideType": "feathers",
+    "habitats": {
+      "Forest": 80,
+      "Plains": 20
+    }
+  },
+  {
+    "name": "European Polecat",
+    "description": "A dark, bandit‑masked mustelid slipping along woodland verges.",
+    "rarity": "Uncommon",
+    "hideType": "fur",
+    "habitats": {
+      "Forest": 100
+    }
+  },
+  {
+    "name": "Grey Partridge",
+    "description": "A round, earth‑toned partridge shuffling through stubble and edge scrub.",
+    "rarity": "Common",
+    "hideType": "feathers",
+    "habitats": {
+      "Forest": 60,
+      "Plains": 40
+    }
+  },
+  {
+    "name": "Pika (Forest Edge)",
+    "description": "A tiny, round‑eared lagomorph squeaking from rock piles at treeline.",
+    "rarity": "Uncommon",
+    "hideType": "fur",
+    "habitats": {
+      "Forest": 70,
+      "Mountain": 30
+    }
+  },
+  {
+    "name": "Pika",
+    "description": "A pebble‑colored, short‑eared lagomorph squeaking from boulder crevices.",
+    "rarity": "Common",
+    "hideType": "fur",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Rock Hyrax",
+    "description": "A squat, short‑tailed browser sunning on warm stone shelves.",
+    "rarity": "Uncommon",
+    "hideType": "leather",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Chukar Partridge",
+    "description": "A barred, sand‑gray partridge with bold black eye stripe on scree slopes.",
+    "rarity": "Common",
+    "hideType": "feathers",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Snow Partridge",
+    "description": "A chunky, gray‑brown partridge mottled for alpine rubble.",
+    "rarity": "Uncommon",
+    "hideType": "feathers",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Dusky Grouse",
+    "description": "A heavy, slate‑brown grouse booming from conifers at timberline.",
+    "rarity": "Uncommon",
+    "hideType": "feathers",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Alpine Snow Hare",
+    "description": "A hare turning white in winter, crouched among wind‑scoured hummocks.",
+    "rarity": "Common",
+    "hideType": "fur",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Ptarmigan (Rock)",
+    "description": "A compact grouse that molts to white in winter; speckled brown in summer.",
+    "rarity": "Common",
+    "hideType": "feathers",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Mountain Quail",
+    "description": "A round quail with bold flank bars and a straight head plume, skittering uphill.",
+    "rarity": "Uncommon",
+    "hideType": "feathers",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Hoary Marmot",
+    "description": "A large, silver‑tipped marmot whistling from burrow lips on talus fans.",
+    "rarity": "Common",
+    "hideType": "fur",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Blue Grouse",
+    "description": "A dark forest‑edge grouse fanning tail and neck tufts in display.",
+    "rarity": "Uncommon",
+    "hideType": "feathers",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Groundhog",
+    "description": "A burly, brown marmot with blunt nose and short tail, grazing along burrow mounds.",
+    "rarity": "Common",
+    "hideType": "fur",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Prairie Dog",
+    "description": "A small, tan ground squirrel that chirps and pops in bustling colonies.",
+    "rarity": "Common",
+    "hideType": "fur",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Striped Skunk",
+    "description": "A glossy black mustelid with bold white stripes and plume tail, ambling at dusk.",
+    "rarity": "Common",
+    "hideType": "fur",
+    "habitats": {
+      "Plains": 80,
+      "Forest": 20
+    }
+  },
+  {
+    "name": "Large Badger",
+    "description": "A flat‑bodied digger with white facial stripe and massive foreclaws.",
+    "rarity": "Uncommon",
+    "hideType": "fur",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Jackdaw (Field)",
+    "description": "A small black corvid with pale eyes, striding through short turf.",
+    "rarity": "Common",
+    "hideType": "feathers",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Lesser Prairie‑Chicken",
+    "description": "A barred brown grouse with short tail and muted neck sacs.",
+    "rarity": "Uncommon",
+    "hideType": "feathers",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Sage Grouse",
+    "description": "A large, gray grouse with spiky tail and white breast bib, booming on leks.",
+    "rarity": "Uncommon",
+    "hideType": "feathers",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Field Hare",
+    "description": "A long‑eared brown hare crouched among tufted grasses.",
+    "rarity": "Common",
+    "hideType": "fur",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Common Crane (Steppe)",
+    "description": "A tall, gray crane with drooping feather plumes at the tail.",
+    "rarity": "Uncommon",
+    "hideType": "feathers",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Saiga Antelope",
+    "description": "A pale, long‑nosed antelope moving in loose steppe herds.",
+    "rarity": "Rare",
+    "hideType": "leather",
+    "habitats": {
+      "Plains": 100
+    }
+  },
+  {
+    "name": "Bullfrog",
+    "description": "A large, olive frog with broad mouth and powerful hind legs, plopping from banks.",
+    "rarity": "Common",
+    "hideType": "leather",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Green Treefrog",
+    "description": "A small, bright‑green frog clinging to reeds above still water.",
+    "rarity": "Common",
+    "hideType": "leather",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Softshell Turtle",
+    "description": "A flat, leathery‑backed turtle with snorkel snout buried in sand.",
+    "rarity": "Uncommon",
+    "hideType": "scales",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Common Moorhen",
+    "description": "A dark waterbird with red frontal shield and yellow bill tip, threading lily pads.",
+    "rarity": "Common",
+    "hideType": "feathers",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Coot",
+    "description": "A slate‑gray waterbird with white bill and lobed toes, pattering across water.",
+    "rarity": "Common",
+    "hideType": "feathers",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Snipe",
+    "description": "A long‑billed, cryptic wader zig‑zagging over soggy meadows at dusk.",
+    "rarity": "Common",
+    "hideType": "feathers",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Tilapia (Wild)",
+    "description": "A broad, olive fish with vertical bars moving in warm shallows.",
+    "rarity": "Common",
+    "hideType": "scales",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Channel Catfish",
+    "description": "A long, whiskered fish with smooth skin and forked tail cruising muddy channels.",
+    "rarity": "Common",
+    "hideType": "scales",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Common Carp",
+    "description": "A deep‑bodied, bronze fish with down‑turned mouth sifting silt.",
+    "rarity": "Common",
+    "hideType": "scales",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Softshell Crab (Marsh)",
+    "description": "A molting crab with tender new carapace hiding among cordgrass.",
+    "rarity": "Uncommon",
+    "hideType": "chitin",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Dorcas Gazelle",
+    "description": "A dainty, tan gazelle with slender black‑tipped horns and white rump patch.",
+    "rarity": "Uncommon",
+    "hideType": "leather",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Arabian Hare",
+    "description": "A sandy‑brown hare with long black‑tipped ears, crouched by scrub.",
+    "rarity": "Common",
+    "hideType": "fur",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Desert Hedgehog",
+    "description": "A tiny hedgehog with pale spines and dark mask, nosing among stones.",
+    "rarity": "Common",
+    "hideType": "quills",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Cape Hare",
+    "description": "A long‑limbed hare with tawny coat and white eye ring, sprinting over flats.",
+    "rarity": "Common",
+    "hideType": "fur",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Uromastyx (Spiny‑tailed Lizard)",
+    "description": "A broad, herbivorous lizard with heavy, spiked tail and beaded scales.",
+    "rarity": "Uncommon",
+    "hideType": "scales",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Sandfish Skink",
+    "description": "A small, smooth‑scaled lizard that swims through loose dunes.",
+    "rarity": "Common",
+    "hideType": "scales",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Desert Tortoise",
+    "description": "A domed, tan tortoise with sturdy scaled legs and beaked mouth.",
+    "rarity": "Uncommon",
+    "hideType": "scales",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Fat‑tailed Gecko",
+    "description": "A squat, banded gecko with thick, fat‑storing tail.",
+    "rarity": "Common",
+    "hideType": "scales",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Sand Partridge",
+    "description": "A compact, sandy partridge with neat chest bars and swift whirr of wings.",
+    "rarity": "Common",
+    "hideType": "feathers",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Crowned Sandgrouse",
+    "description": "A small, swift sandgrouse with neat cap and long pointed wings.",
+    "rarity": "Uncommon",
+    "hideType": "feathers",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Atlantic Cod",
+    "description": "A thick‑bodied, olive‑brown fish with pale lateral line and chin barbel.",
+    "rarity": "Common",
+    "hideType": "scales",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Haddock",
+    "description": "A silver fish with black lateral blotch and dark dorsal line, schooling over banks.",
+    "rarity": "Common",
+    "hideType": "scales",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Atlantic Pollock",
+    "description": "A sleek, green‑gray fish with sharp fin line and pale sides.",
+    "rarity": "Common",
+    "hideType": "scales",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "European Sea Bass",
+    "description": "A long, silver predator gliding over reefs and jetties.",
+    "rarity": "Uncommon",
+    "hideType": "scales",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Mullet",
+    "description": "A blunt‑nosed, silver fish tailing in surf channels and estuaries.",
+    "rarity": "Common",
+    "hideType": "scales",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Flounder",
+    "description": "A flatfish mottled like sand, both eyes riding one side.",
+    "rarity": "Common",
+    "hideType": "scales",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Sardine",
+    "description": "A small, bright‑silver fish flashing through tight shoals.",
+    "rarity": "Common",
+    "hideType": "scales",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Anchovy",
+    "description": "A tiny, slender fish with gaping mouth and glassy sides.",
+    "rarity": "Common",
+    "hideType": "scales",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Puffin",
+    "description": "A stocky seabird with gaudy bill plates and whirring wings over swell.",
+    "rarity": "Uncommon",
+    "hideType": "feathers",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Guillemot",
+    "description": "A black‑and‑white auk with dagger bill, standing upright on ledges.",
+    "rarity": "Common",
+    "hideType": "feathers",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Razorshell Clam",
+    "description": "A long, narrow bivalve like a polished handle, anchored in wet sand.",
+    "rarity": "Common",
+    "hideType": "chitin",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Cockle",
+    "description": "A ridged, heart‑shaped bivalve tucked beneath tidal flats.",
+    "rarity": "Common",
+    "hideType": "chitin",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Periwinkle Snail",
+    "description": "A small, spiraled shore snail grazing dark weeded stones.",
+    "rarity": "Common",
+    "hideType": "chitin",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Octopus",
+    "description": "A mottled, soft‑bodied cephalopod with watchful eyes and coiling arms.",
+    "rarity": "Uncommon",
+    "hideType": "leather",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Squid",
+    "description": "A sleek, torpedo‑shaped cephalopod with fin skirt and quick color shifts.",
+    "rarity": "Uncommon",
+    "hideType": "leather",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Sea Otter",
+    "description": "A dense‑furred mustelid floating belly‑up, rolling in kelp beds.",
+    "rarity": "Uncommon",
+    "hideType": "fur",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Cave Cricket",
+    "description": "A long‑legged, pale cricket with arched back and feathery antennae.",
+    "rarity": "Common",
+    "hideType": "chitin",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Cave Woodlouse",
+    "description": "A flattened, colorless isopod trundling over damp stone.",
+    "rarity": "Common",
+    "hideType": "chitin",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Blind Cave Shrimp",
+    "description": "A translucent shrimp with elongated feelers, drifting in black pools.",
+    "rarity": "Uncommon",
+    "hideType": "chitin",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Troglobite Spider",
+    "description": "A pallid, long‑legged spider with elongated pedipalps, clinging to walls.",
+    "rarity": "Uncommon",
+    "hideType": "chitin",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Cave Snail",
+    "description": "A tiny, glass‑shelled snail sliding along mineral crust.",
+    "rarity": "Common",
+    "hideType": "chitin",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Blink Dog",
+    "description": "A rangy hound with sleek, fawn coat that shimmers at the edges as if out of step with the world.",
+    "rarity": "Rare",
+    "hideType": "fur",
+    "habitats": {
+      "Forest": 60,
+      "Plains": 40
+    }
+  },
+  {
+    "name": "Giant Fire Beetle",
+    "description": "A fist‑sized beetle with glowing thoracic glands, wings ticking softly.",
+    "rarity": "Common",
+    "hideType": "chitin",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Phase Hare",
+    "description": "A silver‑gray hare whose outline wavers in heat‑shimmer as it bounds.",
+    "rarity": "Uncommon",
+    "hideType": "fur",
+    "habitats": {
+      "Plains": 60,
+      "Forest": 40
+    }
+  },
+  {
+    "name": "Mossback Tortoise",
+    "description": "A low, domed tortoise with shell tufted in soft green moss.",
+    "rarity": "Uncommon",
+    "hideType": "scales",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Glow Toad",
+    "description": "A squat, olive toad with faint bioluminescent freckles along the flanks.",
+    "rarity": "Uncommon",
+    "hideType": "leather",
+    "habitats": {
+      "Swamp": 100
+    }
+  },
+  {
+    "name": "Silver Quill Pheasant",
+    "description": "A trim pheasant with mirrored feather tips that glitter in slant light.",
+    "rarity": "Rare",
+    "hideType": "feathers",
+    "habitats": {
+      "Forest": 80,
+      "Plains": 20
+    }
+  },
+  {
+    "name": "Drift Otter",
+    "description": "A sleek, pale otter with webbed hind feet and a kelp‑green sheen to the pelt.",
+    "rarity": "Uncommon",
+    "hideType": "fur",
+    "habitats": {
+      "Coast": 100
+    }
+  },
+  {
+    "name": "Sand‑skink (Glider)",
+    "description": "A tiny lizard that 'swims' through dunes leaving no surface trace.",
+    "rarity": "Common",
+    "hideType": "scales",
+    "habitats": {
+      "Desert": 100
+    }
+  },
+  {
+    "name": "Lantern Moth",
+    "description": "A broad‑winged moth whose abdomen glows like a banked ember.",
+    "rarity": "Uncommon",
+    "hideType": "chitin",
+    "habitats": {
+      "Forest": 70,
+      "Swamp": 30
+    }
+  },
+  {
+    "name": "Stone Finch",
+    "description": "A speckled, rock‑colored finch that nests in shallow cracks and hops among scree.",
+    "rarity": "Common",
+    "hideType": "feathers",
+    "habitats": {
+      "Mountain": 100
+    }
+  },
+  {
+    "name": "Whisper Bat",
+    "description": "A soft‑furred bat whose wing membranes blur at the edges in flight.",
+    "rarity": "Uncommon",
+    "hideType": "fur",
+    "habitats": {
+      "Underdark": 100
+    }
+  },
+  {
+    "name": "Pearl Crab",
+    "description": "A pale shore crab with opalescent carapace that mirrors the sky.",
+    "rarity": "Uncommon",
+    "hideType": "chitin",
+    "habitats": {
+      "Coast": 100
+    }
+  }
+]
