@@ -55,7 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const elHuntGather = document.getElementById("huntBtn");
   const elHuntReroll = document.getElementById("huntRerollBtn");
   const elHuntHabitat = document.getElementById("huntHabitatSelect");
-  const elHuntRarity = document.getElementById("huntRaritySelect");
 
   let HERBS = [];
   let FORAGE = [];
@@ -64,8 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let lastHerbHabitat = null;
   let lastForageHabitat = null;
   let lastHuntHabitat = null;
-  let lastHuntRarity = "Any";
-
+  
   // -------------------------
   // Utilities
   // -------------------------
@@ -190,12 +188,10 @@ document.addEventListener("DOMContentLoaded", () => {
     return list;
   }
 
-  function weightedPickByHabitat(entries, habitat, rarityFilter = "Any") {
+  function weightedPickByHabitat(entries, habitat) {
     const pool = [];
     let total = 0;
     for (const it of entries) {
-      if (rarityFilter && rarityFilter !== "Any" && it.rarity !== rarityFilter)
-        continue;
       const wHab = it.habitats?.[habitat] || 0;
       if (wHab <= 0) continue;
       const wRar = RARITY_WEIGHTS[it.rarity] ?? 1;
@@ -240,7 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function renderHunt(a) {
-    const tags = `${a.rarity}${a.hideType ? " • " + a.hideType : ""}`;
+    const tags = `${a.rarity}${a.hideType ? " • " + a.hideType : ""}${(a.yield!=null) ? " • Yield " + a.yield : ""}`;
     elHuntResult &&
       (elHuntResult.innerHTML = `<div class="tb-detail">
         <div class="tb-detail-header">
@@ -250,7 +246,6 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="tb-detail-desc">${a.description}</div>
       </div>`);
   }
-
   const showHerbMsg = (msg) => elHerbResult && (elHerbResult.textContent = msg);
   const showForageMsg = (msg) => elForResult && (elForResult.textContent = msg);
   const showHuntMsg = (msg) => elHuntResult && (elHuntResult.textContent = msg);
@@ -276,13 +271,13 @@ document.addEventListener("DOMContentLoaded", () => {
     renderForage(choice);
   }
 
-  function huntAnimal(habitat, rarityFilter = "Any") {
+  function huntAnimal(habitat) {
     lastHuntHabitat = habitat;
-    lastHuntRarity = rarityFilter;
+    
     const eligible = HUNT.filter((a) => (a.habitats?.[habitat] || 0) > 0);
     if (!eligible.length)
       return showHuntMsg("You find no huntable animals here.");
-    const choice = weightedPickByHabitat(eligible, habitat, rarityFilter);
+    const choice = weightedPickByHabitat(eligible, habitat);
     if (!choice) return showHuntMsg("You spot nothing of note.");
     renderHunt(choice);
   }
@@ -352,13 +347,11 @@ document.addEventListener("DOMContentLoaded", () => {
   elHuntGather &&
     elHuntGather.addEventListener("click", () => {
       const habitat = elHuntHabitat?.value || "Forest";
-      const rarity = elHuntRarity?.value || "Any";
-      huntAnimal(habitat, rarity);
+      huntAnimal(habitat);
     });
   elHuntReroll &&
     elHuntReroll.addEventListener("click", () => {
       const habitat = lastHuntHabitat || elHuntHabitat?.value || "Forest";
-      const rarity = lastHuntRarity || elHuntRarity?.value || "Any";
-      huntAnimal(habitat, rarity);
+      huntAnimal(habitat);
     });
 });

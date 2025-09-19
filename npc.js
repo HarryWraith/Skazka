@@ -482,12 +482,7 @@
       const filtered = _options.filter((o) =>
         o.label.toLowerCase().includes(needle)
       );
-      list.innerHTML = filtered
-        .map(
-          (o, i) =>
-            `<div role="option" class="tb-option" data-index="${i}" tabindex="-1" style="padding:.4rem .6rem; cursor:pointer;">${o.label}</div>`
-        )
-        .join("");
+      list.innerHTML = filtered.map((o, i) => `<div role="option" class="tb-option" data-index="${i}" style="padding:.4rem .6rem; cursor:pointer;">${o.label}</div>`).join("");
 
       const open = filtered.length > 0;
       list.style.display = open ? "block" : "none";
@@ -522,6 +517,19 @@
           input.value = currentSelection.label;
           clearBtn.style.display = input.value ? "inline-flex" : "none";
           closeList();
+      // Also handle mousedown so selection happens before input blur (mobile/desktop)
+      Array.from(list.children).forEach((el, i) => {
+        el.addEventListener("mousedown", (ev) => {
+          ev.preventDefault();
+          ev.stopPropagation();
+          currentSelection = filtered[i];
+          input.value = currentSelection.label;
+          clearBtn.style.display = input.value ? "inline-flex" : "none";
+          closeList();
+          wrap.dispatchEvent(new CustomEvent("combo:change", { detail: currentSelection }));
+        });
+      });
+
           wrap.dispatchEvent(
             new CustomEvent("combo:change", { detail: currentSelection })
           );
@@ -541,7 +549,7 @@
       openWithFilter(input.value);
     });
     input.addEventListener("focus", () => openWithFilter(input.value));
-    input.addEventListener("blur", () => setTimeout(closeList, 120));
+    input.addEventListener("blur", () => setTimeout(closeList, 200));
     input.addEventListener("keydown", (e) => {
       const opts = [...list.children];
       const idx = opts.indexOf(document.activeElement);
@@ -645,6 +653,22 @@
       { label: "Frontier", tags: ["frontier"] },
     ];
     CONTEXTS = JSON_CTX.length ? JSON_CTX : FALLBACK_CTX;
+    // —— Interlocking filters between Occupation and Context ——
+    function ctxOptionsForOcc(occ) {
+      if (!occ) return CONTEXTS.map((c) => ({ label: c.label, value: c.label }));
+      const need = new Set((occ.requiresAny || []).map(String));
+      const out = CONTEXTS.filter((c) => (c.tags || []).some((t) => need.has(String(t))))
+        .map((c) => ({ label: c.label, value: c.label }));
+      return out.length ? out : CONTEXTS.map((c) => ({ label: c.label, value: c.label }));
+    }
+    function occOptionsForCtx(ctx) {
+      if (!ctx) return OCCUPATIONS.map((o) => ({ label: o.label, value: o.id }));
+      const have = new Set((ctx.tags || []).map(String));
+      const out = OCCUPATIONS.filter((o) => !(o.requiresAny && o.requiresAny.length) || o.requiresAny.some((t) => have.has(String(t))))
+        .map((o) => ({ label: o.label, value: o.id }));
+      return out.length ? out : OCCUPATIONS.map((o) => ({ label: o.label, value: o.id }));
+    }
+
 
     // Ensure controls mount exists
     let controlsMount = $("npc-controls");
@@ -682,17 +706,40 @@
       sharedSpacer,
     });
 
-    // Handlers (null-safe for clear)
+    
+    // Initialize with full lists (no selection yet)
+    occCombo.setOptions(occOptionsForCtx(currentCtx));
+    ctxCombo.setOptions(ctxOptionsForOcc(currentOcc));
+
+    // Handlers (null-safe for clear) — either-first selection
     occCombo.onChange((sel) => {
       currentOcc = sel ? OCCUPATIONS.find((o) => o.id === sel.value) : null;
-      generate();
-    });
-    ctxCombo.onChange((sel) => {
-      currentCtx = sel ? CONTEXTS.find((c) => c.label === sel.value) : null;
+
+      // Update location options based on occupation
+      ctxCombo.setOptions(ctxOptionsForOcc(currentOcc));
+
+      // If current context no longer valid, clear it
+      if (currentCtx) {
+        const valid = ctxOptionsForOcc(currentOcc).some((opt) => opt.value === currentCtx.label);
+        if (!valid) { currentCtx = null; ctxCombo.setValue(""); }
+      }
       generate();
     });
 
-    // Reroll
+    ctxCombo.onChange((sel) => {
+      currentCtx = sel ? CONTEXTS.find((c) => c.label === sel.value) : null;
+
+      // Update occupation options based on location
+      occCombo.setOptions(occOptionsForCtx(currentCtx));
+
+      // If current occupation no longer valid, clear it
+      if (currentOcc) {
+        const valid = occOptionsForCtx(currentCtx).some((opt) => opt.value === currentOcc.id);
+        if (!valid) { currentOcc = null; occCombo.setValue(""); }
+      }
+      generate();
+    });
+// Reroll
     $("npc-reroll")?.addEventListener("click", () => {
       const url = new URL(location.href);
       url.searchParams.set("seed", Math.floor(Math.random() * 1e9));

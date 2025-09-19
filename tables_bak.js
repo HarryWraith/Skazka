@@ -931,86 +931,7 @@
       return (Number(base) || 0) * m;
     }
 
-    
-    // ---------- publication filters (integrated, minimal) ----------
-    const PUB_STORE_KEY = (mode) => `tb_shop.pub.${mode || getPrivacyMode()}`;
-    const normPub = (v) => String(v || "homebrew").toLowerCase();
-    function allPublications() {
-      const set = new Set();
-      (state.data?.items || []).forEach(it => set.add(normPub(it.publication)));
-      set.add("srd"); set.add("homebrew");
-      return Array.from(set).sort();
-    }
-    function allowedByPrivacy(pub) {
-      if (getPrivacyMode() === "private") return true;
-      return PUBLIC_PUBLICATIONS.has(normPub(pub));
-    }
-    function readPubSelection(mode = getPrivacyMode()) {
-      try {
-        const raw = JSON.parse(sessionStorage.getItem(PUB_STORE_KEY(mode)) || "null");
-        if (Array.isArray(raw) && raw.length) return new Set(raw.map(normPub));
-      } catch {}
-      return new Set(allPublications().filter(allowedByPrivacy));
-    }
-    function writePubSelection(sel, mode = getPrivacyMode()) {
-      sessionStorage.setItem(PUB_STORE_KEY(mode), JSON.stringify(Array.from(sel || []).map(normPub)));
-    }
-    function ensurePublicationFiltersUI() {
-      const mode = getPrivacyMode();
-      const allowed = allPublications().filter(allowedByPrivacy);
-      let selected = readPubSelection(mode);
-      // Host
-      let host = document.getElementById("shopFilters");
-      const result = document.getElementById("shopResult");
-      if (!host) {
-        host = document.createElement("div");
-        host.id = "shopFilters";
-        host.className = "tb-filters";
-        if (result && result.parentElement) result.parentElement.insertBefore(host, result);
-        else document.body.prepend(host);
-      }
-      // Build
-      host.innerHTML = "";
-      const group = document.createElement("div");
-      group.className = "tb-filter-group";
-      const title = document.createElement("div");
-      title.className = "tb-filter-title";
-      title.textContent = "Publication";
-      group.appendChild(title);
-      const row = document.createElement("div");
-      row.className = "tb-filter-row";
-      allowed.forEach(pub => {
-        const id = `pub_${pub}`;
-        const wrap = document.createElement("label");
-        wrap.className = "tb-checkbox chip";
-        wrap.setAttribute("for", id);
-        wrap.style.display = "inline-flex";
-        wrap.style.alignItems = "center";
-        wrap.style.gap = ".5rem";
-        const box = document.createElement("input");
-        box.type = "checkbox";
-        box.id = id;
-        box.dataset.pub = pub;
-        box.checked = selected.has(pub);
-        const lab = document.createElement("span");
-        lab.className = "tb-checkbox-label";
-        lab.textContent = (pub === "srd") ? "SRD"
-                         : (pub === "homebrew") ? "Homebrew"
-                         : (pub === "3rd_party" || pub === "3pp" || pub === "third-party" || pub === "third party") ? "3rd-Party"
-                         : (pub === "official_non_srd") ? "Official (non-SRD)"
-                         : pub.replace(/[_\-]/g, " ").replace(/\b\w/g, c => c.toUpperCase());
-        wrap.appendChild(box); wrap.appendChild(lab);
-        row.appendChild(wrap);
-        box.addEventListener("change", () => {
-          if (box.checked) selected.add(pub); else selected.delete(pub);
-          writePubSelection(selected, mode);
-          renderNow(false);
-        });
-      });
-      group.appendChild(row);
-      host.appendChild(group);
-    }
-// ---------- filter/sort + table render ----------
+    // ---------- filter/sort + table render ----------
     function filterAndSort(items, { cat, q, sort }) {
       let list = items;
       if (cat && cat !== "__all__")
@@ -1056,11 +977,9 @@
         ...it,
         _adj: round2(adjustedPrice(it.price_gp)),
       }));
-      // Privacy gate first, then publication filter
+      // Privacy gate first
       const privacyFiltered = items.filter(isItemVisibleByPrivacy);
-      const pubSel = readPubSelection();
-      const pubFiltered = privacyFiltered.filter(it => pubSel.has(normPub(it.publication)));
-      const list = filterAndSort(pubFiltered, { cat, q, sort });
+      const list = filterAndSort(privacyFiltered, { cat, q, sort });
       state.results = list;
 
       if (!list.length) return `<div>No items match your filters.</div>`;
@@ -1313,7 +1232,6 @@
     function wireControls() {
       // Mount/inject slider UI (if not present)
       ensurePrivacySlider();
-      ensurePublicationFiltersUI();
 
       // Change/select controls
       [
@@ -1345,7 +1263,6 @@
           } else {
             setPrivacyMode("public");
           }
-          ensurePublicationFiltersUI();
           renderNow(false);
         });
       } else {
@@ -1393,7 +1310,6 @@
           const pct = Number($("#" + id).dataset.disc || 0);
           state.hagglePct = state.hagglePct === pct ? 0 : pct; // toggle off if same
           setPressed();
-          ensurePublicationFiltersUI();
           renderNow(false);
         });
       });
@@ -1525,24 +1441,6 @@
 
   const RARITY_BY_LEVEL = {
     levelNone: null,
-    levelSkazka: {
-      low: [{ v: "uncommon", w: 98 }],
-      mid: [
-        { v: "uncommon", w: 55 },
-        { v: "rare", w: 45 },
-      ],
-      high: [
-        { v: "rare", w: 65 },
-        { v: "very rare", w: 30 },
-        { v: "legendary", w: 5 },
-      ],
-      epic: [
-        { v: "very rare", w: 65 },
-        { v: "legendary", w: 33 },
-        { v: "artifact", w: 2 },
-      ],
-    },
-
     levelLow: {
       low: [{ v: "uncommon", w: 98 }],
       mid: [
@@ -1627,15 +1525,7 @@
     "diamond shard",
   ];
   const GEM_COUNTS = { low: [0, 1], mid: [1, 4], high: [3, 8], epic: [6, 12] };
-  
-function isConsumableMagic(it) {
-  const t = String(it.type || "").toLowerCase();
-  const name = String(it.name || "").toLowerCase();
-  if (t === "potion" || t === "scroll" || t === "ammo" || t === "ammunition") return true;
-  if (/\b(dust|oil|ointment|salve|elixir|philter|bead)\b/.test(name)) return true;
-  return false;
-}
-const MAGIC_COUNTS = { low: [0, 1], mid: [1, 2], high: [2, 4], epic: [3, 6] };
+  const MAGIC_COUNTS = { low: [0, 1], mid: [1, 2], high: [2, 4], epic: [3, 6] };
 
   function rollMagicItemsForBand(band, count, levelKey = "levelNormal") {
     const weights = RARITY_BY_LEVEL[levelKey] || RARITY_WEIGHTS;
@@ -1666,13 +1556,7 @@ const MAGIC_COUNTS = { low: [0, 1], mid: [1, 2], high: [2, 4], epic: [3, 6] };
             .flat(),
         ].filter(Boolean);
       }
-      
-      // Skazka: only allow consumable magic items
-      if (levelKey === "levelSkazka") {
-        pool = pool.filter(isConsumableMagic);
-        if (!pool.length) continue; // skip this pick if none available
-      }
-out.push(pick(pool)?.name || "mystery item");
+      out.push(pick(pool)?.name || "mystery item");
     }
     return out;
   }

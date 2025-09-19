@@ -30,9 +30,13 @@
         <li>Treasure</li>
         <li>Names</li>
         <li>Random Encounters</li>
-        <li>Door generator</li>
+        <li>Doors</li>
         <li>Shop & price adjuster</li>
         <li>Magic Forge</li>
+        <li>NPC</li>
+        <li>Herbalism</li>
+        <li>Foraging</li>
+        <li>Hunting</li>
       </ol>
     </article>
     <article>
@@ -146,6 +150,7 @@
           <label class="tb-label">
             World magic prevalence
             <select id="treasureLevel" class="tb-select">
+              <option value="levelSkazka">Skazka</option>
               <option value="levelNone">No magic</option>
               <option value="levelLow">Low</option>
               <option value="levelNormal" selected>Normal</option>
@@ -172,6 +177,8 @@
         <div class="tb-actions">
           <button id="rollTreasure" class="tb-btn">Roll</button>
           <button id="randTreasure" class="tb-ghost-btn">Randomize</button>
+          <button id="randomGem" class="tb-ghost-btn">Random Gem</button>
+          <button id="randomArt" class="tb-ghost-btn">Random Art</button>
         </div>
         </div>
         <output id="treasureResult" class="tb-result" aria-live="polite">—</output>
@@ -321,7 +328,7 @@
               <option value="__all__">All categories</option>
             </select>
           </label>
-
+          <div id="shop-filters"></div>
           <label class="tb-label">
             Search
             <input id="shopSearch" class="tb-input" placeholder="e.g., longsword, saddle, potion">
@@ -388,6 +395,7 @@
         <div id="npc-pretty" class="tb-result" aria-live="polite"></div>
       </section>
     </article>
+
     <article class="tb-panel">
       <h3 class="tb-title">Herbalism</h3>
       <div class="tb-grid">
@@ -404,7 +412,6 @@
         </label>
         <div class="tb-actions">
           <button class="tb-btn" id="gatherBtn">Gather</button>
-          <button class="tb-ghost-btn" id="rerollBtn" title="Reroll the last habitat">Reroll</button>
         </div>
       </div>
       <div id="gatherResult" class="tb-result" aria-live="polite"></div>
@@ -425,7 +432,6 @@
         </label>
         <div class="tb-actions">
           <button class="tb-btn" id="forageBtn">Forage</button>
-          <button class="tb-ghost-btn" id="forageRerollBtn" title="Reroll the last habitat">Reroll</button>
         </div>
       </div>
       <div id="forageResult" class="tb-result" aria-live="polite"></div>
@@ -449,20 +455,8 @@
             </select>
           </label>
 
-          <label class="tb-label">Rarity
-            <select class="tb-select" id="huntRaritySelect">
-              <option value="Any">Any</option>
-              <option value="Common">Common</option>
-              <option value="Uncommon">Uncommon</option>
-              <option value="Rare">Rare</option>
-              <option value="Very Rare">Very Rare</option>
-              <option value="Legendary">Legendary</option>
-            </select>
-          </label>
-
           <div class="tb-actions">
             <button class="tb-btn" id="huntBtn">Hunt</button>
-            <button class="tb-ghost-btn" id="huntRerollBtn" title="Reroll the last hunt">Reroll</button>
           </div>
         </div>
         <div id="huntResult" class="tb-result" aria-live="polite"></div>
