@@ -1,11 +1,27 @@
-// main.js — entry for generators page
+// Lazy-load side-effect modules only if their mount exists on this page
+function lazyImportWhen(selector, path) {
+  const el = document.querySelector(selector);
+  return el
+    ? import(path).catch((err) => console.error(`Failed to load ${path}`, err))
+    : null;
+}
 
-// ───────────────────────────────────────────────
-// Side-effect modules (they wire themselves up)
-import "./shop.js";
-import "./forge.js";
-import "./gathering.js";
-import "./npc.js";
+document.addEventListener("DOMContentLoaded", () => {
+  // shop.js wires itself to #shop-panel
+  lazyImportWhen("#shop-panel", "./shop.js");
+
+  // forge.js wires to #forgeCheats
+  lazyImportWhen("#forgeCheats", "./forge.js");
+
+  // gathering.js wires to Herbalism/Foraging panels
+  lazyImportWhen(
+    "#habitatSelect, #forageHabitatSelect, #gatherResult, #forageResult, #forage-panel",
+    "./gathering.js"
+  );
+
+  // npc.js wires to #npc-panel — this is the one that was bleeding through
+  lazyImportWhen("#npc-panel", "./npc.js");
+});
 
 // Feature modules we call from here
 import * as weather from "./weather.js";
