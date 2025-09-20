@@ -201,6 +201,23 @@ body p {
   align-items: start;
 }
 
+.grid-two {
+  display: grid;
+  grid-template-columns: 7fr 3fr;
+  /* ~70% / 30% */
+  gap: 40px;
+  max-width: 80%;
+  margin: 2em auto 1em;
+  align-items: start;
+}
+
+/* optional: stack on small screens */
+@media (max-width: 900px) {
+  .grid-two {
+    grid-template-columns: 1fr;
+  }
+}
+
 .grid-four {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

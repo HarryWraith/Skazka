@@ -195,6 +195,28 @@
   border-bottom: 1px dashed var(--sb-border);
 }
 
+.tb-table td {
+  vertical-align: top;
+}
+
+.tb-table .tb-badges {
+  gap: 6px;
+  /* a bit tighter in rows */
+  margin-top: 2px;
+}
+
+.tb-table .tb-coins {
+  margin-top: 2px;
+}
+
+.tb-table .tb-detail-name {
+  font: inherit;
+  /* stop the 1.125rem detail header sizing */
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 2px;
+}
+
 .tb-table tbody tr:last-child td {
   border-bottom: 0;
 }
@@ -325,9 +347,30 @@
 }
 
 #shopDetail.tb-result {
-  padding: 13px;
+  padding: 14px;
   border: 1px solid var(--sb-gold);
-  background-color: #161721;
+  background: #161721;
+  border-radius: 12px;
+}
+
+#shopDetail .tb-detail {
+  display: grid;
+  gap: 12px;
+}
+
+#shopDetail .tb-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+#shopDetail .tb-detail-name {
+  font-weight: 800;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  margin: 0;
 }
 
 .tb-detail-desc {
@@ -335,31 +378,166 @@
   opacity: .9;
 }
 
+#shopDetail .tb-badges {
+  display: inline-flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
 
-/* Scrollable shop results (10-ish rows tall, sticky header) */
+#shopDetail .tb-kv {
+  display: grid;
+  grid-template-columns: minmax(140px, 220px) 1fr;
+  column-gap: 16px;
+  row-gap: 6px;
+  align-items: baseline;
+}
+
+#shopDetail .tb-kv-row {
+  display: contents;
+}
+
+#shopDetail .tb-kv-key {
+  color: var(--sb-dim);
+  font-weight: 700;
+  opacity: .9;
+}
+
+#shopDetail .tb-kv-val {
+  text-align: left;
+  /* looks crisp with short values */
+  font-variant-numeric: tabular-nums;
+  /* tidy numeric columns */
+  white-space: normal;
+}
+
+#shopDetail .tb-kv-val .coins {
+  display: inline-flex;
+  gap: 4px;
+  margin-left: 8px;
+}
+
+#shopDetail .hr {
+  height: 1px;
+  margin: 2px 0 6px;
+  background: linear-gradient(90deg, transparent, var(--sb-border), transparent);
+  border: 0;
+}
+
+#shopDetail .tb-detail-desc {
+  margin-top: 4px;
+  opacity: .94;
+  line-height: 1.46;
+}
+
+
+/* ===== SHOP TABLE — 60 / 20 / 20, left-aligned prices with inline coins ===== */
 #shopResult {
   display: block;
   padding: 0 !important;
-  /* kills the inherited .tb-result padding */
+  /* override .tb-result padding */
   margin: 0;
   overflow: auto;
-  max-height: var(--shop-max, 420px);
-  /* JS sets this precisely */
+  max-height: var(--shop-max, 360px);
+  /* JS will set this to ~5 rows */
   -webkit-overflow-scrolling: touch;
-}
-
-#shopResult table {
-  width: 100%;
-  margin: 0;
 }
 
 #shopResult thead th {
   position: sticky;
   top: 0;
-  background: var(--panel-bg, #0b0b0b);
-  /* or your panel bg */
-  z-index: 1;
+  z-index: 3;
+  background: var(--sb-panel, #12131a);
+  border-bottom: 1px solid var(--sb-border);
 }
+
+#shopResult .tb-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+#shopResult .tb-table thead th,
+#shopResult .tb-table td {
+  padding: 6px 8px;
+  vertical-align: top;
+  line-height: 1.25;
+  border-bottom: 1px dashed var(--sb-border);
+}
+
+#shopResult .tb-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  background: var(--sb-panel, #12131a);
+  border-bottom: 1px solid var(--sb-border);
+  text-align: left;
+  color: var(--sb-gold-strong);
+  font-weight: 900;
+}
+
+/* Column widths (JS colgroup uses 60/20/20) */
+#shopResult .tb-table td.col-name {
+  width: 60%;
+}
+
+#shopResult .tb-table td.col-base {
+  width: 20%;
+}
+
+#shopResult .tb-table td.col-adjusted {
+  width: 20%;
+}
+
+/* Prices: LEFT aligned for both columns; use tabular numerals for neat columns */
+#shopResult .tb-table td.col-base,
+#shopResult .tb-table td.col-adjusted {
+  text-align: left;
+  white-space: normal;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Keep "6000 gp" together; coins inline on the same line */
+.nowrap {
+  white-space: nowrap;
+}
+
+#shopResult .tb-table td.col-base .tb-coins,
+#shopResult .tb-table td.col-adjusted .tb-coins {
+  display: inline-flex;
+  /* inline with number */
+  align-items: baseline;
+  gap: 4px;
+  margin-left: 8px;
+  /* space after “gp” */
+  white-space: normal;
+}
+
+/* Name + badges on one line (wrappable) */
+#shopResult .tb-table .name-line {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+#shopResult .tb-table .tb-detail-name {
+  font: inherit;
+  font-weight: 700;
+  line-height: 1.22;
+  margin: 0;
+}
+
+#shopResult .tb-table .tb-badges {
+  display: inline-flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+/* Last row cleanup */
+#shopResult .tb-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
 
 /*shop privacy*/
 .tb-privacy {
@@ -925,4 +1103,434 @@
   #npc-panel .tb-combobox .tb-clear {
     line-height: 1;
   }
+}
+
+/* ===========================
+   TREASURE — badges & coins
+   =========================== */
+
+
+/* Loot lines: name + badges left, coins right */
+.tb-result .loot-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 8px;
+  margin: 2px 0 2px 10px;
+  line-height: 1.45;
+  white-space: normal;
+}
+
+.tb-result .loot-line .tb-badges {
+  display: inline-flex;
+  /* ensure flex item for ordering */
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  order: 2;
+}
+
+.tb-result .loot-line .coins {
+  order: 3;
+  margin-left: auto;
+}
+
+/* Badges */
+.tb-badges {
+  display: inline-flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.tb-badge {
+  font-size: 14px;
+  line-height: 1.15;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklab, var(--sb-border) 80%, #000);
+  background: color-mix(in oklab, var(--sb-panel2) 85%, #000);
+  color: var(--sb-dim);
+  text-transform: none;
+}
+
+.tb-badge-warn {
+  border-color: #b85;
+  color: #b85;
+}
+
+/* Rarity tints
+   NOTE: we support “very rare”, “very_rare”, and “very-rare”. */
+.tb-badge.rarity.common {
+  color: #cfd3da;
+  border-color: #6b707c;
+}
+
+.tb-badge.rarity.uncommon {
+  color: #4cc98a;
+  border-color: #2c8a5f;
+}
+
+.tb-badge.rarity.rare {
+  color: #5aa8ff;
+  border-color: #3c6fb8;
+}
+
+/* all spellings for very rare */
+.tb-badge.rarity.very.rare,
+.tb-badge.rarity.very_rare,
+.tb-badge.rarity.very-rare {
+  color: #b888ff;
+  border-color: #7a58c9;
+}
+
+.tb-badge.rarity.legendary {
+  color: #ffb24d;
+  border-color: #bf7a1f;
+}
+
+.tb-badge.rarity.artifact {
+  color: #ff6b6b;
+  border-color: #b53f3f;
+}
+
+/* Attunement / Slot / Consumable */
+.tb-badge.attune.attune-true {
+  color: #ffd86b;
+  border-color: #b38b2c;
+}
+
+.tb-badge.attune.attune-false {
+  color: #9bb2c9;
+  border-color: #546476;
+}
+
+.tb-badge.slot {
+  color: #d8d2c2;
+  border-color: #6b6659;
+}
+
+.tb-badge.consumable {
+  color: #8bd16a;
+  border-color: #3f7a2a;
+}
+
+/* Coin chips */
+:root {
+  --coin-pp: #b8e3ff;
+  /* platinum */
+  --coin-gp: var(--sb-gold-strong, #e1b84d);
+  /* gold     */
+  --coin-sp: #c9c9d6;
+  /* silver   */
+  --coin-cp: #c88a55;
+  /* copper   */
+}
+
+.coins {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 6px;
+  font-size: 16px;
+  opacity: .95;
+  font-variant-numeric: tabular-nums;
+  /* nicer digit alignment */
+}
+
+.coin {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 6px;
+  border-radius: 999px;
+  border: 1px solid var(--sb-border);
+  background: color-mix(in oklab, var(--sb-panel2) 78%, #000);
+  line-height: 1.2;
+  letter-spacing: .1px;
+}
+
+.coin-pp {
+  color: var(--coin-pp);
+  border-color: color-mix(in oklab, var(--coin-pp) 50%, #000);
+}
+
+.coin-gp {
+  color: var(--coin-gp);
+  border-color: color-mix(in oklab, var(--coin-gp) 55%, #000);
+}
+
+.coin-sp {
+  color: var(--coin-sp);
+  border-color: color-mix(in oklab, var(--coin-sp) 45%, #000);
+}
+
+.coin-cp {
+  color: var(--coin-cp);
+  border-color: color-mix(in oklab, var(--coin-cp) 45%, #000);
+}
+
+/* Subtle difference for sell vs price rows */
+.coins-price .coin {
+  opacity: .95;
+}
+
+.coins-sell .coin {
+  opacity: .85;
+  filter: saturate(.9);
+}
+
+/* Tighten on very small screens */
+@media (max-width:560px) {
+  .tb-result .loot-line .coins {
+    margin-top: 2px;
+  }
+}
+
+/* ===========================
+   SHOP — 3-column controls layout
+   =========================== */
+.shop-controls {
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) minmax(280px, 1fr) minmax(160px, auto);
+  gap: 16px 24px;
+  align-items: start;
+  margin-bottom: 8px;
+}
+
+.shop-controls .col-1,
+.shop-controls .col-2 {
+  display: grid;
+  gap: 10px;
+}
+
+.shop-controls .haggle-block {
+  display: grid;
+  gap: 8px;
+}
+
+.shop-controls .col-3 {
+  grid-column: 3;
+  align-self: end;
+  /* bottom of controls area */
+  justify-self: end;
+  /* right edge */
+}
+
+.tb-coins-toggle {
+  display: inline-flex;
+  flex-direction: row;
+  /* force same line */
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+
+  /* bottom-right placement */
+  margin: 0 0 0 auto;
+  /* push to the right in flex parents */
+  justify-self: end;
+  /* right in grid cell */
+  align-self: end;
+  /* bottom in grid cell */
+}
+
+.tb-coins-toggle input {
+  margin: 0;
+}
+
+/* Responsive collapse */
+@media (max-width: 1100px) {
+  .shop-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .shop-controls .col-3 {
+    align-self: start;
+    justify-self: start;
+    margin-top: 4px;
+  }
+}
+
+/* Publication badge */
+.tb-badge.pub {
+  /* same base styling as .tb-badge; only colors differ per type */
+  border-color: color-mix(in oklab, var(--sb-border) 80%, #000);
+  color: var(--sb-dim);
+}
+
+/* ============================================================================
+   BADGE PALETTE — unified scheme
+   - Text & border always share the same color
+   - “Solid” badges: colored background with white (or chosen) text/border
+   - “Outline” badges (rarities): transparent background, colored text/border
+   ============================================================================ */
+
+/* --- Palette (tweak here if you want different shades) --- */
+:root {
+  --badge-white: #ffffff;
+  --badge-grey: #9aa3ae;
+  --badge-green: #8bd16a;
+  /* light green */
+  --badge-blue: #5aa8ff;
+  /* bright blue */
+  --badge-orange: #ffb24d;
+  --badge-purple: #b888ff;
+
+  --badge-navy: #0f2a5f;
+  /* publication text/border on white */
+  --slot-blue: #2b6cb0;
+  /* solid slot background */
+  --danger-red: #d64545;
+  /* cursed / attune-false text */
+  --ok-green: #2e8b57;
+  /* attune-true text on white */
+  --solid-purple: #6b3fb8;
+  /* vestige bg */
+  --solid-gold: #9c7b2d;
+  /* tattoo bg */
+  --solid-teal: #2c8a5f;
+  /* focus bg */
+  --solid-slate: #374151;
+  /* charges bg */
+}
+
+/* ----------------------------------------------------------------------------
+   RARITIES (outline: transparent bg, colored text + border)
+   ---------------------------------------------------------------------------- */
+.tb-badge.rarity.common {
+  color: var(--badge-white);
+  border-color: var(--badge-white);
+}
+
+.tb-badge.rarity.uncommon {
+  color: var(--badge-grey);
+  border-color: var(--badge-grey);
+}
+
+.tb-badge.rarity.rare {
+  color: var(--badge-green);
+  border-color: var(--badge-green);
+}
+
+.tb-badge.rarity.very.rare,
+.tb-badge.rarity.very_rare,
+.tb-badge.rarity.very-rare {
+  color: var(--badge-blue);
+  border-color: var(--badge-blue);
+}
+
+.tb-badge.rarity.legendary {
+  color: var(--badge-orange);
+  border-color: var(--badge-orange);
+}
+
+.tb-badge.rarity.artifact {
+  color: var(--badge-purple);
+  border-color: var(--badge-purple);
+}
+
+/* ----------------------------------------------------------------------------
+   PUBLICATION (all the same: white bg, navy text + border)
+   Data values: srd | wotc_exp | 3rd party | homebrew
+   We also support legacy class names via aliases.
+   ---------------------------------------------------------------------------- */
+.tb-badge.pub[class*="pub-"] {
+  background: var(--badge-white);
+  color: var(--badge-navy);
+  border-color: var(--badge-navy);
+}
+
+
+
+/* ----------------------------------------------------------------------------
+   ATTUNEMENT
+   ---------------------------------------------------------------------------- */
+.tb-badge.attune.attune-true {
+  background: var(--badge-white);
+  color: var(--ok-green);
+  border-color: var(--ok-green);
+}
+
+.tb-badge.attune.attune-false {
+  background: var(--badge-white);
+  color: var(--danger-red);
+  border-color: var(--danger-red);
+}
+
+/* ----------------------------------------------------------------------------
+   SLOT (solid blue with white text)
+   ---------------------------------------------------------------------------- */
+.tb-badge.slot {
+  background: var(--slot-blue);
+  color: var(--badge-white);
+  border-color: var(--badge-white);
+}
+
+/* ----------------------------------------------------------------------------
+   CONSUMABLE (keep as a solid supportive green)
+   ---------------------------------------------------------------------------- */
+.tb-badge.consumable {
+  background: var(--solid-teal);
+  color: var(--badge-white);
+  border-color: var(--badge-white);
+}
+
+/* ----------------------------------------------------------------------------
+   NEW BADGES
+   ---------------------------------------------------------------------------- */
+/* Vestige: solid purple, white text */
+.tb-badge.vestige {
+  background: var(--solid-purple);
+  color: var(--badge-white);
+  border-color: var(--badge-white);
+}
+
+/* Cursed: solid red, white text */
+.tb-badge.cursed {
+  background: var(--danger-red);
+  color: var(--badge-white);
+  border-color: var(--badge-white);
+}
+
+/* Sentient: solid white, purple text */
+.tb-badge.sentient {
+  background: var(--badge-white);
+  color: var(--solid-purple);
+  border-color: var(--solid-purple);
+}
+
+/* Charges: solid slate, white text (neutral utility) */
+.tb-badge.charges {
+  background: var(--solid-slate);
+  color: var(--badge-white);
+  border-color: var(--badge-white);
+}
+
+/* Tattoo: solid gold, white text (distinctive) */
+.tb-badge.tattoo {
+  background: var(--solid-gold);
+  color: var(--badge-white);
+  border-color: var(--badge-white);
+}
+
+/* Focus: solid teal, white text (supportive) */
+.tb-badge.focus {
+  background: var(--solid-teal);
+  color: var(--badge-white);
+  border-color: var(--badge-white);
+}
+
+.tb-detail .tb-badges {
+  display: block;
+  /* badges are inline-block; block parent is fine */
+  white-space: nowrap;
+  /* no wrap */
+  overflow-x: auto;
+  /* scroll if too many */
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.tb-detail .tb-badge {
+  display: inline-block;
 }
