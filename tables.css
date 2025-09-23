@@ -12,19 +12,118 @@
   --sb-radius: var(--sb-radius, 14px);
 }
 
-/* Panel */
+/* === Treasure panel with corner-strong fading border + tight gold glow === */
 .tb-panel {
+  position: relative;
   display: grid;
   gap: 12px;
   background: linear-gradient(180deg, var(--sb-panel), var(--sb-panel2));
-  border: 1px solid var(--sb-border);
   border-radius: var(--sb-radius);
   padding: clamp(12px, 2vw, 18px);
   color: var(--sb-text);
   box-shadow: 0 12px 24px rgba(0, 0, 0, .45), inset 0 1px 0 rgba(255, 255, 255, .02);
   margin: 18px 0;
   font-size: 1.1rem;
+  border: none;
+
+  /* tweakables */
+  --stroke-w: 2px;
+  /* border thickness */
+  --corner-strength: 1;
+  /* 0–1; strong at corners */
+  --side-strength: 0;
+  /* 0–1; weak at side middles */
+  --border-color: oklch(75% 0.17 70);
+  /* orange stroke */
+  --glow-color: oklch(85% 0.15 85 / .85);
+  /* gold glow */
 }
+
+/* Solid border: strong at corners, fades toward side middles */
+.tb-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+
+  background:
+    repeating-conic-gradient(from 0deg,
+      color-mix(in oklab, var(--border-color) calc(var(--side-strength)*100%), transparent) 0deg 18deg,
+      color-mix(in oklab, var(--border-color) 70%, transparent) 32deg,
+      color-mix(in oklab, var(--border-color) calc(var(--corner-strength)*100%), transparent) 45deg,
+      color-mix(in oklab, var(--border-color) 70%, transparent) 58deg,
+      color-mix(in oklab, var(--border-color) calc(var(--side-strength)*100%), transparent) 72deg 90deg);
+
+  padding: var(--stroke-w);
+
+  /* Standard (spec) mask */
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+
+  /* WebKit/Blink */
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+}
+
+/* Tight outer glow hugging the border with the same angular falloff */
+.tb-panel::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  /* small spill for the glow */
+  border-radius: calc(var(--sb-radius) + 2px);
+  pointer-events: none;
+
+  background:
+    repeating-conic-gradient(from 0deg,
+      color-mix(in oklab, var(--glow-color) 0%, transparent) 0deg 18deg,
+      color-mix(in oklab, var(--glow-color) 55%, transparent) 32deg,
+      color-mix(in oklab, var(--glow-color) 100%, transparent) 45deg,
+      color-mix(in oklab, var(--glow-color) 55%, transparent) 58deg,
+      color-mix(in oklab, var(--glow-color) 0%, transparent) 72deg 90deg);
+
+  padding: calc(var(--stroke-w) + 1px);
+
+  /* Standard (spec) mask */
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+
+  /* WebKit/Blink */
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+
+  filter: blur(6px);
+  opacity: .9;
+}
+
+/* Fallback for engines without mask-composite support */
+@supports not ((-webkit-mask-composite: xor) or (mask-composite: exclude)) {
+  .tb-panel::before {
+    background: none;
+    outline: var(--stroke-w) solid var(--border-color);
+    outline-offset: -1px;
+    padding: 0;
+  }
+
+  .tb-panel::after {
+    background: none;
+    filter: drop-shadow(0 0 6px color-mix(in oklab, var(--glow-color) 60%, transparent));
+    padding: 0;
+    inset: 0;
+    border-radius: inherit;
+  }
+}
+
+
 
 .tb-title {
   margin: 0 0 10px;
@@ -203,6 +302,18 @@
   gap: 6px;
   /* a bit tighter in rows */
   margin-top: 2px;
+}
+
+/* Reagent badge (dark green pill, gold text/border) */
+.tb-badge.reagent {
+  color: #ffd86b;
+  /* gold text */
+  border-color: #b38b2c;
+  /* gold border */
+  background: rgba(41, 142, 78, 0.7);
+  /* deep green wash */
+  /* optional subtle inner line for polish */
+  box-shadow: inset 0 0 0 1px rgba(255, 216, 107, 0.06);
 }
 
 .tb-table .tb-coins {
@@ -1533,4 +1644,359 @@
 
 .tb-detail .tb-badge {
   display: inline-block;
+}
+
+/* === Services badges === */
+.tb-badge.type {
+  background: transparent;
+}
+
+.tb-badge.quality {
+  background: transparent;
+}
+
+.tb-badge.model {
+  background: transparent;
+  opacity: .9;
+}
+
+.tb-badge.count {
+  background: transparent;
+  border-color: var(--sb-border);
+  color: var(--sb-text);
+}
+
+/* Service types */
+.tb-badge.type.type-inn {
+  color: #e0b455;
+  border-color: #9c7720;
+}
+
+/* warm amber */
+.tb-badge.type.type-personal_services {
+  color: #7ecac1;
+  border-color: #2f7c74;
+}
+
+.tb-badge.type.type-public_services {
+  color: #9bb2c9;
+  border-color: #546476;
+}
+
+.tb-badge.type.type-transport {
+  color: #f3a469;
+  border-color: #9a5a2b;
+}
+
+.tb-badge.type.type-professional {
+  color: #c1c1d8;
+  border-color: #6c6c8a;
+}
+
+.tb-badge.type.type-magical {
+  color: #b18cff;
+  border-color: #6d47c2;
+}
+
+.tb-badge.type.type-security {
+  color: #ff8c8c;
+  border-color: #a53b3b;
+}
+
+.tb-badge.type.type-criminal {
+  color: #ff6b8a;
+  border-color: #9a2c49;
+}
+
+.tb-badge.type.type-banking {
+  color: #8fd38a;
+  border-color: #2f7d2a;
+}
+
+.tb-badge.type.type-bureaucratic {
+  color: #d0c48a;
+  border-color: #7a6f2b;
+}
+
+/* Qualities */
+.tb-badge.quality.quality-low-quality {
+  color: #9bb2c9;
+  border-color: #546476;
+}
+
+.tb-badge.quality.quality-standard-quality {
+  color: #cbbd8a;
+  border-color: #7f6e2e;
+}
+
+.tb-badge.quality.quality-high-quality {
+  color: #ffd86b;
+  border-color: #b38b2c;
+}
+
+/* Models (kept subtle) */
+.tb-badge.model {
+  color: var(--sb-text);
+  border-color: var(--sb-border);
+}
+
+.tb-badge.model.model-per-meal {
+  opacity: 1;
+}
+
+.tb-badge.model.model-per-night {
+  opacity: 1;
+}
+
+.tb-badge.model.model-per-hour {
+  opacity: 1;
+}
+
+.tb-badge.model.model-per-day {
+  opacity: 1;
+}
+
+.tb-badge.model.model-per-person {
+  opacity: 1;
+}
+
+.tb-badge.model.model-per-mile {
+  opacity: 1;
+}
+
+.tb-badge.model.model-per-animal-day {
+  opacity: 1;
+}
+
+.tb-badge.model.model-per-page {
+  opacity: 1;
+}
+
+.tb-badge.model.model-per-letter {
+  opacity: 1;
+}
+
+.tb-badge.model.model-per-load {
+  opacity: 1;
+}
+
+/* Illicit warning pill (you already have tb-badge-warn, adding a semantic alias) */
+.tb-badge.illicit,
+.tb-badge.tb-badge-warn {
+  color: #f2b08b;
+  border-color: #a8653b;
+}
+
+/* -------- generic badge palettes for Inn/Services -------- */
+.tb-badge.kind {
+  color: #f6e0a0;
+  /* warm gold */
+  border-color: #b38b2c;
+}
+
+.tb-badge.tone {
+  color: #cfe3ff;
+  /* cool blue */
+  border-color: #466a92;
+}
+
+.tb-badge.tone.tone-cozy {
+  color: #ffd86b;
+  border-color: #b38b2c;
+}
+
+.tb-badge.tone.tone-rowdy {
+  color: #ffcc8a;
+  border-color: #a3631d;
+}
+
+.tb-badge.tone.tone-refined {
+  color: #cbbdff;
+  border-color: #6b5fb5;
+}
+
+.tb-badge.tone.tone-seedy {
+  color: #c7c7c7;
+  border-color: #5a5a5a;
+}
+
+.tb-badge.tone.tone-quiet {
+  color: #a7d7c9;
+  border-color: #2d6b5a;
+}
+
+.tb-badge.tone.tone-rough {
+  color: #ff9b9b;
+  border-color: #a33;
+}
+
+.tb-badge.inn-tag {
+  color: #9bb2c9;
+  /* neutral steel */
+  border-color: #546476;
+}
+
+.tb-badge.quality {
+  color: #cfe8ff;
+  border-color: #5a7ea6;
+}
+
+.tb-badge.quality-low-quality {
+  opacity: .9;
+}
+
+.tb-badge.quality-high-quality {
+  color: #ffd86b;
+  border-color: #b38b2c;
+}
+
+.tb-badge.model {
+  color: #9bb2c9;
+  border-color: #546476;
+}
+
+
+/* -------- bullets for Quirks/Hooks -------- */
+.tb-points {
+  list-style: disc;
+  margin: .25rem 0 .75rem;
+  padding-left: 1.25rem;
+}
+
+.tb-points li {
+  margin: .125rem 0;
+  line-height: 1.45;
+}
+
+/* ─── Inn flavor lists (Quirks / Hooks) ─── */
+.tb-flavor {
+  /* container for the two columns */
+  align-items: start;
+  /* top-align both columns */
+  gap: 0.75rem 2rem;
+  /* tight rows, comfy column gap */
+}
+
+.tb-flavor .tb-meta {
+  margin-bottom: 0.25rem;
+}
+
+/* pretty, card-like list items with custom icons */
+.tb-flavor-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.tb-flavor-list li {
+  position: relative;
+  padding: 0.4rem 0.6rem 0.4rem 1.6rem;
+  /* room for icon */
+  line-height: 1.45;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px dashed rgba(255, 255, 255, 0.08);
+  border-radius: 0.6rem;
+}
+
+/* default icon (✶) and variations via data-icon */
+.tb-flavor-list li::before {
+  content: "✶";
+  position: absolute;
+  left: 0.6rem;
+  top: 0.45rem;
+  opacity: 0.9;
+  font-size: 0.9em;
+  filter: drop-shadow(0 0 0.5px rgba(0, 0, 0, .4));
+  /* soft gold glow to match your palette */
+  color: #ffd86b;
+}
+
+.tb-flavor-list[data-icon="quest"] li::before {
+  content: "⚑";
+}
+
+/* Hooks */
+.tb-flavor-list[data-icon="spark"] li::before {
+  content: "✶";
+}
+
+/* Quirks */
+
+/* subtle hover to make it feel interactive without being clickable */
+.tb-flavor-list li:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Gem badge (cool steel/blue tone) */
+.tb-badge.gem {
+  color: #cfe3ff;
+  /* light steel-blue text */
+  border-color: #466a92;
+  /* cool steel border */
+  background: rgba(30, 60, 90, 0.20);
+  /* subtle blue wash */
+  box-shadow: inset 0 0 0 1px rgba(70, 106, 146, 0.08);
+}
+
+/* (You already have this) Reagent badge */
+.tb-badge.reagent {
+  color: #ffd86b;
+  border-color: #b38b2c;
+  background: rgba(22, 66, 38, 0.22);
+  box-shadow: inset 0 0 0 1px rgba(255, 216, 107, 0.06);
+}
+
+
+.tb-badge.herb {
+  color: #cfe8ff;
+  border-color: #5a7ea6;
+  background: rgba(40, 120, 100, .22);
+}
+
+.tb-badge.monster_part {
+  color: #ffcc8a;
+  border-color: #a3631d;
+  background: rgba(120, 60, 20, .25);
+}
+
+.tb-badge.parchment {
+  color: #f6e0a0;
+  border-color: #b38b2c;
+  background: rgba(80, 70, 40, .22);
+}
+
+.tb-badge.ink {
+  color: #cbbdff;
+  border-color: #6b5fb5;
+  background: rgba(40, 40, 80, .28);
+}
+
+.tb-badge.alchemical {
+  color: #a7d7c9;
+  border-color: #2d6b5a;
+  background: rgba(20, 80, 60, .26);
+}
+
+#bpList {
+  max-height: 22rem;
+  overflow: auto;
+}
+
+#bpList .tb-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#bpList .tb-list-item {
+  padding: .5rem .75rem;
+  cursor: pointer;
+}
+
+#bpList .tb-list-item[aria-selected="true"] {
+  outline: 2px solid var(--skz-accent);
+  border-radius: .25rem;
 }

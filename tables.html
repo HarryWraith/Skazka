@@ -16,255 +16,275 @@
 </head>
 
 <body>
-  <div id="navbar"></div><!-- Navbar will be loaded here -->
+  <div id="navbar"></div>
 
+  <!--left-->
   <section class="grid-even">
     <div>
       <h2 class="skz-viking">Contents</h2>
       <ol class="toc-list">
-        <li>Weather</li>
-        <li>Traps</li>
-        <li>Treasure</li>
-        <li>Names</li>
-        <li>Random Encounters</li>
-        <li>Doors</li>
-        <li>Shop & price adjuster</li>
-        <li>Magic Forge</li>
-        <li>NPC</li>
-        <li>Herbalism</li>
-        <li>Foraging</li>
-        <li>Hunting</li>
+        <li><a href="#weather-sec">Weather generator</a> </li>
+        <li><a href="#trap-sec">Trap generator</a></li>
+        <li><a href="#name-sec">Name generator</a></li>
+        <li><a href="#npc-sec">NPC generator</a></li>
+        <li><a href="#encounters-sec">Encounter generator</a></li>
+        <li><a href="#door-sec">Doors generator</a></li>
+        <li><a href="#herb-sec">Herbalism generator</a></li>
+        <li><a href="#foraging-sec">Foraging generator</a></li>
+        <li><a href="#hunting-sec">Hunting generator</a></li>
+        <li><a href="#bp-title">Formula directory</a></li>
+        <li><a href="#treasure-sec">Treasure generator</a></li>
+        <li><a href="#shop-title">Shop & price adjuster</a></li>
+        <li><a href="#services-sec">Services directory</a></li>
+        <li><a href="#inn-sec">Tavern & Inn generator</a></li>
       </ol>
     </div>
+    <!--centre-->
     <div>
       <h1 class="skz-viking">Random Generators</h1>
       <p>Below are some generators that I have created. While the Skazka campaign setting is based on the Dungeons &
         Dragons 5E rules (2014) many of the generators could be used for other RPG games or settings too.</p>
+
+      <p class="article-small">
+        <em>
+          Please report issues you find <a href="contact.html"><b>here</b></a>. I'd also welcome your homebrew
+          subbmissions. If you can't code, don't worry; I can take your idea and make it a reality.
+        </em>
+      </p>
     </div>
-    <div class="article-small">
-      <p>Please report issues you find <a href="contact.html"><b>here</b></a>. I'd also welcome your homebrew
-        subbmissions. If you can't code, don't worry; I can take your idea and make it a reality.</p>
-    </div>
+
   </section>
 
-  <section class="grid-even"><!--group 1-->
-    <div><!-- 1.1 -->
-      <!-- Weather (kept for convenience) -->
-      <div class="tb-panel">
-        <h2 class="tb-title">Weather (by Zone × Season)</h2>
-        <div class="tb-grid">
-          <label class="tb-label">
-            Zone
-            <select id="zone" class="tb-select">
-              <option value="far_north">Far North</option>
-              <option value="north">North</option>
-              <option value="centre" selected>Central</option>
-              <option value="south">South</option>
-              <option value="far_south">Equitorial</option>
-            </select>
-          </label>
-          <label class="tb-label">
-            Season
-            <select id="season" class="tb-select">
-              <option value="spring">Spring</option>
-              <option value="summer">Summer</option>
-              <option value="autumn" selected>Autumn</option>
-              <option value="winter">Winter</option>
-            </select>
-          </label>
-        </div>
-        <div class="tb-grid"></div>
-        <div class="tb-actions">
-          <button id="rollWeather" class="tb-btn">Roll</button>
-          <button id="randWeather" class="tb-ghost-btn">Randomize</button>
-        </div>
-        <output id="weatherResult" class="tb-result" aria-live="polite">—</output>
-      </div>
-    </div>
+  <!---------------------------generators start------------------------------>
 
-    <div><!-- 1.2 -->
-      <!-- Traps -->
-      <div class="tb-panel">
-        <h2 class="tb-title">Traps (Simple/Complex)</h2>
-        <div class="tb-grid">
-          <label class="tb-label">
-            Tech
-            <select id="trapTech" class="tb-select">
-              <option value="mechanical">Mechanical</option>
-              <option value="magical">Magical</option>
-              <option value="environmental">Environmental</option>
-            </select>
-          </label>
-          <label class="tb-label">
-            Lethality
-            <select id="trapLevel" class="tb-select">
-              <option value="low">Low</option>
-              <option value="medium" selected>Medium</option>
-              <option value="high">High</option>
-            </select>
-          </label>
-          <label class="tb-label">
-            Environment
-            <select id="trapEnv" class="tb-select">
-              <option value="dungeon">Dungeon</option>
-              <option value="tomb">Tomb</option>
-              <option value="sewer">Sewer</option>
-              <option value="forest">Forest</option>
-              <option value="ruin">Ruin</option>
-              <option value="lair">Lair</option>
-              <option value="temple">Temple</option>
-              <option value="arctic">Arctic</option>
-            </select>
-          </label>
-          <label class="tb-label">
-            Difficulty
-            <select id="trapDcBracket" class="tb-select">
-              <option value="very_easy" selected>Very easy</option>
-              <option value="easy">Easy</option>
-              <option value="medium">Medium</option>
-              <option value="hard">Hard</option>
-              <option value="very_hard">Very hard</option>
-              <option value="nearly_impossible">Almost impossible</option>
-            </select>
-          </label>
-        </div>
-        <div class="tb-grid"></div>
-        <div class="tb-actions">
-          <button id="rollTrap" class="tb-btn">Roll</button>
-          <button id="randTrap" class="tb-ghost-btn">Randomize</button>
-        </div>
-        <output id="trapResult" class="tb-result" aria-live="polite">—</output>
-      </div>
-    </div>
-
-    <div><!-- 1.3 --></div>
-  </section>
-
-  <section class="grid-even"><!--group 2-->
-    <div><!-- 2.1 Names -->
-      <div class="tb-panel">
-        <h2 class="tb-title">Names</h2>
-        <div class="tb-grid">
-          <label class="tb-label">
-            Race/Species
-            <select id="nameSpecies" class="tb-select">
-              <option value="human_sken" selected>Human, Sken</option>
-              <option value="human_kaij" selected>Human, Kaij</option>
-              <option value="human_caratania" selected>Human, Caratanian</option>
-              <option value="elf">Elven</option>
-              <option value="dwarf">Dwarven</option>
-              <option value="dragonborn">Dragonborn</option>
-              <option value="gnome">Gnomes</option>
-              <option value="goblin">Goblins</option>
-            </select>
-          </label>
-          <label class="tb-label">
-            Gender
-            <select id="nameGender" class="tb-select">
-              <option value="male" selected>Male</option>
-              <option value="female">Female</option>
-            </select>
-          </label>
-        </div>
-        <div class="tb-grid"></div>
-        <div class="tb-actions">
-          <button id="rollName" class="tb-btn">Roll</button>
-          <button id="randName" class="tb-ghost-btn">Randomize</button>
-        </div>
-        <output id="nameResult" class="tb-result" aria-live="polite">—</output>
-      </div>
-    </div>
-
-    <div>
-      <div class="tb-panel">
-        <h2 class="tb-title">Random Encounters</h2>
-        <div class="tb-grid">
-          <label class="tb-label">
-            Zone
-            <select id="encounterZone" class="tb-select">
-              <option value="forest" selected>Forest</option>
-              <option value="plains">Plains</option>
-              <option value="mountains">Mountains</option>
-              <option value="desert">Desert</option>
-              <option value="swamp">Swamp</option>
-              <option value="coast">Coast</option>
-              <option value="underground">Underground</option>
-              <option value="ruins">Ruins</option>
-              <option value="arctic">Arctic</option>
-              <option value="populated_city">Populated — City</option>
-              <option value="populated_village">Populated — Village</option>
-              <option value="populated_frontier">Populated — Frontier</option>
-            </select>
-          </label>
-
-          <label class="tb-label">
-            Risk Level
-            <select id="encounterRisk" class="tb-select">
-              <option value="safe">Safe</option>
-              <option value="low" selected>Low</option>
-              <option value="moderate">Moderate</option>
-              <option value="high">High</option>
-              <option value="deadly">Deadly</option>
-            </select>
-          </label>
-        </div>
-
-        <div class="tb-grid"></div>
-        <div class="tb-actions">
-          <button id="rollEncounter" class="tb-btn">Roll</button>
-          <button id="randEncounter" class="tb-ghost-btn">Randomize</button>
-        </div>
-        <output id="encounterResult" class="tb-result" aria-live="polite">—</output>
-      </div>
-    </div>
-
-    <div>
-      <div class="tb-panel">
-        <h2 class="tb-title">Door Generator</h2>
-        <div class="tb-grid"></div>
-        <div class="tb-actions">
-          <button id="rollDoor" class="tb-btn">Roll</button>
-        </div>
-        <output id="doorResult" class="tb-result" aria-live="polite">—</output>
-      </div>
-    </div>
-  </section>
-
-  <section class="grid-even"><!--group 3-->
-    <div id="forgeCheats">
-      <div class="tb-panel">
-        <h2 class="tb-title">Magic Item Crafting — Cheat Sheets</h2>
-        <div class="tb-grid">
-          <label class="tb-label">
-            Source
-            <select id="forgeSource" class="tb-select" aria-label="Choose rules source">
-              <option value="srd" selected>SRD</option>
-              <option value="xgte">XGtE</option>
-              <option value="skazka">Skazka</option>
-            </select>
-          </label>
-        </div>
-        <output id="forgeSheet" class="tb-result" aria-live="polite"></output>
-      </div>
-    </div>
-  </section>
-
+  <!------three group--------->
   <section class="grid-even">
-    <div>
-      <div class="tb-panel" id="npc-panel">
-        <h3 class="tb-title">NPC Generator</h3>
-        <div id="npc-controls"></div>
-        <div class="tb-actions">
-          <button id="npc-reroll" class="tb-btn" type="button">Reroll</button>
-          <button id="npc-copy-text" class="tb-btn" type="button">Copy text</button>
-          <span id="npc-debug" class="tb-debug" style="opacity:.85;"></span>
-        </div>
-        <div id="npc-pretty" class="tb-result" aria-live="polite"></div>
+    <!-- Weather -->
+    <div class="tb-panel">
+      <h2 class="tb-title" id="weather-sec">Weather</h2>
+      <p>A weather generator for Skazka which could be used for any other northern hemisphere continent.</p>
+      <div class="tb-grid">
+        <label class="tb-label">
+          Zone
+          <select id="zone" class="tb-select">
+            <option value="far_north">Far North</option>
+            <option value="north">North</option>
+            <option value="centre" selected>Central</option>
+            <option value="south">South</option>
+            <option value="far_south">Equitorial</option>
+          </select>
+        </label>
+        <label class="tb-label">
+          Season
+          <select id="season" class="tb-select">
+            <option value="spring">Spring</option>
+            <option value="summer">Summer</option>
+            <option value="autumn" selected>Autumn</option>
+            <option value="winter">Winter</option>
+          </select>
+        </label>
       </div>
+      <div class="tb-grid"></div>
+      <div class="tb-actions">
+        <button id="rollWeather" class="tb-btn">Roll</button>
+        <button id="randWeather" class="tb-ghost-btn">Randomize</button>
+      </div>
+      <output id="weatherResult" class="tb-result" aria-live="polite">—</output>
     </div>
 
+    <!-- Traps -->
     <div class="tb-panel">
-      <h3 class="tb-title">Herbalism</h3>
+      <h2 class="tb-title" id="trap-sec">Traps</h2>
+      <p>A trap generator that offers magical, mechanical and environmental traps in variety of flavours and
+        lethalities.</p>
+      <div class="tb-grid">
+        <label class="tb-label">
+          Tech
+          <select id="trapTech" class="tb-select">
+            <option value="mechanical">Mechanical</option>
+            <option value="magical">Magical</option>
+            <option value="environmental">Environmental</option>
+          </select>
+        </label>
+        <label class="tb-label">
+          Lethality
+          <select id="trapLevel" class="tb-select">
+            <option value="low">Low</option>
+            <option value="medium" selected>Medium</option>
+            <option value="high">High</option>
+          </select>
+        </label>
+        <label class="tb-label">
+          Environment
+          <select id="trapEnv" class="tb-select">
+            <option value="dungeon">Dungeon</option>
+            <option value="tomb">Tomb</option>
+            <option value="sewer">Sewer</option>
+            <option value="forest">Forest</option>
+            <option value="ruin">Ruin</option>
+            <option value="lair">Lair</option>
+            <option value="temple">Temple</option>
+            <option value="arctic">Arctic</option>
+          </select>
+        </label>
+        <label class="tb-label">
+          Difficulty
+          <select id="trapDcBracket" class="tb-select">
+            <option value="very_easy" selected>Very easy</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+            <option value="very_hard">Very hard</option>
+            <option value="nearly_impossible">Almost impossible</option>
+          </select>
+        </label>
+      </div>
+      <div class="tb-grid"></div>
+      <div class="tb-actions">
+        <button id="rollTrap" class="tb-btn">Roll</button>
+        <button id="randTrap" class="tb-ghost-btn">Randomize</button>
+      </div>
+      <output id="trapResult" class="tb-result" aria-live="polite">—</output>
+    </div>
+
+    <!-- 2.1 Names -->
+    <div class="tb-panel">
+      <h2 class="tb-title" id="name-sec">Names</h2>
+      <p>Skazka based name generator. Three human ethno name groups plus classic RPG species.</p>
+      <div class="tb-grid">
+        <label class="tb-label">
+          Race/Species
+          <select id="nameSpecies" class="tb-select">
+            <option value="human_sken" selected>Human, Sken</option>
+            <option value="human_kaij" selected>Human, Kaij</option>
+            <option value="human_caratania" selected>Human, Caratanian</option>
+            <option value="elf">Elven</option>
+            <option value="dwarf">Dwarven</option>
+            <option value="dragonborn">Dragonborn</option>
+            <option value="gnome">Gnomes</option>
+            <option value="goblin">Goblins</option>
+          </select>
+        </label>
+        <label class="tb-label">
+          Gender
+          <select id="nameGender" class="tb-select">
+            <option value="male" selected>Male</option>
+            <option value="female">Female</option>
+          </select>
+        </label>
+      </div>
+      <div class="tb-grid"></div>
+      <div class="tb-actions">
+        <button id="rollName" class="tb-btn">Roll</button>
+        <button id="randName" class="tb-ghost-btn">Randomize</button>
+      </div>
+      <output id="nameResult" class="tb-result" aria-live="polite">—</output>
+    </div>
+  </section>
+
+  <!-----three group----->
+  <section class="grid-even">
+    <!--npc generator-->
+    <div class="tb-panel" id="npc-panel">
+      <h3 class="tb-title" id="npc-sec">NPC Generator</h3>
+      <p>A super handy NPC generator for multiple locales.</p>
+      <div id="npc-controls">
+        <div class="tb-grid">
+          <label class="tb-label">
+            Locale
+            <select id="npcContext" class="tb-select">
+              <option value="" disabled selected>— Select locale —</option>
+              <option value="Village / Rural">Village / Rural</option>
+              <option value="Town">Town</option>
+              <option value="City">City</option>
+              <option value="Dockside (City)">Dockside (City)</option>
+              <option value="Seaport">Seaport</option>
+              <option value="Frontier">Frontier</option>
+              <option value="Ruins / Low Magic">Ruins / Low Magic</option>
+              <option value="Temple District">Temple District</option>
+              <option value="Noble Quarter">Noble Quarter</option>
+              <option value="Poor Quarter">Poor Quarter</option>
+              <option value="Workhouses">Workhouses</option>
+              <option value="Tourney Grounds">Tourney Grounds</option>
+            </select>
+          </label>
+          <label class="tb-label">
+            Occupation
+            <select id="npcOccupation" class="tb-select" disabled>
+              <option value="" disabled selected>— Select occupation —</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <div class="tb-actions">
+        <button id="npc-reroll" class="tb-btn" type="button">Reroll</button>
+        <button id="npc-copy-text" class="tb-btn" type="button">Copy text</button>
+        <span id="npc-debug" class="tb-debug" style="opacity:.85;"></span>
+      </div>
+      <div id="npc-pretty" class="tb-result" aria-live="polite"></div>
+    </div>
+    <!--random encounters-->
+    <div class="tb-panel">
+      <h2 class="tb-title" id="encounters-sec">Random Encounters</h2>
+      <p>Random encounters for all locales with several risk levels.</p>
+      <div class="tb-grid">
+        <label class="tb-label">
+          Zone
+          <select id="encounterZone" class="tb-select">
+            <option value="forest" selected>Forest</option>
+            <option value="plains">Plains</option>
+            <option value="mountains">Mountains</option>
+            <option value="desert">Desert</option>
+            <option value="swamp">Swamp</option>
+            <option value="coast">Coast</option>
+            <option value="underground">Underground</option>
+            <option value="ruins">Ruins</option>
+            <option value="arctic">Arctic</option>
+            <option value="populated_city">Populated — City</option>
+            <option value="populated_village">Populated — Village</option>
+            <option value="populated_frontier">Populated — Frontier</option>
+          </select>
+        </label>
+        <label class="tb-label">
+          Risk Level
+          <select id="encounterRisk" class="tb-select">
+            <option value="safe">Safe</option>
+            <option value="low" selected>Low</option>
+            <option value="moderate">Moderate</option>
+            <option value="high">High</option>
+            <option value="deadly">Deadly</option>
+          </select>
+        </label>
+      </div>
+      <div class="tb-grid"></div>
+      <div class="tb-actions">
+        <button id="rollEncounter" class="tb-btn">Roll</button>
+        <button id="randEncounter" class="tb-ghost-btn">Randomize</button>
+      </div>
+      <output id="encounterResult" class="tb-result" aria-live="polite">—</output>
+    </div>
+    <!--door generator-->
+    <div class="tb-panel">
+      <h2 class="tb-title" id="door-sec">Door Generator</h2>
+      <p>Generate random doors which include a variety of meterisl, different lock types, an indicator for whether it is
+        trapped or not, and more.</p>
+      <div class="tb-grid"></div>
+      <div class="tb-actions">
+        <button id="rollDoor" class="tb-btn">Roll</button>
+      </div>
+      <output id="doorResult" class="tb-result" aria-live="polite">—</output>
+    </div>
+  </section>
+
+  <!-----three group----->
+  <section class="grid-even">
+    <!--herbalism-->
+    <div class="tb-panel">
+      <h3 class="tb-title" id="herb-sec">Herbalism</h3>
+      <p>A herb generator which links directly to the gathering house rules used in my Skazka campaign setting, but no
+        reason it cannot be used for other game worlds. Each herb is medicinal, toxin or an enhancer. Some herbs can be
+        both medicinal and an enhancer; others can be a toxin and an enhancer. Consume wisely.</p>
+      <p><a href="gathering.html"><strong>Gathering</strong> house rules.</a></p>
       <div class="tb-grid">
         <label class="tb-label">Habitat
           <select class="tb-select" id="habitatSelect">
@@ -283,9 +303,13 @@
       </div>
       <div id="gatherResult" class="tb-result" aria-live="polite"></div>
     </div>
-
+    <!--foraging-->
     <div class="tb-panel" id="forage-panel">
-      <h3 class="tb-title">Foraging</h3>
+      <h3 class="tb-title" id="foraging-sec">Foraging</h3>
+      <p>A foraging generator which links directly to the gathering house rules used in my Skazka campaign setting, but
+        no reason it cannot be used for other game worlds. Adventurers need to eat and this aspect of RPGs is often
+        overlooked. This table (and my house rules) make foraging easy..</p>
+      <p><a href="gathering.html"><strong>Gathering</strong> house rules.</a></p>
       <div class="tb-grid">
         <label class="tb-label">Habitat
           <select class="tb-select" id="forageHabitatSelect">
@@ -304,95 +328,172 @@
       </div>
       <div id="forageResult" class="tb-result" aria-live="polite"></div>
     </div>
-  </section>
-
-  <section class="grid-even">
-    <div>
-      <div class="tb-panel" id="hunting-panel">
-        <h3 class="tb-title">Hunting</h3>
-        <div class="tb-grid">
-          <label class="tb-label">Habitat
-            <select class="tb-select" id="huntHabitatSelect">
-              <option value="Forest">Forest</option>
-              <option value="Mountain">Mountain</option>
-              <option value="Plains">Plains</option>
-              <option value="Swamp">Swamp</option>
-              <option value="Desert">Desert</option>
-              <option value="Coast">Coast</option>
-              <option value="Underdark">Underdark</option>
-            </select>
-          </label>
-          <div class="tb-actions">
-            <button class="tb-btn" id="huntBtn">Hunt</button>
-          </div>
-        </div>
-        <div id="huntResult" class="tb-result" aria-live="polite"></div>
-      </div>
-    </div>
-    <div></div>
-    <div></div>
-  </section>
-
-  <div class="grid-two">
-    <!-- LEFT: main shop controls + list -->
-    <div>
-      <!--magic items-->
-      <div class="tb-panel">
-        <h2 class="tb-title">Treasure (Hoard / Individual)</h2>
-        <div class="tb-privacy" style="margin-bottom:.5rem">
-          <span class="tb-privacy-label">Public</span>
-          <input id="treasurePrivacySlider" class="tb-privacy-slider" type="range" min="0" max="1" step="1" value="0"
-            aria-label="Treasure privacy: 0=Public, 1=Private">
-          <span class="tb-privacy-label">Private</span>
-        </div>
-
-        <div class="tb-grid">
-          <label class="tb-label">
-            World magic prevalence
-            <select id="treasureLevel" class="tb-select">
-              <option value="levelSkazka">Skazka</option>
-              <option value="levelNone">No magic</option>
-              <option value="levelLow">Low</option>
-              <option value="levelNormal" selected>Normal</option>
-              <option value="levelHigh">High</option>
-            </select>
-          </label>
-          <label class="tb-label">
-            Mode
-            <select id="treasureMode" class="tb-select">
-              <option value="hoard" selected>Hoard</option>
-              <option value="individual">Individual</option>
-            </select>
-          </label>
-          <label class="tb-label">
-            Band / Tier
-            <select id="treasureBand" class="tb-select">
-              <option value="low">Low (CR 1–4 feel)</option>
-              <option value="mid" selected>Mid (CR 5–10 feel)</option>
-              <option value="high">High (CR 11–16 feel)</option>
-              <option value="epic">Epic (CR 17+ feel)</option>
-            </select>
-          </label>
-        </div>
+    <!--hunting-->
+    <div class="tb-panel" id="hunting-panel">
+      <h3 class="tb-title" id="hunting-sec">Hunting</h3>
+      <p>A hunting generator which links directly to the gathering house rules used in my Skazka campaign setting, but
+        no reason it cannot be used for other game worlds. Generate the creature hunted based on your location. The
+        Yield returned
+        tells you how many meals that will feed you for. It also hints at what you can attempt to skin.</p>
+      <p><a href="gathering.html"><strong>Gathering</strong> house rules.</a></p>
+      <div class="tb-grid">
+        <label class="tb-label">Habitat
+          <select class="tb-select" id="huntHabitatSelect">
+            <option value="Forest">Forest</option>
+            <option value="Mountain">Mountain</option>
+            <option value="Plains">Plains</option>
+            <option value="Swamp">Swamp</option>
+            <option value="Desert">Desert</option>
+            <option value="Coast">Coast</option>
+            <option value="Underdark">Underdark</option>
+          </select>
+        </label>
         <div class="tb-actions">
-          <button id="rollTreasure" class="tb-btn">Roll</button>
-          <button id="randTreasure" class="tb-ghost-btn">Randomize</button>
-          <button id="randomGem" class="tb-ghost-btn">Random Gem</button>
-          <button id="randomArt" class="tb-ghost-btn">Random Art</button>
+          <button class="tb-btn" id="huntBtn">Hunt</button>
         </div>
-        <output id="treasureResult" class="tb-result" aria-live="polite">—</output>
       </div>
+      <div id="huntResult" class="tb-result" aria-live="polite"></div>
     </div>
-  </div>
+  </section>
 
-  <div class="grid-two" aria-labelledby="shop-title">
-    <!-- LEFT: main shop controls + list -->
+
+  <!-- ===================== Formulas ===================== -->
+  <section class="grid-two-wide">
+    <!-- LEFT: controls + results (70%) -->
+    <div class="tb-panel" id="bp-panel" role="region" aria-labelledby="bp-title">
+      <h3 id="bp-title" class="tb-title">Magic formulas</h3>
+      <p>Filter by type/rarity or search. Click <em>Show</em>, then select a result to view the formula on the right.
+      </p>
+
+      <div class="shop-controls">
+        <div class="col col-1">
+          <label class="tb-label">
+            Type
+            <select id="bpType" class="tb-select">
+              <option value="__all__">All types</option>
+              <option value="potion">Potion</option>
+              <option value="weapon">Weapon</option>
+              <option value="armor">Armor</option>
+              <option value="ring">Ring</option>
+              <option value="wand">Wand</option>
+              <option value="staff">Staff</option>
+              <option value="rod">Rod</option>
+              <option value="wondrous">Wondrous</option>
+              <option value="ammo">Ammo</option>
+              <option value="scroll">Scroll</option>
+            </select>
+          </label>
+
+          <label class="tb-label">
+            Rarity
+            <select id="bpRarity" class="tb-select">
+              <option value="__all__">All rarities</option>
+              <option value="common">Common</option>
+              <option value="uncommon">Uncommon</option>
+              <option value="rare">Rare</option>
+              <option value="very rare">Very rare</option>
+              <option value="legendary">Legendary</option>
+              <option value="artifact">Artifact</option>
+              <option value="varies">Varies</option>
+            </select>
+          </label>
+
+          <label class="tb-label">
+            Search
+            <input id="bpSearch" class="tb-input" placeholder="e.g., healing, agate, venom" inputmode="search">
+          </label>
+        </div>
+
+        <div class="col col-2">
+          <div class="tb-help">Search matches blueprint name, tags, ingredient names, and badges.</div>
+        </div>
+
+        <div class="col col-3">
+          <label class="tb-coins-toggle">
+            <input type="checkbox" id="bpCoins">
+            <span>Show coin breakdown</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="tb-actions">
+        <button id="bpShow" class="tb-btn" type="button">Show</button>
+        <button id="bpExport" class="tb-ghost-btn" type="button">Export CSV</button>
+      </div>
+
+      <!-- Results list (left) -->
+      <output id="bpResult" class="tb-result" role="status">—</output>
+    </div>
+
+    <!-- RIGHT: blueprint detail (30%) -->
+    <aside class="tb-panel" id="bp-detail-panel" role="complementary" aria-labelledby="bp-detail-title">
+      <h2 id="bp-detail-title" class="tb-title" style="display:none">Blueprint detail</h2>
+      <div id="bpDetail" class="tb-result" aria-live="polite"></div>
+    </aside>
+  </section>
+
+  <!-----treasure generator----->
+  <section class="grid-two">
+    <div class="tb-panel">
+      <h2 class="tb-title" id="treasure-sec">Treasure (Hoard / Individual)</h2>
+      <p>Loot, loot, and more loot. Who doesn't love shinies? Only those who are in my campaign can have access to
+        non-SRD items - they get that because I own virtually every book. Sorry and all that but I don't want a level 12
+        lawyer up my ass!
+      </p>
+      <!--treasure controls start-->
+      <div class="tb-privacy" style="margin-bottom:.5rem">
+        <span class="tb-privacy-label">Public</span>
+        <input id="treasurePrivacySlider" class="tb-privacy-slider" type="range" min="0" max="1" step="1" value="0"
+          aria-label="Treasure privacy: 0=Public, 1=Private">
+        <span class="tb-privacy-label">Private</span>
+      </div>
+      <div class="tb-grid">
+        <label class="tb-label">
+          World magic prevalence
+          <select id="treasureLevel" class="tb-select">
+            <option value="levelSkazka">Skazka</option>
+            <option value="levelNone">No magic</option>
+            <option value="levelLow">Low</option>
+            <option value="levelNormal" selected>Normal</option>
+            <option value="levelHigh">High</option>
+          </select>
+        </label>
+        <label class="tb-label">
+          Mode
+          <select id="treasureMode" class="tb-select">
+            <option value="hoard" selected>Hoard</option>
+            <option value="individual">Individual</option>
+          </select>
+        </label>
+        <label class="tb-label">
+          Band / Tier
+          <select id="treasureBand" class="tb-select">
+            <option value="low">Low (CR 1–4 feel)</option>
+            <option value="mid" selected>Mid (CR 5–10 feel)</option>
+            <option value="high">High (CR 11–16 feel)</option>
+            <option value="epic">Epic (CR 17+ feel)</option>
+          </select>
+        </label>
+      </div>
+      <div class="tb-actions">
+        <button id="rollTreasure" class="tb-btn">Roll</button>
+        <button id="randTreasure" class="tb-ghost-btn">Randomize</button>
+        <button id="randomGem" class="tb-ghost-btn">Random Gem</button>
+        <button id="randomArt" class="tb-ghost-btn">Random Art</button>
+      </div>
+      <output id="treasureResult" class="tb-result" aria-live="polite">—</output>
+    </div>
+  </section>
+
+  <!--shop-->
+  <section class="grid-two">
     <div class="tb-panel" id="shop-panel" role="region" aria-labelledby="shop-title">
       <h2 id="shop-title" class="tb-title">Shop &amp; Price Adjuster</h2>
-
-      <!-- === THREE-COLUMN CONTROLS === -->
+      <p>We all need somewhere to spend our money. I've put together a massive list of items. Again, not in my campaign,
+        sorry! Prices are guides only.</p>
+      <p>I've also added some handy tools for calculating discounts and disfavour. Search or filter. Click show. Then
+        select the item for more info in a details pane over on the right of the screen.</p>
       <div class="shop-controls">
-        <!-- Column 1: slider, category, search, sort -->
         <div class="col col-1">
           <div class="tb-privacy">
             <span class="tb-privacy-label">Public</span>
@@ -400,22 +501,17 @@
               aria-label="Privacy mode slider: 0=Public, 1=Private">
             <span class="tb-privacy-label">Private</span>
           </div>
-
           <label class="tb-label">
             Category
             <select id="shopCategory" class="tb-select">
               <option value="__all__">All categories</option>
             </select>
           </label>
-
-          <!-- (optional slot for future dynamic filter chips) -->
           <div id="shop-filters"></div>
-
           <label class="tb-label">
             Search
             <input id="shopSearch" class="tb-input" placeholder="e.g., longsword, saddle, potion" inputmode="search">
           </label>
-
           <label class="tb-label">
             Sort by
             <select id="shopSort" class="tb-select">
@@ -425,8 +521,6 @@
             </select>
           </label>
         </div>
-
-        <!-- Column 2: demand, reputation, haggle -->
         <div class="col col-2">
           <label class="tb-label">
             Demand and supply
@@ -436,7 +530,6 @@
               <option value="overstock_low_demand">Overstock or low demand (-15%)</option>
             </select>
           </label>
-
           <label class="tb-label">
             PC reputation
             <select id="shopRep" class="tb-select">
@@ -445,7 +538,6 @@
               <option value="favoured">Favoured (-10%)</option>
             </select>
           </label>
-
           <div id="haggleControls" class="haggle-block">
             <div class="tb-label">Persuasion discount</div>
             <div class="tb-seg" role="group" aria-label="Persuasion discount">
@@ -456,23 +548,18 @@
             <div id="persuasionOutcome" class="tb-help">No discount.</div>
           </div>
         </div>
-
-        <!-- Column 3: bottom-right coin breakdown toggle -->
         <div class="col col-3">
-          <label for="shopCoins" class="tb-coins-toggle">
+          <label class="tb-coins-toggle">
             <input type="checkbox" id="shopCoins">
             <span>Show coin breakdown</span>
           </label>
         </div>
       </div>
-      <!-- === /THREE-COLUMN CONTROLS === -->
-
       <div class="tb-actions">
         <button id="rollShop" class="tb-btn" type="button">Show</button>
         <button id="exportShop" class="tb-ghost-btn" type="button">Export CSV</button>
       </div>
-
-      <output id="shopResult" class="tb-result" role="status" aria-live="polite">—</output>
+      <output id="shopResult" class="tb-result" role="status">—</output>
     </div>
 
     <!-- RIGHT: complementary item detail -->
@@ -480,7 +567,86 @@
       <h2 id="shop-detail-title" class="tb-title" style="display:none">Item detail</h2>
       <div id="shopDetail" class="tb-result" aria-live="polite"></div>
     </aside>
-  </div>
+  </section>
+
+  <section class="grid-even">
+    <div class="tb-panel" id="services-panel">
+      <h3 class="tb-title" id="services-sec">Services directory</h3>
+      <p>
+        Browse prices for inns, transport, magical rites, mercenaries, and more. Prices use your coin badges
+        and can be scaled in-code per location.
+      </p>
+
+      <div class="tb-grid">
+        <label class="tb-label">Service type
+          <select class="tb-select" id="servicesTypeSelect">
+            <option value="">All types</option>
+            <option value="inn">Inn</option>
+            <option value="personal_services">Personal</option>
+            <option value="public_services">Public</option>
+            <option value="transport">Transport</option>
+            <option value="professional">Professional</option>
+            <option value="magical">Magical</option>
+            <option value="security">Security</option>
+            <option value="criminal">Criminal</option>
+            <option value="banking">Banking</option>
+            <option value="bureaucratic">Bureaucratic</option>
+          </select>
+        </label>
+
+        <label class="tb-label">Search
+          <input class="tb-input" type="search" id="servicesSearch" placeholder="Name, notes…">
+        </label>
+
+        <div class="tb-actions">
+          <button class="tb-btn" id="servicesSearchBtn" type="button">Search</button>
+          <button class="tb-btn" id="servicesResetBtn" type="button">Reset</button>
+        </div>
+      </div>
+
+      <div class="tb-meta" id="servicesResultInfo" aria-live="polite"></div>
+
+      <!-- Results mount — services.js renders here -->
+      <div id="services" data-services aria-live="polite"></div>
+    </div>
+    <!--tavern generator-->
+    <div class="tb-panel" id="inn-panel">
+      <h3 class="tb-title" id="inn-sec">Tavern / Inn Generator</h3>
+      <p>Spin up a named inn/tavern with vibe, features, staff, and a menu sourced from your Services directory.</p>
+
+      <div class="tb-grid">
+        <label class="tb-label">Vibe
+          <select class="tb-select" id="innVibe">
+            <option value="">Any</option>
+            <option value="cozy">Cozy</option>
+            <option value="rowdy">Rowdy</option>
+            <option value="refined">Refined</option>
+            <option value="seedy">Seedy</option>
+            <option value="quiet">Quiet</option>
+            <option value="rough">Rough</option>
+          </select>
+        </label>
+
+        <label class="tb-label">Type
+          <select class="tb-select" id="innType">
+            <option value="">Any</option>
+            <option value="inn">Inn</option>
+            <option value="tavern">Tavern</option>
+            <option value="roadhouse">Roadhouse</option>
+            <option value="alehouse">Alehouse</option>
+          </select>
+        </label>
+
+        <div class="tb-actions">
+          <button class="tb-btn" id="innGenBtn" type="button">Generate</button>
+        </div>
+      </div>
+
+      <div id="innResult" class="tb-result" aria-live="polite"></div>
+    </div>
+  </section>
+
+
 
   <div id="footer"></div>
 </body>

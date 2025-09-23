@@ -34,6 +34,11 @@ html {
   background: #0a0b0f;
 }
 
+:target {
+  scroll-margin-top: 40vh;
+  /* works with fragment navigation in modern browsers */
+}
+
 /* Only affects the materials table */
 .materials-table {
   width: 100%;
@@ -204,6 +209,16 @@ body p {
 .grid-two {
   display: grid;
   grid-template-columns: 7fr 3fr;
+  /* ~70% / 30% */
+  gap: 40px;
+  max-width: 80%;
+  margin: 2em auto 1em;
+  align-items: start;
+}
+
+.grid-two-wide {
+  display: grid;
+  grid-template-columns: 5fr 5fr;
   /* ~70% / 30% */
   gap: 40px;
   max-width: 80%;

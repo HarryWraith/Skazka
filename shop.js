@@ -601,18 +601,24 @@ document.addEventListener("DOMContentLoaded", async () => {
   populateCategoryOptions();
 
   // Slider: always prompt on public→private; clear detail; refresh
-  if (slider) {
-    slider.addEventListener("change", () => {
-      if (slider.value === "1") {
-        if (!requirePrivatePassword()) {
-          slider.value = "0";
+  // Slider: always prompt on public→private; clear detail; refresh
+  if (slider && slider.dataset.bound !== "1") {
+    slider.dataset.bound = "1";
+    slider.addEventListener(
+      "change",
+      () => {
+        if (slider.value === "1") {
+          if (!requirePrivatePassword()) {
+            slider.value = "0";
+          }
         }
-      }
-      clearShopDetail();
-      populateCategoryOptions();
-      runShop();
-    });
-  }
+        clearShopDetail();
+        populateCategoryOptions();
+        runShop();
+      },
+      { once: true }
+    );
+  } // ← closes the if
 
   // Haggle buttons
   ["haggle5", "haggle10", "haggle15"].forEach((id) => {

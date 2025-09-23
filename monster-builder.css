@@ -1,21 +1,21 @@
 /* ===============================
    Skazka Theme Variables
 ================================ */
-:root{
+:root {
   --sb-bg: #0a0b0f;
   --sb-panel: #12131a;
-  --sb-panel2:#171922;
-  --sb-border:#2a2d36;
-  --sb-text:#e6dccb;
-  --sb-dim:#b9b09e;
-  --sb-gold:#c2a13a;
-  --sb-gold-strong:#e1b84d;
-  --sb-chip:#20222b;
-  --sb-radius:14px;
-  --sb-radius-sm:10px;
-  --sb-gap:10px;
-  --sb-font:"Alegreya", ui-serif, Georgia, serif;
-  --sb-mono:ui-monospace, Menlo, Consolas, monospace;
+  --sb-panel2: #171922;
+  --sb-border: #2a2d36;
+  --sb-text: #e6dccb;
+  --sb-dim: #b9b09e;
+  --sb-gold: #c2a13a;
+  --sb-gold-strong: #e1b84d;
+  --sb-chip: #20222b;
+  --sb-radius: 14px;
+  --sb-radius-sm: 10px;
+  --sb-gap: 10px;
+  --sb-font: "Alegreya", ui-serif, Georgia, serif;
+  --sb-mono: ui-monospace, Menlo, Consolas, monospace;
   /* Optional equal height:
      --sb-ability-minh: 280px; */
 }
@@ -23,73 +23,105 @@
 /* ===============================
    Panels
 ================================ */
-.sb-panel{
+.sb-panel {
   background: linear-gradient(180deg, var(--sb-panel), var(--sb-panel2));
-  border:1px solid var(--sb-border);
+  border: 1px solid var(--sb-border);
   border-radius: var(--sb-radius);
-  padding: clamp(12px,2.2vw,18px);
+  padding: clamp(12px, 2.2vw, 18px);
   color: var(--sb-text);
   font-family: var(--sb-font);
-  box-shadow: 0 12px 24px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.02);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, .45), inset 0 1px 0 rgba(255, 255, 255, .02);
 }
 
-.sb-title{ color: var(--sb-gold-strong); margin:0 0 8px; letter-spacing:.3px; }
-.sb-subtitle{ color: var(--sb-gold); margin:10px 0 6px; }
-.sb-tip{ color: var(--sb-dim); font-size:.95rem; margin:0 0 6px; }
-.sb-bullets{ margin:0; padding-left:16px; color:var(--sb-dim); }
+.sb-title {
+  color: var(--sb-gold-strong);
+  margin: 0 0 8px;
+  letter-spacing: .3px;
+}
+
+.sb-subtitle {
+  color: var(--sb-gold);
+  margin: 10px 0 6px;
+}
+
+.sb-tip {
+  color: var(--sb-dim);
+  font-size: .95rem;
+  margin: 0 0 6px;
+}
+
+.sb-bullets {
+  margin: 0;
+  padding-left: 16px;
+  color: var(--sb-dim);
+}
 
 /* ===============================
    Grid
 ================================ */
-.sb-grid{
-  display:grid;
-  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+.sb-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: var(--sb-gap);
-  margin-top:8px;
+  margin-top: 8px;
 }
 
 /* ===============================
    Inputs / Selects / Textareas
 ================================ */
-.sb-input, .sb-select, textarea.sb-input{
-  width:100%;
-  background:#0f1117;
-  color:var(--sb-text);
-  border:1px solid var(--sb-border);
-  border-radius:10px;
-  padding:10px 12px;
-  min-height:42px;
-  line-height:1.2;
-  outline:none;
-  box-sizing:border-box;
+.sb-input,
+.sb-select,
+textarea.sb-input {
+  width: 100%;
+  background: #0f1117;
+  color: var(--sb-text);
+  border: 1px solid var(--sb-border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  min-height: 42px;
+  line-height: 1.2;
+  outline: none;
+  box-sizing: border-box;
   font: 600 1rem var(--sb-font);
 }
-.sb-input::placeholder{ color: color-mix(in oklab, var(--sb-dim) 75%, black); }
-.sb-input:focus, .sb-select:focus, textarea.sb-input:focus{
+
+.sb-input::placeholder {
+  color: color-mix(in oklab, var(--sb-dim) 75%, black);
+}
+
+.sb-input:focus,
+.sb-select:focus,
+textarea.sb-input:focus {
   border-color: var(--sb-gold-strong);
-  box-shadow: 0 0 0 2px rgba(226,184,77,.25);
-  background:#10131a;
+  box-shadow: 0 0 0 2px rgba(226, 184, 77, .25);
+  background: #10131a;
 }
 
 /* Number inputs: validator-friendly */
-input[type="number"].sb-num{ appearance:none; }
+input[type="number"].sb-num {
+  appearance: none;
+}
+
 input[type="number"].sb-num::-webkit-outer-spin-button,
-input[type="number"].sb-num::-webkit-inner-spin-button{ margin:0; }
+input[type="number"].sb-num::-webkit-inner-spin-button {
+  margin: 0;
+}
 
 /* ===============================
    Fieldsets / Ability Grids
 ================================ */
 
 
-#sb-builder fieldset.sb-ability{
-  border:1px solid var(--sb-border);
-  border-radius:10px;
-  padding:12px;
-  margin-top:14px;
-  color:var(--sb-text);
-  position:relative;
-  overflow: visible;                 /* ensure legend is never clipped */
-  background: rgba(0,0,0,.12);
+#sb-builder fieldset.sb-ability {
+  border: 1px solid var(--sb-border);
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 14px;
+  color: var(--sb-text);
+  position: relative;
+  overflow: visible;
+  /* ensure legend is never clipped */
+  background: rgba(0, 0, 0, .12);
 }
 
 .sb-ability-title {
@@ -102,9 +134,11 @@ input[type="number"].sb-num::-webkit-inner-spin-button{ margin:0; }
 }
 
 /* LEGEND — in normal flow (no absolute positioning) */
-#sb-builder fieldset.sb-ability > legend{
-  display: inline-block;          /* shrink to fit */
-  margin: 0 0 6px 12px;              /* slight indent; gives a clean look */
+#sb-builder fieldset.sb-ability>legend {
+  display: inline-block;
+  /* shrink to fit */
+  margin: 0 0 6px 12px;
+  /* slight indent; gives a clean look */
   padding: 0 .4em;
   line-height: 1.1;
   font-weight: 800;
@@ -119,191 +153,219 @@ input[type="number"].sb-num::-webkit-inner-spin-button{ margin:0; }
 /* tidy label layout so captions align over controls */
 .sb-ability-grid label,
 #sb-builder .sb-ability-grid label,
-#sb-builder .sb-grid > label{
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  gap:6px;
-  font-weight:800;
-  letter-spacing:.25px;
+#sb-builder .sb-grid>label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  font-weight: 800;
+  letter-spacing: .25px;
 }
 
 /* Six-pack grid */
-#sb-builder .sb-ability-grid{
-  display:grid;
-  grid-template-columns: repeat(6, minmax(88px,1fr));
-  gap:8px;
-  margin-top: 10px;                  /* consistent top gap under legend */
+#sb-builder .sb-ability-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(88px, 1fr));
+  gap: 8px;
+  margin-top: 10px;
+  /* consistent top gap under legend */
 }
 
-.sb-inline{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  margin-top:10px;
-  color:var(--sb-dim);
+.sb-inline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  color: var(--sb-dim);
 }
 
 /* ===============================
    Helpers / Mini Grid
 ================================ */
-.sb-helper{
-  margin-top:14px;
-  padding-top:6px;
-  border-top:1px dashed var(--sb-border);
+.sb-helper {
+  margin-top: 14px;
+  padding-top: 6px;
+  border-top: 1px dashed var(--sb-border);
 }
-.sb-mini-grid{
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-  gap:8px;
+
+.sb-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 8px;
 }
 
 /* ===============================
    Repeaters
 ================================ */
-.sb-row{ margin-top:10px; }
-.sb-list{ display:grid; gap:8px; }
-.sb-item{
-  background:#0f1117;
-  border:1px solid var(--sb-border);
-  border-radius:10px;
-  padding:8px;
-  display:grid;
-  gap:6px;
+.sb-row {
+  margin-top: 10px;
+}
+
+.sb-list {
+  display: grid;
+  gap: 8px;
+}
+
+.sb-item {
+  background: #0f1117;
+  border: 1px solid var(--sb-border);
+  border-radius: 10px;
+  padding: 8px;
+  display: grid;
+  gap: 6px;
   color: var(--sb-text);
 }
-.sb-item .sb-two{
-  display:grid;
+
+.sb-item .sb-two {
+  display: grid;
   grid-template-columns: 220px 1fr;
-  gap:8px;
+  gap: 8px;
 }
-.sb-item textarea{ min-height:80px; resize:vertical; }
+
+.sb-item textarea {
+  min-height: 80px;
+  resize: vertical;
+}
 
 /* ===============================
    Buttons
 ================================ */
-.sb-btn{
+.sb-btn {
   background: linear-gradient(180deg, var(--sb-gold-strong), var(--sb-gold));
-  color:#0b0a07;
-  border:1px solid color-mix(in oklab, var(--sb-gold) 70%, black);
-  border-radius:10px;
-  padding:8px 12px;
-  font-weight:700;
-  cursor:pointer;
+  color: #0b0a07;
+  border: 1px solid color-mix(in oklab, var(--sb-gold) 70%, black);
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-weight: 700;
+  cursor: pointer;
   transition: transform .06s ease, box-shadow .2s ease, filter .2s ease;
-  text-shadow: 0 1px 0 rgba(255,255,255,0.15);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.15);
 }
-.sb-btn:hover{
-  filter:brightness(1.05);
-  box-shadow:0 0 0 2px rgba(226,184,77,.25),0 10px 24px rgba(226,184,77,.25);
-}
-.sb-btn:active{ transform: translateY(1px); }
 
-.sb-ghost-btn{
+.sb-btn:hover {
+  filter: brightness(1.05);
+  box-shadow: 0 0 0 2px rgba(226, 184, 77, .25), 0 10px 24px rgba(226, 184, 77, .25);
+}
+
+.sb-btn:active {
+  transform: translateY(1px);
+}
+
+.sb-ghost-btn {
   background: transparent;
   color: var(--sb-gold-strong);
-  border:1px solid var(--sb-gold);
-  border-radius:10px;
-  padding:7px 12px;
-  cursor:pointer;
+  border: 1px solid var(--sb-gold);
+  border-radius: 10px;
+  padding: 7px 12px;
+  cursor: pointer;
   transition: background .2s ease, box-shadow .2s ease;
 }
-.sb-ghost-btn:hover{
-  background: rgba(226,184,77,.08);
-  box-shadow: inset 0 0 0 1px rgba(226,184,77,.18);
+
+.sb-ghost-btn:hover {
+  background: rgba(226, 184, 77, .08);
+  box-shadow: inset 0 0 0 1px rgba(226, 184, 77, .18);
 }
 
 /* ===============================
    Export Bar
 ================================ */
-.sb-export{
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
-  margin-top:10px;
+.sb-export {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
 }
 
 /* ===============================
    Preview
 ================================ */
-#sb-preview .sb-pre, .sb-pre{
+#sb-preview .sb-pre,
+.sb-pre {
   white-space: pre-wrap;
   font-family: var(--sb-mono);
   color: var(--sb-text);
-  background:#0f1117;
-  border:1px solid var(--sb-border);
-  border-radius:10px;
-  padding:10px;
-  min-height:240px;
+  background: #0f1117;
+  border: 1px solid var(--sb-border);
+  border-radius: 10px;
+  padding: 10px;
+  min-height: 240px;
 }
-.sb-pre--small{ min-height:0; }
+
+.sb-pre--small {
+  min-height: 0;
+}
 
 /* ===============================
    Inline select + custom input
 ================================ */
-.sb-two-inline{
-  display:grid;
+.sb-two-inline {
+  display: grid;
   grid-template-columns: 220px 1fr;
-  gap:8px;
+  gap: 8px;
 }
 
 /* ===============================
    Monster Builder Layout Fixes
 ================================ */
-#sb-builder .sb-grid{
-  display:grid;
+#sb-builder .sb-grid {
+  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 12px 16px;
-  align-items:start;
+  align-items: start;
 }
 
 /* Fieldsets span full grid width */
-#sb-builder fieldset.sb-ability{ grid-column: 1 / -1; }
+#sb-builder fieldset.sb-ability {
+  grid-column: 1 / -1;
+}
 
 /* Inputs/selects sizing */
 #sb-builder .sb-input,
-#sb-builder .sb-select{
+#sb-builder .sb-select {
   width: 100%;
   min-height: 42px;
   box-sizing: border-box;
 }
 
 /* Creature Type (two inline) */
-#sb-builder .sb-two-inline{
-  display:grid;
+#sb-builder .sb-two-inline {
+  display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 8px;
 }
-@media (max-width: 640px){
-  #sb-builder .sb-two-inline{ grid-template-columns: 1fr; }
+
+@media (max-width: 640px) {
+  #sb-builder .sb-two-inline {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Helper text rhythm */
-#sb-builder .sb-tip{
-  display:block;
-  opacity:.8;
-  font-size:.9rem;
-  margin-top:4px;
+#sb-builder .sb-tip {
+  display: block;
+  opacity: .8;
+  font-size: .9rem;
+  margin-top: 4px;
 }
 
 /* Disabled state */
 #sb-builder select:disabled,
 #sb-builder input:disabled,
-#sb-builder textarea:disabled{
-  opacity:.6;
-  cursor:not-allowed;
+#sb-builder textarea:disabled {
+  opacity: .6;
+  cursor: not-allowed;
 }
 
 /* Buttons area spacing */
-#sb-builder .sb-export{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
+#sb-builder .sb-export {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 /* Optional equal height (enable var above) */
-@supports (height: min(1px, 1px)){
-  #sb-builder fieldset.sb-ability{
+@supports (height: min(1px, 1px)) {
+  #sb-builder fieldset.sb-ability {
     min-height: var(--sb-ability-minh, auto);
   }
 }
@@ -311,10 +373,16 @@ input[type="number"].sb-num::-webkit-inner-spin-button{ margin:0; }
 /* ===============================
    Responsive
 ================================ */
-@media (max-width: 900px){
+@media (max-width: 900px) {
   /* legends remain correct */
 }
-@media (max-width: 720px){
-  .sb-item .sb-two{ grid-template-columns: 1fr; }
-  .sb-two-inline{ grid-template-columns: 1fr; }
+
+@media (max-width: 720px) {
+  .sb-item .sb-two {
+    grid-template-columns: 1fr;
+  }
+
+  .sb-two-inline {
+    grid-template-columns: 1fr;
+  }
 }

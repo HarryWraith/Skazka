@@ -1,0 +1,2050 @@
+{
+  "services": [
+    {
+      "name": "Inn Meal (simple)",
+      "service_type": "inn",
+      "service_model": "per_meal",
+      "quality": "low_quality",
+      "price_coins": {
+        "sp": 1
+      },
+      "is_illicit": false,
+      "notes": "Bread, thin stew, small ale."
+    },
+    {
+      "name": "Inn Meal (hearty)",
+      "service_type": "inn",
+      "service_model": "per_meal",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 3
+      },
+      "is_illicit": false,
+      "notes": "Stew, bread, cheese, pint of ale."
+    },
+    {
+      "name": "Inn Meal (fine)",
+      "service_type": "inn",
+      "service_model": "per_meal",
+      "quality": "high_quality",
+      "price_coins": {
+        "sp": 8
+      },
+      "is_illicit": false,
+      "notes": "Multiple courses and good wine."
+    },
+    {
+      "name": "Ale (mug)",
+      "service_type": "inn",
+      "service_model": "per_person",
+      "quality": "standard_quality",
+      "price_coins": {
+        "cp": 4
+      },
+      "is_illicit": false,
+      "notes": "House ale, one mug."
+    },
+    {
+      "name": "Ale (pitcher)",
+      "service_type": "inn",
+      "service_model": "per_person",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 2
+      },
+      "is_illicit": false,
+      "notes": "Shared pitcher."
+    },
+    {
+      "name": "Wine (common, cup)",
+      "service_type": "inn",
+      "service_model": "per_person",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 2
+      },
+      "is_illicit": false,
+      "notes": "Common table wine."
+    },
+    {
+      "name": "Wine (fine, bottle)",
+      "service_type": "inn",
+      "service_model": "per_person",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 10
+      },
+      "is_illicit": false,
+      "notes": "Cellared vintage."
+    },
+    {
+      "name": "Spirits (shot)",
+      "service_type": "inn",
+      "service_model": "per_person",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 5
+      },
+      "is_illicit": false,
+      "notes": "Local distillate."
+    },
+    {
+      "name": "Bunk in Common Room",
+      "service_type": "inn",
+      "service_model": "per_night",
+      "quality": "low_quality",
+      "price_coins": {
+        "sp": 5
+      },
+      "is_illicit": false,
+      "notes": "Shared bunks, noisy."
+    },
+    {
+      "name": "Private Room (common)",
+      "service_type": "inn",
+      "service_model": "per_night",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 8
+      },
+      "is_illicit": false,
+      "notes": "Single bed, lockable door."
+    },
+    {
+      "name": "Private Room (fine)",
+      "service_type": "inn",
+      "service_model": "per_night",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 2
+      },
+      "is_illicit": false,
+      "notes": "Feather bed, fireplace, wash basin."
+    },
+    {
+      "name": "Suite (with parlor)",
+      "service_type": "inn",
+      "service_model": "per_night",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 5
+      },
+      "is_illicit": false,
+      "notes": "Spacious quarters, privacy and service."
+    },
+    {
+      "name": "Bath (basic)",
+      "service_type": "inn",
+      "service_model": "per_person",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 1
+      },
+      "is_illicit": false,
+      "notes": "Hot water if available."
+    },
+    {
+      "name": "Hot Bath (herbs & salts)",
+      "service_type": "inn",
+      "service_model": "per_person",
+      "quality": "high_quality",
+      "price_coins": {
+        "sp": 2
+      },
+      "is_illicit": false,
+      "notes": "Scented oils and salts."
+    },
+    {
+      "name": "Sauna/Steam Room (hour)",
+      "service_type": "inn",
+      "service_model": "per_hour",
+      "quality": "high_quality",
+      "price_coins": {
+        "sp": 3
+      },
+      "is_illicit": false,
+      "notes": "Shared steam room."
+    },
+    {
+      "name": "Laundry (per load)",
+      "service_type": "inn",
+      "service_model": "per_load",
+      "quality": "standard_quality",
+      "price_coins": {
+        "cp": 5
+      },
+      "is_illicit": false,
+      "notes": "Wash and dry basic garments."
+    },
+    {
+      "name": "Fire Tending (room service)",
+      "service_type": "inn",
+      "service_model": "flat",
+      "quality": "standard_quality",
+      "price_coins": {
+        "cp": 8
+      },
+      "is_illicit": false,
+      "notes": "Fire lit and kept through the evening."
+    },
+    {
+      "name": "Stabling (per animal/day)",
+      "service_type": "inn",
+      "service_model": "per_animal_day",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 2
+      },
+      "is_illicit": false,
+      "notes": "Feed and water included."
+    },
+    {
+      "name": "Grooming (per animal)",
+      "service_type": "inn",
+      "service_model": "per_person",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 1
+      },
+      "is_illicit": false,
+      "notes": "Brush, hoof check, mane and tail."
+    },
+    {
+      "name": "Tack Cleaning (per set)",
+      "service_type": "inn",
+      "service_model": "flat",
+      "quality": "high_quality",
+      "price_coins": {
+        "sp": 2
+      },
+      "is_illicit": false,
+      "notes": "Leather cleaned and oiled."
+    },
+    {
+      "name": "Late Checkout (add-on)",
+      "service_type": "inn",
+      "service_model": "flat",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 1
+      },
+      "is_illicit": false,
+      "notes": "Keep room until late afternoon."
+    },
+    {
+      "name": "Room Service Meal",
+      "service_type": "inn",
+      "service_model": "per_meal",
+      "quality": "high_quality",
+      "price_coins": {
+        "sp": 5
+      },
+      "is_illicit": false,
+      "notes": "Delivered to the room."
+    },
+    {
+      "name": "Barber: Shave & Haircut",
+      "service_type": "personal_services",
+      "service_model": "per_person",
+      "quality": "standard_quality",
+      "price_coins": {
+        "cp": 5
+      },
+      "is_illicit": false,
+      "notes": "Quick trim and shave."
+    },
+    {
+      "name": "Barber: Grooming (luxury)",
+      "service_type": "personal_services",
+      "service_model": "per_person",
+      "quality": "high_quality",
+      "price_coins": {
+        "sp": 2
+      },
+      "is_illicit": false,
+      "notes": "Hot towels, oils, styling."
+    },
+    {
+      "name": "Tailoring: Mending (per garment)",
+      "service_type": "personal_services",
+      "service_model": "per_person",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 1
+      },
+      "is_illicit": false,
+      "notes": "Simple repairs and hems."
+    },
+    {
+      "name": "Tailoring: Fitting & Adjustments",
+      "service_type": "personal_services",
+      "service_model": "per_person",
+      "quality": "high_quality",
+      "price_coins": {
+        "sp": 5
+      },
+      "is_illicit": false,
+      "notes": "Precise fitting with pins and chalk."
+    },
+    {
+      "name": "Massage (hour)",
+      "service_type": "personal_services",
+      "service_model": "per_hour",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 3
+      },
+      "is_illicit": false,
+      "notes": "Relaxing, non-medical."
+    },
+    {
+      "name": "Private Massage (luxury hour)",
+      "service_type": "personal_services",
+      "service_model": "per_hour",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 1
+      },
+      "is_illicit": false,
+      "notes": "Private room with oils and heated stones."
+    },
+    {
+      "name": "Escort Companionship (licensed, hour)",
+      "service_type": "personal_services",
+      "service_model": "per_hour",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 2
+      },
+      "is_illicit": false,
+      "notes": "Licensed companionship; private and discreet."
+    },
+    {
+      "name": "Escort Companionship (unlicensed, hour)",
+      "service_type": "personal_services",
+      "service_model": "per_hour",
+      "quality": "standard_quality",
+      "price_coins": {
+        "gp": 1
+      },
+      "is_illicit": true,
+      "notes": "Unlicensed companionship; higher risk."
+    },
+    {
+      "name": "Tutor: Languages (hour)",
+      "service_type": "personal_services",
+      "service_model": "per_hour",
+      "quality": "standard_quality",
+      "price_coins": {
+        "gp": 2
+      },
+      "is_illicit": false,
+      "notes": "Common tongues and scripts."
+    },
+    {
+      "name": "Tutor: Instrument (hour)",
+      "service_type": "personal_services",
+      "service_model": "per_hour",
+      "quality": "standard_quality",
+      "price_coins": {
+        "gp": 2
+      },
+      "is_illicit": false,
+      "notes": "Lute, flute, drum, or voice."
+    },
+    {
+      "name": "Private Chef (per person)",
+      "service_type": "personal_services",
+      "service_model": "per_person",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 1
+      },
+      "is_illicit": false,
+      "notes": "In-home meal preparation."
+    },
+    {
+      "name": "Childcare (day)",
+      "service_type": "personal_services",
+      "service_model": "per_day",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 1
+      },
+      "is_illicit": false,
+      "notes": "Supervised group care."
+    },
+    {
+      "name": "Tattoo (small)",
+      "service_type": "personal_services",
+      "service_model": "flat",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 5
+      },
+      "is_illicit": false,
+      "notes": "Simple linework design."
+    },
+    {
+      "name": "Tattoo (large)",
+      "service_type": "personal_services",
+      "service_model": "flat",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 2
+      },
+      "is_illicit": false,
+      "notes": "Detailed multi-session piece."
+    },
+    {
+      "name": "Bardic Performance (private, hour)",
+      "service_type": "personal_services",
+      "service_model": "per_hour",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 1
+      },
+      "is_illicit": false,
+      "notes": "Private room entertainment."
+    },
+    {
+      "name": "Tailoring: Bespoke Garment Commission",
+      "service_type": "personal_services",
+      "service_model": "flat",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 10
+      },
+      "is_illicit": false,
+      "notes": "Measurements, pattern, and final fitting."
+    },
+    {
+      "name": "Bathhouse Entry",
+      "service_type": "public_services",
+      "service_model": "per_person",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 1
+      },
+      "is_illicit": false,
+      "notes": "Access to public baths."
+    },
+    {
+      "name": "Steam Room (hour)",
+      "service_type": "public_services",
+      "service_model": "per_hour",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 2
+      },
+      "is_illicit": false,
+      "notes": "Shared steam benches."
+    },
+    {
+      "name": "Public Massage (hour)",
+      "service_type": "public_services",
+      "service_model": "per_hour",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 3
+      },
+      "is_illicit": false,
+      "notes": "Bathhouse attendants."
+    },
+    {
+      "name": "Public Laundry (per load)",
+      "service_type": "public_services",
+      "service_model": "per_load",
+      "quality": "low_quality",
+      "price_coins": {
+        "cp": 3
+      },
+      "is_illicit": false,
+      "notes": "Self-serve tubs."
+    },
+    {
+      "name": "Public Latrine",
+      "service_type": "public_services",
+      "service_model": "per_person",
+      "quality": "low_quality",
+      "price_coins": {
+        "cp": 1
+      },
+      "is_illicit": false,
+      "notes": "Maintained nightsoil pits."
+    },
+    {
+      "name": "Messenger: Intra-city (per letter)",
+      "service_type": "public_services",
+      "service_model": "per_letter",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 1
+      },
+      "is_illicit": false,
+      "notes": "Hand delivery within the walls."
+    },
+    {
+      "name": "Courier: Inter-city (per mile)",
+      "service_type": "public_services",
+      "service_model": "per_mile",
+      "quality": "standard_quality",
+      "price_coins": {
+        "cp": 5
+      },
+      "is_illicit": false,
+      "notes": "Riders change at waystations."
+    },
+    {
+      "name": "Notice Posting (board)",
+      "service_type": "public_services",
+      "service_model": "flat",
+      "quality": "standard_quality",
+      "price_coins": {
+        "cp": 5
+      },
+      "is_illicit": false,
+      "notes": "Guild boards, taverns, temples."
+    },
+    {
+      "name": "Market Stall Fee (per day)",
+      "service_type": "public_services",
+      "service_model": "per_day",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 5
+      },
+      "is_illicit": false,
+      "notes": "Open-air market pitch."
+    },
+    {
+      "name": "Weigh & Measure Service (per load)",
+      "service_type": "public_services",
+      "service_model": "per_load",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 1
+      },
+      "is_illicit": false,
+      "notes": "Official scales and rods."
+    },
+    {
+      "name": "Water Barrel Fill",
+      "service_type": "public_services",
+      "service_model": "per_load",
+      "quality": "low_quality",
+      "price_coins": {
+        "cp": 1
+      },
+      "is_illicit": false,
+      "notes": "Well or fountain."
+    },
+    {
+      "name": "Public Scribe: Letter Writing (per letter)",
+      "service_type": "public_services",
+      "service_model": "per_letter",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 5
+      },
+      "is_illicit": false,
+      "notes": "Dictation and neat hand."
+    },
+    {
+      "name": "Entertainer Troupe Ticket (common)",
+      "service_type": "public_services",
+      "service_model": "per_person",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 1
+      },
+      "is_illicit": false,
+      "notes": "Street or square performances."
+    },
+    {
+      "name": "Entertainer Troupe Ticket (fine)",
+      "service_type": "public_services",
+      "service_model": "per_person",
+      "quality": "high_quality",
+      "price_coins": {
+        "sp": 5
+      },
+      "is_illicit": false,
+      "notes": "Halls or amphitheaters."
+    },
+    {
+      "name": "Hostel Bed (dormitory)",
+      "service_type": "public_services",
+      "service_model": "per_night",
+      "quality": "low_quality",
+      "price_coins": {
+        "sp": 2
+      },
+      "is_illicit": false,
+      "notes": "Basic bunks; bring your own lock."
+    },
+    {
+      "name": "Ferry Crossing (per person)",
+      "service_type": "transport",
+      "service_model": "per_person",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 2
+      },
+      "is_illicit": false,
+      "notes": "River or canal ferry."
+    },
+    {
+      "name": "Ferry Crossing (per animal)",
+      "service_type": "transport",
+      "service_model": "per_person",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 5
+      },
+      "is_illicit": false,
+      "notes": "Mounts and beasts."
+    },
+    {
+      "name": "Coach Fare (per mile)",
+      "service_type": "transport",
+      "service_model": "per_mile",
+      "quality": "standard_quality",
+      "price_coins": {
+        "cp": 5
+      },
+      "is_illicit": false,
+      "notes": "Shared coach, scheduled stops."
+    },
+    {
+      "name": "Express Coach (per mile)",
+      "service_type": "transport",
+      "service_model": "per_mile",
+      "quality": "high_quality",
+      "price_coins": {
+        "sp": 1
+      },
+      "is_illicit": false,
+      "notes": "Limited stops, faster teams."
+    },
+    {
+      "name": "Wagon Hire (per day)",
+      "service_type": "transport",
+      "service_model": "per_day",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 5
+      },
+      "is_illicit": false,
+      "notes": "Driver included; cargo rated."
+    },
+    {
+      "name": "Cart Rental (per day)",
+      "service_type": "transport",
+      "service_model": "per_day",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 3
+      },
+      "is_illicit": false,
+      "notes": "Hand-cart or small mule cart."
+    },
+    {
+      "name": "Horse Rental (riding, per day)",
+      "service_type": "transport",
+      "service_model": "per_day",
+      "quality": "standard_quality",
+      "price_coins": {
+        "gp": 1
+      },
+      "is_illicit": false,
+      "notes": "Security deposit required."
+    },
+    {
+      "name": "Warhorse Rental (per day)",
+      "service_type": "transport",
+      "service_model": "per_day",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 5
+      },
+      "is_illicit": false,
+      "notes": "War-trained; proof of need."
+    },
+    {
+      "name": "Mule/Donkey Rental (per day)",
+      "service_type": "transport",
+      "service_model": "per_day",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 3
+      },
+      "is_illicit": false,
+      "notes": "Pack animal."
+    },
+    {
+      "name": "Ship Passage (coastal, per day)",
+      "service_type": "transport",
+      "service_model": "per_day",
+      "quality": "standard_quality",
+      "price_coins": {
+        "gp": 2
+      },
+      "is_illicit": false,
+      "notes": "Shared cabin or deck passage."
+    },
+    {
+      "name": "Riverboat Passage (per day)",
+      "service_type": "transport",
+      "service_model": "per_day",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 5
+      },
+      "is_illicit": false,
+      "notes": "Shallow draft boats."
+    },
+    {
+      "name": "Porter Hire (per day)",
+      "service_type": "transport",
+      "service_model": "per_day",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 2
+      },
+      "is_illicit": false,
+      "notes": "Carries up to 40 lb."
+    },
+    {
+      "name": "Guide: Wilderness (per day)",
+      "service_type": "transport",
+      "service_model": "per_day",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 2
+      },
+      "is_illicit": false,
+      "notes": "Knows trails, beasts, and campsites."
+    },
+    {
+      "name": "Stable: Feed Animals (per day)",
+      "service_type": "transport",
+      "service_model": "per_day",
+      "quality": "low_quality",
+      "price_coins": {
+        "cp": 2
+      },
+      "is_illicit": false,
+      "notes": "Hay and water at the rail."
+    },
+    {
+      "name": "Caravan Space (per day)",
+      "service_type": "transport",
+      "service_model": "per_day",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 4
+      },
+      "is_illicit": false,
+      "notes": "Join a merchant caravan for safety."
+    },
+    {
+      "name": "Blacksmith: Weapon Repair",
+      "service_type": "professional",
+      "service_model": "flat",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 2
+      },
+      "is_illicit": false,
+      "notes": "Sharpening, straightening, hilt wrap."
+    },
+    {
+      "name": "Armorer: Armor Repairs",
+      "service_type": "professional",
+      "service_model": "flat",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 5
+      },
+      "is_illicit": false,
+      "notes": "Buckles, straps, rivets replaced."
+    },
+    {
+      "name": "Armorer: Fitting & Padding",
+      "service_type": "professional",
+      "service_model": "flat",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 1
+      },
+      "is_illicit": false,
+      "notes": "Custom padding for comfort."
+    },
+    {
+      "name": "Locksmith: New Key",
+      "service_type": "professional",
+      "service_model": "flat",
+      "quality": "standard_quality",
+      "price_coins": {
+        "gp": 1
+      },
+      "is_illicit": false,
+      "notes": "Key cut to an existing lock."
+    },
+    {
+      "name": "Locksmith: Legal Lock Opening",
+      "service_type": "professional",
+      "service_model": "flat",
+      "quality": "standard_quality",
+      "price_coins": {
+        "gp": 2
+      },
+      "is_illicit": false,
+      "notes": "Proof of ownership required."
+    },
+    {
+      "name": "Appraiser: Gem or Art (per item)",
+      "service_type": "professional",
+      "service_model": "per_person",
+      "quality": "high_quality",
+      "price_coins": {
+        "sp": 5
+      },
+      "is_illicit": false,
+      "notes": "Written estimate with seal."
+    },
+    {
+      "name": "Scribe: Copying (per page)",
+      "service_type": "professional",
+      "service_model": "per_page",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 2
+      },
+      "is_illicit": false,
+      "notes": "Clean, legible script."
+    },
+    {
+      "name": "Translator (per page)",
+      "service_type": "professional",
+      "service_model": "per_page",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 3
+      },
+      "is_illicit": false,
+      "notes": "Common regional tongues."
+    },
+    {
+      "name": "Cartographer: Draft Map (per page)",
+      "service_type": "professional",
+      "service_model": "per_page",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 2
+      },
+      "is_illicit": false,
+      "notes": "Scaled, with legend and compass."
+    },
+    {
+      "name": "Surveyor: Boundary Marking (per mile)",
+      "service_type": "professional",
+      "service_model": "per_mile",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 2
+      },
+      "is_illicit": false,
+      "notes": "Stakes, chains, and notes."
+    },
+    {
+      "name": "Architect: Building Plans (per room)",
+      "service_type": "professional",
+      "service_model": "per_person",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 5
+      },
+      "is_illicit": false,
+      "notes": "Load-bearing and materials list."
+    },
+    {
+      "name": "Mason: Day Labor (per day)",
+      "service_type": "professional",
+      "service_model": "per_day",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 3
+      },
+      "is_illicit": false,
+      "notes": "Stonework and mortar."
+    },
+    {
+      "name": "Carpenter: Day Labor (per day)",
+      "service_type": "professional",
+      "service_model": "per_day",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 3
+      },
+      "is_illicit": false,
+      "notes": "Joinery, frames, and roofs."
+    },
+    {
+      "name": "Physician: Consultation (hour)",
+      "service_type": "professional",
+      "service_model": "per_hour",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 1
+      },
+      "is_illicit": false,
+      "notes": "Diagnosis, bandaging, splints."
+    },
+    {
+      "name": "Herbalist: Remedies Consultation",
+      "service_type": "professional",
+      "service_model": "per_person",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 2
+      },
+      "is_illicit": false,
+      "notes": "Herbal salves and teas."
+    },
+    {
+      "name": "Veterinarian: Animal Care",
+      "service_type": "professional",
+      "service_model": "per_person",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 5
+      },
+      "is_illicit": false,
+      "notes": "Mount and livestock treatment."
+    },
+    {
+      "name": "Portrait Painter (per day)",
+      "service_type": "professional",
+      "service_model": "per_day",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 3
+      },
+      "is_illicit": false,
+      "notes": "Canvas and paints included."
+    },
+    {
+      "name": "Musician: Private Performance (hour)",
+      "service_type": "professional",
+      "service_model": "per_hour",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 1
+      },
+      "is_illicit": false,
+      "notes": "Instrumental or vocal."
+    },
+    {
+      "name": "Dancer Troupe Booking (evening)",
+      "service_type": "professional",
+      "service_model": "flat",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 3
+      },
+      "is_illicit": false,
+      "notes": "Troupe of 3–5 performers."
+    },
+    {
+      "name": "Farrier: Shoe a Horse",
+      "service_type": "professional",
+      "service_model": "flat",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 5
+      },
+      "is_illicit": false,
+      "notes": "Four shoes, fitted and nailed."
+    },
+    {
+      "name": "Glazier: Window Fitting (per pane)",
+      "service_type": "professional",
+      "service_model": "per_person",
+      "quality": "high_quality",
+      "price_coins": {
+        "sp": 8
+      },
+      "is_illicit": false,
+      "notes": "Leaded glass; fragile handling."
+    },
+    {
+      "name": "Candlemaker: Custom Order Fee",
+      "service_type": "professional",
+      "service_model": "flat",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 1
+      },
+      "is_illicit": false,
+      "notes": "Scented or beeswax options."
+    },
+    {
+      "name": "Jeweler: Repair/Resize Ring",
+      "service_type": "professional",
+      "service_model": "flat",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 1
+      },
+      "is_illicit": false,
+      "notes": "Cleaning and polish included."
+    },
+    {
+      "name": "Locksmith: Safe Consultation (hour)",
+      "service_type": "professional",
+      "service_model": "per_hour",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 2
+      },
+      "is_illicit": false,
+      "notes": "Advice on vaults and traps."
+    },
+    {
+      "name": "Identify Magic Item",
+      "service_type": "magical",
+      "service_model": "flat",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 10
+      },
+      "is_illicit": false,
+      "notes": "Ritual appraisal and aura reading."
+    },
+    {
+      "name": "Detect Magic: Site Sweep",
+      "service_type": "magical",
+      "service_model": "flat",
+      "quality": "standard_quality",
+      "price_coins": {
+        "gp": 5
+      },
+      "is_illicit": false,
+      "notes": "Short ritual or spell pulse."
+    },
+    {
+      "name": "Magical Healing (per 10 HP)",
+      "service_type": "magical",
+      "service_model": "per_person",
+      "quality": "standard_quality",
+      "price_coins": {
+        "gp": 5
+      },
+      "is_illicit": false,
+      "notes": "Divine or arcane channeling."
+    },
+    {
+      "name": "Lesser Restoration / Cure Disease",
+      "service_type": "magical",
+      "service_model": "flat",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 40
+      },
+      "is_illicit": false,
+      "notes": "Ends one disease or condition."
+    },
+    {
+      "name": "Neutralize Poison",
+      "service_type": "magical",
+      "service_model": "flat",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 50
+      },
+      "is_illicit": false,
+      "notes": "Purges mundane toxins."
+    },
+    {
+      "name": "Remove Curse",
+      "service_type": "magical",
+      "service_model": "flat",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 90
+      },
+      "is_illicit": false,
+      "notes": "Lifts a single curse effect."
+    },
+    {
+      "name": "Greater Restoration",
+      "service_type": "magical",
+      "service_model": "flat",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 450
+      },
+      "is_illicit": false,
+      "notes": "Restores drained attributes or severe afflictions."
+    },
+    {
+      "name": "Revivify (fresh death)",
+      "service_type": "magical",
+      "service_model": "flat",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 300
+      },
+      "is_illicit": false,
+      "notes": "Within a minute of death; diamond required."
+    },
+    {
+      "name": "Raise Dead (temple rite)",
+      "service_type": "magical",
+      "service_model": "flat",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 1250
+      },
+      "is_illicit": false,
+      "notes": "Requires costly diamonds and offerings."
+    },
+    {
+      "name": "Resurrection",
+      "service_type": "magical",
+      "service_model": "flat",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 10000
+      },
+      "is_illicit": false,
+      "notes": "Long ritual; rare officiants."
+    },
+    {
+      "name": "True Resurrection",
+      "service_type": "magical",
+      "service_model": "flat",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 25000
+      },
+      "is_illicit": false,
+      "notes": "Legendary rite; scarce components."
+    },
+    {
+      "name": "Stone to Flesh (de-petrify)",
+      "service_type": "magical",
+      "service_model": "flat",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 1500
+      },
+      "is_illicit": false,
+      "notes": "Restores a petrified creature."
+    },
+    {
+      "name": "Dispel Magic (site)",
+      "service_type": "magical",
+      "service_model": "flat",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 150
+      },
+      "is_illicit": false,
+      "notes": "Ends effects within a zone."
+    },
+    {
+      "name": "Scrying Session",
+      "service_type": "magical",
+      "service_model": "per_hour",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 200
+      },
+      "is_illicit": false,
+      "notes": "Reveals distant subjects; success varies."
+    },
+    {
+      "name": "Divination (omens/augury)",
+      "service_type": "magical",
+      "service_model": "flat",
+      "quality": "standard_quality",
+      "price_coins": {
+        "gp": 25
+      },
+      "is_illicit": false,
+      "notes": "Yes/No guidance; incense consumed."
+    },
+    {
+      "name": "Commune (ask the divine)",
+      "service_type": "magical",
+      "service_model": "flat",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 100
+      },
+      "is_illicit": false,
+      "notes": "Three questions; holy offerings."
+    },
+    {
+      "name": "Teleportation Circle Access",
+      "service_type": "magical",
+      "service_model": "flat",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 1000
+      },
+      "is_illicit": false,
+      "notes": "Licensed use of a permanent circle."
+    },
+    {
+      "name": "Plane Shift Passage",
+      "service_type": "magical",
+      "service_model": "flat",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 2500
+      },
+      "is_illicit": false,
+      "notes": "Rare circle; survival not guaranteed."
+    },
+    {
+      "name": "Sanctify/Consecrate Ground",
+      "service_type": "magical",
+      "service_model": "flat",
+      "quality": "standard_quality",
+      "price_coins": {
+        "gp": 50
+      },
+      "is_illicit": false,
+      "notes": "Wards a small site against corruption."
+    },
+    {
+      "name": "Warding Glyph Inscription (per spell level)",
+      "service_type": "magical",
+      "service_model": "per_person",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 200
+      },
+      "is_illicit": false,
+      "notes": "Includes trivial materials."
+    },
+    {
+      "name": "Enchant Weapon (+1 for a day)",
+      "service_type": "magical",
+      "service_model": "flat",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 75
+      },
+      "is_illicit": false,
+      "notes": "Temporary enhancement."
+    },
+    {
+      "name": "Animate Dead (per corpse)",
+      "service_type": "magical",
+      "service_model": "per_person",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 100
+      },
+      "is_illicit": true,
+      "notes": "Taboo necromancy; watched by authorities."
+    },
+    {
+      "name": "Bestow Curse (commission)",
+      "service_type": "magical",
+      "service_model": "flat",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 200
+      },
+      "is_illicit": true,
+      "notes": "Illegal in most jurisdictions."
+    },
+    {
+      "name": "Speak with Dead (session)",
+      "service_type": "magical",
+      "service_model": "per_hour",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 150
+      },
+      "is_illicit": false,
+      "notes": "Subject may be uncooperative."
+    },
+    {
+      "name": "Hire Guard (day shift)",
+      "service_type": "security",
+      "service_model": "per_day",
+      "quality": "standard_quality",
+      "price_coins": {
+        "gp": 2
+      },
+      "is_illicit": false,
+      "notes": "Spear and shield; basic kit."
+    },
+    {
+      "name": "Hire Guard (night shift)",
+      "service_type": "security",
+      "service_model": "per_day",
+      "quality": "standard_quality",
+      "price_coins": {
+        "gp": 1
+      },
+      "is_illicit": false,
+      "notes": "Patrols halls and yards."
+    },
+    {
+      "name": "Veteran Guard (day)",
+      "service_type": "security",
+      "service_model": "per_day",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 5
+      },
+      "is_illicit": false,
+      "notes": "Experienced soldier; better gear."
+    },
+    {
+      "name": "Elite Bodyguard (day)",
+      "service_type": "security",
+      "service_model": "per_day",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 8
+      },
+      "is_illicit": false,
+      "notes": "Close protection; stays within 10 ft."
+    },
+    {
+      "name": "Archer Hire (day)",
+      "service_type": "security",
+      "service_model": "per_day",
+      "quality": "standard_quality",
+      "price_coins": {
+        "gp": 3
+      },
+      "is_illicit": false,
+      "notes": "Shortbow and 40 arrows."
+    },
+    {
+      "name": "Bouncer (evening)",
+      "service_type": "security",
+      "service_model": "flat",
+      "quality": "standard_quality",
+      "price_coins": {
+        "gp": 1
+      },
+      "is_illicit": false,
+      "notes": "Tavern or festhall door."
+    },
+    {
+      "name": "Private Watch Patrol (night)",
+      "service_type": "security",
+      "service_model": "flat",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 5
+      },
+      "is_illicit": false,
+      "notes": "Two guards, horn and lantern."
+    },
+    {
+      "name": "Beast Hunter/Trapper (day)",
+      "service_type": "security",
+      "service_model": "per_day",
+      "quality": "standard_quality",
+      "price_coins": {
+        "gp": 2
+      },
+      "is_illicit": false,
+      "notes": "Sets humane or lethal traps."
+    },
+    {
+      "name": "Caravan Guard (per day)",
+      "service_type": "security",
+      "service_model": "per_day",
+      "quality": "standard_quality",
+      "price_coins": {
+        "gp": 2
+      },
+      "is_illicit": false,
+      "notes": "Marches with merchants."
+    },
+    {
+      "name": "Siege Engineer Consult (hour)",
+      "service_type": "security",
+      "service_model": "per_hour",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 3
+      },
+      "is_illicit": false,
+      "notes": "Walls, gates, and defenses."
+    },
+    {
+      "name": "Assassination Contract (commoner)",
+      "service_type": "criminal",
+      "service_model": "flat",
+      "quality": "standard_quality",
+      "price_coins": {
+        "gp": 200
+      },
+      "is_illicit": true,
+      "notes": "Silent job; no questions asked."
+    },
+    {
+      "name": "Assassination Contract (noble)",
+      "service_type": "criminal",
+      "service_model": "flat",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 2000
+      },
+      "is_illicit": true,
+      "notes": "High-profile; advanced planning."
+    },
+    {
+      "name": "Burglary for Hire (shop/home)",
+      "service_type": "criminal",
+      "service_model": "flat",
+      "quality": "standard_quality",
+      "price_coins": {
+        "gp": 50
+      },
+      "is_illicit": true,
+      "notes": "Break-in, retrieve item."
+    },
+    {
+      "name": "Pickpocket on Request",
+      "service_type": "criminal",
+      "service_model": "flat",
+      "quality": "low_quality",
+      "price_coins": {
+        "gp": 10
+      },
+      "is_illicit": true,
+      "notes": "Attempt to lift one small item."
+    },
+    {
+      "name": "Arson Job",
+      "service_type": "criminal",
+      "service_model": "flat",
+      "quality": "standard_quality",
+      "price_coins": {
+        "gp": 60
+      },
+      "is_illicit": true,
+      "notes": "Discrete ignition; no witnesses."
+    },
+    {
+      "name": "Kidnapping & Ransom",
+      "service_type": "criminal",
+      "service_model": "flat",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 200
+      },
+      "is_illicit": true,
+      "notes": "Holding location provided."
+    },
+    {
+      "name": "Smuggling Arrangement (broker fee)",
+      "service_type": "criminal",
+      "service_model": "flat",
+      "quality": "standard_quality",
+      "price_coins": {
+        "gp": 25
+      },
+      "is_illicit": true,
+      "notes": "Move goods/persons past checks."
+    },
+    {
+      "name": "Forge Papers (per page)",
+      "service_type": "criminal",
+      "service_model": "per_page",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 10
+      },
+      "is_illicit": true,
+      "notes": "Seals and hand imitate officials."
+    },
+    {
+      "name": "Counterfeit Coin Operation (per 100 gp)",
+      "service_type": "criminal",
+      "service_model": "per_load",
+      "quality": "low_quality",
+      "price_coins": {
+        "gp": 20
+      },
+      "is_illicit": true,
+      "notes": "Risky; poor fidelity."
+    },
+    {
+      "name": "Bribe Brokerage",
+      "service_type": "criminal",
+      "service_model": "flat",
+      "quality": "standard_quality",
+      "price_coins": {
+        "gp": 10
+      },
+      "is_illicit": true,
+      "notes": "Places bribes where they count."
+    },
+    {
+      "name": "Blackmail Arrangement",
+      "service_type": "criminal",
+      "service_model": "flat",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 50
+      },
+      "is_illicit": true,
+      "notes": "Evidence acquisition and threat delivery."
+    },
+    {
+      "name": "Spy/Informant Retainer (weekly)",
+      "service_type": "criminal",
+      "service_model": "per_day",
+      "quality": "standard_quality",
+      "price_coins": {
+        "gp": 15
+      },
+      "is_illicit": true,
+      "notes": "Daily tidings on target."
+    },
+    {
+      "name": "Illegal Gambling Den Entry",
+      "service_type": "criminal",
+      "service_model": "per_person",
+      "quality": "standard_quality",
+      "price_coins": {
+        "gp": 1
+      },
+      "is_illicit": true,
+      "notes": "High-stakes games; rake applies."
+    },
+    {
+      "name": "Poison Procurement (dose)",
+      "service_type": "criminal",
+      "service_model": "per_person",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 25
+      },
+      "is_illicit": true,
+      "notes": "Deadly, rare, or sleeping drafts."
+    },
+    {
+      "name": "Thieves' Guild Dues (monthly)",
+      "service_type": "criminal",
+      "service_model": "flat",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 5
+      },
+      "is_illicit": true,
+      "notes": "Protects members and turf."
+    },
+    {
+      "name": "Currency Exchange Fee (per 100 gp)",
+      "service_type": "banking",
+      "service_model": "per_load",
+      "quality": "standard_quality",
+      "price_coins": {
+        "gp": 1
+      },
+      "is_illicit": false,
+      "notes": "Weighing, testing, and stamping."
+    },
+    {
+      "name": "Vault Storage (per week)",
+      "service_type": "banking",
+      "service_model": "per_day",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 2
+      },
+      "is_illicit": false,
+      "notes": "Secure vault; insured locally."
+    },
+    {
+      "name": "Safe Deposit Box (per month)",
+      "service_type": "banking",
+      "service_model": "flat",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 1
+      },
+      "is_illicit": false,
+      "notes": "Private key; clerk present."
+    },
+    {
+      "name": "Letter of Credit Issuance",
+      "service_type": "banking",
+      "service_model": "flat",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 5
+      },
+      "is_illicit": false,
+      "notes": "Redeemable at partner houses."
+    },
+    {
+      "name": "Loan Origination Fee",
+      "service_type": "banking",
+      "service_model": "flat",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 5
+      },
+      "is_illicit": false,
+      "notes": "Interest terms vary."
+    },
+    {
+      "name": "Pawn Appraisal (per item)",
+      "service_type": "banking",
+      "service_model": "per_person",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 1
+      },
+      "is_illicit": false,
+      "notes": "Appraised for collateral."
+    },
+    {
+      "name": "Pawn Interest (per 10 gp/week)",
+      "service_type": "banking",
+      "service_model": "per_load",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 1
+      },
+      "is_illicit": false,
+      "notes": "Interest charged on outstanding pawn."
+    },
+    {
+      "name": "Money Transfer (city to city)",
+      "service_type": "banking",
+      "service_model": "flat",
+      "quality": "standard_quality",
+      "price_coins": {
+        "gp": 2
+      },
+      "is_illicit": false,
+      "notes": "Secure courier or code."
+    },
+    {
+      "name": "Caravan Insurance (per week)",
+      "service_type": "banking",
+      "service_model": "per_day",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 5
+      },
+      "is_illicit": false,
+      "notes": "Pays out on loss; terms apply."
+    },
+    {
+      "name": "Notary & Seal (per document)",
+      "service_type": "bureaucratic",
+      "service_model": "per_person",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 3
+      },
+      "is_illicit": false,
+      "notes": "Wax seal and registry entry."
+    },
+    {
+      "name": "Permit: Market Stall (per week)",
+      "service_type": "bureaucratic",
+      "service_model": "per_day",
+      "quality": "standard_quality",
+      "price_coins": {
+        "gp": 2
+      },
+      "is_illicit": false,
+      "notes": "Issued by market wardens."
+    },
+    {
+      "name": "Guild License (annual)",
+      "service_type": "bureaucratic",
+      "service_model": "flat",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 25
+      },
+      "is_illicit": false,
+      "notes": "Allows legal practice in city."
+    },
+    {
+      "name": "Court Filing Fee",
+      "service_type": "bureaucratic",
+      "service_model": "flat",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 5
+      },
+      "is_illicit": false,
+      "notes": "Paid to the clerk of court."
+    },
+    {
+      "name": "Records Search (hour)",
+      "service_type": "bureaucratic",
+      "service_model": "per_hour",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 2
+      },
+      "is_illicit": false,
+      "notes": "Archives and ledgers."
+    },
+    {
+      "name": "Fine Processing Fee",
+      "service_type": "bureaucratic",
+      "service_model": "flat",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 1
+      },
+      "is_illicit": false,
+      "notes": "Administrative overhead."
+    },
+    {
+      "name": "Travel Papers Issuance",
+      "service_type": "bureaucratic",
+      "service_model": "flat",
+      "quality": "standard_quality",
+      "price_coins": {
+        "gp": 1
+      },
+      "is_illicit": false,
+      "notes": "Seal of local authority."
+    },
+    {
+      "name": "Heraldic Announcement",
+      "service_type": "bureaucratic",
+      "service_model": "flat",
+      "quality": "high_quality",
+      "price_coins": {
+        "sp": 5
+      },
+      "is_illicit": false,
+      "notes": "Public squares and markets."
+    },
+    {
+      "name": "Land Deed Registration",
+      "service_type": "bureaucratic",
+      "service_model": "flat",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 3
+      },
+      "is_illicit": false,
+      "notes": "Recorded with the chancery."
+    },
+    {
+      "name": "Writ of Passage (caravan)",
+      "service_type": "bureaucratic",
+      "service_model": "flat",
+      "quality": "standard_quality",
+      "price_coins": {
+        "gp": 2
+      },
+      "is_illicit": false,
+      "notes": "Inspected at city gates."
+    },
+    {
+      "name": "Room Service Breakfast (Low Quality)",
+      "service_type": "inn",
+      "service_model": "per_meal",
+      "quality": "low_quality",
+      "price_coins": {
+        "sp": 1
+      },
+      "is_illicit": false,
+      "notes": "Delivered at dawn with tea or coffee."
+    },
+    {
+      "name": "Room Service Breakfast (Standard Quality)",
+      "service_type": "inn",
+      "service_model": "per_meal",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 2
+      },
+      "is_illicit": false,
+      "notes": "Delivered at dawn with tea or coffee."
+    },
+    {
+      "name": "Room Service Breakfast (High Quality)",
+      "service_type": "inn",
+      "service_model": "per_meal",
+      "quality": "high_quality",
+      "price_coins": {
+        "sp": 4
+      },
+      "is_illicit": false,
+      "notes": "Delivered at dawn with tea or coffee."
+    },
+    {
+      "name": "House Wine (bottle) (Low Quality)",
+      "service_type": "inn",
+      "service_model": "per_person",
+      "quality": "low_quality",
+      "price_coins": {
+        "sp": 5
+      },
+      "is_illicit": false,
+      "notes": "Local vintages; corkage applies."
+    },
+    {
+      "name": "House Wine (bottle) (Standard Quality)",
+      "service_type": "inn",
+      "service_model": "per_person",
+      "quality": "standard_quality",
+      "price_coins": {
+        "gp": 1
+      },
+      "is_illicit": false,
+      "notes": "Local vintages; corkage applies."
+    },
+    {
+      "name": "House Wine (bottle) (High Quality)",
+      "service_type": "inn",
+      "service_model": "per_person",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 3
+      },
+      "is_illicit": false,
+      "notes": "Local vintages; corkage applies."
+    },
+    {
+      "name": "Private Bath Suite (hour) (Low Quality)",
+      "service_type": "public_services",
+      "service_model": "per_hour",
+      "quality": "low_quality",
+      "price_coins": {
+        "sp": 1
+      },
+      "is_illicit": false,
+      "notes": "Room, tub, and attendance."
+    },
+    {
+      "name": "Private Bath Suite (hour) (Standard Quality)",
+      "service_type": "public_services",
+      "service_model": "per_hour",
+      "quality": "standard_quality",
+      "price_coins": {
+        "sp": 3
+      },
+      "is_illicit": false,
+      "notes": "Room, tub, and attendance."
+    },
+    {
+      "name": "Private Bath Suite (hour) (High Quality)",
+      "service_type": "public_services",
+      "service_model": "per_hour",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 1
+      },
+      "is_illicit": false,
+      "notes": "Room, tub, and attendance."
+    },
+    {
+      "name": "Coach Cabin Upgrade (Low Quality)",
+      "service_type": "transport",
+      "service_model": "flat",
+      "quality": "low_quality",
+      "price_coins": {
+        "sp": 5
+      },
+      "is_illicit": false,
+      "notes": "More legroom and privacy."
+    },
+    {
+      "name": "Coach Cabin Upgrade (Standard Quality)",
+      "service_type": "transport",
+      "service_model": "flat",
+      "quality": "standard_quality",
+      "price_coins": {
+        "gp": 1
+      },
+      "is_illicit": false,
+      "notes": "More legroom and privacy."
+    },
+    {
+      "name": "Coach Cabin Upgrade (High Quality)",
+      "service_type": "transport",
+      "service_model": "flat",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 3
+      },
+      "is_illicit": false,
+      "notes": "More legroom and privacy."
+    },
+    {
+      "name": "Guide: Hazardous Terrain (per day) (Low Quality)",
+      "service_type": "transport",
+      "service_model": "per_day",
+      "quality": "low_quality",
+      "price_coins": {
+        "gp": 1
+      },
+      "is_illicit": false,
+      "notes": "Swamps, ruins, or monster country."
+    },
+    {
+      "name": "Guide: Hazardous Terrain (per day) (Standard Quality)",
+      "service_type": "transport",
+      "service_model": "per_day",
+      "quality": "standard_quality",
+      "price_coins": {
+        "gp": 3
+      },
+      "is_illicit": false,
+      "notes": "Swamps, ruins, or monster country."
+    },
+    {
+      "name": "Guide: Hazardous Terrain (per day) (High Quality)",
+      "service_type": "transport",
+      "service_model": "per_day",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 6
+      },
+      "is_illicit": false,
+      "notes": "Swamps, ruins, or monster country."
+    },
+    {
+      "name": "Bodyguard Team (2 guards, day) (Standard Quality)",
+      "service_type": "security",
+      "service_model": "per_day",
+      "quality": "standard_quality",
+      "price_coins": {
+        "gp": 10
+      },
+      "is_illicit": false,
+      "notes": "Rotating watch; horns and whistles."
+    },
+    {
+      "name": "Bodyguard Team (2 guards, day) (High Quality)",
+      "service_type": "security",
+      "service_model": "per_day",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 16
+      },
+      "is_illicit": false,
+      "notes": "Rotating watch; horns and whistles."
+    },
+    {
+      "name": "Scribe: Illuminated Manuscript (per page) (Standard Quality)",
+      "service_type": "professional",
+      "service_model": "per_page",
+      "quality": "standard_quality",
+      "price_coins": {
+        "gp": 1
+      },
+      "is_illicit": false,
+      "notes": "Gilded borders and capitals."
+    },
+    {
+      "name": "Scribe: Illuminated Manuscript (per page) (High Quality)",
+      "service_type": "professional",
+      "service_model": "per_page",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 5
+      },
+      "is_illicit": false,
+      "notes": "Gilded borders and capitals."
+    },
+    {
+      "name": "Temple Healing Ward (day pass) (Low Quality)",
+      "service_type": "magical",
+      "service_model": "per_day",
+      "quality": "low_quality",
+      "price_coins": {
+        "sp": 5
+      },
+      "is_illicit": false,
+      "notes": "Priority access to healers."
+    },
+    {
+      "name": "Temple Healing Ward (day pass) (Standard Quality)",
+      "service_type": "magical",
+      "service_model": "per_day",
+      "quality": "standard_quality",
+      "price_coins": {
+        "gp": 2
+      },
+      "is_illicit": false,
+      "notes": "Priority access to healers."
+    },
+    {
+      "name": "Temple Healing Ward (day pass) (High Quality)",
+      "service_type": "magical",
+      "service_model": "per_day",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 5
+      },
+      "is_illicit": false,
+      "notes": "Priority access to healers."
+    },
+    {
+      "name": "Private Investigator Retainer (per day) (Standard Quality)",
+      "service_type": "security",
+      "service_model": "per_day",
+      "quality": "standard_quality",
+      "price_coins": {
+        "gp": 4
+      },
+      "is_illicit": false,
+      "notes": "Shadowing, interviews, reports."
+    },
+    {
+      "name": "Private Investigator Retainer (per day) (High Quality)",
+      "service_type": "security",
+      "service_model": "per_day",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 8
+      },
+      "is_illicit": false,
+      "notes": "Shadowing, interviews, reports."
+    },
+    {
+      "name": "Escort Companionship (evening) (Standard Quality)",
+      "service_type": "personal_services",
+      "service_model": "flat",
+      "quality": "standard_quality",
+      "price_coins": {
+        "gp": 3
+      },
+      "is_illicit": false,
+      "notes": "Dinner, music, and company."
+    },
+    {
+      "name": "Escort Companionship (evening) (High Quality)",
+      "service_type": "personal_services",
+      "service_model": "flat",
+      "quality": "high_quality",
+      "price_coins": {
+        "gp": 6
+      },
+      "is_illicit": false,
+      "notes": "Dinner, music, and company."
+    }
+  ]
+}

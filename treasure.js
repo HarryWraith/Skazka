@@ -96,7 +96,10 @@ function bindTreasurePrivacy() {
   };
 
   // Use change (release) for clean UX; input would prompt on every pixel
-  slider.addEventListener("change", handleToggle);
+  if (slider && slider.dataset.bound !== "1") {
+    slider.dataset.bound = "1";
+    slider.addEventListener("change", handleToggle);
+  }
 }
 
 /* =========================
@@ -176,7 +179,7 @@ function renderBadges(item) {
     );
   }
 
-  // Slot (keep your lc/titleCase helpers)
+  // Slot
   if (item.slot) {
     badges.push(
       `<span class="tb-badge slot slot-${lc(
@@ -192,9 +195,7 @@ function renderBadges(item) {
     );
   }
 
-  // --- New optional badges wired to the fields we added to the catalog ---
-
-  // Vestige (optionally shows stage if present)
+  // Vestige
   if (item.is_vestige) {
     const stageRaw = item.vestige_stage && String(item.vestige_stage).trim();
     const stage =
@@ -243,7 +244,19 @@ function renderBadges(item) {
     );
   }
 
-  // Publication badge (unchanged)
+  // NEW — Gem tag
+  if (Array.isArray(item.tags) && item.tags.some((t) => lc(t) === "gem")) {
+    badges.push(`<span class="tb-badge gem" title="Gem">Gem</span>`);
+  }
+
+  // NEW — Reagent tag
+  if (Array.isArray(item.tags) && item.tags.some((t) => lc(t) === "reagent")) {
+    badges.push(
+      `<span class="tb-badge reagent" title="Crafting Reagent">Reagent</span>`
+    );
+  }
+
+  // Publication
   if (item.publication) {
     const pubKey = lc(item.publication).replace(/[^a-z0-9]+/g, "-");
     badges.push(
@@ -585,7 +598,9 @@ export function renderTreasure(t) {
   const header = `<div><strong>${
     t.mode === "individual" ? "Individual" : "Hoard"
   }</strong></div>`;
-  const coinsLine = `<div class="loot-line"><span>Coinage:</span> ${t.coins}</div>`;
+  const coinsLine = `<div class="loot-line"><span>Coinage:</span> ${
+    coinRow(t.coins_raw, "coins-sum") || t.coins
+  }</div>`;
 
   const gemsBlock =
     t.gem_items && t.gem_items.length
@@ -596,7 +611,8 @@ ${t.gem_items
     const chips = coinRow(sellCoins(g), "coins-sell");
     const sellParens =
       g.sell_price != null ? ` (${round2(g.sell_price)} gp)` : "";
-    return `<li class="loot-line loot-gem">${g.name}${sellParens} ${chips}</li>`;
+    const badges = renderBadges(g); // ← now shows Reagent (and Gem) pills
+    return `<li class="loot-line loot-gem"><span class="tb-detail-name">${g.name}${sellParens}</span> ${badges} ${chips}</li>`;
   })
   .join("\n")}
 </ul>`
