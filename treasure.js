@@ -1,6 +1,5 @@
-// treasure.js — catalog-driven treasure (independent privacy slider + badges + coins)
-
 import { randint, pick, pickWeighted } from "./utils.js";
+import { badgeHtml, coinRowHtml } from "./badges.js";
 
 /* =========================
    Catalog loader
@@ -106,11 +105,10 @@ function bindTreasurePrivacy() {
    Public filter
    ========================= */
 function isPublicAllowed(item) {
-  const pub = String(item?.publication || "")
-    .toLowerCase()
-    .trim();
   return (
-    pub === "srd" || pub === "srd5.1" || pub === "srd5_1" || pub === "homebrew"
+    String(item?.publication || "")
+      .toLowerCase()
+      .trim() === "srd"
   );
 }
 function inScope(item) {
@@ -139,11 +137,7 @@ function coinPill(k, v) {
   return v ? `<span class="coin coin-${k}">${v}${k}</span>` : "";
 }
 function coinRow(coins, cls = "") {
-  if (!coins) return "";
-  const html = ["pp", "gp", "sp", "cp"]
-    .map((k) => coinPill(k, coins[k]))
-    .join(" ");
-  return html.trim() ? `<span class="coins ${cls}">${html}</span>` : "";
+  return coinRowHtml(coins, cls);
 }
 
 function titleCase(s) {
@@ -154,117 +148,87 @@ function titleCase(s) {
     .replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
-function renderBadges(item) {
+function renderBadges(entity) {
+  const lc = (s) =>
+    String(s || "")
+      .toLowerCase()
+      .trim();
+  const titleCase = (s) =>
+    String(s || "")
+      .replace(/[_-]+/g, " ")
+      .replace(/\s+/g, " ")
+      .trim()
+      .replace(/\b\w/g, (c) => c.toUpperCase());
+  const isNA = (s) => {
+    const v = lc(s);
+    return !v || v === "n/a" || v === "na" || v === "-" || v === "—";
+  };
+
+  // Map normalized item "type" → badge class your CSS already styles
+  const TYPE_BADGE = {
+    weapon: "weapon",
+    armor: "armor",
+    shield: "shield",
+    ring: "ring",
+    wand: "wand",
+    staff: "staff",
+    rod: "rod",
+    ammunition: "ammo",
+    ammo: "ammo",
+    wondrous: "wondrous",
+    weapons: "weapon",
+    rings: "ring",
+    staves: "staff",
+    potions: "potion",
+    goods: "goods",
+    gear: "gear",
+    art: "art",
+    gems: "gems",
+  };
+
   const badges = [];
+  const add = (cls, label, title = label) => {
+    if (!isNA(label)) badges.push(badgeHtml(cls, label, { title }));
+  };
 
-  // Rarity → classes & label (e.g. "very_rare" => class="very rare", label "Very Rare")
-  const rRaw = String(item?.rarity || "").trim();
-  const rNorm = rRaw.replace(/[_-]+/g, " ").toLowerCase();
-  if (rNorm) {
-    const rClasses = rNorm.split(/\s+/).join(" ");
-    const rLabel = rNorm.replace(/\b\w/g, (c) => c.toUpperCase());
-    badges.push(
-      `<span class="tb-badge rarity ${rClasses}" title="Rarity">${rLabel}</span>`
+  // rarity
+  const rRaw = String(entity?.rarity || "");
+  if (!isNA(rRaw)) {
+    const r = lc(rRaw.replace(/[_-]+/g, " "));
+    add(
+      `rarity ${r}`,
+      r.replace(/\b\w/g, (c) => c.toUpperCase()),
+      "Rarity"
     );
   }
 
-  // Attunement
-  if (item.attunement === true) {
-    badges.push(
-      `<span class="tb-badge attune attune-true" title="Requires attunement">Attune</span>`
-    );
-  } else if (item.attunement === false) {
-    badges.push(
-      `<span class="tb-badge attune attune-false" title="No Attune">No Attune</span>`
-    );
-  }
+  // attunement
+  if (entity.attunement === true)
+    add("attune attune-true", "attune", "Requires attunement");
+  else if (entity.attunement === false)
+    add("attune attune-false", "no attune", "No attunement required");
 
-  // Slot
-  if (item.slot) {
-    badges.push(
-      `<span class="tb-badge slot slot-${lc(
-        item.slot
-      )}" title="Slot">${titleCase(item.slot)}</span>`
-    );
-  }
+  // consumable
+  if (entity.is_consumable) add("consumable", "consumable");
 
-  // Consumable
-  if (item.is_consumable) {
-    badges.push(
-      `<span class="tb-badge consumable" title="Consumable">Consumable</span>`
-    );
-  }
+  // type → map if known; otherwise use a sanitized class from the raw type
+  const tRaw = lc(entity.type);
+  const tMapped = TYPE_BADGE[tRaw];
+  const clsSafe = (tMapped || tRaw)
+    .replace(/\s+/g, "-") // spaces → hyphens
+    .replace(/[^a-z0-9-]/g, "-") // punctuation → hyphen
+    .replace(/-+/g, "-") // collapse dup hyphens
+    .replace(/^-|-$/g, ""); // trim
+  if (clsSafe) add(clsSafe, titleCase(entity.type), "Type");
 
-  // Vestige
-  if (item.is_vestige) {
-    const stageRaw = item.vestige_stage && String(item.vestige_stage).trim();
-    const stage =
-      stageRaw && stageRaw.length
-        ? stageRaw.charAt(0).toUpperCase() + stageRaw.slice(1)
-        : null;
-    badges.push(
-      `<span class="tb-badge vestige" title="Vestige of Divergence">${
-        stage ? `Vestige: ${stage}` : "Vestige"
-      }</span>`
-    );
-  }
+  // illicit
+  const tags = Array.isArray(entity.tags) ? entity.tags.map(lc) : [];
+  if (tags.includes("illicit"))
+    add("illicit", "illicit", "Restricted / illicit goods");
 
-  // Cursed
-  if (item.is_cursed) {
-    badges.push(
-      `<span class="tb-badge cursed" title="This item carries a curse">Cursed</span>`
-    );
-  }
-
-  // Sentient
-  if (item.is_sentient) {
-    badges.push(
-      `<span class="tb-badge sentient" title="This item is sentient">Sentient</span>`
-    );
-  }
-
-  // Charges
-  if (item.has_charges) {
-    badges.push(
-      `<span class="tb-badge charges" title="Has expendable charges">Charges</span>`
-    );
-  }
-
-  // Tattoo
-  if (String(item.subtype || "").toLowerCase() === "tattoo") {
-    badges.push(
-      `<span class="tb-badge tattoo" title="Magic Tattoo">Tattoo</span>`
-    );
-  }
-
-  // Focus
-  if (item.is_focus) {
-    badges.push(
-      `<span class="tb-badge focus" title="Spellcasting Focus">Focus</span>`
-    );
-  }
-
-  // NEW — Gem tag
-  if (Array.isArray(item.tags) && item.tags.some((t) => lc(t) === "gem")) {
-    badges.push(`<span class="tb-badge gem" title="Gem">Gem</span>`);
-  }
-
-  // NEW — Reagent tag
-  if (Array.isArray(item.tags) && item.tags.some((t) => lc(t) === "reagent")) {
-    badges.push(
-      `<span class="tb-badge reagent" title="Crafting Reagent">Reagent</span>`
-    );
-  }
-
-  // Publication
-  if (item.publication) {
-    const pubKey = lc(item.publication).replace(/[^a-z0-9]+/g, "-");
-    badges.push(
-      `<span class="tb-badge pub pub-${pubKey}" title="Publication">${titleCase(
-        item.publication
-      )}</span>`
-    );
-  }
+  // publication → SRD only
+  if (lc(entity.publication) === "srd")
+    add("pub pub-srd", "srd", "Open content");
 
   return badges.length
     ? `<span class="tb-badges">${badges.join(" ")}</span>`
@@ -279,25 +243,19 @@ function allItems() {
 }
 
 function magicCatalog() {
-  return allItems().filter((it) => {
-    if (!it?.name) return false;
-    if (!inScope(it)) return false;
-    const cat = String(it.category || "").toLowerCase();
-    const isMagicCat = cat.startsWith("magic");
-    const isMagicFlag = !!it._from_magic;
-    const hasRarity = !!it.rarity;
-    return (isMagicCat || isMagicFlag) && hasRarity;
-  });
+  return allItems().filter(
+    (it) => it?.name && inScope(it) && it.magical === true
+  );
 }
 
 function gemCatalog() {
   return allItems().filter(
-    (it) => it?.name && inScope(it) && lc(it.category) === "gems"
+    (it) => it?.name && inScope(it) && lc(it.type) === "gems"
   );
 }
 function artCatalog() {
   return allItems().filter(
-    (it) => it?.name && inScope(it) && lc(it.category) === "art"
+    (it) => it?.name && inScope(it) && lc(it.type) === "art"
   );
 }
 
@@ -406,13 +364,7 @@ const RARITY_BY_LEVEL = {
 };
 
 function isConsumableMagic(it) {
-  const t = lc(it.type || "");
-  const name = lc(it.name || "");
-  if (t === "potion" || t === "scroll" || t === "ammo" || t === "ammunition")
-    return true;
-  if (/\b(dust|oil|ointment|salve|elixir|philter|bead)\b/.test(name))
-    return true;
-  return false;
+  return !!(it && it.magical === true && it.is_consumable === true);
 }
 
 function rollMagicItemsForBand(band, count, levelKey = "levelNormal") {
@@ -591,10 +543,6 @@ export function rollTreasure(mode, band, levelKey = "levelNormal") {
 export function renderTreasure(t) {
   if (!t) return "—";
 
-  const sellCoins = (it) =>
-    it?.sell_coins ||
-    (Number.isFinite(it?.sell_price) ? coinsFromGp(it.sell_price) : null);
-
   const header = `<div><strong>${
     t.mode === "individual" ? "Individual" : "Hoard"
   }</strong></div>`;
@@ -608,11 +556,8 @@ export function renderTreasure(t) {
 <ul class="tb-list">
 ${t.gem_items
   .map((g) => {
-    const chips = coinRow(sellCoins(g), "coins-sell");
-    const sellParens =
-      g.sell_price != null ? ` (${round2(g.sell_price)} gp)` : "";
-    const badges = renderBadges(g); // ← now shows Reagent (and Gem) pills
-    return `<li class="loot-line loot-gem"><span class="tb-detail-name">${g.name}${sellParens}</span> ${badges} ${chips}</li>`;
+    const badges = renderBadges(g);
+    return `<li class="loot-line loot-gem"><span class="tb-detail-name">${g.name}</span> ${badges}</li>`;
   })
   .join("\n")}
 </ul>`
@@ -624,10 +569,8 @@ ${t.gem_items
 <ul class="tb-list">
 ${t.art_items
   .map((a) => {
-    const chips = coinRow(sellCoins(a), "coins-sell");
-    const sellParens =
-      a.sell_price != null ? ` (${round2(a.sell_price)} gp)` : "";
-    return `<li class="loot-line loot-art">${a.name}${sellParens} ${chips}</li>`;
+    const badges = renderBadges(a);
+    return `<li class="loot-line loot-art"><span class="tb-detail-name">${a.name}</span> ${badges}</li>`;
   })
   .join("\n")}
 </ul>`

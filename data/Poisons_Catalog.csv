@@ -1,0 +1,31 @@
+Name,Rarity,Price,Effects,Save Type and DC,Reagents,Delivery,Publication
+Assassin's Blood,Uncommon,150 gp,Ingested; poisoned for 24 hours on failed save.,CON 10,Fangsprout (sprig) + Obsidian (10 gp shard),ingested,wotc_exp
+Burnt Othur Fumes,Rare,500 gp,Inhaled; poisoned for 1 minute and takes 3d6 poison dmg each round while poisoned.,CON 13,Whispermold (sprig) + Ashen Puff (puff) + Rock Crystal (chip),inhaled,wotc_exp
+Carrion Crawler Mucus,Uncommon,200 gp,Injury; paralyzed for 1 minute on failed save (repeat save at end of each turn).,CON 13,VenomMushroom (sprig) + Acid (vial),blood_exposure,wotc_exp
+Drow Poison,Uncommon,200 gp,"Injury; poisoned for 1 hour. If the save fails by 5+, unconscious for the same duration.",CON 13,DreamThorn (sprig) + Onyx (chip),blood_exposure,wotc_exp
+Essence of Ether,Rare,300 gp,Inhaled; poisoned and unconscious for 8 hours (or until awakened).,CON 15,MiasmaMoss (sprig) + Pearl (common) + Rare oils & unguents (1 vial),inhaled,wotc_exp
+Malice,Uncommon,250 gp,Inhaled; blinded for 1 minute on failed save.,CON 15,Witchthorn (sprig) + Sodalite (shard),inhaled,wotc_exp
+Midnight Tears,Very Rare,1500 gp,"Ingested; no effect until midnight, then 9d6 poison dmg.",CON 17,PoisonRoot (root) + Diamond dust (25 gp pinch) + StarMist (petals),ingested,wotc_exp
+Oil of Taggit,Uncommon,400 gp,Ingested; poisoned and unconscious for 24 hours.,CON 13,GhostLily (sprig) + Rare oils & unguents (1 vial),ingested,wotc_exp
+Pale Tincture,Rare,500 gp,"Ingested; poisoned until cured. At dawn, take 1d6 dmg and repeat save; death at 0 HP.",CON 16,Griefspore (puff) + Jade dust (10 gp pinch),ingested,wotc_exp
+Purple Worm Poison,Legendary,2000 gp,"Injury; 12d6 poison dmg on failed save, half on success.",CON 19,BloodIvy (sprig) + SpecterBloom (petal) + Adamantine filings (1 oz),blood_exposure,wotc_exp
+Serpent Venom,Uncommon,200 gp,"Injury; 3d6 poison dmg on failed save, half on success.",CON 11,PoisonRoot (root) + Serpentine (chip),blood_exposure,wotc_exp
+Torpor,Rare,600 gp,Ingested; incapacitated for 4d6 hours on failed save.,CON 15,DreamThorn (sprig) + Opal (hyalite) (chip),ingested,wotc_exp
+Truth Serum,Uncommon,150 gp,"Ingested; for 1 hour, disadvantage on Deception checks (creature may still remain silent).",WIS 11,Whispermold (microdose) + Rock Crystal (chip),ingested,wotc_exp
+Wyvern Poison,Very Rare,1200 gp,"Injury; 7d6 poison dmg on failed save, half on success.",CON 15,Witchthorn (sprig) + Ruby dust (50 gp pinch) + Garnet (50 gp chip),blood_exposure,wotc_exp
+Blightcap Tincture (ingested),Rare,500 gp,Ingested; necrotic fungus corruption. 2d6 poison dmg + poisoned for 1 hour.,CON 14,Blightcap (cap) + Jade dust (10 gp pinch),ingested,homebrew
+Candor Elixir (ingested),Uncommon,250 gp,Ingested; compels honesty for 10 minutes. Creature cannot speak deliberate falsehoods.,CHA 13,DreamThorn (microdose) + CrystalVine (leaf),ingested,homebrew
+Kingssleep Draught (ingested),Very Rare,800 gp,"Ingested; magical slumber for 24 hours, cannot be awakened by nonmagical means.",WIS 16,SpecterBloom (petals) + StarMist (stamens) + Pearl (common),ingested,homebrew
+Night's Embrace Tincture,Rare,600 gp,Injury or Ingested; 4d6 poison dmg and disadvantage on attack rolls for 1 minute.,CON 15,GhostLily (sprig) + Onyx (chip) + Rare oils & unguents (1 vial),ingested|blood_exposure,homebrew
+Widowmaker Oil (injury),Rare,700 gp,Injury; 6d6 poison dmg and poisoned for 1 hour. Fail by 5+: stunned for 1 round.,CON 15,BloodIvy (sprig) + Rare oils & unguents (1 vial) + Hematite (filings),blood_exposure,homebrew
+Hag's Breath,Very Rare,1000 gp,Inhaled; poisoned for 1 minute and suffers 2 levels of exhaustion on failed save.,CON 17,MiasmaMoss (sprig) + Gullscream Fungus (shavings) + Obsidian (shard),inhaled,homebrew
+Ash Serpent Venin,Uncommon,300 gp,Injury; 2d6 poison dmg + coughing fit (disadvantage on Concentration checks for 1 minute).,CON 13,VenomMushroom (sprig) + Serpentine (chip) + Acid (vial),blood_exposure,homebrew
+Feydust Nectar,Rare,500 gp,Ingested; charmed for 1 hour and disadvantage on WIS saves while charmed.,WIS 14,Witchthorn (microdose) + FeyBerries (juice) + Moonstone (chip),ingested,homebrew
+Ironrot Ichor,Rare,650 gp,Injury; 3d6 poison dmg. Targets wearing metal armor have −1 AC for 1 hour (corrosion).,CON 15,Saltshade (leaf) + Adamantine filings (1 oz) + Acid (vial),blood_exposure,homebrew
+Chillblain Toxin,Uncommon,250 gp,Injury; 2d6 cold dmg + poisoned for 10 minutes; speed halved while poisoned.,CON 12,Shiverstalk (cap) + Aquamarine (chip),blood_exposure,homebrew
+Bloodfire Extract,Very Rare,1200 gp,"Ingested; 4d6 fire dmg as blood sears from within. If reduced to 0 HP, body is scorched.",CON 16,BloodIvy (sprig) + Ashen Puff (spores) + Ruby dust (50 gp pinch),ingested,homebrew
+Dreamthief Vapor,Rare,700 gp,"Inhaled; target falls asleep for 1 hour. While asleep, suffers nightmares and loses 1 Hit Die.",WIS 15,DreamThorn (sprig) + StarMist (pollen) + Pearl (common),inhaled,homebrew
+Ebon Lotus Distillate,Legendary,2500 gp,Ingested; poisoned and cannot regain HP by any means for 24 hours.,CON 18,SpecterBloom (petals) + Obsidian (shard) + Rare oils & unguents (1 vial) + Diamond (50 gp focus),ingested,homebrew
+Gloomfang Venom,Rare,600 gp,"Injury; 4d6 poison dmg. On failure by 5+, restrained by shadowy rigor for 1 minute.",CON 15,Fangsprout (sprig) + Jet (chip),blood_exposure,homebrew
+Soulbane Resin,Very Rare,1500 gp,"Ingested; 6d6 necrotic dmg and poisoned. If target dies, soul is trapped in the resin.",CON 17,GhostLily (sprig) + Onyx (shard) + Rare oils & unguents (1 vial) + Diamonds (300 gp worth),ingested,homebrew
+Wyrmbane Draught,Rare,750 gp,Ingested; Non-dragons: poisoned for 1 hour. Dragons: 8d6 poison dmg on failed save.,CON 16,"PoisonRoot (root) + Emerald (1,000 gp) (chip) + ThunderShroom (powder)",ingested,homebrew

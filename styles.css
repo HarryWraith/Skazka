@@ -218,7 +218,7 @@ body p {
 
 .grid-two-wide {
   display: grid;
-  grid-template-columns: 5fr 5fr;
+  grid-template-columns: 3fr 7fr;
   /* ~70% / 30% */
   gap: 40px;
   max-width: 80%;

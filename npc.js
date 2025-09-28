@@ -1,13 +1,5 @@
-/* =========================
-   npc.js — unified NPC generator (core + UI)
-   - Uses names.js for names
-   - Loads npc.json to drive Locale + Occupation UI
-   - Self-gating: only runs if #npc-panel (or aliases) exist
-   - Exports createNPC for inn.js and others
-   ========================= */
-
-/* ---------- core (from former npc-core.js) ---------- */
-import * as names from "./names.js"; // logic-only, safe to import everywhere
+import * as names from "./names.js";
+import { badge, alignClass, titleCase } from "./badges.js";
 
 const pick = (a) => a[Math.floor(Math.random() * a.length)];
 const roll = (d, n = 3, add = 0) =>
@@ -27,7 +19,7 @@ const SPECIES = [
   "tiefling",
   "dragonborn",
 ];
-const GENDERS = ["female", "male", "nonbinary", "unspecified"];
+const GENDERS = ["female", "male"];
 const ALIGN = ["LG", "NG", "CG", "LN", "N", "CN", "LE", "NE", "CE"];
 const DEMEANOR = [
   "stoic",
@@ -143,11 +135,21 @@ export function createNPC({
 
 /* ---------- UI helpers ---------- */
 const $ = (s, r = document) => r.querySelector(s);
-function pill(cls, text) {
-  const el = document.createElement("span");
-  el.className = `tb-badge ${cls}`;
-  el.textContent = text;
-  return el;
+const pill = badge;
+
+export function renderNPCBadges(npc) {
+  const wrap = document.createElement("span");
+  wrap.className = "tb-badges";
+  wrap.append(
+    pill("npc-role", npc.role),
+    pill(`npc-align ${alignClass(npc.alignment)}`, npc.alignment),
+    pill(`npc-gender ${String(npc.gender).toLowerCase()}`, npc.gender),
+    pill(
+      `npc-race ${String(npc.species).toLowerCase()}`,
+      titleCase(npc.species)
+    )
+  );
+  return wrap;
 }
 
 function renderNPC(npc) {
@@ -159,13 +161,8 @@ function renderNPC(npc) {
   const title = document.createElement("div");
   title.className = "tb-title";
   title.textContent = npc.name;
-  head.append(
-    title,
-    document.createTextNode(" "),
-    pill("npc-role", npc.role),
-    document.createTextNode(" "),
-    pill("npc-align", npc.alignment)
-  );
+  const badges = renderNPCBadges(npc);
+  head.append(title, document.createTextNode(" "), badges);
   wrap.append(head);
 
   const meta = document.createElement("div");

@@ -12,118 +12,19 @@
   --sb-radius: var(--sb-radius, 14px);
 }
 
-/* === Treasure panel with corner-strong fading border + tight gold glow === */
+/* === Panel === */
 .tb-panel {
   position: relative;
   display: grid;
   gap: 12px;
   background: linear-gradient(180deg, var(--sb-panel), var(--sb-panel2));
-  border-radius: var(--sb-radius);
+  border: 1px solid var(--sb-border);
   padding: clamp(12px, 2vw, 18px);
   color: var(--sb-text);
   box-shadow: 0 12px 24px rgba(0, 0, 0, .45), inset 0 1px 0 rgba(255, 255, 255, .02);
   margin: 18px 0;
   font-size: 1.1rem;
-  border: none;
-
-  /* tweakables */
-  --stroke-w: 2px;
-  /* border thickness */
-  --corner-strength: 1;
-  /* 0–1; strong at corners */
-  --side-strength: 0;
-  /* 0–1; weak at side middles */
-  --border-color: oklch(75% 0.17 70);
-  /* orange stroke */
-  --glow-color: oklch(85% 0.15 85 / .85);
-  /* gold glow */
 }
-
-/* Solid border: strong at corners, fades toward side middles */
-.tb-panel::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  pointer-events: none;
-
-  background:
-    repeating-conic-gradient(from 0deg,
-      color-mix(in oklab, var(--border-color) calc(var(--side-strength)*100%), transparent) 0deg 18deg,
-      color-mix(in oklab, var(--border-color) 70%, transparent) 32deg,
-      color-mix(in oklab, var(--border-color) calc(var(--corner-strength)*100%), transparent) 45deg,
-      color-mix(in oklab, var(--border-color) 70%, transparent) 58deg,
-      color-mix(in oklab, var(--border-color) calc(var(--side-strength)*100%), transparent) 72deg 90deg);
-
-  padding: var(--stroke-w);
-
-  /* Standard (spec) mask */
-  mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  mask-composite: exclude;
-
-  /* WebKit/Blink */
-  -webkit-mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-}
-
-/* Tight outer glow hugging the border with the same angular falloff */
-.tb-panel::after {
-  content: "";
-  position: absolute;
-  inset: -2px;
-  /* small spill for the glow */
-  border-radius: calc(var(--sb-radius) + 2px);
-  pointer-events: none;
-
-  background:
-    repeating-conic-gradient(from 0deg,
-      color-mix(in oklab, var(--glow-color) 0%, transparent) 0deg 18deg,
-      color-mix(in oklab, var(--glow-color) 55%, transparent) 32deg,
-      color-mix(in oklab, var(--glow-color) 100%, transparent) 45deg,
-      color-mix(in oklab, var(--glow-color) 55%, transparent) 58deg,
-      color-mix(in oklab, var(--glow-color) 0%, transparent) 72deg 90deg);
-
-  padding: calc(var(--stroke-w) + 1px);
-
-  /* Standard (spec) mask */
-  mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  mask-composite: exclude;
-
-  /* WebKit/Blink */
-  -webkit-mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-
-  filter: blur(6px);
-  opacity: .9;
-}
-
-/* Fallback for engines without mask-composite support */
-@supports not ((-webkit-mask-composite: xor) or (mask-composite: exclude)) {
-  .tb-panel::before {
-    background: none;
-    outline: var(--stroke-w) solid var(--border-color);
-    outline-offset: -1px;
-    padding: 0;
-  }
-
-  .tb-panel::after {
-    background: none;
-    filter: drop-shadow(0 0 6px color-mix(in oklab, var(--glow-color) 60%, transparent));
-    padding: 0;
-    inset: 0;
-    border-radius: inherit;
-  }
-}
-
-
 
 .tb-title {
   margin: 0 0 10px;
@@ -132,7 +33,7 @@
   font-weight: 900;
 }
 
-/* Grid for controls */
+/* === Controls grid === */
 .tb-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -212,7 +113,7 @@
   box-shadow: inset 0 0 0 1px rgba(226, 184, 77, .18);
 }
 
-/* Result */
+/* === Result wrappers === */
 .tb-result {
   display: block;
   margin-top: 10px;
@@ -225,12 +126,11 @@
   line-height: 1.55;
 }
 
-/* Traps: render multi-line nicely, with a bold label and readable spacing */
+/* Traps: render multi-line nicely */
 #trapResult {
   white-space: normal;
 }
 
-/* allow <div> lines to wrap */
 #trapResult .tb-line {
   margin: 2px 0;
 }
@@ -240,7 +140,7 @@
   margin-right: 4px;
 }
 
-/* Divider image consistency on this page */
+/* Divider image */
 .divider-image {
   display: block !important;
   width: min(680px, 60%);
@@ -248,7 +148,7 @@
   margin: 0 auto clamp(8px, 2.4vw, 20px);
 }
 
-/* Treasure & Quirk results may include HTML lists */
+/* Lists inside results */
 #treasureResult,
 #quirkResult {
   white-space: normal;
@@ -263,6 +163,7 @@
   margin: 2px 0;
 }
 
+/* === Key/Value grid === */
 .tb-kv {
   margin: 2px 0;
   display: grid;
@@ -275,7 +176,7 @@
   margin-right: 6px;
 }
 
-/* Simple table for shop results */
+/* === Tables === */
 .tb-table {
   width: 100%;
   border-collapse: collapse;
@@ -298,22 +199,40 @@
   vertical-align: top;
 }
 
-.tb-table .tb-badges {
-  gap: 6px;
-  /* a bit tighter in rows */
-  margin-top: 2px;
+/* Blueprint detail table: keep cost visible and right-aligned */
+#bpDetail .tb-table {
+  table-layout: fixed;
+  width: 100%;
 }
 
-/* Reagent badge (dark green pill, gold text/border) */
-.tb-badge.reagent {
-  color: #ffd86b;
-  /* gold text */
-  border-color: #b38b2c;
-  /* gold border */
-  background: rgba(41, 142, 78, 0.7);
-  /* deep green wash */
-  /* optional subtle inner line for polish */
-  box-shadow: inset 0 0 0 1px rgba(255, 216, 107, 0.06);
+#bpDetail .tb-table col.col-ing {
+  width: 60%;
+}
+
+#bpDetail .tb-table col.col-qty {
+  width: 6ch;
+}
+
+#bpDetail .tb-table col.col-unit {
+  width: 10ch;
+}
+
+#bpDetail .tb-table col.col-badges {
+  width: auto;
+}
+
+
+/* shrink-to-content */
+#bpDetail .tb-table th.col-cost,
+#bpDetail .tb-table td.col-cost {
+  text-align: right;
+  white-space: nowrap;
+  padding-right: 1rem;
+}
+
+#bpDetail .tb-table th.col-qty,
+#bpDetail .tb-table td.col-qty {
+  text-align: center;
 }
 
 .tb-table .tb-coins {
@@ -322,7 +241,6 @@
 
 .tb-table .tb-detail-name {
   font: inherit;
-  /* stop the 1.125rem detail header sizing */
   font-weight: 700;
   line-height: 1.25;
   margin: 0 0 2px;
@@ -332,6 +250,7 @@
   border-bottom: 0;
 }
 
+/* Segments */
 .tb-seg {
   display: flex;
   gap: 6px;
@@ -343,31 +262,7 @@
   filter: saturate(1.2) brightness(2);
 }
 
-.tb-help {
-  opacity: .8;
-  font-size: .9rem;
-  margin-top: .25rem;
-}
-
-.tb-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6px 8px;
-  border-bottom: 1px solid var(--tb-border, #2c2c2c);
-}
-
-.tb-row--head {
-  font-weight: 600;
-  opacity: .8;
-  border-bottom: 1px solid var(--tb-border, #2c2c2c);
-}
-
-.tb-row.is-selected {
-  outline: 1px solid var(--tb-accent, #d4b25e);
-  outline-offset: -1px;
-}
-
+/* Detail header */
 .tb-detail-header {
   display: flex;
   justify-content: space-between;
@@ -382,24 +277,7 @@
   line-height: 1.2;
 }
 
-.tb-badges {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-}
-
-.tb-badge {
-  font-size: 12px;
-  border: 1px solid #666;
-  border-radius: 999px;
-  padding: 2px 8px;
-}
-
-.tb-badge-warn {
-  border-color: #b85;
-  color: #b85;
-}
-
+/* KV (compact variant) */
 .tb-kv {
   display: grid;
   gap: 4px;
@@ -421,6 +299,7 @@
   white-space: pre-wrap;
 }
 
+/* Coins */
 .tb-coins {
   opacity: .7;
   margin-left: 6px;
@@ -442,15 +321,14 @@
 .tb-table td:nth-child(3),
 .tb-table td:nth-child(4) {
   width: 15%;
-
 }
 
+/* === Shop detail === */
 #shopDetail {
   padding: 0;
 }
 
 .tb-detail {
-
   max-width: 56rem;
   margin-inline: auto;
   display: grid;
@@ -459,7 +337,6 @@
 
 #shopDetail.tb-result {
   padding: 14px;
-  border: 1px solid var(--sb-gold);
   background: #161721;
   border-radius: 12px;
 }
@@ -515,9 +392,7 @@
 
 #shopDetail .tb-kv-val {
   text-align: left;
-  /* looks crisp with short values */
   font-variant-numeric: tabular-nums;
-  /* tidy numeric columns */
   white-space: normal;
 }
 
@@ -540,16 +415,13 @@
   line-height: 1.46;
 }
 
-
-/* ===== SHOP TABLE — 60 / 20 / 20, left-aligned prices with inline coins ===== */
+/* ===== SHOP TABLE — 60 / 20 / 20 ===== */
 #shopResult {
   display: block;
   padding: 0 !important;
-  /* override .tb-result padding */
   margin: 0;
   overflow: auto;
   max-height: var(--shop-max, 360px);
-  /* JS will set this to ~5 rows */
   -webkit-overflow-scrolling: touch;
 }
 
@@ -586,7 +458,7 @@
   font-weight: 900;
 }
 
-/* Column widths (JS colgroup uses 60/20/20) */
+/* Column widths */
 #shopResult .tb-table td.col-name {
   width: 60%;
 }
@@ -599,7 +471,7 @@
   width: 20%;
 }
 
-/* Prices: LEFT aligned for both columns; use tabular numerals for neat columns */
+/* Price alignment */
 #shopResult .tb-table td.col-base,
 #shopResult .tb-table td.col-adjusted {
   text-align: left;
@@ -607,7 +479,6 @@
   font-variant-numeric: tabular-nums;
 }
 
-/* Keep "6000 gp" together; coins inline on the same line */
 .nowrap {
   white-space: nowrap;
 }
@@ -615,15 +486,13 @@
 #shopResult .tb-table td.col-base .tb-coins,
 #shopResult .tb-table td.col-adjusted .tb-coins {
   display: inline-flex;
-  /* inline with number */
   align-items: baseline;
   gap: 4px;
   margin-left: 8px;
-  /* space after “gp” */
   white-space: normal;
 }
 
-/* Name + badges on one line (wrappable) */
+/* Name + badges on one line */
 #shopResult .tb-table .name-line {
   display: flex;
   gap: 8px;
@@ -644,13 +513,11 @@
   flex-wrap: wrap;
 }
 
-/* Last row cleanup */
 #shopResult .tb-table tbody tr:last-child td {
   border-bottom: 0;
 }
 
-
-/*shop privacy*/
+/* === Shop privacy === */
 .tb-privacy {
   display: inline-flex;
   align-items: center;
@@ -687,7 +554,7 @@
   background: linear-gradient(90deg, #3aa655 0 50%, #3aa655 50% 100%);
 }
 
-/* Thumb (knob) */
+/* Thumb */
 .tb-privacy-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
@@ -697,7 +564,6 @@
   background: #fff;
   border: 2px solid rgba(0, 0, 0, .15);
   margin-top: 1px;
-  /* center on track */
   box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
 }
 
@@ -710,21 +576,18 @@
   box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
 }
 
-/* Optional focus ring */
 .tb-privacy-slider:focus-visible {
   outline: 2px solid #4a90e2;
   outline-offset: 2px;
 }
 
 /* ===========================
-   Forge Cheat Sheet — FINAL (tight lists + card/column fixes)
+   Forge Cheat Sheet
    =========================== */
-
 #forgeSheet.tb-result {
   padding: 8px 10px;
 }
 
-/* Overall rhythm */
 #forgeSheet .forge {
   display: grid;
   gap: 10px;
@@ -736,7 +599,6 @@
   gap: 4px;
 }
 
-/* Headings */
 #forgeSheet .forge-h {
   margin: 2px 0 6px !important;
   font-weight: 900;
@@ -744,7 +606,6 @@
   letter-spacing: .2px;
 }
 
-/* Body text (never justify) */
 #forgeSheet .forge-p,
 #forgeSheet p {
   margin: 0;
@@ -753,28 +614,20 @@
   text-justify: auto !important;
 }
 
-/* ---------------------------------
-   BULLET LISTS — lock spacing tight
-   --------------------------------- */
 #forgeSheet .forge-list {
-  /* Kill any global margins/padding and control spacing via gap */
   margin: 0 !important;
   padding: 0 0 0 1rem !important;
   list-style: disc outside;
   display: grid !important;
-  /* force grid so gap applies */
   gap: 4px !important;
-  /* tweak here (2–6px) */
 }
 
 #forgeSheet .forge-list>li {
   margin: 0 !important;
   padding: 0 !important;
   line-height: 1.46;
-  /* match surrounding rhythm */
 }
 
-/* Two short paragraphs row */
 #forgeSheet .forge-grid-2 {
   display: grid;
   grid-template-columns: 1fr;
@@ -789,7 +642,6 @@
   }
 }
 
-/* Tool cards */
 #forgeSheet .forge-tools {
   display: flex;
   flex-wrap: wrap;
@@ -823,7 +675,6 @@
   text-align: left;
 }
 
-/* Table */
 #forgeSheet .forge-table {
   width: 100%;
   border-collapse: collapse;
@@ -850,7 +701,6 @@
   text-align: right;
 }
 
-/* Divider */
 #forgeSheet .hr {
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--sb-border), transparent);
@@ -858,7 +708,6 @@
   border: 0;
 }
 
-/* --- Generator panel (XGtE) --- */
 #forgeSheet .forge-gen {
   border: 1px solid var(--sb-border);
   border-radius: 12px;
@@ -896,7 +745,6 @@
   box-shadow: inset 0 0 0 1px rgba(226, 184, 77, .18);
 }
 
-/* Generated pills output */
 #forgeSheet .forge-gen-out {
   display: flex;
   flex-wrap: wrap;
@@ -912,8 +760,7 @@
   opacity: .95;
 }
 
-
-/* optional: make the options look clickable and ensure it floats over content */
+/* Options dropdown */
 #preset-list {
   z-index: 20;
   box-shadow: 0 6px 18px rgba(0, 0, 0, .35);
@@ -925,11 +772,131 @@
   filter: brightness(1.1);
 }
 
-/* ============================
-   NPC GENERATOR — SCOPED STYLES
-   ============================ */
+/* NPC — role */
+.tb-badge.npc-role {
+  background: #5b2c83;
+  color: #fff;
+  border-color: #e0c8ff;
+}
 
-/* Controls row: Occupation + Setting side-by-side; stack on small screens */
+/* NPC — alignment (base + variants) */
+.tb-badge.npc-align {
+  background: #12151d;
+  color: #cfe3ff;
+  border-color: #3c6fb8;
+}
+
+.tb-badge.npc-align.good {
+  background: #2c8a5f;
+  color: #fff;
+  border-color: #cfe9cf;
+}
+
+.tb-badge.npc-align.neutral {
+  background: #3b4758;
+  color: #cfd3da;
+  border-color: #6b707c;
+}
+
+.tb-badge.npc-align.evil {
+  background: #7e0c23;
+  color: #ffe2e2;
+  border-color: #d28b99;
+}
+
+/* Optional gender variants (if you want them) */
+.tb-badge.npc-gender.male {
+  background: #1f3a93;
+  color: #fff;
+  border-color: #8fb2ff;
+}
+
+.tb-badge.npc-gender.female {
+  background: #7a1f6f;
+  color: #fff;
+  border-color: #f0b5ff;
+}
+
+.tb-badge.npc-race {
+  background: #7a1f6f;
+  color: #36b761;
+  border-color: #068021;
+}
+
+/* Humans */
+.tb-badge.npc-race.human {
+  background: #2c3e50;
+  color: #e6eef8;
+  border: 1px solid #3b536b;
+}
+
+/* Elves */
+.tb-badge.npc-race.elf {
+  background: #1f5a3c;
+  color: #d9f2e3;
+  border: 1px solid #2f7a56;
+}
+
+/* Dwarves */
+.tb-badge.npc-race.dwarf {
+  background: #5a3b1f;
+  color: #f3e3cf;
+  border: 1px solid #7a552f;
+}
+
+/* Halflings */
+.tb-badge.npc-race.halfling {
+  background: #4b2c5e;
+  color: #f0e6f7;
+  border: 1px solid #6b3f86;
+}
+
+/* Gnomes */
+.tb-badge.npc-race.gnome {
+  background: #2f4a6b;
+  color: #e6f0fa;
+  border: 1px solid #3f6a9b;
+}
+
+/* Half-elf / Half-orc (hyphenated!) */
+.tb-badge.npc-race.half-elf {
+  background: #244d3f;
+  color: #d9f2ea;
+  border: 1px solid #31725b;
+}
+
+.tb-badge.npc-race.half-orc {
+  background: #3c4d24;
+  color: #edf6d9;
+  border: 1px solid #587231;
+}
+
+/* Tieflings */
+.tb-badge.npc-race.tiefling {
+  background: #5a2130;
+  color: #f8dee3;
+  border: 1px solid #7a2e43;
+}
+
+/* Dragonborn */
+.tb-badge.npc-race.dragonborn {
+  background: #2a3b6e;
+  color: #e4ebfb;
+  border: 1px solid #3c57a3;
+}
+
+/* (Optional) Kenku, since inns may produce them */
+.tb-badge.npc-race.kenku {
+  background: #333333;
+  color: #f0f0f0;
+  border: 1px solid #4a4a4a;
+}
+
+
+
+/* ===========================
+   NPC generator (scoped)
+   =========================== */
 #npc-controls {
   display: grid;
   grid-template-columns: repeat(2, minmax(260px, 1fr));
@@ -943,7 +910,6 @@
   }
 }
 
-/* Combobox + dropdown (scoped) */
 #npc-panel .tb-combobox {
   position: relative;
   display: block;
@@ -951,7 +917,6 @@
 
 #npc-panel .tb-combobox .tb-input {
   padding-right: 36px;
-  /* room for the clear button */
 }
 
 #npc-panel .tb-input {
@@ -983,13 +948,11 @@
   outline: none;
 }
 
-/* Result wrapper itself shouldn’t add big gaps */
 #npc-pretty.tb-result {
   margin: 8px 0 0;
   padding: 8px 10px;
 }
 
-/* Compact NPC card (scoped to output) */
 #npc-pretty .npc-card {
   line-height: 1.28;
   margin: 0;
@@ -999,7 +962,6 @@
   box-sizing: border-box;
 }
 
-/* Nuke default margins that cause tall gaps—only inside the card */
 #npc-pretty .npc-card h1,
 #npc-pretty .npc-card h2,
 #npc-pretty .npc-card h3,
@@ -1011,7 +973,6 @@
   margin: 0;
 }
 
-/* Header */
 #npc-pretty .npc-header {
   margin-bottom: .22rem;
 }
@@ -1033,7 +994,6 @@
   font-size: .84em;
 }
 
-/* Key/Value rows */
 #npc-pretty .npc-meta {
   margin: .12rem 0 .24rem;
 }
@@ -1044,14 +1004,12 @@
   column-gap: .6rem;
   align-items: baseline;
   padding: .03rem 0;
-  /* tight rows */
 }
 
 #npc-pretty .npc-meta .k {
   font-weight: 700;
 }
 
-/* Hooks */
 #npc-pretty .npc-hooks {
   margin: .22rem 0 .18rem;
 }
@@ -1072,7 +1030,6 @@
   line-height: 1.28;
 }
 
-/* Opener quote */
 #npc-pretty .npc-opener {
   margin: .26rem 0 0;
   padding: .32rem .56rem;
@@ -1082,17 +1039,13 @@
   opacity: .92;
 }
 
-/* NPC panel: neutralize the global .tb-result spacing behavior */
 #npc-panel #npc-pretty {
   white-space: normal;
-  /* stop preserving template newlines */
   line-height: 1.32;
-  /* tighter than the global 1.55 */
   margin-top: 8px;
   padding: 8px 10px;
 }
 
-/* Keep the card compact (restates the tight rules, but scoped) */
 #npc-panel #npc-pretty .npc-card {
   line-height: 1.28;
 }
@@ -1174,13 +1127,12 @@
   opacity: .92;
 }
 
-/* Clear (×) button inside inputs */
+/* Clear button in inputs */
 #npc-panel .tb-combobox .tb-clear {
   position: absolute;
   right: 10px;
   top: 50%;
   transform: translateY(-50%);
-  /* center vertically */
   height: 22px;
   width: 22px;
   display: inline-flex;
@@ -1192,14 +1144,8 @@
   color: var(--sb-dim);
   cursor: pointer;
   z-index: 21;
-  /* above the input */
   padding: 0;
   line-height: 1;
-}
-
-#npc-panel .tb-combobox .tb-clear:hover {
-  background: rgba(255, 255, 255, .08);
-  color: var(--sb-text);
 }
 
 #npc-panel .tb-combobox .tb-clear:hover,
@@ -1209,7 +1155,6 @@
   outline: none;
 }
 
-/* Safari: ensure button isn't shifted by line-height quirks */
 @supports (-webkit-touch-callout: none) {
   #npc-panel .tb-combobox .tb-clear {
     line-height: 1;
@@ -1217,11 +1162,8 @@
 }
 
 /* ===========================
-   TREASURE — badges & coins
+   Treasure — loot lines & coins
    =========================== */
-
-
-/* Loot lines: name + badges left, coins right */
 .tb-result .loot-line {
   display: flex;
   flex-wrap: wrap;
@@ -1234,7 +1176,6 @@
 
 .tb-result .loot-line .tb-badges {
   display: inline-flex;
-  /* ensure flex item for ordering */
   flex-wrap: wrap;
   align-items: center;
   gap: 8px;
@@ -1246,96 +1187,12 @@
   margin-left: auto;
 }
 
-/* Badges */
-.tb-badges {
-  display: inline-flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.tb-badge {
-  font-size: 14px;
-  line-height: 1.15;
-  padding: 4px 10px;
-  border-radius: 999px;
-  border: 1px solid color-mix(in oklab, var(--sb-border) 80%, #000);
-  background: color-mix(in oklab, var(--sb-panel2) 85%, #000);
-  color: var(--sb-dim);
-  text-transform: none;
-}
-
-.tb-badge-warn {
-  border-color: #b85;
-  color: #b85;
-}
-
-/* Rarity tints
-   NOTE: we support “very rare”, “very_rare”, and “very-rare”. */
-.tb-badge.rarity.common {
-  color: #cfd3da;
-  border-color: #6b707c;
-}
-
-.tb-badge.rarity.uncommon {
-  color: #4cc98a;
-  border-color: #2c8a5f;
-}
-
-.tb-badge.rarity.rare {
-  color: #5aa8ff;
-  border-color: #3c6fb8;
-}
-
-/* all spellings for very rare */
-.tb-badge.rarity.very.rare,
-.tb-badge.rarity.very_rare,
-.tb-badge.rarity.very-rare {
-  color: #b888ff;
-  border-color: #7a58c9;
-}
-
-.tb-badge.rarity.legendary {
-  color: #ffb24d;
-  border-color: #bf7a1f;
-}
-
-.tb-badge.rarity.artifact {
-  color: #ff6b6b;
-  border-color: #b53f3f;
-}
-
-/* Attunement / Slot / Consumable */
-.tb-badge.attune.attune-true {
-  color: #ffd86b;
-  border-color: #b38b2c;
-}
-
-.tb-badge.attune.attune-false {
-  color: #9bb2c9;
-  border-color: #546476;
-}
-
-.tb-badge.slot {
-  color: #d8d2c2;
-  border-color: #6b6659;
-}
-
-.tb-badge.consumable {
-  color: #8bd16a;
-  border-color: #3f7a2a;
-}
-
 /* Coin chips */
 :root {
   --coin-pp: #b8e3ff;
-  /* platinum */
   --coin-gp: var(--sb-gold-strong, #e1b84d);
-  /* gold     */
   --coin-sp: #c9c9d6;
-  /* silver   */
   --coin-cp: #c88a55;
-  /* copper   */
 }
 
 .coins {
@@ -1346,7 +1203,6 @@
   font-size: 16px;
   opacity: .95;
   font-variant-numeric: tabular-nums;
-  /* nicer digit alignment */
 }
 
 .coin {
@@ -1380,7 +1236,6 @@
   border-color: color-mix(in oklab, var(--coin-cp) 45%, #000);
 }
 
-/* Subtle difference for sell vs price rows */
 .coins-price .coin {
   opacity: .95;
 }
@@ -1390,7 +1245,6 @@
   filter: saturate(.9);
 }
 
-/* Tighten on very small screens */
 @media (max-width:560px) {
   .tb-result .loot-line .coins {
     margin-top: 2px;
@@ -1398,7 +1252,7 @@
 }
 
 /* ===========================
-   SHOP — 3-column controls layout
+   SHOP — controls layout
    =========================== */
 .shop-controls {
   display: grid;
@@ -1422,33 +1276,24 @@
 .shop-controls .col-3 {
   grid-column: 3;
   align-self: end;
-  /* bottom of controls area */
   justify-self: end;
-  /* right edge */
 }
 
 .tb-coins-toggle {
   display: inline-flex;
   flex-direction: row;
-  /* force same line */
   align-items: center;
   gap: 8px;
   white-space: nowrap;
-
-  /* bottom-right placement */
   margin: 0 0 0 auto;
-  /* push to the right in flex parents */
   justify-self: end;
-  /* right in grid cell */
   align-self: end;
-  /* bottom in grid cell */
 }
 
 .tb-coins-toggle input {
   margin: 0;
 }
 
-/* Responsive collapse */
 @media (max-width: 1100px) {
   .shop-controls {
     grid-template-columns: 1fr;
@@ -1461,499 +1306,483 @@
   }
 }
 
-/* Publication badge */
-.tb-badge.pub {
-  /* same base styling as .tb-badge; only colors differ per type */
-  border-color: color-mix(in oklab, var(--sb-border) 80%, #000);
+/* ===========================
+   BLUEPRINTS — list & detail spacing
+   =========================== */
+#bpResult.tb-result {
+  white-space: normal;
+  line-height: 1.35;
+}
+
+#bpList {
+  max-height: 22rem;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+#bpList .tb-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#bpList .tb-list-item {
+  display: block;
+  padding: .5rem .75rem;
+  border-bottom: 1px dashed var(--sb-border);
+}
+
+#bpList .tb-list-item:last-child {
+  border-bottom: 0;
+}
+
+#bpList .tb-list-item[aria-selected="true"] {
+  outline: 2px solid var(--sb-gold-strong);
+  border-radius: .25rem;
+}
+
+#bpDetail.tb-result {
+  white-space: normal;
+  line-height: 1.35;
+}
+
+#bpDetail .tb-kv {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 6px 12px;
+}
+
+#bpDetail .tb-table th,
+#bpDetail .tb-table td {
+  padding: 6px 8px;
+}
+
+#bpDetail .tb-table col.col-ing {
+  width: 34%;
+}
+
+#bpDetail .tb-table col.col-qty {
+  width: 6ch;
+}
+
+#bpDetail .tb-table col.col-unit {
+  width: 10ch;
+}
+
+#bpDetail .tb-table col.col-badges {
+  width: auto;
+}
+
+
+#bpDetail .tb-table th.col-cost,
+#bpDetail .tb-table td.col-cost {
+  text-align: right;
+  white-space: nowrap;
+  padding-right: 1rem;
+}
+
+#bpDetail .tb-table th.col-qty,
+#bpDetail .tb-table td.col-qty {
+  text-align: center;
+}
+
+/* Make badges visible in treasure lists */
+.tb-list .tb-badges {
+  display: inline-flex;
+  gap: 6px;
+  margin-left: .5rem;
+  /* space after the name */
+  vertical-align: middle;
+}
+
+.tb-list .tb-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--badge-border, #444);
+  /* pick colors you like, or let type-specific classes override */
+  background: var(--badge-bg, rgba(255, 255, 255, .06));
+  color: var(--badge-fg, #ddd);
+  font-size: .9rem;
+}
+
+/* ============================================================
+   BADGES — Unified (final)
+   ============================================================ */
+
+/* Base pill */
+.tb-badge {
+  font-size: 14px;
+  line-height: 1.15;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklab, var(--sb-border) 80%, #000);
+  background: color-mix(in oklab, var(--sb-panel2) 85%, #000);
   color: var(--sb-dim);
+  text-transform: none;
 }
 
-/* ============================================================================
-   BADGE PALETTE — unified scheme
-   - Text & border always share the same color
-   - “Solid” badges: colored background with white (or chosen) text/border
-   - “Outline” badges (rarities): transparent background, colored text/border
-   ============================================================================ */
-
-/* --- Palette (tweak here if you want different shades) --- */
-:root {
-  --badge-white: #ffffff;
-  --badge-grey: #9aa3ae;
-  --badge-green: #8bd16a;
-  /* light green */
-  --badge-blue: #5aa8ff;
-  /* bright blue */
-  --badge-orange: #ffb24d;
-  --badge-purple: #b888ff;
-
-  --badge-navy: #0f2a5f;
-  /* publication text/border on white */
-  --slot-blue: #2b6cb0;
-  /* solid slot background */
-  --danger-red: #d64545;
-  /* cursed / attune-false text */
-  --ok-green: #2e8b57;
-  /* attune-true text on white */
-  --solid-purple: #6b3fb8;
-  /* vestige bg */
-  --solid-gold: #9c7b2d;
-  /* tattoo bg */
-  --solid-teal: #2c8a5f;
-  /* focus bg */
-  --solid-slate: #374151;
-  /* charges bg */
+/* One rule for layout */
+.tb-badges {
+  display: inline-flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
-/* ----------------------------------------------------------------------------
-   RARITIES (outline: transparent bg, colored text + border)
-   ---------------------------------------------------------------------------- */
+/* Rarity (outline) */
 .tb-badge.rarity.common {
-  color: var(--badge-white);
-  border-color: var(--badge-white);
+  color: #cfd3da;
+  border-color: #6b707c;
 }
 
 .tb-badge.rarity.uncommon {
-  color: var(--badge-grey);
-  border-color: var(--badge-grey);
+  color: #4cc98a;
+  border-color: #2c8a5f;
 }
 
 .tb-badge.rarity.rare {
-  color: var(--badge-green);
-  border-color: var(--badge-green);
+  color: #5aa8ff;
+  border-color: #3c6fb8;
 }
 
 .tb-badge.rarity.very.rare,
 .tb-badge.rarity.very_rare,
 .tb-badge.rarity.very-rare {
-  color: var(--badge-blue);
-  border-color: var(--badge-blue);
+  color: #b888ff;
+  border-color: #7a58c9;
 }
 
 .tb-badge.rarity.legendary {
-  color: var(--badge-orange);
-  border-color: var(--badge-orange);
+  color: #ffb24d;
+  border-color: #bf7a1f;
 }
 
 .tb-badge.rarity.artifact {
-  color: var(--badge-purple);
-  border-color: var(--badge-purple);
+  color: #ff6b6b;
+  border-color: #b53f3f;
 }
 
-/* ----------------------------------------------------------------------------
-   PUBLICATION (all the same: white bg, navy text + border)
-   Data values: srd | wotc_exp | 3rd party | homebrew
-   We also support legacy class names via aliases.
-   ---------------------------------------------------------------------------- */
-.tb-badge.pub[class*="pub-"] {
-  background: var(--badge-white);
-  color: var(--badge-navy);
-  border-color: var(--badge-navy);
-}
-
-
-
-/* ----------------------------------------------------------------------------
-   ATTUNEMENT
-   ---------------------------------------------------------------------------- */
-.tb-badge.attune.attune-true {
-  background: var(--badge-white);
-  color: var(--ok-green);
-  border-color: var(--ok-green);
-}
-
-.tb-badge.attune.attune-false {
-  background: var(--badge-white);
-  color: var(--danger-red);
-  border-color: var(--danger-red);
-}
-
-/* ----------------------------------------------------------------------------
-   SLOT (solid blue with white text)
-   ---------------------------------------------------------------------------- */
-.tb-badge.slot {
-  background: var(--slot-blue);
-  color: var(--badge-white);
-  border-color: var(--badge-white);
-}
-
-/* ----------------------------------------------------------------------------
-   CONSUMABLE (keep as a solid supportive green)
-   ---------------------------------------------------------------------------- */
-.tb-badge.consumable {
-  background: var(--solid-teal);
-  color: var(--badge-white);
-  border-color: var(--badge-white);
-}
-
-/* ----------------------------------------------------------------------------
-   NEW BADGES
-   ---------------------------------------------------------------------------- */
-/* Vestige: solid purple, white text */
-.tb-badge.vestige {
-  background: var(--solid-purple);
-  color: var(--badge-white);
-  border-color: var(--badge-white);
-}
-
-/* Cursed: solid red, white text */
-.tb-badge.cursed {
-  background: var(--danger-red);
-  color: var(--badge-white);
-  border-color: var(--badge-white);
-}
-
-/* Sentient: solid white, purple text */
-.tb-badge.sentient {
-  background: var(--badge-white);
-  color: var(--solid-purple);
-  border-color: var(--solid-purple);
-}
-
-/* Charges: solid slate, white text (neutral utility) */
-.tb-badge.charges {
-  background: var(--solid-slate);
-  color: var(--badge-white);
-  border-color: var(--badge-white);
-}
-
-/* Tattoo: solid gold, white text (distinctive) */
-.tb-badge.tattoo {
-  background: var(--solid-gold);
-  color: var(--badge-white);
-  border-color: var(--badge-white);
-}
-
-/* Focus: solid teal, white text (supportive) */
-.tb-badge.focus {
-  background: var(--solid-teal);
-  color: var(--badge-white);
-  border-color: var(--badge-white);
-}
-
-.tb-detail .tb-badges {
-  display: block;
-  /* badges are inline-block; block parent is fine */
-  white-space: nowrap;
-  /* no wrap */
-  overflow-x: auto;
-  /* scroll if too many */
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-}
-
-.tb-detail .tb-badge {
-  display: inline-block;
-}
-
-/* === Services badges === */
-.tb-badge.type {
-  background: transparent;
-}
-
-.tb-badge.quality {
-  background: transparent;
-}
-
-.tb-badge.model {
-  background: transparent;
-  opacity: .9;
-}
-
-.tb-badge.count {
-  background: transparent;
-  border-color: var(--sb-border);
-  color: var(--sb-text);
-}
-
-/* Service types */
-.tb-badge.type.type-inn {
-  color: #e0b455;
-  border-color: #9c7720;
-}
-
-/* warm amber */
-.tb-badge.type.type-personal_services {
-  color: #7ecac1;
-  border-color: #2f7c74;
-}
-
-.tb-badge.type.type-public_services {
-  color: #9bb2c9;
-  border-color: #546476;
-}
-
-.tb-badge.type.type-transport {
-  color: #f3a469;
-  border-color: #9a5a2b;
-}
-
-.tb-badge.type.type-professional {
-  color: #c1c1d8;
-  border-color: #6c6c8a;
-}
-
-.tb-badge.type.type-magical {
-  color: #b18cff;
-  border-color: #6d47c2;
-}
-
-.tb-badge.type.type-security {
-  color: #ff8c8c;
-  border-color: #a53b3b;
-}
-
-.tb-badge.type.type-criminal {
-  color: #ff6b8a;
-  border-color: #9a2c49;
-}
-
-.tb-badge.type.type-banking {
-  color: #8fd38a;
-  border-color: #2f7d2a;
-}
-
-.tb-badge.type.type-bureaucratic {
-  color: #d0c48a;
-  border-color: #7a6f2b;
-}
-
-/* Qualities */
-.tb-badge.quality.quality-low-quality {
-  color: #9bb2c9;
-  border-color: #546476;
-}
-
-.tb-badge.quality.quality-standard-quality {
-  color: #cbbd8a;
-  border-color: #7f6e2e;
-}
-
-.tb-badge.quality.quality-high-quality {
+.tb-badge.rarity.unique {
   color: #ffd86b;
   border-color: #b38b2c;
 }
 
-/* Models (kept subtle) */
-.tb-badge.model {
-  color: var(--sb-text);
-  border-color: var(--sb-border);
+/* Attunement / Consumable */
+.tb-badge.attune.attune-true {
+  background: #fff;
+  color: #2e8b57;
+  border-color: #2e8b57;
 }
 
-.tb-badge.model.model-per-meal {
-  opacity: 1;
+.tb-badge.attune.attune-false {
+  background: #fff;
+  color: #d64545;
+  border-color: #d64545;
 }
 
-.tb-badge.model.model-per-night {
-  opacity: 1;
+.tb-badge.consumable {
+  background: #2c8a5f;
+  color: #fff;
+  border-color: #fff;
 }
 
-.tb-badge.model.model-per-hour {
-  opacity: 1;
+/* Publication (SRD only shown) */
+.tb-badge.pub.pub-srd {
+  background: #fff;
+  color: #0f2a5f;
+  border-color: #0f2a5f;
 }
 
-.tb-badge.model.model-per-day {
-  opacity: 1;
-}
-
-.tb-badge.model.model-per-person {
-  opacity: 1;
-}
-
-.tb-badge.model.model-per-mile {
-  opacity: 1;
-}
-
-.tb-badge.model.model-per-animal-day {
-  opacity: 1;
-}
-
-.tb-badge.model.model-per-page {
-  opacity: 1;
-}
-
-.tb-badge.model.model-per-letter {
-  opacity: 1;
-}
-
-.tb-badge.model.model-per-load {
-  opacity: 1;
-}
-
-/* Illicit warning pill (you already have tb-badge-warn, adding a semantic alias) */
-.tb-badge.illicit,
-.tb-badge.tb-badge-warn {
+/* Illicit */
+.tb-badge.illicit {
   color: #f2b08b;
   border-color: #a8653b;
 }
 
-/* -------- generic badge palettes for Inn/Services -------- */
-.tb-badge.kind {
-  color: #f6e0a0;
-  /* warm gold */
-  border-color: #b38b2c;
+/* Ingredient types (blueprints detail) */
+.tb-badge.herb {
+  background: #2e7d32;
+  color: #fff;
+  border-color: #cfe9cf;
 }
 
-.tb-badge.tone {
+.tb-badge.packs {
+  background: #8b4dc0;
+  color: #fff;
+  border-color: #e0c8ff;
+}
+
+.tb-badge.containers {
+  background: #290746;
+  color: #fff;
+  border-color: #e0c8ff;
+}
+
+.tb-badge.goods {
+  background: #290746;
+  color: #228bae;
+  border-color: #e0c8ff;
+}
+
+.tb-badge.art {
+  background: #290746;
+  color: #20f2d9;
+  border-color: #e0c8ff;
+}
+
+.tb-badge.ammunition {
+  background: #7e0c23;
+  color: #20f2d9;
+  border-color: #ded3ec;
+}
+
+.tb-badge.foci.and.symbols {
+  background: #7e0c23;
+  color: #20f282;
+  border-color: #ded3ec;
+}
+
+.tb-badge.poisons {
+  background: #1be7a0;
+  color: #df113d;
+  border-color: #ded3ec;
+}
+
+.tb-badge.performing {
+  background: #cdf30d;
+  color: #df113d;
+  border-color: #ded3ec;
+}
+
+.tb-badge.mounts {
+  background: #574426;
+  color: #faf9f9;
+  border-color: #ded3ec;
+}
+
+.tb-badge.gems,
+.tb-badge.gem {
+  background: #5b2c83;
+  color: #fff;
+  border-color: #e0c8ff;
+}
+
+.tb-badge.alchemical {
+  background: #22577a;
+  color: #fff;
+  border-color: #bfe6ff;
+}
+
+/* Core item types (blue slot look) */
+.tb-badge.weapon,
+.tb-badge.weapons,
+.tb-badge.armor,
+.tb-badge.shield,
+.tb-badge.ring,
+.tb-badge.wand,
+.tb-badge.staff,
+.tb-badge.rod,
+.tb-badge.ammo,
+.tb-badge.wondrous {
+  background: #2b6cb0;
+  color: #fff;
+  border-color: #fff;
+}
+
+/* Other catalog types (neutral solids; tweak if desired) */
+.tb-badge.potion {
+  background: #6b46c1;
+  color: #fff;
+  border-color: #fff;
+}
+
+.tb-badge.clothing {
+  background: #eeedf1;
+  color: #ea14aa;
+  border-color: #000000;
+}
+
+.tb-badge.tools {
+  background: #eeedf1;
+  color: #371b2e;
+  border-color: #000000;
+}
+
+.tb-badge.vehicles {
+  background: #eeedf1;
+  color: #3324a5;
+  border-color: #000000;
+}
+
+.tb-badge.scroll {
+  background: #975a16;
+  color: #fff;
+  border-color: #fff;
+}
+
+.tb-badge.tool {
+  background: #2c5282;
+  color: #fff;
+  border-color: #fff;
+}
+
+.tb-badge.trade_good {
+  background: #805ad5;
+  color: #fff;
+  border-color: #fff;
+}
+
+.tb-badge.gear {
+  background: #2d3748;
+  color: #fff;
+  border-color: #fff;
+}
+
+.tb-badge.material {
+  background: #22577a;
+  color: #fff;
+  border-color: #fff;
+}
+
+.tb-badge.book,
+.tb-badge.map,
+.tb-badge.container,
+.tb-badge.art_object,
+.tb-badge.writing {
+  background: rgba(255, 255, 255, .06);
+  color: #c9c9d6;
+  border-color: #6f6f7a;
+}
+
+/* Core reagent roles */
+.tb-badge.base {
+  background: #394257;
+  color: #fff;
+  border-color: #fff;
+}
+
+/* Substances / materials */
+.tb-badge.powder {
+  color: #d7c2a3;
+  border-color: #8d6a3a;
+  background: rgba(120, 90, 40, .18);
+}
+
+.tb-badge.metal {
+  color: #9bd;
+  border-color: #5a7a9a;
+  background: rgba(80, 100, 130, .22);
+}
+
+.tb-badge.mineral {
   color: #cfe3ff;
-  /* cool blue */
   border-color: #466a92;
+  background: rgba(30, 60, 90, .20);
 }
 
-.tb-badge.tone.tone-cozy {
-  color: #ffd86b;
+.tb-badge.glass {
+  color: #9bd7ff;
+  border-color: #5a9cc6;
+  background: rgba(60, 120, 160, .20);
+}
+
+.tb-badge.resin {
+  color: #f6d07a;
   border-color: #b38b2c;
+  background: rgba(80, 60, 20, .22);
 }
 
-.tb-badge.tone.tone-rowdy {
-  color: #ffcc8a;
-  border-color: #a3631d;
+.tb-badge.wax {
+  color: #eedc8a;
+  border-color: #b38b2c;
+  background: rgba(80, 60, 20, .18);
 }
 
-.tb-badge.tone.tone-refined {
+.tb-badge.oil {
   color: #cbbdff;
   border-color: #6b5fb5;
+  background: rgba(40, 30, 70, .28);
 }
 
-.tb-badge.tone.tone-seedy {
-  color: #c7c7c7;
-  border-color: #5a5a5a;
+.tb-badge.salt {
+  color: #cfe3ff;
+  border-color: #466a92;
+  background: rgba(30, 60, 90, .20);
 }
 
-.tb-badge.tone.tone-quiet {
+.tb-badge.carbon {
+  color: #8e8e97;
+  border-color: #5b5b66;
+  background: rgba(50, 50, 60, .22);
+}
+
+.tb-badge.ash {
+  color: #c9c9d6;
+  border-color: #6f6f7a;
+  background: rgba(80, 80, 100, .18);
+}
+
+.tb-badge.earth {
+  color: #d5b08a;
+  border-color: #8d6a3a;
+  background: rgba(90, 70, 40, .18);
+}
+
+/* Organic / biological */
+.tb-badge.organic {
   color: #a7d7c9;
   border-color: #2d6b5a;
+  background: rgba(20, 80, 60, .22);
 }
 
-.tb-badge.tone.tone-rough {
-  color: #ff9b9b;
-  border-color: #a33;
+.tb-badge.moss {
+  color: #a7d7c9;
+  border-color: #2d6b5a;
+  background: rgba(20, 80, 60, .20);
 }
 
-.tb-badge.inn-tag {
-  color: #9bb2c9;
-  /* neutral steel */
-  border-color: #546476;
-}
-
-.tb-badge.quality {
+.tb-badge.lichen {
   color: #cfe8ff;
   border-color: #5a7ea6;
+  background: rgba(40, 80, 110, .16);
 }
 
-.tb-badge.quality-low-quality {
-  opacity: .9;
+.tb-badge.silk {
+  color: #f1f3f5;
+  border-color: #8aa3c0;
+  background: rgba(70, 90, 110, .16);
 }
 
-.tb-badge.quality-high-quality {
-  color: #ffd86b;
-  border-color: #b38b2c;
-}
-
-.tb-badge.model {
-  color: #9bb2c9;
-  border-color: #546476;
-}
-
-
-/* -------- bullets for Quirks/Hooks -------- */
-.tb-points {
-  list-style: disc;
-  margin: .25rem 0 .75rem;
-  padding-left: 1.25rem;
-}
-
-.tb-points li {
-  margin: .125rem 0;
-  line-height: 1.45;
-}
-
-/* ─── Inn flavor lists (Quirks / Hooks) ─── */
-.tb-flavor {
-  /* container for the two columns */
-  align-items: start;
-  /* top-align both columns */
-  gap: 0.75rem 2rem;
-  /* tight rows, comfy column gap */
-}
-
-.tb-flavor .tb-meta {
-  margin-bottom: 0.25rem;
-}
-
-/* pretty, card-like list items with custom icons */
-.tb-flavor-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 0.4rem;
-}
-
-.tb-flavor-list li {
-  position: relative;
-  padding: 0.4rem 0.6rem 0.4rem 1.6rem;
-  /* room for icon */
-  line-height: 1.45;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px dashed rgba(255, 255, 255, 0.08);
-  border-radius: 0.6rem;
-}
-
-/* default icon (✶) and variations via data-icon */
-.tb-flavor-list li::before {
-  content: "✶";
-  position: absolute;
-  left: 0.6rem;
-  top: 0.45rem;
-  opacity: 0.9;
-  font-size: 0.9em;
-  filter: drop-shadow(0 0 0.5px rgba(0, 0, 0, .4));
-  /* soft gold glow to match your palette */
-  color: #ffd86b;
-}
-
-.tb-flavor-list[data-icon="quest"] li::before {
-  content: "⚑";
-}
-
-/* Hooks */
-.tb-flavor-list[data-icon="spark"] li::before {
-  content: "✶";
-}
-
-/* Quirks */
-
-/* subtle hover to make it feel interactive without being clickable */
-.tb-flavor-list li:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.12);
-}
-
-/* Gem badge (cool steel/blue tone) */
-.tb-badge.gem {
+.tb-badge.avian {
   color: #cfe3ff;
-  /* light steel-blue text */
   border-color: #466a92;
-  /* cool steel border */
-  background: rgba(30, 60, 90, 0.20);
-  /* subtle blue wash */
-  box-shadow: inset 0 0 0 1px rgba(70, 106, 146, 0.08);
+  background: rgba(30, 60, 90, .16);
 }
 
-/* (You already have this) Reagent badge */
-.tb-badge.reagent {
-  color: #ffd86b;
-  border-color: #b38b2c;
-  background: rgba(22, 66, 38, 0.22);
-  box-shadow: inset 0 0 0 1px rgba(255, 216, 107, 0.06);
+.tb-badge.scale {
+  color: #ffcc8a;
+  border-color: #a3631d;
+  background: rgba(120, 60, 20, .22);
 }
 
+.tb-badge.chitin {
+  color: #ffcc8a;
+  border-color: #a3631d;
+  background: rgba(120, 60, 20, .18);
+}
 
-.tb-badge.herb {
-  color: #cfe8ff;
-  border-color: #5a7ea6;
-  background: rgba(40, 120, 100, .22);
+.tb-badge.horn {
+  color: #d7c2a3;
+  border-color: #8d6a3a;
+  background: rgba(90, 70, 40, .16);
+}
+
+.tb-badge.hoof {
+  color: #d7c2a3;
+  border-color: #8d6a3a;
+  background: rgba(90, 70, 40, .16);
 }
 
 .tb-badge.monster_part {
@@ -1962,6 +1791,92 @@
   background: rgba(120, 60, 20, .25);
 }
 
+/* Magical / planar themes */
+.tb-badge.arcane {
+  color: #cbbdff;
+  border-color: #6b5fb5;
+  background: rgba(40, 40, 80, .22);
+}
+
+.tb-badge.essence {
+  color: #b888ff;
+  border-color: #7a58c9;
+  background: rgba(70, 40, 120, .20);
+}
+
+.tb-badge.ectoplasm {
+  color: #cbbdff;
+  border-color: #6b5fb5;
+  background: rgba(60, 50, 100, .22);
+}
+
+.tb-badge.fey {
+  color: #ff9bd7;
+  border-color: #a54b7d;
+  background: rgba(120, 50, 90, .20);
+}
+
+.tb-badge.elemental {
+  color: #a6e3ff;
+  border-color: #5aa8ff;
+  background: rgba(60, 100, 160, .16);
+}
+
+.tb-badge.air {
+  color: #cfe8ff;
+  border-color: #5a9bd6;
+  background: rgba(80, 120, 170, .16);
+}
+
+.tb-badge.fire {
+  color: #e07a3a;
+  border-color: #a14a22;
+  background: rgba(140, 60, 20, .22);
+}
+
+.tb-badge.water {
+  color: #8dd3ff;
+  border-color: #3d7cab;
+  background: rgba(20, 80, 110, .20);
+}
+
+.tb-badge.earthy {
+  color: #d5b08a;
+  border-color: #8d6a3a;
+  background: rgba(90, 70, 40, .18);
+}
+
+.tb-badge.radiant {
+  color: #f0c14b;
+  border-color: #b38b2c;
+  background: rgba(180, 140, 40, .18);
+}
+
+.tb-badge.necrotic {
+  color: #cba3ff;
+  border-color: #7a58c9;
+  background: rgba(60, 40, 90, .26);
+}
+
+.tb-badge.frost {
+  color: #8dd3ff;
+  border-color: #5aa8ff;
+  background: rgba(70, 130, 180, .20);
+}
+
+.tb-badge.lightning {
+  color: #b4d3ff;
+  border-color: #6aa0ff;
+  background: rgba(60, 90, 160, .20);
+}
+
+.tb-badge.time {
+  color: #f6e0a0;
+  border-color: #b38b2c;
+  background: rgba(120, 100, 60, .14);
+}
+
+/* Scribing helpers (used elsewhere but handy here too) */
 .tb-badge.parchment {
   color: #f6e0a0;
   border-color: #b38b2c;
@@ -1974,29 +1889,236 @@
   background: rgba(40, 40, 80, .28);
 }
 
-.tb-badge.alchemical {
-  color: #a7d7c9;
+.tb-badge.reagent {
+  color: #ffd86b;
+  border-color: #b38b2c;
+  background: rgba(22, 66, 38, .22);
+  box-shadow: inset 0 0 0 1px rgba(255, 216, 107, .06);
+}
+
+/* Herb subtypes / toxin — add styles */
+.tb-badge.enhancer {
+  color: #9fd0ff;
+  border-color: #3c6fb8;
+  background: rgba(30, 70, 120, .20);
+}
+
+.tb-badge.medicinal {
+  color: #a7e3b8;
   border-color: #2d6b5a;
-  background: rgba(20, 80, 60, .26);
+  background: rgba(20, 80, 60, .22);
 }
 
-#bpList {
-  max-height: 22rem;
-  overflow: auto;
+.tb-badge.toxin {
+  color: #ff9b9b;
+  border-color: #a33;
+  background: rgba(140, 30, 30, .18);
 }
 
-#bpList .tb-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+.tb-badge.extra {
+  background: rgba(100, 120, 255, .15);
+  border: 1px solid rgba(100, 120, 255, .35);
+  color: #c8d0ff;
 }
 
-#bpList .tb-list-item {
-  padding: .5rem .75rem;
-  cursor: pointer;
+/* INN / SERVICES */
+.tb-badge.kind {
+  background: #1f2a3a;
+  color: #e6f0ff;
+  border-color: #5a7ab5;
 }
 
-#bpList .tb-list-item[aria-selected="true"] {
-  outline: 2px solid var(--skz-accent);
-  border-radius: .25rem;
+.tb-badge.kind.kind-inn {
+  background: #2d3f5e;
+}
+
+.tb-badge.tone {
+  background: #263244;
+  color: #e6f0ff;
+  border-color: #5a7ab5;
+}
+
+.tb-badge.inn-tag {
+  background: #303b49;
+  color: #dfe7f2;
+  border-color: #6f8dbd;
+}
+
+.tb-badge.quality {
+  background: #2d2f36;
+  color: #e6e6f0;
+  border-color: #6b6f7a;
+}
+
+.tb-badge.quality.quality-low,
+.tb-badge.quality.quality-low-quality {
+  background: #4a3a28;
+}
+
+.tb-badge.quality.quality-standard,
+.tb-badge.quality.quality-standard-quality {
+  background: #2d3b4a;
+}
+
+tb-badge.quality.quality-high,
+.tb-badge.quality.quality-high-quality {
+  background: #2c5e4a;
+}
+
+.tb-badge.model {
+  background: #000000;
+  color: #ffffff;
+  border-color: #5a728c;
+}
+
+.tb-badge.model.model-flat {
+  background: #854f4f;
+  color: #ffffff;
+  border-color: #5a728c;
+}
+
+.tb-badge.model.model-per-person {
+  background: #867a4e;
+  color: #ffffff;
+  border-color: #5a728c;
+}
+
+.tb-badge.model.model-per-meal {
+  background: #7a854c;
+  color: #ffffff;
+  border-color: #5a728c;
+}
+
+.tb-badge.model.model-per-night {
+  background: #56834a;
+  color: #ffffff;
+  border-color: #5a728c;
+}
+
+.tb-badge.model.model-per-hour {
+  background: #39853c;
+  color: #ffffff;
+  border-color: #5a728c;
+}
+
+.tb-badge.model.model-per-day {
+  background: #47817b;
+  color: #ffffff;
+  border-color: #5a728c;
+}
+
+.tb-badge.model.model-per-mile {
+  background: #3e5376;
+  color: #ffffff;
+  border-color: #5a728c;
+}
+
+.tb-badge.model.model-per-animal-day {
+  background: #433d89;
+  color: #ffffff;
+  border-color: #5a728c;
+}
+
+.tb-badge.model.model-per-page {
+  background: #503f76;
+  color: #ffffff;
+  border-color: #5a728c;
+}
+
+.tb-badge.model.model-per-letter {
+  background: #5b2d88;
+  color: #ffffff;
+  border-color: #5a728c;
+}
+
+.tb-badge.model.model-per-load {
+  background: #a93ca0;
+  color: #ffffff;
+  border-color: #5a728c;
+}
+
+.tb-badge.illicit.tb-badge-warn {
+  background: #daac15;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.tb-badge.count {
+  background: #1b2230;
+  color: #cfe3ff;
+  border-color: #3c6fb8;
+}
+
+.tb-badge.type {
+  background: #1b2230;
+  color: #cfe3ff;
+  border-color: #3c6fb8;
+}
+
+
+.tb-badge.type.type-inn {
+  background: #1b2230;
+  color: #c5d816;
+  border-color: #3c6fb8;
+
+}
+
+.tb-badge.type.type-personal_services {
+  background: #1b2230;
+  color: #d88e16;
+  border-color: #3c6fb8;
+}
+
+.tb-badge.type.type-public_services {
+  background: #1b2230;
+  color: #eb5a0c;
+  border-color: #3c6fb8;
+}
+
+.tb-badge.type.type-transport {
+  background: #1b2230;
+  color: #29d00c;
+  border-color: #3c6fb8;
+}
+
+.tb-badge.type.type-professional {
+  background: #1b2230;
+  color: #16d88e;
+  border-color: #3c6fb8;
+}
+
+.tb-badge.type.type-magical {
+  background: #1b2230;
+  color: #0fc3ae;
+  border-color: #3c6fb8;
+}
+
+.tb-badge.type.type-security {
+  background: #1b2230;
+  color: #0f4bc3;
+  border-color: #3c6fb8;
+}
+
+.tb-badge.type.type-criminal {
+  background: #1b2230;
+  color: #f2b08b;
+  border-color: #a8653b;
+}
+
+.tb-badge.type.type-banking {
+  background: #1b2230;
+  color: #d96fde;
+  border-color: #a8653b;
+}
+
+.tb-badge.type.type-bureaucratic {
+  background: #1b2230;
+  color: #da145d;
+  border-color: #a8653b;
+}
+
+.tb-badge.yield {
+  border: 1px solid #10c7e0;
+  background: #222a35;
+  color: #dbe7ff;
 }

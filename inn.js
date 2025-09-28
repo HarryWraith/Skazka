@@ -1,13 +1,12 @@
-/* =========================
-   inn.js — Tavern/Inn generator (data-driven)
-   - Uses ./data/inn.json for structure + wordbanks
-   - Uses services.js for menu items + coin chips
-   - Uses npc-core.js for staff (names via names.js internally)
-   - Renders Quirks/Hooks as clean bullet lists
-   ========================= */
-
 import { loadServicesData } from "./services.js";
-import { createNPC } from "./npc.js";
+import { createNPC, renderNPCBadges } from "./npc.js";
+import {
+  badge,
+  qualityPill as qualityPillShared,
+  modelPill as modelPillShared,
+  illicitPill as illicitPillShared,
+  coinChipsNode,
+} from "./badges.js";
 
 /* ---------- config ---------- */
 const INN_DATA_URL = "./data/inn.json";
@@ -66,47 +65,16 @@ async function loadInnData(url = INN_DATA_URL) {
   return innCache;
 }
 
-/* ---------- badges & chips ---------- */
-function pill(cls, text) {
-  const el = document.createElement("span");
-  el.className = `tb-badge ${cls}`;
-  el.textContent = text;
-  return el;
-}
-const typePill = (key, label) => pill(`kind kind-${key}`, label || key);
-const vibePill = (key) => pill(`tone tone-${key}`, title(key));
-const tagPill = (key, label) => pill(`inn-tag tag-${key}`, label || key);
+const typePill = (key, label) => badge(`kind kind-${key}`, label || key);
+const vibePill = (key) => badge(`tone tone-${key}`, title(key));
+const tagPill = (key, label) => badge(`inn-tag tag-${key}`, label || key);
 
-function qualityPill(q) {
-  const cls = String(q || "").replace(/_/g, "-");
-  return pill(
-    `quality quality-${cls}`,
-    title(String(q || "").replace(/_/g, " "))
-  );
-}
+const qualityPill = qualityPillShared;
 function modelPill(model) {
-  const cls = String(model || "").replace(/_/g, "-");
-  const label = MODEL_LABEL[model] || model;
-  return pill(`model model-${cls}`, label);
+  return modelPillShared(model, MODEL_LABEL);
 }
-function illicitPill(is) {
-  return is ? pill("illicit tb-badge-warn", "Illicit") : null;
-}
-
-function coinChips(price) {
-  const wrap = document.createElement("span");
-  wrap.className = "coins";
-  for (const k of ["pp", "gp", "sp", "cp"]) {
-    const v = price?.[k];
-    if (!v) continue;
-    const el = document.createElement("span");
-    el.className = `coin coin-${k}`;
-    el.textContent = `${v}${k}`;
-    wrap.append(el);
-  }
-  if (!wrap.childElementCount) wrap.textContent = "—";
-  return wrap;
-}
+const illicitPill = illicitPillShared;
+const coinChips = coinChipsNode;
 const MODEL_LABEL = {
   flat: "flat fee",
   per_person: "per person",
@@ -232,13 +200,29 @@ async function generateInn({
     const role = choice(roles) || "Staff";
     const species = weightedPick(SPECIES_WEIGHTS) || "human"; // bias toward common folk
     const npc = createNPC({ role, species, vibe: vibeKey });
-    return { role, name: npc.name, species: npc.species || species };
+    return {
+      role,
+      name: npc.name,
+      species: npc.species || species,
+      alignment: npc.alignment,
+      gender: npc.gender,
+    };
   });
 
   const quirks = pickSome(cfg.quirks || [], 1, 2);
   const hooks = pickSome(cfg.hooks || [], 2, 3);
 
-  return { name, vibeKey, vibe, type, featureKeys, menu, staff, quirks, hooks };
+  return {
+    name,
+    vibeKey,
+    vibe,
+    type,
+    featureKeys,
+    menu,
+    staff,
+    quirks,
+    hooks,
+  };
 }
 
 /* ---------- render ---------- */
@@ -345,6 +329,7 @@ function renderInn(target, data, cfg) {
       const nm = document.createElement("div");
       nm.className = "tb-title";
       nm.textContent = s.name;
+      nm.append(document.createTextNode(" "), renderNPCBadges(s));
       const m = document.createElement("div");
       m.className = "tb-meta";
       m.textContent = `${s.role} — ${title(

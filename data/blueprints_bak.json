@@ -1,0 +1,4857 @@
+{
+  "schema": "blueprints.v1",
+  "updated": "2025-09-23",
+  "blueprints": [
+    {
+      "id": "scroll-cantrip",
+      "type": "scroll",
+      "result_name": "Spell Scroll (cantrip)",
+      "rarity": "common",
+      "dc": 15,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "scroll",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "arcane-parchment-common",
+          "qty": 1,
+          "unit": "sheet",
+          "badges": ["parchment", "arcane"]
+        },
+        {
+          "ref": "arcane-ink-common",
+          "qty": 1,
+          "unit": "dram",
+          "badges": ["ink", "arcane"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": [],
+        "notes": "[no blueprint] — scrolls are scribed, not engineered."
+      },
+      "tags": ["scribe", "arcane", "no-blueprint"]
+    },
+    {
+      "id": "scroll-level-1",
+      "type": "scroll",
+      "result_name": "Spell Scroll (1st level)",
+      "rarity": "common",
+      "dc": 15,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "scroll",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "arcane-parchment-common",
+          "qty": 1,
+          "unit": "sheet",
+          "badges": ["parchment", "arcane"]
+        },
+        {
+          "ref": "arcane-ink-common",
+          "qty": 1,
+          "unit": "dram",
+          "badges": ["ink", "arcane"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": [],
+        "notes": "[no blueprint] — scrolls are scribed, not engineered."
+      },
+      "tags": ["scribe", "arcane", "no-blueprint"]
+    },
+    {
+      "id": "scroll-level-2",
+      "type": "scroll",
+      "result_name": "Spell Scroll (2nd level)",
+      "rarity": "uncommon",
+      "dc": 17,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "scroll",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "arcane-parchment-uncommon",
+          "qty": 1,
+          "unit": "sheet",
+          "badges": ["parchment", "arcane"]
+        },
+        {
+          "ref": "arcane-ink-uncommon",
+          "qty": 1,
+          "unit": "dram",
+          "badges": ["ink", "arcane"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": [],
+        "notes": "[no blueprint] — scrolls are scribed, not engineered."
+      },
+      "tags": ["scribe", "arcane", "no-blueprint"]
+    },
+    {
+      "id": "scroll-level-3",
+      "type": "scroll",
+      "result_name": "Spell Scroll (3rd level)",
+      "rarity": "uncommon",
+      "dc": 17,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "scroll",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "arcane-parchment-uncommon",
+          "qty": 4,
+          "unit": "sheet",
+          "badges": ["parchment", "arcane"]
+        },
+        {
+          "ref": "arcane-ink-uncommon",
+          "qty": 4,
+          "unit": "dram",
+          "badges": ["ink", "arcane"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": [],
+        "notes": "[no blueprint] — scrolls are scribed, not engineered."
+      },
+      "tags": ["scribe", "arcane", "no-blueprint"]
+    },
+    {
+      "id": "scroll-level-4",
+      "type": "scroll",
+      "result_name": "Spell Scroll (4th level)",
+      "rarity": "rare",
+      "dc": 19,
+      "time": {
+        "unit": "hours",
+        "value": 24
+      },
+      "yield": {
+        "unit": "scroll",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "arcane-parchment-rare",
+          "qty": 3,
+          "unit": "sheet",
+          "badges": ["parchment", "arcane"]
+        },
+        {
+          "ref": "arcane-ink-rare",
+          "qty": 3,
+          "unit": "dram",
+          "badges": ["ink", "arcane"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": [],
+        "notes": "[no blueprint] — scrolls are scribed, not engineered."
+      },
+      "tags": ["scribe", "arcane", "no-blueprint"]
+    },
+    {
+      "id": "scroll-level-5",
+      "type": "scroll",
+      "result_name": "Spell Scroll (5th level)",
+      "rarity": "rare",
+      "dc": 19,
+      "time": {
+        "unit": "hours",
+        "value": 24
+      },
+      "yield": {
+        "unit": "scroll",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "arcane-parchment-rare",
+          "qty": 10,
+          "unit": "sheet",
+          "badges": ["parchment", "arcane"]
+        },
+        {
+          "ref": "arcane-ink-rare",
+          "qty": 10,
+          "unit": "dram",
+          "badges": ["ink", "arcane"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": [],
+        "notes": "[no blueprint] — scrolls are scribed, not engineered."
+      },
+      "tags": ["scribe", "arcane", "no-blueprint"]
+    },
+    {
+      "id": "scroll-level-6",
+      "type": "scroll",
+      "result_name": "Spell Scroll (6th level)",
+      "rarity": "very rare",
+      "dc": 22,
+      "time": {
+        "unit": "hours",
+        "value": 24
+      },
+      "yield": {
+        "unit": "scroll",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "arcane-parchment-very-rare",
+          "qty": 10,
+          "unit": "sheet",
+          "badges": ["parchment", "arcane"]
+        },
+        {
+          "ref": "arcane-ink-very-rare",
+          "qty": 10,
+          "unit": "dram",
+          "badges": ["ink", "arcane"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": [],
+        "notes": "[no blueprint] — scrolls are scribed, not engineered."
+      },
+      "tags": ["scribe", "arcane", "no-blueprint"]
+    },
+    {
+      "id": "scroll-level-7",
+      "type": "scroll",
+      "result_name": "Spell Scroll (7th level)",
+      "rarity": "legendary",
+      "dc": 25,
+      "time": {
+        "unit": "week",
+        "value": 1
+      },
+      "yield": {
+        "unit": "scroll",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "arcane-parchment-legendary",
+          "qty": 6,
+          "unit": "sheet",
+          "badges": ["parchment", "arcane"]
+        },
+        {
+          "ref": "arcane-ink-legendary",
+          "qty": 6,
+          "unit": "dram",
+          "badges": ["ink", "arcane"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": [],
+        "notes": "[no blueprint] — scrolls are scribed, not engineered."
+      },
+      "tags": ["scribe", "arcane", "no-blueprint"]
+    },
+    {
+      "id": "scroll-level-8",
+      "type": "scroll",
+      "result_name": "Spell Scroll (8th level)",
+      "rarity": "legendary",
+      "dc": 25,
+      "time": {
+        "unit": "week",
+        "value": 1
+      },
+      "yield": {
+        "unit": "scroll",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "arcane-parchment-legendary",
+          "qty": 12,
+          "unit": "sheet",
+          "badges": ["parchment", "arcane"]
+        },
+        {
+          "ref": "arcane-ink-legendary",
+          "qty": 12,
+          "unit": "dram",
+          "badges": ["ink", "arcane"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": [],
+        "notes": "[no blueprint] — scrolls are scribed, not engineered."
+      },
+      "tags": ["scribe", "arcane", "no-blueprint"]
+    },
+    {
+      "id": "scroll-level-9",
+      "type": "scroll",
+      "result_name": "Spell Scroll (9th level)",
+      "rarity": "legendary",
+      "dc": 25,
+      "time": {
+        "unit": "week",
+        "value": 1
+      },
+      "yield": {
+        "unit": "scroll",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "arcane-parchment-legendary",
+          "qty": 24,
+          "unit": "sheet",
+          "badges": ["parchment", "arcane"]
+        },
+        {
+          "ref": "arcane-ink-legendary",
+          "qty": 24,
+          "unit": "dram",
+          "badges": ["ink", "arcane"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": [],
+        "notes": "[no blueprint] — scrolls are scribed, not engineered."
+      },
+      "tags": ["scribe", "arcane", "no-blueprint"]
+    },
+    {
+      "id": "potion:elixir-of-health",
+      "type": "potion",
+      "result_name": "Elixir of Health",
+      "rarity": "rare",
+      "dc": 19,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:shaderoot",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:stormmorel",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:emeraldberries",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "basilisk-scale-dust",
+          "qty": 1,
+          "unit": "pinch",
+          "badges": ["powder", "monster_part"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:oil-of-etherealness",
+      "type": "potion",
+      "result_name": "Oil of Etherealness",
+      "rarity": "rare",
+      "dc": 19,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:kelpreed",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:wheattuft",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:opalbloom",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "stardust-vial",
+          "qty": 1,
+          "unit": "vial",
+          "badges": ["powder", "arcane"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:oil-of-sharpness",
+      "type": "potion",
+      "result_name": "Oil of Sharpness",
+      "rarity": "very rare",
+      "dc": 22,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:veinbloom",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:steppe-moss",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:serpent-truffle",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "arcane-ink-very-rare",
+          "qty": 1,
+          "unit": "dram",
+          "badges": ["ink", "arcane"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:oil-of-slipperiness",
+      "type": "potion",
+      "result_name": "Oil of Slipperiness",
+      "rarity": "uncommon",
+      "dc": 17,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:barrencrown",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:cinderflower",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:black-algae",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "arcane-ink-uncommon",
+          "qty": 1,
+          "unit": "dram",
+          "badges": ["ink", "arcane"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:philter-of-love",
+      "type": "potion",
+      "result_name": "Philter of Love",
+      "rarity": "uncommon",
+      "dc": 17,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:seawhip-kelp",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:gull-saltbark",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:thornberry",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "ectoplasm-smear",
+          "qty": 1,
+          "unit": "smear",
+          "badges": ["ectoplasm", "arcane"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-acid-resistance",
+      "type": "potion",
+      "result_name": "Potion of Acid Resistance",
+      "rarity": "uncommon",
+      "dc": 17,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:mistral-weed",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:saffron-bulb",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:buffreed",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "elemental-dust-fire",
+          "qty": 1,
+          "unit": "pinch",
+          "badges": ["elemental", "fire"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-animal-friendship",
+      "type": "potion",
+      "result_name": "Potion of Animal Friendship",
+      "rarity": "uncommon",
+      "dc": 17,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:black-algae",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:skyvine",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:duskleaf",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "amber-resin",
+          "qty": 1,
+          "unit": "glob",
+          "badges": ["resin", "organic"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-animal-friendship",
+      "type": "potion",
+      "result_name": "Potion of Animal Friendship",
+      "rarity": "uncommon",
+      "dc": 17,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:buffreed",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:marshthatch",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:whisper-truffle",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "ectoplasm-smear",
+          "qty": 1,
+          "unit": "smear",
+          "badges": ["ectoplasm", "arcane"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-clairvoyance",
+      "type": "potion",
+      "result_name": "Potion of Clairvoyance",
+      "rarity": "rare",
+      "dc": 19,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:siren-tube",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:sunbulb",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:sun-moss",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "stardust-vial",
+          "qty": 1,
+          "unit": "vial",
+          "badges": ["powder", "arcane"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-climbing",
+      "type": "potion",
+      "result_name": "Potion of Climbing",
+      "rarity": "common",
+      "dc": 15,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:spraybloom",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:sicklebulb",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:shadow-truffle",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "chimney-soot",
+          "qty": 1,
+          "unit": "pinch",
+          "badges": ["powder", "carbon"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-cloud-giant-strength",
+      "type": "potion",
+      "result_name": "Potion of Cloud Giant Strength",
+      "rarity": "very rare",
+      "dc": 22,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:mycon-lace",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:ebontruffle",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:ebontruffle",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "void-salt",
+          "qty": 1,
+          "unit": "pinch",
+          "badges": ["salt", "arcane"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-cold-resistance",
+      "type": "potion",
+      "result_name": "Potion of Cold Resistance",
+      "rarity": "uncommon",
+      "dc": 17,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:cinderthorn",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:frostbeard-lichen",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:glowshelf",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "obsidian-shards",
+          "qty": 1,
+          "unit": "chip",
+          "badges": ["mineral", "glass"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-diminution",
+      "type": "potion",
+      "result_name": "Potion of Diminution",
+      "rarity": "rare",
+      "dc": 19,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:rimecress",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:iron-needle",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:wheattuft",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "pearl-of-power",
+          "qty": 1,
+          "unit": null,
+          "badges": ["gem", "reagent"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-fire-giant-strength",
+      "type": "potion",
+      "result_name": "Potion of Fire Giant Strength",
+      "rarity": "rare",
+      "dc": 19,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:high-tuft",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:sun-moss",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:spine-thorn",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "celestial-salt",
+          "qty": 1,
+          "unit": "pinch",
+          "badges": ["salt", "arcane"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-fire-resistance",
+      "type": "potion",
+      "result_name": "Potion of Fire Resistance",
+      "rarity": "uncommon",
+      "dc": 17,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:orchidroot",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:spraykelp",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:gloambulb",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "kraken-inklet",
+          "qty": 1,
+          "unit": "dram",
+          "badges": ["ink", "marine"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-flying",
+      "type": "potion",
+      "result_name": "Potion of Flying",
+      "rarity": "very rare",
+      "dc": 22,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:cinder-cactus",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:coralseafern",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:coralseafern",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "diamond-dust",
+          "qty": 1,
+          "unit": "pinch",
+          "badges": ["gem"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-force-resistance",
+      "type": "potion",
+      "result_name": "Potion of Force Resistance",
+      "rarity": "uncommon",
+      "dc": 17,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:stonewort",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:wandergrass",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:gull-saltbark",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "ghost-orchid-sap",
+          "qty": 1,
+          "unit": "drop",
+          "badges": ["sap", "arcane"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-frost-giant-strength",
+      "type": "potion",
+      "result_name": "Potion of Frost Giant Strength",
+      "rarity": "rare",
+      "dc": 19,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:serebloom",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:serebloom",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:serebloom",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "voidglass-sand",
+          "qty": 1,
+          "unit": "pinch",
+          "badges": ["glass", "arcane"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-gaseous-form",
+      "type": "potion",
+      "result_name": "Potion of Gaseous Form",
+      "rarity": "rare",
+      "dc": 19,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:honeybramble",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:shaderoot",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:serebloom",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "sunstone",
+          "qty": 1,
+          "unit": "stone",
+          "badges": ["gem", "radiant"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-giant-strength",
+      "type": "potion",
+      "result_name": "Potion of Giant Strength",
+      "rarity": "varies",
+      "dc": null,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:honey-root",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:sunfern",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:honey-root",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "grave-salt",
+          "qty": 1,
+          "unit": "pinch",
+          "badges": ["salt", "arcane"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-greater-healing",
+      "type": "potion",
+      "result_name": "Potion of Greater Healing",
+      "rarity": "uncommon",
+      "dc": 17,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:duskleaf",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:crystalvine",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:icicle-bloom",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "amethyst-shard",
+          "qty": 1,
+          "unit": "shard",
+          "badges": ["gem"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-growth",
+      "type": "potion",
+      "result_name": "Potion of Growth",
+      "rarity": "uncommon",
+      "dc": 17,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:stonewort",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:nightmist",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:glowshelf",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "garnet-shard",
+          "qty": 1,
+          "unit": "shard",
+          "badges": ["gem"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-healing",
+      "type": "potion",
+      "result_name": "Potion of Healing",
+      "rarity": "common",
+      "dc": 15,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:marshsnare-root",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:spraybloom",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:honeycap",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "beetle-carapace",
+          "qty": 1,
+          "unit": "chip",
+          "badges": ["monster_part", "chitin"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-heroism",
+      "type": "potion",
+      "result_name": "Potion of Heroism",
+      "rarity": "rare",
+      "dc": 19,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:thundershroom",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:stormmorel",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:crystal-lichen",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "voidglass-sand",
+          "qty": 1,
+          "unit": "pinch",
+          "badges": ["glass", "arcane"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-hill-giant-strength",
+      "type": "potion",
+      "result_name": "Potion of Hill Giant Strength",
+      "rarity": "uncommon",
+      "dc": 17,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:twilightfern",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:scorchbark",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:moss-fern",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "elemental-dust-earth",
+          "qty": 1,
+          "unit": "pinch",
+          "badges": ["elemental", "earth"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-invisibility",
+      "type": "potion",
+      "result_name": "Potion of Invisibility",
+      "rarity": "very rare",
+      "dc": 22,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:cinder-cactus",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:serpent-truffle",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:steppe-moss",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "arcane-parchment-very-rare",
+          "qty": 1,
+          "unit": "sheet",
+          "badges": ["parchment", "arcane"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-lightning-resistance",
+      "type": "potion",
+      "result_name": "Potion of Lightning Resistance",
+      "rarity": "uncommon",
+      "dc": 17,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:cinderflower",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:gloambulb",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:black-algae",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "amber-resin",
+          "qty": 1,
+          "unit": "glob",
+          "badges": ["resin", "organic"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-mind-reading",
+      "type": "potion",
+      "result_name": "Potion of Mind Reading",
+      "rarity": "rare",
+      "dc": 19,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:shaderoot",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:shaderoot",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:prairiereed",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "arcane-parchment-rare",
+          "qty": 1,
+          "unit": "sheet",
+          "badges": ["parchment", "arcane"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-necrotic-resistance",
+      "type": "potion",
+      "result_name": "Potion of Necrotic Resistance",
+      "rarity": "uncommon",
+      "dc": 17,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:twilightfern",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:nightmist",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:mistral-weed",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "elemental-dust-air",
+          "qty": 1,
+          "unit": "pinch",
+          "badges": ["elemental", "air"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-psychic-resistance",
+      "type": "potion",
+      "result_name": "Potion of Psychic Resistance",
+      "rarity": "uncommon",
+      "dc": 17,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:mistral-weed",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:moss-fern",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:steppebloom",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "smoky-quartz-dust",
+          "qty": 1,
+          "unit": "pinch",
+          "badges": ["powder", "gem"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-radiant-resistance",
+      "type": "potion",
+      "result_name": "Potion of Radiant Resistance",
+      "rarity": "uncommon",
+      "dc": 17,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:sodden-knot",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:umbercap",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:seawhip-kelp",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "kraken-inklet",
+          "qty": 1,
+          "unit": "dram",
+          "badges": ["ink", "marine"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-resistance",
+      "type": "potion",
+      "result_name": "Potion of Resistance",
+      "rarity": "uncommon",
+      "dc": 17,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:granitetuft",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:twilightfern",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:spraykelp",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "ghost-orchid-sap",
+          "qty": 1,
+          "unit": "drop",
+          "badges": ["sap", "arcane"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-speed",
+      "type": "potion",
+      "result_name": "Potion of Speed",
+      "rarity": "very rare",
+      "dc": 22,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:veinbloom",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:spore-truffle",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:murk-lily",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "dragon-bone-dust",
+          "qty": 1,
+          "unit": "pinch",
+          "badges": ["powder", "monster_part"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-stone-giant-strength",
+      "type": "potion",
+      "result_name": "Potion of Stone Giant Strength",
+      "rarity": "rare",
+      "dc": 19,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:glassroot",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:iron-needle",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:spine-thorn",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "wyvern-bile",
+          "qty": 1,
+          "unit": "dram",
+          "badges": ["monster_part"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-storm-giant-strength",
+      "type": "potion",
+      "result_name": "Potion of Storm Giant Strength",
+      "rarity": "legendary",
+      "dc": 25,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:reed-fungus",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:moonpetal",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:reed-fungus",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "echo-of-dawn",
+          "qty": 1,
+          "unit": "shard",
+          "badges": ["gem", "arcane"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-superior-healing",
+      "type": "potion",
+      "result_name": "Potion of Superior Healing",
+      "rarity": "rare",
+      "dc": 19,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:stonecap",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:sun-moss",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:cloud-crown",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "voidglass-sand",
+          "qty": 1,
+          "unit": "pinch",
+          "badges": ["glass", "arcane"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-supreme-healing",
+      "type": "potion",
+      "result_name": "Potion of Supreme Healing",
+      "rarity": "very rare",
+      "dc": 22,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:lantern-ivy",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:feyberries",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:starmist",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "leviathan-scale",
+          "qty": 1,
+          "unit": "flake",
+          "badges": ["monster_part", "marine"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-thunder-resistance",
+      "type": "potion",
+      "result_name": "Potion of Thunder Resistance",
+      "rarity": "uncommon",
+      "dc": 17,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:black-algae",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:slate-root",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:storm-saltbark",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "arcane-parchment-uncommon",
+          "qty": 1,
+          "unit": "sheet",
+          "badges": ["parchment", "arcane"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-water-breathing",
+      "type": "potion",
+      "result_name": "Potion of Water Breathing",
+      "rarity": "uncommon",
+      "dc": 17,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:umbercap",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:drift-saltbark",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:whisper-truffle",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "obsidian-shards",
+          "qty": 1,
+          "unit": "chip",
+          "badges": ["mineral", "glass"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-climbing-potion-no",
+      "type": "potion",
+      "result_name": "Potion Of Climbing",
+      "rarity": "common",
+      "dc": 15,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:briarbud",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:honey-root",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:stormsaltbark",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "snake-scale-chip",
+          "qty": 1,
+          "unit": "chip",
+          "badges": ["monster_part", "scale"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-healing-potion-no",
+      "type": "potion",
+      "result_name": "Potion Of Healing",
+      "rarity": "common",
+      "dc": 15,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:sun-thatch",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:pale-toadstool",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:stallace",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "snake-scale-chip",
+          "qty": 1,
+          "unit": "chip",
+          "badges": ["monster_part", "scale"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:oil-of-slipperiness-potion-no",
+      "type": "potion",
+      "result_name": "Oil Of Slipperiness",
+      "rarity": "common",
+      "dc": 15,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:shardmoss",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:sunfern",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:shadow-truffle",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "beeswax",
+          "qty": 1,
+          "unit": "lump",
+          "badges": ["wax", "organic"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:philter-of-love-potion-no",
+      "type": "potion",
+      "result_name": "Philter Of Love",
+      "rarity": "common",
+      "dc": 15,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:shadow-truffle",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:dripcap",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:honey-root",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "eel-skin-strip",
+          "qty": 1,
+          "unit": "strip",
+          "badges": ["monster_part", "marine"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-animal-friendship-potion-no",
+      "type": "potion",
+      "result_name": "Potion Of Animal Friendship",
+      "rarity": "common",
+      "dc": 15,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:honey-root",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:dripcap",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:shell-weed",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "arcane-parchment-common",
+          "qty": 1,
+          "unit": "sheet",
+          "badges": ["parchment", "arcane"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-fire-breath-potion-no",
+      "type": "potion",
+      "result_name": "Potion Of Fire Breath",
+      "rarity": "common",
+      "dc": 15,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:dripcap",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:reefpod",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:shardmoss",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "saltpeter",
+          "qty": 1,
+          "unit": "pinch",
+          "badges": ["salt", "mineral"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-healing-greater-potion-no",
+      "type": "potion",
+      "result_name": "Potion Of Healing, Greater",
+      "rarity": "common",
+      "dc": 15,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:spraybloom",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:needlecap",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:sicklebulb",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "oyster-shell-dust",
+          "qty": 1,
+          "unit": "pinch",
+          "badges": ["powder", "mineral", "marine"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-growth-potion-no",
+      "type": "potion",
+      "result_name": "Potion Of Growth",
+      "rarity": "common",
+      "dc": 15,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:dripcap",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:needlecap",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:windreed",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "eel-skin-strip",
+          "qty": 1,
+          "unit": "strip",
+          "badges": ["monster_part", "marine"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-hill-giant-strength-potion-no",
+      "type": "potion",
+      "result_name": "Potion Of Hill Giant Strength",
+      "rarity": "common",
+      "dc": 15,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:sunfern",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:gloommold",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:stallace",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "hoof-scrapings",
+          "qty": 1,
+          "unit": "pinch",
+          "badges": ["organic", "hoof"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-resistance-potion-no",
+      "type": "potion",
+      "result_name": "Potion Of Resistance",
+      "rarity": "common",
+      "dc": 15,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:sun-thatch",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:sicklebulb",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:stallace",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "saltpeter",
+          "qty": 1,
+          "unit": "pinch",
+          "badges": ["salt", "mineral"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-water-breathing-potion-no",
+      "type": "potion",
+      "result_name": "Potion Of Water Breathing",
+      "rarity": "common",
+      "dc": 15,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:stallace",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:needlecap",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:needlecap",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "lamp-oil",
+          "qty": 1,
+          "unit": "vial",
+          "badges": ["oil", "alchemical"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:elixir-of-health-potion-no",
+      "type": "potion",
+      "result_name": "Elixir Of Health",
+      "rarity": "common",
+      "dc": 15,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:beechnettle",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:marshsnare-root",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:brineweed",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "bat-guano",
+          "qty": 1,
+          "unit": "pellet",
+          "badges": ["alchemical"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:oil-of-etherealness-potion-no",
+      "type": "potion",
+      "result_name": "Oil Of Etherealness",
+      "rarity": "common",
+      "dc": 15,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:gloommold",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:reefpod",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:marshsnare-root",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "cat-urine-vial",
+          "qty": 1,
+          "unit": "vial",
+          "badges": ["alchemical"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-clairvoyance-potion-no",
+      "type": "potion",
+      "result_name": "Potion Of Clairvoyance",
+      "rarity": "common",
+      "dc": 15,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:spraybloom",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:shardmoss",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:marshsnare-root",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "lamp-oil",
+          "qty": 1,
+          "unit": "vial",
+          "badges": ["oil", "alchemical"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-diminution-potion-no",
+      "type": "potion",
+      "result_name": "Potion Of Diminution",
+      "rarity": "common",
+      "dc": 15,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:beechnettle",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:beechnettle",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:gloommold",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "beeswax",
+          "qty": 1,
+          "unit": "lump",
+          "badges": ["wax", "organic"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-fire-giant-strength-potion-no",
+      "type": "potion",
+      "result_name": "Potion Of Fire Giant Strength",
+      "rarity": "common",
+      "dc": 15,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:aloetuft",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:stallace",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:marshsnare-root",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "chalk-dust",
+          "qty": 1,
+          "unit": "pinch",
+          "badges": ["powder", "mineral"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-frost-giant-strengthpotion-no",
+      "type": "potion",
+      "result_name": "Potion Of Frost Giant Strengthpotion No",
+      "rarity": "common",
+      "dc": 15,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:honey-root",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:honey-root",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:beechnettle",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "moss-scrapings",
+          "qty": 1,
+          "unit": "pinch",
+          "badges": ["organic", "moss"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-gaseous-form-potion-no",
+      "type": "potion",
+      "result_name": "Potion Of Gaseous Form",
+      "rarity": "common",
+      "dc": 15,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:honey-root",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:stag-seed",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:aloetuft",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "rust-flakes",
+          "qty": 1,
+          "unit": "pinch",
+          "badges": ["metal", "powder"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-heroism-potion-no",
+      "type": "potion",
+      "result_name": "Potion Of Heroism",
+      "rarity": "common",
+      "dc": 15,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:pale-toadstool",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:brineweed",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:slate-cap",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "moss-scrapings",
+          "qty": 1,
+          "unit": "pinch",
+          "badges": ["organic", "moss"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-invulnerability-potion-no",
+      "type": "potion",
+      "result_name": "Potion Of Invulnerability",
+      "rarity": "common",
+      "dc": 15,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:mirage-spine",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:windreed",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:marshsnare-root",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "ground-seashell",
+          "qty": 1,
+          "unit": "pinch",
+          "badges": ["powder", "mineral", "marine"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-mind-reading-potion-no",
+      "type": "potion",
+      "result_name": "Potion Of Mind Reading",
+      "rarity": "common",
+      "dc": 15,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:stallace",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:shardmoss",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:sun-thatch",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "agate-chip",
+          "qty": 1,
+          "unit": "chip",
+          "badges": ["gem"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-healing-superior-potion-no",
+      "type": "potion",
+      "result_name": "Potion Of Healing, Superior",
+      "rarity": "common",
+      "dc": 15,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:windreed",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:pale-toadstool",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:aloetuft",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "lamp-oil",
+          "qty": 1,
+          "unit": "vial",
+          "badges": ["oil", "alchemical"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:oil-of-sharpness-potion-no",
+      "type": "potion",
+      "result_name": "Oil Of Sharpness",
+      "rarity": "common",
+      "dc": 15,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:mirage-spine",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:marshsnare-root",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:aloetuft",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "silver-powder",
+          "qty": 1,
+          "unit": "pinch",
+          "badges": ["powder", "metal"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-cloud-giant-strengthpotion-no",
+      "type": "potion",
+      "result_name": "Potion Of Cloud Giant Strengthpotion No",
+      "rarity": "common",
+      "dc": 15,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:beechnettle",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:sun-thatch",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:pale-toadstool",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "river-clay",
+          "qty": 1,
+          "unit": "lump",
+          "badges": ["earth", "mineral"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-flying-potion-no",
+      "type": "potion",
+      "result_name": "Potion Of Flying",
+      "rarity": "common",
+      "dc": 15,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:shell-weed",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:beechnettle",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:pale-toadstool",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "chimney-soot",
+          "qty": 1,
+          "unit": "pinch",
+          "badges": ["powder", "carbon"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-invisibility-potion-no",
+      "type": "potion",
+      "result_name": "Potion Of Invisibility",
+      "rarity": "common",
+      "dc": 15,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:needlecap",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:marshsnare-root",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:dripcap",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "pine-resin",
+          "qty": 1,
+          "unit": "glob",
+          "badges": ["resin", "organic"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-longevity-potion-no",
+      "type": "potion",
+      "result_name": "Potion Of Longevity",
+      "rarity": "common",
+      "dc": 15,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:mirage-spine",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:lightleaf",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:slate-cap",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "agate-chip",
+          "qty": 1,
+          "unit": "chip",
+          "badges": ["gem"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-speed-potion-no",
+      "type": "potion",
+      "result_name": "Potion Of Speed",
+      "rarity": "common",
+      "dc": 15,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:aloetuft",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:mirage-spine",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:dripcap",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "beeswax",
+          "qty": 1,
+          "unit": "lump",
+          "badges": ["wax", "organic"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-healing-supreme-potion-no",
+      "type": "potion",
+      "result_name": "Potion Of Healing, Supreme",
+      "rarity": "common",
+      "dc": 15,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:mirage-spine",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:needlecap",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:shadow-truffle",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "oyster-shell-dust",
+          "qty": 1,
+          "unit": "pinch",
+          "badges": ["powder", "mineral", "marine"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-vitality-potion-no",
+      "type": "potion",
+      "result_name": "Potion Of Vitality",
+      "rarity": "common",
+      "dc": 15,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:briarbud",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:needlecap",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:pale-toadstool",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "beeswax",
+          "qty": 1,
+          "unit": "lump",
+          "badges": ["wax", "organic"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-storm-giant-strengthpotion-no",
+      "type": "potion",
+      "result_name": "Potion Of Storm Giant Strengthpotion No",
+      "rarity": "common",
+      "dc": 15,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:aloetuft",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:sun-thatch",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:mirage-spine",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "arcane-ink-common",
+          "qty": 1,
+          "unit": "dram",
+          "badges": ["ink", "arcane"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-rare",
+      "type": "potion",
+      "result_name": "Potion, Rare",
+      "rarity": "very rare",
+      "dc": 22,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:spore-truffle",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:mycon-lace",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:steppe-moss",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "phoenix-ash",
+          "qty": 1,
+          "unit": "pinch",
+          "badges": ["ash", "arcane"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-maximum-power",
+      "type": "potion",
+      "result_name": "Potion Of Maximum Power",
+      "rarity": "rare",
+      "dc": 19,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:stonecap",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:sunbulb",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:kelpreed",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "shadow-essence",
+          "qty": 1,
+          "unit": "vial",
+          "badges": ["essence", "necrotic"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-of-possibility",
+      "type": "potion",
+      "result_name": "Potion Of Possibility",
+      "rarity": "very rare",
+      "dc": 22,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:murk-lily",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:spore-truffle",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:steppe-moss",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "leviathan-scale",
+          "qty": 1,
+          "unit": "flake",
+          "badges": ["monster_part", "marine"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-very-rare",
+      "type": "potion",
+      "result_name": "Potion, Very Rare",
+      "rarity": "very rare",
+      "dc": 22,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:starmist",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:lantern-ivy",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:murk-lily",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "dragonscale-assorted",
+          "qty": 1,
+          "unit": "handful",
+          "badges": ["monster_part", "scale"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "potion:potion-beltwondrous",
+      "type": "potion",
+      "result_name": "Potion Beltwondrous",
+      "rarity": "rare",
+      "dc": 19,
+      "time": {
+        "unit": "long rest",
+        "value": 1
+      },
+      "yield": {
+        "unit": "bottle",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "herb:iron-needle",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "herb:stonecap",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "enhancer", "medicinal"]
+        },
+        {
+          "ref": "herb:kelpreed",
+          "qty": 1,
+          "unit": "sprig",
+          "badges": ["herb", "medicinal"]
+        },
+        {
+          "ref": "crushed-pearl",
+          "qty": 1,
+          "unit": "pinch",
+          "badges": ["powder", "gem"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["potion", "brew"]
+    },
+    {
+      "id": "weapon-plus-one-uncommon",
+      "type": "weapon",
+      "result_name": "Weapon +1",
+      "rarity": "uncommon",
+      "dc": 17,
+      "yield": {
+        "unit": "item",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "base-item-weapon",
+          "qty": 1,
+          "badges": ["base", "weapon"]
+        },
+        {
+          "ref": "quicksilver",
+          "qty": 1,
+          "unit": "dram",
+          "badges": ["alchemical", "metal"]
+        },
+        {
+          "ref": "smoky-quartz-dust",
+          "qty": 1,
+          "badges": ["powder", "gem"]
+        },
+        {
+          "ref": "wisp-essence",
+          "qty": 1,
+          "badges": ["essence", "arcane"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["weapon", "enchant"]
+    },
+    {
+      "id": "weapon-plus-two-rare",
+      "type": "weapon",
+      "result_name": "Weapon +2",
+      "rarity": "rare",
+      "dc": 19,
+      "yield": {
+        "unit": "item",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "base-item-weapon",
+          "qty": 1,
+          "badges": ["base", "weapon"]
+        },
+        {
+          "ref": "manticore-whisker",
+          "qty": 1,
+          "badges": ["monster_part"]
+        },
+        {
+          "ref": "celestial-salt",
+          "qty": 1,
+          "badges": ["salt", "arcane"]
+        },
+        {
+          "ref": "crushed-pearl",
+          "qty": 1,
+          "badges": ["powder", "gem"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["weapon", "enchant"]
+    },
+    {
+      "id": "weapon-plus-three-very-rare",
+      "type": "weapon",
+      "result_name": "Weapon +3",
+      "rarity": "very rare",
+      "dc": 22,
+      "yield": {
+        "unit": "item",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "base-item-weapon",
+          "qty": 1,
+          "badges": ["base", "weapon"]
+        },
+        {
+          "ref": "dragon-bone-dust",
+          "qty": 1,
+          "badges": ["powder", "monster_part"]
+        },
+        {
+          "ref": "stardust-vial",
+          "qty": 1,
+          "badges": ["powder", "arcane"]
+        },
+        {
+          "ref": "mithral-filings",
+          "qty": 1,
+          "badges": ["metal", "powder"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["weapon", "enchant"]
+    },
+    {
+      "id": "armor-plus-one-uncommon",
+      "type": "armor",
+      "result_name": "Armor +1",
+      "rarity": "uncommon",
+      "dc": 17,
+      "yield": {
+        "unit": "item",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "base-item-armor",
+          "qty": 1,
+          "badges": ["base", "armor"]
+        },
+        {
+          "ref": "obsidian-shards",
+          "qty": 1,
+          "badges": ["mineral", "glass"]
+        },
+        {
+          "ref": "faerie-wing-dust",
+          "qty": 1,
+          "badges": ["fey", "powder"]
+        },
+        {
+          "ref": "amber-resin",
+          "qty": 1,
+          "badges": ["resin", "organic"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["armor", "enchant"]
+    },
+    {
+      "id": "armor-plus-two-rare",
+      "type": "armor",
+      "result_name": "Armor +2",
+      "rarity": "rare",
+      "dc": 19,
+      "yield": {
+        "unit": "item",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "base-item-armor",
+          "qty": 1,
+          "badges": ["base", "armor"]
+        },
+        {
+          "ref": "basilisk-scale-dust",
+          "qty": 1,
+          "badges": ["powder", "monster_part"]
+        },
+        {
+          "ref": "celestial-salt",
+          "qty": 1,
+          "badges": ["salt", "arcane"]
+        },
+        {
+          "ref": "elemental-brine",
+          "qty": 1,
+          "badges": ["elemental", "alchemical"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["armor", "enchant"]
+    },
+    {
+      "id": "armor-plus-three-very-rare",
+      "type": "armor",
+      "result_name": "Armor +3",
+      "rarity": "very rare",
+      "dc": 22,
+      "yield": {
+        "unit": "item",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "base-item-armor",
+          "qty": 1,
+          "badges": ["base", "armor"]
+        },
+        {
+          "ref": "dragon-bone-dust",
+          "qty": 1,
+          "badges": ["powder", "monster_part"]
+        },
+        {
+          "ref": "void-salt",
+          "qty": 1,
+          "badges": ["salt", "arcane"]
+        },
+        {
+          "ref": "mithral-filings",
+          "qty": 1,
+          "badges": ["metal", "powder"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["armor", "enchant"]
+    },
+    {
+      "id": "shield-plus-one-uncommon",
+      "type": "armor",
+      "result_name": "Shield +1",
+      "rarity": "uncommon",
+      "dc": 17,
+      "yield": {
+        "unit": "item",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "base-item-shield",
+          "qty": 1,
+          "badges": ["base", "shield"]
+        },
+        {
+          "ref": "obsidian-shards",
+          "qty": 1,
+          "badges": ["mineral", "glass"]
+        },
+        {
+          "ref": "beeswax",
+          "qty": 1,
+          "badges": ["wax", "organic"]
+        },
+        {
+          "ref": "amber-resin",
+          "qty": 1,
+          "badges": ["resin", "organic"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["armor", "enchant"]
+    },
+    {
+      "id": "shield-plus-two-rare",
+      "type": "armor",
+      "result_name": "Shield +2",
+      "rarity": "rare",
+      "dc": 19,
+      "yield": {
+        "unit": "item",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "base-item-shield",
+          "qty": 1,
+          "badges": ["base", "shield"]
+        },
+        {
+          "ref": "wyvern-bile",
+          "qty": 1,
+          "badges": ["monster_part"]
+        },
+        {
+          "ref": "celestial-salt",
+          "qty": 1,
+          "badges": ["salt", "arcane"]
+        },
+        {
+          "ref": "stardust-vial",
+          "qty": 1,
+          "badges": ["powder", "arcane"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["armor", "enchant"]
+    },
+    {
+      "id": "shield-plus-three-very-rare",
+      "type": "armor",
+      "result_name": "Shield +3",
+      "rarity": "very rare",
+      "dc": 22,
+      "yield": {
+        "unit": "item",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "base-item-shield",
+          "qty": 1,
+          "badges": ["base", "shield"]
+        },
+        {
+          "ref": "dragon-bone-dust",
+          "qty": 1,
+          "badges": ["powder", "monster_part"]
+        },
+        {
+          "ref": "void-salt",
+          "qty": 1,
+          "badges": ["salt", "arcane"]
+        },
+        {
+          "ref": "mithral-filings",
+          "qty": 1,
+          "badges": ["metal", "powder"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["armor", "enchant"]
+    },
+    {
+      "id": "flametongue-rare",
+      "type": "weapon",
+      "result_name": "Flametongue",
+      "rarity": "rare",
+      "dc": 19,
+      "yield": {
+        "unit": "item",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "base-item-weapon",
+          "qty": 1,
+          "badges": ["base", "weapon"]
+        },
+        {
+          "ref": "sulfur-brimstone",
+          "qty": 1,
+          "badges": ["powder", "sulfur"]
+        },
+        {
+          "ref": "elemental-dust-fire",
+          "qty": 1,
+          "badges": ["elemental", "fire"]
+        },
+        {
+          "ref": "salamander-flame-sac",
+          "qty": 1,
+          "badges": ["monster_part", "fire"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["weapon", "enchant"]
+    },
+    {
+      "id": "frost-brand-very-rare",
+      "type": "weapon",
+      "result_name": "Frost Brand",
+      "rarity": "very rare",
+      "dc": 22,
+      "yield": {
+        "unit": "item",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "base-item-weapon",
+          "qty": 1,
+          "badges": ["base", "weapon"]
+        },
+        {
+          "ref": "diamond-dust",
+          "qty": 1,
+          "badges": ["gem"]
+        },
+        {
+          "ref": "leviathan-scale",
+          "qty": 1,
+          "badges": ["monster_part", "marine"]
+        },
+        {
+          "ref": "frost-elemental-core",
+          "qty": 1,
+          "badges": ["elemental", "frost"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["weapon", "enchant"]
+    },
+    {
+      "id": "sun-blade-rare",
+      "type": "weapon",
+      "result_name": "Sun Blade",
+      "rarity": "rare",
+      "dc": 19,
+      "yield": {
+        "unit": "item",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "base-item-weapon",
+          "qty": 1,
+          "badges": ["base", "weapon"]
+        },
+        {
+          "ref": "sunstone",
+          "qty": 1,
+          "badges": ["gem", "radiant"]
+        },
+        {
+          "ref": "stardust-vial",
+          "qty": 1,
+          "badges": ["powder", "arcane"]
+        },
+        {
+          "ref": "celestial-salt",
+          "qty": 1,
+          "badges": ["salt", "arcane"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["weapon", "enchant"]
+    },
+    {
+      "id": "dragon-scale-mail-very-rare",
+      "type": "armor",
+      "result_name": "Dragon Scale Mail",
+      "rarity": "very rare",
+      "dc": 22,
+      "yield": {
+        "unit": "item",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "base-item-armor",
+          "qty": 1,
+          "badges": ["base", "armor"]
+        },
+        {
+          "ref": "dragonscale-assorted",
+          "qty": 1,
+          "badges": ["monster_part", "scale"]
+        },
+        {
+          "ref": "dragon-bone-dust",
+          "qty": 1,
+          "badges": ["powder", "monster_part"]
+        },
+        {
+          "ref": "mithral-filings",
+          "qty": 1,
+          "badges": ["metal", "powder"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["armor", "enchant"]
+    },
+    {
+      "id": "ring-of-protection-rare",
+      "type": "ring",
+      "result_name": "Ring of Protection",
+      "rarity": "rare",
+      "dc": 19,
+      "yield": {
+        "unit": "item",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "base-item-ring",
+          "qty": 1,
+          "badges": ["base", "ring"]
+        },
+        {
+          "ref": "crushed-pearl",
+          "qty": 1,
+          "badges": ["powder", "gem"]
+        },
+        {
+          "ref": "celestial-salt",
+          "qty": 1,
+          "badges": ["salt", "arcane"]
+        },
+        {
+          "ref": "wisp-essence",
+          "qty": 1,
+          "badges": ["essence", "arcane"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["ring", "enchant"]
+    },
+    {
+      "id": "ring-of-spell-storing-very-rare",
+      "type": "ring",
+      "result_name": "Ring of Spell Storing",
+      "rarity": "very rare",
+      "dc": 22,
+      "yield": {
+        "unit": "item",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "base-item-ring",
+          "qty": 1,
+          "badges": ["base", "ring"]
+        },
+        {
+          "ref": "astral-dew",
+          "qty": 1,
+          "badges": ["essence", "arcane"]
+        },
+        {
+          "ref": "stardust-vial",
+          "qty": 1,
+          "badges": ["powder", "arcane"]
+        },
+        {
+          "ref": "celestial-salt",
+          "qty": 1,
+          "badges": ["salt", "arcane"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["ring", "enchant"]
+    },
+    {
+      "id": "wand-of-the-war-mage-plus-one-uncommon",
+      "type": "wand",
+      "result_name": "Wand of the War Mage +1",
+      "rarity": "uncommon",
+      "dc": 17,
+      "yield": {
+        "unit": "item",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "base-item-wand",
+          "qty": 1,
+          "badges": ["base", "wand"]
+        },
+        {
+          "ref": "smoky-quartz-dust",
+          "qty": 1,
+          "badges": ["powder", "gem"]
+        },
+        {
+          "ref": "wisp-essence",
+          "qty": 1,
+          "badges": ["essence", "arcane"]
+        },
+        {
+          "ref": "amber-resin",
+          "qty": 1,
+          "badges": ["resin", "organic"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["wand", "enchant"]
+    },
+    {
+      "id": "wand-of-the-war-mage-plus-two-rare",
+      "type": "wand",
+      "result_name": "Wand of the War Mage +2",
+      "rarity": "rare",
+      "dc": 19,
+      "yield": {
+        "unit": "item",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "base-item-wand",
+          "qty": 1,
+          "badges": ["base", "wand"]
+        },
+        {
+          "ref": "crushed-pearl",
+          "qty": 1,
+          "badges": ["powder", "gem"]
+        },
+        {
+          "ref": "elemental-brine",
+          "qty": 1,
+          "badges": ["elemental", "alchemical"]
+        },
+        {
+          "ref": "shadow-ink",
+          "qty": 1,
+          "badges": ["ink", "arcane"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["wand", "enchant"]
+    },
+    {
+      "id": "wand-of-the-war-mage-plus-three-very-rare",
+      "type": "wand",
+      "result_name": "Wand of the War Mage +3",
+      "rarity": "very rare",
+      "dc": 22,
+      "yield": {
+        "unit": "item",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "base-item-wand",
+          "qty": 1,
+          "badges": ["base", "wand"]
+        },
+        {
+          "ref": "sapphire-shard",
+          "qty": 1,
+          "badges": ["gem"]
+        },
+        {
+          "ref": "stardust-vial",
+          "qty": 1,
+          "badges": ["powder", "arcane"]
+        },
+        {
+          "ref": "mithral-filings",
+          "qty": 1,
+          "badges": ["metal", "powder"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["wand", "enchant"]
+    },
+    {
+      "id": "rod-of-the-pact-keeper-plus-one-uncommon",
+      "type": "rod",
+      "result_name": "Rod of the Pact Keeper +1",
+      "rarity": "uncommon",
+      "dc": 17,
+      "yield": {
+        "unit": "item",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "base-item-rod",
+          "qty": 1,
+          "badges": ["base", "rod"]
+        },
+        {
+          "ref": "obsidian-shards",
+          "qty": 1,
+          "badges": ["mineral", "glass"]
+        },
+        {
+          "ref": "shadow-ink",
+          "qty": 1,
+          "badges": ["ink", "arcane"]
+        },
+        {
+          "ref": "ectoplasm-smear",
+          "qty": 1,
+          "badges": ["ectoplasm", "arcane"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["rod", "enchant"]
+    },
+    {
+      "id": "rod-of-the-pact-keeper-plus-two-rare",
+      "type": "rod",
+      "result_name": "Rod of the Pact Keeper +2",
+      "rarity": "rare",
+      "dc": 19,
+      "yield": {
+        "unit": "item",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "base-item-rod",
+          "qty": 1,
+          "badges": ["base", "rod"]
+        },
+        {
+          "ref": "voidglass-sand",
+          "qty": 1,
+          "badges": ["glass", "arcane"]
+        },
+        {
+          "ref": "shadow-essence",
+          "qty": 1,
+          "badges": ["essence", "necrotic"]
+        },
+        {
+          "ref": "crushed-pearl",
+          "qty": 1,
+          "badges": ["powder", "gem"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["rod", "enchant"]
+    },
+    {
+      "id": "rod-of-the-pact-keeper-plus-three-very-rare",
+      "type": "rod",
+      "result_name": "Rod of the Pact Keeper +3",
+      "rarity": "very rare",
+      "dc": 22,
+      "yield": {
+        "unit": "item",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "base-item-rod",
+          "qty": 1,
+          "badges": ["base", "rod"]
+        },
+        {
+          "ref": "void-salt",
+          "qty": 1,
+          "badges": ["salt", "arcane"]
+        },
+        {
+          "ref": "ancient-ichor",
+          "qty": 1,
+          "badges": ["monster_part", "arcane"]
+        },
+        {
+          "ref": "stardust-vial",
+          "qty": 1,
+          "badges": ["powder", "arcane"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["rod", "enchant"]
+    },
+    {
+      "id": "staff-of-power-very-rare",
+      "type": "staff",
+      "result_name": "Staff of Power",
+      "rarity": "very rare",
+      "dc": 22,
+      "yield": {
+        "unit": "item",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "base-item-staff",
+          "qty": 1,
+          "badges": ["base", "staff"]
+        },
+        {
+          "ref": "mithral-filings",
+          "qty": 1,
+          "badges": ["metal", "powder"]
+        },
+        {
+          "ref": "stardust-vial",
+          "qty": 1,
+          "badges": ["powder", "arcane"]
+        },
+        {
+          "ref": "dragon-bone-dust",
+          "qty": 1,
+          "badges": ["powder", "monster_part"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["staff", "enchant"]
+    },
+    {
+      "id": "cloak-of-protection-uncommon",
+      "type": "wondrous",
+      "result_name": "Cloak of Protection",
+      "rarity": "uncommon",
+      "dc": 17,
+      "yield": {
+        "unit": "item",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "base-item-wondrous",
+          "qty": 1,
+          "badges": ["base", "wondrous"]
+        },
+        {
+          "ref": "faerie-wing-dust",
+          "qty": 1,
+          "badges": ["fey", "powder"]
+        },
+        {
+          "ref": "amber-resin",
+          "qty": 1,
+          "badges": ["resin", "organic"]
+        },
+        {
+          "ref": "wisp-essence",
+          "qty": 1,
+          "badges": ["essence", "arcane"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["wondrous", "enchant"]
+    },
+    {
+      "id": "boots-of-speed-rare",
+      "type": "wondrous",
+      "result_name": "Boots of Speed",
+      "rarity": "rare",
+      "dc": 19,
+      "yield": {
+        "unit": "item",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "base-item-wondrous",
+          "qty": 1,
+          "badges": ["base", "wondrous"]
+        },
+        {
+          "ref": "eel-skin-strip",
+          "qty": 1,
+          "badges": ["monster_part", "marine"]
+        },
+        {
+          "ref": "quicksilver",
+          "qty": 1,
+          "unit": "dram",
+          "badges": ["alchemical", "metal"]
+        },
+        {
+          "ref": "storm-heart",
+          "qty": 1,
+          "badges": ["elemental", "lightning"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["wondrous", "enchant"]
+    },
+    {
+      "id": "ammunition-plus-one-uncommon",
+      "type": "ammo",
+      "result_name": "Ammunition +1",
+      "rarity": "uncommon",
+      "dc": 17,
+      "yield": {
+        "unit": "item",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "base-item-ammo",
+          "qty": 1,
+          "badges": ["base", "ammo"]
+        },
+        {
+          "ref": "saltpeter",
+          "qty": 1,
+          "badges": ["salt", "mineral"]
+        },
+        {
+          "ref": "copper-filings",
+          "qty": 1,
+          "badges": ["metal", "powder"]
+        },
+        {
+          "ref": "faerie-wing-dust",
+          "qty": 1,
+          "badges": ["fey", "powder"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["ammo", "enchant"]
+    },
+    {
+      "id": "ammunition-plus-two-rare",
+      "type": "ammo",
+      "result_name": "Ammunition +2",
+      "rarity": "rare",
+      "dc": 19,
+      "yield": {
+        "unit": "item",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "base-item-ammo",
+          "qty": 1,
+          "badges": ["base", "ammo"]
+        },
+        {
+          "ref": "elemental-brine",
+          "qty": 1,
+          "badges": ["elemental", "alchemical"]
+        },
+        {
+          "ref": "manticore-whisker",
+          "qty": 1,
+          "badges": ["monster_part"]
+        },
+        {
+          "ref": "crushed-pearl",
+          "qty": 1,
+          "badges": ["powder", "gem"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["ammo", "enchant"]
+    },
+    {
+      "id": "ammunition-plus-three-very-rare",
+      "type": "ammo",
+      "result_name": "Ammunition +3",
+      "rarity": "very rare",
+      "dc": 22,
+      "yield": {
+        "unit": "item",
+        "qty": 1
+      },
+      "ingredients": [
+        {
+          "ref": "base-item-ammo",
+          "qty": 1,
+          "badges": ["base", "ammo"]
+        },
+        {
+          "ref": "dragon-bone-dust",
+          "qty": 1,
+          "badges": ["powder", "monster_part"]
+        },
+        {
+          "ref": "stardust-vial",
+          "qty": 1,
+          "badges": ["powder", "arcane"]
+        },
+        {
+          "ref": "mithral-filings",
+          "qty": 1,
+          "badges": ["metal", "powder"]
+        }
+      ],
+      "requirements": {
+        "level_min": 1,
+        "features": []
+      },
+      "tags": ["ammo", "enchant"]
+    }
+  ],
+  "enums": {
+    "types": [
+      "potion",
+      "weapon",
+      "armor",
+      "ring",
+      "wand",
+      "staff",
+      "rod",
+      "wondrous",
+      "ammo",
+      "scroll"
+    ],
+    "rarities": [
+      "common",
+      "uncommon",
+      "rare",
+      "very rare",
+      "legendary",
+      "artifact",
+      "varies"
+    ]
+  }
+}

@@ -6,7 +6,7 @@
    - Hunting: adds 'hideType' and rarity filter
    - Selection = habitat weight × rarity weight (with optional rarity filter = exact match)
 */
-
+import { badgeHtml, titleCase } from "./badges.js";
 document.addEventListener("DOMContentLoaded", () => {
   // -------------------------
   // Config
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let lastHerbHabitat = null;
   let lastForageHabitat = null;
   let lastHuntHabitat = null;
-  
+
   // -------------------------
   // Utilities
   // -------------------------
@@ -212,40 +212,106 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ---------- Renderers ----------
   function renderHerb(h) {
-    const tags = `${h.rarity}${h.type?.length ? " • " + safeJoin(h.type) : ""}`;
-    elHerbResult &&
-      (elHerbResult.innerHTML = `<div class="tb-detail">
-        <div class="tb-detail-header">
-          <div class="tb-detail-name">${h.name}</div>
-          <div class="tb-badges"><span class="tb-badge">${tags}</span></div>
-        </div>
-        <div class="tb-detail-desc">${h.description}</div>
-      </div>`);
+    const pills = [];
+
+    // rarity → reuse Shop/Treasure style
+    if (h.rarity) {
+      const r = String(h.rarity)
+        .replace(/[_\s]+/g, " ")
+        .toLowerCase();
+      pills.push(badgeHtml(`rarity ${r}`, titleCase(r), { title: "Rarity" }));
+    }
+
+    // types (array or string) → use 'type' class for consistent styling
+    (Array.isArray(h.type) ? h.type : [h.type]).filter(Boolean).forEach((t) => {
+      const k = String(t).toLowerCase().replace(/\s+/g, "-");
+      pills.push(badgeHtml(`type type-${k}`, titleCase(t)));
+    });
+
+    const badges = pills.length
+      ? `<span class="tb-badges">${pills.join(" ")}</span>`
+      : "";
+
+    if (elHerbResult) {
+      elHerbResult.innerHTML = `<div class="tb-detail">
+      <div class="tb-detail-header">
+        <div class="tb-detail-name">${h.name}</div>
+        ${badges}
+      </div>
+      <div class="tb-detail-desc">${h.description}</div>
+    </div>`;
+    }
   }
 
   function renderForage(f) {
-    const tags = `${f.rarity}${f.category ? " • " + f.category : ""}`;
-    elForResult &&
-      (elForResult.innerHTML = `<div class="tb-detail">
-        <div class="tb-detail-header">
-          <div class="tb-detail-name">${f.name}</div>
-          <div class="tb-badges"><span class="tb-badge">${tags}</span></div>
-        </div>
-        <div class="tb-detail-desc">${f.description}</div>
-      </div>`);
+    const pills = [];
+
+    // rarity
+    if (f.rarity) {
+      const r = String(f.rarity)
+        .replace(/[_\s]+/g, " ")
+        .toLowerCase();
+      pills.push(badgeHtml(`rarity ${r}`, titleCase(r), { title: "Rarity" }));
+    }
+
+    // category (edible / medicinal / fruit …) → 'type' class
+    if (f.category) {
+      const c = String(f.category).toLowerCase().replace(/\s+/g, "-");
+      pills.push(badgeHtml(`type type-${c}`, titleCase(f.category)));
+    }
+
+    const badges = pills.length
+      ? `<span class="tb-badges">${pills.join(" ")}</span>`
+      : "";
+
+    if (elForResult) {
+      elForResult.innerHTML = `<div class="tb-detail">
+      <div class="tb-detail-header">
+        <div class="tb-detail-name">${f.name}</div>
+        ${badges}
+      </div>
+      <div class="tb-detail-desc">${f.description}</div>
+    </div>`;
+    }
   }
 
   function renderHunt(a) {
-    const tags = `${a.rarity}${a.hideType ? " • " + a.hideType : ""}${(a.yield!=null) ? " • Yield " + a.yield : ""}`;
-    elHuntResult &&
-      (elHuntResult.innerHTML = `<div class="tb-detail">
-        <div class="tb-detail-header">
-          <div class="tb-detail-name">${a.name}</div>
-          <div class="tb-badges"><span class="tb-badge">${tags}</span></div>
-        </div>
-        <div class="tb-detail-desc">${a.description}</div>
-      </div>`);
+    const pills = [];
+
+    // rarity
+    if (a.rarity) {
+      const r = String(a.rarity)
+        .replace(/[_\s]+/g, " ")
+        .toLowerCase();
+      pills.push(badgeHtml(`rarity ${r}`, titleCase(r), { title: "Rarity" }));
+    }
+
+    // hide type (leather / fur / chitin …)
+    if (a.hideType) {
+      const k = String(a.hideType).toLowerCase().replace(/\s+/g, "-");
+      pills.push(badgeHtml(`type type-${k}`, titleCase(a.hideType)));
+    }
+
+    // yield (optional)
+    if (a.yield != null) {
+      pills.push(badgeHtml(`yield`, `Yield ${a.yield}`));
+    }
+
+    const badges = pills.length
+      ? `<span class="tb-badges">${pills.join(" ")}</span>`
+      : "";
+
+    if (elHuntResult) {
+      elHuntResult.innerHTML = `<div class="tb-detail">
+      <div class="tb-detail-header">
+        <div class="tb-detail-name">${a.name}</div>
+        ${badges}
+      </div>
+      <div class="tb-detail-desc">${a.description}</div>
+    </div>`;
+    }
   }
+
   const showHerbMsg = (msg) => elHerbResult && (elHerbResult.textContent = msg);
   const showForageMsg = (msg) => elForResult && (elForResult.textContent = msg);
   const showHuntMsg = (msg) => elHuntResult && (elHuntResult.textContent = msg);
@@ -273,7 +339,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function huntAnimal(habitat) {
     lastHuntHabitat = habitat;
-    
+
     const eligible = HUNT.filter((a) => (a.habitats?.[habitat] || 0) > 0);
     if (!eligible.length)
       return showHuntMsg("You find no huntable animals here.");

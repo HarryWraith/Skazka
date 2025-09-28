@@ -1,16 +1,64 @@
-// blueprints.js — logic-only (no fallbacks). Fails loudly if /data/blueprints.json missing.
-let DATA = null;
-let ING_INDEX = new Map();
-let LAST = { results: [], selectedId: null };
+/* blueprints.js — list/detail UI for blueprints + ingredients cost lookup
+   Strict version: NO FALLBACK. Requires BOTH:
+     - ./data/blueprints.json
+     - ./data/ingredients.json
+   Exposes (for main.js):
+     ensureData, getState, filterResults, renderList, getById, renderDetail
+*/
+
+const BP_PATH = "./data/blueprints.json";
+const ING_PATH = "./data/ingredients.json";
+
+let STATE = {
+  DATA: null, // { schema, blueprints: [...] }
+  INGREDIENTS: null, // { schema, ingredients: [...] }
+  ING_INDEX: null, // Map(lowercase id/name -> ingredient)
+  LAST: { selectedId: null },
+};
+
+// ─────────────────────────── Loader ───────────────────────────
 
 export async function ensureData() {
-  if (DATA) return DATA;
-  const url = "./data/blueprints.json";
-  const res = await fetch(url, { cache: "no-store" });
-  if (!res.ok) throw new Error(`Failed to load ${url} (${res.status})`);
-  DATA = await res.json();
-  ING_INDEX = new Map((DATA.ingredients_catalog || []).map((x) => [x.id, x]));
-  return DATA;
+  if (STATE.DATA && STATE.INGREDIENTS && STATE.ING_INDEX) return STATE;
+
+  // Fetch both in parallel; no fallback.
+  const [bpResp, ingResp] = await Promise.all([
+    fetch(BP_PATH),
+    fetch(ING_PATH, { cache: "no-cache" }),
+  ]);
+
+  if (!bpResp.ok)
+    throw new Error(`Failed to load ${BP_PATH} (${bpResp.status})`);
+  if (!ingResp.ok)
+    throw new Error(`Failed to load ${ING_PATH} (${ingResp.status})`);
+
+  STATE.DATA = await bpResp.json();
+  STATE.INGREDIENTS = await ingResp.json();
+
+  // Build ingredient index
+  const list = Array.isArray(STATE.INGREDIENTS?.ingredients)
+    ? STATE.INGREDIENTS.ingredients
+    : null;
+  if (!list) throw new Error("ingredients.json is missing 'ingredients' array");
+
+  STATE.ING_INDEX = new Map();
+  for (const ing of list) {
+    const key = lc(ing.id || ing.name || "");
+    if (key) STATE.ING_INDEX.set(key, ing);
+  }
+
+  return STATE;
+}
+
+// ─────────────────────────── Query API ───────────────────────────
+
+export function getState() {
+  return STATE;
+}
+
+export function getById(id) {
+  const arr = STATE.DATA?.blueprints || [];
+  return arr.find((b) => String(b.id) === String(id)) || null;
 }
 
 export function filterResults({
@@ -18,247 +66,438 @@ export function filterResults({
   rarity = "__all__",
   search = "",
 } = {}) {
-  const all = DATA?.blueprints || [];
-  let out = all;
-  if (type !== "__all__") out = out.filter((b) => (b.type || "") === type);
-  if (rarity !== "__all__")
-    out = out.filter((b) => (b.rarity || "") === rarity);
-  if (search) {
-    const s = search.trim().toLowerCase();
-    out = out.filter((b) => {
-      const hay = [
-        b.result_name,
-        b.id,
-        b.rarity,
-        b.type,
-        ...(b.tags || []),
-        ...(b.ingredients || []).flatMap((ing) => {
-          const ref = ING_INDEX.get(ing.ref);
-          return [
-            ing.ref,
-            ref?.name,
-            ...(ref?.badges || []),
-            ...(ing.badges || []),
-          ];
-        }),
-      ]
-        .join(" | ")
-        .toLowerCase();
-      return hay.includes(s);
-    });
-  }
-  out = out
-    .slice()
-    .sort((a, b) =>
-      (a.result_name || a.id).localeCompare(b.result_name || b.id)
-    );
-  LAST.results = out;
-  return out;
+  const txt = lc(search.trim());
+  const tAll = lc(type) === "__all__";
+  const rAll = lc(rarity) === "__all__";
+
+  const list = (STATE.DATA?.blueprints || []).filter((b) => {
+    if (!b?.id || !b?.result_name) return false;
+    if (!tAll && lc(b.type) !== lc(type)) return false;
+    if (!rAll && lc(b.rarity) !== lc(rarity)) return false;
+    if (txt && !lc(b.result_name).includes(txt)) return false;
+    return true;
+  });
+
+  // stable sort: type → rarity bucket → name
+  const bucket = (r) =>
+    ({
+      common: 1,
+      uncommon: 2,
+      rare: 3,
+      "very rare": 4,
+      legendary: 5,
+      artifact: 6,
+      unique: 7,
+      varies: 8,
+    }[lc(r || "")] || 99);
+
+  return list.sort((a, b) => {
+    const t = lc(a.type).localeCompare(lc(b.type));
+    if (t) return t;
+    const rb = bucket(a.rarity) - bucket(b.rarity);
+    if (rb) return rb;
+    return lc(a.result_name).localeCompare(lc(b.result_name));
+  });
 }
 
-function coinText(gp) {
-  if (gp == null) return "";
-  const n = Number(gp);
-  if (isNaN(n)) return "";
-  return `${Math.round(n * 10) / 10} gp`;
+// ─────────────────────────── Rendering ───────────────────────────
+
+// Renders the left-hand list of blueprints WITHOUT any price
+export function renderList(container, arr) {
+  if (!container) return;
+  const rows = (arr || [])
+    .map((bp) => {
+      const type = titleCase(bp.type || "");
+      const rarity = titleCase(bp.rarity || "");
+      const sub = [type, rarity].filter(Boolean).join(" • ");
+      const total = getBlueprintCost(bp);
+      const priceHtml =
+        total != null ? `<span class="muted"> • ${gpFmt(total)}</span>` : "";
+      return `
+      <div class="tb-list-item tb-row tb-list-row" data-bp="${esc(bp.id)}">
+        <div class="tb-detail-name">${esc(bp.result_name)}${priceHtml}</div>
+        <div class="tb-sub muted">${esc(sub)}</div>
+        <div class="tb-badges">${renderBadges(bp)}</div>
+      </div>
+    `;
+    })
+    .join("");
+
+  container.innerHTML = `
+    <div id="bpList" class="tb-list">
+      ${rows || `<div class="muted">No results.</div>`}
+    </div>
+  `;
 }
-function gpToCoins(gp) {
-  const n = Number(gp || 0);
-  const whole = Math.floor(n);
-  const frac = Math.round((n - whole) * 10) / 10;
-  const coins = { pp: 0, gp: whole, sp: 0, cp: 0 };
-  if (frac >= 0.1) coins.sp = Math.round(frac * 10);
-  return coins;
+
+export function renderDetail(container, bp, opts = {}) {
+  if (!container) return;
+  if (!bp) {
+    container.innerHTML = `<div class="muted">Select a blueprint to view details.</div>`;
+    return;
+  }
+  STATE.LAST.selectedId = bp.id;
+
+  const kvRows = [];
+  kvRows.push(
+    `<div class="tb-kv-key">Type</div><div class="tb-kv-val">${esc(
+      titleCase(bp.type)
+    )}</div>`
+  );
+  if (bp.rarity) {
+    kvRows.push(
+      `<div class="tb-kv-key">Rarity</div><div class="tb-kv-val">${esc(
+        titleCase(bp.rarity)
+      )}</div>`
+    );
+  }
+  if (bp?.time?.value != null && bp?.time?.unit) {
+    kvRows.push(
+      `<div class="tb-kv-key">Time</div><div class="tb-kv-val">${esc(
+        String(bp.time.value)
+      )} ${esc(String(bp.time.unit))}</div>`
+    );
+  }
+
+  const totalCost = getBlueprintCost(bp);
+  if (totalCost != null) {
+    const coinMode = !!opts.coinMode;
+    kvRows.push(
+      `<div class="tb-kv-key">Cost</div><div class="tb-kv-val">${
+        coinMode ? coinsInline(totalCost) : esc(gpFmt(totalCost))
+      }</div>`
+    );
+  }
+
+  const ingTable = renderIngredientsTable(bp); // (new version below — no price column)
+
+  container.innerHTML = `
+    <div class="tb-detail">
+      <div class="tb-detail-header">
+        <h3 class="tb-detail-name">${esc(bp.result_name)}</h3>
+        <span class="tb-badges">${renderBadges(bp)}</span>
+      </div>
+
+      <div class="tb-kv">
+        ${kvRows.join("")}
+      </div>
+
+      <div class="hr"></div>
+      <div class="section-head">Ingredients</div>
+      ${ingTable}
+    </div>
+  `;
 }
-function renderCoins(coins, cls = "") {
-  if (!coins) return "";
+
+// ─────────────────────────── Helpers ───────────────────────────
+
+function gpFmt(n) {
+  return `${Number(n).toFixed(2).replace(/\.00$/, "")} gp`;
+}
+
+function coinsHtml(gp) {
+  const c = coinsFromGp(gp);
   const pill = (k, v) =>
     v ? `<span class="coin coin-${k}">${v}${k}</span>` : "";
-  return `<span class="coins ${cls}">${["pp", "gp", "sp", "cp"]
-    .map((k) => pill(k, coins[k]))
-    .join(" ")}</span>`;
+  return `
+    <div class="row"><span class="label">Cost</span>
+      <span class="value coins">
+        ${pill("pp", c.pp)}${pill("gp", c.gp)}${pill("sp", c.sp)}${pill(
+    "cp",
+    c.cp
+  )}
+      </span>
+    </div>`;
 }
 
-export function renderList(container, results, visibleCount = 5) {
-  const root =
-    typeof container === "string"
-      ? document.querySelector(container)
-      : container;
-  if (!root) return;
-  root.innerHTML = "";
-  if (!results?.length) {
-    root.textContent = "No blueprints match your filters.";
-    return;
-  }
-
-  const wrapper = document.createElement("div");
-  wrapper.className = "bp-scrollwrap";
-  wrapper.style.overflowY = "auto";
-
-  const table = document.createElement("table");
-  table.className = "tb-table";
-  table.innerHTML = `<thead><tr><th>Name</th><th>Type</th><th>Rarity</th></tr></thead>`;
-  const tbody = document.createElement("tbody");
-
-  results.forEach((bp) => {
-    const tr = document.createElement("tr");
-    tr.innerHTML = `<td><button class="tb-link" data-bp="${bp.id}">${
-      bp.result_name || bp.id
-    }</button></td><td>${bp.type}</td><td>${bp.rarity}</td>`;
-    tbody.appendChild(tr);
-  });
-
-  table.appendChild(tbody);
-  wrapper.appendChild(table);
-  root.appendChild(wrapper);
-
-  // Cap height to exactly N rows + header, so only 5 are visible and the rest scroll
-  requestAnimationFrame(() => {
-    try {
-      const rows = tbody.querySelectorAll("tr");
-      const header = table.tHead?.rows?.[0];
-      const rowH = rows[0]?.getBoundingClientRect().height || 36;
-      const headH = header?.getBoundingClientRect().height || 36;
-      const padding = 4;
-      wrapper.style.maxHeight =
-        Math.round(headH + rowH * visibleCount + padding) + "px";
-    } catch {
-      // fallback: approx height
-      wrapper.style.maxHeight = 36 * (visibleCount + 1) + "px";
-    }
-  });
+function coinsFromGp(gp) {
+  if (gp == null) return { pp: 0, gp: 0, sp: 0, cp: 0 };
+  let cp = Math.round(Number(gp) * 100);
+  const pp = Math.floor(cp / 1000);
+  cp -= pp * 1000;
+  const gpi = Math.floor(cp / 100);
+  cp -= gpi * 100;
+  const sp = Math.floor(cp / 10);
+  cp -= sp * 10;
+  return { pp, gp: gpi, sp, cp };
 }
 
-export function getById(id) {
-  return (DATA?.blueprints || []).find((b) => b.id === id) || null;
+function coinsInline(gp) {
+  const c = coinsFromGp(gp);
+  const pill = (k, v) =>
+    v ? `<span class="coin coin-${k}">${v}${k}</span>` : "";
+  return `<span class="coins">${pill("pp", c.pp)}${pill("gp", c.gp)}${pill(
+    "sp",
+    c.sp
+  )}${pill("cp", c.cp)}</span>`;
 }
 
-export function renderDetail(container, bp, { coinMode = false } = {}) {
-  const root =
-    typeof container === "string"
-      ? document.querySelector(container)
-      : container;
-  if (!root) return;
-  root.innerHTML = "";
-  if (!bp) {
-    root.textContent = "Select a blueprint to view details.";
-    return;
-  }
-  LAST.selectedId = bp.id;
+function renderTime(time) {
+  if (!time || time.value == null || !time.unit) return "";
+  return `<div class="row"><span class="label">Time</span><span class="value">${esc(
+    String(time.value)
+  )} ${esc(String(time.unit))}</span></div>`;
+}
 
-  const wrap = document.createElement("div");
-  wrap.className = "tb-stack";
+function renderIngredientsTable(bp) {
+  const ings = Array.isArray(bp.ingredients) ? bp.ingredients : [];
+  if (ings.length === 0) return `<div class="muted">—</div>`;
 
-  const h = document.createElement("h3");
-  h.textContent = `${bp.result_name || bp.id} — ${bp.rarity}`;
-  wrap.appendChild(h);
+  const rows = ings
+    .map((it) => {
+      const refKey = lc(it.ref || "");
+      const meta = STATE.ING_INDEX?.get(refKey) || null;
 
-  const meta = document.createElement("div");
-  meta.className = "tb-muted";
-  meta.textContent = `${bp.type} • ${
-    bp.dc != null ? "DC " + bp.dc + " • " : ""
-  }${bp.time?.value ?? "?"} ${bp.time?.unit ?? ""}`;
-  wrap.appendChild(meta);
+      const name = meta?.name || it.ref || "Unknown";
+      const unit = it.unit || meta?.unit || "";
+      const qty = (typeof it.qty === "number" ? it.qty : Number(it.qty)) || 1;
 
-  // tags (e.g., no-blueprint)
-  if (bp.tags && bp.tags.length) {
-    const tagbox = document.createElement("div");
-    tagbox.className = "tb-badges";
-    bp.tags.forEach((t) => {
-      const b = document.createElement("span");
-      b.className = `tb-badge ${t}`;
-      b.textContent = t.replace("-", " ");
-      tagbox.appendChild(b);
-    });
-    wrap.appendChild(tagbox);
-  }
+      // Row badges declared in the blueprint
+      const rawBadges = Array.isArray(it.badges)
+        ? it.badges.map((b) => lc(String(b)))
+        : [];
 
-  // ingredients table
-  const tbl = document.createElement("table");
-  tbl.className = "tb-table";
-  tbl.innerHTML = `<thead><tr><th>Ingredient</th><th>Qty</th><th>Unit</th><th>Badges</th><th>Cost</th></tr></thead>`;
-  const tbody = document.createElement("tbody");
-  (bp.ingredients || []).forEach((ing) => {
-    const ref = ING_INDEX.get(ing.ref);
-    const tr = document.createElement("tr");
-    const name = document.createElement("td");
-    name.textContent = ref?.name || ing.ref;
-    const qty = document.createElement("td");
-    qty.textContent = ing.qty ?? "";
-    const unit = document.createElement("td");
-    unit.textContent = ing.unit || ref?.unit || "";
-    const badges = document.createElement("td");
-    new Set([...(ref?.badges || []), ...(ing.badges || [])]).forEach((b) => {
-      const span = document.createElement("span");
-      span.className = `tb-badge ${b}`;
-      span.textContent = b;
-      badges.appendChild(span);
-    });
-    const cost = document.createElement("td");
-    const c = ref?.price_gp;
-    cost.innerHTML = coinMode ? renderCoins(gpToCoins(c)) : coinText(c);
-    tr.append(name, qty, unit, badges, cost);
-    tbody.appendChild(tr);
-  });
-  tbl.appendChild(tbody);
-  wrap.appendChild(tbl);
+      // Base rows: only base + item family
+      const isBase = rawBadges.includes("base");
+      const BASE_ALLOWED = new Set([
+        "base",
+        "ammo",
+        "weapon",
+        "armor",
+        "shield",
+        "wondrous",
+        "wand",
+        "staff",
+        "rod",
+        "ring",
+      ]);
+      const showBadges = isBase
+        ? rawBadges.filter((t) => BASE_ALLOWED.has(t))
+        : rawBadges;
 
-  const cost = bp.cost || {};
-  const totalEl = document.createElement("div");
-  totalEl.className = "tb-kv";
-  const totalHtml = `
-    <div class="tb-kv-row"><div>Total cost</div><div><strong>${
-      coinMode
-        ? renderCoins(gpToCoins(cost.total_gp ?? 0), "tight")
-        : coinText(cost.total_gp ?? 0)
-    }</strong></div></div>
-    ${
-      "materials_gp" in cost
-        ? `<div class="tb-kv-row"><div>Materials</div><div>${
-            coinMode
-              ? renderCoins(gpToCoins(cost.materials_gp), "tight")
-              : coinText(cost.materials_gp)
-          }</div></div>`
-        : ""
-    }
-    ${
-      "consumables_gp" in cost
-        ? `<div class="tb-kv-row"><div>Consumables</div><div>${
-            coinMode
-              ? renderCoins(gpToCoins(cost.consumables_gp), "tight")
-              : coinText(cost.consumables_gp)
-          }</div></div>`
-        : ""
-    }
-    ${
-      "tool_wear_gp" in cost
-        ? `<div class="tb-kv-row"><div>Tool wear</div><div>${
-            coinMode
-              ? renderCoins(gpToCoins(cost.tool_wear_gp), "tight")
-              : coinText(cost.tool_wear_gp)
-          }</div></div>`
-        : ""
-    }
+      const tagPills = showBadges.map((t) => {
+        const cls = t.replace(/\s+/g, "_");
+        return `<span class="tb-badge ${cls}">${esc(t)}</span>`;
+      });
+
+      // Ingredient type pill (consistent with badges.js look)
+      const ingType = lc(meta?.type || ""); // e.g. metal, gem, herb, mineral, etc.
+      const typePill = ingType
+        ? `<span class="tb-badge ${esc(
+            ingType
+          )}" style="margin-left:.5rem;">${titleCase(ingType)}</span>`
+        : "";
+
+      // Cost for this row (price_gp × qty)
+      const price =
+        meta && meta.price_gp != null ? Number(meta.price_gp) : null;
+      const rowCost =
+        price != null && !Number.isNaN(price) ? price * Number(qty) : null;
+
+      return `
+      <tr>
+        <td class="col-ing">
+          <div class="name-line">
+            <span class="tb-detail-name">${esc(name)}</span>${typePill}
+          </div>
+        </td>
+        <td class="col-qty">${esc(String(qty))}</td>
+        <td class="col-unit">${esc(unit)}</td>
+        <td class="col-badges">
+          ${
+            tagPills.length
+              ? `<div class="tb-badges">${tagPills.join(" ")}</div>`
+              : ""
+          }
+        </td>
+        <td class="col-cost" title="${
+          price != null && rowCost != null
+            ? `${gpFmt(price)} × ${qty} = ${gpFmt(rowCost)}`
+            : ""
+        }">
+          ${
+            rowCost != null
+              ? `<span class="muted">${gpFmt(
+                  price
+                )} ea</span> &times; ${qty} = <strong>${gpFmt(
+                  rowCost
+                )}</strong>`
+              : "—"
+          }
+        </td>
+      </tr>
+    `;
+    })
+    .join("");
+
+  const total = getBlueprintCost(bp);
+
+  return `
+    <table class="tb-table">
+      <colgroup>
+        <col class="col-ing" />
+        <col class="col-qty" />
+        <col class="col-unit" />
+        <col class="col-badges" />
+        <col class="col-cost" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th class="col-ing">Ingredient</th>
+          <th class="col-qty">Qty</th>
+          <th class="col-unit">Unit</th>
+          <th class="col-badges">Tags</th>
+          <th class="col-cost">Cost</th>
+        </tr>
+      </thead>
+      <tbody>${rows}</tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4" style="text-align:right;"><strong>Total</strong></td>
+          <td class="col-cost"><strong>${(function () {
+            const total = getBlueprintCost(bp);
+            return total != null ? gpFmt(total) : "—";
+          })()}</strong></td>
+        </tr>
+      </tfoot>
+    </table>
   `;
-  totalEl.innerHTML = totalHtml;
-  wrap.appendChild(totalEl);
-
-  if (bp.requirements) {
-    const req = document.createElement("div");
-    req.className = "tb-help";
-    const feats = (bp.requirements.features || []).join(", ");
-    const lvl = bp.requirements.level_min
-      ? `Level ${bp.requirements.level_min}`
-      : "";
-    const extra = bp.requirements.notes ? ` — ${bp.requirements.notes}` : "";
-    const parts = [lvl, feats].filter(Boolean).join(" • ");
-    req.textContent = parts ? `Requires: ${parts}${extra}` : `Requires: —`;
-    wrap.appendChild(req);
-  }
-
-  root.appendChild(wrap);
 }
 
-export function getState() {
-  return { DATA, ING_INDEX, LAST };
+// Total cost: explicit total if present; else sum ingredients (price_gp × qty)
+function getBlueprintCost(bp) {
+  const explicit = Number(bp?.cost?.total_gp);
+  if (!Number.isNaN(explicit) && explicit > 0) return round2(explicit);
+
+  let total = 0,
+    seenAny = false;
+  for (const it of bp.ingredients || []) {
+    const meta = STATE.ING_INDEX?.get(lc(it.ref || "")) || null;
+    const price = meta && meta.price_gp != null ? Number(meta.price_gp) : null;
+    const qty = (typeof it.qty === "number" ? it.qty : Number(it.qty)) || 1;
+    if (
+      price != null &&
+      !Number.isNaN(price) &&
+      qty != null &&
+      !Number.isNaN(qty)
+    ) {
+      total += price * qty;
+      seenAny = true;
+    }
+  }
+  return seenAny ? round2(total) : null;
+}
+
+function round2(n) {
+  return Math.round(Number(n) * 100) / 100;
+}
+
+// ─────────────────────────── Badges (minimal, n/a suppressed) ───────────────────────────
+
+function renderBadges(entity) {
+  const lc = (s) =>
+    String(s || "")
+      .toLowerCase()
+      .trim();
+  const titleCase = (s) =>
+    String(s || "")
+      .replace(/[_-]+/g, " ")
+      .replace(/\s+/g, " ")
+      .trim()
+      .replace(/\b\w/g, (c) => c.toUpperCase());
+  const isNA = (s) => {
+    const v = lc(s);
+    return !v || v === "n/a" || v === "na" || v === "-" || v === "—";
+  };
+
+  // Map normalized item "type" → badge class your CSS already styles
+  const TYPE_BADGE = {
+    weapon: "weapon",
+    armor: "armor",
+    shield: "shield",
+    ring: "ring",
+    wand: "wand",
+    staff: "staff",
+    rod: "rod",
+    ammunition: "ammo",
+    ammo: "ammo",
+    "wondrous item": "wondrous",
+    wondrous: "wondrous",
+    scroll: "scroll",
+    potion: "potion",
+    poison: "poison",
+  };
+
+  const badges = [];
+  const add = (cls, label, title = label) => {
+    if (!isNA(label))
+      badges.push(
+        `<span class="tb-badge ${cls}" title="${title}">${label}</span>`
+      );
+  };
+
+  // rarity
+  const rRaw = String(entity?.rarity || "");
+  if (!isNA(rRaw)) {
+    const r = lc(rRaw.replace(/[_-]+/g, " "));
+    add(
+      `rarity ${r}`,
+      r.replace(/\b\w/g, (c) => c.toUpperCase()),
+      "Rarity"
+    );
+  }
+
+  // attunement
+  if (entity.attunement === true)
+    add("attune attune-true", "attune", "Requires attunement");
+  else if (entity.attunement === false)
+    add("attune attune-false", "no attune", "No attunement required");
+
+  // consumable
+  if (entity.is_consumable) add("consumable", "consumable");
+
+  // type → use your CSS classes (no "type-" prefix)
+  const tBadge = TYPE_BADGE[lc(entity.type)];
+  if (tBadge) add(tBadge, titleCase(entity.type), "Type");
+
+  // illicit
+  const tags = Array.isArray(entity.tags) ? entity.tags.map(lc) : [];
+  if (tags.includes("illicit"))
+    add("illicit", "illicit", "Restricted / illicit goods");
+
+  // publication → SRD only
+  if (lc(entity.publication) === "srd")
+    add("pub pub-srd", "srd", "Open content");
+
+  return badges.length
+    ? `<span class="tb-badges">${badges.join(" ")}</span>`
+    : "";
+}
+
+function norm(s) {
+  const v = lc(s);
+  if (!v || v === "n/a" || v === "na" || v === "-" || v === "—") return "";
+  return v;
+}
+
+// ─────────────────────────── utils ───────────────────────────
+
+function lc(s) {
+  return String(s || "").toLowerCase();
+}
+function esc(s) {
+  return String(s || "").replace(
+    /[&<>"']/g,
+    (c) =>
+      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[
+        c
+      ])
+  );
+}
+function titleCase(s) {
+  return String(s || "")
+    .replace(/[_-]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .replace(/\b\w/g, (c) => c.toUpperCase());
 }

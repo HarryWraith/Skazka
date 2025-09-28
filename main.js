@@ -62,6 +62,7 @@ import "./services.js";
 import "./shop.js";
 import "./inn.js";
 import "./gathering.js"; // was already working for you
+import "./badges.js";
 
 // Logic-only modules (no DOM bleed)
 import * as weather from "./weather.js";
@@ -343,6 +344,27 @@ async function boot() {
           .join(" ")}</span>`
       : "";
 
+  // Minimal type-badge helper for Random Gem/Art
+  const _clsSafe = (t) =>
+    String(t || "")
+      .toLowerCase()
+      .replace(/\s+/g, "-")
+      .replace(/[^a-z0-9-]/g, "-")
+      .replace(/-+/g, "-")
+      .replace(/^-|-$/g, "");
+  const _title = (s) =>
+    String(s || "").replace(/\w\S*/g, (w) => w[0].toUpperCase() + w.slice(1));
+  const _typeBadge = (it) => {
+    const cls = _clsSafe(it?.type);
+    return cls
+      ? `<span class="tb-badge ${cls}" title="Type">${_title(it.type)}</span>`
+      : "";
+  };
+  const _srdBadge = (it) =>
+    String(it?.publication || "").toLowerCase() === "srd"
+      ? `<span class="tb-badge pub pub-srd" title="Open content">SRD</span>`
+      : "";
+
   _get("rollTreasure")?.addEventListener("click", async () => {
     await treasure.loadTreasureData?.();
     const level = _get("treasureLevel")?.value || "levelNormal";
@@ -374,17 +396,9 @@ async function boot() {
       : "—";
     const coins = _renderCoins(g?.sell_coins, "coins-sell");
 
-    const hasTag = (tag) =>
-      Array.isArray(g?.tags) &&
-      g.tags.some((t) => String(t).toLowerCase() === tag);
-
-    const badges = [
-      hasTag("gem") && `<span class="tb-badge gem" title="Gem">Gem</span>`,
-      hasTag("reagent") &&
-        `<span class="tb-badge reagent" title="Crafting Reagent">Reagent</span>`,
-    ]
-      .filter(Boolean)
-      .join(" ");
+    const badges = g
+      ? [_typeBadge(g), _srdBadge(g)].filter(Boolean).join(" ")
+      : "";
 
     _get("treasureResult").innerHTML = `
     <div><strong>Random Gem</strong></div>
@@ -398,15 +412,23 @@ async function boot() {
     await treasure.loadTreasureData?.();
     const band = _get("treasureBand")?.value || "mid";
     const level = _get("treasureLevel")?.value || "levelNormal";
-    const t = treasure.rollTreasure?.("hoard", band, level);
-    const a = t?.art_items?.[0];
+    let a = null;
+    for (let i = 0; i < 8 && !a; i++) {
+      const tt = treasure.rollTreasure?.("hoard", band, level);
+      a = tt?.art_items?.[0] || null;
+    }
     const label = a
       ? `${a.name}${a.sell_price != null ? ` (${a.sell_price} gp)` : ""}`
       : "—";
     const coins = _renderCoins(a?.sell_coins, "coins-sell");
-    _get(
-      "treasureResult"
-    ).innerHTML = `<div><strong>Random Art</strong></div><div class="loot-line loot-art">${label} ${coins}</div>`;
+    const badges = a
+      ? [_typeBadge(a), _srdBadge(a)].filter(Boolean).join(" ")
+      : "";
+
+    _get("treasureResult").innerHTML = `<div><strong>Random Art</strong></div>
+       <div class="loot-line loot-art">
+         <span class="tb-detail-name">${label}</span> ${badges} ${coins}
+       </div>`;
   });
 
   // ─────────────────── NAMES ───────────────────
@@ -440,10 +462,10 @@ async function boot() {
   // ─────────────── BLUEPRINTS (Magic Item Blueprints) ───────────────
   $("#bpShow")?.addEventListener("click", async () => {
     try {
-      await blueprints.ensureData(); // loads ./data/blueprints.json (no fallbacks)
+      await blueprints.ensureData(); // loads ./data/blueprints.json and ./data/ingredients.json (no fallback)
     } catch (e) {
       console.error(e);
-      $("#bpResult").textContent = "Failed to load /data/blueprints.json";
+      $("#bpResult").textContent = "Failed to load blueprints/ingredients.";
       return;
     }
 
@@ -454,11 +476,20 @@ async function boot() {
     const results = blueprints.filterResults({ type, rarity, search });
     blueprints.renderList($("#bpResult"), results);
 
-    // click a row to render details on the right
+    // Click a row to render details on the right
     $("#bpResult").onclick = (ev) => {
-      const btn = ev.target.closest("[data-bp]");
-      if (!btn) return;
-      const id = btn.getAttribute("data-bp");
+      const li = ev.target.closest("#bpList .tb-list-item[data-bp]");
+      if (!li) return;
+
+      // selection styling
+      for (const el of document.querySelectorAll(
+        "#bpList .tb-list-item[aria-selected]"
+      )) {
+        el.removeAttribute("aria-selected");
+      }
+      li.setAttribute("aria-selected", "true");
+
+      const id = li.getAttribute("data-bp");
       const bp = blueprints.getById(id);
       blueprints.renderDetail($("#bpDetail"), bp, {
         coinMode: $("#bpCoins")?.checked,

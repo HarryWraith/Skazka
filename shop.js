@@ -1,9 +1,4 @@
-// shop.js — catalog-driven shop with badges, coin chips, live filters/search
-// PUBLIC vs PRIVATE: slider 0=Public (SRD + homebrew), 1=Private (all; prompt every time)
-
-/* =========================
-   Catalog loader
-   ========================= */
+import { badgeHtml, coinRowHtml } from "./badges.js";
 const CATALOG_PATH = "./data/catalog.json";
 let CATALOG_DATA = null;
 
@@ -54,81 +49,107 @@ function coinsFromGp(gp) {
 }
 
 function coinRow(coins, cls = "") {
-  if (!coins) return "";
-  const parts = [];
-  if (coins.pp) parts.push(`<span class="coin coin-pp">${coins.pp}pp</span>`);
-  if (coins.gp) parts.push(`<span class="coin coin-gp">${coins.gp}gp</span>`);
-  if (coins.sp) parts.push(`<span class="coin coin-sp">${coins.sp}sp</span>`);
-  if (coins.cp) parts.push(`<span class="coin coin-cp">${coins.cp}cp</span>`);
-  return parts.length
-    ? `<span class="coins ${cls}">${parts.join(" ")}</span>`
-    : "";
+  return coinRowHtml(coins, cls);
 }
 
 /* =========================
    Badges
    ========================= */
-function renderBadges(item) {
-  const lc = (s) => String(s || "").toLowerCase();
+function renderBadges(entity) {
+  const lc = (s) =>
+    String(s || "")
+      .toLowerCase()
+      .trim();
   const titleCase = (s) =>
     String(s || "")
       .replace(/[_-]+/g, " ")
       .replace(/\s+/g, " ")
       .trim()
       .replace(/\b\w/g, (c) => c.toUpperCase());
+  const isNA = (s) => {
+    const v = lc(s);
+    return !v || v === "n/a" || v === "na" || v === "-" || v === "—";
+  };
+
+  // Map normalized item "type" → badge class your CSS already styles
+  const TYPE_BADGE = {
+    weapon: "weapon",
+    armor: "armor",
+    shield: "shield",
+    ring: "ring",
+    wand: "wand",
+    staff: "staff",
+    rod: "rod",
+    ammunition: "ammo",
+    ammo: "ammo",
+    "wondrous item": "wondrous",
+    wondrous: "wondrous",
+    weapons: "weapon",
+    rings: "ring",
+    staves: "staff",
+    potions: "potion",
+    goods: "goods",
+    gear: "gear",
+    art: "art",
+    gems: "gems",
+  };
 
   const badges = [];
-  const add = (cls, label, title = label) =>
-    badges.push(
-      `<span class="tb-badge ${cls}" title="${title}">${label}</span>`
-    );
+  const add = (cls, label, title = label) => {
+    if (!isNA(label)) badges.push(badgeHtml(cls, label, { title }));
+  };
 
-  // Rarity → classes & label (e.g., "very_rare" => class="very rare", label "Very Rare")
-  const rRaw = String(item?.rarity || "").trim();
-  const rNorm = rRaw.replace(/[_-]+/g, " ").toLowerCase();
-  if (rNorm) {
-    const rClasses = rNorm.split(/\s+/).join(" ");
-    const rLabel = rNorm.replace(/\b\w/g, (c) => c.toUpperCase());
-    add(`rarity ${rClasses}`, rLabel, "Rarity");
-  }
-
-  // Attunement
-  if (item.attunement === true)
-    add("attune attune-true", "Attune", "Requires attunement");
-  else if (item.attunement === false)
-    add("attune attune-false", "No Attune", "No attunement required");
-
-  // Slot
-  if (item.slot)
-    add(`slot slot-${lc(item.slot)}`, titleCase(item.slot), "Slot");
-
-  // Consumable
-  if (item.is_consumable) add("consumable", "Consumable");
-
-  // NEW — vestige / cursed / sentient / charges / tattoo / focus
-  if (item.is_vestige) {
-    const stageRaw = item.vestige_stage && String(item.vestige_stage).trim();
-    const stage = stageRaw
-      ? stageRaw.charAt(0).toUpperCase() + stageRaw.slice(1)
-      : null;
+  // rarity
+  const rRaw = String(entity?.rarity || "");
+  if (!isNA(rRaw)) {
+    const r = lc(rRaw.replace(/[_-]+/g, " "));
     add(
-      "vestige",
-      stage ? `Vestige: ${stage}` : "Vestige",
-      "Vestige of Divergence"
+      `rarity ${r}`,
+      r.replace(/\b\w/g, (c) => c.toUpperCase()),
+      "Rarity"
     );
   }
-  if (item.is_cursed) add("cursed", "Cursed");
-  if (item.is_sentient) add("sentient", "Sentient");
-  if (item.has_charges) add("charges", "Charges");
-  if (String(item.subtype || "").toLowerCase() === "tattoo")
-    add("tattoo", "Tattoo");
-  if (item.is_focus) add("focus", "Focus", "Spellcasting Focus");
 
-  // Publication (uses your data values; CSS maps class names to colors)
-  if (item.publication) {
-    const pubKey = lc(item.publication).replace(/[^a-z0-9]+/g, "-"); // e.g. "wotc_exp" → "wotc-exp"
-    add(`pub pub-${pubKey}`, titleCase(item.publication), "Publication");
+  // attunement
+  if (entity.attunement === true)
+    add("attune attune-true", "attune", "Requires attunement");
+
+  // consumable
+  if (entity.is_consumable) add("consumable", "consumable");
+
+  // type → use your CSS classes (no "type-" prefix)
+  const t = lc(entity.type);
+  if (!isNA(t)) {
+    // Special aliases that your CSS already colors
+    const TYPE_BADGE = {
+      weapon: "weapon",
+      armor: "armor",
+      shield: "shield",
+      ring: "ring",
+      wand: "wand",
+      staff: "staff",
+      rod: "rod",
+      ammunition: "ammo",
+      ammo: "ammo",
+      "wondrous item": "wondrous",
+      wondrous: "wondrous",
+    };
+
+    const styled = TYPE_BADGE[t] || TYPE_BADGE[titleCase(t).toLowerCase()];
+    // 1) Always add the generic type class so everything has a pill
+    add(t, titleCase(entity.type), "Type");
+    // 2) If a styled alias exists, add that too (duplicates are harmless visually)
+    if (styled && styled !== t) add(styled, titleCase(entity.type), "Type");
   }
+
+  // illicit
+  const tags = Array.isArray(entity.tags) ? entity.tags.map(lc) : [];
+  if (tags.includes("illicit"))
+    add("illicit", "illicit", "Restricted / illicit goods");
+
+  // publication → SRD only
+  if (lc(entity.publication) === "srd")
+    add("pub pub-srd", "srd", "Open content");
 
   return badges.length
     ? `<span class="tb-badges">${badges.join(" ")}</span>`
@@ -179,14 +200,7 @@ function clearShopDetail() {
 const INCLUDE_UNPRICED = true;
 
 function allowedInPublic(pub) {
-  const p = lc(pub);
-  return (
-    p === "homebrew" ||
-    p === "srd" ||
-    p === "srd5.1" ||
-    p === "srd5_1" ||
-    p === "srd5-1"
-  );
+  return String(pub || "").toLowerCase() === "srd";
 }
 
 function shopItems() {
@@ -195,14 +209,16 @@ function shopItems() {
   return items.filter((it) => {
     if (!it || !it.name) return false;
     if (!priv && !allowedInPublic(it.publication)) return false;
-    return INCLUDE_UNPRICED || Number.isFinite(Number(it.price_gp));
+    return INCLUDE_UNPRICED || Number.isFinite(Number(it.price));
   });
 }
 
 function categoriesFrom(items) {
   const set = new Set();
-  for (const it of items)
-    set.add(it.category || (it._from_magic ? "magic" : "general"));
+  for (const it of items) {
+    const t = String(it?.type || "misc").toLowerCase();
+    set.add(t);
+  }
   return Array.from(set).sort((a, b) => a.localeCompare(b));
 }
 
@@ -249,17 +265,14 @@ function _scoreItem(it) {
 }
 
 function dedupeRows(rows) {
-  const byName = new Map();
+  const byId = new Map();
   for (const r of rows) {
-    const key = lc(
-      String(r.item.name || "")
-        .replace(/\s+/g, " ")
-        .trim()
-    );
-    const prev = byName.get(key);
-    if (!prev || _scoreItem(r.item) > _scoreItem(prev.item)) byName.set(key, r);
+    const key = String(r?.item?.id ?? "").trim();
+    if (!key) continue; // if an item somehow lacks an id, skip it
+    const prev = byId.get(key);
+    if (!prev || _scoreItem(r.item) > _scoreItem(prev.item)) byId.set(key, r);
   }
-  return Array.from(byName.values());
+  return Array.from(byId.values());
 }
 
 /* =========================
@@ -284,7 +297,7 @@ function filterSortRows(items, filters) {
     if (!it || !it.name) continue;
 
     if (filters.cat && filters.cat !== "__all__") {
-      const cat = it.category || (it._from_magic ? "magic" : "general");
+      const cat = String(it.type || "misc").toLowerCase();
       if (cat !== filters.cat) continue;
     }
     if (filters.qStr) {
@@ -294,9 +307,7 @@ function filterSortRows(items, filters) {
       if (!hay.includes(filters.qStr)) continue;
     }
 
-    const base = Number.isFinite(Number(it.price_gp))
-      ? round2(it.price_gp)
-      : null;
+    const base = Number.isFinite(Number(it.price)) ? round2(it.price) : null;
     const adj = computeAdjustedPrice(
       base,
       filters.demand,
@@ -390,15 +401,15 @@ function renderDetail(item) {
   if (!item) return "";
   const badges = renderBadges(item); // returns a single <span class="tb-badges">…</span>
 
-  const hasBase = Number.isFinite(Number(item.price_gp));
-  const baseVal = hasBase ? round2(item.price_gp) : null;
+  const hasBase = Number.isFinite(Number(item.price));
+  const baseVal = hasBase ? round2(item.price) : null;
   const baseStr = baseVal != null ? `${baseVal} gp` : "—";
   const baseCoins = item.price_coins ?? (hasBase ? coinsFromGp(baseVal) : null);
 
   const sellVal = Number.isFinite(Number(item.sell_price))
     ? round2(item.sell_price)
     : hasBase
-    ? round2(item.price_gp * 0.5)
+    ? round2(item.price * 0.5)
     : null;
   const sellStr = sellVal != null ? `${sellVal} gp` : "—";
   const sellCoins =
@@ -414,21 +425,18 @@ function renderDetail(item) {
   })();
 
   const lines = [
-    ["Category", titleCase(item.category || "—")],
     ["Type", titleCase(item.type || "—")],
     ["Rarity", titleCase(item.rarity || "—")],
     [
       "Attunement",
       item.attunement === true ? "Yes" : item.attunement === false ? "No" : "—",
     ],
-    ["Slot", titleCase(item.slot || "—")],
+
     ["Consumable", item.is_consumable ? "Yes" : "No"],
-    ["Identification", item.identification || "—"],
+
     ["Publication", item.publication || "—"],
-    ["Source", item.source || "—"],
+
     // NEW
-    ["Weight", weightStr],
-    ["Reference", item.reference || "—"],
   ]
     .map(
       ([k, v]) =>
@@ -476,10 +484,8 @@ function exportCSV(rows) {
   const headers = [
     "id",
     "name",
-    "category",
     "rarity",
     "attunement",
-    "slot",
     "consumable",
     "base_gp",
     "adjusted_gp",
@@ -491,14 +497,12 @@ function exportCSV(rows) {
       const vals = [
         it.id ?? "",
         it.name ?? "",
-        it.category ?? "",
         it.rarity ?? "",
         it.attunement === true
           ? "true"
           : it.attunement === false
           ? "false"
           : "",
-        it.slot ?? "",
         it.is_consumable ? "true" : "",
         r.base_gp ?? "",
         r.adj_gp ?? "",
@@ -601,23 +605,18 @@ document.addEventListener("DOMContentLoaded", async () => {
   populateCategoryOptions();
 
   // Slider: always prompt on public→private; clear detail; refresh
-  // Slider: always prompt on public→private; clear detail; refresh
   if (slider && slider.dataset.bound !== "1") {
     slider.dataset.bound = "1";
-    slider.addEventListener(
-      "change",
-      () => {
-        if (slider.value === "1") {
-          if (!requirePrivatePassword()) {
-            slider.value = "0";
-          }
+    slider.addEventListener("change", () => {
+      if (slider.value === "1") {
+        if (!requirePrivatePassword()) {
+          slider.value = "0";
         }
-        clearShopDetail();
-        populateCategoryOptions();
-        runShop();
-      },
-      { once: true }
-    );
+      }
+      clearShopDetail();
+      populateCategoryOptions();
+      runShop();
+    }); // ← no { once: true }
   } // ← closes the if
 
   // Haggle buttons

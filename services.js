@@ -1,4 +1,11 @@
-/* services.js — robust renderer + typed badges + coin chips (pp/gp/sp/cp) */
+import {
+  badge,
+  qualityPill,
+  modelPill as modelPillShared,
+  countBadge,
+  illicitPill,
+  coinChipsNode,
+} from "./badges.js";
 
 let DATA_URL = "./data/services.json"; // single source of truth
 let servicesCache = null;
@@ -146,72 +153,17 @@ const MODEL_LABEL = {
   per_letter: "per letter",
   per_load: "per load",
 };
-
-// Typed pills (so you can style via CSS like .tb-badge.type.type-inn, etc.)
 function typePill(key) {
-  const span = document.createElement("span");
-  span.className = `tb-badge type type-${key}`;
-  span.textContent = TYPE_LABEL[key] || key;
-  return span;
-}
-
-function qualityPill(q) {
-  const cls = String(q || "").replace(/_/g, "-"); // low_quality -> low-quality
-  const span = document.createElement("span");
-  span.className = `tb-badge quality quality-${cls}`;
-  span.textContent = (q || "")
-    .replace(/_/g, " ")
-    .replace(/\b\w/g, (s) => s.toUpperCase());
-  return span;
+  // keep .type for semantics; add .kind to inherit existing styling
+  return badge(`type kind type-${key} kind-${key}`, TYPE_LABEL[key] || key);
 }
 
 function modelPill(model) {
-  const cls = String(model || "").replace(/_/g, "-"); // per_meal -> per-meal
-  const span = document.createElement("span");
-  span.className = `tb-badge model model-${cls}`;
-  span.textContent = MODEL_LABEL[model] || model;
-  return span;
+  return modelPillShared(model, MODEL_LABEL);
 }
 
-function countBadge(n) {
-  const span = document.createElement("span");
-  span.className = "tb-badge count";
-  span.textContent = String(n);
-  return span;
-}
-
-function illicitBadge(is) {
-  if (!is) return null;
-  const span = document.createElement("span");
-  // include both 'illicit' and warn class so your CSS can hook either
-  span.className = "tb-badge illicit tb-badge-warn";
-  span.textContent = "Illicit";
-  return span;
-}
-
-/* coin chips with currency suffixes (pp/gp/sp/cp) */
-function coinChips(price) {
-  const wrap = document.createElement("span");
-  wrap.className = "coins";
-  const order = [
-    ["pp", "pp"],
-    ["gp", "gp"],
-    ["sp", "sp"],
-    ["cp", "cp"],
-  ];
-  let added = false;
-  for (const [k, suf] of order) {
-    const v = price?.[k];
-    if (!v) continue;
-    const el = document.createElement("span");
-    el.className = `coin coin-${k}`;
-    el.textContent = `${v}${suf}`;
-    wrap.append(el);
-    added = true;
-  }
-  if (!added) wrap.textContent = "—";
-  return wrap;
-}
+const illicitBadge = illicitPill; // keep existing variable name used below
+const coinChips = coinChipsNode; // in case it's referenced anywhere later
 
 function renderServiceRow(s) {
   const li = document.createElement("li");

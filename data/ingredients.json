@@ -1,0 +1,3564 @@
+{
+  "ingredients": [
+    {
+      "id": "acid-vial",
+      "name": "Acid (vial)",
+      "price_gp": "25",
+      "rarity": "common",
+      "unit": "vial",
+      "type": "organic"
+    },
+    {
+      "id": "adamantine-filings-1-oz",
+      "name": "Adamantine filings (1 oz)",
+      "price_gp": "62.5",
+      "rarity": "very rare",
+      "unit": "pinch",
+      "type": "metal"
+    },
+    {
+      "id": "agate-banded",
+      "name": "Agate (banded)",
+      "price_gp": "10",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "agate-moss",
+      "name": "Agate (moss)",
+      "price_gp": "10",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "alexandrite",
+      "name": "Alexandrite",
+      "price_gp": "500",
+      "rarity": "rare",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "amazonite",
+      "name": "Amazonite",
+      "price_gp": "10",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "amber",
+      "name": "Amber",
+      "price_gp": "100",
+      "rarity": "uncommon",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "amethyst",
+      "name": "Amethyst",
+      "price_gp": "100",
+      "rarity": "uncommon",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "ametrine",
+      "name": "Ametrine",
+      "price_gp": "100",
+      "rarity": "uncommon",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "ammolite",
+      "name": "Ammolite",
+      "price_gp": "500",
+      "rarity": "rare",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "andalusite",
+      "name": "Andalusite",
+      "price_gp": "100",
+      "rarity": "uncommon",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "antitoxin-vial",
+      "name": "Antitoxin (vial)",
+      "price_gp": "50",
+      "rarity": "common",
+      "unit": "vial",
+      "type": "alchemical"
+    },
+    {
+      "id": "aquamarine",
+      "name": "Aquamarine",
+      "price_gp": "500",
+      "rarity": "rare",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "aventurine",
+      "name": "Aventurine",
+      "price_gp": "10",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "azurite",
+      "name": "Azurite",
+      "price_gp": "10",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "benitoite",
+      "name": "Benitoite",
+      "price_gp": "5000",
+      "rarity": "very rare",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "black-opal",
+      "name": "Black Opal",
+      "price_gp": "1000",
+      "rarity": "very rare",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "black-pearl",
+      "name": "Black Pearl",
+      "price_gp": "500",
+      "rarity": "rare",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "bloodstone",
+      "name": "Bloodstone",
+      "price_gp": "50",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "blue-lace-agate",
+      "name": "Blue Lace Agate",
+      "price_gp": "50",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "blue-sapphire",
+      "name": "Blue Sapphire",
+      "price_gp": "1000",
+      "rarity": "very rare",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "carnelian",
+      "name": "Carnelian (50 gp)",
+      "price_gp": "50",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "carnelian-20-gp",
+      "name": "Carnelian (20 gp)",
+      "price_gp": "20",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "chalcedony",
+      "name": "Chalcedony",
+      "price_gp": "50",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "chrysoberyl",
+      "name": "Chrysoberyl",
+      "price_gp": "500",
+      "rarity": "rare",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "chrysocolla",
+      "name": "Chrysocolla",
+      "price_gp": "50",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "chrysoprase",
+      "name": "Chrysoprase",
+      "price_gp": "50",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "citrine",
+      "name": "Citrine",
+      "price_gp": "50",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "coral-red",
+      "name": "Coral (red)",
+      "price_gp": "100",
+      "rarity": "uncommon",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "diamond-50-gp-focus",
+      "name": "Diamond (50 gp)",
+      "price_gp": "50",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "diamond-pink",
+      "name": "Diamond (pink)",
+      "price_gp": "5000",
+      "rarity": "very rare",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "diamond-dust-25-gp-pinch",
+      "name": "Diamond dust (25 gp pinch)",
+      "price_gp": "25",
+      "rarity": "common",
+      "unit": "pinch",
+      "type": "gem"
+    },
+    {
+      "id": "diamonds-300-gp-worth",
+      "name": "Diamonds (300 gp worth)",
+      "price_gp": "300",
+      "rarity": "uncommon",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "emerald",
+      "name": "Emerald",
+      "price_gp": "1000",
+      "rarity": "very rare",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "emerald-1-000-gp",
+      "name": "Emerald (1,000 gp)",
+      "price_gp": "1000",
+      "rarity": "very rare",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "fire-opal",
+      "name": "Fire Opal",
+      "price_gp": "1000",
+      "rarity": "very rare",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "fluorite",
+      "name": "Fluorite",
+      "price_gp": "10",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "garnet",
+      "name": "Garnet",
+      "price_gp": "100",
+      "rarity": "uncommon",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "garnet-50-gp",
+      "name": "Garnet (50 gp)",
+      "price_gp": "50",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "garnet-spessartine",
+      "name": "Garnet (spessartine)",
+      "price_gp": "500",
+      "rarity": "rare",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "hawk-s-eye",
+      "name": "Hawk’s Eye",
+      "price_gp": "50",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "heliodor",
+      "name": "Heliodor",
+      "price_gp": "500",
+      "rarity": "rare",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "hematite",
+      "name": "Hematite",
+      "price_gp": "10",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "howlite",
+      "name": "Howlite",
+      "price_gp": "10",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "iolite",
+      "name": "Iolite",
+      "price_gp": "100",
+      "rarity": "uncommon",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "jacinth",
+      "name": "Jacinth",
+      "price_gp": "5000",
+      "rarity": "very rare",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "jade-green",
+      "name": "Jade (green)",
+      "price_gp": "100",
+      "rarity": "uncommon",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "jade-white",
+      "name": "Jade (white)",
+      "price_gp": "100",
+      "rarity": "uncommon",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "jade-dust-10-gp",
+      "name": "Jade dust (10 gp)",
+      "price_gp": "10",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "jadeite-imperial",
+      "name": "Jadeite (imperial)",
+      "price_gp": "5000",
+      "rarity": "very rare",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "jasper-brecciated",
+      "name": "Jasper (brecciated)",
+      "price_gp": "10",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "jasper-red",
+      "name": "Jasper (red)",
+      "price_gp": "50",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "jet",
+      "name": "Jet",
+      "price_gp": "100",
+      "rarity": "uncommon",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "kunzite",
+      "name": "Kunzite",
+      "price_gp": "500",
+      "rarity": "rare",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "kyanite",
+      "name": "Kyanite",
+      "price_gp": "50",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "labradorite",
+      "name": "Labradorite",
+      "price_gp": "50",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "lapis-lazuli",
+      "name": "Lapis Lazuli",
+      "price_gp": "10",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "lead-based-ink-10-gp",
+      "name": "Lead-based ink (10 gp)",
+      "price_gp": "10",
+      "rarity": "common",
+      "unit": "bottle",
+      "type": "goods"
+    },
+    {
+      "id": "malachite",
+      "name": "Malachite",
+      "price_gp": "10",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "malachite-50-gp",
+      "name": "Malachite (50 gp)",
+      "price_gp": "50",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "mithral-flakes-reagent-grade-1-oz",
+      "name": "Mithral flakes (reagent-grade, 1 oz)",
+      "price_gp": "50",
+      "rarity": "very rare",
+      "unit": "pinch",
+      "type": "metal"
+    },
+    {
+      "id": "moonstone",
+      "name": "Moonstone",
+      "price_gp": "50",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "morganite",
+      "name": "Morganite",
+      "price_gp": "500",
+      "rarity": "rare",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "musgravite",
+      "name": "Musgravite",
+      "price_gp": "5000",
+      "rarity": "very rare",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "obsidian",
+      "name": "Obsidian",
+      "price_gp": "10",
+      "rarity": "very rare",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "obsidian-10-gp",
+      "name": "Obsidian (10 gp)",
+      "price_gp": "10",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "onyx",
+      "name": "Onyx",
+      "price_gp": "50",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "opal-250-gp",
+      "name": "Opal (250 gp)",
+      "price_gp": "250",
+      "rarity": "rare",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "opal-hyalite",
+      "name": "Opal (hyalite)",
+      "price_gp": "100",
+      "rarity": "uncommon",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "opal-white",
+      "name": "Opal (white)",
+      "price_gp": "1000",
+      "rarity": "very rare",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "pearl-common",
+      "name": "Pearl (common)",
+      "price_gp": "100",
+      "rarity": "uncommon",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "peridot",
+      "name": "Peridot",
+      "price_gp": "500",
+      "rarity": "rare",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "prehnite",
+      "name": "Prehnite",
+      "price_gp": "50",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "quartz-rose",
+      "name": "Quartz (rose)",
+      "price_gp": "10",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "rare-oils-and-unguents-1-000-gp",
+      "name": "Rare oils & unguents (1,000 gp)",
+      "price_gp": "1000",
+      "rarity": "rare",
+      "unit": "bottle",
+      "type": "organic"
+    },
+    {
+      "id": "red-beryl-bixbite",
+      "name": "Red Beryl (bixbite)",
+      "price_gp": "5000",
+      "rarity": "very rare",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "rhodochrosite",
+      "name": "Rhodochrosite",
+      "price_gp": "50",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "rhodonite",
+      "name": "Rhodonite",
+      "price_gp": "10",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "incense-25-gp",
+      "name": "Incense (25 gp)",
+      "price_gp": "25",
+      "rarity": "common",
+      "unit": "block",
+      "type": "goods"
+    },
+    {
+      "id": "rock-crystal-clear-quartz",
+      "name": "Rock Crystal (clear quartz)",
+      "price_gp": "50",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "ruby",
+      "name": "Ruby",
+      "price_gp": "1000",
+      "rarity": "very rare",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "ruby-500-gp",
+      "name": "Ruby (500 gp)",
+      "price_gp": "500",
+      "rarity": "rare",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "ruby-dust-50-gp",
+      "name": "Ruby dust (50 gp)",
+      "price_gp": "50",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "sapphire-yellow",
+      "name": "Sapphire (yellow)",
+      "price_gp": "1000",
+      "rarity": "very rare",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "sard",
+      "name": "Sard",
+      "price_gp": "10",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "sardonyx",
+      "name": "Sardonyx",
+      "price_gp": "50",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "seraphinite",
+      "name": "Seraphinite",
+      "price_gp": "50",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "serpentine",
+      "name": "Serpentine",
+      "price_gp": "50",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "sodalite",
+      "name": "Sodalite",
+      "price_gp": "10",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "sphene-titanite",
+      "name": "Sphene (titanite)",
+      "price_gp": "500",
+      "rarity": "rare",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "spinel-blue",
+      "name": "Spinel (blue)",
+      "price_gp": "1000",
+      "rarity": "very rare",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "spinel-red",
+      "name": "Spinel (red)",
+      "price_gp": "100",
+      "rarity": "uncommon",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "star-ruby",
+      "name": "Star Ruby",
+      "price_gp": "5000",
+      "rarity": "very rare",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "star-sapphire",
+      "name": "Star Sapphire",
+      "price_gp": "5000",
+      "rarity": "very rare",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "sunstone",
+      "name": "Sunstone",
+      "price_gp": "500",
+      "rarity": "rare",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "taaffeite",
+      "name": "Taaffeite",
+      "price_gp": "5000",
+      "rarity": "very rare",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "tanzanite",
+      "name": "Tanzanite",
+      "price_gp": "500",
+      "rarity": "rare",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "tiger-s-eye",
+      "name": "Tiger’s Eye",
+      "price_gp": "10",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "topaz-blue",
+      "name": "Topaz (blue)",
+      "price_gp": "100",
+      "rarity": "uncommon",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "topaz-imperial",
+      "name": "Topaz (imperial)",
+      "price_gp": "500",
+      "rarity": "rare",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "tourmaline-green",
+      "name": "Tourmaline (green)",
+      "price_gp": "100",
+      "rarity": "uncommon",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "tourmaline-indicolite",
+      "name": "Tourmaline (indicolite)",
+      "price_gp": "500",
+      "rarity": "rare",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "turquoise",
+      "name": "Turquoise",
+      "price_gp": "10",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "unakite",
+      "name": "Unakite",
+      "price_gp": "10",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "zircon-common",
+      "name": "Zircon (common)",
+      "price_gp": "50",
+      "rarity": "common",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "zircon-fine",
+      "name": "Zircon (fine)",
+      "price_gp": "1000",
+      "rarity": "very rare",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "herb:glowshelf",
+      "name": "Glowshelf",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:umbercap",
+      "name": "Umbercap",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:whispermold",
+      "name": "Whispermold",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:blacklace-moss",
+      "name": "Blacklace Moss",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:fangsprout",
+      "name": "Fangsprout",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:veinbloom",
+      "name": "Veinbloom",
+      "price_gp": "250",
+      "rarity": "very rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:shiverstalk",
+      "name": "Shiverstalk",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:mycon-lace",
+      "name": "Mycon Lace",
+      "price_gp": "250",
+      "rarity": "very rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:griefspore",
+      "name": "Griefspore",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:stonewort",
+      "name": "Stonewort",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:ebontruffle",
+      "name": "Ebontruffle",
+      "price_gp": "250",
+      "rarity": "very rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:lurker-s-ivy",
+      "name": "Lurker’s Ivy",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:crystalvine",
+      "name": "CrystalVine",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:beechnettle",
+      "name": "BeechNettle",
+      "price_gp": "5",
+      "rarity": "common",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:dreamthorn",
+      "name": "DreamThorn",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:skyvine",
+      "name": "SkyVine",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:starmist",
+      "name": "StarMist",
+      "price_gp": "250",
+      "rarity": "very rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:nightmist",
+      "name": "NightMist",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:thundershroom",
+      "name": "ThunderShroom",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:feyberries",
+      "name": "FeyBerries",
+      "price_gp": "250",
+      "rarity": "very rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:sirenbloom",
+      "name": "SirenBloom",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:cinderflower",
+      "name": "CinderFlower",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:venommushroom",
+      "name": "VenomMushroom",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:orchidroot",
+      "name": "OrchidRoot",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:emeraldberries",
+      "name": "EmeraldBerries",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:twilightfern",
+      "name": "TwilightFern",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:specterbloom",
+      "name": "SpecterBloom",
+      "price_gp": "250",
+      "rarity": "very rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:lightleaf",
+      "name": "LightLeaf",
+      "price_gp": "5",
+      "rarity": "common",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:poisonroot",
+      "name": "PoisonRoot",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:duskleaf",
+      "name": "DuskLeaf",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:miasmamoss",
+      "name": "MiasmaMoss",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:witchthorn",
+      "name": "Witchthorn",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:ghostlily",
+      "name": "GhostLily",
+      "price_gp": "250",
+      "rarity": "very rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:bloodivy",
+      "name": "BloodIvy",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:emberfern",
+      "name": "EmberFern",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:moonpetal",
+      "name": "Moonpetal",
+      "price_gp": "3000",
+      "rarity": "legendary",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:sunfern",
+      "name": "Sunfern",
+      "price_gp": "5",
+      "rarity": "common",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:honeycap",
+      "name": "Honeycap",
+      "price_gp": "5",
+      "rarity": "common",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:bitterroot",
+      "name": "Bitterroot",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:stormmorel",
+      "name": "Stormmorel",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:blightcap",
+      "name": "Blightcap",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:seawhip-kelp",
+      "name": "Seawhip Kelp",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:glassroot",
+      "name": "Glassroot",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:frostbeard-lichen",
+      "name": "Frostbeard Lichen",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:serpent-truffle",
+      "name": "Serpent Truffle",
+      "price_gp": "250",
+      "rarity": "very rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:ashen-puff",
+      "name": "Ashen Puff",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:marshsnare-root",
+      "name": "Marshsnare Root",
+      "price_gp": "5",
+      "rarity": "common",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:gullscream-fungus",
+      "name": "Gullscream Fungus",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:saffron-bulb",
+      "name": "Saffron Bulb",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:needlecap",
+      "name": "Needlecap",
+      "price_gp": "5",
+      "rarity": "common",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:saltshade",
+      "name": "Saltshade",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:honey-root",
+      "name": "Honey root",
+      "price_gp": "5",
+      "rarity": "common",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:moss-fern",
+      "name": "Moss fern",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:shadow-truffle",
+      "name": "Shadow truffle",
+      "price_gp": "5",
+      "rarity": "common",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:thorn-bramble",
+      "name": "Thorn-bramble",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:briar-moss",
+      "name": "Briar moss",
+      "price_gp": "3000",
+      "rarity": "legendary",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:honeybramble",
+      "name": "HoneyBramble",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:leafseed",
+      "name": "LeafSeed",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:whisper-truffle",
+      "name": "Whisper truffle",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:dapple-thorn",
+      "name": "Dapple-thorn",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:thornberry",
+      "name": "ThornBerry",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:crown-root",
+      "name": "Crown-root",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:thornivy",
+      "name": "ThornIvy",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:dapple-bark",
+      "name": "Dapple bark",
+      "price_gp": "5",
+      "rarity": "common",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:glimmermoss",
+      "name": "GlimmerMoss",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:amberthorn",
+      "name": "AmberThorn",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:dappletruffle",
+      "name": "DappleTruffle",
+      "price_gp": "5",
+      "rarity": "common",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:briarbud",
+      "name": "BriarBud",
+      "price_gp": "5",
+      "rarity": "common",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:silkseed",
+      "name": "SilkSeed",
+      "price_gp": "5",
+      "rarity": "common",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:amberbark",
+      "name": "AmberBark",
+      "price_gp": "5",
+      "rarity": "common",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:stag-seed",
+      "name": "Stag-seed",
+      "price_gp": "5",
+      "rarity": "common",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:stonelichen",
+      "name": "StoneLichen",
+      "price_gp": "5",
+      "rarity": "common",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:gale-moss",
+      "name": "Gale moss",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:high-tuft",
+      "name": "High-tuft",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:slate-cap",
+      "name": "Slate cap",
+      "price_gp": "5",
+      "rarity": "common",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:shard-truffle",
+      "name": "Shard-truffle",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:rimecress",
+      "name": "RimeCress",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:stonecap",
+      "name": "StoneCap",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:crystal-lichen",
+      "name": "Crystal lichen",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:skylit-leaf",
+      "name": "Skylit leaf",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:cliffpuff",
+      "name": "CliffPuff",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:glacier-truffle",
+      "name": "Glacier truffle",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:glacier-needle",
+      "name": "Glacier-needle",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:icicle-bloom",
+      "name": "Icicle-bloom",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:slate-root",
+      "name": "Slate-root",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:cloud-crown",
+      "name": "Cloud-crown",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:granitetuft",
+      "name": "GraniteTuft",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:iron-tuft",
+      "name": "Iron-tuft",
+      "price_gp": "2",
+      "rarity": "uncommon",
+      "unit": "item",
+      "type": "metal"
+    },
+    {
+      "id": "herb:iron-needle",
+      "name": "Iron needle",
+      "price_gp": "2",
+      "rarity": "rare",
+      "unit": "item",
+      "type": "metal"
+    },
+    {
+      "id": "herb:shardmoss",
+      "name": "ShardMoss",
+      "price_gp": "5",
+      "rarity": "common",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:eagle-berry",
+      "name": "Eagle berry",
+      "price_gp": "5",
+      "rarity": "common",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:sicklebulb",
+      "name": "SickleBulb",
+      "price_gp": "5",
+      "rarity": "common",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:sun-tuft",
+      "name": "Sun tuft",
+      "price_gp": "5",
+      "rarity": "common",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:buffreed",
+      "name": "BuffReed",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:dawn-tuft",
+      "name": "Dawn tuft",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:sunbulb",
+      "name": "SunBulb",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:windreed",
+      "name": "WindReed",
+      "price_gp": "5",
+      "rarity": "common",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:sunbarley",
+      "name": "SunBarley",
+      "price_gp": "5",
+      "rarity": "common",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:gold-flower",
+      "name": "Gold flower",
+      "price_gp": "15",
+      "rarity": "uncommon",
+      "unit": "item",
+      "type": "metal"
+    },
+    {
+      "id": "herb:whistlebarley",
+      "name": "WhistleBarley",
+      "price_gp": "250",
+      "rarity": "very rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:gold-reed",
+      "name": "Gold-reed",
+      "price_gp": "50",
+      "rarity": "uncommon",
+      "unit": "item",
+      "type": "metal"
+    },
+    {
+      "id": "herb:fieldbark",
+      "name": "FieldBark",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:wheattuft",
+      "name": "WheatTuft",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:dawn-root",
+      "name": "Dawn root",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:wandergrass",
+      "name": "WanderGrass",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:prairieflower",
+      "name": "PrairieFlower",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:sun-bloom",
+      "name": "Sun-bloom",
+      "price_gp": "5",
+      "rarity": "common",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:sun-thatch",
+      "name": "Sun-thatch",
+      "price_gp": "5",
+      "rarity": "common",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:steppe-moss",
+      "name": "Steppe-moss",
+      "price_gp": "250",
+      "rarity": "very rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:steppebloom",
+      "name": "SteppeBloom",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:prairiereed",
+      "name": "PrairieReed",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:black-algae",
+      "name": "Black algae",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:dripcap",
+      "name": "DripCap",
+      "price_gp": "5",
+      "rarity": "common",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:soddenreed",
+      "name": "SoddenReed",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:peat-bark",
+      "name": "Peat-bark",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:dripbloom",
+      "name": "DripBloom",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:black-moss",
+      "name": "Black-moss",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:marshcap",
+      "name": "MarshCap",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:murk-knot",
+      "name": "Murk knot",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:stink-root",
+      "name": "Stink root",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:willowbloom",
+      "name": "WillowBloom",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:sodden-knot",
+      "name": "Sodden knot",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:marshfungus",
+      "name": "MarshFungus",
+      "price_gp": "250",
+      "rarity": "very rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:stagnant-bark",
+      "name": "Stagnant-bark",
+      "price_gp": "250",
+      "rarity": "very rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:driproot",
+      "name": "DripRoot",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:marshthatch",
+      "name": "MarshThatch",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:stinkcap",
+      "name": "StinkCap",
+      "price_gp": "250",
+      "rarity": "very rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:murk-lily",
+      "name": "Murk lily",
+      "price_gp": "250",
+      "rarity": "very rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:reed-fungus",
+      "name": "Reed-fungus",
+      "price_gp": "3000",
+      "rarity": "legendary",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:willow-moss",
+      "name": "Willow moss",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:peatpuff",
+      "name": "PeatPuff",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:spine-root",
+      "name": "Spine root",
+      "price_gp": "5",
+      "rarity": "common",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:flarebark",
+      "name": "FlareBark",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:dune-seed",
+      "name": "Dune seed",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:spineroot",
+      "name": "SpineRoot",
+      "price_gp": "5",
+      "rarity": "common",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:cindertuft",
+      "name": "CinderTuft",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:cinder-cactus",
+      "name": "Cinder cactus",
+      "price_gp": "250",
+      "rarity": "very rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:dune-bloom",
+      "name": "Dune bloom",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:barrencrown",
+      "name": "BarrenCrown",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:scorchbark",
+      "name": "ScorchBark",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:spine-thorn",
+      "name": "Spine-thorn",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:opalbloom",
+      "name": "OpalBloom",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:saltcactus",
+      "name": "SaltCactus",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:spinemoss",
+      "name": "SpineMoss",
+      "price_gp": "5",
+      "rarity": "common",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:cinderthorn",
+      "name": "CinderThorn",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:scorchknot",
+      "name": "ScorchKnot",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:aloetuft",
+      "name": "AloeTuft",
+      "price_gp": "5",
+      "rarity": "common",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:serebloom",
+      "name": "SereBloom",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:mirage-spine",
+      "name": "Mirage-spine",
+      "price_gp": "5",
+      "rarity": "common",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:sun-moss",
+      "name": "Sun moss",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:sandcrown",
+      "name": "SandCrown",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:siren-tube",
+      "name": "Siren-tube",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:spraykelp",
+      "name": "SprayKelp",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:brineweed",
+      "name": "BrineWeed",
+      "price_gp": "5",
+      "rarity": "common",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:drift-reed",
+      "name": "Drift reed",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:shell-weed",
+      "name": "Shell-weed",
+      "price_gp": "5",
+      "rarity": "common",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:reefpod",
+      "name": "ReefPod",
+      "price_gp": "5",
+      "rarity": "common",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:mistral-cap",
+      "name": "Mistral-cap",
+      "price_gp": "5",
+      "rarity": "common",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:coralseafern",
+      "name": "CoralSeafern",
+      "price_gp": "250",
+      "rarity": "very rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:foambloom",
+      "name": "FoamBloom",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:mistral-saltbark",
+      "name": "Mistral saltbark",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:spraybloom",
+      "name": "SprayBloom",
+      "price_gp": "5",
+      "rarity": "common",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:storm-saltbark",
+      "name": "Storm-saltbark",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:mistral-weed",
+      "name": "Mistral-weed",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:coral-moss",
+      "name": "Coral moss",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:tidecap",
+      "name": "TideCap",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:gull-saltbark",
+      "name": "Gull saltbark",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:stormsaltbark",
+      "name": "StormSaltbark",
+      "price_gp": "5",
+      "rarity": "common",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:drift-saltbark",
+      "name": "Drift saltbark",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:azure-tube",
+      "name": "Azure tube",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:kelpreed",
+      "name": "KelpReed",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:nether-moss",
+      "name": "Nether-moss",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:lantern-ivy",
+      "name": "Lantern-ivy",
+      "price_gp": "250",
+      "rarity": "very rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:stal-puff",
+      "name": "Stal-puff",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:whisper-vine",
+      "name": "Whisper vine",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:caveshelf",
+      "name": "CaveShelf",
+      "price_gp": "5",
+      "rarity": "common",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:spore-truffle",
+      "name": "Spore truffle",
+      "price_gp": "250",
+      "rarity": "very rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:shaderoot",
+      "name": "ShadeRoot",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:shiver-ivy",
+      "name": "Shiver ivy",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:stallace",
+      "name": "StalLace",
+      "price_gp": "5",
+      "rarity": "common",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:cavenode",
+      "name": "CaveNode",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:veilmold",
+      "name": "VeilMold",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:gloam-lace",
+      "name": "Gloam-lace",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:pale-toadstool",
+      "name": "Pale-toadstool",
+      "price_gp": "5",
+      "rarity": "common",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:umbral-root",
+      "name": "Umbral-root",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:lanternbulb",
+      "name": "LanternBulb",
+      "price_gp": "90",
+      "rarity": "rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:gloommold",
+      "name": "GloomMold",
+      "price_gp": "5",
+      "rarity": "common",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:palevine",
+      "name": "PaleVine",
+      "price_gp": "5",
+      "rarity": "common",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:gloom-vine",
+      "name": "Gloom-vine",
+      "price_gp": "250",
+      "rarity": "very rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:paletoadstool",
+      "name": "PaleToadstool",
+      "price_gp": "250",
+      "rarity": "very rare",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "herb:gloambulb",
+      "name": "GloamBulb",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "sprig",
+      "type": "organic"
+    },
+    {
+      "id": "arcane-parchment-common",
+      "name": "Arcane parchment (common)",
+      "price_gp": "7.5",
+      "rarity": "common",
+      "unit": "sheet",
+      "type": "goods"
+    },
+    {
+      "id": "arcane-ink-common",
+      "name": "Arcane ink (common)",
+      "price_gp": "7.5",
+      "rarity": "common",
+      "unit": "bottle",
+      "type": "goods"
+    },
+    {
+      "id": "arcane-parchment-uncommon",
+      "name": "Arcane parchment (uncommon)",
+      "price_gp": "12.5",
+      "rarity": "uncommon",
+      "unit": "sheet",
+      "type": "goods"
+    },
+    {
+      "id": "arcane-ink-uncommon",
+      "name": "Arcane ink (uncommon)",
+      "price_gp": "12.5",
+      "rarity": "uncommon",
+      "unit": "bottle",
+      "type": "goods"
+    },
+    {
+      "id": "arcane-parchment-rare",
+      "name": "Arcane parchment (rare)",
+      "price_gp": "50",
+      "rarity": "rare",
+      "unit": "sheet",
+      "type": "goods"
+    },
+    {
+      "id": "arcane-ink-rare",
+      "name": "Arcane ink (rare)",
+      "price_gp": "50",
+      "rarity": "rare",
+      "unit": "bottle",
+      "type": "goods"
+    },
+    {
+      "id": "arcane-parchment-very-rare",
+      "name": "Arcane parchment (very rare)",
+      "price_gp": "150",
+      "rarity": "very rare",
+      "unit": "sheet",
+      "type": "goods"
+    },
+    {
+      "id": "arcane-ink-very-rare",
+      "name": "Arcane ink (very rare)",
+      "price_gp": "150",
+      "rarity": "very rare",
+      "unit": "bottle",
+      "type": "goods"
+    },
+    {
+      "id": "arcane-parchment-legendary",
+      "name": "Arcane parchment (legendary)",
+      "price_gp": "500",
+      "rarity": "legendary",
+      "unit": "sheet",
+      "type": "goods"
+    },
+    {
+      "id": "arcane-ink-legendary",
+      "name": "Arcane ink (legendary)",
+      "price_gp": "500",
+      "rarity": "legendary",
+      "unit": "bottle",
+      "type": "goods"
+    },
+    {
+      "id": "bone-dust",
+      "name": "Bone Dust",
+      "price_gp": "1.01",
+      "rarity": "common",
+      "unit": "pinch",
+      "type": "organic"
+    },
+    {
+      "id": "ground-seashell",
+      "name": "Ground Seashell",
+      "price_gp": "0.5",
+      "rarity": "common",
+      "unit": "pinch",
+      "type": "organic"
+    },
+    {
+      "id": "sulfur-brimstone",
+      "name": "Brimstone (Sulfur)",
+      "price_gp": "1.97",
+      "rarity": "common",
+      "unit": "pinch",
+      "type": "organic"
+    },
+    {
+      "id": "saltpeter",
+      "name": "Saltpeter (Niter)",
+      "price_gp": "0.26",
+      "rarity": "common",
+      "unit": "pinch",
+      "type": "organic"
+    },
+    {
+      "id": "beeswax",
+      "name": "Beeswax",
+      "price_gp": "1.63",
+      "rarity": "common",
+      "unit": "lump",
+      "type": "wax"
+    },
+    {
+      "id": "pine-resin",
+      "name": "Pine Resin",
+      "price_gp": "1.13",
+      "rarity": "common",
+      "unit": "glob",
+      "type": "organic"
+    },
+    {
+      "id": "lamp-oil",
+      "name": "Lamp Oil",
+      "price_gp": "0.22",
+      "rarity": "common",
+      "unit": "vial",
+      "type": "organic"
+    },
+    {
+      "id": "chimney-soot",
+      "name": "Chimney Soot",
+      "price_gp": "1.55",
+      "rarity": "common",
+      "unit": "pinch",
+      "type": "organic"
+    },
+    {
+      "id": "wood-ash",
+      "name": "Wood Ash",
+      "price_gp": "0.16",
+      "rarity": "common",
+      "unit": "pinch",
+      "type": "organic"
+    },
+    {
+      "id": "river-clay",
+      "name": "River Clay",
+      "price_gp": "1.33",
+      "rarity": "common",
+      "unit": "lump",
+      "type": "organic"
+    },
+    {
+      "id": "oyster-shell-dust",
+      "name": "Oyster Shell Dust",
+      "price_gp": "0.26",
+      "rarity": "common",
+      "unit": "pinch",
+      "type": "organic"
+    },
+    {
+      "id": "copper-filings",
+      "name": "Copper Filings",
+      "price_gp": "0.32",
+      "rarity": "common",
+      "unit": "pinch",
+      "type": "metal"
+    },
+    {
+      "id": "iron-shavings",
+      "name": "Iron Shavings",
+      "price_gp": "1.3",
+      "rarity": "common",
+      "unit": "pinch",
+      "type": "metal"
+    },
+    {
+      "id": "rust-flakes",
+      "name": "Rust Flakes",
+      "price_gp": "2.49",
+      "rarity": "common",
+      "unit": "pinch",
+      "type": "metal"
+    },
+    {
+      "id": "moss-scrapings",
+      "name": "Moss Scrapings",
+      "price_gp": "0.42",
+      "rarity": "common",
+      "unit": "pinch",
+      "type": "organic"
+    },
+    {
+      "id": "lichen-flakes",
+      "name": "Lichen Flakes",
+      "price_gp": "0.71",
+      "rarity": "common",
+      "unit": "pinch",
+      "type": "organic"
+    },
+    {
+      "id": "spider-silk",
+      "name": "Spider Silk",
+      "price_gp": "1.9",
+      "rarity": "common",
+      "unit": "strand",
+      "type": "organic"
+    },
+    {
+      "id": "feather-down",
+      "name": "Feather Down",
+      "price_gp": "2.85",
+      "rarity": "common",
+      "unit": "tuft",
+      "type": "organic"
+    },
+    {
+      "id": "snail-slime",
+      "name": "Snail Slime",
+      "price_gp": "1.75",
+      "rarity": "common",
+      "unit": "smear",
+      "type": "organic"
+    },
+    {
+      "id": "eel-skin-strip",
+      "name": "Eel Skin Strip",
+      "price_gp": "1.22",
+      "rarity": "common",
+      "unit": "strip",
+      "type": "organic"
+    },
+    {
+      "id": "snake-scale-chip",
+      "name": "Snake Scales",
+      "price_gp": "2.93",
+      "rarity": "common",
+      "unit": "pinch",
+      "type": "organic"
+    },
+    {
+      "id": "beetle-carapace",
+      "name": "Beetle Carapace Chip",
+      "price_gp": "0.19",
+      "rarity": "common",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "horn-shavings",
+      "name": "Horn Shavings",
+      "price_gp": "2.58",
+      "rarity": "common",
+      "unit": "pinch",
+      "type": "organic"
+    },
+    {
+      "id": "hoof-scrapings",
+      "name": "Hoof Scrapings",
+      "price_gp": "0.9",
+      "rarity": "common",
+      "unit": "pinch",
+      "type": "organic"
+    },
+    {
+      "id": "powdered-charcoal",
+      "name": "Powdered Charcoal",
+      "price_gp": "0.48",
+      "rarity": "common",
+      "unit": "pinch",
+      "type": "organic"
+    },
+    {
+      "id": "chalk-dust",
+      "name": "Chalk Dust",
+      "price_gp": "0.4",
+      "rarity": "common",
+      "unit": "pinch",
+      "type": "organic"
+    },
+    {
+      "id": "grave-salt",
+      "name": "Grave Salt",
+      "price_gp": "0.96",
+      "rarity": "common",
+      "unit": "pinch",
+      "type": "organic"
+    },
+    {
+      "id": "bat-guano",
+      "name": "Bat Guano",
+      "price_gp": "2.46",
+      "rarity": "common",
+      "unit": "pellet",
+      "type": "organic"
+    },
+    {
+      "id": "cat-urine-vial",
+      "name": "Cat Urine (vial)",
+      "price_gp": "0.58",
+      "rarity": "common",
+      "unit": "vial",
+      "type": "organic"
+    },
+    {
+      "id": "fish-scales",
+      "name": "Fish Scales",
+      "price_gp": "1.77",
+      "rarity": "common",
+      "unit": "pinch",
+      "type": "organic"
+    },
+    {
+      "id": "silver-powder",
+      "name": "Powdered Silver",
+      "price_gp": "1.93",
+      "rarity": "common",
+      "unit": "pinch",
+      "type": "metal"
+    },
+    {
+      "id": "moonsalt",
+      "name": "Moon Salt",
+      "price_gp": "11.19",
+      "rarity": "uncommon",
+      "unit": "pinch",
+      "type": "organic"
+    },
+    {
+      "id": "frog-eye",
+      "name": "Frog’s Eye",
+      "price_gp": "15.05",
+      "rarity": "uncommon",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "ectoplasm-smear",
+      "name": "Ectoplasm Smear",
+      "price_gp": "4.38",
+      "rarity": "uncommon",
+      "unit": "smear",
+      "type": "extra"
+    },
+    {
+      "id": "smoky-quartz-dust",
+      "name": "Smoky Quartz Dust",
+      "price_gp": "4.31",
+      "rarity": "common",
+      "unit": "pinch",
+      "type": "gem"
+    },
+    {
+      "id": "grave-dirt",
+      "name": "Consecrated Grave Dirt",
+      "price_gp": "7.53",
+      "rarity": "uncommon",
+      "unit": "pinch",
+      "type": "organic"
+    },
+    {
+      "id": "quicksilver",
+      "name": "Quicksilver",
+      "price_gp": "20.21",
+      "rarity": "uncommon",
+      "unit": "vial",
+      "type": "metal"
+    },
+    {
+      "id": "faerie-wing-dust",
+      "name": "Faerie Wing Dust",
+      "price_gp": "12.41",
+      "rarity": "uncommon",
+      "unit": "pinch",
+      "type": "extra"
+    },
+    {
+      "id": "wisp-essence",
+      "name": "Wisp Essence",
+      "price_gp": "9.91",
+      "rarity": "rare",
+      "unit": "vial",
+      "type": "essence"
+    },
+    {
+      "id": "elemental-dust-air",
+      "name": "Elemental Dust (Air)",
+      "price_gp": "15.88",
+      "rarity": "uncommon",
+      "unit": "pinch",
+      "type": "elemental"
+    },
+    {
+      "id": "elemental-dust-earth",
+      "name": "Elemental Dust (Earth)",
+      "price_gp": "12.97",
+      "rarity": "uncommon",
+      "unit": "pinch",
+      "type": "elemental"
+    },
+    {
+      "id": "elemental-dust-fire",
+      "name": "Elemental Dust (Fire)",
+      "price_gp": "9.59",
+      "rarity": "uncommon",
+      "unit": "pinch",
+      "type": "elemental"
+    },
+    {
+      "id": "elemental-dust-water",
+      "name": "Elemental Dust (Water)",
+      "price_gp": "20.48",
+      "rarity": "uncommon",
+      "unit": "pinch",
+      "type": "elemental"
+    },
+    {
+      "id": "amber-resin",
+      "name": "Amber Resin",
+      "price_gp": "18.38",
+      "rarity": "uncommon",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "obsidian-shards",
+      "name": "Obsidian Shards",
+      "price_gp": "800",
+      "rarity": "rare",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "octopus-ink",
+      "name": "Octopus ink",
+      "price_gp": "15.64",
+      "rarity": "uncommon",
+      "unit": "bottle",
+      "type": "organic"
+    },
+    {
+      "id": "ghost-orchid-sap",
+      "name": "Ghost Orchid Sap",
+      "price_gp": "14.55",
+      "rarity": "uncommon",
+      "unit": "drop",
+      "type": "extra"
+    },
+    {
+      "id": "pearl-dust",
+      "name": "Pearl dust",
+      "price_gp": "275.03",
+      "rarity": "rare",
+      "unit": "pinch",
+      "type": "gem"
+    },
+    {
+      "id": "wyvern-bile",
+      "name": "Wyvern Bile",
+      "price_gp": "251.3",
+      "rarity": "rare",
+      "unit": "vial",
+      "type": "organic"
+    },
+    {
+      "id": "elemental-brine",
+      "name": "Elemental Brine",
+      "price_gp": "108.79",
+      "rarity": "rare",
+      "unit": "vial",
+      "type": "elemental"
+    },
+    {
+      "id": "shadow-ink",
+      "name": "Shadow Ink",
+      "price_gp": "118.81",
+      "rarity": "rare",
+      "unit": "bottle",
+      "type": "goods"
+    },
+    {
+      "id": "manticore-whisker",
+      "name": "Manticore Whisker",
+      "price_gp": "167.71",
+      "rarity": "rare",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "basilisk-scale-dust",
+      "name": "Basilisk Scale Dust",
+      "price_gp": "212.72",
+      "rarity": "rare",
+      "unit": "pinch",
+      "type": "organic"
+    },
+    {
+      "id": "celestial-salt",
+      "name": "Celestial Salt",
+      "price_gp": "218.43",
+      "rarity": "rare",
+      "unit": "pinch",
+      "type": "extra"
+    },
+    {
+      "id": "stardust-vial",
+      "name": "Stardust (vial)",
+      "price_gp": "172.8",
+      "rarity": "uncommon",
+      "unit": "pinch",
+      "type": "extra"
+    },
+    {
+      "id": "voidglass-sand",
+      "name": "Voidglass Sand",
+      "price_gp": "158.68",
+      "rarity": "very rare",
+      "unit": "pinch",
+      "type": "extra"
+    },
+    {
+      "id": "void-salt",
+      "name": "Void Salt",
+      "price_gp": "367.64",
+      "rarity": "very rare",
+      "unit": "pinch",
+      "type": "extra"
+    },
+    {
+      "id": "dragon-bone-dust",
+      "name": "Dragon Bone Dust",
+      "price_gp": "767.29",
+      "rarity": "very rare",
+      "unit": "pinch",
+      "type": "organic"
+    },
+    {
+      "id": "phoenix-ash",
+      "name": "Phoenix Ash",
+      "price_gp": "1058.74",
+      "rarity": "very rare",
+      "unit": "pinch",
+      "type": "extra"
+    },
+    {
+      "id": "mithral-filings",
+      "name": "Mithral Filings",
+      "price_gp": "686.51",
+      "rarity": "very rare",
+      "unit": "pinch",
+      "type": "metal"
+    },
+    {
+      "id": "astral-dew",
+      "name": "Astral Dew",
+      "price_gp": "1400.38",
+      "rarity": "very rare",
+      "unit": "vial",
+      "type": "extra"
+    },
+    {
+      "id": "leviathan-scale",
+      "name": "Leviathan Scale Flake",
+      "price_gp": "788.25",
+      "rarity": "very rare",
+      "unit": "pinch",
+      "type": "organic"
+    },
+    {
+      "id": "stellar-mercury",
+      "name": "Stellar Mercury",
+      "price_gp": "5085.89",
+      "rarity": "legendary",
+      "unit": "vial",
+      "type": "metal"
+    },
+    {
+      "id": "echo-of-dawn",
+      "name": "Echo of Dawn (prism shard)",
+      "price_gp": "7377.48",
+      "rarity": "legendary",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "ancient-ichor",
+      "name": "Ancient Ichor",
+      "price_gp": "7479.37",
+      "rarity": "legendary",
+      "unit": "vial",
+      "type": "organic"
+    },
+    {
+      "id": "tarrasque-scale-frag",
+      "name": "Tarrasque Scale Fragment",
+      "price_gp": "8737.23",
+      "rarity": "legendary",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "worldroot-resin",
+      "name": "Worldroot Resin",
+      "price_gp": "9039.81",
+      "rarity": "legendary",
+      "unit": "glob",
+      "type": "extra"
+    },
+    {
+      "id": "chronal-sand",
+      "name": "Chronal Sand",
+      "price_gp": "9723.41",
+      "rarity": "legendary",
+      "unit": "pinch",
+      "type": "extra"
+    },
+    {
+      "id": "garnet-shard",
+      "name": "Garnet Shard",
+      "price_gp": "100",
+      "rarity": "uncommon",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "amethyst-shard",
+      "name": "Amethyst Shard",
+      "price_gp": "100",
+      "rarity": "uncommon",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "topaz-shard",
+      "name": "Topaz Shard",
+      "price_gp": "500",
+      "rarity": "rare",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "sapphire-shard",
+      "name": "Sapphire Shard",
+      "price_gp": "1000",
+      "rarity": "very rare",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "ruby-shard",
+      "name": "Ruby Shard",
+      "price_gp": "1000",
+      "rarity": "very rare",
+      "unit": "item",
+      "type": "gem"
+    },
+    {
+      "id": "diamond-dust-300-gp-pinch",
+      "name": "Diamond dust (300 gp pinch)",
+      "price_gp": "300",
+      "rarity": "rare",
+      "unit": "pinch",
+      "type": "gem"
+    },
+    {
+      "id": "base-weapon",
+      "name": "Base weapon",
+      "price_gp": "",
+      "rarity": "",
+      "unit": "item",
+      "type": "weapon"
+    },
+    {
+      "id": "base-armor",
+      "name": "Base armor",
+      "price_gp": "",
+      "rarity": "",
+      "unit": "item",
+      "type": "armor"
+    },
+    {
+      "id": "base-ring",
+      "name": "Base ring",
+      "price_gp": "",
+      "rarity": "",
+      "unit": "item",
+      "type": "ring"
+    },
+    {
+      "id": "base-wand",
+      "name": "Base wand",
+      "price_gp": "",
+      "rarity": "",
+      "unit": "item",
+      "type": "wand"
+    },
+    {
+      "id": "base-staff",
+      "name": "Base staff",
+      "price_gp": "",
+      "rarity": "",
+      "unit": "item",
+      "type": "staff"
+    },
+    {
+      "id": "base-rod",
+      "name": "Base rod",
+      "price_gp": "",
+      "rarity": "",
+      "unit": "item",
+      "type": "rod"
+    },
+    {
+      "id": "base-ammo",
+      "name": "Base ammunition",
+      "price_gp": "",
+      "rarity": "",
+      "unit": "item",
+      "type": "ammo"
+    },
+    {
+      "id": "base-wondrous",
+      "name": "Base wondrous item",
+      "price_gp": "",
+      "rarity": "",
+      "unit": "item",
+      "type": "wondrous"
+    },
+    {
+      "id": "salamander-flame-sac",
+      "name": "Salamander Flame Sac",
+      "price_gp": "200",
+      "rarity": "rare",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "frost-elemental-core",
+      "name": "Frost Elemental Core",
+      "price_gp": "900",
+      "rarity": "very rare",
+      "unit": "core",
+      "type": "elemental"
+    },
+    {
+      "id": "radiant-essence",
+      "name": "Radiant Essence",
+      "price_gp": "180",
+      "rarity": "very rare",
+      "unit": "vial",
+      "type": "essence"
+    },
+    {
+      "id": "shadow-essence",
+      "name": "Shadow Essence",
+      "price_gp": "160",
+      "rarity": "very rare",
+      "unit": "vial",
+      "type": "essence"
+    },
+    {
+      "id": "storm-heart",
+      "name": "Storm Heart",
+      "price_gp": "800",
+      "rarity": "very rare",
+      "unit": "core",
+      "type": "elemental"
+    },
+    {
+      "id": "dragonscale-assorted",
+      "name": "Dragon scale",
+      "price_gp": "700",
+      "rarity": "very rare",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "bat-wing",
+      "name": "Bat Wing",
+      "price_gp": "10",
+      "rarity": "common",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "goblin-ear",
+      "name": "Goblin Ear",
+      "price_gp": "15",
+      "rarity": "common",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "kobold-scale",
+      "name": "Kobold Scale",
+      "price_gp": "20",
+      "rarity": "common",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "rat-tail",
+      "name": "Rat Tail",
+      "price_gp": "5",
+      "rarity": "common",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "toad-warts",
+      "name": "Toad Warts",
+      "price_gp": "8",
+      "rarity": "common",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "wolf-fang",
+      "name": "Wolf Fang",
+      "price_gp": "12",
+      "rarity": "common",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "zombie-finger-bone",
+      "name": "Zombie Finger Bone",
+      "price_gp": "18",
+      "rarity": "common",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "sprite-dust",
+      "name": "Sprite Dust",
+      "price_gp": "25",
+      "rarity": "common",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "skeleton-knuckle",
+      "name": "Skeleton Knuckle",
+      "price_gp": "10",
+      "rarity": "common",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "stirge-proboscis",
+      "name": "Stirge Proboscis",
+      "price_gp": "22",
+      "rarity": "common",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "basilisk-scale",
+      "name": "Basilisk Scale",
+      "price_gp": "40",
+      "rarity": "uncommon",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "cockatrice-feather",
+      "name": "Cockatrice Feather",
+      "price_gp": "35",
+      "rarity": "uncommon",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "darkmantle-ink",
+      "name": "Darkmantle Ink",
+      "price_gp": "28",
+      "rarity": "uncommon",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "ettercap-venom",
+      "name": "Ettercap Venom",
+      "price_gp": "50",
+      "rarity": "uncommon",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "giant-centipede-carapace",
+      "name": "Giant Centipede Carapace",
+      "price_gp": "45",
+      "rarity": "uncommon",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "gnoll-hide-scrap",
+      "name": "Gnoll Hide Scrap",
+      "price_gp": "30",
+      "rarity": "uncommon",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "hippogriff-feather",
+      "name": "Hippogriff Feather",
+      "price_gp": "48",
+      "rarity": "uncommon",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "owlbear-claw",
+      "name": "Owlbear Claw",
+      "price_gp": "42",
+      "rarity": "uncommon",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "shadow-essence-residue",
+      "name": "Shadow Essence Residue",
+      "price_gp": "50",
+      "rarity": "uncommon",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "worg-fang",
+      "name": "Worg Fang",
+      "price_gp": "38",
+      "rarity": "uncommon",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "chimera-fang",
+      "name": "Chimera Fang",
+      "price_gp": "120",
+      "rarity": "rare",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "dryads-sap",
+      "name": "Dryad’s Sap",
+      "price_gp": "130",
+      "rarity": "rare",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "ettin-brain-lobe",
+      "name": "Ettin Brain Lobe",
+      "price_gp": "140",
+      "rarity": "rare",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "ghostly-essence",
+      "name": "Ghostly Essence",
+      "price_gp": "150",
+      "rarity": "rare",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "griffon-talon",
+      "name": "Griffon Talon",
+      "price_gp": "145",
+      "rarity": "rare",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "manticore-spike",
+      "name": "Manticore Spike",
+      "price_gp": "110",
+      "rarity": "rare",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "medusa-scale",
+      "name": "Medusa Scale",
+      "price_gp": "135",
+      "rarity": "rare",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "naga-scale",
+      "name": "Naga Scale",
+      "price_gp": "150",
+      "rarity": "rare",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "troll-heart",
+      "name": "Troll Heart",
+      "price_gp": "125",
+      "rarity": "rare",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "wyvern-venom-sac",
+      "name": "Wyvern Venom Sac",
+      "price_gp": "150",
+      "rarity": "rare",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "beholder-eyestalk",
+      "name": "Beholder Eyestalk",
+      "price_gp": "480",
+      "rarity": "very rare",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "dragons-blood-vial",
+      "name": "Dragon’s Blood Vial",
+      "price_gp": "500",
+      "rarity": "very rare",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "kraken-ink-vial",
+      "name": "Kraken Ink Vial",
+      "price_gp": "490",
+      "rarity": "very rare",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "lamia-hair-strand",
+      "name": "Lamia Hair Strand",
+      "price_gp": "460",
+      "rarity": "very rare",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "medusas-tear",
+      "name": "Medusa’s Tear",
+      "price_gp": "500",
+      "rarity": "very rare",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "mind-flayer-tentacle",
+      "name": "Mind Flayer Tentacle",
+      "price_gp": "475",
+      "rarity": "very rare",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "nightmares-ash",
+      "name": "Nightmare’s Ash",
+      "price_gp": "500",
+      "rarity": "very rare",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "roc-feather",
+      "name": "Roc Feather",
+      "price_gp": "450",
+      "rarity": "very rare",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "salamander-ember-core",
+      "name": "Salamander Ember Core",
+      "price_gp": "495",
+      "rarity": "very rare",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "yeti-heart",
+      "name": "Yeti Heart",
+      "price_gp": "430",
+      "rarity": "very rare",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "ancient-dragon-scale",
+      "name": "Ancient Dragon Scale",
+      "price_gp": "2000",
+      "rarity": "legendary",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "balor-horn-fragment",
+      "name": "Balor Horn Fragment",
+      "price_gp": "1900",
+      "rarity": "legendary",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "demilich-dust",
+      "name": "Demilich Dust",
+      "price_gp": "2000",
+      "rarity": "legendary",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "kraken-heart-fragment",
+      "name": "Kraken Heart Fragment",
+      "price_gp": "1950",
+      "rarity": "legendary",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "lich-phylactery-shard",
+      "name": "Lich Phylactery Shard",
+      "price_gp": "2000",
+      "rarity": "legendary",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "phoenix-feather",
+      "name": "Phoenix Feather",
+      "price_gp": "2000",
+      "rarity": "legendary",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "pit-fiend-fang",
+      "name": "Pit Fiend Fang",
+      "price_gp": "1850",
+      "rarity": "legendary",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "solars-tear-crystallized",
+      "name": "Solar’s Tear (Crystallized)",
+      "price_gp": "2000",
+      "rarity": "legendary",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "tarrasque-scale",
+      "name": "Tarrasque Scale",
+      "price_gp": "2000",
+      "rarity": "legendary",
+      "unit": "item",
+      "type": "organic"
+    },
+    {
+      "id": "unicorn-horn-dust",
+      "name": "Unicorn Horn Dust",
+      "price_gp": "2000",
+      "rarity": "legendary",
+      "unit": "item",
+      "type": "organic"
+    }
+  ]
+}
