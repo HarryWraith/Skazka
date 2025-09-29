@@ -469,6 +469,30 @@ async function boot() {
       return;
     }
 
+    const typeSel = $("#bpType");
+    if (typeSel) {
+      const st = blueprints.getState?.();
+      const types = Array.from(
+        new Set(
+          (st?.DATA?.blueprints || [])
+            .map((b) => (b.type || "").toLowerCase())
+            .filter(Boolean)
+        )
+      ).sort();
+
+      const current = typeSel.value || "__all__";
+      const mk = (val, label) => `<option value="${val}">${label}</option>`;
+      const labelize = (s) => s.replace(/\b\w/g, (c) => c.toUpperCase());
+
+      typeSel.innerHTML = [mk("__all__", "All")]
+        .concat(types.map((t) => mk(t, labelize(t))))
+        .join("");
+
+      if ([...typeSel.options].some((o) => o.value === current)) {
+        typeSel.value = current;
+      }
+    }
+
     const type = $("#bpType")?.value || "__all__";
     const rarity = $("#bpRarity")?.value || "__all__";
     const search = $("#bpSearch")?.value?.trim() || "";
@@ -512,16 +536,6 @@ async function boot() {
     if (!st?.LAST?.selectedId) return;
     const bp = blueprints.getById(st.LAST.selectedId);
     blueprints.renderDetail($("#bpDetail"), bp, {
-      coinMode: $("#bpCoins")?.checked,
-    });
-  });
-
-  // re-render detail when coin mode changes
-  $("#bpCoins")?.addEventListener("change", () => {
-    const st = blueprints.getState?.();
-    if (!st?.LAST?.selectedId) return;
-    const bp = blueprints.getById?.(st.LAST.selectedId);
-    blueprints.renderDetail?.($("#bpDetail"), bp, {
       coinMode: $("#bpCoins")?.checked,
     });
   });

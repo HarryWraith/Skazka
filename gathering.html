@@ -87,14 +87,14 @@
                         <p>
                                 Gathering requires a skill check against a DC, which can be modified by environmental
                                 factors such as terrain, season, or outside influences (e.g. a nearby wolf pack). On a
-                                success, the character collects usable reagents. The exact Yield is determined by how
-                                successful the skill check was. Consult the Yield table at the bottom of this page.. <a
-                                        href="tables.html">here</a>.
+                                success, the character collects usable reagents. The exact amount is determined by how
+                                successful the skill check was. Consult the 'margin of success' table at the bottom of
+                                this page.. <a href="./gathering.html#yield">here</a>.
                         </p>
 
                         <h4 class="skz-viking">Skill checks & DC</h4><br>
 
-                        <p>The base DC for all gathering checks is 10. This DC is then adjusted by situational factors
+                        <p>The base DC for all gathering checks is 8. This DC is then adjusted by situational factors
                                 such as terrain, season, or other complications that make gathering more difficult. The
                                 table below offers suggested modifiers, but it cannot account for every possible
                                 circumstance—the DM should apply additional adjustments as needed.</p>
@@ -137,21 +137,49 @@
 
                         <h4 class="skz-viking">Heerb gathering</h4><br>
                         <p>Herb gathering requires proficiency with a <strong>Herbalism Kit</strong>. On a successful
-                                check, consult the
-                                table below for suggested Yield.
+                                check. The number of rolls you can make on the <a
+                                        href="./tables.html#herb-sec">Herbalism</a>
+                                table is determined by the margin of success. Each roll you can make returns a pound of
+                                whichever herb is rolled.
                         </p>
 
                         <h4 class="skz-viking">Foraging</h4>
-                        <p>Foraging requires a <strong>Survival check</strong> or <strong>Nature</strong>. Checks are
+                        <p>Foraging requires a <strong>Survival</strong> or <strong>Nature</strong> check. They are
                                 made with <strong>disadvantage</strong> if you are not profcient with one of these
-                                skills. On a successful check,
-                                consult the table below for suggested Yield.
+                                skills. Your margin of success determines the number of rolls you can make on the <a
+                                        href="./tables.html#foraging-sec">Foraging table</a>. Each roll grants one item
+                                of food; enough for one person for one day.
                         </p>
                         <h4 class="skz-viking">Hunting & skinning</h4>
                         <p>Hunting requires a <strong>Survival</strong> check. Checks are made with
-                                <strong>disadvantage</strong> if you are not profcient.
+                                <strong>disadvantage</strong> if you are not profcient. Determine the outcome
+                                of your hunt then roll that number of times on the <a
+                                        href="./tables.html#hunting-sec">Hunting table</a>.
                         </p>
 
+                        <p>Skinning requires proficiency with <strong>Leatherworker’s Tools</strong>. Each attempt calls
+                                for a skill check, though the skinner need not have hunted the beast you are attempting
+                                to skin. Of course, if the hunt fails, there is nothing to skin..</p>
+
+                        <p> Each individual beast successfully hunted can then be skinned. The rarity of that beast must
+                                then be used to determine the skinning DC in the table below.
+
+                        <p>Example: Hugglebear the hunter is tracking through a forest in deep winter (+5 DC).
+                                This makes the DC 8 + 5 (13). She rolls a 16 giving a success margin of 3. margin
+                                of success of 3 grants her two rolls on the hunting table.</p>
+
+                        <p>First roll using 'Forest' determines a 'Ruffed Grouse' (Yield 1, common, feathers). For the
+                                hunter this provides 1 food item; enough to feed one person for a day. In order
+                                to 'skin' to obtain feathers the skinner must succeed on a DC 8 + 5 (13) Leatherworking
+                                Tools check to safely remove the feathers without damaging them. Notes: as the DM I
+                                decided that the penalty for Winter (+5) should still apply here because it is difficult
+                                to work with cold hands. However, had the skinner taken the carcass inside and plucked
+                                it before the hunter cuts it up for food I would have reduced that penalty.</p>
+                        <p>The second roll determines a 'red deer' (Yield 5, uncomm, leather). For the hunter this
+                                provides 5 units of food; enough to feed 5 people for a day. This time the skinning DC
+                                is a flat 12 because the carcass was carried back to a nice warm cabin in the woods. The
+                                check is a success and the hunter has obtained a deer hide.
+                        </p>
                         <table class="materials-table" style="width: 40%;">
                                 <thead>
                                         <tr class="tr-left">
@@ -183,36 +211,21 @@
                                 </tbody>
                         </table><br>
 
-                        <p>Skinning requires proficiency with <strong>Leatherworker’s Tools</strong>. Each attempt calls
-                                for a skill check, though the hunter and the skinner need not be the same person. Of
-                                course, if the hunt fails, there is nothing to skin. Consult the table below for
-                                suggested Yield. The chosen Yield for skinning must match the result of the hunt. For
-                                example: if Cedric the hunter secures a successful Yield of 2 and chooses to roll on the
-                                Uncommon table, Bob—the party’s skinner—may then attempt to skin the creature.</p>
-                        <p>Keep in mind, however, that a successful hunt does not guarantee a successful skinning.
-                                Further, the DC for skinning is based solely on the rarity of the creature that was
-                                successfully hunted. Each individual beast you wish to skin requires its own skill
-                                check.</p>
 
-                        <h4 class="skz-viking">Yield</h4><br>
-                        <p>Consult the table below. Once a Yield is determined, proceed to the generators <a
-                                        href="tables.html">here</a>. The Yield column provides a numerical value that
-                                represents the total number of rolls the player can make.</p>
+                        <h4 class="skz-viking" id="yield">Margin of success</h4><br>
+                        <p>Consult the table below to determine the total number of rolls you can make on the
+                                corresponding gathering table.
+                        </p>
 
-                        <p>Note that when hunting or foraging, the <strong>Yield</strong> also represents how many
-                                people can be sustained for one day. For example, a Yield of 3 from hunting combined
-                                with 3 from foraging provides a total Yield of 6—enough to feed 6 people for one day, or
-                                3 people for two days.</p>
                         <p><strong>Note</strong>: if your travel speed exceeds 'normal' pace then you cannot hunt or
-                                forage. If
-                                the party elects to move at a slower speed then foraging and hunting checks can be made
-                                with advantage.</p>
+                                forage. If the party elects to move at a slower speed then foraging and hunting checks
+                                can be made with advantage.</p>
 
                         <table class="materials-table" style="width: 40%;">
                                 <thead>
                                         <tr class="tr-left">
                                                 <th class="skz-vk-th">Margin of Success (DC beaten by…)</th>
-                                                <th class="skz-vk-th">Yield (Units)</th>
+                                                <th class="skz-vk-th">Rolls</th>
                                         </tr>
                                 </thead>
                                 <tbody>

@@ -9728,7 +9728,7 @@
       "attunement": false,
       "is_consumable": true,
       "magical": true,
-      "publication": null,
+      "publication": "srd",
       "price": 50.0,
       "price_": 50
     },
@@ -9740,7 +9740,7 @@
       "attunement": false,
       "is_consumable": true,
       "magical": true,
-      "publication": null,
+      "publication": "srd",
       "price": 100.0,
       "price_": 100
     },
@@ -9752,7 +9752,7 @@
       "attunement": false,
       "is_consumable": true,
       "magical": true,
-      "publication": null,
+      "publication": "srd",
       "price": 250.0,
       "price_": 250
     },
@@ -9764,7 +9764,7 @@
       "attunement": false,
       "is_consumable": true,
       "magical": true,
-      "publication": null,
+      "publication": "srd",
       "price": 500.0,
       "price_": 500
     },
@@ -9776,7 +9776,7 @@
       "attunement": false,
       "is_consumable": true,
       "magical": true,
-      "publication": null,
+      "publication": "srd",
       "price": 2500.0,
       "price_": 2500
     },
@@ -9788,7 +9788,7 @@
       "attunement": false,
       "is_consumable": true,
       "magical": true,
-      "publication": null,
+      "publication": "srd",
       "price": 5000.0,
       "price_": 5000
     },
@@ -9800,7 +9800,7 @@
       "attunement": false,
       "is_consumable": true,
       "magical": true,
-      "publication": null,
+      "publication": "srd",
       "price": 7500.0,
       "price_": 7500
     },
@@ -9812,7 +9812,7 @@
       "attunement": false,
       "is_consumable": true,
       "magical": true,
-      "publication": null,
+      "publication": "srd",
       "price": 9000.0,
       "price_": 9000
     },
@@ -9824,7 +9824,7 @@
       "attunement": false,
       "is_consumable": true,
       "magical": true,
-      "publication": null,
+      "publication": "srd",
       "price": 11000.0,
       "price_": 11000
     },
@@ -9836,7 +9836,7 @@
       "attunement": false,
       "is_consumable": true,
       "magical": true,
-      "publication": null,
+      "publication": "srd",
       "price": null,
       "price_": "---"
     },
@@ -26124,6 +26124,18 @@
       "publication": "srd",
       "price": 150.0,
       "price_": 150
+    },
+    {
+      "id": 2178,
+      "name": "Arcane Ink",
+      "type": "goods",
+      "rarity": "legendary",
+      "attunement": false,
+      "is_consumable": false,
+      "magical": false,
+      "publication": "srd",
+      "price": 500.0,
+      "price_": 500
     },
     {
       "id": 2178,
