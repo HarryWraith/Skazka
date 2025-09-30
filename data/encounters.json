@@ -1,6 +1,12 @@
 {
   "schema": "encounters.v3",
-  "risks": ["safe", "low", "moderate", "high", "deadly"],
+  "risks": [
+    "safe",
+    "low",
+    "moderate",
+    "high",
+    "deadly"
+  ],
   "zones": [
     "forest",
     "plains",
@@ -22,13 +28,22 @@
           "v": "A family of deer grazing peacefully in a sun-dappled clearing",
           "w": 15
         },
-        { "v": "Ancient standing stones covered in protective runes", "w": 10 },
-        { "v": "A babbling brook with exceptionally pure water", "w": 12 },
+        {
+          "v": "Ancient standing stones covered in protective runes",
+          "w": 10
+        },
+        {
+          "v": "A babbling brook with exceptionally pure water",
+          "w": 12
+        },
         {
           "v": "Colorful songbirds performing an elaborate mating display",
           "w": 8
         },
-        { "v": "A wise old hermit tending to wounded animals", "w": 7 },
+        {
+          "v": "A wise old hermit tending to wounded animals",
+          "w": 7
+        },
         {
           "v": "A grove where all the leaves shine silver in moonlight",
           "w": 6
@@ -37,14 +52,26 @@
           "v": "A friendly dryad offering directions and forest wisdom",
           "w": 5
         },
-        { "v": "An abandoned but well-stocked ranger's cache", "w": 8 },
-        { "v": "A circle of mushrooms that grants temporary fey luck", "w": 4 },
+        {
+          "v": "An abandoned but well-stocked ranger's cache",
+          "w": 8
+        },
+        {
+          "v": "A circle of mushrooms that grants temporary fey luck",
+          "w": 4
+        },
         {
           "v": "A majestic elk with golden antlers watching from afar",
           "w": 6
         },
-        { "v": "A natural amphitheater where forest spirits dance", "w": 3 },
-        { "v": "A talking squirrel with news from distant lands", "w": 4 },
+        {
+          "v": "A natural amphitheater where forest spirits dance",
+          "w": 3
+        },
+        {
+          "v": "A talking squirrel with news from distant lands",
+          "w": 4
+        },
         {
           "v": "Berry bushes heavy with magical fruit that restores energy",
           "w": 7
@@ -53,96 +80,263 @@
           "v": "A lost child from a nearby village, scared but unharmed",
           "w": 5
         },
-        { "v": "A traveling scholar studying rare plants", "w": 6 }
+        {
+          "v": "A traveling scholar studying rare plants",
+          "w": 6
+        }
       ],
       "low": [
         {
           "v": "1d4 Giant Spiders (CR 1) defending their web-filled territory",
           "w": 20
         },
-        { "v": "A hungry Black Bear (CR 1/2) foraging for food", "w": 18 },
-        { "v": "2d4 Bandits (CR 1/8) demanding a 'forest tax'", "w": 16 },
-        { "v": "1d2 Brown Bears (CR 1) protecting their cubs", "w": 12 },
+        {
+          "v": "A hungry Black Bear (CR 1/2) foraging for food",
+          "w": 18
+        },
+        {
+          "v": "2d4 Bandits (CR 1/8) demanding a 'forest tax'",
+          "w": 16
+        },
+        {
+          "v": "1d2 Brown Bears (CR 1) protecting their cubs",
+          "w": 12
+        },
         {
           "v": "A territorial Dryad (CR 1) warning against tree cutting",
           "w": 8
         },
-        { "v": "1d6 Wolves (CR 1/4) hunting as a coordinated pack", "w": 14 },
+        {
+          "v": "1d6 Wolves (CR 1/4) hunting as a coordinated pack",
+          "w": 14
+        },
         {
           "v": "2d6 Stirges (CR 1/8) attracted by the scent of blood",
           "w": 10
         },
-        { "v": "A Wild Boar (CR 1/4) charging through underbrush", "w": 8 },
-        { "v": "1d4 Giant Centipedes (CR 1/4) in rotting logs", "w": 6 },
-        { "v": "A Dire Wolf (CR 1) stalking the party from shadows", "w": 7 },
-        { "v": "2d4 Kobolds (CR 1/8) with crude forest traps", "w": 9 },
-        { "v": "A Satyr (CR 1/2) playing tricks on travelers", "w": 5 },
-        { "v": "1d6 Giant Rats (CR 1/8) infected with disease", "w": 7 },
-        { "v": "A Vine Blight (CR 1/2) strangling forest paths", "w": 6 },
+        {
+          "v": "A Wild Boar (CR 1/4) charging through underbrush",
+          "w": 8
+        },
+        {
+          "v": "1d4 Giant Centipedes (CR 1/4) in rotting logs",
+          "w": 6
+        },
+        {
+          "v": "A Dire Wolf (CR 1) stalking the party from shadows",
+          "w": 7
+        },
+        {
+          "v": "2d4 Kobolds (CR 1/8) with crude forest traps",
+          "w": 9
+        },
+        {
+          "v": "A Satyr (CR 1/2) playing tricks on travelers",
+          "w": 5
+        },
+        {
+          "v": "1d6 Giant Rats (CR 1/8) infected with disease",
+          "w": 7
+        },
+        {
+          "v": "A Vine Blight (CR 1/2) strangling forest paths",
+          "w": 6
+        },
         {
           "v": "1d4 Awakened Shrubs (CR 0) turned hostile by corruption",
+          "w": 4
+        },
+        {
+          "t": "A rickety **snare line** set by kobolds tangles ankles while archers harry from trees",
+          "tags": [
+            "ambush",
+            "hazard",
+            "kobolds",
+            "day"
+          ],
+          "w": 6
+        },
+        {
+          "t": "Feral **boars** stampede across the path; calming them could save a nearby farm",
+          "tags": [
+            "beasts",
+            "day",
+            "social"
+          ],
           "w": 4
         }
       ],
       "moderate": [
-        { "v": "An Owlbear (CR 3) fiercely defending its den", "w": 22 },
+        {
+          "v": "An Owlbear (CR 3) fiercely defending its den",
+          "w": 22
+        },
         {
           "v": "1d3 Displacer Beasts (CR 3) hunting in coordinated ambush",
           "w": 18
         },
-        { "v": "A Shambling Mound (CR 5) in a grove of decay", "w": 12 },
-        { "v": "2d6 Hobgoblins (CR 1/2) on military patrol", "w": 15 },
-        { "v": "A Green Hag (CR 3) seeking dark bargains", "w": 10 },
-        { "v": "1d2 Trolls (CR 5) hunting for fresh meat", "w": 8 },
-        { "v": "A Grick (CR 2) lurking in canopy shadows", "w": 7 },
-        { "v": "2d4 Dryads (CR 1) united against intruders", "w": 6 },
-        { "v": "1d4 Owlbears (CR 3) competing for territory", "w": 9 },
-        { "v": "A corrupted Unicorn (CR 5) driven mad by dark magic", "w": 4 },
-        { "v": "3d6 Wolves (CR 1/4) led by a Dire Wolf (CR 1)", "w": 11 },
-        { "v": "A Bulezau (CR 3) leading goblin raiders", "w": 5 },
-        { "v": "2d4 Giant Spiders (CR 1) in ancient webbed ruins", "w": 8 },
-        { "v": "A Banshee (CR 4) haunting cursed groves", "w": 6 },
-        { "v": "1d6 Ettercaps (CR 2) with spider allies", "w": 7 }
+        {
+          "v": "A Shambling Mound (CR 5) in a grove of decay",
+          "w": 12
+        },
+        {
+          "v": "2d6 Hobgoblins (CR 1/2) on military patrol",
+          "w": 15
+        },
+        {
+          "v": "A Green Hag (CR 3) seeking dark bargains",
+          "w": 10
+        },
+        {
+          "v": "1d2 Trolls (CR 5) hunting for fresh meat",
+          "w": 8
+        },
+        {
+          "v": "A Grick (CR 2) lurking in canopy shadows",
+          "w": 7
+        },
+        {
+          "v": "2d4 Dryads (CR 1) united against intruders",
+          "w": 6
+        },
+        {
+          "v": "1d4 Owlbears (CR 3) competing for territory",
+          "w": 9
+        },
+        {
+          "v": "A corrupted Unicorn (CR 5) driven mad by dark magic",
+          "w": 4
+        },
+        {
+          "v": "3d6 Wolves (CR 1/4) led by a Dire Wolf (CR 1)",
+          "w": 11
+        },
+        {
+          "v": "A Bulezau (CR 3) leading goblin raiders",
+          "w": 5
+        },
+        {
+          "v": "2d4 Giant Spiders (CR 1) in ancient webbed ruins",
+          "w": 8
+        },
+        {
+          "v": "A Banshee (CR 4) haunting cursed groves",
+          "w": 6
+        },
+        {
+          "v": "1d6 Ettercaps (CR 2) with spider allies",
+          "w": 7
+        },
+        {
+          "t": "A **hag’s market** appears at dusk, trading favors and curses",
+          "tags": [
+            "fey",
+            "dusk",
+            "social",
+            "mystical"
+          ],
+          "w": 5
+        }
       ],
       "high": [
-        { "v": "A young Green Dragon (CR 8) claiming forest domain", "w": 20 },
-        { "v": "A Treant (CR 9) enraged by deforestation", "w": 18 },
-        { "v": "2d4 Wights (CR 3) from an ancient battlefield", "w": 12 },
-        { "v": "A Druid (CR 2) with 2d4 Brown Bears (CR 1)", "w": 14 },
-        { "v": "1d3 Hill Giants (CR 5) foraging destructively", "w": 10 },
-        { "v": "A powerful Coven of Green Hags (CR 5 each)", "w": 8 },
-        { "v": "An Adult Owlbear (CR 5) with 1d4 young", "w": 9 },
-        { "v": "2d6 Trolls (CR 5) establishing new hunting grounds", "w": 7 },
-        { "v": "A Roper (CR 5) disguised as ancient tree", "w": 6 },
-        { "v": "1d4 Bulezau (CR 3) leading chaos cultists", "w": 5 },
+        {
+          "v": "A young Green Dragon (CR 8) claiming forest domain",
+          "w": 20
+        },
+        {
+          "v": "A Treant (CR 9) enraged by deforestation",
+          "w": 18
+        },
+        {
+          "v": "2d4 Wights (CR 3) from an ancient battlefield",
+          "w": 12
+        },
+        {
+          "v": "A Druid (CR 2) with 2d4 Brown Bears (CR 1)",
+          "w": 14
+        },
+        {
+          "v": "1d3 Hill Giants (CR 5) foraging destructively",
+          "w": 10
+        },
+        {
+          "v": "A powerful Coven of Green Hags (CR 5 each)",
+          "w": 8
+        },
+        {
+          "v": "An Adult Owlbear (CR 5) with 1d4 young",
+          "w": 9
+        },
+        {
+          "v": "2d6 Trolls (CR 5) establishing new hunting grounds",
+          "w": 7
+        },
+        {
+          "v": "A Roper (CR 5) disguised as ancient tree",
+          "w": 6
+        },
+        {
+          "v": "1d4 Bulezau (CR 3) leading chaos cultists",
+          "w": 5
+        },
         {
           "v": "A vengeful Forest Guardian (Treant CR 9) with awakened tree allies",
           "w": 8
         },
-        { "v": "3d4 Displacer Beasts (CR 3) in pack formation", "w": 6 },
-        { "v": "A corrupted Archdruid (CR 12) spreading blight", "w": 4 },
+        {
+          "v": "3d4 Displacer Beasts (CR 3) in pack formation",
+          "w": 6
+        },
+        {
+          "v": "A corrupted Archdruid (CR 12) spreading blight",
+          "w": 4
+        },
         {
           "v": "2d4 Yuan-ti Purebloods (CR 1) scouting for temple sites",
           "w": 5
         }
       ],
       "deadly": [
-        { "v": "An adult Green Dragon (CR 15) in its ancient lair", "w": 25 },
-        { "v": "A Lich (CR 21) conducting necromantic experiments", "w": 15 },
-        { "v": "2d4 Stone Giants (CR 7) led by a Giant Lord", "w": 18 },
-        { "v": "An Ancient Treant with 1d4 Treants (CR 9)", "w": 12 },
-        { "v": "A Death Knight (CR 17) on an eternal quest", "w": 8 },
+        {
+          "v": "An adult Green Dragon (CR 15) in its ancient lair",
+          "w": 25
+        },
+        {
+          "v": "A Lich (CR 21) conducting necromantic experiments",
+          "w": 15
+        },
+        {
+          "v": "2d4 Stone Giants (CR 7) led by a Giant Lord",
+          "w": 18
+        },
+        {
+          "v": "An Ancient Treant with 1d4 Treants (CR 9)",
+          "w": 12
+        },
+        {
+          "v": "A Death Knight (CR 17) on an eternal quest",
+          "w": 8
+        },
         {
           "v": "A Tarrasque (CR 30) awakening from centuries of slumber",
           "w": 3
         },
-        { "v": "An Avatar of a nature deity demanding worship", "w": 5 },
+        {
+          "v": "An Avatar of a nature deity demanding worship",
+          "w": 5
+        },
         {
           "v": "A Pit Fiend (CR 20) corrupting the heart of the forest",
           "w": 6
         },
-        { "v": "An Ancient Green Dragon (CR 22) with draconic court", "w": 4 },
-        { "v": "A powerful Lich Lord with undead army", "w": 4 }
+        {
+          "v": "An Ancient Green Dragon (CR 22) with draconic court",
+          "w": 4
+        },
+        {
+          "v": "A powerful Lich Lord with undead army",
+          "w": 4
+        }
       ]
     },
     "plains": {
@@ -151,115 +345,334 @@
           "v": "A herd of wild horses galloping across the grassland",
           "w": 20
         },
-        { "v": "Prairie dogs popping up from their burrow network", "w": 15 },
+        {
+          "v": "Prairie dogs popping up from their burrow network",
+          "w": 15
+        },
         {
           "v": "A circle of ancient standing stones humming with power",
           "w": 10
         },
-        { "v": "Wildflowers blooming in seasonal display", "w": 12 },
-        { "v": "A majestic hawk circling on thermal currents", "w": 8 },
-        { "v": "A natural oasis with clear spring water", "w": 7 },
-        { "v": "Friendly centaurs racing across the plains", "w": 6 },
-        { "v": "A weather-worn monument to ancient heroes", "w": 5 },
-        { "v": "Herds of antelope migrating seasonally", "w": 9 },
-        { "v": "A traveling merchant's abandoned but safe camp", "w": 6 },
-        { "v": "Ancient burial mounds radiating peaceful energy", "w": 4 },
-        { "v": "A giant's causeway of naturally arranged stones", "w": 3 }
+        {
+          "v": "Wildflowers blooming in seasonal display",
+          "w": 12
+        },
+        {
+          "v": "A majestic hawk circling on thermal currents",
+          "w": 8
+        },
+        {
+          "v": "A natural oasis with clear spring water",
+          "w": 7
+        },
+        {
+          "v": "Friendly centaurs racing across the plains",
+          "w": 6
+        },
+        {
+          "v": "A weather-worn monument to ancient heroes",
+          "w": 5
+        },
+        {
+          "v": "Herds of antelope migrating seasonally",
+          "w": 9
+        },
+        {
+          "v": "A traveling merchant's abandoned but safe camp",
+          "w": 6
+        },
+        {
+          "v": "Ancient burial mounds radiating peaceful energy",
+          "w": 4
+        },
+        {
+          "v": "A giant's causeway of naturally arranged stones",
+          "w": 3
+        }
       ],
       "low": [
-        { "v": "2d4 Gnolls (CR 1/2) hunting in savage pack", "w": 20 },
-        { "v": "1d4 Giant Hyenas (CR 1) scavenging battlefields", "w": 15 },
-        { "v": "A Lion (CR 1) stalking weakened prey", "w": 12 },
-        { "v": "2d6 Bandits (CR 1/8) mounted on horses", "w": 18 },
-        { "v": "1d2 Centaurs (CR 2) patrolling tribal territory", "w": 8 },
-        { "v": "A pack of 2d4 Wolves (CR 1/4)", "w": 10 },
-        { "v": "1d6 Giant Vultures (CR 1) seeking carrion", "w": 9 },
-        { "v": "2d4 Hobgoblins (CR 1/2) on scouting mission", "w": 14 },
-        { "v": "A Wild Boar (CR 1/4) charging through grass", "w": 6 },
-        { "v": "1d4 Giant Eagles (CR 1) defending nesting grounds", "w": 7 },
-        { "v": "2d6 Kobolds (CR 1/8) with crude mounted tactics", "w": 8 },
-        { "v": "A Dire Wolf (CR 1) leading smaller wolves", "w": 5 }
+        {
+          "v": "2d4 Gnolls (CR 1/2) hunting in savage pack",
+          "w": 20
+        },
+        {
+          "v": "1d4 Giant Hyenas (CR 1) scavenging battlefields",
+          "w": 15
+        },
+        {
+          "v": "A Lion (CR 1) stalking weakened prey",
+          "w": 12
+        },
+        {
+          "v": "2d6 Bandits (CR 1/8) mounted on horses",
+          "w": 18
+        },
+        {
+          "v": "1d2 Centaurs (CR 2) patrolling tribal territory",
+          "w": 8
+        },
+        {
+          "v": "A pack of 2d4 Wolves (CR 1/4)",
+          "w": 10
+        },
+        {
+          "v": "1d6 Giant Vultures (CR 1) seeking carrion",
+          "w": 9
+        },
+        {
+          "v": "2d4 Hobgoblins (CR 1/2) on scouting mission",
+          "w": 14
+        },
+        {
+          "v": "A Wild Boar (CR 1/4) charging through grass",
+          "w": 6
+        },
+        {
+          "v": "1d4 Giant Eagles (CR 1) defending nesting grounds",
+          "w": 7
+        },
+        {
+          "v": "2d6 Kobolds (CR 1/8) with crude mounted tactics",
+          "w": 8
+        },
+        {
+          "v": "A Dire Wolf (CR 1) leading smaller wolves",
+          "w": 5
+        }
       ],
       "moderate": [
-        { "v": "1d3 Manticores (CR 3) hunting from aerial advantage", "w": 22 },
-        { "v": "A Bulezau (CR 3) with 1d6 Gnolls", "w": 15 },
-        { "v": "2d4 Hobgoblins (CR 1/2) on warhorses", "w": 18 },
-        { "v": "A Griffon (CR 2) defending its mountain nest", "w": 12 },
-        { "v": "1d2 Owlbears (CR 3) wandering from forest", "w": 8 },
-        { "v": "A Lamia (CR 4) with charmed minions", "w": 6 },
-        { "v": "2d6 Centaurs (CR 2) in territorial dispute", "w": 10 },
-        { "v": "A Hill Giant (CR 5) hunting large game", "w": 9 },
-        { "v": "1d4 Manticores (CR 3) competing for territory", "w": 7 },
-        { "v": "A Phase Spider (CR 3) hunting between planes", "w": 5 },
+        {
+          "v": "1d3 Manticores (CR 3) hunting from aerial advantage",
+          "w": 22
+        },
+        {
+          "v": "A Bulezau (CR 3) with 1d6 Gnolls",
+          "w": 15
+        },
+        {
+          "v": "2d4 Hobgoblins (CR 1/2) on warhorses",
+          "w": 18
+        },
+        {
+          "v": "A Griffon (CR 2) defending its mountain nest",
+          "w": 12
+        },
+        {
+          "v": "1d2 Owlbears (CR 3) wandering from forest",
+          "w": 8
+        },
+        {
+          "v": "A Lamia (CR 4) with charmed minions",
+          "w": 6
+        },
+        {
+          "v": "2d6 Centaurs (CR 2) in territorial dispute",
+          "w": 10
+        },
+        {
+          "v": "A Hill Giant (CR 5) hunting large game",
+          "w": 9
+        },
+        {
+          "v": "1d4 Manticores (CR 3) competing for territory",
+          "w": 7
+        },
+        {
+          "v": "A Phase Spider (CR 3) hunting between planes",
+          "w": 5
+        },
         {
           "v": "2d4 Gnoll Fangs of Yeenoghu (CR 1) in religious frenzy",
           "w": 11
         },
-        { "v": "A Cyclops (CR 6) wandering lost", "w": 4 }
+        {
+          "v": "A Cyclops (CR 6) wandering lost",
+          "w": 4
+        }
       ],
       "high": [
-        { "v": "A young Blue Dragon (CR 9) claiming sky dominion", "w": 22 },
-        { "v": "2d4 Wyverns (CR 6) in aerial hunting formation", "w": 18 },
-        { "v": "A Roc (CR 11) hunting for massive prey", "w": 12 },
-        { "v": "1d3 Fire Giants (CR 9) on military campaign", "w": 15 },
-        { "v": "A Behir (CR 11) hunting dragons and giants", "w": 10 },
-        { "v": "An Air Elemental (CR 5) raging in massive storm", "w": 8 },
-        { "v": "A Sphinx (CR 11) testing travelers with riddles", "w": 6 },
-        { "v": "2d4 Hill Giants (CR 5) in tribal war party", "w": 14 },
-        { "v": "A Chimera (CR 6) terrorizing wide territory", "w": 9 },
-        { "v": "1d4 Stone Giants (CR 7) hurling massive boulders", "w": 7 }
+        {
+          "v": "A young Blue Dragon (CR 9) claiming sky dominion",
+          "w": 22
+        },
+        {
+          "v": "2d4 Wyverns (CR 6) in aerial hunting formation",
+          "w": 18
+        },
+        {
+          "v": "A Roc (CR 11) hunting for massive prey",
+          "w": 12
+        },
+        {
+          "v": "1d3 Fire Giants (CR 9) on military campaign",
+          "w": 15
+        },
+        {
+          "v": "A Behir (CR 11) hunting dragons and giants",
+          "w": 10
+        },
+        {
+          "v": "An Air Elemental (CR 5) raging in massive storm",
+          "w": 8
+        },
+        {
+          "v": "A Sphinx (CR 11) testing travelers with riddles",
+          "w": 6
+        },
+        {
+          "v": "2d4 Hill Giants (CR 5) in tribal war party",
+          "w": 14
+        },
+        {
+          "v": "A Chimera (CR 6) terrorizing wide territory",
+          "w": 9
+        },
+        {
+          "v": "1d4 Stone Giants (CR 7) hurling massive boulders",
+          "w": 7
+        }
       ],
       "deadly": [
-        { "v": "An adult Blue Dragon (CR 16) in massive storm", "w": 25 },
-        { "v": "A Purple Worm (CR 15) erupting from deep earth", "w": 18 },
-        { "v": "An Ancient Roc with territory spanning continents", "w": 15 },
-        { "v": "A Balor (CR 19) leading demonic horde", "w": 12 },
-        { "v": "An Ancient Storm Giant (CR 13) army", "w": 10 },
-        { "v": "A Kraken (CR 23) if near large water body", "w": 8 },
-        { "v": "An Ancient Blue Dragon (CR 23) in permanent storm", "w": 7 },
-        { "v": "A Tarrasque (CR 30) on continent-spanning rampage", "w": 5 }
+        {
+          "v": "An adult Blue Dragon (CR 16) in massive storm",
+          "w": 25
+        },
+        {
+          "v": "A Purple Worm (CR 15) erupting from deep earth",
+          "w": 18
+        },
+        {
+          "v": "An Ancient Roc with territory spanning continents",
+          "w": 15
+        },
+        {
+          "v": "A Balor (CR 19) leading demonic horde",
+          "w": 12
+        },
+        {
+          "v": "An Ancient Storm Giant (CR 13) army",
+          "w": 10
+        },
+        {
+          "v": "A Kraken (CR 23) if near large water body",
+          "w": 8
+        },
+        {
+          "v": "An Ancient Blue Dragon (CR 23) in permanent storm",
+          "w": 7
+        },
+        {
+          "v": "A Tarrasque (CR 30) on continent-spanning rampage",
+          "w": 5
+        }
       ]
     },
     "mountains": {
       "safe": [
-        { "v": "Mountain goats expertly navigating steep cliffs", "w": 18 },
+        {
+          "v": "Mountain goats expertly navigating steep cliffs",
+          "w": 18
+        },
         {
           "v": "A crystal-clear mountain spring with healing properties",
           "w": 12
         },
-        { "v": "Ancient dwarven road markers showing safe passage", "w": 15 },
+        {
+          "v": "Ancient dwarven road markers showing safe passage",
+          "w": 15
+        },
         {
           "v": "Golden eagles soaring majestically on thermal currents",
           "w": 10
         },
-        { "v": "A naturally sheltered cave perfect for rest", "w": 8 },
-        { "v": "A hermit's shrine offering blessings to travelers", "w": 6 },
-        { "v": "Wildflowers blooming in protected alpine meadows", "w": 7 },
-        { "v": "A natural stone bridge spanning dangerous chasms", "w": 5 },
-        { "v": "Ancient stone cairns marking safe paths", "w": 9 },
-        { "v": "A peaceful mountain lake reflecting perfect sky", "w": 6 },
-        { "v": "Friendly mountain folk offering guidance", "w": 4 },
-        { "v": "A natural hot spring providing warmth and healing", "w": 5 }
+        {
+          "v": "A naturally sheltered cave perfect for rest",
+          "w": 8
+        },
+        {
+          "v": "A hermit's shrine offering blessings to travelers",
+          "w": 6
+        },
+        {
+          "v": "Wildflowers blooming in protected alpine meadows",
+          "w": 7
+        },
+        {
+          "v": "A natural stone bridge spanning dangerous chasms",
+          "w": 5
+        },
+        {
+          "v": "Ancient stone cairns marking safe paths",
+          "w": 9
+        },
+        {
+          "v": "A peaceful mountain lake reflecting perfect sky",
+          "w": 6
+        },
+        {
+          "v": "Friendly mountain folk offering guidance",
+          "w": 4
+        },
+        {
+          "v": "A natural hot spring providing warmth and healing",
+          "w": 5
+        }
       ],
       "low": [
-        { "v": "2d4 Orcs (CR 1/2) from mountain tribal territories", "w": 20 },
-        { "v": "1d2 Giant Goats (CR 1/2) defending their terrain", "w": 15 },
+        {
+          "v": "2d4 Orcs (CR 1/2) from mountain tribal territories",
+          "w": 20
+        },
+        {
+          "v": "1d2 Giant Goats (CR 1/2) defending their terrain",
+          "w": 15
+        },
         {
           "v": "A Giant Eagle (CR 1) aggressively protecting its nest",
           "w": 12
         },
-        { "v": "1d4 Kobolds (CR 1/8) with elaborate mountain traps", "w": 18 },
-        { "v": "A Mountain Dwarf Veteran (CR 3) on patrol", "w": 8 },
-        { "v": "1d2 Brown Bears (CR 1) in mountain caves", "w": 10 },
-        { "v": "A Dire Wolf (CR 1) hunting mountain paths", "w": 7 },
-        { "v": "2d6 Stirges (CR 1/8) from high-altitude caves", "w": 9 },
-        { "v": "A Wild Boar (CR 1/4) charging down slopes", "w": 6 },
-        { "v": "1d6 Giant Centipedes (CR 1/4) under mountain rocks", "w": 8 },
-        { "v": "A Scout (CR 1/2) tracking through mountain passes", "w": 5 },
-        { "v": "2d4 Bandits (CR 1/8) ambushing at narrow passes", "w": 14 }
+        {
+          "v": "1d4 Kobolds (CR 1/8) with elaborate mountain traps",
+          "w": 18
+        },
+        {
+          "v": "A Mountain Dwarf Veteran (CR 3) on patrol",
+          "w": 8
+        },
+        {
+          "v": "1d2 Brown Bears (CR 1) in mountain caves",
+          "w": 10
+        },
+        {
+          "v": "A Dire Wolf (CR 1) hunting mountain paths",
+          "w": 7
+        },
+        {
+          "v": "2d6 Stirges (CR 1/8) from high-altitude caves",
+          "w": 9
+        },
+        {
+          "v": "A Wild Boar (CR 1/4) charging down slopes",
+          "w": 6
+        },
+        {
+          "v": "1d6 Giant Centipedes (CR 1/4) under mountain rocks",
+          "w": 8
+        },
+        {
+          "v": "A Scout (CR 1/2) tracking through mountain passes",
+          "w": 5
+        },
+        {
+          "v": "2d4 Bandits (CR 1/8) ambushing at narrow passes",
+          "w": 14
+        }
       ],
       "moderate": [
-        { "v": "A Manticore (CR 3) hunting from high mountain peaks", "w": 20 },
+        {
+          "v": "A Manticore (CR 3) hunting from high mountain peaks",
+          "w": 20
+        },
         {
           "v": "1d3 Griffons (CR 2) defending vast mountain territory",
           "w": 18
@@ -268,15 +681,42 @@
           "v": "2d4 Hobgoblins (CR 1/2) in fortified mountain stronghold",
           "w": 16
         },
-        { "v": "A Hill Giant (CR 5) hurling massive boulders", "w": 12 },
-        { "v": "A Roper (CR 5) disguised as mountain formation", "w": 8 },
-        { "v": "A Young Copper Dragon (CR 7) claiming territory", "w": 6 },
-        { "v": "2d6 Orcs (CR 1/2) in tribal war party", "w": 14 },
-        { "v": "A Chimera (CR 6) terrorizing mountain passes", "w": 7 },
-        { "v": "1d4 Ettercaps (CR 2) with giant spider allies", "w": 9 },
-        { "v": "A Cyclops (CR 6) throwing rocks at travelers", "w": 5 },
-        { "v": "A Galeb Duhr (CR 6) angered by mining operations", "w": 4 },
-        { "v": "2d4 Duergar (CR 1) raiders from the Underdark", "w": 10 }
+        {
+          "v": "A Hill Giant (CR 5) hurling massive boulders",
+          "w": 12
+        },
+        {
+          "v": "A Roper (CR 5) disguised as mountain formation",
+          "w": 8
+        },
+        {
+          "v": "A Young Copper Dragon (CR 7) claiming territory",
+          "w": 6
+        },
+        {
+          "v": "2d6 Orcs (CR 1/2) in tribal war party",
+          "w": 14
+        },
+        {
+          "v": "A Chimera (CR 6) terrorizing mountain passes",
+          "w": 7
+        },
+        {
+          "v": "1d4 Ettercaps (CR 2) with giant spider allies",
+          "w": 9
+        },
+        {
+          "v": "A Cyclops (CR 6) throwing rocks at travelers",
+          "w": 5
+        },
+        {
+          "v": "A Galeb Duhr (CR 6) angered by mining operations",
+          "w": 4
+        },
+        {
+          "v": "2d4 Duergar (CR 1) raiders from the Underdark",
+          "w": 10
+        }
       ],
       "high": [
         {
@@ -287,155 +727,476 @@
           "v": "2d4 Stone Giants (CR 7) hurling house-sized boulders",
           "w": 18
         },
-        { "v": "A Frost Giant Jarl with massive tribal warband", "w": 16 },
-        { "v": "A Behir (CR 11) hunting dragons in mountain peaks", "w": 12 },
-        { "v": "A Cloud Giant (CR 9) in floating mountain castle", "w": 10 },
-        { "v": "An Adult Copper Dragon (CR 14) demanding tribute", "w": 8 },
+        {
+          "v": "A Frost Giant Jarl with massive tribal warband",
+          "w": 16
+        },
+        {
+          "v": "A Behir (CR 11) hunting dragons in mountain peaks",
+          "w": 12
+        },
+        {
+          "v": "A Cloud Giant (CR 9) in floating mountain castle",
+          "w": 10
+        },
+        {
+          "v": "An Adult Copper Dragon (CR 14) demanding tribute",
+          "w": 8
+        },
         {
           "v": "A Roc (CR 11) with territory spanning mountain ranges",
           "w": 9
         },
-        { "v": "2d6 Fire Giants (CR 9) in military expedition", "w": 14 },
-        { "v": "A powerful Storm Giant (CR 13) controlling weather", "w": 6 },
-        { "v": "An Ancient Earth Elemental awakening", "w": 5 }
+        {
+          "v": "2d6 Fire Giants (CR 9) in military expedition",
+          "w": 14
+        },
+        {
+          "v": "A powerful Storm Giant (CR 13) controlling weather",
+          "w": 6
+        },
+        {
+          "v": "An Ancient Earth Elemental awakening",
+          "w": 5
+        }
       ],
       "deadly": [
-        { "v": "An ancient Red Dragon (CR 17) in volcanic fortress", "w": 25 },
-        { "v": "A Fire Giant Dreadnought leading massive army", "w": 18 },
-        { "v": "A Balor (CR 19) emerging from Abyss portal", "w": 15 },
-        { "v": "An Ancient Stone Giant empire awakening", "w": 12 },
-        { "v": "A Pit Fiend establishing mountain stronghold", "w": 10 },
-        { "v": "A Tarrasque awakening in mountain depths", "w": 8 },
-        { "v": "An Ancient Cloud Giant kingdom descending", "w": 7 },
-        { "v": "A Primordial Earth Elemental breaking free", "w": 5 }
+        {
+          "v": "An ancient Red Dragon (CR 17) in volcanic fortress",
+          "w": 25
+        },
+        {
+          "v": "A Fire Giant Dreadnought leading massive army",
+          "w": 18
+        },
+        {
+          "v": "A Balor (CR 19) emerging from Abyss portal",
+          "w": 15
+        },
+        {
+          "v": "An Ancient Stone Giant empire awakening",
+          "w": 12
+        },
+        {
+          "v": "A Pit Fiend establishing mountain stronghold",
+          "w": 10
+        },
+        {
+          "v": "A Tarrasque awakening in mountain depths",
+          "w": 8
+        },
+        {
+          "v": "An Ancient Cloud Giant kingdom descending",
+          "w": 7
+        },
+        {
+          "v": "A Primordial Earth Elemental breaking free",
+          "w": 5
+        }
       ]
     },
     "desert": {
       "safe": [
-        { "v": "A natural oasis with life-giving water", "w": 20 },
-        { "v": "Ancient stone monuments marking safe passage", "w": 15 },
-        { "v": "A caravan of friendly merchants sharing water", "w": 12 },
-        { "v": "Desert nomads offering guidance", "w": 10 },
-        { "v": "A hidden cave providing shade from sun", "w": 8 },
-        { "v": "Fossilized remains of ancient sea creatures", "w": 6 },
-        { "v": "A mirage that's actually a magical sanctuary", "w": 4 },
-        { "v": "Wild camels grazing on sparse vegetation", "w": 7 },
-        { "v": "A weather-worn shrine to desert spirits", "w": 5 },
-        { "v": "Beautiful desert flowers blooming after rare rain", "w": 3 }
+        {
+          "v": "A natural oasis with life-giving water",
+          "w": 20
+        },
+        {
+          "v": "Ancient stone monuments marking safe passage",
+          "w": 15
+        },
+        {
+          "v": "A caravan of friendly merchants sharing water",
+          "w": 12
+        },
+        {
+          "v": "Desert nomads offering guidance",
+          "w": 10
+        },
+        {
+          "v": "A hidden cave providing shade from sun",
+          "w": 8
+        },
+        {
+          "v": "Fossilized remains of ancient sea creatures",
+          "w": 6
+        },
+        {
+          "v": "A mirage that's actually a magical sanctuary",
+          "w": 4
+        },
+        {
+          "v": "Wild camels grazing on sparse vegetation",
+          "w": 7
+        },
+        {
+          "v": "A weather-worn shrine to desert spirits",
+          "w": 5
+        },
+        {
+          "v": "Beautiful desert flowers blooming after rare rain",
+          "w": 3
+        }
       ],
       "low": [
-        { "v": "2d4 Bandits (CR 1/8) mounted on camels", "w": 20 },
-        { "v": "1d4 Giant Scorpions (CR 3) hunting in sand", "w": 18 },
-        { "v": "A Bandit Captain (CR 2) leading desert raiders", "w": 15 },
-        { "v": "2d6 Giant Vultures (CR 1) circling for carrion", "w": 12 },
-        { "v": "1d6 Giant Hyenas (CR 1) scavenging", "w": 10 },
-        { "v": "A Lion (CR 1) defending water source", "w": 8 },
-        { "v": "2d4 Stirges (CR 1/8) from desert caves", "w": 9 },
-        { "v": "1d4 Giant Centipedes (CR 1/4) under rocks", "w": 7 },
-        { "v": "A Phase Spider (CR 3) hunting between planes", "w": 6 },
-        { "v": "2d6 Kobolds (CR 1/8) adapted to desert warfare", "w": 11 }
+        {
+          "v": "2d4 Bandits (CR 1/8) mounted on camels",
+          "w": 20
+        },
+        {
+          "v": "1d4 Giant Scorpions (CR 3) hunting in sand",
+          "w": 18
+        },
+        {
+          "v": "A Bandit Captain (CR 2) leading desert raiders",
+          "w": 15
+        },
+        {
+          "v": "2d6 Giant Vultures (CR 1) circling for carrion",
+          "w": 12
+        },
+        {
+          "v": "1d6 Giant Hyenas (CR 1) scavenging",
+          "w": 10
+        },
+        {
+          "v": "A Lion (CR 1) defending water source",
+          "w": 8
+        },
+        {
+          "v": "2d4 Stirges (CR 1/8) from desert caves",
+          "w": 9
+        },
+        {
+          "v": "1d4 Giant Centipedes (CR 1/4) under rocks",
+          "w": 7
+        },
+        {
+          "v": "A Phase Spider (CR 3) hunting between planes",
+          "w": 6
+        },
+        {
+          "v": "2d6 Kobolds (CR 1/8) adapted to desert warfare",
+          "w": 11
+        }
       ],
       "moderate": [
-        { "v": "A Sphinx (CR 11) testing travelers with riddles", "w": 15 },
-        { "v": "1d3 Lamias (CR 4) with charmed servants", "w": 18 },
-        { "v": "A Blue Dragon Wyrmling (CR 3) claiming territory", "w": 12 },
-        { "v": "2d4 Hobgoblins (CR 1/2) on desert patrol", "w": 16 },
-        { "v": "A Cyclops (CR 6) guarding ancient ruins", "w": 8 },
-        { "v": "1d6 Yuan-ti Purebloods (CR 1) from hidden temple", "w": 10 },
-        { "v": "A Manticore (CR 3) hunting from desert peaks", "w": 14 },
-        { "v": "2d6 Gnolls (CR 1/2) in hunting pack", "w": 20 },
-        { "v": "A Roc (CR 11) with massive hunting territory", "w": 7 },
-        { "v": "1d4 Efreets (CR 11) from Elemental Plane of Fire", "w": 5 }
+        {
+          "v": "A Sphinx (CR 11) testing travelers with riddles",
+          "w": 15
+        },
+        {
+          "v": "1d3 Lamias (CR 4) with charmed servants",
+          "w": 18
+        },
+        {
+          "v": "A Blue Dragon Wyrmling (CR 3) claiming territory",
+          "w": 12
+        },
+        {
+          "v": "2d4 Hobgoblins (CR 1/2) on desert patrol",
+          "w": 16
+        },
+        {
+          "v": "A Cyclops (CR 6) guarding ancient ruins",
+          "w": 8
+        },
+        {
+          "v": "1d6 Yuan-ti Purebloods (CR 1) from hidden temple",
+          "w": 10
+        },
+        {
+          "v": "A Manticore (CR 3) hunting from desert peaks",
+          "w": 14
+        },
+        {
+          "v": "2d6 Gnolls (CR 1/2) in hunting pack",
+          "w": 20
+        },
+        {
+          "v": "A Roc (CR 11) with massive hunting territory",
+          "w": 7
+        },
+        {
+          "v": "1d4 Efreets (CR 11) from Elemental Plane of Fire",
+          "w": 5
+        }
       ],
       "high": [
-        { "v": "A young Blue Dragon (CR 9) in desert palace", "w": 20 },
-        { "v": "An Adult Brass Dragon (CR 13) demanding tribute", "w": 15 },
-        { "v": "A powerful Sphinx (CR 17) guarding ancient secrets", "w": 12 },
-        { "v": "2d4 Efreets (CR 11) from Fire Elemental plane", "w": 18 },
-        { "v": "A Death Knight seeking desert artifacts", "w": 8 },
-        { "v": "A Lich establishing desert tower", "w": 10 },
-        { "v": "An army of Fire Giants on campaign", "w": 14 },
-        { "v": "A Purple Worm emerging from deep desert", "w": 9 },
-        { "v": "A Balor leading demonic desert invasion", "w": 6 }
+        {
+          "v": "A young Blue Dragon (CR 9) in desert palace",
+          "w": 20
+        },
+        {
+          "v": "An Adult Brass Dragon (CR 13) demanding tribute",
+          "w": 15
+        },
+        {
+          "v": "A powerful Sphinx (CR 17) guarding ancient secrets",
+          "w": 12
+        },
+        {
+          "v": "2d4 Efreets (CR 11) from Fire Elemental plane",
+          "w": 18
+        },
+        {
+          "v": "A Death Knight seeking desert artifacts",
+          "w": 8
+        },
+        {
+          "v": "A Lich establishing desert tower",
+          "w": 10
+        },
+        {
+          "v": "An army of Fire Giants on campaign",
+          "w": 14
+        },
+        {
+          "v": "A Purple Worm emerging from deep desert",
+          "w": 9
+        },
+        {
+          "v": "A Balor leading demonic desert invasion",
+          "w": 6
+        }
       ],
       "deadly": [
-        { "v": "An Ancient Blue Dragon (CR 23) ruling desert empire", "w": 25 },
-        { "v": "A Lich King with vast undead desert army", "w": 18 },
-        { "v": "An Ancient Brass Dragon (CR 20) with court", "w": 15 },
-        { "v": "A Tarrasque awakening in desert heart", "w": 8 },
-        { "v": "A Demon Lord establishing desert realm", "w": 12 },
-        { "v": "An Avatar of desert deity demanding worship", "w": 10 },
-        { "v": "A Primordial Fire Elemental breaking free", "w": 7 },
-        { "v": "An Ancient Sphinx with reality-altering power", "w": 5 }
+        {
+          "v": "An Ancient Blue Dragon (CR 23) ruling desert empire",
+          "w": 25
+        },
+        {
+          "v": "A Lich King with vast undead desert army",
+          "w": 18
+        },
+        {
+          "v": "An Ancient Brass Dragon (CR 20) with court",
+          "w": 15
+        },
+        {
+          "v": "A Tarrasque awakening in desert heart",
+          "w": 8
+        },
+        {
+          "v": "A Demon Lord establishing desert realm",
+          "w": 12
+        },
+        {
+          "v": "An Avatar of desert deity demanding worship",
+          "w": 10
+        },
+        {
+          "v": "A Primordial Fire Elemental breaking free",
+          "w": 7
+        },
+        {
+          "v": "An Ancient Sphinx with reality-altering power",
+          "w": 5
+        }
       ]
     },
     "swamp": {
       "safe": [
-        { "v": "A peaceful bog with medicinal herbs", "w": 15 },
-        { "v": "Fireflies creating magical light displays", "w": 12 },
-        { "v": "A raised dry area perfect for camping", "w": 18 },
-        { "v": "Friendly lizardfolk sharing swamp knowledge", "w": 8 },
-        { "v": "A natural bridge over treacherous waters", "w": 10 },
-        { "v": "Ancient cypress trees with hollow shelters", "w": 9 },
-        { "v": "A hermit's hut on stilts offering shelter", "w": 7 },
-        { "v": "Edible swamp plants growing abundantly", "w": 6 },
-        { "v": "A natural spring with surprisingly clean water", "w": 5 },
-        { "v": "Friendly will-o'-wisps providing safe guidance", "w": 4 }
+        {
+          "v": "A peaceful bog with medicinal herbs",
+          "w": 15
+        },
+        {
+          "v": "Fireflies creating magical light displays",
+          "w": 12
+        },
+        {
+          "v": "A raised dry area perfect for camping",
+          "w": 18
+        },
+        {
+          "v": "Friendly lizardfolk sharing swamp knowledge",
+          "w": 8
+        },
+        {
+          "v": "A natural bridge over treacherous waters",
+          "w": 10
+        },
+        {
+          "v": "Ancient cypress trees with hollow shelters",
+          "w": 9
+        },
+        {
+          "v": "A hermit's hut on stilts offering shelter",
+          "w": 7
+        },
+        {
+          "v": "Edible swamp plants growing abundantly",
+          "w": 6
+        },
+        {
+          "v": "A natural spring with surprisingly clean water",
+          "w": 5
+        },
+        {
+          "v": "Friendly will-o'-wisps providing safe guidance",
+          "w": 4
+        }
       ],
       "low": [
-        { "v": "2d4 Giant Frogs (CR 1/4) croaking territorially", "w": 20 },
-        { "v": "1d4 Crocodiles (CR 1/2) lurking in murky water", "w": 18 },
-        { "v": "A Lizardfolk (CR 1/2) defending tribal territory", "w": 15 },
-        { "v": "2d6 Stirges (CR 1/8) swarming from stagnant pools", "w": 12 },
-        { "v": "1d6 Giant Spiders (CR 1) in web-covered trees", "w": 14 },
-        { "v": "A Will-o'-Wisp (CR 2) leading travelers astray", "w": 8 },
-        { "v": "2d4 Giant Centipedes (CR 1/4) under rotting logs", "w": 10 },
-        { "v": "1d4 Giant Poisonous Snakes (CR 1/4)", "w": 11 },
-        { "v": "A Swarm of Insects (CR 1/2) from disturbed nests", "w": 9 },
-        { "v": "2d6 Giant Rats (CR 1/8) carrying swamp fever", "w": 7 }
+        {
+          "v": "2d4 Giant Frogs (CR 1/4) croaking territorially",
+          "w": 20
+        },
+        {
+          "v": "1d4 Crocodiles (CR 1/2) lurking in murky water",
+          "w": 18
+        },
+        {
+          "v": "A Lizardfolk (CR 1/2) defending tribal territory",
+          "w": 15
+        },
+        {
+          "v": "2d6 Stirges (CR 1/8) swarming from stagnant pools",
+          "w": 12
+        },
+        {
+          "v": "1d6 Giant Spiders (CR 1) in web-covered trees",
+          "w": 14
+        },
+        {
+          "v": "A Will-o'-Wisp (CR 2) leading travelers astray",
+          "w": 8
+        },
+        {
+          "v": "2d4 Giant Centipedes (CR 1/4) under rotting logs",
+          "w": 10
+        },
+        {
+          "v": "1d4 Giant Poisonous Snakes (CR 1/4)",
+          "w": 11
+        },
+        {
+          "v": "A Swarm of Insects (CR 1/2) from disturbed nests",
+          "w": 9
+        },
+        {
+          "v": "2d6 Giant Rats (CR 1/8) carrying swamp fever",
+          "w": 7
+        }
       ],
       "moderate": [
-        { "v": "A Shambling Mound (CR 5) in decaying vegetation", "w": 20 },
-        { "v": "1d3 Green Hags (CR 3) forming coven", "w": 18 },
-        { "v": "A Hydra (CR 8) in deepest swamp pools", "w": 12 },
-        { "v": "2d4 Lizardfolk (CR 1/2) with Shaman", "w": 16 },
-        { "v": "1d4 Will-o'-Wisps (CR 2) working together", "w": 10 },
-        { "v": "A Black Dragon Wyrmling (CR 2)", "w": 8 },
-        { "v": "2d6 Yuan-ti Purebloods (CR 1) from hidden temple", "w": 14 },
-        { "v": "A Troll (CR 5) regenerating in swamp muck", "w": 9 },
-        { "v": "1d6 Ghouls (CR 1) in ancient burial mounds", "w": 7 },
-        { "v": "A Catoblepas (CR 5) with deadly gaze", "w": 6 }
+        {
+          "v": "A Shambling Mound (CR 5) in decaying vegetation",
+          "w": 20
+        },
+        {
+          "v": "1d3 Green Hags (CR 3) forming coven",
+          "w": 18
+        },
+        {
+          "v": "A Hydra (CR 8) in deepest swamp pools",
+          "w": 12
+        },
+        {
+          "v": "2d4 Lizardfolk (CR 1/2) with Shaman",
+          "w": 16
+        },
+        {
+          "v": "1d4 Will-o'-Wisps (CR 2) working together",
+          "w": 10
+        },
+        {
+          "v": "A Black Dragon Wyrmling (CR 2)",
+          "w": 8
+        },
+        {
+          "v": "2d6 Yuan-ti Purebloods (CR 1) from hidden temple",
+          "w": 14
+        },
+        {
+          "v": "A Troll (CR 5) regenerating in swamp muck",
+          "w": 9
+        },
+        {
+          "v": "1d6 Ghouls (CR 1) in ancient burial mounds",
+          "w": 7
+        },
+        {
+          "v": "A Catoblepas (CR 5) with deadly gaze",
+          "w": 6
+        }
       ],
       "high": [
-        { "v": "A young Black Dragon (CR 7) in acidic lair", "w": 22 },
-        { "v": "A powerful Green Hag Coven (3 CR 3 hags)", "w": 18 },
-        { "v": "An Adult Hydra (CR 8) with multiple lairs", "w": 15 },
-        { "v": "A Lich establishing swamp tower", "w": 10 },
-        { "v": "2d4 Trolls (CR 5) in territorial war", "w": 16 },
-        { "v": "A Death Knight seeking swamp artifacts", "w": 8 },
-        { "v": "A powerful Yuan-ti Abomination (CR 7)", "w": 12 },
-        { "v": "An Ancient Shambling Mound with plant allies", "w": 9 },
-        { "v": "A Nalfeshnee (CR 13) corrupting swamp", "w": 6 }
+        {
+          "v": "A young Black Dragon (CR 7) in acidic lair",
+          "w": 22
+        },
+        {
+          "v": "A powerful Green Hag Coven (3 CR 3 hags)",
+          "w": 18
+        },
+        {
+          "v": "An Adult Hydra (CR 8) with multiple lairs",
+          "w": 15
+        },
+        {
+          "v": "A Lich establishing swamp tower",
+          "w": 10
+        },
+        {
+          "v": "2d4 Trolls (CR 5) in territorial war",
+          "w": 16
+        },
+        {
+          "v": "A Death Knight seeking swamp artifacts",
+          "w": 8
+        },
+        {
+          "v": "A powerful Yuan-ti Abomination (CR 7)",
+          "w": 12
+        },
+        {
+          "v": "An Ancient Shambling Mound with plant allies",
+          "w": 9
+        },
+        {
+          "v": "A Nalfeshnee (CR 13) corrupting swamp",
+          "w": 6
+        }
       ],
       "deadly": [
-        { "v": "An Ancient Black Dragon (CR 21) ruling vast swamp", "w": 25 },
-        { "v": "A Lich King with undead swamp army", "w": 20 },
+        {
+          "v": "An Ancient Black Dragon (CR 21) ruling vast swamp",
+          "w": 25
+        },
+        {
+          "v": "A Lich King with undead swamp army",
+          "w": 20
+        },
         {
           "v": "Ancient black dragon awakens from slumber beneath the bog",
           "w": 1
         },
-        { "v": "Necromancer's tower rising from the poisoned waters", "w": 2 },
+        {
+          "v": "Necromancer's tower rising from the poisoned waters",
+          "w": 2
+        },
         {
           "v": "Massive hydra with regenerating heads bursts from deep pool",
           "w": 3
         },
-        { "v": "Plague-spreading will-o'-wisps leading to mass grave", "w": 4 },
-        { "v": "Hag coven performing ritual to summon demon lord", "w": 2 },
+        {
+          "v": "Plague-spreading will-o'-wisps leading to mass grave",
+          "w": 4
+        },
+        {
+          "v": "Hag coven performing ritual to summon demon lord",
+          "w": 2
+        },
         {
           "v": "Undead army of plague victims marching through the mire",
           "w": 3
         },
-        { "v": "Portal to the Shadowfell tearing reality apart", "w": 1 },
+        {
+          "v": "Portal to the Shadowfell tearing reality apart",
+          "w": 1
+        },
         {
           "v": "Ancient aboleth controlling all swamp creatures as puppets",
           "w": 2
@@ -448,13 +1209,22 @@
           "v": "Cursed fog that ages victims decades with each breath",
           "w": 3
         },
-        { "v": "Primordial ooze that devours everything it touches", "w": 4 },
+        {
+          "v": "Primordial ooze that devours everything it touches",
+          "w": 4
+        },
         {
           "v": "Demon-possessed treant commanding poisonous plant army",
           "w": 2
         },
-        { "v": "Tarrasque sleeping beneath miles of swamp sediment", "w": 1 },
-        { "v": "Death knight leading spectral cavalry charge", "w": 2 },
+        {
+          "v": "Tarrasque sleeping beneath miles of swamp sediment",
+          "w": 1
+        },
+        {
+          "v": "Death knight leading spectral cavalry charge",
+          "w": 2
+        },
         {
           "v": "Corrupted archdruid transforming region into undead wasteland",
           "w": 2
@@ -463,84 +1233,270 @@
     },
     "coast": {
       "safe": [
-        { "v": "Dolphins playing in the surf near pristine beach", "w": 15 },
+        {
+          "v": "Dolphins playing in the surf near pristine beach",
+          "w": 15
+        },
         {
           "v": "Fisherman's village with friendly locals offering fresh catch",
           "w": 12
         },
-        { "v": "Lighthouse keeper sharing stories and warm meal", "w": 8 },
-        { "v": "Seals basking peacefully on sun-warmed rocks", "w": 10 },
-        { "v": "Tidal pool teeming with colorful sea life", "w": 14 },
-        { "v": "Merchant ship offering passage to distant ports", "w": 9 },
+        {
+          "v": "Lighthouse keeper sharing stories and warm meal",
+          "w": 8
+        },
+        {
+          "v": "Seals basking peacefully on sun-warmed rocks",
+          "w": 10
+        },
+        {
+          "v": "Tidal pool teeming with colorful sea life",
+          "w": 14
+        },
+        {
+          "v": "Merchant ship offering passage to distant ports",
+          "w": 9
+        },
         {
           "v": "Beach combers finding interesting shells and driftwood",
           "w": 11
         },
-        { "v": "Sea birds performing graceful aerial displays", "w": 13 },
-        { "v": "Calm bay perfect for swimming and rest", "w": 16 },
-        { "v": "Coastal shrine blessed by sea goddess", "w": 6 },
-        { "v": "Gentle waves bringing messages in bottles", "w": 7 },
-        { "v": "Harbor town celebrating seasonal fishing festival", "w": 5 },
-        { "v": "Retired sailor offering navigation lessons", "w": 4 },
-        { "v": "Sea turtle nesting site protected by local druids", "w": 3 },
-        { "v": "Natural hot springs heated by underwater vents", "w": 6 }
+        {
+          "v": "Sea birds performing graceful aerial displays",
+          "w": 13
+        },
+        {
+          "v": "Calm bay perfect for swimming and rest",
+          "w": 16
+        },
+        {
+          "v": "Coastal shrine blessed by sea goddess",
+          "w": 6
+        },
+        {
+          "v": "Gentle waves bringing messages in bottles",
+          "w": 7
+        },
+        {
+          "v": "Harbor town celebrating seasonal fishing festival",
+          "w": 5
+        },
+        {
+          "v": "Retired sailor offering navigation lessons",
+          "w": 4
+        },
+        {
+          "v": "Sea turtle nesting site protected by local druids",
+          "w": 3
+        },
+        {
+          "v": "Natural hot springs heated by underwater vents",
+          "w": 6
+        }
       ],
       "low": [
-        { "v": "Smuggler's boat avoiding customs patrol", "w": 12 },
-        { "v": "Aggressive seagulls defending their nesting grounds", "w": 15 },
-        { "v": "Territorial crab swarm protecting their territory", "w": 14 },
-        { "v": "Pickpockets working the busy harbor district", "w": 10 },
-        { "v": "Drunk sailors starting tavern brawls", "w": 11 },
-        { "v": "Reef sharks investigating unusual activity", "w": 8 },
-        { "v": "Rough seas making travel dangerous", "w": 13 },
-        { "v": "Con artist selling fake treasure maps", "w": 9 },
-        { "v": "Shipwreck survivors needing rescue", "w": 7 },
-        { "v": "Territorial sea otters defending their kelp beds", "w": 8 },
-        { "v": "Harbor guards demanding excessive bribes", "w": 6 },
-        { "v": "Poisonous jellyfish bloom in swimming area", "w": 5 },
-        { "v": "Rival fishing crews in heated dispute", "w": 7 },
-        { "v": "Unstable cliff threatening to collapse into sea", "w": 4 },
-        { "v": "Quarantine flags on approaching merchant vessel", "w": 3 }
+        {
+          "v": "Smuggler's boat avoiding customs patrol",
+          "w": 12
+        },
+        {
+          "v": "Aggressive seagulls defending their nesting grounds",
+          "w": 15
+        },
+        {
+          "v": "Territorial crab swarm protecting their territory",
+          "w": 14
+        },
+        {
+          "v": "Pickpockets working the busy harbor district",
+          "w": 10
+        },
+        {
+          "v": "Drunk sailors starting tavern brawls",
+          "w": 11
+        },
+        {
+          "v": "Reef sharks investigating unusual activity",
+          "w": 8
+        },
+        {
+          "v": "Rough seas making travel dangerous",
+          "w": 13
+        },
+        {
+          "v": "Con artist selling fake treasure maps",
+          "w": 9
+        },
+        {
+          "v": "Shipwreck survivors needing rescue",
+          "w": 7
+        },
+        {
+          "v": "Territorial sea otters defending their kelp beds",
+          "w": 8
+        },
+        {
+          "v": "Harbor guards demanding excessive bribes",
+          "w": 6
+        },
+        {
+          "v": "Poisonous jellyfish bloom in swimming area",
+          "w": 5
+        },
+        {
+          "v": "Rival fishing crews in heated dispute",
+          "w": 7
+        },
+        {
+          "v": "Unstable cliff threatening to collapse into sea",
+          "w": 4
+        },
+        {
+          "v": "Quarantine flags on approaching merchant vessel",
+          "w": 3
+        }
       ],
       "moderate": [
-        { "v": "Pirate ship demanding tribute from passing vessels", "w": 10 },
-        { "v": "Merfolk warning of underwater dangers ahead", "w": 8 },
-        { "v": "Giant octopus investigating ship from below", "w": 9 },
-        { "v": "Coastal raiders planning night assault", "w": 7 },
-        { "v": "Sea hags luring sailors to watery graves", "w": 6 },
-        { "v": "Rogue waves from distant storm", "w": 12 },
-        { "v": "Sahuagin war party emerging from depths", "w": 5 },
-        { "v": "Cursed treasure washing up on shore", "w": 4 },
-        { "v": "Naval battle between rival kingdoms", "w": 3 },
-        { "v": "Corrupted lighthouse sending ships to their doom", "w": 4 },
-        { "v": "Giant crabs emerging for territorial battle", "w": 8 },
-        { "v": "Siren song echoing from hidden grotto", "w": 5 },
-        { "v": "Undead crew manning ghost ship", "w": 6 },
-        { "v": "Violent storm summoned by angry sea spirit", "w": 7 },
-        { "v": "Dragon turtle claiming coastal waters as territory", "w": 2 }
+        {
+          "v": "Pirate ship demanding tribute from passing vessels",
+          "w": 10
+        },
+        {
+          "v": "Merfolk warning of underwater dangers ahead",
+          "w": 8
+        },
+        {
+          "v": "Giant octopus investigating ship from below",
+          "w": 9
+        },
+        {
+          "v": "Coastal raiders planning night assault",
+          "w": 7
+        },
+        {
+          "v": "Sea hags luring sailors to watery graves",
+          "w": 6
+        },
+        {
+          "v": "Rogue waves from distant storm",
+          "w": 12
+        },
+        {
+          "v": "Sahuagin war party emerging from depths",
+          "w": 5
+        },
+        {
+          "v": "Cursed treasure washing up on shore",
+          "w": 4
+        },
+        {
+          "v": "Naval battle between rival kingdoms",
+          "w": 3
+        },
+        {
+          "v": "Corrupted lighthouse sending ships to their doom",
+          "w": 4
+        },
+        {
+          "v": "Giant crabs emerging for territorial battle",
+          "w": 8
+        },
+        {
+          "v": "Siren song echoing from hidden grotto",
+          "w": 5
+        },
+        {
+          "v": "Undead crew manning ghost ship",
+          "w": 6
+        },
+        {
+          "v": "Violent storm summoned by angry sea spirit",
+          "w": 7
+        },
+        {
+          "v": "Dragon turtle claiming coastal waters as territory",
+          "w": 2
+        }
       ],
       "high": [
-        { "v": "Kraken tentacles rising from ocean depths", "w": 3 },
-        { "v": "Massive hurricane with supernatural origin", "w": 5 },
-        { "v": "Aboleth city rising from underwater trench", "w": 2 },
-        { "v": "Ancient sea god awakening in fury", "w": 1 },
-        { "v": "Pirate armada led by undead admiral", "w": 4 },
-        { "v": "Tidal wave carrying undead marine army", "w": 3 },
-        { "v": "Leviathan emerging to reclaim lost territory", "w": 2 },
-        { "v": "Cursed island appearing during blood moon", "w": 3 },
-        { "v": "Naval lich commanding fleet of bone ships", "w": 2 },
-        { "v": "Maelstrom opening portal to Elemental Plane of Water", "w": 1 },
-        { "v": "Bronze dragon demanding tribute from all seafarers", "w": 4 },
-        { "v": "Demon cult trying to summon oceanic fiend", "w": 3 },
-        { "v": "Time storm causing temporal distortions at sea", "w": 1 },
-        { "v": "Massive sea serpent coiling around entire coastline", "w": 2 },
-        { "v": "Underwater volcano creating new hostile landmass", "w": 4 }
+        {
+          "v": "Kraken tentacles rising from ocean depths",
+          "w": 3
+        },
+        {
+          "v": "Massive hurricane with supernatural origin",
+          "w": 5
+        },
+        {
+          "v": "Aboleth city rising from underwater trench",
+          "w": 2
+        },
+        {
+          "v": "Ancient sea god awakening in fury",
+          "w": 1
+        },
+        {
+          "v": "Pirate armada led by undead admiral",
+          "w": 4
+        },
+        {
+          "v": "Tidal wave carrying undead marine army",
+          "w": 3
+        },
+        {
+          "v": "Leviathan emerging to reclaim lost territory",
+          "w": 2
+        },
+        {
+          "v": "Cursed island appearing during blood moon",
+          "w": 3
+        },
+        {
+          "v": "Naval lich commanding fleet of bone ships",
+          "w": 2
+        },
+        {
+          "v": "Maelstrom opening portal to Elemental Plane of Water",
+          "w": 1
+        },
+        {
+          "v": "Bronze dragon demanding tribute from all seafarers",
+          "w": 4
+        },
+        {
+          "v": "Demon cult trying to summon oceanic fiend",
+          "w": 3
+        },
+        {
+          "v": "Time storm causing temporal distortions at sea",
+          "w": 1
+        },
+        {
+          "v": "Massive sea serpent coiling around entire coastline",
+          "w": 2
+        },
+        {
+          "v": "Underwater volcano creating new hostile landmass",
+          "w": 4
+        }
       ],
       "deadly": [
-        { "v": "Avatar of Dagon rising from deepest oceanic trench", "w": 1 },
-        { "v": "Cthulhu-like entity stirring in sunken city", "w": 1 },
-        { "v": "Apocalyptic tsunami carrying otherworldly horrors", "w": 2 },
-        { "v": "Ancient sea god's corpse reanimating as undead titan", "w": 1 },
+        {
+          "v": "Avatar of Dagon rising from deepest oceanic trench",
+          "w": 1
+        },
+        {
+          "v": "Cthulhu-like entity stirring in sunken city",
+          "w": 1
+        },
+        {
+          "v": "Apocalyptic tsunami carrying otherworldly horrors",
+          "w": 2
+        },
+        {
+          "v": "Ancient sea god's corpse reanimating as undead titan",
+          "w": 1
+        },
         {
           "v": "Reality-warping storm connecting all planes of existence",
           "w": 1
@@ -553,101 +1509,314 @@
           "v": "Collective consciousness of all drowned souls seeking revenge",
           "w": 2
         },
-        { "v": "Elder kraken capable of sinking continents", "w": 1 },
+        {
+          "v": "Elder kraken capable of sinking continents",
+          "w": 1
+        },
         {
           "v": "Oceanic lich transforming all water into necrotic energy",
           "w": 1
         },
-        { "v": "Portal to Far Realm flooding reality with madness", "w": 1 },
-        { "v": "Great Old One using ocean as extension of its will", "w": 1 },
-        { "v": "World-serpent Jörmungandr surfacing for Ragnarok", "w": 1 },
-        { "v": "Living tsunami with malevolent consciousness", "w": 2 },
-        { "v": "All sea gods uniting for war against mortal realm", "w": 1 },
-        { "v": "Ocean itself becoming sentient and hostile to life", "w": 1 }
+        {
+          "v": "Portal to Far Realm flooding reality with madness",
+          "w": 1
+        },
+        {
+          "v": "Great Old One using ocean as extension of its will",
+          "w": 1
+        },
+        {
+          "v": "World-serpent Jörmungandr surfacing for Ragnarok",
+          "w": 1
+        },
+        {
+          "v": "Living tsunami with malevolent consciousness",
+          "w": 2
+        },
+        {
+          "v": "All sea gods uniting for war against mortal realm",
+          "w": 1
+        },
+        {
+          "v": "Ocean itself becoming sentient and hostile to life",
+          "w": 1
+        }
       ]
     },
     "underground": {
       "safe": [
-        { "v": "Underground spring with crystal-clear healing water", "w": 12 },
-        { "v": "Friendly deep gnome community offering shelter", "w": 10 },
-        { "v": "Luminescent fungi providing natural light", "w": 15 },
-        { "v": "Abandoned mine shaft with forgotten tool cache", "w": 9 },
-        { "v": "Echo chamber with beautiful acoustic properties", "w": 8 },
-        { "v": "Underground lake with blind but harmless fish", "w": 11 },
-        { "v": "Stable cavern system with multiple safe passages", "w": 14 },
-        { "v": "Dwarf expedition sharing camp and stories", "w": 7 },
-        { "v": "Natural cathedral chamber inspiring awe", "w": 6 },
-        { "v": "Hibernating bears in cozy cave den", "w": 8 },
-        { "v": "Ancient library carved into stone walls", "w": 4 },
-        { "v": "Underground garden tended by earth elementals", "w": 5 },
-        { "v": "Peaceful bat colony in high cavern ceiling", "w": 13 },
-        { "v": "Geothermal vents providing natural warmth", "w": 10 },
-        { "v": "Stone bridge crossing underground chasm safely", "w": 9 }
+        {
+          "v": "Underground spring with crystal-clear healing water",
+          "w": 12
+        },
+        {
+          "v": "Friendly deep gnome community offering shelter",
+          "w": 10
+        },
+        {
+          "v": "Luminescent fungi providing natural light",
+          "w": 15
+        },
+        {
+          "v": "Abandoned mine shaft with forgotten tool cache",
+          "w": 9
+        },
+        {
+          "v": "Echo chamber with beautiful acoustic properties",
+          "w": 8
+        },
+        {
+          "v": "Underground lake with blind but harmless fish",
+          "w": 11
+        },
+        {
+          "v": "Stable cavern system with multiple safe passages",
+          "w": 14
+        },
+        {
+          "v": "Dwarf expedition sharing camp and stories",
+          "w": 7
+        },
+        {
+          "v": "Natural cathedral chamber inspiring awe",
+          "w": 6
+        },
+        {
+          "v": "Hibernating bears in cozy cave den",
+          "w": 8
+        },
+        {
+          "v": "Ancient library carved into stone walls",
+          "w": 4
+        },
+        {
+          "v": "Underground garden tended by earth elementals",
+          "w": 5
+        },
+        {
+          "v": "Peaceful bat colony in high cavern ceiling",
+          "w": 13
+        },
+        {
+          "v": "Geothermal vents providing natural warmth",
+          "w": 10
+        },
+        {
+          "v": "Stone bridge crossing underground chasm safely",
+          "w": 9
+        }
       ],
       "low": [
-        { "v": "Loose rocks threatening minor cave-in", "w": 14 },
-        { "v": "Aggressive rat swarm defending their nest", "w": 15 },
-        { "v": "Confusing tunnel system causing mild disorientation", "w": 12 },
-        { "v": "Slippery slopes near underground streams", "w": 13 },
-        { "v": "Territorial giant spiders in web-filled passages", "w": 10 },
-        { "v": "Kobold scouts avoiding direct confrontation", "w": 9 },
-        { "v": "Natural gas pockets creating breathing difficulty", "w": 8 },
-        { "v": "Giant centipedes scuttling through cracks", "w": 11 },
-        { "v": "Unstable rope bridge across narrow chasm", "w": 7 },
-        { "v": "Mildly toxic mushroom spores in the air", "w": 8 },
-        { "v": "Getting lost in maze-like tunnel network", "w": 6 },
-        { "v": "Cold draft extinguishing torches unexpectedly", "w": 9 },
-        { "v": "Paranoid hermit suspicious of all strangers", "w": 5 },
-        { "v": "Giant beetles competing for tunnel territory", "w": 6 },
-        { "v": "Shallow pit trap set by desperate scavengers", "w": 4 }
+        {
+          "v": "Loose rocks threatening minor cave-in",
+          "w": 14
+        },
+        {
+          "v": "Aggressive rat swarm defending their nest",
+          "w": 15
+        },
+        {
+          "v": "Confusing tunnel system causing mild disorientation",
+          "w": 12
+        },
+        {
+          "v": "Slippery slopes near underground streams",
+          "w": 13
+        },
+        {
+          "v": "Territorial giant spiders in web-filled passages",
+          "w": 10
+        },
+        {
+          "v": "Kobold scouts avoiding direct confrontation",
+          "w": 9
+        },
+        {
+          "v": "Natural gas pockets creating breathing difficulty",
+          "w": 8
+        },
+        {
+          "v": "Giant centipedes scuttling through cracks",
+          "w": 11
+        },
+        {
+          "v": "Unstable rope bridge across narrow chasm",
+          "w": 7
+        },
+        {
+          "v": "Mildly toxic mushroom spores in the air",
+          "w": 8
+        },
+        {
+          "v": "Getting lost in maze-like tunnel network",
+          "w": 6
+        },
+        {
+          "v": "Cold draft extinguishing torches unexpectedly",
+          "w": 9
+        },
+        {
+          "v": "Paranoid hermit suspicious of all strangers",
+          "w": 5
+        },
+        {
+          "v": "Giant beetles competing for tunnel territory",
+          "w": 6
+        },
+        {
+          "v": "Shallow pit trap set by desperate scavengers",
+          "w": 4
+        }
       ],
       "moderate": [
-        { "v": "Drow patrol enforcing territorial boundaries", "w": 8 },
-        { "v": "Bulette burrowing through tunnel walls", "w": 6 },
-        { "v": "Underground river with dangerous rapids", "w": 9 },
-        { "v": "Duergar slavers seeking new captives", "w": 7 },
-        { "v": "Hook horror stalking prey through echoing chambers", "w": 5 },
-        { "v": "Umber hulk creating confusing tunnel maze", "w": 4 },
-        { "v": "Gelatinous cube blocking narrow corridor", "w": 8 },
-        { "v": "Stone giant hurling boulders at intruders", "w": 3 },
-        { "v": "Rust monster destroying metal equipment", "w": 6 },
-        { "v": "Purple worm creating dangerous tunnel collapses", "w": 2 },
-        { "v": "Mind flayer hunting for fresh brains", "w": 3 },
-        { "v": "Otyugh lurking in refuse-filled chamber", "w": 7 },
-        { "v": "Roper disguised as stalactite formation", "w": 5 },
-        { "v": "Underground troll claiming bridge toll", "w": 6 },
-        { "v": "Poisonous gas leak from deep earth fissure", "w": 4 }
+        {
+          "v": "Drow patrol enforcing territorial boundaries",
+          "w": 8
+        },
+        {
+          "v": "Bulette burrowing through tunnel walls",
+          "w": 6
+        },
+        {
+          "v": "Underground river with dangerous rapids",
+          "w": 9
+        },
+        {
+          "v": "Duergar slavers seeking new captives",
+          "w": 7
+        },
+        {
+          "v": "Hook horror stalking prey through echoing chambers",
+          "w": 5
+        },
+        {
+          "v": "Umber hulk creating confusing tunnel maze",
+          "w": 4
+        },
+        {
+          "v": "Gelatinous cube blocking narrow corridor",
+          "w": 8
+        },
+        {
+          "v": "Stone giant hurling boulders at intruders",
+          "w": 3
+        },
+        {
+          "v": "Rust monster destroying metal equipment",
+          "w": 6
+        },
+        {
+          "v": "Purple worm creating dangerous tunnel collapses",
+          "w": 2
+        },
+        {
+          "v": "Mind flayer hunting for fresh brains",
+          "w": 3
+        },
+        {
+          "v": "Otyugh lurking in refuse-filled chamber",
+          "w": 7
+        },
+        {
+          "v": "Roper disguised as stalactite formation",
+          "w": 5
+        },
+        {
+          "v": "Underground troll claiming bridge toll",
+          "w": 6
+        },
+        {
+          "v": "Poisonous gas leak from deep earth fissure",
+          "w": 4
+        }
       ],
       "high": [
-        { "v": "Ancient black dragon in vast underground lair", "w": 2 },
-        { "v": "Mind flayer colony preparing psychic assault", "w": 3 },
-        { "v": "Beholder tyrant ruling underground kingdom", "w": 2 },
-        { "v": "Aboleth controlling underground lake ecosystem", "w": 2 },
-        { "v": "Drow city mobilizing for surface raid", "w": 4 },
-        { "v": "Lich's phylactery hidden in deepest chambers", "w": 1 },
-        { "v": "Tarrasque egg incubating in geothermal chamber", "w": 1 },
-        { "v": "Portal to Underdark's most dangerous regions", "w": 3 },
-        { "v": "Ancient dwarf city overrun by demons", "w": 3 },
-        { "v": "Balor commanding army of lesser fiends", "w": 2 },
-        { "v": "Primordial earth elemental awakening", "w": 2 },
-        { "v": "Death tyrant animating thousands of corpses", "w": 3 },
-        { "v": "Kraken trapped in underground sea", "w": 1 },
-        { "v": "Elder brain controlling vast illithid empire", "w": 2 },
-        { "v": "Planar rifts destabilizing reality itself", "w": 1 }
+        {
+          "v": "Ancient black dragon in vast underground lair",
+          "w": 2
+        },
+        {
+          "v": "Mind flayer colony preparing psychic assault",
+          "w": 3
+        },
+        {
+          "v": "Beholder tyrant ruling underground kingdom",
+          "w": 2
+        },
+        {
+          "v": "Aboleth controlling underground lake ecosystem",
+          "w": 2
+        },
+        {
+          "v": "Drow city mobilizing for surface raid",
+          "w": 4
+        },
+        {
+          "v": "Lich's phylactery hidden in deepest chambers",
+          "w": 1
+        },
+        {
+          "v": "Tarrasque egg incubating in geothermal chamber",
+          "w": 1
+        },
+        {
+          "v": "Portal to Underdark's most dangerous regions",
+          "w": 3
+        },
+        {
+          "v": "Ancient dwarf city overrun by demons",
+          "w": 3
+        },
+        {
+          "v": "Balor commanding army of lesser fiends",
+          "w": 2
+        },
+        {
+          "v": "Primordial earth elemental awakening",
+          "w": 2
+        },
+        {
+          "v": "Death tyrant animating thousands of corpses",
+          "w": 3
+        },
+        {
+          "v": "Kraken trapped in underground sea",
+          "w": 1
+        },
+        {
+          "v": "Elder brain controlling vast illithid empire",
+          "w": 2
+        },
+        {
+          "v": "Planar rifts destabilizing reality itself",
+          "w": 1
+        }
       ],
       "deadly": [
         {
           "v": "Primordial titan bound since world's creation breaking free",
           "w": 1
         },
-        { "v": "Entrance to Nine Hells guarded by pit fiend legion", "w": 1 },
+        {
+          "v": "Entrance to Nine Hells guarded by pit fiend legion",
+          "w": 1
+        },
         {
           "v": "Great Old One's physical manifestation in deepest cavern",
           "w": 1
         },
-        { "v": "World-eating purple worm of legendary proportions", "w": 2 },
-        { "v": "Elder brain dragon commanding psychic apocalypse", "w": 1 },
-        { "v": "Aspect of Tharizdun spreading entropy through stone", "w": 1 },
+        {
+          "v": "World-eating purple worm of legendary proportions",
+          "w": 2
+        },
+        {
+          "v": "Elder brain dragon commanding psychic apocalypse",
+          "w": 1
+        },
+        {
+          "v": "Aspect of Tharizdun spreading entropy through stone",
+          "w": 1
+        },
         {
           "v": "Dracolich so ancient it predates mortal civilizations",
           "w": 1
@@ -656,13 +1825,22 @@
           "v": "Avatar of earth primordial reshaping continental foundations",
           "w": 1
         },
-        { "v": "Cosmic horror spawning reality-warping offspring", "w": 1 },
-        { "v": "Orcus himself establishing foothold in mortal realm", "w": 1 },
+        {
+          "v": "Cosmic horror spawning reality-warping offspring",
+          "w": 1
+        },
+        {
+          "v": "Orcus himself establishing foothold in mortal realm",
+          "w": 1
+        },
         {
           "v": "Elder aboleth network controlling planetary consciousness",
           "w": 1
         },
-        { "v": "Living mountain revealing itself as slumbering god", "w": 1 },
+        {
+          "v": "Living mountain revealing itself as slumbering god",
+          "w": 1
+        },
         {
           "v": "Portal matrix connecting to all planes simultaneously",
           "w": 1
@@ -671,7 +1849,10 @@
           "v": "Collective unconscious of planet achieving malevolent sentience",
           "w": 1
         },
-        { "v": "Reality itself unraveling at fundamental level", "w": 1 }
+        {
+          "v": "Reality itself unraveling at fundamental level",
+          "w": 1
+        }
       ]
     },
     "ruins": {
@@ -680,74 +1861,245 @@
           "v": "Scholarly expedition cataloging historical artifacts",
           "w": 12
         },
-        { "v": "Intact library with preserved ancient texts", "w": 8 },
-        { "v": "Peaceful garden overgrown with medicinal herbs", "w": 10 },
-        { "v": "Friendly ghost sharing stories of the ruins' past", "w": 6 },
-        { "v": "Hidden cache of non-magical but valuable supplies", "w": 9 },
-        { "v": "Stone circles still radiating protective magic", "w": 7 },
-        { "v": "Clear spring emerging from ancient fountain", "w": 11 },
-        { "v": "Intact murals depicting heroic historical events", "w": 13 },
-        { "v": "Stable tower offering excellent vantage point", "w": 8 },
-        { "v": "Ancient shrine still blessed by benevolent deity", "w": 5 },
-        { "v": "Caretaker spirits maintaining ruins peacefully", "w": 4 },
-        { "v": "Underground chamber with preserved frescoes", "w": 6 },
-        { "v": "Singing stones that produce haunting melodies", "w": 7 },
-        { "v": "Time-locked chamber preserving moment from past", "w": 3 },
-        { "v": "Benevolent druid protecting ruins from decay", "w": 5 }
+        {
+          "v": "Intact library with preserved ancient texts",
+          "w": 8
+        },
+        {
+          "v": "Peaceful garden overgrown with medicinal herbs",
+          "w": 10
+        },
+        {
+          "v": "Friendly ghost sharing stories of the ruins' past",
+          "w": 6
+        },
+        {
+          "v": "Hidden cache of non-magical but valuable supplies",
+          "w": 9
+        },
+        {
+          "v": "Stone circles still radiating protective magic",
+          "w": 7
+        },
+        {
+          "v": "Clear spring emerging from ancient fountain",
+          "w": 11
+        },
+        {
+          "v": "Intact murals depicting heroic historical events",
+          "w": 13
+        },
+        {
+          "v": "Stable tower offering excellent vantage point",
+          "w": 8
+        },
+        {
+          "v": "Ancient shrine still blessed by benevolent deity",
+          "w": 5
+        },
+        {
+          "v": "Caretaker spirits maintaining ruins peacefully",
+          "w": 4
+        },
+        {
+          "v": "Underground chamber with preserved frescoes",
+          "w": 6
+        },
+        {
+          "v": "Singing stones that produce haunting melodies",
+          "w": 7
+        },
+        {
+          "v": "Time-locked chamber preserving moment from past",
+          "w": 3
+        },
+        {
+          "v": "Benevolent druid protecting ruins from decay",
+          "w": 5
+        }
       ],
       "low": [
-        { "v": "Unstable floors threatening to collapse underfoot", "w": 14 },
-        { "v": "Territorial animals nesting in ruined structures", "w": 15 },
-        { "v": "Rival treasure hunters claiming exclusive rights", "w": 10 },
-        { "v": "Confusing layout causing explorers to become lost", "w": 12 },
-        { "v": "Minor magical traps still partially functional", "w": 9 },
-        { "v": "Scavenger bands picking through debris", "w": 11 },
-        { "v": "Crumbling stairs making climbing treacherous", "w": 13 },
-        { "v": "Cursed objects causing minor misfortunes", "w": 8 },
-        { "v": "Overgrown vines concealing dangerous drops", "w": 10 },
-        { "v": "Wild magic surges from damaged arcane focuses", "w": 7 },
-        { "v": "Paranoid hermit warning others away", "w": 6 },
-        { "v": "Loose masonry creating falling hazards", "w": 12 },
-        { "v": "Ink cap mushrooms causing mild hallucinations", "w": 5 },
-        { "v": "Echo chambers amplifying sounds confusingly", "w": 8 },
-        { "v": "Theft accusations between expedition members", "w": 4 }
+        {
+          "v": "Unstable floors threatening to collapse underfoot",
+          "w": 14
+        },
+        {
+          "v": "Territorial animals nesting in ruined structures",
+          "w": 15
+        },
+        {
+          "v": "Rival treasure hunters claiming exclusive rights",
+          "w": 10
+        },
+        {
+          "v": "Confusing layout causing explorers to become lost",
+          "w": 12
+        },
+        {
+          "v": "Minor magical traps still partially functional",
+          "w": 9
+        },
+        {
+          "v": "Scavenger bands picking through debris",
+          "w": 11
+        },
+        {
+          "v": "Crumbling stairs making climbing treacherous",
+          "w": 13
+        },
+        {
+          "v": "Cursed objects causing minor misfortunes",
+          "w": 8
+        },
+        {
+          "v": "Overgrown vines concealing dangerous drops",
+          "w": 10
+        },
+        {
+          "v": "Wild magic surges from damaged arcane focuses",
+          "w": 7
+        },
+        {
+          "v": "Paranoid hermit warning others away",
+          "w": 6
+        },
+        {
+          "v": "Loose masonry creating falling hazards",
+          "w": 12
+        },
+        {
+          "v": "Ink cap mushrooms causing mild hallucinations",
+          "w": 5
+        },
+        {
+          "v": "Echo chambers amplifying sounds confusingly",
+          "w": 8
+        },
+        {
+          "v": "Theft accusations between expedition members",
+          "w": 4
+        },
+        {
+          "t": "A **mirror maze** hallway disorients explorers; echoes attract opportunistic thieves",
+          "tags": [
+            "hazard",
+            "ambush",
+            "night"
+          ],
+          "w": 5
+        }
       ],
       "moderate": [
-        { "v": "Animated statues guarding ancient secrets", "w": 8 },
-        { "v": "Bandit group using ruins as fortified base", "w": 9 },
-        { "v": "Wraiths of those who died defending the city", "w": 6 },
-        { "v": "Complex puzzle locks protecting inner chambers", "w": 7 },
-        { "v": "Gargoyle sentinels awakening to defend territory", "w": 5 },
-        { "v": "Cursed artifact driving explorers to madness", "w": 4 },
-        { "v": "Stone golem still following ancient patrol route", "w": 3 },
-        { "v": "Spectres reliving their final moments endlessly", "w": 6 },
-        { "v": "Magical trap network still fully operational", "w": 5 },
+        {
+          "v": "Animated statues guarding ancient secrets",
+          "w": 8
+        },
+        {
+          "v": "Bandit group using ruins as fortified base",
+          "w": 9
+        },
+        {
+          "v": "Wraiths of those who died defending the city",
+          "w": 6
+        },
+        {
+          "v": "Complex puzzle locks protecting inner chambers",
+          "w": 7
+        },
+        {
+          "v": "Gargoyle sentinels awakening to defend territory",
+          "w": 5
+        },
+        {
+          "v": "Cursed artifact driving explorers to madness",
+          "w": 4
+        },
+        {
+          "v": "Stone golem still following ancient patrol route",
+          "w": 3
+        },
+        {
+          "v": "Spectres reliving their final moments endlessly",
+          "w": 6
+        },
+        {
+          "v": "Magical trap network still fully operational",
+          "w": 5
+        },
         {
           "v": "Ancient construct guardian demanding proper passwords",
           "w": 4
         },
-        { "v": "Teleportation circles malfunctioning unpredictably", "w": 3 },
-        { "v": "Cult using ruins for dark ritual preparations", "w": 7 },
-        { "v": "Bound demon slowly breaking free from containment", "w": 2 },
-        { "v": "Time distortion fields aging intruders rapidly", "w": 2 },
-        { "v": "Dragon wyrmling claiming ruins as first lair", "w": 4 }
+        {
+          "v": "Teleportation circles malfunctioning unpredictably",
+          "w": 3
+        },
+        {
+          "v": "Cult using ruins for dark ritual preparations",
+          "w": 7
+        },
+        {
+          "v": "Bound demon slowly breaking free from containment",
+          "w": 2
+        },
+        {
+          "v": "Time distortion fields aging intruders rapidly",
+          "w": 2
+        },
+        {
+          "v": "Dragon wyrmling claiming ruins as first lair",
+          "w": 4
+        }
       ],
       "high": [
-        { "v": "Ancient lich returning to reclaim former stronghold", "w": 2 },
-        { "v": "Demon lord's cult attempting to complete summoning", "w": 3 },
-        { "v": "Dracolich using ruins as base for undead army", "w": 2 },
-        { "v": "Portal to Shadowfell slowly consuming reality", "w": 2 },
-        { "v": "Mummy lord awakening to rebuild lost empire", "w": 3 },
-        { "v": "Beholder tyrant establishing new domain", "w": 2 },
-        { "v": "Ancient curse transforming visitors into undead", "w": 4 },
+        {
+          "v": "Ancient lich returning to reclaim former stronghold",
+          "w": 2
+        },
+        {
+          "v": "Demon lord's cult attempting to complete summoning",
+          "w": 3
+        },
+        {
+          "v": "Dracolich using ruins as base for undead army",
+          "w": 2
+        },
+        {
+          "v": "Portal to Shadowfell slowly consuming reality",
+          "w": 2
+        },
+        {
+          "v": "Mummy lord awakening to rebuild lost empire",
+          "w": 3
+        },
+        {
+          "v": "Beholder tyrant establishing new domain",
+          "w": 2
+        },
+        {
+          "v": "Ancient curse transforming visitors into undead",
+          "w": 4
+        },
         {
           "v": "Primordial elemental sealed beneath foundations stirring",
           "w": 1
         },
-        { "v": "Death knight rallying army of fallen defenders", "w": 3 },
-        { "v": "Artifact of world-ending power destabilizing reality", "w": 1 },
-        { "v": "Vampire lord rebuilding ancient blood cult", "w": 3 },
-        { "v": "Planar convergence threatening dimensional stability", "w": 1 },
+        {
+          "v": "Death knight rallying army of fallen defenders",
+          "w": 3
+        },
+        {
+          "v": "Artifact of world-ending power destabilizing reality",
+          "w": 1
+        },
+        {
+          "v": "Vampire lord rebuilding ancient blood cult",
+          "w": 3
+        },
+        {
+          "v": "Planar convergence threatening dimensional stability",
+          "w": 1
+        },
         {
           "v": "Ancient gold dragon corrupted by centuries of isolation",
           "w": 2
@@ -766,9 +2118,18 @@
           "v": "Avatar of destruction deity manifesting to finish ancient work",
           "w": 1
         },
-        { "v": "Tarrasque hibernating beneath city foundations", "w": 1 },
-        { "v": "Great Old One using ruins as anchor point to reality", "w": 1 },
-        { "v": "Time paradox threatening to unmake entire timeline", "w": 1 },
+        {
+          "v": "Tarrasque hibernating beneath city foundations",
+          "w": 1
+        },
+        {
+          "v": "Great Old One using ruins as anchor point to reality",
+          "w": 1
+        },
+        {
+          "v": "Time paradox threatening to unmake entire timeline",
+          "w": 1
+        },
         {
           "v": "Cosmic horror from before creation stirring to wakefulness",
           "w": 1
@@ -789,14 +2150,26 @@
           "v": "Collective unconscious of civilization becoming malevolently aware",
           "w": 1
         },
-        { "v": "Entropy incarnate consuming ordered existence", "w": 1 },
-        { "v": "Living embodiment of civilization's greatest sins", "w": 1 },
+        {
+          "v": "Entropy incarnate consuming ordered existence",
+          "w": 1
+        },
+        {
+          "v": "Living embodiment of civilization's greatest sins",
+          "w": 1
+        },
         {
           "v": "Aspect of void seeking to return universe to nothingness",
           "w": 1
         },
-        { "v": "Fusion of all evil archetypes into singular entity", "w": 1 },
-        { "v": "Conceptual weapon designed to kill abstract ideas", "w": 1 },
+        {
+          "v": "Fusion of all evil archetypes into singular entity",
+          "w": 1
+        },
+        {
+          "v": "Conceptual weapon designed to kill abstract ideas",
+          "w": 1
+        },
         {
           "v": "Reality itself achieving consciousness and declaring war on existence",
           "w": 1
@@ -805,163 +2178,574 @@
     },
     "arctic": {
       "safe": [
-        { "v": "Aurora borealis displaying spectacular colors", "w": 15 },
-        { "v": "Inuit hunting party sharing warm shelter", "w": 10 },
-        { "v": "Seal colony basking on ice floes", "w": 12 },
-        { "v": "Friendly polar bears playing with cubs", "w": 8 },
-        { "v": "Ice fishing hole with abundant catches", "w": 11 },
-        { "v": "Heated natural cave providing refuge", "w": 13 },
-        { "v": "Reindeer herd migrating across tundra", "w": 14 },
-        { "v": "Snow sculptors creating magnificent ice art", "w": 6 },
-        { "v": "Hot springs surrounded by ice formations", "w": 7 },
-        { "v": "Arctic foxes frolicking in powder snow", "w": 9 },
-        { "v": "Ice bridge spanning frozen river safely", "w": 10 },
-        { "v": "Abandoned but well-stocked trapper's cabin", "w": 8 },
-        { "v": "Peaceful ice spirit offering winter wisdom", "w": 5 },
-        { "v": "Crystalline ice formations creating natural wonder", "w": 7 },
-        { "v": "Singing whales visible through holes in ice", "w": 4 }
+        {
+          "v": "Aurora borealis displaying spectacular colors",
+          "w": 15
+        },
+        {
+          "v": "Inuit hunting party sharing warm shelter",
+          "w": 10
+        },
+        {
+          "v": "Seal colony basking on ice floes",
+          "w": 12
+        },
+        {
+          "v": "Friendly polar bears playing with cubs",
+          "w": 8
+        },
+        {
+          "v": "Ice fishing hole with abundant catches",
+          "w": 11
+        },
+        {
+          "v": "Heated natural cave providing refuge",
+          "w": 13
+        },
+        {
+          "v": "Reindeer herd migrating across tundra",
+          "w": 14
+        },
+        {
+          "v": "Snow sculptors creating magnificent ice art",
+          "w": 6
+        },
+        {
+          "v": "Hot springs surrounded by ice formations",
+          "w": 7
+        },
+        {
+          "v": "Arctic foxes frolicking in powder snow",
+          "w": 9
+        },
+        {
+          "v": "Ice bridge spanning frozen river safely",
+          "w": 10
+        },
+        {
+          "v": "Abandoned but well-stocked trapper's cabin",
+          "w": 8
+        },
+        {
+          "v": "Peaceful ice spirit offering winter wisdom",
+          "w": 5
+        },
+        {
+          "v": "Crystalline ice formations creating natural wonder",
+          "w": 7
+        },
+        {
+          "v": "Singing whales visible through holes in ice",
+          "w": 4
+        }
       ],
       "low": [
-        { "v": "Thin ice threatening to crack under weight", "w": 14 },
-        { "v": "Sudden blizzard reducing visibility to zero", "w": 15 },
-        { "v": "Wolves tracking travelers from distance", "w": 12 },
-        { "v": "Equipment failure in extreme cold conditions", "w": 13 },
-        { "v": "Avalanche risk on unstable snow slopes", "w": 10 },
-        { "v": "Frostbite threat from exposed skin", "w": 16 },
-        { "v": "Aggressive walrus defending territory", "w": 8 },
-        { "v": "Ice shelf calving into dangerous bergs", "w": 9 },
-        { "v": "Hypothermia onset during storm", "w": 11 },
-        { "v": "Getting lost in whiteout conditions", "w": 12 },
-        { "v": "Territorial musk ox charging intruders", "w": 7 },
-        { "v": "Frozen river current pulling under ice", "w": 6 },
-        { "v": "Wind chill creating deadly temperatures", "w": 10 },
-        { "v": "Snow blindness from intense glare", "w": 5 },
-        { "v": "Shelter destroyed by unexpected ice shift", "w": 4 }
+        {
+          "v": "Thin ice threatening to crack under weight",
+          "w": 14
+        },
+        {
+          "v": "Sudden blizzard reducing visibility to zero",
+          "w": 15
+        },
+        {
+          "v": "Wolves tracking travelers from distance",
+          "w": 12
+        },
+        {
+          "v": "Equipment failure in extreme cold conditions",
+          "w": 13
+        },
+        {
+          "v": "Avalanche risk on unstable snow slopes",
+          "w": 10
+        },
+        {
+          "v": "Frostbite threat from exposed skin",
+          "w": 16
+        },
+        {
+          "v": "Aggressive walrus defending territory",
+          "w": 8
+        },
+        {
+          "v": "Ice shelf calving into dangerous bergs",
+          "w": 9
+        },
+        {
+          "v": "Hypothermia onset during storm",
+          "w": 11
+        },
+        {
+          "v": "Getting lost in whiteout conditions",
+          "w": 12
+        },
+        {
+          "v": "Territorial musk ox charging intruders",
+          "w": 7
+        },
+        {
+          "v": "Frozen river current pulling under ice",
+          "w": 6
+        },
+        {
+          "v": "Wind chill creating deadly temperatures",
+          "w": 10
+        },
+        {
+          "v": "Snow blindness from intense glare",
+          "w": 5
+        },
+        {
+          "v": "Shelter destroyed by unexpected ice shift",
+          "w": 4
+        }
       ],
       "moderate": [
-        { "v": "Hungry polar bear stalking potential prey", "w": 10 },
-        { "v": "Ice storm making travel impossible", "w": 12 },
-        { "v": "Frost giant patrol claiming territory", "w": 6 },
-        { "v": "White dragon wyrmling hunting for food", "w": 4 },
-        { "v": "Yeti pack surrounding travelers", "w": 7 },
-        { "v": "Crevasse field requiring careful navigation", "w": 9 },
-        { "v": "Ice elemental emerging from frozen lake", "w": 5 },
-        { "v": "Dire wolf pack coordinating attack", "w": 8 },
-        { "v": "Remorhaz tunneling beneath snow", "w": 3 },
-        { "v": "Winter hag casting ice curse", "w": 4 },
-        { "v": "Mammoth herd stampeding across tundra", "w": 6 },
-        { "v": "Ice devils claiming mortal souls", "w": 3 },
-        { "v": "Abominable snowman territory dispute", "w": 5 },
-        { "v": "Supernatural blizzard with magical cold", "w": 7 },
-        { "v": "Ice troll regenerating despite freezing temperatures", "w": 4 }
+        {
+          "v": "Hungry polar bear stalking potential prey",
+          "w": 10
+        },
+        {
+          "v": "Ice storm making travel impossible",
+          "w": 12
+        },
+        {
+          "v": "Frost giant patrol claiming territory",
+          "w": 6
+        },
+        {
+          "v": "White dragon wyrmling hunting for food",
+          "w": 4
+        },
+        {
+          "v": "Yeti pack surrounding travelers",
+          "w": 7
+        },
+        {
+          "v": "Crevasse field requiring careful navigation",
+          "w": 9
+        },
+        {
+          "v": "Ice elemental emerging from frozen lake",
+          "w": 5
+        },
+        {
+          "v": "Dire wolf pack coordinating attack",
+          "w": 8
+        },
+        {
+          "v": "Remorhaz tunneling beneath snow",
+          "w": 3
+        },
+        {
+          "v": "Winter hag casting ice curse",
+          "w": 4
+        },
+        {
+          "v": "Mammoth herd stampeding across tundra",
+          "w": 6
+        },
+        {
+          "v": "Ice devils claiming mortal souls",
+          "w": 3
+        },
+        {
+          "v": "Abominable snowman territory dispute",
+          "w": 5
+        },
+        {
+          "v": "Supernatural blizzard with magical cold",
+          "w": 7
+        },
+        {
+          "v": "Ice troll regenerating despite freezing temperatures",
+          "w": 4
+        }
       ],
       "high": [
-        { "v": "Ancient white dragon claiming entire region", "w": 3 },
-        { "v": "Frost giant jarl leading war party", "w": 4 },
-        { "v": "Primordial ice elemental awakening", "w": 2 },
-        { "v": "Wendigo spreading cannibalistic curse", "w": 3 },
-        { "v": "Ice lich commanding undead army", "w": 2 },
-        { "v": "Portal to Plane of Ice destabilizing region", "w": 2 },
-        { "v": "Kraken frozen in ice for millennia breaking free", "w": 1 },
-        { "v": "Avatar of winter goddess manifesting", "w": 1 },
-        { "v": "Tarrasque in hibernation beginning to stir", "w": 1 },
-        { "v": "Eternal winter curse consuming the world", "w": 2 },
-        { "v": "Ice age beginning due to planar interference", "w": 2 },
-        { "v": "Balor trapped in ice slowly melting free", "w": 1 },
-        { "v": "Ancient civilization preserved in ice reanimating", "w": 3 },
-        { "v": "Reality freeze spreading outward from epicenter", "w": 1 },
-        { "v": "World serpent's frozen coils beginning to thaw", "w": 1 }
+        {
+          "v": "Ancient white dragon claiming entire region",
+          "w": 3
+        },
+        {
+          "v": "Frost giant jarl leading war party",
+          "w": 4
+        },
+        {
+          "v": "Primordial ice elemental awakening",
+          "w": 2
+        },
+        {
+          "v": "Wendigo spreading cannibalistic curse",
+          "w": 3
+        },
+        {
+          "v": "Ice lich commanding undead army",
+          "w": 2
+        },
+        {
+          "v": "Portal to Plane of Ice destabilizing region",
+          "w": 2
+        },
+        {
+          "v": "Kraken frozen in ice for millennia breaking free",
+          "w": 1
+        },
+        {
+          "v": "Avatar of winter goddess manifesting",
+          "w": 1
+        },
+        {
+          "v": "Tarrasque in hibernation beginning to stir",
+          "w": 1
+        },
+        {
+          "v": "Eternal winter curse consuming the world",
+          "w": 2
+        },
+        {
+          "v": "Ice age beginning due to planar interference",
+          "w": 2
+        },
+        {
+          "v": "Balor trapped in ice slowly melting free",
+          "w": 1
+        },
+        {
+          "v": "Ancient civilization preserved in ice reanimating",
+          "w": 3
+        },
+        {
+          "v": "Reality freeze spreading outward from epicenter",
+          "w": 1
+        },
+        {
+          "v": "World serpent's frozen coils beginning to thaw",
+          "w": 1
+        }
       ],
       "deadly": [
-        { "v": "Ragnarok-herald of endless winter manifesting", "w": 1 },
-        { "v": "Primordial of absolute zero achieving consciousness", "w": 1 },
-        { "v": "Ice age deity awakening to freeze all existence", "w": 1 },
-        { "v": "Cosmic horror from frozen void between stars", "w": 1 },
-        { "v": "Reality itself freezing into permanent stasis", "w": 1 },
-        { "v": "Great Old One whose dreams create eternal winter", "w": 1 },
-        { "v": "Avatar of entropy freezing time and space", "w": 1 },
-        { "v": "Aspect of death god turning world into ice tomb", "w": 1 },
-        { "v": "Living embodiment of heat death of universe", "w": 1 },
-        { "v": "Conceptual winter consuming abstract warmth itself", "w": 1 },
-        { "v": "All cold in universe concentrating into single point", "w": 1 },
-        { "v": "Ice that exists before and after reality", "w": 1 },
-        { "v": "Frozen screams of every creature that ever lived", "w": 1 },
-        { "v": "Winter that consumes even the concept of seasons", "w": 1 },
-        { "v": "Absolute zero achieving malevolent sentience", "w": 1 }
+        {
+          "v": "Ragnarok-herald of endless winter manifesting",
+          "w": 1
+        },
+        {
+          "v": "Primordial of absolute zero achieving consciousness",
+          "w": 1
+        },
+        {
+          "v": "Ice age deity awakening to freeze all existence",
+          "w": 1
+        },
+        {
+          "v": "Cosmic horror from frozen void between stars",
+          "w": 1
+        },
+        {
+          "v": "Reality itself freezing into permanent stasis",
+          "w": 1
+        },
+        {
+          "v": "Great Old One whose dreams create eternal winter",
+          "w": 1
+        },
+        {
+          "v": "Avatar of entropy freezing time and space",
+          "w": 1
+        },
+        {
+          "v": "Aspect of death god turning world into ice tomb",
+          "w": 1
+        },
+        {
+          "v": "Living embodiment of heat death of universe",
+          "w": 1
+        },
+        {
+          "v": "Conceptual winter consuming abstract warmth itself",
+          "w": 1
+        },
+        {
+          "v": "All cold in universe concentrating into single point",
+          "w": 1
+        },
+        {
+          "v": "Ice that exists before and after reality",
+          "w": 1
+        },
+        {
+          "v": "Frozen screams of every creature that ever lived",
+          "w": 1
+        },
+        {
+          "v": "Winter that consumes even the concept of seasons",
+          "w": 1
+        },
+        {
+          "v": "Absolute zero achieving malevolent sentience",
+          "w": 1
+        }
       ]
     },
     "populated_city": {
       "safe": [
-        { "v": "Street festival celebrating local harvest", "w": 15 },
-        { "v": "Friendly merchant offering fair prices", "w": 14 },
-        { "v": "Public library with knowledgeable librarian", "w": 10 },
-        { "v": "City guard providing helpful directions", "w": 12 },
-        { "v": "Charitable temple offering free meals", "w": 11 },
-        { "v": "Street performer entertaining crowd", "w": 13 },
-        { "v": "Helpful citizen offering local recommendations", "w": 16 },
-        { "v": "Well-maintained inn with comfortable rooms", "w": 12 },
-        { "v": "Peaceful park with beautiful gardens", "w": 9 },
-        { "v": "Museum displaying local history and artifacts", "w": 8 },
-        { "v": "Artisan quarter with skilled craftspeople", "w": 10 },
-        { "v": "Message board with community announcements", "w": 7 },
-        { "v": "Public fountain with clean drinking water", "w": 11 },
-        { "v": "Retired adventurer sharing tales over ale", "w": 6 },
-        { "v": "Market square bustling with honest trade", "w": 14 }
+        {
+          "v": "Street festival celebrating local harvest",
+          "w": 15
+        },
+        {
+          "v": "Friendly merchant offering fair prices",
+          "w": 14
+        },
+        {
+          "v": "Public library with knowledgeable librarian",
+          "w": 10
+        },
+        {
+          "v": "City guard providing helpful directions",
+          "w": 12
+        },
+        {
+          "v": "Charitable temple offering free meals",
+          "w": 11
+        },
+        {
+          "v": "Street performer entertaining crowd",
+          "w": 13
+        },
+        {
+          "v": "Helpful citizen offering local recommendations",
+          "w": 16
+        },
+        {
+          "v": "Well-maintained inn with comfortable rooms",
+          "w": 12
+        },
+        {
+          "v": "Peaceful park with beautiful gardens",
+          "w": 9
+        },
+        {
+          "v": "Museum displaying local history and artifacts",
+          "w": 8
+        },
+        {
+          "v": "Artisan quarter with skilled craftspeople",
+          "w": 10
+        },
+        {
+          "v": "Message board with community announcements",
+          "w": 7
+        },
+        {
+          "v": "Public fountain with clean drinking water",
+          "w": 11
+        },
+        {
+          "v": "Retired adventurer sharing tales over ale",
+          "w": 6
+        },
+        {
+          "v": "Market square bustling with honest trade",
+          "w": 14
+        }
       ],
       "low": [
-        { "v": "Pickpockets working crowded market areas", "w": 15 },
-        { "v": "Overpriced goods targeting obvious travelers", "w": 14 },
-        { "v": "Drunk causing minor disturbance in tavern", "w": 12 },
-        { "v": "City regulations requiring unexpected permits", "w": 10 },
-        { "v": "Aggressive beggars harassing passersby", "w": 11 },
-        { "v": "Street urchins attempting petty theft", "w": 13 },
-        { "v": "Noise ordinance violations causing fines", "w": 8 },
-        { "v": "Contaminated food from questionable vendor", "w": 9 },
-        { "v": "Minor traffic accident blocking main street", "w": 10 },
-        { "v": "Con artist running shell game scam", "w": 8 },
-        { "v": "Overcrowded inn with no available rooms", "w": 7 },
-        { "v": "Gossiping citizens spreading minor rumors", "w": 9 },
-        { "v": "Street protest causing temporary delays", "w": 6 },
-        { "v": "Merchant dispute requiring mediation", "w": 5 },
-        { "v": "Lost tourist seeking directions repeatedly", "w": 7 }
+        {
+          "v": "Pickpockets working crowded market areas",
+          "w": 15
+        },
+        {
+          "v": "Overpriced goods targeting obvious travelers",
+          "w": 14
+        },
+        {
+          "v": "Drunk causing minor disturbance in tavern",
+          "w": 12
+        },
+        {
+          "v": "City regulations requiring unexpected permits",
+          "w": 10
+        },
+        {
+          "v": "Aggressive beggars harassing passersby",
+          "w": 11
+        },
+        {
+          "v": "Street urchins attempting petty theft",
+          "w": 13
+        },
+        {
+          "v": "Noise ordinance violations causing fines",
+          "w": 8
+        },
+        {
+          "v": "Contaminated food from questionable vendor",
+          "w": 9
+        },
+        {
+          "v": "Minor traffic accident blocking main street",
+          "w": 10
+        },
+        {
+          "v": "Con artist running shell game scam",
+          "w": 8
+        },
+        {
+          "v": "Overcrowded inn with no available rooms",
+          "w": 7
+        },
+        {
+          "v": "Gossiping citizens spreading minor rumors",
+          "w": 9
+        },
+        {
+          "v": "Street protest causing temporary delays",
+          "w": 6
+        },
+        {
+          "v": "Merchant dispute requiring mediation",
+          "w": 5
+        },
+        {
+          "v": "Lost tourist seeking directions repeatedly",
+          "w": 7
+        }
       ],
       "moderate": [
-        { "v": "Thieves' guild recruitment attempt", "w": 8 },
-        { "v": "Political rally turning into heated argument", "w": 9 },
-        { "v": "Corrupt official demanding bribes", "w": 7 },
-        { "v": "Gang turf war spilling into streets", "w": 6 },
-        { "v": "Fire spreading through merchant quarter", "w": 5 },
-        { "v": "Disease outbreak causing quarantine measures", "w": 4 },
-        { "v": "Noble's carriage accident injuring bystanders", "w": 6 },
-        { "v": "Vigilante group taking law into own hands", "w": 5 },
-        { "v": "Foreign spy network operating in shadows", "w": 4 },
-        { "v": "Religious tension between competing faiths", "w": 7 },
-        { "v": "Workers' strike shutting down key services", "w": 8 },
-        { "v": "Monster infiltrating city disguised as citizen", "w": 3 },
-        { "v": "Magical accident damaging city infrastructure", "w": 4 },
-        { "v": "Assassination attempt on prominent figure", "w": 3 },
-        { "v": "Riot breaking out over food shortages", "w": 5 }
+        {
+          "v": "Thieves' guild recruitment attempt",
+          "w": 8
+        },
+        {
+          "v": "Political rally turning into heated argument",
+          "w": 9
+        },
+        {
+          "v": "Corrupt official demanding bribes",
+          "w": 7
+        },
+        {
+          "v": "Gang turf war spilling into streets",
+          "w": 6
+        },
+        {
+          "v": "Fire spreading through merchant quarter",
+          "w": 5
+        },
+        {
+          "v": "Disease outbreak causing quarantine measures",
+          "w": 4
+        },
+        {
+          "v": "Noble's carriage accident injuring bystanders",
+          "w": 6
+        },
+        {
+          "v": "Vigilante group taking law into own hands",
+          "w": 5
+        },
+        {
+          "v": "Foreign spy network operating in shadows",
+          "w": 4
+        },
+        {
+          "v": "Religious tension between competing faiths",
+          "w": 7
+        },
+        {
+          "v": "Workers' strike shutting down key services",
+          "w": 8
+        },
+        {
+          "v": "Monster infiltrating city disguised as citizen",
+          "w": 3
+        },
+        {
+          "v": "Magical accident damaging city infrastructure",
+          "w": 4
+        },
+        {
+          "v": "Assassination attempt on prominent figure",
+          "w": 3
+        },
+        {
+          "v": "Riot breaking out over food shortages",
+          "w": 5
+        }
       ],
       "high": [
-        { "v": "Vampire coven controlling city council", "w": 3 },
-        { "v": "Dragon demanding tribute from entire population", "w": 2 },
-        { "v": "Demon cult preparing large-scale sacrifice", "w": 3 },
-        { "v": "Plague of lycanthropy spreading rapidly", "w": 4 },
-        { "v": "Mind flayer network infiltrating leadership", "w": 2 },
-        { "v": "Portal to Nine Hells opening in city center", "w": 1 },
-        { "v": "Lich establishing undead kingdom within walls", "w": 2 },
-        { "v": "Foreign invasion overwhelming city defenses", "w": 4 },
-        { "v": "Beholder crime lord controlling underworld", "w": 2 },
-        { "v": "Cursed artifact turning citizens into monsters", "w": 3 },
-        { "v": "Devil contract enslaving entire population", "w": 1 },
-        { "v": "Reality storm warping city's physical laws", "w": 1 },
-        { "v": "Ancient curse awakening to reclaim territory", "w": 2 },
-        { "v": "Planar convergence merging city with Shadowfell", "w": 1 },
-        { "v": "Tarrasque awakening beneath city foundations", "w": 1 }
+        {
+          "v": "Vampire coven controlling city council",
+          "w": 3
+        },
+        {
+          "v": "Dragon demanding tribute from entire population",
+          "w": 2
+        },
+        {
+          "v": "Demon cult preparing large-scale sacrifice",
+          "w": 3
+        },
+        {
+          "v": "Plague of lycanthropy spreading rapidly",
+          "w": 4
+        },
+        {
+          "v": "Mind flayer network infiltrating leadership",
+          "w": 2
+        },
+        {
+          "v": "Portal to Nine Hells opening in city center",
+          "w": 1
+        },
+        {
+          "v": "Lich establishing undead kingdom within walls",
+          "w": 2
+        },
+        {
+          "v": "Foreign invasion overwhelming city defenses",
+          "w": 4
+        },
+        {
+          "v": "Beholder crime lord controlling underworld",
+          "w": 2
+        },
+        {
+          "v": "Cursed artifact turning citizens into monsters",
+          "w": 3
+        },
+        {
+          "v": "Devil contract enslaving entire population",
+          "w": 1
+        },
+        {
+          "v": "Reality storm warping city's physical laws",
+          "w": 1
+        },
+        {
+          "v": "Ancient curse awakening to reclaim territory",
+          "w": 2
+        },
+        {
+          "v": "Planar convergence merging city with Shadowfell",
+          "w": 1
+        },
+        {
+          "v": "Tarrasque awakening beneath city foundations",
+          "w": 1
+        }
       ],
       "deadly": [
-        { "v": "Avatar of tyranny deity manifesting in palace", "w": 1 },
-        { "v": "Great Old One using city as psychic amplifier", "w": 1 },
+        {
+          "v": "Avatar of tyranny deity manifesting in palace",
+          "w": 1
+        },
+        {
+          "v": "Great Old One using city as psychic amplifier",
+          "w": 1
+        },
         {
           "v": "Reality virus spreading through collective consciousness",
           "w": 1
@@ -970,19 +2754,46 @@
           "v": "All citizens simultaneously possessed by single entity",
           "w": 1
         },
-        { "v": "City itself achieving malevolent sentience", "w": 1 },
-        { "v": "Conceptual plague erasing idea of civilization", "w": 1 },
-        { "v": "Time loop trapping city in eternal suffering", "w": 1 },
-        { "v": "Living embodiment of urban decay consuming order", "w": 1 },
-        { "v": "Collective unconscious of city becoming hostile", "w": 1 },
-        { "v": "Paradox engine unmaking city's timeline", "w": 1 },
+        {
+          "v": "City itself achieving malevolent sentience",
+          "w": 1
+        },
+        {
+          "v": "Conceptual plague erasing idea of civilization",
+          "w": 1
+        },
+        {
+          "v": "Time loop trapping city in eternal suffering",
+          "w": 1
+        },
+        {
+          "v": "Living embodiment of urban decay consuming order",
+          "w": 1
+        },
+        {
+          "v": "Collective unconscious of city becoming hostile",
+          "w": 1
+        },
+        {
+          "v": "Paradox engine unmaking city's timeline",
+          "w": 1
+        },
         {
           "v": "Every sin ever committed in city gaining physical form",
           "w": 1
         },
-        { "v": "Aspect of chaos rewriting laws of reality", "w": 1 },
-        { "v": "Fusion of all urban nightmares into singular horror", "w": 1 },
-        { "v": "City becoming nexus for all possible apocalypses", "w": 1 },
+        {
+          "v": "Aspect of chaos rewriting laws of reality",
+          "w": 1
+        },
+        {
+          "v": "Fusion of all urban nightmares into singular horror",
+          "w": 1
+        },
+        {
+          "v": "City becoming nexus for all possible apocalypses",
+          "w": 1
+        },
         {
           "v": "Abstract concept of 'city' turning against inhabitants",
           "w": 1
@@ -991,90 +2802,294 @@
     },
     "populated_village": {
       "safe": [
-        { "v": "Village elder sharing local folklore", "w": 15 },
-        { "v": "Harvest festival with community feast", "w": 12 },
-        { "v": "Friendly innkeeper offering hearty meals", "w": 14 },
-        { "v": "Children playing traditional village games", "w": 13 },
-        { "v": "Local healer providing herbal remedies", "w": 10 },
-        { "v": "Farmer offering fresh produce at fair price", "w": 16 },
-        { "v": "Village craftsman demonstrating traditional skills", "w": 9 },
-        { "v": "Community well with pure, cold water", "w": 11 },
-        { "v": "Peaceful cemetery with well-tended graves", "w": 8 },
-        { "v": "Village priest blessing travelers", "w": 7 },
-        { "v": "Market day with friendly competition", "w": 10 },
-        { "v": "Local militia captain sharing regional news", "w": 8 },
-        { "v": "Village shrine offering quiet reflection", "w": 6 },
-        { "v": "Storyteller entertaining with epic tales", "w": 9 },
-        { "v": "Wedding celebration welcoming strangers", "w": 5 }
+        {
+          "v": "Village elder sharing local folklore",
+          "w": 15
+        },
+        {
+          "v": "Harvest festival with community feast",
+          "w": 12
+        },
+        {
+          "v": "Friendly innkeeper offering hearty meals",
+          "w": 14
+        },
+        {
+          "v": "Children playing traditional village games",
+          "w": 13
+        },
+        {
+          "v": "Local healer providing herbal remedies",
+          "w": 10
+        },
+        {
+          "v": "Farmer offering fresh produce at fair price",
+          "w": 16
+        },
+        {
+          "v": "Village craftsman demonstrating traditional skills",
+          "w": 9
+        },
+        {
+          "v": "Community well with pure, cold water",
+          "w": 11
+        },
+        {
+          "v": "Peaceful cemetery with well-tended graves",
+          "w": 8
+        },
+        {
+          "v": "Village priest blessing travelers",
+          "w": 7
+        },
+        {
+          "v": "Market day with friendly competition",
+          "w": 10
+        },
+        {
+          "v": "Local militia captain sharing regional news",
+          "w": 8
+        },
+        {
+          "v": "Village shrine offering quiet reflection",
+          "w": 6
+        },
+        {
+          "v": "Storyteller entertaining with epic tales",
+          "w": 9
+        },
+        {
+          "v": "Wedding celebration welcoming strangers",
+          "w": 5
+        }
       ],
       "low": [
-        { "v": "Suspicious villagers distrustful of outsiders", "w": 14 },
-        { "v": "Crop failure causing food shortages", "w": 10 },
-        { "v": "Livestock disease affecting local economy", "w": 9 },
-        { "v": "Village gossip spreading uncomfortable rumors", "w": 12 },
-        { "v": "Merchant caravan bringing inflated prices", "w": 8 },
-        { "v": "Bandits demanding protection money", "w": 7 },
-        { "v": "Well contaminated by upstream activity", "w": 6 },
-        { "v": "Minor property dispute between neighbors", "w": 11 },
-        { "v": "Traveling preacher causing religious tension", "w": 5 },
-        { "v": "Wild animals raiding village stores", "w": 9 },
-        { "v": "Bridge washout isolating village temporarily", "w": 8 },
-        { "v": "Tax collector demanding excessive payments", "w": 7 },
-        { "v": "Village drunk causing public disturbances", "w": 10 },
-        { "v": "Superstitious fears about recent omens", "w": 6 },
-        { "v": "Rival village competing for trade routes", "w": 4 }
+        {
+          "v": "Suspicious villagers distrustful of outsiders",
+          "w": 14
+        },
+        {
+          "v": "Crop failure causing food shortages",
+          "w": 10
+        },
+        {
+          "v": "Livestock disease affecting local economy",
+          "w": 9
+        },
+        {
+          "v": "Village gossip spreading uncomfortable rumors",
+          "w": 12
+        },
+        {
+          "v": "Merchant caravan bringing inflated prices",
+          "w": 8
+        },
+        {
+          "v": "Bandits demanding protection money",
+          "w": 7
+        },
+        {
+          "v": "Well contaminated by upstream activity",
+          "w": 6
+        },
+        {
+          "v": "Minor property dispute between neighbors",
+          "w": 11
+        },
+        {
+          "v": "Traveling preacher causing religious tension",
+          "w": 5
+        },
+        {
+          "v": "Wild animals raiding village stores",
+          "w": 9
+        },
+        {
+          "v": "Bridge washout isolating village temporarily",
+          "w": 8
+        },
+        {
+          "v": "Tax collector demanding excessive payments",
+          "w": 7
+        },
+        {
+          "v": "Village drunk causing public disturbances",
+          "w": 10
+        },
+        {
+          "v": "Superstitious fears about recent omens",
+          "w": 6
+        },
+        {
+          "v": "Rival village competing for trade routes",
+          "w": 4
+        }
       ],
       "moderate": [
-        { "v": "Werewolf hiding among trusted villagers", "w": 5 },
-        { "v": "Cult secretly operating within community", "w": 4 },
-        { "v": "Bandit group using village as base", "w": 7 },
-        { "v": "Plague spreading through livestock and people", "w": 6 },
-        { "v": "Village leader possessed by evil spirit", "w": 3 },
-        { "v": "Ancient curse awakening in old burial ground", "w": 4 },
-        { "v": "Mysterious disappearances of village youth", "w": 5 },
-        { "v": "Hag manipulating village politics from shadows", "w": 3 },
-        { "v": "Dragon demanding tribute from helpless villagers", "w": 2 },
-        { "v": "Necromancer raising dead from village cemetery", "w": 4 },
-        { "v": "Doppelganger replacing key village figures", "w": 3 },
-        { "v": "Devil's contract binding entire village", "w": 2 },
-        { "v": "Mind control parasite spreading through community", "w": 4 },
-        { "v": "Fey court claiming village as their territory", "w": 6 },
-        { "v": "Witch trial mob mentality consuming reason", "w": 8 }
+        {
+          "v": "Werewolf hiding among trusted villagers",
+          "w": 5
+        },
+        {
+          "v": "Cult secretly operating within community",
+          "w": 4
+        },
+        {
+          "v": "Bandit group using village as base",
+          "w": 7
+        },
+        {
+          "v": "Plague spreading through livestock and people",
+          "w": 6
+        },
+        {
+          "v": "Village leader possessed by evil spirit",
+          "w": 3
+        },
+        {
+          "v": "Ancient curse awakening in old burial ground",
+          "w": 4
+        },
+        {
+          "v": "Mysterious disappearances of village youth",
+          "w": 5
+        },
+        {
+          "v": "Hag manipulating village politics from shadows",
+          "w": 3
+        },
+        {
+          "v": "Dragon demanding tribute from helpless villagers",
+          "w": 2
+        },
+        {
+          "v": "Necromancer raising dead from village cemetery",
+          "w": 4
+        },
+        {
+          "v": "Doppelganger replacing key village figures",
+          "w": 3
+        },
+        {
+          "v": "Devil's contract binding entire village",
+          "w": 2
+        },
+        {
+          "v": "Mind control parasite spreading through community",
+          "w": 4
+        },
+        {
+          "v": "Fey court claiming village as their territory",
+          "w": 6
+        },
+        {
+          "v": "Witch trial mob mentality consuming reason",
+          "w": 8
+        }
       ],
       "high": [
-        { "v": "Vampire lord controlling village through fear", "w": 3 },
-        { "v": "Demon possession spreading through bloodlines", "w": 2 },
-        { "v": "Lich using village as undead army recruitment", "w": 2 },
-        { "v": "Portal to Shadowfell consuming village reality", "w": 1 },
-        { "v": "Ancient evil awakening beneath village foundations", "w": 2 },
-        { "v": "Mind flayer colony enslaving entire population", "w": 1 },
-        { "v": "Beholder establishing tyrannical rule", "w": 1 },
-        { "v": "Cursed artifact transforming villagers into monsters", "w": 3 },
-        { "v": "Death knight claiming village for undead kingdom", "w": 2 },
-        { "v": "Reality storm erasing village from existence", "w": 1 },
-        { "v": "All village ancestors returning as vengeful spirits", "w": 3 },
-        { "v": "Planar convergence merging village with Nine Hells", "w": 1 },
-        { "v": "Time loop trapping village in eternal tragedy", "w": 1 },
-        { "v": "Collective nightmare of all villagers manifesting", "w": 2 },
-        { "v": "Village serving as anchor for cosmic horror", "w": 1 }
+        {
+          "v": "Vampire lord controlling village through fear",
+          "w": 3
+        },
+        {
+          "v": "Demon possession spreading through bloodlines",
+          "w": 2
+        },
+        {
+          "v": "Lich using village as undead army recruitment",
+          "w": 2
+        },
+        {
+          "v": "Portal to Shadowfell consuming village reality",
+          "w": 1
+        },
+        {
+          "v": "Ancient evil awakening beneath village foundations",
+          "w": 2
+        },
+        {
+          "v": "Mind flayer colony enslaving entire population",
+          "w": 1
+        },
+        {
+          "v": "Beholder establishing tyrannical rule",
+          "w": 1
+        },
+        {
+          "v": "Cursed artifact transforming villagers into monsters",
+          "w": 3
+        },
+        {
+          "v": "Death knight claiming village for undead kingdom",
+          "w": 2
+        },
+        {
+          "v": "Reality storm erasing village from existence",
+          "w": 1
+        },
+        {
+          "v": "All village ancestors returning as vengeful spirits",
+          "w": 3
+        },
+        {
+          "v": "Planar convergence merging village with Nine Hells",
+          "w": 1
+        },
+        {
+          "v": "Time loop trapping village in eternal tragedy",
+          "w": 1
+        },
+        {
+          "v": "Collective nightmare of all villagers manifesting",
+          "w": 2
+        },
+        {
+          "v": "Village serving as anchor for cosmic horror",
+          "w": 1
+        }
       ],
       "deadly": [
-        { "v": "Avatar of harvest death god claiming all life", "w": 1 },
-        { "v": "Great Old One using village as psychic beacon", "w": 1 },
-        { "v": "Reality itself rejecting village's right to exist", "w": 1 },
-        { "v": "Conceptual plague erasing idea of community", "w": 1 },
-        { "v": "Village becoming ground zero for universal unmaking", "w": 1 },
+        {
+          "v": "Avatar of harvest death god claiming all life",
+          "w": 1
+        },
+        {
+          "v": "Great Old One using village as psychic beacon",
+          "w": 1
+        },
+        {
+          "v": "Reality itself rejecting village's right to exist",
+          "w": 1
+        },
+        {
+          "v": "Conceptual plague erasing idea of community",
+          "w": 1
+        },
+        {
+          "v": "Village becoming ground zero for universal unmaking",
+          "w": 1
+        },
         {
           "v": "All human suffering concentrated into single location",
           "w": 1
         },
-        { "v": "Living embodiment of rural decay consuming hope", "w": 1 },
+        {
+          "v": "Living embodiment of rural decay consuming hope",
+          "w": 1
+        },
         {
           "v": "Collective unconscious turning violently against itself",
           "w": 1
         },
-        { "v": "Abstract concept of 'home' becoming predatory", "w": 1 },
-        { "v": "Time paradox unmaking village's entire timeline", "w": 1 },
+        {
+          "v": "Abstract concept of 'home' becoming predatory",
+          "w": 1
+        },
+        {
+          "v": "Time paradox unmaking village's entire timeline",
+          "w": 1
+        },
         {
           "v": "Every secret ever hidden manifesting as physical horror",
           "w": 1
@@ -1083,96 +3098,306 @@
           "v": "Fusion of all pastoral nightmares achieving consciousness",
           "w": 1
         },
-        { "v": "Village as patient zero for reality virus", "w": 1 },
-        { "v": "Primordial innocence corrupted into ultimate evil", "w": 1 },
-        { "v": "Community spirit twisted into hive mind apocalypse", "w": 1 }
+        {
+          "v": "Village as patient zero for reality virus",
+          "w": 1
+        },
+        {
+          "v": "Primordial innocence corrupted into ultimate evil",
+          "w": 1
+        },
+        {
+          "v": "Community spirit twisted into hive mind apocalypse",
+          "w": 1
+        }
       ]
     },
     "populated_frontier": {
       "safe": [
-        { "v": "Frontier trading post with fair dealing merchants", "w": 14 },
-        { "v": "Pioneer family sharing hearty frontier hospitality", "w": 12 },
-        { "v": "Scout offering knowledge of safe trails", "w": 11 },
-        { "v": "Hunting party returning with fresh game to share", "w": 10 },
-        { "v": "Missionary providing medical care and supplies", "w": 8 },
-        { "v": "Prospector sharing rumors of profitable claims", "w": 9 },
-        { "v": "Frontier town celebrating successful harvest", "w": 7 },
-        { "v": "Rangers patrolling to ensure traveler safety", "w": 13 },
-        { "v": "Native guide offering safe passage knowledge", "w": 6 },
-        { "v": "Homesteader needing help but offering payment", "w": 8 },
-        { "v": "Wagon train with space for additional travelers", "w": 10 },
-        { "v": "Frontier doctor providing healing services", "w": 7 },
-        { "v": "Storyteller sharing tales of frontier legends", "w": 6 },
-        { "v": "Supply cache left by previous expedition", "w": 9 },
-        { "v": "Peaceful indigenous settlement offering trade", "w": 5 }
+        {
+          "v": "Frontier trading post with fair dealing merchants",
+          "w": 14
+        },
+        {
+          "v": "Pioneer family sharing hearty frontier hospitality",
+          "w": 12
+        },
+        {
+          "v": "Scout offering knowledge of safe trails",
+          "w": 11
+        },
+        {
+          "v": "Hunting party returning with fresh game to share",
+          "w": 10
+        },
+        {
+          "v": "Missionary providing medical care and supplies",
+          "w": 8
+        },
+        {
+          "v": "Prospector sharing rumors of profitable claims",
+          "w": 9
+        },
+        {
+          "v": "Frontier town celebrating successful harvest",
+          "w": 7
+        },
+        {
+          "v": "Rangers patrolling to ensure traveler safety",
+          "w": 13
+        },
+        {
+          "v": "Native guide offering safe passage knowledge",
+          "w": 6
+        },
+        {
+          "v": "Homesteader needing help but offering payment",
+          "w": 8
+        },
+        {
+          "v": "Wagon train with space for additional travelers",
+          "w": 10
+        },
+        {
+          "v": "Frontier doctor providing healing services",
+          "w": 7
+        },
+        {
+          "v": "Storyteller sharing tales of frontier legends",
+          "w": 6
+        },
+        {
+          "v": "Supply cache left by previous expedition",
+          "w": 9
+        },
+        {
+          "v": "Peaceful indigenous settlement offering trade",
+          "w": 5
+        }
       ],
       "low": [
-        { "v": "Equipment failure far from reliable repair", "w": 13 },
-        { "v": "Wild animal raids on supply stores", "w": 12 },
-        { "v": "Flash flood washing out bridge or ford", "w": 10 },
-        { "v": "Claim jumpers disputing mining rights", "w": 8 },
-        { "v": "Opportunistic thieves targeting isolated travelers", "w": 11 },
-        { "v": "Dangerous wildlife defending territory", "w": 14 },
-        { "v": "Getting lost due to poor trail markings", "w": 12 },
-        { "v": "Unscrupulous trader selling defective goods", "w": 9 },
-        { "v": "Disease outbreak in remote settlement", "w": 7 },
-        { "v": "Severe weather threatening shelter and supplies", "w": 13 },
-        { "v": "Hostile indigenous tribe warning trespassers", "w": 6 },
-        { "v": "Frontier justice mob seeking suspected criminal", "w": 5 },
-        { "v": "Contaminated water source causing illness", "w": 8 },
-        { "v": "Rival prospectors creating territorial disputes", "w": 7 },
-        { "v": "Supply shortage driving up essential prices", "w": 10 }
+        {
+          "v": "Equipment failure far from reliable repair",
+          "w": 13
+        },
+        {
+          "v": "Wild animal raids on supply stores",
+          "w": 12
+        },
+        {
+          "v": "Flash flood washing out bridge or ford",
+          "w": 10
+        },
+        {
+          "v": "Claim jumpers disputing mining rights",
+          "w": 8
+        },
+        {
+          "v": "Opportunistic thieves targeting isolated travelers",
+          "w": 11
+        },
+        {
+          "v": "Dangerous wildlife defending territory",
+          "w": 14
+        },
+        {
+          "v": "Getting lost due to poor trail markings",
+          "w": 12
+        },
+        {
+          "v": "Unscrupulous trader selling defective goods",
+          "w": 9
+        },
+        {
+          "v": "Disease outbreak in remote settlement",
+          "w": 7
+        },
+        {
+          "v": "Severe weather threatening shelter and supplies",
+          "w": 13
+        },
+        {
+          "v": "Hostile indigenous tribe warning trespassers",
+          "w": 6
+        },
+        {
+          "v": "Frontier justice mob seeking suspected criminal",
+          "w": 5
+        },
+        {
+          "v": "Contaminated water source causing illness",
+          "w": 8
+        },
+        {
+          "v": "Rival prospectors creating territorial disputes",
+          "w": 7
+        },
+        {
+          "v": "Supply shortage driving up essential prices",
+          "w": 10
+        }
       ],
       "moderate": [
-        { "v": "Outlaw gang controlling important river crossing", "w": 8 },
-        { "v": "Violent land dispute between settlers", "w": 7 },
-        { "v": "Indian war party seeking to drive out settlers", "w": 6 },
-        { "v": "Corrupt sheriff exploiting frontier isolation", "w": 5 },
-        { "v": "Dangerous cult establishing remote compound", "w": 4 },
-        { "v": "Wild magic storms from ancient battleground", "w": 3 },
-        { "v": "Wendigo stalking frontier settlements", "w": 3 },
-        { "v": "Dragon claiming mountain territory for lair", "w": 2 },
-        { "v": "Bandits using frontier laws to legitimize robbery", "w": 9 },
-        { "v": "Supernatural predator hunting isolated families", "w": 4 },
-        { "v": "Mining operation unleashing underground horrors", "w": 5 },
-        { "v": "Frontier war between competing territorial claims", "w": 6 },
-        { "v": "Cursed gold mine driving prospectors to madness", "w": 4 },
-        { "v": "Plague carrier spreading disease along trade routes", "w": 6 },
-        { "v": "Rogue military unit establishing illegal outpost", "w": 5 }
+        {
+          "v": "Outlaw gang controlling important river crossing",
+          "w": 8
+        },
+        {
+          "v": "Violent land dispute between settlers",
+          "w": 7
+        },
+        {
+          "v": "Indian war party seeking to drive out settlers",
+          "w": 6
+        },
+        {
+          "v": "Corrupt sheriff exploiting frontier isolation",
+          "w": 5
+        },
+        {
+          "v": "Dangerous cult establishing remote compound",
+          "w": 4
+        },
+        {
+          "v": "Wild magic storms from ancient battleground",
+          "w": 3
+        },
+        {
+          "v": "Wendigo stalking frontier settlements",
+          "w": 3
+        },
+        {
+          "v": "Dragon claiming mountain territory for lair",
+          "w": 2
+        },
+        {
+          "v": "Bandits using frontier laws to legitimize robbery",
+          "w": 9
+        },
+        {
+          "v": "Supernatural predator hunting isolated families",
+          "w": 4
+        },
+        {
+          "v": "Mining operation unleashing underground horrors",
+          "w": 5
+        },
+        {
+          "v": "Frontier war between competing territorial claims",
+          "w": 6
+        },
+        {
+          "v": "Cursed gold mine driving prospectors to madness",
+          "w": 4
+        },
+        {
+          "v": "Plague carrier spreading disease along trade routes",
+          "w": 6
+        },
+        {
+          "v": "Rogue military unit establishing illegal outpost",
+          "w": 5
+        }
       ],
       "high": [
-        { "v": "Ancient evil awakening from undisturbed slumber", "w": 2 },
-        { "v": "Demon cult preparing frontier for infernal invasion", "w": 3 },
-        { "v": "Lich establishing remote phylactery stronghold", "w": 2 },
-        { "v": "Reality tears from disturbing sacred sites", "w": 1 },
-        { "v": "Primordial elemental claiming entire territory", "w": 2 },
-        { "v": "Vampire lord building frontier blood kingdom", "w": 2 },
-        { "v": "Portal to Feywild displacing natural laws", "w": 1 },
-        { "v": "Death knight leading spectral cavalry", "w": 2 },
-        { "v": "Beholder tyrant conquering remote settlements", "w": 1 },
-        { "v": "Ancient curse spreading through frontier bloodlines", "w": 3 },
-        { "v": "Mind flayer colony establishing brain farm", "w": 1 },
-        { "v": "Tarrasque egg discovered in territorial dispute", "w": 1 },
-        { "v": "Planar convergence merging frontier with Shadowfell", "w": 1 },
-        { "v": "Time distortion aging entire region rapidly", "w": 1 },
-        { "v": "Cosmic horror using frontier as feeding ground", "w": 1 }
+        {
+          "v": "Ancient evil awakening from undisturbed slumber",
+          "w": 2
+        },
+        {
+          "v": "Demon cult preparing frontier for infernal invasion",
+          "w": 3
+        },
+        {
+          "v": "Lich establishing remote phylactery stronghold",
+          "w": 2
+        },
+        {
+          "v": "Reality tears from disturbing sacred sites",
+          "w": 1
+        },
+        {
+          "v": "Primordial elemental claiming entire territory",
+          "w": 2
+        },
+        {
+          "v": "Vampire lord building frontier blood kingdom",
+          "w": 2
+        },
+        {
+          "v": "Portal to Feywild displacing natural laws",
+          "w": 1
+        },
+        {
+          "v": "Death knight leading spectral cavalry",
+          "w": 2
+        },
+        {
+          "v": "Beholder tyrant conquering remote settlements",
+          "w": 1
+        },
+        {
+          "v": "Ancient curse spreading through frontier bloodlines",
+          "w": 3
+        },
+        {
+          "v": "Mind flayer colony establishing brain farm",
+          "w": 1
+        },
+        {
+          "v": "Tarrasque egg discovered in territorial dispute",
+          "w": 1
+        },
+        {
+          "v": "Planar convergence merging frontier with Shadowfell",
+          "w": 1
+        },
+        {
+          "v": "Time distortion aging entire region rapidly",
+          "w": 1
+        },
+        {
+          "v": "Cosmic horror using frontier as feeding ground",
+          "w": 1
+        }
       ],
       "deadly": [
-        { "v": "Avatar of untamed wilderness rejecting civilization", "w": 1 },
-        { "v": "Great Old One awakening in unexplored territories", "w": 1 },
-        { "v": "Reality itself declaring war on expansion", "w": 1 },
-        { "v": "Conceptual frontier consuming settled lands", "w": 1 },
+        {
+          "v": "Avatar of untamed wilderness rejecting civilization",
+          "w": 1
+        },
+        {
+          "v": "Great Old One awakening in unexplored territories",
+          "w": 1
+        },
+        {
+          "v": "Reality itself declaring war on expansion",
+          "w": 1
+        },
+        {
+          "v": "Conceptual frontier consuming settled lands",
+          "w": 1
+        },
         {
           "v": "Living embodiment of manifest destiny turned malevolent",
           "w": 1
         },
-        { "v": "All frontier violence condensed into single entity", "w": 1 },
-        { "v": "Primordial chaos reclaiming ordered territory", "w": 1 },
+        {
+          "v": "All frontier violence condensed into single entity",
+          "w": 1
+        },
+        {
+          "v": "Primordial chaos reclaiming ordered territory",
+          "w": 1
+        },
         {
           "v": "Collective unconscious of land rejecting human presence",
           "w": 1
         },
-        { "v": "Time paradox creating infinite frontier expansion", "w": 1 },
+        {
+          "v": "Time paradox creating infinite frontier expansion",
+          "w": 1
+        },
         {
           "v": "Abstract concept of 'wild' achieving hostile sentience",
           "w": 1
@@ -1181,14 +3406,113 @@
           "v": "Every broken promise to indigenous peoples manifesting",
           "w": 1
         },
-        { "v": "Fusion of all expansion guilt into cosmic horror", "w": 1 },
+        {
+          "v": "Fusion of all expansion guilt into cosmic horror",
+          "w": 1
+        },
         {
           "v": "Frontier as nexus for universal territorial conflicts",
           "w": 1
         },
-        { "v": "Living map that rewrites reality to match its design", "w": 1 },
-        { "v": "Aspect of exploration consuming explorers eternally", "w": 1 }
+        {
+          "v": "Living map that rewrites reality to match its design",
+          "w": 1
+        },
+        {
+          "v": "Aspect of exploration consuming explorers eternally",
+          "w": 1
+        }
       ]
     }
-  }
+  },
+  "time_bias_by_zone": {
+    "forest": {
+      "night": [
+        {
+          "hasTag": "night",
+          "bonus": 3
+        },
+        {
+          "hasTag": "ambush",
+          "bonus": 1
+        }
+      ],
+      "dawn": [
+        {
+          "hasTag": "beasts",
+          "bonus": 2
+        }
+      ],
+      "dusk": [
+        {
+          "hasTag": "fey",
+          "bonus": 2
+        }
+      ]
+    },
+    "ruins": {
+      "night": [
+        {
+          "hasTag": "undead",
+          "bonus": 3
+        }
+      ]
+    }
+  },
+  "complications": {
+    "low": [
+      {
+        "v": "Sudden downpour makes terrain slick and visibility poor",
+        "w": 2
+      },
+      {
+        "v": "A bystander needs help but complicates negotiations",
+        "w": 1
+      },
+      {
+        "v": "A second group arrives with conflicting goals",
+        "w": 1
+      }
+    ],
+    "moderate": [
+      {
+        "v": "Local predator scents blood and circles the scene",
+        "w": 2
+      },
+      {
+        "v": "Ancient ward activates, altering magic nearby",
+        "w": 1
+      },
+      {
+        "v": "Terrain hazard splits the party briefly",
+        "w": 1
+      }
+    ],
+    "high": [
+      {
+        "v": "Reinforcements arrive mid-encounter",
+        "w": 2
+      },
+      {
+        "v": "A ritual begins; stopping it requires a skill challenge",
+        "w": 1
+      }
+    ],
+    "deadly": [
+      {
+        "v": "Planar rift destabilizes the area each round",
+        "w": 1
+      },
+      {
+        "v": "Boss has a lair action unique to this site",
+        "w": 1
+      }
+    ]
+  },
+  "flavor_hooks": [
+    "A local rumor ties this event to a missing caravan.",
+    "An old map marks this spot with a warning sigil.",
+    "A child’s toy lies half-buried nearby, recently dropped.",
+    "Fresh tracks suggest something larger passed through at dawn."
+  ]
 }

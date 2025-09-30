@@ -2122,3 +2122,567 @@ tb-badge.quality.quality-high,
   background: #222a35;
   color: #dbe7ff;
 }
+
+/* ===========================
+   Trap layout wrappers
+   =========================== */
+.trap-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .4rem .5rem;
+  margin-bottom: .5rem;
+}
+
+.trap-dcs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem .45rem;
+  margin-top: .5rem;
+}
+
+/* ===========================
+   Color direction you requested
+   =========================== */
+
+/* LETHALITY — red scale, white text & border */
+.tb-badge.trap-lethality {
+  color: #fff;
+  border-color: rgba(255, 255, 255, .8);
+}
+
+.tb-badge.trap-lethality.lethality-low {
+  background: #f87171;
+}
+
+/* red-400 */
+.tb-badge.trap-lethality.lethality-medium {
+  background: #ef4444;
+}
+
+/* red-500 */
+.tb-badge.trap-lethality.lethality-deadly {
+  background: #b91c1c;
+}
+
+.tb-badge.trap-dc {
+  color: #fff;
+  border-color: transparent;
+}
+
+.tb-badge.trap-dc.dcv-8 {
+  background: #22c55e;
+}
+
+/* green-600 */
+.tb-badge.trap-dc.dcv-10 {
+  background: #65a30d;
+}
+
+/* lime-700  */
+.tb-badge.trap-dc.dcv-12 {
+  background: #84cc16;
+}
+
+/* lime-500  */
+.tb-badge.trap-dc.dcv-14 {
+  background: #eab308;
+}
+
+/* yellow-500 */
+.tb-badge.trap-dc.dcv-16 {
+  background: #f59e0b;
+}
+
+/* amber-500  */
+.tb-badge.trap-dc.dcv-18 {
+  background: #f97316;
+}
+
+/* orange-500 */
+.tb-badge.trap-dc.dcv-20 {
+  background: #ef4444;
+}
+
+/* red-500    */
+.tb-badge.trap-dc.dcv-22 {
+  background: #dc2626;
+}
+
+/* red-600    */
+.tb-badge.trap-dc.dcv-24 {
+  background: #b91c1c;
+}
+
+/* red-700    */
+.tb-badge.trap-dc.dcv-26 {
+  background: #7f1d1d;
+}
+
+.tb-badge.trap-env {
+  background: #f3c3ec;
+  color: #1e3a8a;
+  border-color: #bfdbfe;
+}
+
+.tb-badge.trap-area {
+  background: #ee67da;
+  color: #1e3a8a;
+  border-color: #bfdbfe;
+}
+
+.tb-badge.trap-utility {
+  background: #e546cd;
+  color: #c3ceee;
+  border-color: #bfdbfe;
+}
+
+/* TRAP TYPE — blue scale */
+.tb-badge.trap-type {
+  background: #e0f2fe;
+  color: #075985;
+  border-color: #7dd3fc;
+}
+
+/* sky-100 */
+.tb-badge.trap-type.type-mechanical {
+  background: #dbeafe;
+  color: #1e3a8a;
+  border-color: #bfdbfe;
+}
+
+/* blue-100 */
+.tb-badge.trap-type.type-magical {
+  background: #dbeafe;
+  color: #1e3a8a;
+  border-color: #bfdbfe;
+}
+
+/* DAMAGE TYPE — orange scale (unified for all types) */
+.tb-badge.trap-dmg {
+  background: #fed7aa;
+  color: #7c2d12;
+  border-color: #fdba74;
+}
+
+/* orange-200/300 */
+
+/* SAVE pills stay neutral; DC bar pills are labeled already */
+.tb-badge.trap-save {
+  background: #f1f5f9;
+  color: #0f172a;
+  border-color: #cbd5e1;
+}
+
+/* Row layout: text left, pills at the end */
+.trap-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: .5rem;
+  row-gap: .35rem;
+  margin: .15rem 0 .35rem;
+}
+
+.trap-row .row-text {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* <= change to this */
+.trap-row .row-pills {
+  margin-left: auto;
+  flex: 0 1 40%;
+  display: inline-flex;
+  gap: .35rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.trap-footer-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+  margin-top: .65rem;
+}
+
+.trap-line {
+  margin: .25rem 0 .45rem;
+  line-height: 1.45;
+}
+
+.trap-line b {
+  margin-right: .35rem;
+}
+
+.trap-line .line-pills {
+  display: inline-flex;
+  gap: .35rem;
+  vertical-align: baseline;
+}
+
+
+/* Small screens: stack pills under the text */
+@media (max-width: 720px) {
+  .trap-row .row-text {
+    flex: 1 0 100%;
+    min-width: 0;
+  }
+
+  .trap-row .row-pills {
+    flex: 1 0 100%;
+    justify-content: flex-start;
+  }
+}
+
+/* encounter badge variants (add to your main stylesheet if desired) */
+.tb-badge.enc-zone {
+  background: #1e293b;
+}
+
+.tb-badge.enc-risk {
+  background: #334155;
+}
+
+.tb-badge.enc-time {
+  background: #475569;
+}
+
+.tb-badge.enc-tag {
+  background: #6b7280;
+}
+
+/* risk severity overrides */
+.tb-badge.risk-safe {
+  background: #16a34a;
+  color: #fff;
+}
+
+.tb-badge.risk-low {
+  background: #22c55e;
+  color: #0b0f0f;
+}
+
+.tb-badge.risk-moderate {
+  background: #f59e0b;
+  color: #111;
+}
+
+.tb-badge.risk-high {
+  background: #ef4444;
+  color: #fff;
+}
+
+.tb-badge.risk-deadly {
+  background: #991b1b;
+  color: #fff;
+}
+
+
+/* ========== Door pills (extend .tb-badge) ========== */
+/*challenge*/
+
+
+.tb-badge.door-chal {
+  background: #f6e602ff;
+  color: #b23f11ff;
+  border-color: #b23f11ff;
+}
+
+
+
+/* Material */
+.tb-badge.door-mat {
+  background: #374151;
+  color: #F9FAFB;
+  border-color: white;
+}
+
+/* optional per-material tints */
+.tb-badge.mat-softwood {
+  background: #065f46;
+}
+
+.tb-badge.mat-reinforced-softwood {
+  background: #0f766e;
+}
+
+.tb-badge.mat-hardwood {
+  background: #166534;
+}
+
+.tb-badge.mat-reinforced-hardwood {
+  background: #14532d;
+}
+
+.tb-badge.mat-iron {
+  background: #334155;
+}
+
+.tb-badge.mat-steel {
+  background: #1f2937;
+}
+
+.tb-badge.mat-stone {
+  background: #4b5563;
+}
+
+.tb-badge.mat-adamantine {
+  background: #6b21a8;
+}
+
+/* Hardness (HP) */
+.tb-badge.door-hp {
+  background: #1e3a8a;
+  color: #F9FAFB;
+}
+
+/* Toughness (Break DC) */
+.tb-badge.door-breakdc,
+.tb-badge.door-lockdc,
+.tb-badge.door-pickdc {
+  background: #7dd3fc;
+  color: #111827;
+}
+
+/* tone steps (match your dcToneClass e.g., dcv-8,10,...,26) */
+.tb-badge.dcv-8,
+.tb-badge.dcv-10 {
+  filter: brightness(1.05);
+}
+
+.tb-badge.dcv-12,
+.tb-badge.dcv-14 {
+  filter: brightness(1.0);
+}
+
+.tb-badge.dcv-16,
+.tb-badge.dcv-18 {
+  filter: brightness(0.95);
+}
+
+.tb-badge.dcv-20,
+.tb-badge.dcv-22 {
+  filter: brightness(0.9);
+}
+
+.tb-badge.dcv-24,
+.tb-badge.dcv-26 {
+  filter: brightness(0.85);
+}
+
+/* Lock */
+.tb-badge.door-lock {
+  background: #075985;
+  color: white;
+  border-color: white;
+}
+
+/* lock types */
+.tb-badge.lock-std-door-key {
+  background: #3f3f46;
+}
+
+.tb-badge.lock-padlock {
+  background: #4b5563;
+}
+
+.tb-badge.lock-deadbolt {
+  background: #334155;
+}
+
+.tb-badge.lock-combination {
+  background: #4c1d95;
+}
+
+.tb-badge.lock-puzzle-lock {
+  background: #6d28d9;
+}
+
+.tb-badge.lock-arcane-seal {
+  background: #7c3aed;
+}
+
+.tb-badge.lock-obstruction {
+  background: #92400e;
+}
+
+.tb-badge.lock-no-lock {
+  background: #475569;
+}
+
+/* Lock quality */
+.tb-badge.door-quality {
+  background: #52525b;
+  color: #F9FAFB;
+}
+
+.tb-badge.quality-common {
+  background: #6b7280;
+}
+
+.tb-badge.quality-sturdy {
+  background: #475569;
+}
+
+.tb-badge.quality-fine {
+  background: #2563eb;
+}
+
+.tb-badge.quality-exquisite {
+  background: #1d4ed8;
+}
+
+.tb-badge.quality-runic {
+  background: #7c3aed;
+}
+
+/* Locked state + side */
+.tb-badge.door-state.state-open {
+  background-color: #068021;
+  color: white;
+  border-color: whitesmoke;
+}
+
+.tb-badge.door-state.state-closed-unlocked {
+  background-color: greenyellow;
+  color: white;
+  border-color: whitesmoke;
+}
+
+.tb-badge.door-state.state-closed-locked {
+  background-color: red;
+  color: white;
+  border-color: whitesmoke;
+}
+
+.tb-badge.door-state.state-ajar {
+  background-color: orange;
+  color: white;
+  border-color: whitesmoke;
+}
+
+.tb-badge.door-state.state-obstructed {
+  background-color: red;
+  color: orange;
+  border-color: whitesmoke;
+}
+
+.tb-badge.door-lockq {
+  background-color: blueviolet;
+  color: white;
+  border-color: whitesmoke;
+}
+
+.tb-badge.door-side {
+  background-color: #3562abff;
+  color: white;
+  border-color: whitesmoke;
+}
+
+.tb-badge.door-side {
+  background-color: #3562abff;
+  color: white;
+  border-color: whitesmoke;
+}
+
+.tb-badge.door-pick.ok {
+  background-color: #3562abff;
+  color: white;
+  border-color: whitesmoke;
+}
+
+.tb-badge.door-hingechip {
+  background-color: #3562abff;
+  color: white;
+  border-color: whitesmoke;
+}
+
+
+
+
+
+
+
+
+
+
+.tb-badge.door-hingechip.hinge-noisy .hinge-jammed / .hinge-breaks .tb-badge.door-lockedfrom.side-this-side {
+  background: #0f766e;
+}
+
+.tb-badge.door-lockedfrom.side-other-side {
+  background: #0ea5e9;
+}
+
+/* Pickability + Pick DC */
+.tb-badge.door-pick.pick-yes {
+  background: #0d9488;
+  color: #fff;
+}
+
+
+.tb-badge.door-pickdc.pick-impossible {
+  background: #7e0c23;
+  color: #10c7e0;
+}
+
+/* Trap & Damage */
+.tb-badge.door-trap.trap-yes {
+  background: #b45309;
+  color: #fff;
+}
+
+/* warn */
+.tb-badge.door-trap.trap-no {
+  background: #475569;
+  color: #F9FAFB;
+}
+
+.tb-badge.door-damage.dmg-yes {
+  background: #dc2626;
+  color: #fff;
+}
+
+.tb-badge.door-damage.dmg-no {
+  background: #15803d;
+  color: #fff;
+}
+
+
+
+/* ========== Vertical layout helpers (optional) ========== */
+
+
+.door-bracket {
+  opacity: .7;
+  padding: 0 .15rem;
+}
+
+/* Vertical door layout */
+.door-vertical .door-line {
+  margin: .3rem 0;
+}
+
+.door-vertical .door-line .tb-badge {
+  margin-right: .25rem;
+}
+
+.door-bracket {
+  opacity: .7;
+  padding: 0 .15rem;
+}
+
+/* Put the #doorChallenge select below its label inside the .tb-grid */
+#doorChallenge {
+  grid-column: 1 / -1;
+  /* start at column 1 and span the row → drops beneath label */
+  justify-self: start;
+  /* align left within the grid */
+  margin-top: .25rem;
+  /* a little breathing room under the label */
+  display: block;
+  /* ensures it behaves like a block in case of resets */
+  width: min(320px, 100%);
+  /* optional: keep it tidy */
+}

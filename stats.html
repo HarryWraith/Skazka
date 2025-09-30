@@ -1,0 +1,78 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Skazka - aeter</title>
+    <link rel="stylesheet" href="navbar.css?v=3">
+    <link rel="stylesheet" href="tables.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/png" href="assets/skazka_logo.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet" />
+    <script src="navbar.js?v=3"></script>
+    <script type="module" src="./main.js"></script>
+
+</head>
+
+<body class="page-stats">
+    <div id="navbar"></div><!-- Navbar will be loaded here -->
+
+    <header class="page-hero">
+        <h1 class="skz-viking">Campaign Stats & Sessions</h1>
+        <p class="sub">Running totals, leaderboards, and detailed logs</p>
+    </header>
+
+
+    <main class="grid-container">
+        <!-- LEFT -->
+        <article class="left-column">
+            <section id="stats-session-list" class="tb-panel">
+                <h3 class="tb-title skz-title">Sessions</h3>
+                <!-- stats.js will render the list here -->
+            </section>
+        </article>
+
+        <!-- CENTER -->
+        <article class="center-column">
+            <section class="tb-panel" id="stats-tools-panel">
+                <h3 class="tb-title skz-title">Exports & Tools</h3>
+                <div class="tb-actions">
+                    <button id="btnExportSession" class="tb-btn" disabled>Export Selected Session (JSON)</button>
+                    <button id="btnExportTotalsJSON" class="tb-btn">Export Totals (JSON)</button>
+                    <button id="btnExportPerCharCSV" class="tb-ghost-btn">Export Per-Character (CSV)</button>
+                </div>
+            </section>
+
+            <section class="tb-panel">
+                <h3 class="tb-title skz-title">Campaign Overview</h3>
+                <div id="stats-kpis"></div>
+            </section>
+
+            <section class="tb-panel">
+                <h3 class="tb-title skz-title">Leaderboards</h3>
+                <div id="stats-leaderboards"></div>
+            </section>
+
+            <section class="tb-panel" id="stats-detail-panel">
+                <h3 class="tb-title skz-title">Session Details</h3>
+                <div id="stats-detail"></div>
+            </section>
+        </article>
+
+        <!-- RIGHT -->
+        <article class="right-column">
+            <section id="stats-characters" class="tb-panel">
+                <h3 class="tb-title skz-title">Characters</h3>
+                <!-- stats.js will render per-character stats here -->
+            </section>
+        </article>
+    </main>
+
+
+    <div id="footer"></div>
+
+</body>
+
+</html>

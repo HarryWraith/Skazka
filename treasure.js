@@ -301,7 +301,10 @@ const RARITY_BY_LEVEL = {
     ],
   },
   levelLow: {
-    low: [{ v: "uncommon", w: 98 }],
+    low: [
+      { v: "common", w: 30 },
+      { v: "uncommon", w: 70 },
+    ],
     mid: [
       { v: "uncommon", w: 55 },
       { v: "rare", w: 45 },
@@ -319,8 +322,9 @@ const RARITY_BY_LEVEL = {
   },
   levelNormal: {
     low: [
-      { v: "uncommon", w: 85 },
-      { v: "rare", w: 14 },
+      { v: "common", w: 20 },
+      { v: "uncommon", w: 70 },
+      { v: "rare", w: 9 },
       { v: "very rare", w: 1 },
     ],
     mid: [
@@ -363,6 +367,27 @@ const RARITY_BY_LEVEL = {
   },
 };
 
+// Chance that a picked item is a *consumable* (potion, scroll, etc.)
+// by CR band and rarity. Tuned to feel like DMG hoards:
+// - low: lots of consumables
+// - mid: still many consumables
+// - high/epic: mostly permanent items
+const CONSUMABLE_SPLIT = {
+  levelNormal: {
+    low: { common: 0.85, uncommon: 0.7, rare: 0.4, "very rare": 0.2 },
+    mid: { /* no common */ uncommon: 0.6, rare: 0.45, "very rare": 0.25 },
+    high: { rare: 0.3, "very rare": 0.25, legendary: 0.1 },
+    epic: { "very rare": 0.15, legendary: 0.05 },
+  },
+  // Nudge knobs for your other prevalence levels (optional)
+  levelLow: "more", // +10% consumables vs levelNormal
+  levelHigh: "less", // −10% consumables vs levelNormal
+  levelSkazka: "force", // 100% consumables
+};
+
+// Optional: DMG A–I never yield artifacts in hoards; keep false to mimic that.
+const ALLOW_ARTIFACTS_IN_HOARDS = false;
+
 function isConsumableMagic(it) {
   return !!(it && it.magical === true && it.is_consumable === true);
 }
@@ -370,44 +395,94 @@ function isConsumableMagic(it) {
 function rollMagicItemsForBand(band, count, levelKey = "levelNormal") {
   const weights = RARITY_BY_LEVEL[levelKey] || RARITY_BY_LEVEL.levelNormal;
   if (!weights) return [];
-  const b = getBuckets();
+
+  // Buckets are already privacy-filtered via magicCatalog() + inScope()
+  const buckets = getBuckets(); // { common: [...], uncommon: [...], rare: [...], ... }
+  const ORDER = [
+    "common",
+    "uncommon",
+    "rare",
+    "very rare",
+    "legendary",
+    "artifact",
+  ];
   const out = [];
-  for (let i = 0; i < count; i++) {
-    let rarity = pickWeighted(weights[band] || weights.mid);
-    let pool = b[rarity] || [];
 
-    // broaden if empty
-    if (!pool.length) {
-      const order = [
-        "common",
-        "uncommon",
-        "rare",
-        "very rare",
-        "legendary",
-        "artifact",
-      ];
-      const idx = Math.max(0, order.indexOf(rarity));
-      pool = [
-        ...order
-          .slice(idx)
-          .map((r) => b[r])
-          .flat(),
-        ...order
-          .slice(0, idx)
-          .map((r) => b[r])
-          .flat(),
-      ].filter(Boolean);
+  // --- helpers ---
+  function pickWeighted(arr) {
+    const total = arr.reduce((s, x) => s + (x.w || 0), 0);
+    if (!total) return arr[0]?.v;
+    let r = Math.random() * total;
+    for (const { v, w } of arr) {
+      r -= w || 0;
+      if (r <= 0) return v;
     }
-
-    // Skazka: consumable-only
-    if (levelKey === "levelSkazka") {
-      pool = pool.filter(isConsumableMagic);
-      if (!pool.length) continue;
-    }
-
-    const it = pick(pool);
-    if (it) out.push(it);
+    return arr[arr.length - 1]?.v;
   }
+
+  function consumableChance(levelKey, band, rarity) {
+    const base = CONSUMABLE_SPLIT.levelNormal[band] || {};
+    let p = base[rarity] ?? 0;
+
+    if (CONSUMABLE_SPLIT[levelKey] === "force") return 1;
+    if (CONSUMABLE_SPLIT[levelKey] === "more") p = Math.min(1, p + 0.1);
+    if (CONSUMABLE_SPLIT[levelKey] === "less") p = Math.max(0, p - 0.1);
+
+    return p;
+  }
+
+  function poolBy(rarity, wantConsumable) {
+    let pool = buckets[rarity] || [];
+    // Skazka forces consumables; otherwise apply the requested split
+    if (CONSUMABLE_SPLIT[levelKey] === "force") {
+      pool = pool.filter(isConsumableMagic);
+    } else {
+      pool = pool.filter((it) => !!it.is_consumable === !!wantConsumable);
+    }
+    // Optional: never allow artifacts in hoards if disabled
+    if (!ALLOW_ARTIFACTS_IN_HOARDS && rarity === "artifact") {
+      pool = [];
+    }
+    return pool;
+  }
+
+  function broadenFrom(rarity, wantConsumable) {
+    const idx = Math.max(0, ORDER.indexOf(rarity));
+    // Walk forward then wrap, prefer same/nearby rarities first
+    const ring = [...ORDER.slice(idx), ...ORDER.slice(0, idx)];
+    // Keep consumable intent first; if still empty, drop the consumable constraint
+    let pool = ring.flatMap((r) => poolBy(r, wantConsumable));
+    if (!pool.length && CONSUMABLE_SPLIT[levelKey] !== "force") {
+      pool = ring.flatMap((r) => buckets[r] || []); // any type
+    }
+    return pool;
+  }
+  // --- /helpers ---
+
+  for (let i = 0; i < count; i++) {
+    let picked = null;
+
+    // bounded retries to avoid infinite loops on tiny catalogs
+    for (let attempts = 0; attempts < 200 && !picked; attempts++) {
+      // 1) pick a rarity per band+level
+      let rarity = pickWeighted(weights[band] || weights.mid) || "uncommon";
+      if (!ALLOW_ARTIFACTS_IN_HOARDS && rarity === "artifact") continue;
+
+      // 2) decide consumable vs permanent
+      const pCon = consumableChance(levelKey, band, rarity);
+      const wantConsumable = Math.random() < pCon;
+
+      // 3) try pool for that (rarity, type); else broaden sensibly
+      let pool = poolBy(rarity, wantConsumable);
+      if (!pool.length) pool = broadenFrom(rarity, wantConsumable);
+
+      // 4) pick
+      if (pool.length) picked = pool[Math.floor(Math.random() * pool.length)];
+    }
+
+    if (picked) out.push(picked);
+  }
+
   return out;
 }
 
@@ -426,18 +501,47 @@ function rollDice(expr) {
   return total * mult;
 }
 
-const INDIVIDUAL_RULES = {
-  low: { cp: "5d6", sp: "4d6", gp: "3d6" },
-  mid: { sp: "4d6*10", gp: "2d6*10" },
-  high: { sp: "3d6*10", gp: "4d6*10", pp: "2d6" },
-  epic: { gp: "8d6*10", pp: "4d6" },
+const INDIVIDUAL_TABLES = {
+  low: [
+    // CR 0–4
+    { range: [1, 30], coins: { cp: "5d6" } },
+    { range: [31, 70], coins: { sp: "4d6" } },
+    { range: [71, 95], coins: { gp: "3d6" } },
+    { range: [96, 100], coins: { pp: "1d6" } },
+  ],
+  mid: [
+    // CR 5–10
+    { range: [1, 30], coins: { cp: "4d6*100", ep: "1d6*10" } },
+    { range: [31, 70], coins: { sp: "6d6*10", gp: "2d6*10" } },
+    { range: [71, 95], coins: { gp: "4d6*10" } },
+    { range: [96, 100], coins: { gp: "2d6*10", pp: "3d6" } },
+  ],
+  high: [
+    // CR 11–16
+    { range: [1, 35], coins: { sp: "4d6*100", gp: "1d6*100" } },
+    { range: [36, 75], coins: { gp: "2d6*100", pp: "1d6*10" } },
+    { range: [76, 100], coins: { gp: "2d6*100", pp: "2d6*10" } },
+  ],
+  epic: [
+    // CR 17+
+    { range: [1, 15], coins: { ep: "2d6*1000", gp: "8d6*100" } },
+    { range: [16, 55], coins: { gp: "1d6*1000", pp: "1d6*100" } },
+    { range: [56, 100], coins: { gp: "1d6*1000", pp: "2d6*100" } },
+  ],
 };
-const INDIVIDUAL_MAGIC = {
-  low: { p: 0.1, count: [1, 1] },
-  mid: { p: 0.15, count: [1, 1] },
-  high: { p: 0.18, count: [0, 1] },
-  epic: { p: 0.2, count: [0, 1] },
-};
+
+function rollIndividualRAW(band) {
+  const table = INDIVIDUAL_TABLES[band] || INDIVIDUAL_TABLES.mid;
+  const d = randint(1, 100);
+  const row =
+    table.find((r) => d >= r.range[0] && d <= r.range[1]) ||
+    table[table.length - 1];
+  const coinsObj = { cp: 0, sp: 0, ep: 0, gp: 0, pp: 0 };
+  for (const k of Object.keys(row.coins)) {
+    coinsObj[k] = rollDice(row.coins[k]);
+  }
+  return coinsObj;
+}
 
 const COIN_BANDS = {
   low: { gp: [50, 200], sp: [100, 400], cp: [0, 200] },
@@ -458,31 +562,29 @@ export function rollTreasure(mode, band, levelKey = "levelNormal") {
   console.debug("[treasure] roll in", isPrivate ? "Private" : "Public");
 
   if (mode === "individual") {
-    const r = INDIVIDUAL_RULES[band] || INDIVIDUAL_RULES.mid;
-    const coinsObj = {
-      cp: rollDice(r.cp),
-      sp: rollDice(r.sp),
-      gp: rollDice(r.gp),
-      pp: rollDice(r.pp),
-    };
-    let magic = [];
-    if (levelKey !== "levelNone") {
-      const im = INDIVIDUAL_MAGIC[band] || INDIVIDUAL_MAGIC.mid;
-      const n = Math.random() < im.p ? randint(im.count[0], im.count[1]) : 0;
-      magic = n > 0 ? rollMagicItemsForBand(band, n, levelKey) : [];
-    }
+    const coinsObj = rollIndividualRAW(band);
+    const magic = [];
+
     return {
       mode,
       band,
       coins: `${coinsObj.gp ? coinsObj.gp + " gp" : ""}${
-        coinsObj.sp ? (coinsObj.gp ? ", " : "") + coinsObj.sp + " sp" : ""
+        coinsObj.ep ? (coinsObj.gp ? ", " : "") + coinsObj.ep + " ep" : ""
+      }${
+        coinsObj.sp
+          ? (coinsObj.gp || coinsObj.ep ? ", " : "") + coinsObj.sp + " sp"
+          : ""
       }${
         coinsObj.cp
-          ? (coinsObj.gp || coinsObj.sp ? ", " : "") + coinsObj.cp + " cp"
+          ? (coinsObj.gp || coinsObj.ep || coinsObj.sp ? ", " : "") +
+            coinsObj.cp +
+            " cp"
           : ""
       }${
         coinsObj.pp
-          ? (coinsObj.gp || coinsObj.sp || coinsObj.cp ? ", " : "") +
+          ? (coinsObj.gp || coinsObj.ep || coinsObj.sp || coinsObj.cp
+              ? ", "
+              : "") +
             coinsObj.pp +
             " pp"
           : ""

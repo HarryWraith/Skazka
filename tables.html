@@ -266,12 +266,24 @@
     <!--door generator-->
     <div class="tb-panel">
       <h2 class="tb-title" id="door-sec">Door Generator</h2>
-      <p>Generate random doors which include a variety of meterisl, different lock types, an indicator for whether it is
+      <p>Generate random doors which include a variety of material, different lock types, an indicator for whether it is
         trapped or not, and more.</p>
-      <div class="tb-grid"></div>
+
+      <div class="tb-grid">
+        <label class="tb-label" for="doorChallenge">Challenge level</label>
+        <select class="tb-select" id="doorChallenge" aria-label="Challenge level">
+          <option value="easy">Very easy</option>
+          <option value="easy">Easy</option>
+          <option value="medium" selected>Standard</option>
+          <option value="hard">Hard</option>
+          <option value="very_hard">Very Hard</option>
+        </select>
+      </div>
+
       <div class="tb-actions">
         <button id="rollDoor" class="tb-btn">Roll</button>
       </div>
+
       <output id="doorResult" class="tb-result" aria-live="polite">—</output>
     </div>
   </section>

@@ -1,5 +1,5 @@
 {
-  "schema": "doors.v1",
+  "schema": "doors.v3.1",
 
   "dc_brackets": {
     "very_easy": { "min": 5, "max": 9 },
@@ -10,19 +10,108 @@
     "nearly_impossible": { "min": 30, "max": 30 }
   },
 
+  "lock_broken": {
+    "base_pct": 5,
+    "if_damaged_pct": 25
+  },
+
+  "challenge_bias": {
+    "very_easy": {
+      "trap_chance_pct": 8,
+      "lock_quality_weight": {
+        "common": 7,
+        "sturdy": 3,
+        "fine": 1,
+        "exquisite": 0,
+        "magical": 0
+      },
+      "dc_mod_all": -5
+    },
+    "easy": {
+      "trap_chance_pct": 12,
+      "lock_quality_weight": {
+        "common": 6,
+        "sturdy": 3,
+        "fine": 1,
+        "exquisite": 0,
+        "magical": 0
+      },
+      "dc_mod_all": -3
+    },
+    "medium": {
+      "trap_chance_pct": 22,
+      "lock_quality_weight": {
+        "common": 4,
+        "sturdy": 4,
+        "fine": 2,
+        "exquisite": 1,
+        "magical": 0
+      },
+      "dc_mod_all": 0
+    },
+    "hard": {
+      "trap_chance_pct": 32,
+      "lock_quality_weight": {
+        "common": 2,
+        "sturdy": 4,
+        "fine": 3,
+        "exquisite": 1,
+        "magical": 1
+      },
+      "dc_mod_all": 1
+    },
+    "very_hard": {
+      "trap_chance_pct": 45,
+      "lock_quality_weight": {
+        "common": 1,
+        "sturdy": 3,
+        "fine": 3,
+        "exquisite": 2,
+        "magical": 2
+      },
+      "dc_mod_all": 2
+    }
+  },
+
+  "materials": [
+    { "v": "softwood", "w": 5, "hp": [10, 14], "break_dc": "easy" },
+    { "v": "hardwood", "w": 4, "hp": [15, 25], "break_dc": "medium" },
+    { "v": "reinforced wood", "w": 3, "hp": [20, 30], "break_dc": "medium" },
+    { "v": "iron", "w": 2, "hp": [30, 50], "break_dc": "hard" },
+    { "v": "steel", "w": 1, "hp": [40, 55], "break_dc": "very_hard" }
+  ],
+
+  "qualities": [
+    { "v": "common", "w": 6, "hp_multiplier": 1.0, "dc_modifier": 0 },
+    { "v": "sturdy", "w": 4, "hp_multiplier": 1.2, "dc_modifier": 1 },
+    { "v": "fine", "w": 2, "hp_multiplier": 1.3, "dc_modifier": 2 },
+    { "v": "exquisite", "w": 1, "hp_multiplier": 1.45, "dc_modifier": 3 }
+  ],
+
   "lock_types": [
-    { "v": "std door key", "w": 4 },
+    { "v": "std door key", "w": 5 },
     { "v": "padlock", "w": 3 },
     { "v": "deadbolt", "w": 3 },
-    { "v": "obstruction", "w": 2 },
+    { "v": "puzzle lock", "w": 2 },
+    { "v": "arcane seal", "w": 1 },
     { "v": "no lock", "w": 2 }
   ],
 
   "lock_qualities": [
-    { "v": "common", "w": 6 },
-    { "v": "fine", "w": 3 },
-    { "v": "exquisite", "w": 1 }
+    { "v": "common", "w": 5 },
+    { "v": "sturdy", "w": 3 },
+    { "v": "fine", "w": 2 },
+    { "v": "exquisite", "w": 1 },
+    { "v": "magical", "w": 1 }
   ],
+
+  "lockpick_dc_by_quality": {
+    "common": "easy",
+    "sturdy": "medium",
+    "fine": "medium",
+    "exquisite": "hard",
+    "magical": "very_hard"
+  },
 
   "locked_weights_by_type": {
     "std door key": [
@@ -37,59 +126,67 @@
       { "v": true, "w": 7 },
       { "v": false, "w": 3 }
     ],
-    "obstruction": [{ "v": "", "w": 1 }],
-    "no lock": [{ "v": "", "w": 1 }]
+    "puzzle lock": [
+      { "v": true, "w": 8 },
+      { "v": false, "w": 2 }
+    ],
+    "arcane seal": [
+      { "v": true, "w": 9 },
+      { "v": false, "w": 1 }
+    ],
+    "no lock": [{ "v": false, "w": 100 }]
   },
 
   "locked_from_weights": [
-    { "v": "this side", "w": 7 },
-    { "v": "other side", "w": 3 }
+    { "v": "this side", "w": 6 },
+    { "v": "other side", "w": 4 }
   ],
 
-  "lockpick_possible_weights_by_quality": {
-    "common": [
-      { "v": true, "w": 99 },
-      { "v": false, "w": 1 }
-    ],
-    "fine": [
-      { "v": true, "w": 98 },
-      { "v": false, "w": 2 }
-    ],
-    "exquisite": [
-      { "v": true, "w": 95 },
-      { "v": false, "w": 5 }
-    ]
-  },
-
-  "lockpick_dc_by_quality": {
-    "common": "easy",
-    "fine": "medium",
-    "exquisite": "hard"
-  },
-
-  "materials": [
-    { "v": "softwood", "hp": [10, 14], "break_dc": "easy" },
-    { "v": "reinforced softwood", "hp": [15, 18], "break_dc": "medium" },
-    { "v": "hardwood", "hp": [18, 22], "break_dc": "medium" },
-    { "v": "reinforced hardwood", "hp": [22, 28], "break_dc": "hard" },
-    { "v": "iron", "hp": [30, 40], "break_dc": "hard" },
-    { "v": "stone", "hp": [40, 55], "break_dc": "very_hard" }
+  "door_states": [
+    { "v": "open", "w": 1, "locks_allowed": false },
+    { "v": "ajar", "w": 2, "locks_allowed": false },
+    { "v": "closed unlocked", "w": 4, "locks_allowed": false },
+    { "v": "closed locked", "w": 3, "locks_allowed": true },
+    { "v": "obstructed", "w": 1, "locks_allowed": false }
   ],
 
-  "trap_chance": { "true": 30, "false": 70 },
+  "hinges": [
+    {
+      "v": "well-oiled",
+      "w": 4,
+      "noise": "silent",
+      "open_fail_pct": 0,
+      "jammed": false
+    },
+    {
+      "v": "rusty",
+      "w": 3,
+      "noise": "noisy",
+      "open_fail_pct": 0,
+      "jammed": false
+    },
+    {
+      "v": "loose",
+      "w": 2,
+      "noise": "noisy",
+      "open_fail_pct": 5,
+      "jammed": false
+    },
+    {
+      "v": "jammed",
+      "w": 1,
+      "noise": "noisy",
+      "open_fail_pct": 0,
+      "jammed": true
+    }
+  ],
 
-  "damage_effect": {
-    "hp_multiplier": 0.5,
-    "dc_modifier": -3
-  },
+  "damage_effect": { "hp_multiplier": 0.5, "dc_modifier": -3 },
 
+  "traps": [],
   "obstruction_examples": [
     "furniture shoved against it",
     "barred with a beam",
-    "collapsed rubble blocking the frame",
-    "nailed planks across the panels",
-    "Hinges jammed with pitons",
-    "frame swollen by damp",
-    "blocked by dead body"
+    "collapsed rubble blocking the frame"
   ]
 }

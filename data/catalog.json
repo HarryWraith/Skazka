@@ -7400,7 +7400,7 @@
       "attunement": false,
       "is_consumable": true,
       "magical": true,
-      "publication": null,
+      "publication": "srd",
       "price": 50.0,
       "price_": 50
     },

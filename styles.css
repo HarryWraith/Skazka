@@ -1206,3 +1206,421 @@ img.popup {
     animation: none;
   }
 }
+
+span.tag {
+  border-color: var(--sb-gold);
+}
+
+/* ─────────────────────────────────────────────
+   Stats page — clean v2 (tb-* aligned, polished)
+   Depends on tables.css for tb-panel/tb-table/buttons
+   ──────────────────────────────────────────── */
+
+/* HERO: centered + panel-grade styling */
+
+
+.page-hero {
+  /* layout */
+  padding: clamp(16px, 3vw, 24px);
+  margin: 18px 5vw;
+  text-align: center;
+  display: grid;
+  place-items: center;
+  row-gap: 6px;
+  /* panel look to match site */
+  background: linear-gradient(180deg, var(--sb-panel, #12131a), var(--sb-panel2, #171922));
+  border: 1px solid var(--sb-border, #2a2d36);
+  border-radius: var(--sb-radius, 14px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, .45), inset 0 1px 0 rgba(255, 255, 255, .02);
+}
+
+.page-hero>* {
+  margin-inline: auto;
+}
+
+.page-hero .skz-viking {
+  color: var(--sb-gold-strong, #e1b84d);
+  letter-spacing: .3px;
+  font-weight: 900;
+  margin: 0;
+}
+
+.page-hero .sub {
+  opacity: .88;
+  max-width: 70ch;
+  margin: 0;
+}
+
+/* optional actions row inside hero */
+.page-hero .tb-actions {
+  display: inline-flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 6px;
+}
+
+/* ensure buttons (and links-as-buttons) feel the same everywhere */
+a.tb-btn,
+a.tb-ghost-btn,
+button.tb-btn,
+button.tb-ghost-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .5ch;
+  text-decoration: none;
+  cursor: pointer;
+  /* hand on hover */
+  border-radius: var(--sb-radius, 14px);
+}
+
+/* KPIs */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  margin: 12px 0 20px;
+}
+
+.kpi-grid.kpi-mini {
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+.kpi-card {
+  background: color-mix(in oklab, var(--sb-panel2, #171922) 85%, #000);
+  border: 1px solid var(--sb-border, #2a2d36);
+  border-radius: var(--sb-radius, 14px);
+  padding: 10px 12px;
+  text-align: center;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .03);
+}
+
+.kpi-label {
+  color: var(--sb-gold-strong);
+  font-size: .95rem;
+  opacity: .8;
+}
+
+.kpi-value {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-top: 4px;
+}
+
+/* Utility chips */
+.pill {
+  display: inline-block;
+  padding: 4px 10px;
+  border: 1px solid var(--sb-border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .04);
+  font-size: .8rem;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .06);
+  border: 1px dashed var(--sb-border);
+  font-size: .75rem;
+}
+
+.tag.good {
+  border-color: #3cb371;
+}
+
+.tag.bad {
+  border-color: #c04a4a;
+}
+
+/* Leaderboards (inside tb-panel; rows rendered with tb-table) */
+.leaderboards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 10px;
+  margin: 4px 0 12px;
+}
+
+.leaderboards .lb {
+  border: 1px dashed var(--sb-border);
+  border-radius: 12px;
+  padding: 8px;
+  background: rgba(255, 255, 255, .03);
+}
+
+.leaderboards .lb h4 {
+  margin: 0 0 6px;
+  font-size: 1rem;
+}
+
+/* Session list (left panel) */
+
+
+.sl-item {
+  border: 1px solid var(--sb-border, #2a2d36);
+  background: color-mix(in oklab, var(--sb-panel2, #171922) 85%, #000);
+  border-radius: 12px;
+  padding: 10px;
+  cursor: pointer;
+  transition: filter .18s ease, transform .06s ease;
+}
+
+.sl-item:hover {
+  filter: brightness(1.06) saturate(1.05);
+  transform: translateY(-1px);
+}
+
+.sl-item.active {
+  border: 2px solid var(--sb-gold-strong, #e1b84d);
+  background: transparent;
+  box-shadow: none !important;
+}
+
+.sl-top {
+  display: block;
+}
+
+.sl-top strong {
+  display: block;
+  line-height: 1.25;
+  margin: 2px 0;
+  color: var(--sb-gold-strong);
+  filter: brightness(1.2);
+  text-align: left;
+}
+
+.sl-date {
+  display: block;
+  margin-top: 4px;
+  font-size: .9rem;
+  opacity: .85;
+}
+
+.sl-tags {
+  margin-top: 6px;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+/* Session header + meta */
+.session-header h2 {
+  margin: 8px 0 4px;
+}
+
+.session-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 6px 0 8px;
+}
+
+/* Inspiration */
+.inspiration-strip {
+  margin-top: 10px;
+}
+
+.inspiration-strip .insp-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.inspiration-session h4 {
+  margin: 10px 0 6px;
+}
+
+.inspiration-session ul {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+/* Encounters/Loot/Summary headings (tables come from tables.css) */
+.encounters h4,
+.loot h4,
+.summary h4 {
+  margin: 14px 0 8px;
+}
+
+/* Markdown summary */
+.summary .markdown p {
+  margin: 8px 0;
+}
+
+.summary .markdown h1,
+.summary .markdown h2,
+.summary .markdown h3 {
+  margin: 10px 0 6px;
+}
+
+/* Event log */
+.event-log {
+  margin-top: 16px;
+}
+
+.event-log summary {
+  cursor: pointer;
+  padding: 8px;
+  border: 1px solid var(--sb-border);
+  border-radius: 10px;
+  background: var(--sb-panel);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .03);
+}
+
+.events {
+  list-style: none;
+  display: grid;
+  gap: 6px;
+  margin-top: 10px;
+  padding: 0;
+}
+
+.events li {
+  padding: 8px;
+  border: 1px dashed var(--sb-border);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, .03);
+}
+
+.ev-time {
+  opacity: .7;
+  margin-right: 6px;
+}
+
+/* Characters (right panel) */
+.char-card {
+  border: 1px dashed var(--sb-border);
+  border-radius: 12px;
+  padding: 8px;
+  background: rgba(255, 255, 255, .03);
+  margin-bottom: 10px;
+}
+
+.muted {
+  opacity: .75;
+  font-size: .85rem;
+}
+
+.small {
+  font-size: .8rem;
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+/* tb-title enhancer: apply as class="tb-title skz-title" */
+.tb-title.skz-title {
+  /* keep tb-title base, then add punch */
+  position: relative;
+  text-align: center;
+  color: var(--sb-gold-strong);
+  /* match table heads */
+  font-weight: 900;
+  /* ensure heavy weight */
+  letter-spacing: .02em;
+  line-height: 1.2;
+  text-shadow: 0 0 6px color-mix(in srgb, var(--sb-gold-strong) 28%, transparent);
+}
+
+/* responsive nudge without blowing up existing sizes */
+h2.tb-title.skz-title {
+  font-size: clamp(1.25rem, 0.9rem + 1vw, 1.6rem);
+}
+
+h3.tb-title.skz-title {
+  font-size: clamp(1.05rem, 0.85rem + 0.7vw, 1.3rem);
+}
+
+/* gold underline (subtle, centered) */
+.tb-title.skz-title::after {
+  content: "";
+  display: block;
+  height: 2px;
+  margin: 6px auto 2px;
+  width: min(220px, 46%);
+  border-radius: 2px;
+  background: linear-gradient(90deg,
+      transparent 0%,
+      color-mix(in srgb, var(--sb-gold-strong) 60%, transparent) 15%,
+      var(--sb-gold-strong) 50%,
+      color-mix(in srgb, var(--sb-gold-strong) 60%, transparent) 85%,
+      transparent 100%);
+  opacity: .85;
+}
+
+.tb-kv-key {
+  color: var(--sb-gold);
+}
+
+.tb-kv-key strong {
+  color: var(--sb-gold-strong);
+  filter: brightness(1.2);
+}
+
+.tb-actions btn {
+  text-align: center;
+}
+
+/* Stats page only: center labels inside tb buttons */
+.page-stats .tb-btn,
+.page-stats .tb-ghost-btn,
+.page-stats button.tb-btn,
+.page-stats button.tb-ghost-btn,
+.page-stats a.tb-btn,
+.page-stats a.tb-ghost-btn {
+  display: inline-flex;
+  /* keep shape but allow centering */
+  align-items: center;
+  /* vertical center */
+  justify-content: center;
+  /* horizontal center */
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Keep the export buttons full-width but centered */
+.page-stats #stats-tools-panel .tb-actions .tb-btn,
+.page-stats #stats-tools-panel .tb-actions .tb-ghost-btn {
+  width: 100%;
+}
+
+/* Scroll only the list, not the panel header */
+#stats-session-list {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+/* Allow the left grid column to let its child scroll (grid quirk) */
+.left-column,
+#stats-session-list {
+  min-height: 0;
+}
+
+/* allow overflow from the left column */
+#stats-session-list {
+  min-height: 0;
+}
+
+/* fixed-height, scrollable list (10 rows; JS sets --sl-fixed-h) */
+#stats-session-list .sl-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-height: var(--sl-max-h, 520px);
+  /* cap at ~10 rows; scroll when exceeded */
+  overflow-y: auto;
+  /* use 'scroll' if you want the track always visible */
+  background: transparent;
+  scrollbar-gutter: stable;
+  /* optional: keeps layout steady when bar appears */
+}

@@ -78,3 +78,74 @@ export function alignClass(txt) {
   if (/(LE|NE|CE|EVIL)/.test(v)) return "evil";
   return "neutral";
 }
+//doors//
+// small helper for CSS-friendly modifiers (e.g. "Closed Unlocked" -> "closed-unlocked")
+export const slugify = (s = "") =>
+  String(s)
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
+// Door state pill -> <span class="tb-badge door-state state-open">Open</span>
+export function doorStateBadge(stateText) {
+  const slug = slugify(stateText || "");
+  return badgeHtml(`door-state state-${slug}`, titleCase(stateText || ""));
+}
+
+// Lock type pill -> <span class="tb-badge door-lock locktype-padlock">Padlock</span>
+export function lockTypeBadge(lockType) {
+  const slug = slugify(lockType || "no lock");
+  return badgeHtml(
+    `door-lock locktype-${slug}`,
+    titleCase(lockType || "no lock")
+  );
+}
+
+// Lock quality pill (adds " Lock" to label) -> "Exquisite Lock"
+export function lockQualityBadge(lockQuality) {
+  if (!lockQuality) return "";
+  const slug = slugify(lockQuality);
+  return badgeHtml(
+    `door-lockq lockq-${slug}`,
+    `${titleCase(lockQuality)} Lock`
+  );
+}
+
+// Locks-from pill -> classes: locks-from-this-side | locks-from-other-side
+export function locksFromBadge(side) {
+  if (!side) return "";
+  const slug = slugify(side);
+  return badgeHtml(`door-side locks-from-${slug}`, titleCase(side));
+}
+
+// Pick pills:
+// - pickable + dc -> "Pickable" + "Pick DC N"
+// - unpickableReason === "broken" -> "Unpickable - broken"
+// - otherwise unpickable -> "Unpickable"
+// - no lock -> ""
+export function pickPills({ pickable, dc, unpickableReason } = {}) {
+  if (pickable && Number.isFinite(dc)) {
+    return [
+      badgeHtml("door-pick ok", "Pickable"),
+      badgeHtml(`door-pickdc dcv-${dc}`, `Pick DC ${dc}`),
+    ].join(" ");
+  }
+  if (pickable === false) {
+    const label =
+      unpickableReason === "broken" ? "Unpickable - broken" : "Unpickable";
+    return badgeHtml("door-pickdc pick-impossible", label);
+  }
+  return "";
+}
+
+// Hinges chips -> "Silent"/"Noisy", optional "Jammed", optional "Breaks on Open"
+export function hingeChipsHtml({ noise, jammed, open_fail_pct } = {}) {
+  const chips = [];
+  const n = String(noise || "").toLowerCase() === "silent" ? "silent" : "noisy";
+  chips.push(badgeHtml(`door-hingechip hinge-${n}`, titleCase(n)));
+  if (jammed) chips.push(badgeHtml("door-hingechip hinge-jammed", "Jammed"));
+  if (Number(open_fail_pct || 0) > 0)
+    chips.push(badgeHtml("door-hingechip hinge-breaks", "Breaks on Open"));
+  return chips.join(" ");
+}

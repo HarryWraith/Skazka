@@ -63,6 +63,7 @@ import "./shop.js";
 import "./inn.js";
 import "./gathering.js"; // was already working for you
 import "./badges.js";
+import "./stats.js";
 
 // Logic-only modules (no DOM bleed)
 import * as weather from "./weather.js";
@@ -541,10 +542,16 @@ async function boot() {
   });
 
   // ─────────────────── DOORS ───────────────────
+  const chalEl = $("#doorChallenge"); // <select> from your panel
+
   $("#rollDoor")?.addEventListener("click", () => {
-    const d = doors.rollDoor?.();
+    const challenge = chalEl?.value || "medium"; // "easy" | "medium" | "hard" | "very_hard"
+    const d = doors.rollDoor?.({ challenge }); // pass the selected challenge
     if (d) $("#doorResult").innerHTML = doors.renderDoor(d);
   });
+
+  // optional: re-roll automatically when the dropdown changes
+  chalEl?.addEventListener("change", () => $("#rollDoor")?.click());
 }
 
 // Run at the right time on every page

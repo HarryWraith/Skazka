@@ -1,7 +1,6 @@
-{
-  "schema": "traps.v3",
-  "trap_types": ["mechanical", "magical", "environmental"],
-
+{ 
+  "schema": "traps.v3.1",
+  "trap_types": ["mechanical", "magical", "environmental", "illusory"],
   "dc_brackets": {
     "detect": {
       "very_easy": { "min": 5, "max": 9 },
@@ -24,24 +23,42 @@
       "nearly_impossible": { "min": 30, "max": 30 }
     }
   },
-
   "damage_by_lethality": {
-    "low": ["1d6", "1d8", "2d6", "1d10"],
-    "medium": ["2d6", "2d8", "1d12", "2d10", "3d10"],
-    "high": ["4d6", "3d8", "2d10", "2d12", "4d8", "6d10", "10d10"]
+    "low": [
+      { "dice": "1d6", "w": 3 },
+      { "dice": "1d8", "w": 2 },
+      { "dice": "2d6", "w": 2 },
+      { "dice": "1d10", "w": 1 }
+    ],
+    "medium": [
+      { "dice": "2d6", "w": 2 },
+      { "dice": "2d8", "w": 3 },
+      { "dice": "1d12", "w": 2 },
+      { "dice": "2d10", "w": 2 },
+      { "dice": "3d10", "w": 1 }
+    ],
+    "high": [
+      { "dice": "4d6", "w": 1 },
+      { "dice": "3d8", "w": 2 },
+      { "dice": "4d8", "w": 3 },
+      { "dice": "5d8", "w": 2 },
+      { "dice": "6d10", "w": 2 },
+      { "dice": "8d10", "w": 1 },
+      { "dice": "10d10", "w": 1 }
+    ]
   },
-
   "default_damage_type_by_type": {
     "mechanical": "bludgeoning",
     "magical": "fire",
-    "environmental": "bludgeoning"
+    "environmental": "bludgeoning",
+    "illusory": "psychic"
   },
-
   "damage_type_distribution_by_type": {
     "mechanical": [
+      { "type": "piercing", "w": 4 },
       { "type": "bludgeoning", "w": 4 },
-      { "type": "piercing", "w": 3 },
       { "type": "slashing", "w": 2 },
+      { "type": "poison", "w": 2 },
       { "type": "thunder", "w": 1 }
     ],
     "magical": [
@@ -50,7 +67,7 @@
       { "type": "cold", "w": 2 },
       { "type": "force", "w": 2 },
       { "type": "acid", "w": 2 },
-      { "type": "necrotic", "w": 1 },
+      { "type": "necrotic", "w": 2 },
       { "type": "radiant", "w": 1 },
       { "type": "psychic", "w": 1 },
       { "type": "thunder", "w": 1 },
@@ -63,210 +80,79 @@
       { "type": "cold", "w": 2 },
       { "type": "fire", "w": 2 },
       { "type": "piercing", "w": 1 }
+    ],
+    "illusory": [
+      { "type": "psychic", "w": 4 },
+      { "type": "necrotic", "w": 2 },
+      { "type": "radiant", "w": 1 },
+      { "type": "thunder", "w": 1 }
     ]
   },
-
   "damage_type_keywords": [
-    {
-      "type": "piercing",
-      "keywords": [
-        "spear",
-        "dart",
-        "needle",
-        "spike",
-        "arrow",
-        "bolt",
-        "stinger",
-        "thorn",
-        "stalactite"
-      ]
-    },
-    {
-      "type": "slashing",
-      "keywords": [
-        "scythe",
-        "blade",
-        "saw",
-        "axe",
-        "razor",
-        "slicer",
-        "guillotine"
-      ]
-    },
-    {
-      "type": "bludgeoning",
-      "keywords": [
-        "hammer",
-        "mace",
-        "club",
-        "block",
-        "boulder",
-        "ram",
-        "crush",
-        "piston",
-        "collapse",
-        "falling"
-      ]
-    },
-    {
-      "type": "fire",
-      "keywords": [
-        "fire",
-        "flame",
-        "burn",
-        "scorch",
-        "flare",
-        "geothermal",
-        "ignition"
-      ]
-    },
-    {
-      "type": "cold",
-      "keywords": ["ice", "frost", "freezing", "rime", "hail"]
-    },
-    { "type": "acid", "keywords": ["acid", "corrode", "caustic", "dissolve"] },
-    {
-      "type": "poison",
-      "keywords": [
-        "poison",
-        "toxin",
-        "venom",
-        "gas",
-        "miasma",
-        "spore",
-        "fumes"
-      ]
-    },
-    {
-      "type": "lightning",
-      "keywords": ["lightning", "shock", "electr", "arc"]
-    },
-    {
-      "type": "force",
-      "keywords": ["force", "telekinetic", "repulse", "hammer"]
-    },
-    {
-      "type": "thunder",
-      "keywords": ["thunder", "sonic", "boom", "concussion"]
-    },
-    {
-      "type": "necrotic",
-      "keywords": ["necrotic", "grave", "wither", "siphon", "drain"]
-    },
-    {
-      "type": "radiant",
-      "keywords": ["radiant", "holy", "dawn", "sun", "gleam", "brilliance"]
-    },
-    {
-      "type": "psychic",
-      "keywords": ["psychic", "mind", "whisper", "scream", "dread"]
-    }
+    { "type": "piercing", "keywords": ["spear","dart","needle","spike","arrow","bolt","stinger","thorn","stalactite","quill"] },
+    { "type": "slashing", "keywords": ["scythe","blade","saw","axe","razor","slicer","guillotine","mirror-shard"] },
+    { "type": "bludgeoning", "keywords": ["hammer","mace","club","block","boulder","ram","crush","piston","collapse","falling","gravity"] },
+    { "type": "fire", "keywords": ["fire","flame","burn","scorch","flare","geothermal","ignition","cinder"] },
+    { "type": "cold", "keywords": ["ice","frost","freezing","rime","hail"] },
+    { "type": "acid", "keywords": ["acid","corrode","caustic","dissolve","alchemical"] },
+    { "type": "poison", "keywords": ["poison","toxin","venom","gas","miasma","spore","fumes","needle"] },
+    { "type": "lightning", "keywords": ["lightning","shock","electr","arc"] },
+    { "type": "force", "keywords": ["force","telekinetic","repulse","hammer"] },
+    { "type": "thunder", "keywords": ["thunder","sonic","boom","concussion","wail"] },
+    { "type": "necrotic", "keywords": ["necrotic","grave","wither","siphon","drain","shadow"] },
+    { "type": "radiant", "keywords": ["radiant","holy","dawn","sun","gleam","brilliance"] },
+    { "type": "psychic", "keywords": ["psychic","mind","whisper","scream","dread","illusory","phantom"] }
   ],
-
   "save_types": ["DEX", "CON", "STR", "WIS", "INT", "CHA"],
-
   "areas": [
-    { "v": "single target", "w": 4 },
+    { "v": "single target", "w": 5 },
     { "v": "5-ft square", "w": 3 },
-    { "v": "10-ft line", "w": 2 },
+    { "v": "10-ft line", "w": 3 },
     { "v": "15-ft cone", "w": 2 },
-    { "v": "10-ft radius burst", "w": 3 }
+    { "v": "10-ft radius burst", "w": 3 },
+    { "v": "20-ft line", "w": 1 }
   ],
-
   "status_effects": [
-    {
-      "v": "**restrained** until freed (STR check to escape)",
-      "tags": ["mechanical", "environmental"],
-      "w": 3
-    },
-    {
-      "v": "**blinded** for 1 minute (end each turn, CON save)",
-      "tags": ["radiant", "alchemical", "magical"],
-      "w": 2
-    },
-    {
-      "v": "**deafened** for 1 minute",
-      "tags": ["thunder", "mechanical"],
-      "w": 1
-    },
-    {
-      "v": "**frightened** until end of next turn",
-      "tags": ["psychic", "necrotic", "magical"],
-      "w": 2
-    },
-    {
-      "v": "**knocked prone** and pushed 10 ft",
-      "tags": ["force", "bludgeoning", "mechanical"],
-      "w": 2
-    },
-    {
-      "v": "**poisoned** for 1 minute (save ends each turn)",
-      "tags": ["poison", "environmental"],
-      "w": 2
-    },
-    {
-      "v": "**slowed** (speed halved) for 1 minute",
-      "tags": ["cold", "mechanical"],
-      "w": 1
-    }
+    { "v": "**restrained** until freed (STR check to escape)", "tags": ["mechanical","environmental"], "w": 3 },
+    { "v": "**blinded** for 1 minute (end each turn, CON save)", "tags": ["radiant","alchemical","magical"], "w": 2 },
+    { "v": "**deafened** for 1 minute", "tags": ["thunder","mechanical"], "w": 1 },
+    { "v": "**frightened** until end of next turn", "tags": ["psychic","necrotic","illusory","magical"], "w": 2 },
+    { "v": "**knocked prone** and pushed 10 ft", "tags": ["force","bludgeoning","mechanical"], "w": 2 },
+    { "v": "**poisoned** for 1 minute (save ends each turn)", "tags": ["poison","environmental","mechanical"], "w": 3 },
+    { "v": "**slowed** (speed halved) for 1 minute", "tags": ["cold","mechanical"], "w": 1 },
+    { "v": "**charmed** for 1 minute (WIS save at end of turn)", "tags": ["illusory","magical"], "w": 1 },
+    { "v": "**grappled** until escape (DC equals Disarm DC)", "tags": ["mechanical","environmental","slashing","piercing"], "w": 2 },
+    { "v": "**disoriented** (disadvantage on Perception) for 1 minute", "tags": ["psychic","thunder","illusory"], "w": 1 }
   ],
-
   "triggers": [
-    {
-      "v": "pressure plate",
-      "w": 4,
-      "counter": [
-        "wedging the plate",
-        "leaping the square",
-        "shimming the piston"
-      ]
-    },
-    {
-      "v": "tripwire",
-      "w": 3,
-      "counter": ["cutting the wire", "stepping over", "weight off the line"]
-    },
-    {
-      "v": "light beam",
-      "w": 2,
-      "counter": [
-        "smoky dust to reveal",
-        "mirror to redirect",
-        "covering the lens"
-      ]
-    },
-    {
-      "v": "arcane proximity",
-      "w": 3,
-      "counter": ["dispel magic", "lead-lined hood", "silencing the sigil"]
-    },
-    {
-      "v": "sound threshold",
-      "w": 1,
-      "counter": ["move in silence", "muffle gear", "cast *silence*"]
-    }
+    { "v": "pressure plate", "w": 4, "counter": ["wedging the plate","leaping the square","shimming the piston"] },
+    { "v": "tripwire", "w": 3, "counter": ["cutting the wire","stepping over","weight off the line"] },
+    { "v": "light beam", "w": 2, "counter": ["smoky dust to reveal","mirror to redirect","covering the lens"] },
+    { "v": "arcane proximity", "w": 3, "counter": ["dispel magic","lead-lined hood","silencing the sigil"] },
+    { "v": "sound threshold", "w": 1, "counter": ["move in silence","muffle gear","cast *silence*"] },
+    { "v": "spring-needle port", "w": 3, "counter": ["plugging the port","breaking the ampoule","shielding the limb"] },
+    { "v": "mirrored gaze", "w": 1, "counter": ["averting eyes","shattering the glass","draping the mirror"] },
+    { "v": "rune backlash", "w": 2, "counter": ["counterspell","anti-magic field","arcane ground"] },
+    { "v": "weight imbalance", "w": 2, "counter": ["redistribute weight","sandbags","crawl to spread load"] }
   ],
-
   "reset_modes": [
     { "v": "resets after 1 minute", "w": 3 },
     { "v": "manual reset only", "w": 2 },
-    { "v": "single-use then inert", "w": 2 }
+    { "v": "single-use then inert", "w": 2 },
+    { "v": "gradual reset over an hour", "w": 1 }
   ],
-
   "clues": [
     "hairline seam around a flagstone",
     "soot scoring on the ceiling",
     "a faint glyph visible at an angle",
     "dead insects along the baseboard",
-    "unusual airflow or a sudden cold patch"
+    "unusual airflow or a sudden cold patch",
+    "tiny pinprick holes at waist height",
+    "mirror shows a warped angle",
+    "scuffed floor arcs in a semicircle"
   ],
-
   "alarm": {
-    "chance_by_type": {
-      "mechanical": 0.25,
-      "magical": 0.35,
-      "environmental": 0.2
-    },
+    "chance_by_type": { "mechanical": 0.25, "magical": 0.35, "environmental": 0.2, "illusory": 0.15 },
     "effects": [
       { "v": "bells ring in nearby corridors", "w": 3 },
       { "v": "an arcane flare marks intruders", "w": 2 },
@@ -274,80 +160,49 @@
       { "v": "portcullises slam down nearby", "w": 1 }
     ]
   },
-
   "utility_effects": [
-    {
-      "t": "floor panels **tilt** into a harmless slide ({area})",
-      "tags": ["mechanical", "DEX"]
-    },
-    {
-      "t": "a **locking rune** seals doors ({area})",
-      "tags": ["magical", "WIS|INT|CHA"]
-    },
-    {
-      "t": "dense **smoke** fills the space ({area})",
-      "tags": ["environmental", "CON"]
-    }
+    { "t": "floor panels **tilt** into a harmless slide ({area})", "tags": ["mechanical","DEX"] },
+    { "t": "a **locking rune** seals doors ({area})", "tags": ["magical","WIS|INT|CHA"] },
+    { "t": "dense **smoke** fills the space ({area})", "tags": ["environmental","CON"] },
+    { "t": "a **phantasm haze** confuses senses ({area})", "tags": ["illusory","WIS|INT|CHA"] }
   ],
-
   "effects_by_type": {
     "mechanical": [
-      {
-        "t": "a spring-loaded **spear rack** erupts from the wall ({area})",
-        "tags": ["piercing", "DEX"]
-      },
-      {
-        "t": "interlocking **saw blades** scissor across the corridor ({area})",
-        "tags": ["slashing", "DEX"]
-      },
-      {
-        "t": "a descending **crush piston** slams down ({area})",
-        "tags": ["bludgeoning", "DEX"]
-      },
-      {
-        "t": "a ceiling **spike net** drops and entangles ({area})",
-        "tags": ["piercing", "DEX|STR"]
-      }
+      { "t": "a spring-loaded **needle array** snaps from hidden ports ({area})", "tags": ["piercing|poison","DEX|CON"] },
+      { "t": "interlocking **saw blades** scissor across the corridor ({area})", "tags": ["slashing","DEX"] },
+      { "t": "a descending **crush piston** slams down ({area})", "tags": ["bludgeoning","DEX"] },
+      { "t": "a ceiling **spike net** drops and entangles ({area})", "tags": ["piercing","DEX|STR"] },
+      { "t": "clockwork **menagerie** deploys snapping jaws ({area})", "tags": ["piercing","DEX|STR"] }
     ],
     "magical": [
-      {
-        "t": "a **glyph** detonates in {dtype} energy ({area})",
-        "tags": ["force|fire|cold|lightning|radiant|necrotic", "DEX|CON"]
-      },
-      {
-        "t": "an invisible **force hammer** strikes intruders ({area})",
-        "tags": ["force", "STR|DEX"]
-      },
-      {
-        "t": "a whisper lattice unleashes a **mind-scream** ({area})",
-        "tags": ["psychic", "WIS|INT|CHA"]
-      }
+      { "t": "a **glyph** detonates in {dtype} energy ({area})", "tags": ["force|fire|cold|lightning|radiant|necrotic","DEX|CON"] },
+      { "t": "an invisible **force hammer** strikes intruders ({area})", "tags": ["force","STR|DEX"] },
+      { "t": "a lattice of whispers unleashes a **shadow-surge** ({area})", "tags": ["necrotic|psychic","WIS|CON"] },
+      { "t": "wild **arcana recoil** lashes outward ({area})", "tags": ["force|lightning|fire","DEX|CON"] }
     ],
     "environmental": [
-      {
-        "t": "**barbed vines** lash from masonry ({area})",
-        "tags": ["slashing|poison", "STR|DEX"]
-      },
-      {
-        "t": "a spore pod bursts into **miasma** ({area})",
-        "tags": ["poison", "CON"]
-      },
-      {
-        "t": "a **frost vent** ices over the floor ({area})",
-        "tags": ["cold", "DEX|CON"]
-      },
-      {
-        "t": "a ceiling **rockfall** thunders down ({area})",
-        "tags": ["bludgeoning", "DEX"]
-      }
+      { "t": "**barbed vines** lash from masonry ({area})", "tags": ["slashing|poison","STR|DEX"] },
+      { "t": "a spore pod bursts into **miasma** ({area})", "tags": ["poison","CON"] },
+      { "t": "a **frost vent** ices over the floor ({area})", "tags": ["cold","DEX|CON"] },
+      { "t": "a ceiling **rockfall** thunders down ({area})", "tags": ["bludgeoning","DEX"] },
+      { "t": "a sudden **gravity flip** hurls creatures ({area})", "tags": ["bludgeoning","DEX|STR"] }
+    ],
+    "illusory": [
+      { "t": "a **mirror-guardian** steps from the glass ({area})", "tags": ["slashing|psychic","WIS|DEX"] },
+      { "t": "phantom **quicksand** swallows ankles ({area})", "tags": ["bludgeoning|psychic","WIS|STR"] },
+      { "t": "roaring **ember-phantasm** washes the hall ({area})", "tags": ["fire|psychic","WIS|CON"] },
+      { "t": "a **wail of the lost** rattles souls ({area})", "tags": ["necrotic|thunder","WIS|CON"] }
     ]
   },
-
   "env_tags": {
-    "tomb": ["necrotic", "radiant"],
-    "sewer": ["poison", "acid"],
-    "arctic": ["cold", "bludgeoning"],
-    "lair": ["poison", "fire"],
-    "ruin": ["force", "psychic"]
+    "tomb": ["necrotic","radiant","psychic"],
+    "sewer": ["poison","acid"],
+    "arctic": ["cold","bludgeoning"],
+    "lair": ["poison","fire"],
+    "ruin": ["force","psychic"],
+    "mirror-hall": ["slashing","psychic"],
+    "clockwork": ["piercing","thunder"],
+    "overgrown": ["poison","slashing"],
+    "geomantic": ["force","bludgeoning"]
   }
 }
