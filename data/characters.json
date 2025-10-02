@@ -1,0 +1,432 @@
+{
+     "characters": [
+          {
+               "id": "solryn ",
+               "name": "Solryn",
+               "title": "Raven-haired Enchanter",
+               "player": "Chicken",
+               "class": "Paladin",
+               "icon": {
+                    "src": "assets/icons/classes/paladin.svg",
+                    "alt": "Paladin"
+               },
+               "level": 7,
+               "ancestry": "Half-elf",
+               "alignment": "Neutral Good",
+               "background": "Shadow Scholar",
+               "tags": [],
+               "conditions": ["Inspired"],
+               "portrait": {
+                    "src": "assets/chars/esme-portrait.webp",
+                    "alt": "Esme portrait"
+               },
+               "gallery": [
+                    {
+                         "src": "assets/chars/esme-portrait.webp",
+                         "alt": "Esme portrait"
+                    },
+                    {
+                         "src": "assets/chars/esme-velkaria.webp",
+                         "alt": "Esme in Velkaria"
+                    }
+               ],
+               "stats": { "hp": 43, "ac": 16, "speed": "30 ft", "init": "+3" },
+               "abilityScores": {
+                    "str": 8,
+                    "dex": 16,
+                    "con": 12,
+                    "int": 18,
+                    "wis": 12,
+                    "cha": 14
+               },
+               "bio": {
+                    "aliases": ["Whisper-Weaver", "E."],
+                    "origin": "Ku’Than border hamlet",
+                    "personality": "Curious, soft-spoken, relentless when chasing secrets.",
+                    "ideals": "Hidden truths must breathe",
+                    "bonds": "Varox, unseen guardian",
+                    "flaws": "Tempted by forbidden lore"
+               },
+               "backstory": "Esme grew up chasing whispers through the Elden Wood. The Hollow Depths marked her—skin that can blur, a face that can shift. She trusts the presence she calls Varox, though it cannot touch the waking world. The voices she hears are not his…",
+               "chronicle": [
+                    {
+                         "date": "972-09-21",
+                         "title": "Into the Witch-Road",
+                         "details": "Crossed the brambled moor. Learned the price of a name. Recovered a map sewn into a wolfskin.",
+                         "icon": {
+                              "src": "assets/icons/events.jpg",
+                              "alt": "Event icon"
+                         }
+                    },
+                    {
+                         "date": "972-09-28",
+                         "title": "The Frozen Bell of Velkaria",
+                         "details": "In the ruins, time rang flat. A11’s dream-trial hinted that loops are breaking.",
+                         "icon": {
+                              "src": "assets/icons/events.jpg",
+                              "alt": "Event icon"
+                         }
+                    }
+               ],
+               "inventory": {
+                    "spellbook": [
+                         "Charm Person",
+                         "Suggestion",
+                         "Hypnotic Pattern",
+                         "Modify Memory"
+                    ],
+                    "items": [
+                         "Silver wire circlet (whispers under moonlight)",
+                         "Dream-etched bell fragment"
+                    ],
+                    "links": [
+                         { "label": "Images", "href": "#" },
+                         { "label": "Session Notes", "href": "#" },
+                         { "label": "Downtime Log", "href": "#" }
+                    ]
+               },
+               "sessions": [
+                    { "date": "972-09-21", "title": "The Witch-Road" },
+                    { "date": "972-09-28", "title": "Velkaria’s Bell" },
+                    { "date": "972-10-01", "title": "Hollow Depths Return" }
+               ]
+          },
+          {
+               "id": "voksolta",
+               "name": "Voksolta",
+               "title": "Little Shit",
+               "player": "Patrick",
+               "class": "Rogue",
+               "icon": {
+                    "src": "assets/icons/classes/rogue.svg",
+                    "alt": "Wizard"
+               },
+               "level": 6,
+               "ancestry": "Kobold",
+               "alignment": "Lawful Neutral",
+               "background": "Oath-Broken Squire",
+               "tags": ["Caratania", "Vine-Knight"],
+               "conditions": ["Exhaustion 1"],
+               "portrait": {
+                    "src": "assets/chars/aeter.webp",
+                    "alt": "Aeter portrait"
+               },
+               "gallery": [
+                    {
+                         "src": "assets/chars/aeter.webp",
+                         "alt": "Aeter before the Blood Mountains"
+                    }
+               ],
+               "stats": { "hp": 38, "ac": 17, "speed": "30 ft", "init": "+2" },
+               "abilityScores": {
+                    "str": 12,
+                    "dex": 14,
+                    "con": 14,
+                    "int": 10,
+                    "wis": 12,
+                    "cha": 16
+               },
+               "bio": {
+                    "aliases": ["Vine-Oath"],
+                    "origin": "Caratania City",
+                    "personality": "Devout, severe, protective.",
+                    "ideals": "Strength serves the light",
+                    "bonds": "Shield of Dawn",
+                    "flaws": "Rigid pride"
+               },
+               "backstory": "Aeter’s pact was struck to hold the Blood Mountains at bay; the price was written in vineyards and iron.",
+               "chronicle": [
+                    {
+                         "date": "972-08-30",
+                         "title": "The Bitter Vintage",
+                         "details": "A cursed harvest revealed a buried reliquary beneath the vines.",
+                         "icon": {
+                              "src": "/assets/icons/events.jpg",
+                              "alt": "Event icon"
+                         }
+                    }
+               ],
+               "inventory": {
+                    "spellbook": ["Armor of Agathys", "Hex", "Misty Step"],
+                    "items": ["Thorn-edged pact blade", "Vintner’s Seal"],
+                    "links": [{ "label": "House Ledger", "href": "#" }]
+               },
+               "sessions": [
+                    { "date": "972-08-30", "title": "The Bitter Vintage" }
+               ]
+          },
+          {
+               "id": "eroan",
+               "name": "Eroan",
+               "title": "something something",
+               "player": "Magnus",
+               "class": "Rogue",
+               "icon": {
+                    "src": "assets/icons/classes/rogue.svg",
+                    "alt": "Paladin"
+               },
+               "level": 7,
+               "ancestry": "Elf",
+               "alignment": "Neutral Good",
+               "background": "Shadow Scholar",
+               "tags": [],
+               "conditions": ["Inspired"],
+               "portrait": {
+                    "src": "assets/chars/esme-portrait.webp",
+                    "alt": "Esme portrait"
+               },
+               "gallery": [
+                    {
+                         "src": "assets/chars/esme-portrait.webp",
+                         "alt": "Esme portrait"
+                    },
+                    {
+                         "src": "assets/chars/esme-velkaria.webp",
+                         "alt": "Esme in Velkaria"
+                    }
+               ],
+               "stats": { "hp": 43, "ac": 16, "speed": "30 ft", "init": "+3" },
+               "abilityScores": {
+                    "str": 8,
+                    "dex": 16,
+                    "con": 12,
+                    "int": 18,
+                    "wis": 12,
+                    "cha": 14
+               },
+               "bio": {
+                    "aliases": ["Whisper-Weaver", "E."],
+                    "origin": "Ku’Than border hamlet",
+                    "personality": "Curious, soft-spoken, relentless when chasing secrets.",
+                    "ideals": "Hidden truths must breathe",
+                    "bonds": "Varox, unseen guardian",
+                    "flaws": "Tempted by forbidden lore"
+               },
+               "backstory": "Esme grew up chasing whispers through the Elden Wood. The Hollow Depths marked her—skin that can blur, a face that can shift. She trusts the presence she calls Varox, though it cannot touch the waking world. The voices she hears are not his…",
+               "chronicle": [
+                    {
+                         "date": "972-09-21",
+                         "title": "Into the Witch-Road",
+                         "details": "Crossed the brambled moor. Learned the price of a name. Recovered a map sewn into a wolfskin.",
+                         "icon": {
+                              "src": "assets/icons/events.jpg",
+                              "alt": "Event icon"
+                         }
+                    },
+                    {
+                         "date": "972-09-28",
+                         "title": "The Frozen Bell of Velkaria",
+                         "details": "In the ruins, time rang flat. A11’s dream-trial hinted that loops are breaking.",
+                         "icon": {
+                              "src": "assets/icons/events.jpg",
+                              "alt": "Event icon"
+                         }
+                    }
+               ],
+               "inventory": {
+                    "spellbook": [
+                         "Charm Person",
+                         "Suggestion",
+                         "Hypnotic Pattern",
+                         "Modify Memory"
+                    ],
+                    "items": [
+                         "Silver wire circlet (whispers under moonlight)",
+                         "Dream-etched bell fragment"
+                    ],
+                    "links": [
+                         { "label": "Images", "href": "#" },
+                         { "label": "Session Notes", "href": "#" },
+                         { "label": "Downtime Log", "href": "#" }
+                    ]
+               },
+               "sessions": [
+                    { "date": "972-09-21", "title": "The Witch-Road" },
+                    { "date": "972-09-28", "title": "Velkaria’s Bell" },
+                    { "date": "972-10-01", "title": "Hollow Depths Return" }
+               ]
+          },
+          {
+               "id": "greigor",
+               "name": "Greigor",
+               "title": "Horsey person",
+               "player": "Fluffy",
+               "class": "Fighter",
+               "icon": {
+                    "src": "assets/icons/classes/fighter.svg",
+                    "alt": "Paladin"
+               },
+               "level": 7,
+               "ancestry": "Human, Western Plains",
+               "alignment": "Neutral Good",
+               "background": "Shadow Scholar",
+               "tags": [],
+               "conditions": ["Inspired"],
+               "portrait": {
+                    "src": "assets/chars/esme-portrait.webp",
+                    "alt": "Esme portrait"
+               },
+               "gallery": [
+                    {
+                         "src": "assets/chars/esme-portrait.webp",
+                         "alt": "Esme portrait"
+                    },
+                    {
+                         "src": "assets/chars/esme-velkaria.webp",
+                         "alt": "Esme in Velkaria"
+                    }
+               ],
+               "stats": { "hp": 43, "ac": 16, "speed": "30 ft", "init": "+3" },
+               "abilityScores": {
+                    "str": 8,
+                    "dex": 16,
+                    "con": 12,
+                    "int": 18,
+                    "wis": 12,
+                    "cha": 14
+               },
+               "bio": {
+                    "aliases": ["Whisper-Weaver", "E."],
+                    "origin": "Ku’Than border hamlet",
+                    "personality": "Curious, soft-spoken, relentless when chasing secrets.",
+                    "ideals": "Hidden truths must breathe",
+                    "bonds": "Varox, unseen guardian",
+                    "flaws": "Tempted by forbidden lore"
+               },
+               "backstory": "Esme grew up chasing whispers through the Elden Wood. The Hollow Depths marked her—skin that can blur, a face that can shift. She trusts the presence she calls Varox, though it cannot touch the waking world. The voices she hears are not his…",
+               "chronicle": [
+                    {
+                         "date": "972-09-21",
+                         "title": "Into the Witch-Road",
+                         "details": "Crossed the brambled moor. Learned the price of a name. Recovered a map sewn into a wolfskin.",
+                         "icon": {
+                              "src": "assets/icons/events.jpg",
+                              "alt": "Event icon"
+                         }
+                    },
+                    {
+                         "date": "972-09-28",
+                         "title": "The Frozen Bell of Velkaria",
+                         "details": "In the ruins, time rang flat. A11’s dream-trial hinted that loops are breaking.",
+                         "icon": {
+                              "src": "assets/icons/events.jpg",
+                              "alt": "Event icon"
+                         }
+                    }
+               ],
+               "inventory": {
+                    "spellbook": [
+                         "Charm Person",
+                         "Suggestion",
+                         "Hypnotic Pattern",
+                         "Modify Memory"
+                    ],
+                    "items": [
+                         "Silver wire circlet (whispers under moonlight)",
+                         "Dream-etched bell fragment"
+                    ],
+                    "links": [
+                         { "label": "Images", "href": "#" },
+                         { "label": "Session Notes", "href": "#" },
+                         { "label": "Downtime Log", "href": "#" }
+                    ]
+               },
+               "sessions": [
+                    { "date": "972-09-21", "title": "The Witch-Road" },
+                    { "date": "972-09-28", "title": "Velkaria’s Bell" },
+                    { "date": "972-10-01", "title": "Hollow Depths Return" }
+               ]
+          },
+          {
+               "id": "rhek",
+               "name": "Rhek",
+               "title": "Raven-haired Enchanter",
+               "player": "Jonny",
+               "class": "Wizard",
+               "icon": {
+                    "src": "assets/icons/classes/wizard.svg",
+                    "alt": "Paladin"
+               },
+               "level": 7,
+               "ancestry": "Aarakocra",
+               "alignment": "Neutral Good",
+               "background": "Shadow Scholar",
+               "tags": [],
+               "conditions": ["Inspired"],
+               "portrait": {
+                    "src": "assets/chars/esme-portrait.webp",
+                    "alt": "Esme portrait"
+               },
+               "gallery": [
+                    {
+                         "src": "assets/chars/esme-portrait.webp",
+                         "alt": "Esme portrait"
+                    },
+                    {
+                         "src": "assets/chars/esme-velkaria.webp",
+                         "alt": "Esme in Velkaria"
+                    }
+               ],
+               "stats": { "hp": 43, "ac": 16, "speed": "30 ft", "init": "+3" },
+               "abilityScores": {
+                    "str": 8,
+                    "dex": 16,
+                    "con": 12,
+                    "int": 18,
+                    "wis": 12,
+                    "cha": 14
+               },
+               "bio": {
+                    "aliases": ["Whisper-Weaver", "E."],
+                    "origin": "Ku’Than border hamlet",
+                    "personality": "Curious, soft-spoken, relentless when chasing secrets.",
+                    "ideals": "Hidden truths must breathe",
+                    "bonds": "Varox, unseen guardian",
+                    "flaws": "Tempted by forbidden lore"
+               },
+               "backstory": "Esme grew up chasing whispers through the Elden Wood. The Hollow Depths marked her—skin that can blur, a face that can shift. She trusts the presence she calls Varox, though it cannot touch the waking world. The voices she hears are not his…",
+               "chronicle": [
+                    {
+                         "date": "972-09-21",
+                         "title": "Into the Witch-Road",
+                         "details": "Crossed the brambled moor. Learned the price of a name. Recovered a map sewn into a wolfskin.",
+                         "icon": {
+                              "src": "assets/icons/events.jpg",
+                              "alt": "Event icon"
+                         }
+                    },
+                    {
+                         "date": "972-09-28",
+                         "title": "The Frozen Bell of Velkaria",
+                         "details": "In the ruins, time rang flat. A11’s dream-trial hinted that loops are breaking.",
+                         "icon": {
+                              "src": "assets/icons/events.jpg",
+                              "alt": "Event icon"
+                         }
+                    }
+               ],
+               "inventory": {
+                    "spellbook": [
+                         "Charm Person",
+                         "Suggestion",
+                         "Hypnotic Pattern",
+                         "Modify Memory"
+                    ],
+                    "items": [
+                         "Silver wire circlet (whispers under moonlight)",
+                         "Dream-etched bell fragment"
+                    ],
+                    "links": [
+                         { "label": "Images", "href": "#" },
+                         { "label": "Session Notes", "href": "#" },
+                         { "label": "Downtime Log", "href": "#" }
+                    ]
+               },
+               "sessions": [
+                    { "date": "972-09-21", "title": "The Witch-Road" },
+                    { "date": "972-09-28", "title": "Velkaria’s Bell" },
+                    { "date": "972-10-01", "title": "Hollow Depths Return" }
+               ]
+          }
+     ]
+}

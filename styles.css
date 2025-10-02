@@ -189,6 +189,17 @@ body p {
   align-items: start;
 }
 
+.grid-container-stats {
+  display: grid;
+  grid-template-columns: 20% 50% 30%;
+  gap: 20px;
+  max-width: 80%;
+  margin: 2em auto 1em;
+  align-items: start;
+}
+
+
+
 .grid-single {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -1208,6 +1219,8 @@ img.popup {
 }
 
 span.tag {
+  color: var(--sb-gold-strong);
+  background-color: purple;
   border-color: var(--sb-gold);
 }
 
@@ -1369,12 +1382,11 @@ button.tb-ghost-btn {
 }
 
 .sl-item:hover {
-  filter: brightness(1.06) saturate(1.05);
-  transform: translateY(-1px);
+  filter: brightness(1.4) saturate(1.05);
 }
 
 .sl-item.active {
-  border: 2px solid var(--sb-gold-strong, #e1b84d);
+  border: 1px solid var(--sb-gold-strong, #e1b84d);
   background: transparent;
   box-shadow: none !important;
 }
@@ -1419,11 +1431,9 @@ button.tb-ghost-btn {
 }
 
 /* Inspiration */
-.inspiration-strip {
-  margin-top: 10px;
-}
 
-.inspiration-strip .insp-row {
+
+.insp-row {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
@@ -1506,6 +1516,7 @@ button.tb-ghost-btn {
 
 .small {
   font-size: .8rem;
+  color: var(--sb-dim);
 }
 
 .num {
@@ -1554,6 +1565,10 @@ h3.tb-title.skz-title {
 
 .tb-kv-key {
   color: var(--sb-gold);
+}
+
+.tb-kv-key.small.muted {
+  color: var(--sb-dim);
 }
 
 .tb-kv-key strong {
@@ -1623,4 +1638,356 @@ h3.tb-title.skz-title {
   background: transparent;
   scrollbar-gutter: stable;
   /* optional: keeps layout steady when bar appears */
+}
+
+.page-stats .tb-kv .tb-kv-val.nowrap {
+  white-space: nowrap;
+}
+
+.page-stats .tb-kv .tb-kv-val .sep {
+  padding: 0 6px;
+  opacity: .9;
+}
+
+.lb h4 {
+  color: var(--sb-gold)
+}
+
+/* Leaderboards: always stack rows from the top */
+.page-stats .leaderboards .tb-table tbody {
+  /* undo bottom alignment from tables.css */
+  display: table-row-group;
+  /* restore normal table flow */
+  justify-content: flex-start !important;
+  /* if flex sneaks in */
+  align-content: start !important;
+  /* if grid sneaks in */
+}
+
+/* optional: dim padded empty rows (see JS) */
+.page-stats .leaderboards .tb-table tr.empty td {
+  opacity: .5;
+}
+
+.page-stats #stats-detail-panel {
+  background: rgba(255, 215, 0, 0.1);
+}
+
+page-stats #stats-detail-panel.tb-panel,
+.page-stats #stats-detail-panel .tb-panel {
+  box-shadow: none !important;
+}
+
+/* Summary markdown images */
+.summary .markdown .md-img {
+  margin: 14px 0;
+  text-align: center;
+}
+
+.summary .markdown .md-img img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .35);
+}
+
+.summary .markdown .md-img figcaption {
+  font-size: .85rem;
+  opacity: .8;
+  margin-top: 6px;
+}
+
+/* Session party key/value layout */
+.page-stats .session-kv .tb-kv-row {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  /* keep the two columns tight */
+  column-gap: 20px;
+  /* small gap between label/value */
+  align-items: baseline;
+}
+
+.page-stats .session-kv .tb-kv-key,
+.page-stats .session-kv .tb-kv-val {
+  white-space: nowrap;
+  /* keep each label/value on a single line */
+  text-align: left;
+}
+
+/* No bullets in the inspiration lists */
+.page-stats .inspiration-session ul {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.page-stats .inspiration-session li::marker {
+  content: none;
+}
+
+/* search box spacing */
+.page-stats .sl-search {
+  margin: 6px 0 10px;
+}
+
+/* highlight matches in titles/tags */
+.page-stats mark.hl {
+  background: transparent;
+  color: var(--sb-gold-strong, #e1b84d);
+  border-bottom: 1px dotted var(--sb-gold-strong, #e1b84d);
+  padding: 0 1px;
+}
+
+/* ============ Player Profile (scoped) ============ */
+.page-profile {
+  align-items: start;
+}
+
+.page-profile .profile-main,
+.page-profile .profile-side {
+  display: grid;
+  gap: 12px;
+}
+
+/* Character strip: spans both columns, non-sticky, scroll if needed */
+.page-profile .char-strip {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  /* breathing room so tabs don't kiss the edge */
+  margin: 6px 0 12px;
+  background: var(--sb-panel2);
+  border: 1px solid var(--sb-border);
+  border-radius: 12px;
+  overflow-x: auto;
+  /* allow horizontal scroll on small screens */
+  overflow-y: hidden;
+  /* but clip vertical spill */
+  overscroll-behavior-inline: contain;
+}
+
+/* Player buttons: big, centered, capped at 1/7 width */
+.page-profile .char-tab {
+  /* fluid sizing that scales with viewport but stays sane */
+  --tab-h: clamp(56px, 6.5vw, 72px);
+  /* overall height (trimmed to prevent overspill) */
+  --tab-icon: calc(var(--tab-h) - 8px);
+  --tab-gap: clamp(6px, 1vw, 12px);
+  --tab-pad-x: clamp(10px, 1.5vw, 18px);
+  --tab-font: clamp(1rem, 0.35vw + 1rem, 1.5rem);
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--tab-gap);
+  height: var(--tab-h);
+  padding-inline: var(--tab-pad-x);
+  border-radius: 12px;
+  background: var(--sb-panel);
+  border: 1px solid var(--sb-border);
+  font-weight: 800;
+  font-size: var(--tab-font);
+  white-space: nowrap;
+  cursor: pointer;
+  flex: 1 1 auto;
+  max-width: calc(100% / 6);
+  /* never wider than 1/7 of strip */
+  min-width: 120px;
+  /* readable floor */
+
+  /* prevent browser focus outline from spilling outside rounded container */
+  outline: none;
+}
+
+.page-profile .char-tab:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(226, 184, 77, .25) inset;
+  /* accessible focus ring, inside */
+}
+
+.page-profile .char-tab.is-active {
+  border-color: color-mix(in oklab, var(--sb-gold) 60%, var(--sb-border));
+  box-shadow: 0 0 0 1px rgba(212, 175, 82, 0.12) inset;
+  background-color: var(--sb-gold);
+}
+
+/* Icon inside the button */
+.page-profile .char-tab-avatar {
+  width: var(--tab-icon);
+  height: var(--tab-icon);
+  border-radius: 8px;
+  object-fit: contain;
+  border: 0px solid var(--sb-border);
+}
+
+/* class icons get a hair of inner padding */
+.page-profile .char-tab-avatar.icon {
+  padding: 1px;
+}
+
+/* Label */
+.page-profile .char-tab-name {
+  flex: 1 1 auto;
+  text-align: center;
+  line-height: 1;
+  letter-spacing: .2px;
+}
+
+/* Section tabs (Bio / Backstory / Chronicles / Inventory) */
+.page-profile .pp-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+
+.page-profile .pp-tab {
+  background: var(--sb-panel);
+  border: 1px solid var(--sb-border);
+  color: var(--sb-text);
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.page-profile .pp-tab.is-active,
+.page-profile .pp-tab[aria-selected="true"] {
+  border-color: color-mix(in oklab, var(--sb-gold) 60%, var(--sb-border));
+  box-shadow: 0 0 0 1px rgba(226, 184, 77, .12) inset;
+}
+
+.page-profile .pp-panel {
+  display: none;
+}
+
+.page-profile .pp-panel.is-active {
+  display: block;
+}
+
+/* Bio layout + mini stats row under header KPIs */
+.page-profile .pp-bio-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.page-profile .pp-stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.page-profile .pp-stat {
+  display: grid;
+  place-items: center;
+  gap: 2px;
+  padding: 8px;
+  border: 1px solid var(--sb-border);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, .03);
+}
+
+.page-profile .pp-stat .label {
+  font-weight: 700;
+  opacity: .85;
+  font-size: .8rem;
+}
+
+.page-profile .pp-stat .value {
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+
+/* Sidebar: portrait only */
+.page-profile .profile-side .article-small {
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+.page-profile .profile-side .article-small img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid var(--sb-border);
+}
+
+/* Loading skeletons */
+.page-profile .skeleton {
+  opacity: .6;
+  filter: grayscale(40%);
+}
+
+.page-profile .skeleton-tabs {
+  height: 40px;
+  width: 100%;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, .04);
+}
+
+.page-profile .skeleton-main,
+.page-profile .skeleton-side {
+  min-height: 120px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, .04);
+}
+
+/* Chronicles: centered date, title, icon */
+.page-profile .timeline .event .event-header {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  /* date | title | icon */
+  align-items: center;
+  gap: 10px;
+  padding-block: 8px;
+}
+
+.page-profile .timeline .event .event-year,
+.page-profile .timeline .event .event-title {
+  display: flex;
+  align-items: center;
+  line-height: 1.1;
+  margin: 0;
+}
+
+/* Preferred wrapper: <span class="ev-icon"><img class="rune"></span> */
+.page-profile .timeline .event .ev-icon {
+  --ev-icon-size: 24px;
+  inline-size: var(--ev-icon-size);
+  block-size: var(--ev-icon-size);
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  padding: 2px;
+}
+
+.page-profile .timeline .event .ev-icon>.rune {
+  inline-size: 100%;
+  block-size: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+/* Fallback if you render <img class="rune"> directly */
+.page-profile .timeline .event .event-header>.rune {
+  inline-size: 24px;
+  block-size: 24px;
+  display: block;
+  object-fit: contain;
+  align-self: center;
+  justify-self: end;
+  padding: 2px;
+  border-radius: 6px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .page-profile .pp-bio-grid {
+    grid-template-columns: 1fr;
+  }
 }
