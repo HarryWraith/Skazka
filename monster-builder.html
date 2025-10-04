@@ -21,8 +21,8 @@
   <div id="navbar"></div>
 
   <!-- Main Content Area -->
-  <main class="grid-container">
-    <article class="left-column">
+  <section class="grid-container">
+    <div class="tb-panel">
       <section class="sb-panel">
         <h2 class="sb-title">About</h2>
         <p>
@@ -39,7 +39,7 @@
       </section>
 
       <section class="sb-panel">
-        <h3 class="sb-subtitle">Tips for Foundry import</h3>
+        <h2 class="sb-subtitle">Tips for Foundry import</h2>
         <ul class="sb-bullets">
           <li>Keep headings like <strong>Actions</strong>, <strong>Reactions</strong>, <strong>Legendary
               Actions</strong>.</li>
@@ -47,11 +47,11 @@
           <li>“Hit Points” should include average and dice, e.g. <code>45 (6d8 + 18)</code>.</li>
         </ul>
       </section>
-    </article>
+    </div>
 
-    <article class="center-column">
+    <div class="center-column">
       <section id="sb-builder" class="sb-panel">
-        <h1 class="sb-title">Monster Statblock Builder</h1>
+        <h2 class="sb-title">Monster Statblock Builder</h2>
 
         <!-- Header -->
         <div class="sb-grid">
@@ -129,7 +129,7 @@
         </div>
 
         <!-- Abilities -->
-        <h4 class="sb-ability-title">Ability Scores</h4>
+        <h2 class="sb-ability-title">Ability Scores</h2>
         <fieldset class="sb-ability">
 
           <div class="sb-ability-grid">
@@ -147,7 +147,7 @@
         </fieldset>
 
         <!-- Proficiencies & traits -->
-        <h4 class="sb-ability-title">Saving Throws</h4>
+        <h2 class="sb-ability-title">Saving Throws</h2>
         <div class="sb-grid">
           <!-- Saving Throws -->
 
@@ -336,25 +336,25 @@
         <!-- Traits / Actions / Reactions / Legendary -->
         <section class="sb-repeaters">
           <div class="sb-row">
-            <h3 class="sb-subtitle">Traits</h3>
+            <h2 class="sb-subtitle">Traits</h2>
             <div id="traits" class="sb-list"></div>
             <button type="button" class="sb-btn" data-add="traits">+ Add Trait</button>
           </div>
 
           <div class="sb-row">
-            <h3 class="sb-subtitle">Actions</h3>
+            <h2 class="sb-subtitle">Actions</h2>
             <div id="actions" class="sb-list"></div>
             <button type="button" class="sb-btn" data-add="actions">+ Add Action</button>
           </div>
 
           <div class="sb-row">
-            <h3 class="sb-subtitle">Reactions</h3>
+            <h2 class="sb-subtitle">Reactions</h2>
             <div id="reactions" class="sb-list"></div>
             <button type="button" class="sb-btn" data-add="reactions">+ Add Reaction</button>
           </div>
 
           <div class="sb-row">
-            <h3 class="sb-subtitle">Legendary Actions</h3>
+            <h2 class="sb-subtitle">Legendary Actions</h2>
             <p class="sb-tip">Add a preface line if needed, e.g. “The creature can take 3 legendary actions, choosing
               from the options below…”</p>
             <div id="legendary" class="sb-list"></div>
@@ -362,13 +362,13 @@
           </div>
 
           <div class="sb-row">
-            <h3 class="sb-subtitle">Lair Actions (optional)</h3>
+            <h2 class="sb-subtitle">Lair Actions (optional)</h2>
             <div id="lair" class="sb-list"></div>
             <button type="button" class="sb-btn" data-add="lair">+ Add Lair Action</button>
           </div>
 
           <div class="sb-row">
-            <h3 class="sb-subtitle">Bonus Actions</h3>
+            <h2 class="sb-subtitle">Bonus Actions</h2>
             <div id="bonus" class="sb-list"></div>
             <button type="button" class="sb-btn" data-add="bonus">+ Add Bonus Action</button>
           </div>
@@ -384,15 +384,15 @@
           <input id="importJsonFile" type="file" accept=".json,application/json" style="display:none" />
         </div>
       </section>
-    </article>
+    </div>
 
-    <article class="right-column">
+    <div class="right-column">
       <section id="sb-preview" class="sb-panel">
         <h2 class="sb-title">Preview</h2>
         <pre id="previewOut" class="sb-pre">Start typing on the left…</pre>
       </section>
-    </article>
-  </main>
+    </div>
+  </section>
 
   <div id="footer"></div>
 

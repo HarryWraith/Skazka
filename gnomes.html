@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>Search • Skazka</title>
+    <title>Skazka - aeter</title>
     <link rel="stylesheet" href="navbar.css?v=3">
     <link rel="stylesheet" href="styles.css" />
     <link rel="icon" type="image/png" href="assets/skazka_logo.png" />
@@ -18,10 +18,10 @@
 <body>
     <div id="navbar"></div><!-- Navbar will be loaded here -->
 
-    <!-- Main Content Area -->
-    <main class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
-        <article class="left-column, article-small"> <!-- LEFT -->
-            <h4 class="skz-viking">Physical Description</h4>
+    <!-- section Content Area -->
+    <section class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
+        <div class=" tb-panel"> <!-- LEFT -->
+            <h2 class="tb-title">Physical Description</h2>
             <p>While smaller in stature compared to most other races, Gnomes carry themselves with an energy and
                 presence that often makes one forget their size. Their hands are deft and precise, well-suited to the
                 detailed work of gem-cutting, clockwork engineering, and fine metalcraft. They often dress practically,
@@ -29,9 +29,9 @@
                 even the simplest garments are likely to bear clever adjustments, hidden pockets, or ingenious
                 fastenings. In many ways, their very appearance reflects their character: compact, efficient, and full
                 of unexpected surprises.</p>
-        </article>
+        </div>
 
-        <article class="center-column"><!-- MIDDLE -->
+        <div class="center-column"><!-- MIDDLE -->
             <img src="assets/gnomes.jpg" alt="" />
             <p>The Gnomes of Skazka are a people wrapped in mystery, their origins obscured in the mists of history.
                 Unlike Elves, whose ancestry stretches clearly back to ancient lineages, or Dwarves, who can trace their
@@ -40,11 +40,11 @@
                 them into a race defined less by destiny and more by ingenuity, adaptability, and a relentless drive to
                 improve the world around them. Where others rely on tradition, brute strength, or divine blessing,
                 Gnomes excel through innovation, subtle progress, and the quiet revolution of everyday invention.</p>
-            <img class="noborder" src="assets/divider.png" alt="">
-        </article>
 
-        <article class="right-column, article-small"> <!-- RIGHT -->
-            <h4 class="skz-viking">Heritage</h4>
+        </div>
+
+        <div class="tb-panel"> <!-- RIGHT -->
+            <h2 class="tb-title">Heritage</h2>
             <p>The debate over Gnomish heritage has raged for centuries. Dwarven historians often argue that Gnomes are
                 their distant kin, an offshoot of their ancient bloodline that chose creativity over tradition, surface
                 trade over underground forges. They point to shared skills in mining and craftsmanship as evidence of a
@@ -52,15 +52,14 @@
                 are too great to ignore—where Dwarves are bound by tradition, Gnomes thrive in experimentation. This
                 divide suggests that if there ever was a link, it has long since become irrelevant. What truly defines
                 Gnomes is not where they came from, but the inventive spirit they cultivated on their own path.</p>
-        </article>
-    </main>
+        </div>
+    </section>
 
-    <main class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
-        <article class="left-column"> <!-- LEFT -->
-        </article>
+    <section class="vertical"> <!-- 3 COLUMN 20-60-20 -->
 
-        <article class="center-column"><!-- MIDDLE -->
-            <h2 class="skz-viking">Motivation</h2>
+
+        <div class="tb-panel"><!-- MIDDLE -->
+            <h2 class="tb-title">Motivation</h2>
             <p>At the heart of every Gnome lies an insatiable curiosity and an unshakable desire to solve problems. To
                 them, the world is not something to be endured, but a puzzle waiting for solutions. Their smiths design
                 weapons and tools that adapt to conditions, their alchemists brew concoctions that make life safer and
@@ -69,7 +68,9 @@
                 by the joy of discovery and the satisfaction of creating something that improves the lives of others.
                 They embody the belief that progress need not come from sacrifice, but from dedication, creativity, and
                 the clever application of knowledge.</p>
-            <h2 class="skz-viking">Integration into Society</h2>
+        </div>
+        <div class="tb-panel">
+            <h2 class="tb-title">Integration into Society</h2>
             <p>Gnomes fit seamlessly into the wider fabric of Skazkan society, though always in their own distinctive
                 way. Their underground communities are masterworks of space management and clever engineering, thriving
                 around natural resources and built with astonishing efficiency. Surface settlements, meanwhile, tend to
@@ -81,26 +82,11 @@
                 are not defenseless; when threatened, their ingenuity turns to strategy, traps, and tactical warfare. In
                 both war and peace, they prove that progress and survival alike rest on the same
                 foundation—intelligence, creativity, and adaptability.</p>
-        </article>
+        </div>
 
-        <article class="right-column"> <!-- RIGHT -->
-        </article>
-    </main>
-
-
-
+    </section>
 
     <div id="footer"></div>
-
-    <!-- Lightbox container (hidden by default) -->
-    <div id="lightbox">
-        <span class="close">&times;</span>
-        <img class="lightbox-img" alt="">
-    </div>
-
-
-
-
 
 </body>
 

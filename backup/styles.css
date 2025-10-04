@@ -24,8 +24,7 @@
   --sb-radius: 14px;
   --sb-gap: 10px;
   --bg-tile: 900px;
-  --tl-clear-nudge-y: -2px;
-  --tl-clear-nudge-x: -2px;
+
 }
 
 /* ===============================
@@ -171,7 +170,7 @@ img.noborder[src*="divider"] {
 body p {
   text-align: justify;
   line-height: 1.5;
-  margin: 0.4em 0;
+  margin: 1em 0;
 }
 
 .skz-quote-attribution {
@@ -218,13 +217,6 @@ body p {
   align-items: start;
 }
 
-.vertical {
-  max-width: 50%;
-  margin: 2em auto 2em;
-  align-items: start;
-
-}
-
 .grid-two {
   display: grid;
   grid-template-columns: 7fr 3fr;
@@ -261,7 +253,7 @@ body p {
   align-items: start;
 }
 
-.right-column {
+. .right-column {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -273,7 +265,7 @@ body p {
 
 .center-column {
   padding: 0 10px;
-  font-size: 1em;
+  font-size: 1.5em;
 }
 
 /* ===============================
@@ -577,15 +569,18 @@ article h3 {
   margin: 10px 0;
 }
 
-article img,
-div img {
+article img {
   width: 100%;
   border: 2px solid var(--sb-gold);
   border-radius: 8px;
 }
 
-
-
+.tb-panel {
+  background: var(--sb-panel);
+  border: 1px solid var(--sb-border);
+  border-radius: 8px;
+  padding: 12px;
+}
 
 article li {
   margin-bottom: 15px;
@@ -744,7 +739,6 @@ img.popup {
 
   display: block;
   width: 100%;
-  text-align: center;
   padding-inline: clamp(10px, 2vw, 28px);
   /* tighter, even spacing to the divider/footer */
   margin: clamp(16px, 4vw, 48px) 0 clamp(24px, 3.5vw, 48px);
@@ -1178,7 +1172,7 @@ img.popup {
     max-width: 90%;
   }
 
-  .center-column,
+  . .center-column,
   .right-column {
     margin-bottom: 20px;
   }
@@ -1527,13 +1521,6 @@ button.tb-ghost-btn {
   font-variant-numeric: tabular-nums;
 }
 
-.tb-title {
-  margin: 0 0 10px;
-  color: var(--sb-gold-strong);
-  letter-spacing: .3px;
-  font-weight: 900;
-}
-
 /* tb-title enhancer: apply as class="tb-title skz-title" */
 .tb-title.skz-title {
   /* keep tb-title base, then add punch */
@@ -1624,7 +1611,7 @@ h3.tb-title.skz-title {
 
 
 /* Allow the left grid column to let its child scroll (grid quirk) */
-#stats-session-list {
+. #stats-session-list {
   min-height: 0;
 }
 
@@ -1692,16 +1679,9 @@ h3.tb-title.skz-title {
   padding: clamp(12px, 2vw, 18px);
   color: var(--sb-text);
   box-shadow: 0 12px 24px rgba(0, 0, 0, .45), inset 0 1px 0 rgba(255, 255, 255, .02);
-  margin: 0;
+  margin: 18px 0;
   font-size: 1.1rem;
 }
-
-.vertical .tb-panel:not(:first-of-type) {
-  margin-top: 40px;
-}
-
-
-
 
 page-stats #stats-detail-panel.tb-panel,
 .page-stats #stats-detail-panel .tb-panel {
@@ -2019,143 +1999,5 @@ page-stats #stats-detail-panel.tb-panel,
 @media (max-width: 900px) {
   .page-profile .pp-bio-grid {
     grid-template-columns: 1fr;
-  }
-}
-
-/* ───────── Timeline Search (final replacement) ───────── */
-/* sticky wrapper */
-.tl-search {
-  position: sticky;
-  /* uses JS-calibrated --tl-stick-top; falls back to your --nav-h + 40px */
-  top: var(--tl-stick-top, calc(var(--nav-h, 80px) + 40px));
-  z-index: 40;
-  left: 15px;
-  /* overlay layout: input + clear share the same cell; count below */
-  display: grid;
-  grid-template-rows: auto auto;
-  /* row 1: input; row 2: count */
-  grid-template-columns: 1fr;
-  align-items: center;
-
-  width: min(250px, 13vw);
-  margin: 8px 0 14px;
-  padding: .5rem .75rem;
-  background: color-mix(in srgb, var(--sb-panel) 85%, transparent);
-  backdrop-filter: blur(4px);
-  border: 1px solid var(--sb-border);
-  border-radius: 12px;
-}
-
-/* input (row 1 / col 1) */
-.tl-search input#tl-q {
-  grid-row: 1;
-  grid-column: 1;
-
-  box-sizing: border-box;
-  /* 42px includes border */
-  -webkit-appearance: none;
-  appearance: none;
-
-  width: 100%;
-  height: 42px;
-  padding: 0 44px 0 14px;
-  /* room for the clear button */
-  border: 1px solid var(--sb-border);
-  background: var(--sb-panel2);
-  color: var(--text);
-  border-radius: 10px;
-  outline: none;
-  font: inherit;
-}
-
-.tl-search input#tl-q::placeholder {
-  color: color-mix(in srgb, var(--text) 55%, transparent);
-}
-
-/* belt-and-braces: if type="search" ever comes back, kill native clear */
-.tl-search input#tl-q::-webkit-search-cancel-button,
-.tl-search input#tl-q::-webkit-search-decoration,
-.tl-search input#tl-q::-ms-clear,
-.tl-search input#tl-q::-ms-reveal {
-  -webkit-appearance: none;
-  appearance: none;
-  display: none;
-}
-
-/* clear button (inline SVG uses currentColor) */
-.tl-search #tl-clear {
-  grid-row: 1;
-  grid-column: 1;
-  align-self: center;
-  /* vertical center of the input row */
-  justify-self: end;
-  /* hug right edge */
-  margin-right: 12px;
-
-  box-sizing: border-box;
-  width: 28px;
-  height: 28px;
-  border-radius: 999px;
-  border: 1px solid var(--sb-border);
-  background: var(--sb-panel);
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-
-  color: var(--sb-gold);
-  /* X colour (SVG inherits currentColor) */
-  font-size: 0;
-  /* no text glyph */
-  z-index: 2;
-}
-
-.tl-search #tl-clear svg {
-  display: block;
-  width: 14px;
-  height: 14px;
-  transform: translate(var(--tl-clear-nudge-x), var(--tl-clear-nudge-y));
-}
-
-.tl-search #tl-clear:hover {
-  background: var(--sb-panel2);
-}
-
-.tl-search #tl-clear:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-}
-
-.tl-search input#tl-q:focus {
-  border-color: color-mix(in srgb, var(--accent) 60%, var(--sb-border) 40%);
-}
-
-/* hide/disable the clear when empty; count line */
-.tl-search input#tl-q:placeholder-shown~#tl-clear {
-  opacity: .25;
-  pointer-events: none;
-}
-
-.tl-search output#tl-count {
-  grid-row: 2;
-  grid-column: 1;
-  justify-self: end;
-  margin-top: 6px;
-  font-size: .9rem;
-  opacity: .75;
-}
-
-/* small screens */
-@media (max-width: 420px) {
-  .tl-search {
-    width: 100%;
-    padding: .5rem;
-  }
-
-  .tl-search input#tl-q {
-    padding-right: 42px;
-  }
-
-  .tl-search #tl-clear {
-    margin-right: 8px;
   }
 }

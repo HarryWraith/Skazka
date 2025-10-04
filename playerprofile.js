@@ -91,7 +91,7 @@ const DATA_URL = "./data/characters.json";
           // Header with KPIs; mini stat panes directly below (HP/AC/Speed/Init)
           const header = html`
                <header class="page-hero">
-                    <h1 class="skz-viking">${esc(c.name)}</h1>
+                    <h2 class="skz-viking">${esc(c.name)}</h2>
                     <p class="sub">
                          ${esc(c.title || `${c.class} • Level ${c.level}`)}
                     </p>
@@ -264,7 +264,7 @@ const DATA_URL = "./data/characters.json";
                     ${Array.isArray(c.chronicle) && c.chronicle.length
                          ? `
           <section class="timeline" id="tl-${esc(c.id)}">
-            <h1>${esc(c.name)}’s Path</h1>
+            <h2>${esc(c.name)}’s Path</h2>
             ${c.chronicle
                  .map((ev) => {
                       const iconSrc = ev.icon?.src || ev.rune || "";
@@ -361,7 +361,7 @@ const DATA_URL = "./data/characters.json";
      function renderSide(c) {
           const side = root.querySelector(".profile-side");
           side.innerHTML = `
-      <article class="article-small">
+      <article class="tb-panel">
         ${
              c.portrait?.src
                   ? `<img src="${esc(c.portrait.src)}" alt="${esc(

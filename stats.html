@@ -20,28 +20,28 @@
     <div id="navbar"></div><!-- Navbar will be loaded here -->
 
     <header class="page-hero">
-        <h1 class="skz-viking">Campaign Stats & Sessions</h1>
+        <h2 class="skz-viking">Campaign Stats & Sessions</h2>
         <p class="sub">Running totals, leaderboards, and detailed logs</p>
     </header>
 
 
-    <main class="grid-container-stats">
+    <section class="grid-container-stats">
         <!-- LEFT -->
-        <article class="left-column">
+        <div class="tb-panel">
             <div class="sl-search">
-                <h3 class="tb-title skz-title">Sessions</h3>
+                <h2 class="tb-title skz-title">Sessions</h2>
                 <input id="sessionSearch" type="search" class="tb-input" placeholder="Search sessions…">
             </div>
             <section id="stats-session-list" class="tb-panel">
 
                 <!-- stats.js will render the list here -->
             </section>
-        </article>
+        </div>
 
         <!-- CENTER -->
-        <article class="center-column">
+        <div class="center-column">
             <section class="tb-panel" id="stats-tools-panel">
-                <h3 class="tb-title skz-title">Exports & Tools</h3>
+                <h2 class="tb-title skz-title">Exports & Tools</h2>
                 <div class="tb-actions">
                     <button id="btnExportSession" class="tb-btn" disabled>Export Selected Session (JSON)</button>
                     <button id="btnExportTotalsJSON" class="tb-btn">Export Totals (JSON)</button>
@@ -50,29 +50,29 @@
             </section>
 
             <section class="tb-panel">
-                <h3 class="tb-title skz-title">Campaign Overview</h3>
+                <h2 class="tb-title skz-title">Campaign Overview</h2>
                 <div id="stats-kpis"></div>
             </section>
 
             <section class="tb-panel">
-                <h3 class="tb-title skz-title">Leaderboards</h3>
+                <h2 class="tb-title skz-title">Leaderboards</h2>
                 <div id="stats-leaderboards"></div>
             </section>
 
             <section class="tb-panel" id="stats-detail-panel">
-                <h3 class="tb-title skz-title">Session Details</h3>
+                <h2 class="tb-title skz-title">Session Details</h2>
                 <div id="stats-detail"></div>
             </section>
-        </article>
+        </div>
 
         <!-- RIGHT -->
-        <article class="right-column">
+        <div class="right-column">
             <section id="stats-characters" class="tb-panel">
-                <h3 class="tb-title skz-title">Characters</h3>
+                <h2 class="tb-title skz-title">Characters</h2>
                 <!-- stats.js will render per-character stats here -->
             </section>
-        </article>
-    </main>
+        </div>
+    </section>
 
 
     <div id="footer"></div>

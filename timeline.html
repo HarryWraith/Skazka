@@ -19,16 +19,30 @@
 
 
   <div id="navbar"></div><!-- Navbar will be loaded here -->
+
+
+
+  <form id="tl-searchbar" class="tl-search" role="search" onsubmit="return false;">
+    <input id="tl-q" type="text" role="searchbox" inputmode="search" enterkeyhint="search" autocomplete="off"
+      autocapitalize="off" spellcheck="false" ...>
+    <button type="button" id="tl-clear" aria-label="Clear search">
+      <svg viewBox="0 0 14 14" width="14" height="14" aria-hidden="true">
+        <path d="M2 2L12 12M12 2L2 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+      </svg>
+    </button>
+    <output id="tl-count" aria-live="polite" class="tl-count"></output>
+  </form>
+
+
   <div class="timeline">
     <div id="timeline">
-      <h1 class="skz-viking">Timeline</h1>
+      <h2 class="skz-viking">Timeline</h2>
     </div>
   </div>
 
   <div id="footer"></div>
 
 
-  <script src="main.js"></script>
   <script src="timeline.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -62,6 +76,7 @@
       }
     });
   </script>
+  <script src="timeline-search-addon.js"></script>
 
 
 
