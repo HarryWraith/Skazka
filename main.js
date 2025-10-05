@@ -65,6 +65,7 @@ import "./gathering.js"; // was already working for you
 import "./badges.js";
 import "./stats.js";
 import "./playerprofile.js";
+import "./beasts.js";
 
 // Logic-only modules (no DOM bleed)
 import * as weather from "./weather.js";

@@ -1,0 +1,294 @@
+{
+     "beasts": [
+          {
+               "name": "Elden Wolf",
+               "aka": ["Ash-Howler", "Kindled Hound"],
+               "description": "A gaunt wolf wreathed in ember-mist; its ribs glow like banked coals when it inhales. It stalks burned paths and battlefield pyres, and its howl wakes the heat sleeping in ash and blood.",
+               "img": "/assets/beasts/elden-wolf.jpg",
+               "alt": "A gaunt wolf with ember-lit eyes",
+               "size": "Medium",
+               "type": "Beast",
+               "alignment": "unaligned",
+               "ac": 14,
+               "hp": { "avg": 26, "formula": "4d8+8" },
+               "speed": { "walk": 40 },
+               "abilities": {
+                    "str": 14,
+                    "dex": 15,
+                    "con": 14,
+                    "int": 3,
+                    "wis": 12,
+                    "cha": 8
+               },
+               "saving_throws": {},
+               "skills": {
+                    "Perception": "+3",
+                    "Stealth": "+4",
+                    "Survival": "+3"
+               },
+               "senses": { "passive": 13 },
+               "languages": [],
+               "cr": 2,
+               "traits": [
+                    {
+                         "name": "Keen Hearing and Smell",
+                         "desc": "Advantage on Wisdom (Perception) checks that rely on hearing or smell."
+                    },
+                    {
+                         "name": "Pack Tactics",
+                         "desc": "Advantage on an attack roll against a creature if an ally is within 5 ft. and not incapacitated."
+                    },
+                    {
+                         "name": "Kindled Bite",
+                         "desc": "Bite deals an extra 2d6 fire damage to creatures carrying a flame or that took fire damage since the wolf’s last turn."
+                    }
+               ],
+               "actions": [
+                    {
+                         "name": "Bite",
+                         "desc": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 10 (2d6+3) piercing plus 7 (2d6) fire damage. DC 12 STR save or knocked prone."
+                    },
+                    {
+                         "name": "Cinder Howl (Recharge 5–6)",
+                         "desc": "Creatures of the wolf’s choice within 20 ft. that can hear it must make a DC 12 WIS save or be frightened until the end of the wolf’s next turn; on a failure by 5+, also take 7 (2d6) fire damage."
+                    }
+               ],
+               "reactions": [],
+               "legendary_actions": [],
+               "damage_resistances": ["fire"],
+               "damage_immunities": [],
+               "damage_vulnerabilities": [],
+               "condition_immunities": [],
+               "lore": "Wolves kindled by the ash-winds of Skazka’s burned woods. Their howls stir sleeping embers into hungry sparks."
+          },
+
+          {
+               "name": "Memory Wraith",
+               "aka": ["Unspooler"],
+               "description": "A hollow silhouette stitched from whispered names; it drinks recollection through touch, leaving faces familiar but unlabeled. In moonlight it trails ribbons of borrowed thoughts that flutter like torn parchment.",
+               "img": "/assets/beasts/memory-wraith.jpg",
+               "alt": "A faintly luminous, unraveling figure",
+               "size": "Medium",
+               "type": "Undead",
+               "alignment": "neutral evil",
+               "ac": 13,
+               "hp": { "avg": 58, "formula": "9d8+18" },
+               "speed": { "walk": 0, "fly": 40, "hover": true },
+               "abilities": {
+                    "str": 6,
+                    "dex": 16,
+                    "con": 14,
+                    "int": 12,
+                    "wis": 14,
+                    "cha": 16
+               },
+               "saving_throws": { "Wis": "+5", "Cha": "+6" },
+               "skills": { "Perception": "+5", "Stealth": "+7" },
+               "senses": { "darkvision": 60, "passive": 15 },
+               "languages": ["Common", "Undercommon"],
+               "cr": 4,
+               "traits": [
+                    {
+                         "name": "Incorporeal Movement",
+                         "desc": "Can move through other creatures and objects as if difficult terrain, taking 5 (1d10) force damage if it ends its turn inside an object."
+                    },
+                    {
+                         "name": "Drinking the Thread",
+                         "desc": "When the wraith deals psychic damage to a creature, that creature subtracts 1d4 from the next Intelligence or Wisdom check before the end of its next turn."
+                    }
+               ],
+               "actions": [
+                    {
+                         "name": "Memory Lash",
+                         "desc": "Melee Spell Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (3d6+3) psychic damage."
+                    },
+                    {
+                         "name": "Unspool (Recharge 5–6)",
+                         "desc": "One creature the wraith can see within 30 ft. makes a DC 14 WIS save or loses a random proficiency until the end of its next short rest."
+                    }
+               ],
+               "reactions": [],
+               "legendary_actions": [],
+               "damage_resistances": [
+                    "acid",
+                    "fire",
+                    "lightning",
+                    "thunder",
+                    "bludgeoning/piercing/slashing (nonmagical)"
+               ],
+               "damage_immunities": ["cold", "necrotic", "poison"],
+               "damage_vulnerabilities": [],
+               "condition_immunities": [
+                    "charmed",
+                    "exhaustion",
+                    "grappled",
+                    "poisoned",
+                    "prone",
+                    "restrained"
+               ],
+               "lore": "Born of the Hollow Depths; they drink what you are by unspooling what you were."
+          },
+
+          {
+               "name": "Thorn-Crowned Stag",
+               "aka": ["Bleeding Herald"],
+               "description": "A regal stag burdened with a living briar-crown that weeps sap like blood. Where it passes, hedges wake and close; trespassers pay a toll of thorns, or are woven into the hedge itself.",
+               "alt": "A vast stag crowned in living thorns",
+               "img": "/assets/beasts/thorn-crowned-stag.jpg",
+               "size": "Large",
+               "type": "Fey",
+               "alignment": "neutral",
+               "ac": 15,
+               "hp": { "avg": 95, "formula": "10d10+40" },
+               "speed": { "walk": 50 },
+               "abilities": {
+                    "str": 19,
+                    "dex": 14,
+                    "con": 18,
+                    "int": 6,
+                    "wis": 14,
+                    "cha": 12
+               },
+               "saving_throws": { "Dex": "+5", "Con": "+7" },
+               "skills": { "Perception": "+5", "Athletics": "+7" },
+               "senses": { "passive": 15 },
+               "languages": ["Sylvan"],
+               "cr": 5,
+               "traits": [
+                    {
+                         "name": "Harbinger of Than",
+                         "desc": "While the stag can see the sky, allies of its choice within 30 ft. have advantage on saving throws against being frightened."
+                    },
+                    {
+                         "name": "Bleeding Crown",
+                         "desc": "The stag’s antlers deal an extra 1d6 piercing damage to creatures that have damaged plants in the last 24 hours."
+                    }
+               ],
+               "actions": [
+                    {
+                         "name": "Gore",
+                         "desc": "Melee Weapon Attack: +7 to hit, reach 10 ft., one target. Hit: 17 (2d10+6) piercing damage."
+                    },
+                    {
+                         "name": "Trample",
+                         "desc": "If the stag moves at least 20 ft. straight toward a creature and then hits it with a Gore attack on the same turn, that target must succeed on a DC 15 STR save or be knocked prone. If the target is prone, the stag can make one Stomp attack against it as a bonus action (Stomp: +7 to hit, reach 5 ft., Hit 13 (2d6+6) bludgeoning)."
+                    }
+               ],
+               "reactions": [],
+               "legendary_actions": [],
+               "damage_resistances": ["cold iron (treat as magic)"],
+               "damage_immunities": [],
+               "damage_vulnerabilities": ["fire"],
+               "condition_immunities": [],
+               "lore": "A harbinger of Than’s displeasure; its crown bleeds where axes have bitten bark."
+          },
+
+          {
+               "name": "Desert Glass Serpent",
+               "aka": ["Valkarian Coil"],
+               "description": "A dune-burrower of fused glass and sunfire; its mirrored scales refract daylight into knives. When threatened it shatters into skittering shards, only to reknit around the nearest heat like molten sand.",
+               "alt": "A crystalline serpent glinting like broken glass",
+               "img": "/assets/beasts/desert-glass-serpent.jpg",
+               "size": "Huge",
+               "type": "Monstrosity",
+               "alignment": "unaligned",
+               "ac": 17,
+               "hp": { "avg": 152, "formula": "16d12+48" },
+               "speed": { "walk": 30, "burrow": 20 },
+               "abilities": {
+                    "str": 20,
+                    "dex": 14,
+                    "con": 16,
+                    "int": 5,
+                    "wis": 12,
+                    "cha": 8
+               },
+               "saving_throws": { "Dex": "+6", "Con": "+7" },
+               "skills": { "Perception": "+5", "Stealth": "+6" },
+               "senses": { "tremorsense": 60, "blindsight": 10, "passive": 15 },
+               "languages": [],
+               "cr": 7,
+               "traits": [
+                    {
+                         "name": "Glass Body",
+                         "desc": "Critical hits against the serpent deal normal damage (not critical)."
+                    },
+                    {
+                         "name": "Mirage Sheen",
+                         "desc": "Creatures have disadvantage on Wisdom (Perception) checks to see the serpent in bright light."
+                    }
+               ],
+               "actions": [
+                    {
+                         "name": "Multiattack",
+                         "desc": "The serpent makes two Bite attacks."
+                    },
+                    {
+                         "name": "Bite",
+                         "desc": "Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: 19 (3d8+6) piercing damage plus 7 (2d6) slashing from shards."
+                    },
+                    {
+                         "name": "Shatter Coil (Recharge 5–6)",
+                         "desc": "Creatures in a 15-ft. radius must make a DC 15 DEX save or take 18 (4d8) slashing damage and 18 (4d8) thunder damage, or half as much on a success."
+                    }
+               ],
+               "reactions": [],
+               "legendary_actions": [],
+               "damage_resistances": ["slashing", "thunder"],
+               "damage_immunities": ["poison"],
+               "damage_vulnerabilities": ["bludgeoning"],
+               "condition_immunities": ["poisoned", "prone"],
+               "lore": "Said to coil in the cursed belts near lost Velkaria, where the sand sings like broken crystal."
+          },
+
+          {
+               "name": "Cathedral Moth",
+               "aka": ["Dream-Ruiner"],
+               "description": "A solemn night-moth with stained-glass wings that cast holy-hued shadows; its dust hushes voices to a reverent whisper. Drawn to bells and ruined chancels, it nests in vellum and candle smoke.",
+               "alt": "A pale moth with windowed wings like stained glass",
+               "img": "/assets/beasts/cathedral-moth.jpg",
+               "size": "Small",
+               "type": "Monstrosity",
+               "alignment": "neutral",
+               "ac": 13,
+               "hp": { "avg": 11, "formula": "2d6+4" },
+               "speed": { "fly": 40, "hover": true },
+               "abilities": {
+                    "str": 6,
+                    "dex": 16,
+                    "con": 14,
+                    "int": 8,
+                    "wis": 12,
+                    "cha": 10
+               },
+               "saving_throws": {},
+               "skills": { "Perception": "+3", "Stealth": "+5" },
+               "senses": { "darkvision": 60, "passive": 13 },
+               "languages": [],
+               "cr": 1,
+               "traits": [
+                    {
+                         "name": "Dust of Candleflame",
+                         "desc": "Creatures that start their turn within 5 ft. of the moth while it is flying must succeed on a DC 12 CON save or have their speed reduced by 10 ft. until the end of their next turn."
+                    }
+               ],
+               "actions": [
+                    {
+                         "name": "Proboscis",
+                         "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8+3) piercing damage."
+                    },
+                    {
+                         "name": "Dream-Siphon (Recharge 6)",
+                         "desc": "One creature within 5 ft. makes a DC 12 WIS save or gains one level of exhaustion as the moth sips at sleeping thoughts."
+                    }
+               ],
+               "reactions": [],
+               "legendary_actions": [],
+               "damage_resistances": ["necrotic", "radiant"],
+               "damage_immunities": [],
+               "damage_vulnerabilities": [],
+               "condition_immunities": [],
+               "lore": "Drawn to inverted cathedrals and dream-ruins; their dust eats at candleflame and memory."
+          }
+     ]
+}

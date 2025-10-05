@@ -18,35 +18,39 @@
 <body>
     <div id="navbar"></div><!-- Navbar will be loaded here -->
 
-    <!-- Main Content Area -->
-    <section class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
+    <form id="tl-searchbar" class="tl-search" role="search" onsubmit="return false;">
+        <input id="tl-q" type="text" role="searchbox" inputmode="search" enterkeyhint="search" autocomplete="off"
+            autocapitalize="off" spellcheck="false" ...>
+        <button type="button" id="tl-clear" aria-label="Clear search">
+            <svg viewBox="0 0 14 14" width="14" height="14" aria-hidden="true">
+                <path d="M2 2L12 12M12 2L2 12" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" />
+            </svg>
+        </button>
+        <output id="tl-count" aria-live="polite" class="tl-count"></output>
+    </form>
+
+    <section class="grid-container">
+        <div></div><!--empty-->
+        <div></div><!--introduction-->
+        <div></div><!--empty-->
+
+    </section>
+    <section class="grid-even"> <!-- 3 COLUMN 20-60-20 -->
         <div></div>
-        </div>
 
-        <div class="center-column"><!-- MIDDLE -->
 
-        </div>
+        <div></div>
 
-        <div class="right-column"> <!-- RIGHT -->
-        </div>
+        <div></div>
     </section>
 
-    <section class="grid-even"><!-- 3 COLUMN EVEN -->
-        <div>
-        </div>
-
-        <div>
-        </div>
-
-        <div>
-        </div>
-    </section>
 
 
     <div id="footer"></div>
 
 
-
+    <script src="timeline-search-addon.js"></script>
 
 </body>
 

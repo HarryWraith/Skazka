@@ -23,9 +23,14 @@
   --sb-gold-strong: #e1b84d;
   --sb-radius: 14px;
   --sb-gap: 10px;
-  --bg-tile: 900px;
+  --sb-title: #ffb700ff;
   --tl-clear-nudge-y: -2px;
   --tl-clear-nudge-x: -2px;
+  --font-head: "Cinzel", serif;
+  --font-body: "Alegreya", Georgia, serif;
+
+
+  /* stripe width + column gap */
 }
 
 /* ===============================
@@ -124,6 +129,10 @@ a {
   text-decoration: none;
 }
 
+ul {
+  padding-left: 20px;
+}
+
 a:hover,
 a:focus,
 a:active {
@@ -190,6 +199,8 @@ body p {
   align-items: start;
 }
 
+
+
 .grid-container-stats {
   display: grid;
   grid-template-columns: 20% 50% 30%;
@@ -235,6 +246,31 @@ body p {
   align-items: start;
 }
 
+.skz-grid {
+  display: grid;
+  grid-template-columns: 7fr 3fr;
+  /* ~70% / 30% */
+  gap: 40px;
+  max-width: min(1600px, 90vw);
+  margin: 2rem auto 1rem;
+  align-items: start;
+}
+
+.skz-grid>* {
+  min-width: 0;
+}
+
+/* prevents overflow in columns */
+
+/* stack on smaller screens */
+@media (max-width: 1200px) {
+  .skz-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+
 .grid-two-wide {
   display: grid;
   grid-template-columns: 3fr 7fr;
@@ -273,7 +309,8 @@ body p {
 
 .center-column {
   padding: 0 10px;
-  font-size: 1em;
+  font-size: 1.2em;
+  font-style: italic;
 }
 
 /* ===============================
@@ -298,6 +335,17 @@ button {
   background: var(--sb-panel);
   border: 1px solid var(--sb-border);
   color: var(--sb-text);
+  padding: 8px;
+  font-size: 16px;
+  height: 40px;
+  width: 100%;
+}
+
+.stat-btn {
+  background: var(--sb-gold-strong);
+  border: 1px solid var(--sb-gold);
+  border-radius: 19px;
+  color: var(--sb-bg);
   padding: 8px;
   font-size: 16px;
   height: 40px;
@@ -401,13 +449,11 @@ button {
   /* box & theme */
   display: inline-block;
   padding: 14px 0;
-  /* space for ornaments on both sides */
-  /* type */
-  font-family: "Jura", system-ui, Segoe UI, Roboto, Arial, sans-serif;
+  font-family: "Cinzel", system-ui, Segoe UI, Roboto, Arial, sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: .08em;
-  color: var(--sb-gold-strong);
+  color: var(--sb-title);
 
   /* engraved/gilt vibe */
   text-shadow:
@@ -430,9 +476,9 @@ button {
   background:
     linear-gradient(90deg,
       transparent 0%,
-      color-mix(in srgb, var(--sb-gold-strong) 65%, transparent) 15%,
-      var(--sb-gold-strong) 50%,
-      color-mix(in srgb, var(--sb-gold-strong) 65%, transparent) 85%,
+      color-mix(in srgb, var(--sb-title) 65%, transparent) 15%,
+      var(--sb-title) 50%,
+      color-mix(in srgb, var(--sb-title) 65%, transparent) 85%,
       transparent 100%);
   opacity: .75;
   border-radius: 2px;
@@ -490,6 +536,8 @@ button {
   display: grid;
   gap: 10px;
 }
+
+
 
 /* Fallback: style the first article’s list if no class provided */
 .grid-even>article:first-of-type>ol.skz-ol {
@@ -1534,6 +1582,10 @@ button.tb-ghost-btn {
   font-weight: 900;
 }
 
+.grid-four .tb-title {
+  text-align: center;
+}
+
 /* tb-title enhancer: apply as class="tb-title skz-title" */
 .tb-title.skz-title {
   /* keep tb-title base, then add punch */
@@ -1947,6 +1999,10 @@ page-stats #stats-detail-panel.tb-panel,
   border: 1px solid var(--sb-border);
 }
 
+.tb-panel img {
+  width: 100%;
+}
+
 /* Loading skeletons */
 .page-profile .skeleton {
   opacity: .6;
@@ -2158,4 +2214,297 @@ page-stats #stats-detail-panel.tb-panel,
   .tl-search #tl-clear {
     margin-right: 8px;
   }
+}
+
+
+
+/* ─────────────────────────────────────────────────────────
+   SKAZKA • Bestiary Tarot Grid (LOCKED NAMEPLATE)
+   - 3-wide grid, type-colored borders
+   - FRONT: reserved bottom strip for name, media cannot overlap
+   - Works for <img> and placeholder <div>
+   ───────────────────────────────────────────────────────── */
+#beastCards.beast-cards {
+  --card-ratio: 2 / 3;
+  --card-gap: 18px;
+  --card-radius: 16px;
+  --nameplate-h: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--card-gap);
+}
+
+/* Card shell */
+.beast-card {
+  position: relative;
+  aspect-ratio: var(--card-ratio);
+  perspective: 1200px;
+  outline: none;
+  --card-accent: var(--accent, #08c5ff);
+  /* set per card in JS */
+}
+
+.beast-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.beast-card[aria-selected="true"] .bc-face {
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--card-accent) 45%, transparent) inset,
+    0 12px 28px rgba(0, 0, 0, .34);
+}
+
+/* Rotor */
+.bc-rotor {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transition: transform .45s ease;
+  border-radius: var(--card-radius);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .28), inset 0 0 0 1px rgba(255, 255, 255, .04);
+}
+
+.beast-card.is-flipped .bc-rotor {
+  transform: rotateY(180deg);
+}
+
+/* Faces */
+.bc-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  overflow: hidden;
+  border-radius: var(--card-radius);
+  border: 1.5px solid color-mix(in srgb, var(--card-accent) 72%, var(--sb-border) 28%);
+  background: var(--sb-panel);
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--card-accent) 24%, transparent) inset,
+    0 8px 22px rgba(0, 0, 0, .22);
+}
+
+.bc-face img {
+  border: none;
+}
+
+/* Decorative inner fillet (sits ABOVE media, BELOW nameplate) */
+.bc-face::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border-radius: calc(var(--card-radius) - 4px);
+  border: 1px solid color-mix(in srgb, var(--card-accent) 35%, transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── FRONT: absolute layout with reserved name slot ───────── */
+.bc-front {
+  position: relative;
+}
+
+/* Media wrapper fills face except the nameplate strip at the bottom */
+.bc-media {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: var(--nameplate-h);
+  overflow: hidden;
+  z-index: 0;
+  /* under fillet and nameplate */
+}
+
+/* Media (img or placeholder) fills wrapper */
+.bc-media>.bc-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: radial-gradient(120% 100% at 50% 0%, #0b1118 0%, #070b10 60%, #05080d 100%);
+}
+
+.bc-media>.bc-img:where(div) {
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 2rem;
+  opacity: .28;
+}
+
+/* Nameplate is always visible, centered, and pinned to bottom */
+.bc-front .bc-nameplate {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: var(--nameplate-h);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 12px;
+  font-weight: 800;
+  letter-spacing: .3px;
+  text-align: center;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: linear-gradient(180deg, rgba(0, 0, 0, .55), rgba(0, 0, 0, 0) 70%);
+  border-top: 1px solid color-mix(in srgb, var(--card-accent) 45%, var(--sb-border) 55%);
+  pointer-events: none;
+}
+
+/* ── BACK: quick stats ───────────────────────────────────── */
+.bc-back {
+  transform: rotateY(180deg);
+  display: grid;
+  grid-template-rows: auto 1fr;
+  padding: 12px 14px;
+  background-image: url("./assets/card-back.jpg");
+  background-color: rgba(255, 255, 255, 0.13);
+  background-blend-mode: lighten;
+}
+
+.bc-title {
+  font-weight: 800;
+  margin: 0 0 6px;
+}
+
+.bc-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.bc-chip {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--sb-border);
+  background: var(--sb-panel2);
+  font-size: .85rem;
+  opacity: .9;
+}
+
+.bc-quick {
+  display: grid;
+  gap: 6px;
+  font-variant-numeric: tabular-nums;
+}
+
+.bc-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.bc-k {
+  opacity: .85;
+}
+
+.bc-v {
+  text-align: right;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  #beastCards.beast-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  #beastCards.beast-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+#beastCards .bc-back .bc-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin: 4px;
+}
+
+/* top type tags (formerly .bc-chip) */
+#beastCards .bc-back .bc-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  line-height: 1;
+  font-size: .9rem;
+  border-radius: 999px;
+  color: var(--text);
+  background: color-mix(in srgb, var(--card-accent) 18%, var(--sb-panel2) 82%);
+  border: 1px solid color-mix(in srgb, var(--card-accent) 60%, var(--sb-border) 40%);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .04), 0 1px 6px rgba(0, 0, 0, .18);
+}
+
+/* stat tags row (formerly .bc-badges) */
+#beastCards .bc-back .bc-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+
+}
+
+
+
+/* base stat tag (formerly .stat-pill) */
+#beastCards .bc-back .stat-tag {
+  --tone: var(--sb-panel2);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: .88rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+  background: color-mix(in srgb, var(--tone) 28%, var(--sb-panel2) 72%);
+  border: 1px solid color-mix(in srgb, var(--tone) 60%, var(--sb-border) 40%);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .05), 0 1px 6px rgba(0, 0, 0, .2);
+
+}
+
+#beastCards .bc-back .stat-tag b {
+  font-weight: 800;
+  letter-spacing: .2px;
+  font-size: .95em;
+  /* keep label emphasized but scaled with pill */
+}
+
+/* specific colors */
+#beastCards .bc-back .stat-tag--ac {
+  --tone: #4da3ff;
+}
+
+#beastCards .bc-back .stat-tag--hp {
+  --tone: #d65a63;
+}
+
+#beastCards .bc-back .stat-tag--speed {
+  --tone: #f2c94c;
+  color: #1a1600;
+  text-shadow: none;
+}
+
+/* just in case badges.js targets generic names, lock ours down */
+#beastCards .bc-back .bc-tag,
+#beastCards .bc-back .stat-tag {
+  mix-blend-mode: normal !important;
+  opacity: 1 !important;
+  filter: none !important;
+  border-radius: 999px !important;
+}
+
+#beastCards .bc-back .bc-desc {
+  margin: 8px 2px 6px;
+  line-height: 1.25;
+  opacity: .95;
 }
