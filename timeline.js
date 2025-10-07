@@ -1,4 +1,4 @@
-// timeline.js — Skazka timeline (epochs + auto-open details + branches)
+// timeline.js — Skazka timeline (epochs + modal for expanded descriptions)
 
 /* ---------------- Utilities ---------------- */
 const escapeHTML = (s = "") =>
@@ -14,7 +14,7 @@ const escapeHTML = (s = "") =>
                }[ch])
      );
 
-// Accept array or {events:[...]} or {timeline:[...]}
+/* ---------------- JSON normalizer ---------------- */
 function normalizeData(raw) {
      const list = Array.isArray(raw)
           ? raw
@@ -23,22 +23,97 @@ function normalizeData(raw) {
           : Array.isArray(raw?.timeline)
           ? raw.timeline
           : [];
+
      return list.map((i) => ({
           year: i.year ?? i.date ?? i.when ?? "",
           title: i.title ?? i.name ?? i.heading ?? "",
           detail: i.detail ?? i.details ?? i.text ?? i.description ?? "",
           html: !!i.html,
-          // epoch flags we’ll recognize
           epoch: !!(
                i.epoch ||
                i.is_epoch ||
                (typeof i.kind === "string" && i.kind.toLowerCase() === "epoch")
           ),
+          expanded: i.expanded ?? "",
+          expanded_html: !!i.expanded_html,
      }));
 }
 
+/* ---------------- Modal (accessible, namespaced) ---------------- */
+const SkzModal = (() => {
+     let root, dialog, titleEl, bodyEl, closeBtn, lastFocus;
+
+     function ensure() {
+          if (root) return;
+          root = document.createElement("div");
+          root.id = "skz-tl-modal-root";
+          root.innerHTML = `
+      <div class="skz-modal-backdrop" data-close="1"></div>
+      <div class="skz-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="skz-modal-title">
+        <div class="skz-modal-head">
+          <h3 id="skz-modal-title" class="skz-modal-title"></h3>
+          <button type="button" class="skz-modal-close" aria-label="Close">×</button>
+        </div>
+        <div class="skz-modal-body"></div>
+      </div>
+    `;
+          document.body.appendChild(root);
+          dialog = root.querySelector(".skz-modal-dialog");
+          titleEl = root.querySelector(".skz-modal-title");
+          bodyEl = root.querySelector(".skz-modal-body");
+          closeBtn = root.querySelector(".skz-modal-close");
+
+          root.addEventListener("click", (e) => {
+               if (e.target.dataset.close) close();
+          });
+          closeBtn.addEventListener("click", close);
+          document.addEventListener("keydown", (e) => {
+               if (!root.classList.contains("open")) return;
+               if (e.key === "Escape") close();
+               // focus trap
+               if (e.key === "Tab") {
+                    const f = dialog.querySelectorAll(
+                         'a[href],button,textarea,input,select,[tabindex]:not([tabindex="-1"])'
+                    );
+                    if (!f.length) return;
+                    const first = f[0],
+                         last = f[f.length - 1];
+                    if (e.shiftKey && document.activeElement === first) {
+                         e.preventDefault();
+                         last.focus();
+                    } else if (!e.shiftKey && document.activeElement === last) {
+                         e.preventDefault();
+                         first.focus();
+                    }
+               }
+          });
+     }
+
+     function open({ title = "", content = "" } = {}) {
+          ensure();
+          lastFocus = document.activeElement;
+          titleEl.textContent = title;
+          bodyEl.innerHTML = content;
+          root.classList.add("open");
+          document.body.classList.add("skz-modal-open");
+          closeBtn.focus();
+     }
+
+     function close() {
+          if (!root) return;
+          root.classList.remove("open");
+          document.body.classList.remove("skz-modal-open");
+          if (lastFocus && lastFocus.focus) lastFocus.focus();
+     }
+
+     return { open, close };
+})();
+
 /* ---------------- DOM builders ---------------- */
-function makeEvent({ year, title, detail, html, epoch }, idx) {
+function makeEvent(
+     { year, title, detail, html, epoch, expanded, expanded_html },
+     idx
+) {
      const ev = document.createElement("div");
      ev.className = "event";
      if (epoch) ev.classList.add("event--epoch");
@@ -59,20 +134,49 @@ function makeEvent({ year, title, detail, html, epoch }, idx) {
      const header = ev.querySelector(".event-header");
      const detailsEl = ev.querySelector(".event-details");
 
-     // Add decorative “gothic” corner diamonds only for epoch cards
+     // Decorative ornaments only for epoch cards
      if (epoch) {
-          const left = document.createElement("span");
-          const right = document.createElement("span");
-          left.className = "ornament ornament--left";
-          right.className = "ornament ornament--right";
-          left.setAttribute("aria-hidden", "true");
-          right.setAttribute("aria-hidden", "true");
-          header.append(left, right);
+          const l = document.createElement("span"),
+               r = document.createElement("span");
+          l.className = "ornament ornament--left";
+          r.className = "ornament ornament--right";
+          l.setAttribute("aria-hidden", "true");
+          r.setAttribute("aria-hidden", "true");
+          header.append(l, r);
      }
 
+     // Inline summary text
      detailsEl.innerHTML = html
           ? String(detail)
           : escapeHTML(String(detail)).replace(/\n/g, "<br>");
+
+     // “More…” only if expanded content exists — place it at the END of details
+     if (expanded && String(expanded).trim().length) {
+          const wrap = document.createElement("div");
+          wrap.className = "skz-tl-morewrap";
+
+          const moreBtn = document.createElement("button");
+          moreBtn.type = "button";
+          moreBtn.className = "skz-tl-more";
+          moreBtn.setAttribute("aria-label", `Open details for ${safeTitle}`);
+          moreBtn.textContent = "More…";
+
+          // avoid header toggle/page-jump
+          moreBtn.addEventListener("mousedown", (e) => e.preventDefault());
+          moreBtn.addEventListener("click", (e) => {
+               e.preventDefault();
+               e.stopPropagation();
+
+               const content = expanded_html
+                    ? String(expanded)
+                    : escapeHTML(String(expanded)).replace(/\n/g, "<br>");
+
+               SkzModal.open({ title: safeTitle, content });
+          });
+
+          wrap.appendChild(moreBtn);
+          detailsEl.appendChild(wrap);
+     }
 
      // Default OPEN
      ev.classList.add("open");
@@ -82,7 +186,7 @@ function makeEvent({ year, title, detail, html, epoch }, idx) {
           Branches.scheduleBurst();
      });
 
-     // Toggle
+     // Toggle inline summary (and naturally hide the button when collapsed)
      const toggle = () => {
           const opening = !ev.classList.contains("open");
           if (opening) {
@@ -223,15 +327,12 @@ const Branches = (() => {
                     "d",
                     `M ${startX},${y} C ${c1x},${y} ${c2x},${y} ${endX},${y}`
                );
-
-               // Make epoch branches thicker/brighter
-               if (
+               path.setAttribute(
+                    "class",
                     header.closest(".event")?.classList.contains("event--epoch")
-               ) {
-                    path.setAttribute("class", "branch branch--epoch");
-               } else {
-                    path.setAttribute("class", "branch");
-               }
+                         ? "branch branch--epoch"
+                         : "branch"
+               );
                svg.appendChild(path);
           });
      }
@@ -276,7 +377,6 @@ const Branches = (() => {
 /* ---------------- Boot ---------------- */
 document.addEventListener("DOMContentLoaded", async () => {
      Branches.watch();
-
      try {
           const res = await fetch("data/timeline.json", { cache: "no-store" });
           if (!res.ok) throw new Error(`HTTP ${res.status}`);

@@ -1,0 +1,602 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Skazka - aeter</title>
+    <link rel="stylesheet" href="navbar.css?v=3">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/png" href="assets/skazka_logo.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Alegreya:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <script src="navbar.js?v=3"></script>
+    <script type="module" src="./main.js"></script>
+
+</head>
+
+<body>
+    <div id="navbar"></div>
+
+    <main class="grid-container page-tears" id="top">
+        <!-- Left: Contents (sticky) -->
+        <aside class="toc-col">
+            <nav class="toc sticky">
+                <h2 class="skz-viking">Contents</h2>
+                <ol class="toc-list" id="toc">
+                    <!-- Auto-populated by JS -->
+                </ol>
+            </nav>
+        </aside>
+
+        <!-- Center: Main content -->
+        <article class="center-column">
+            <figure class="hero">
+                <img src="assets/starfall.jpg" alt="Starfall over Skazka: crystalline meteors streak the night"
+                    loading="lazy">
+                <figcaption class="visually-hidden">The celestial storm known as the Starfall that scattered the Tears
+                    of Uzume.</figcaption>
+            </figure>
+
+            <h1 class="skz-viking" id="tears">The Tears of Uzume</h1>
+
+            <section id="intro" data-toc="Introduction" class="tb-panel">
+                <h2 class="tb-title">Introduction</h2>
+                <p>When the goddess Uzume was slain by Fafnirog, her death cry shook the heavens. From that cry spilled
+                    her sorrow, her rage, her joy, and her final dreams. These emotions fell as shards of crystal across
+                    Skazka in the celestial storm known as the Starfall.</p>
+                <p>The world calls them the Tears of Uzume: thumb-sized gems of otherworldly radiance—indestructible,
+                    and forever humming with divine memory. To hold one is to clutch a fragment of a goddess’ last
+                    breath.</p>
+            </section>
+
+            <section id="how" data-toc="How They Work" class="tb-panel">
+                <h2 class="tb-title">How They Work</h2>
+                <ul class="skz-kv">
+                    <li><strong>Socketing:</strong> A Tear may be embedded into any finely crafted item made from an
+                        exotic material. Once socketed, it cannot be removed without shattering it.</li>
+                    <li><strong>Attunement:</strong> Each Tear requires individual attunement.</li>
+                    <li><strong>Limit:</strong> A single item may hold up to three Tears.</li>
+                    <li><strong>Resonance:</strong> Socketing two or more Tears of the same colour into a single item
+                        unlocks a set bonus.</li>
+                    <li><strong>Favoured Items:</strong> Each colour resonates more strongly with certain item types. On
+                        favoured items the set bonus is empowered; on non-favoured items it is lesser.</li>
+                    <li><strong>Affinity:</strong> Each colour governs specific damage/defence types. Whenever a feature
+                        grants extra damage or resistance, choose from that colour’s Affinity.</li>
+                    <li><strong>Wildcard Resonance (Black Tears):</strong> A Black Tear may count as any one colour to
+                        complete that colour’s set on its item. You declare the colour when you attune; once that item
+                        achieves Resonance with the Black Tear, its chosen colour cannot be changed.</li>
+                    <li><strong>Corruption:</strong> Attuning to more than three Tears total risks exhaustion, madness,
+                        or whispers of Uzume bleeding into the soul.</li>
+                </ul>
+            </section>
+
+            <section id="colours" data-toc="Colours of the Tears" class="tb-panel">
+                <h2 class="tb-title">Colours of the Tears</h2>
+                <p>Each Tear shines with a hue bound to one of Uzume’s final emotions. Affinity defines which damage
+                    types and defences that colour can grant.</p>
+
+                <ul class="colour-list">
+                    <li>
+                        <h3><span class="chip chip-blue"></span> Blue (Sorrow)</h3>
+                        <ul class="nodec detail">
+                            <li><strong>Favoured items:</strong> Defensive (armor, shields, helms)</li>
+                            <li><strong>Affinity:</strong> Lightning, Piercing</li>
+                            <li><em>Theme:</em> Loss, grief, endurance, protection</li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <h3><span class="chip chip-red"></span> Red (Wrath)</h3>
+                        <ul class="nodec detail">
+                            <li><strong>Favoured items:</strong> Offensive (weapons, ammunition, staves, wands)</li>
+                            <li><strong>Affinity:</strong> Fire, Bludgeoning, Slashing, Piercing</li>
+                            <li><em>Theme:</em> Rage, destruction, divine fire</li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <h3><span class="chip chip-gold"></span> Gold (Joy)</h3>
+                        <ul class="nodec detail">
+                            <li><strong>Favoured items:</strong> Utility (cloaks, gloves, boots, amulets, rings)</li>
+                            <li><strong>Affinity:</strong> Radiant, Bludgeoning</li>
+                            <li><em>Theme:</em> Healing, courage, fellowship</li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <h3><span class="chip chip-violet"></span> Violet (Dream)</h3>
+                        <ul class="nodec detail">
+                            <li><strong>Favoured items:</strong> Utility (cloaks, rings, amulets) or Offensive (wands,
+                                staves)</li>
+                            <li><strong>Affinity:</strong> Psychic, Slashing</li>
+                            <li><em>Theme:</em> Illusion, trickery, bending of thought</li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <h3><span class="chip chip-silver"></span> Silver (Fate)</h3>
+                        <ul class="nodec detail">
+                            <li><strong>Favoured items:</strong> Any (versatile)</li>
+                            <li><strong>Affinity:</strong> Force, Thunder, Bludgeoning</li>
+                            <li><em>Theme:</em> Time, chance, inevitability</li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <h3><span class="chip chip-black"></span> Black (Chaos)</h3>
+                        <ul class="nodec detail">
+                            <li><strong>Favoured items:</strong> Offensive & Defensive (weapons, armor)</li>
+                            <li><strong>Affinity:</strong> All damage types</li>
+                            <li><em>Theme:</em> Entropy, corruption, raw void</li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <h3><span class="chip chip-green"></span> Green (Growth)</h3>
+                        <ul class="nodec detail">
+                            <li><strong>Favoured items:</strong> Offensive (weapons, ammunition) & Utility (cloaks,
+                                boots). *A Tear in ammunition makes that piece unbreakable.*</li>
+                            <li><strong>Affinity:</strong> Poison, Acid, Slashing</li>
+                            <li><em>Theme:</em> Renewal, venom, wild nature</li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <h3><span class="chip chip-white"></span> White (Hope)</h3>
+                        <ul class="nodec detail">
+                            <li><strong>Favoured items:</strong> Defensive & Utility (armor, cloaks, amulets)</li>
+                            <li><strong>Affinity:</strong> Cold, Piercing</li>
+                            <li><em>Theme:</em> Purity, cleansing, divine shield</li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <h3><span class="chip chip-grey"></span> Grey (Memory)</h3>
+                        <ul class="nodec detail">
+                            <li><strong>Favoured items:</strong> Utility (rings, cloaks, amulets)</li>
+                            <li><strong>Affinity:</strong> Necrotic, Bludgeoning</li>
+                            <li><em>Theme:</em> Secrets, remembrance, echoes of the dead</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <p class="note">When Resonance is achieved on a favoured item the set bonus is stronger. Affinity
+                    controls which damage types can appear as extra damage or resistances for that colour.</p>
+            </section>
+
+            <section id="using" data-toc="Using Tears in Play" class="tb-panel">
+                <h2 class="tb-title">Using Tears in Play</h2>
+                <ul class="skz-kv">
+                    <li>A single Tear grants a minor boon.</li>
+                    <li>A matched pair or trio turns an item into something unique and powerful. Two- and three-set
+                        bonuses are amplified when placed in favoured items.</li>
+                    <li>A Black Tear can complete a colour set on that item (see Wildcard Resonance).</li>
+                    <li>Pursuing full sets may require quests to track down matching colours.</li>
+                    <li>Overuse tempts corruption. Beware the consequence of attuning to more than three gems.</li>
+                </ul>
+            </section>
+
+            <section id="warnings" data-toc="Warnings" class="tb-panel">
+                <h2 class="tb-title">Warnings</h2>
+                <ul class="nodec bullets">
+                    <li><strong>Irreversible:</strong> Once socketed, a Tear is bound to its item until destruction.
+                    </li>
+                    <li><strong>Limited Attunement:</strong> Each gem consumes one of your attunement slots.</li>
+                    <li><strong>Whispers of Uzume:</strong> Those who push beyond mortal limits may hear her sorrow
+                        bleed through.</li>
+                </ul>
+            </section>
+
+            <section id="artefacts" data-toc="Known Artefacts" class="tb-panel">
+                <h2 class="skz-viking">Known Artefacts</h2>
+
+                <div class="artefact-grid">
+
+                    <!-- Artefact Card: Lightbringer -->
+                    <article class="artefact-card" id="lightbringer">
+                        <header class="artefact-header">
+                            <h3 class="artefact-title">
+                                <span class="chip chip-red" aria-hidden="true"></span>
+                                Lightbringer
+                            </h3>
+                            <p class="artefact-subtitle">Weapon (shortsword), legendary (Requires Attunement)</p>
+                        </header>
+
+                        <div class="artefact-body">
+                            <section>
+                                <h4>Material Origin</h4>
+                                <ul class="nodec bullets">
+                                    <li><strong>Exotic Material:</strong> Mithral</li>
+                                    <li><strong>Material Property — Swift Strike:</strong> Once per scene, reroll one
+                                        damage die showing its minimum value.</li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <h4>Base Enchantment</h4>
+                                <p>This sword is a <strong>+3 shortsword</strong> (does not require attunement for the
+                                    enchantment).</p>
+                            </section>
+
+                            <section>
+                                <h4>Socketed Tears of Uzume</h4>
+                                <p>Lightbringer holds three <strong>Red (Wrath)</strong> Tears of Uzume, socketed
+                                    permanently into its hilt. Each Tear requires attunement.</p>
+                                <p><strong>Affinity of Wrath:</strong> Fire (primary)</p>
+                                <ol class="artefact-list">
+                                    <li>
+                                        <strong>Uncommon — Tear of Fury.</strong>
+                                        <div class="muted">Effect: Once per long rest, add <strong>+2d6 fire
+                                                damage</strong> to a melee attack.</div>
+                                    </li>
+                                    <li>
+                                        <strong>Rare — Tear of Burning Heart.</strong>
+                                        <div class="muted">Effect: Once per day, cast <em>Fireball</em> (3rd level).
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <strong>Very Rare — Tear of Bloodflame.</strong>
+                                        <div class="muted">Effect: Critical hits deal an additional <strong>2d6 fire and
+                                                necrotic</strong> damage.</div>
+                                    </li>
+                                </ol>
+                            </section>
+
+                            <section>
+                                <h4>Resonance Effects (Red Tears in a Weapon — Favoured Item)</h4>
+                                <ul class="nodec bullets">
+                                    <li><strong>2-Gem Resonance (Favoured):</strong> Weapon attacks deal an additional
+                                        <strong>+1d6 fire damage</strong>.
+                                    </li>
+                                    <li><strong>3-Gem Resonance (Favoured):</strong> Once per long rest, unleash
+                                        <strong>Uzume’s Inferno</strong>. As an action, Lightbringer belches forth a
+                                        <strong>30-foot cone of fire</strong>. Each creature in the area must make a
+                                        <strong>DC 16 Dexterity saving throw</strong>, taking <strong>6d8 fire
+                                            damage</strong> on a failed save, or half as much on a successful one.
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <h4>Description</h4>
+                                <p>Forged in Caratania’s hidden forges from pure mithral, <strong>Lightbringer</strong>
+                                    burns with the wrath Uzume carried to her grave. Its edge gleams silver, but three
+                                    crimson Tears pulse within the hilt like molten embers. Swift and deadly, the blade
+                                    lashes out with searing flame, each strike echoing the grief of a slain goddess.</p>
+                            </section>
+                        </div>
+                    </article>
+
+                    <!-- ===================== Aegis of the Weeping Sky ===================== -->
+                    <article class="artefact-card" id="aegis-weeping-sky">
+                        <header class="artefact-header">
+                            <h3 class="artefact-title">
+                                <span class="chip chip-blue" aria-hidden="true"></span>
+                                Aegis of the Weeping Sky
+                            </h3>
+                            <p class="artefact-subtitle">Armor (shield), very rare (Requires Attunement)</p>
+                        </header>
+
+                        <div class="artefact-body">
+                            <section>
+                                <h4>Material Origin</h4>
+                                <ul class="nodec bullets">
+                                    <li><strong>Exotic Material:</strong> Adamantine</li>
+                                    <li><strong>Material Property — Unyielding:</strong> Once per scene, downgrade a
+                                        critical hit against you to a normal hit.</li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <h4>Base Enchantment</h4>
+                                <p>This shield is a <strong>+2 shield</strong> (does not require attunement for the
+                                    enchantment).</p>
+                            </section>
+
+                            <section>
+                                <h4>Socketed Tears of Uzume</h4>
+                                <p>Aegis holds three <strong>Blue (Sorrow)</strong> Tears, socketed permanently. Each
+                                    Tear requires attunement.</p>
+                                <p><strong>Affinity of Sorrow:</strong> Lightning, Piercing</p>
+                                <ol class="artefact-list">
+                                    <li>
+                                        <strong>Uncommon — Tear of Endurance.</strong>
+                                        <div>Effect: Gain <strong>+1 HP per character level</strong>.</div>
+                                    </li>
+                                    <li>
+                                        <strong>Rare — Tear of Mourning.</strong>
+                                        <div>Effect: Cast <em>Calm Emotions</em> once per long rest.</div>
+                                    </li>
+                                    <li>
+                                        <strong>Very Rare — Tear of the Weeping Sky.</strong>
+                                        <div>Effect: Gain <strong>resistance to psychic damage</strong>; allies within
+                                            10 ft have <strong>advantage on death saves</strong>.</div>
+                                    </li>
+                                </ol>
+                            </section>
+
+                            <section>
+                                <h4>Resonance Effects (Blue Tears in Armor — Favoured)</h4>
+                                <ul class="nodec bullets">
+                                    <li><strong>2-Gem (Favoured):</strong> Gain <strong>resistance</strong> to one Blue
+                                        Affinity type (Lightning or Piercing). Choose on attunement.</li>
+                                    <li><strong>3-Gem (Favoured):</strong> Once per long rest, <strong>negate a critical
+                                            hit</strong> against you after it is rolled.</li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <h4>Description</h4>
+                                <p>Hammered from star-dark adamant, the Aegis drinks in thunder and sorrow alike. Blue
+                                    Tears glimmer beneath the face of the shield like rain trapped in glass.</p>
+                            </section>
+                        </div>
+                    </article>
+
+                    <!-- ===================== Mantle of the Dawning Hymn ===================== -->
+                    <article class="artefact-card" id="mantle-dawning-hymn">
+                        <header class="artefact-header">
+                            <h3 class="artefact-title">
+                                <span class="chip chip-gold" aria-hidden="true"></span>
+                                Mantle of the Dawning Hymn
+                            </h3>
+                            <p class="artefact-subtitle">Utility (cloak), very rare (Requires Attunement)</p>
+                        </header>
+
+                        <div class="artefact-body">
+                            <section>
+                                <h4>Material Origin</h4>
+                                <ul class="nodec bullets">
+                                    <li><strong>Exotic Material:</strong> Phoenix Feather Weave</li>
+                                    <li><strong>Material Property — Comforting Warmth:</strong> You ignore penalties
+                                        from extreme
+                                        heat.</li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <h4>Base Enchantment</h4>
+                                <p>This mantle grants <strong>+1 to AC and saving throws</strong> (does not require
+                                    attunement for the enchantment).</p>
+                            </section>
+
+                            <section>
+                                <h4>Socketed Tears of Uzume</h4>
+                                <p>The Mantle holds three <strong>Gold (Joy)</strong> Tears, socketed permanently. Each
+                                    Tear requires attunement.</p>
+                                <p><strong>Affinity of Joy:</strong> Radiant, Bludgeoning</p>
+                                <ol class="artefact-list">
+                                    <li>
+                                        <strong>Uncommon — Tear of Warmth.</strong>
+                                        <div>Effect: As an action, heal yourself for <strong>2d8 HP</strong> (1/long
+                                            rest).</div>
+                                    </li>
+                                    <li>
+                                        <strong>Rare — Tear of Radiance.</strong>
+                                        <div>Effect: Cast <em>Beacon of Hope</em> once per long rest.</div>
+                                    </li>
+                                    <li>
+                                        <strong>Very Rare — Tear of the Dawning Sun.</strong>
+                                        <div>Effect: Gain <strong>resistance to necrotic damage</strong>; allies within
+                                            10 ft gain <strong>+2 on saving throws</strong>.</div>
+                                    </li>
+                                </ol>
+                            </section>
+
+                            <section>
+                                <h4>Resonance Effects (Gold Tears in Utility — Favoured)</h4>
+                                <ul class="nodec bullets">
+                                    <li><strong>2-Gem (Favoured):</strong> Allies within 10 ft gain <strong>+2 on saving
+                                            throws vs. fear</strong>.</li>
+                                    <li><strong>3-Gem (Favoured):</strong> Once per long rest, radiate a <strong>30-ft
+                                            healing aura</strong>; each ally regains <strong>2d8 + your Cha
+                                            modifier</strong> HP.</li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <h4>Description</h4>
+                                <p>Phoenixweave catches the first light of dawn and refuses to let it go. The mantle
+                                    smells faintly of summer rain and festival bread; its hem sings when hope is needed
+                                    most.</p>
+                            </section>
+                        </div>
+                    </article>
+
+                    <!-- ===================== Wayfinder of Twinned Threads ===================== -->
+                    <article class="artefact-card" id="wayfinder-twinned-threads">
+                        <header class="artefact-header">
+                            <h3 class="artefact-title">
+                                <span class="chip chip-silver" aria-hidden="true"></span>
+                                Wayfinder of Twinned Threads
+                            </h3>
+                            <p class="artefact-subtitle">Utility (ring), very rare (Requires Attunement)</p>
+                        </header>
+
+                        <div class="artefact-body">
+                            <section>
+                                <h4>Material Origin</h4>
+                                <ul class="nodec bullets">
+                                    <li><strong>Exotic Material:</strong> Starmetal</li>
+                                    <li><strong>Material Property — Aether Conduit:</strong> Once per scene, reduce
+                                        ritual casting time by 50%.</li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <h4>Base Enchantment</h4>
+                                <p>The ring grants <strong>+1 to saving throws</strong> (does not require attunement for
+                                    the enchantment).</p>
+                            </section>
+
+                            <section>
+                                <h4>Socketed Tears of Uzume</h4>
+                                <p>The Wayfinder holds three <strong>Silver (Fate)</strong> Tears, socketed permanently.
+                                    Each Tear requires attunement.</p>
+                                <p><strong>Affinity of Fate:</strong> Force, Thunder, Bludgeoning</p>
+                                <ol class="artefact-list">
+                                    <li>
+                                        <strong>Common — Tear of Chance.</strong>
+                                        <div>Effect: Reroll a failed <strong>ability check</strong> once per long rest.
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <strong>Rare — Tear of Shifting Paths.</strong>
+                                        <div>Effect: Cast <em>Misty Step</em> once per short rest.</div>
+                                    </li>
+                                    <li>
+                                        <strong>Very Rare — Tear of Inevitability.</strong>
+                                        <div>Effect: Once per long rest, force a creature within 30 ft to
+                                            <strong>reroll</strong> a successful attack or save.
+                                        </div>
+                                    </li>
+                                </ol>
+                            </section>
+
+                            <section>
+                                <h4>Resonance Effects (Silver Tears in Any Item — Favoured Everywhere)</h4>
+                                <ul class="nodec bullets">
+                                    <li><strong>2-Gem:</strong> Reroll one failed roll (attack, check, or save)
+                                        <strong>per short rest</strong>.
+                                    </li>
+                                    <li><strong>3-Gem:</strong> Once per long rest, force an enemy within 60 ft to
+                                        <strong>reroll</strong> a successful attack or save.
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <h4>Description</h4>
+                                <p>Threads of quicksilver braid the orichalcum band. When twisted, the ring hums
+                                    softly—like a loom deciding which future to weave.</p>
+                            </section>
+                        </div>
+                    </article>
+
+                    <!-- ===================== Briarstorm Longbow ===================== -->
+                    <article class="artefact-card" id="briarstorm-longbow">
+                        <header class="artefact-header">
+                            <h3 class="artefact-title">
+                                <span class="chip chip-green" aria-hidden="true"></span>
+                                Briarstorm Longbow
+                            </h3>
+                            <p class="artefact-subtitle">Weapon (longbow), very rare (Requires Attunement)</p>
+                        </header>
+
+                        <div class="artefact-body">
+                            <section>
+                                <h4>Material Origin</h4>
+                                <ul class="nodec bullets">
+                                    <li><strong>Exotic Material:</strong> Netherbone</li>
+                                    <li><strong>Material Property — Celestial Bane:</strong> On a critical hit against
+                                        celestials, deal <strong>+2 of the weapon’s main damage type</strong>.
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <h4>Base Enchantment</h4>
+                                <p>This is a <strong>+2 longbow</strong> (does not require attunement for the
+                                    enchantment).</p>
+                            </section>
+
+                            <section>
+                                <h4>Socketed Tears of Uzume</h4>
+                                <p>The Briarstorm holds <strong>two Green (Growth)</strong> Tears and <strong>one Black
+                                        (Chaos)</strong> Tear. The Black Tear is attuned to count as
+                                    <strong>Green</strong> for this item’s set bonus (Wildcard Resonance). Each Tear
+                                    requires attunement.
+                                </p>
+                                <p><strong>Affinity of Growth:</strong> Poison, Acid, Slashing &nbsp; • &nbsp;
+                                    <strong>Affinity of Chaos:</strong> All damage types (for individual Black effects)
+                                </p>
+                                <ol class="artefact-list">
+                                    <li>
+                                        <strong>Rare — Tear of Venom (Green).</strong>
+                                        <div>Effect: Weapon attacks deal an additional <strong>+1d6 poison
+                                                damage</strong>.</div>
+                                    </li>
+                                    <li>
+                                        <strong>Uncommon — Tear of Renewal (Green).</strong>
+                                        <div>Effect: When you spend Hit Dice to heal, you may <strong>reroll
+                                                1s</strong>.</div>
+                                    </li>
+                                    <li>
+                                        <strong>Uncommon — Tear of Flux (Black).</strong>
+                                        <div>Effect: At dawn, gain resistance to a <strong>random damage type</strong>
+                                            (roll).</div>
+                                    </li>
+                                </ol>
+                                <p class="muted">Note: Because the Black Tear is declared Green for this item, it
+                                    completes the <strong>3-Gem Green</strong> set bonus on the bow.</p>
+                            </section>
+
+                            <section>
+                                <h4>Resonance Effects (Green Tears in Weapon — Favoured)</h4>
+                                <ul class="nodec bullets">
+                                    <li><strong>2-Gem (Favoured):</strong> Weapon attacks deal <strong>+1d6</strong>
+                                        damage of a Green Affinity type (Poison, Acid, or Slashing).</li>
+                                    <li><strong>3-Gem (Favoured):</strong> Once per long rest, cast <strong>Wall of
+                                            Thorns</strong> (save DC 16 or your spell save DC, whichever is higher).
+                                    </li>
+                                </ul>
+                                <p class="muted">A Green Tear socketed into ammunition makes that piece
+                                    <strong>unbreakable</strong>.
+                                </p>
+                            </section>
+
+                            <section>
+                                <h4>Description</h4>
+                                <p>Vines knot the yew and never wither; each arrow loosed grows a whisper of leaves. In
+                                    battle, the bow answers cruelty with overgrowth and thorn.</p>
+                            </section>
+                        </div>
+                    </article>
+
+
+                </div>
+            </section>
+
+        </article>
+
+        <!-- Right: Sidebar (optional) -->
+        <aside></aside>
+    </main>
+
+    <div id="footer"></div>
+
+
+    <script>
+        // --- Simple ToC builder + scrollspy ---
+        const toc = document.getElementById('toc');
+        const sections = [...document.querySelectorAll('[data-toc]')];
+
+        sections.forEach(sec => {
+            const id = sec.id;
+            const label = sec.getAttribute('data-toc');
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = `#${id}`;
+            a.textContent = label;
+            li.appendChild(a);
+            toc.appendChild(li);
+        });
+
+        const links = toc.querySelectorAll('a');
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                const link = toc.querySelector(`a[href="#${e.target.id}"]`);
+                if (e.isIntersecting) {
+                    links.forEach(l => l.classList.remove('active'));
+                    link?.classList.add('active');
+                }
+            });
+        }, { rootMargin: "-40% 0px -55% 0px", threshold: 0.01 });
+
+        sections.forEach(s => obs.observe(s));
+    </script>
+</body>

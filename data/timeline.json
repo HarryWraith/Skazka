@@ -1,94 +1,98 @@
 [
-  {
-    "year": "-10000",
-    "title": "Ascent from darkness",
-    "details": "The first Dark Elves emerge from the Underworld and are given the gift of Everlight by Aeter. Age of The Sun begins.",
-    "epoch": true
-  },
-  {
-    "year": "-9000",
-    "title": "Temple of Sinari constructed",
-    "details": "To honour and protect the gift of Everlight, the Dark Elves build the Temple of Sinari in the cave from which they first emerged from the darkness of the Underworld."
-  },
-  {
-    "year": "-3000",
-    "title": "Divergence",
-    "details": "Over next thousand years groups of Sun Elves migrate. The largest group travels south and founds Everdusk, and over time they become  the Wood Elves. Others travel east beyond the mountains and are  never seen nor heard of again."
-  },
-  {
-    "year": "-2800",
-    "title": "Kitezh sacked",
-    "details": "Dwarves rebel against their overlord and sack the city of Kitezh. They set out into the darkness to forge their own fate."
-  },
-  {
-    "year": "-1800",
-    "title": "Nav'Golam founded",
-    "details": "The dwarves, having wondered the Underworld for centuries, finally find a place to call home. They build the great underground city of Nav'Golam."
-  },
-  {
-    "year": "-1800",
-    "title": "Nav'Cherom founded",
-    "details": "The Dwarves, rich with the minerals mined from around Nav'Golam, construct the second city of Nav'Cherom."
-  },
-  {
-    "year": "-1700",
-    "title": "The Orcs arrive on Skazka",
-    "details": "Hundreds of Orcs are brought to Skazka by the god Chernabog. They settle in the arid east - an area known as the Ghost Lands."
-  },
-  {
-    "year": "-1700",
-    "title": "The Fading",
-    "details": "An era defining moment when magic permanency began to fail."
-  },
-  {
-    "year": "-421",
-    "title": "Exodus",
-    "details": "Humans traverse the great ocean between Skia and Kelos and settle on Snuuflund."
-  },
-  {
-    "year": "-320",
-    "title": "Eastward",
-    "details": "The human settlers of Snuuflund have outgrown the Serydina Isles.  Raiding parties set off east to the mainland of Kelos in search of new homes. One settles on the west coast. The other travels far to the east; they will eventually become the people of Caratania"
-  },
-  {
-    "year": "0",
-    "title": "Starfall",
-    "details": "Kelos is struck by a devastating meteor shower. The impact iniates a cataclysmic event that begins a mini ice age. Priests and others who rely on their deities as the source of their magic report a dimming of their divine connection. The Walking Gods, or Prir, are not seen on Skazka from this point onwards.",
-    "epoch": true
-  },
-  {
-    "year": "2",
-    "title": "There be dragons",
-    "details": "Dragons that have slumbered for an eon under the northern ice are awoken."
-  },
-  {
-    "year": "12 - 27",
-    "title": "Construction of citadel Grimspire",
-    "details": "Construction of citadel Grimspire is undertaken with the help of Icethorn, the ancient white dragon."
-  },
-  {
-    "year": "111",
-    "title": "Order of the Word founded",
-    "details": "The Sun Elves agree to teach Humans magic and the Order of The Word is formed."
-  },
-  {
-    "year": "192",
-    "title": "Fall of Grimspire",
-    "details": "Grimspire meets a tragic end. Encouraged by the Fire Witch Maldrath, a group of hunters attack Icethorn's mate, destroying her unhatched eggs. The ancient beast takes her revenge: she attacks Grimspire freezing the citadel, making it uninhabitable, even today."
-  },
-  {
-    "year": "381 - 391",
-    "title": "The Shadow War",
-    "details": "Civil war within the Order of the Word escalates widely and becomes The Shadow War. The Order is split into two factions: one lead by Ilistran Darkweaver who believes magic should be used to elevate mages to a status above mortals; the other led by Arica Dreamforger, believe magic should be used to help all people. The war ends with Ilistran's defeat and disappearance."
-  },
-  {
-    "year": "411 - 901",
-    "title": "Magical Prohibition",
-    "details": "Despite the end of the Shadow War, the continued incursions from other dimensions forces the Aeternian Empire to ban the use of magic by anyone other than those approved to do so by the Emperor. This continued for centuries. To this day the use of displacement and dimensional magic is still banned within Aeternia and viewed with grave suspicion elsewhere."
-  },
-  {
-    "year": "971",
-    "title": "Current year",
-    "details": "This is the year the campaign starts."
-  }
+     {
+          "year": "-10000",
+          "title": "Ascent from darkness",
+          "details": "The first Dark Elves emerge from the Underworld and are given the gift of Everlight by Aeter. Age of The Sun begins.",
+          "epoch": true,
+          "expanded_html": true,
+          "expanded": "This is the fully expanded version of the event in question."
+     },
+     {
+          "year": "-9000",
+          "title": "Temple of Sinari constructed",
+          "details": "To honour and protect the gift of Everlight, the Dark Elves build the Temple of Sinari in the cave from which they first emerged from the darkness of the Underworld."
+     },
+     {
+          "year": "-3000",
+          "title": "Divergence",
+          "details": "Over next thousand years groups of Sun Elves migrate. The largest group travels south and founds Everdusk, and over time they become  the Wood Elves. Others travel east beyond the mountains and are  never seen nor heard of again."
+     },
+     {
+          "year": "-2800",
+          "title": "Kitezh sacked",
+          "details": "Dwarves rebel against their overlord and sack the city of Kitezh. They set out into the darkness to forge their own fate."
+     },
+     {
+          "year": "-1800",
+          "title": "Nav'Golam founded",
+          "details": "The dwarves, having wondered the Underworld for centuries, finally find a place to call home. They build the great underground city of Nav'Golam."
+     },
+     {
+          "year": "-1800",
+          "title": "Nav'Cherom founded",
+          "details": "The Dwarves, rich with the minerals mined from around Nav'Golam, construct the second city of Nav'Cherom."
+     },
+     {
+          "year": "-1700",
+          "title": "The Orcs arrive on Skazka",
+          "details": "Hundreds of Orcs are brought to Skazka by the god Chernabog. They settle in the arid east - an area known as the Ghost Lands."
+     },
+     {
+          "year": "-1700",
+          "title": "The Fading",
+          "details": "An era defining moment when magic permanency began to fail.",
+          "expanded_html": true,
+          "expanded": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"
+     },
+     {
+          "year": "-421",
+          "title": "Exodus",
+          "details": "Humans traverse the great ocean between Skia and Kelos and settle on Snuuflund."
+     },
+     {
+          "year": "-320",
+          "title": "Eastward",
+          "details": "The human settlers of Snuuflund have outgrown the Serydina Isles.  Raiding parties set off east to the mainland of Kelos in search of new homes. One settles on the west coast. The other travels far to the east; they will eventually become the people of Caratania"
+     },
+     {
+          "year": "0",
+          "title": "Starfall",
+          "details": "Kelos is struck by a devastating meteor shower. The impact iniates a cataclysmic event that begins a mini ice age. Priests and others who rely on their deities as the source of their magic report a dimming of their divine connection. The Walking Gods, or Prir, are not seen on Skazka from this point onwards.",
+          "epoch": true
+     },
+     {
+          "year": "2",
+          "title": "There be dragons",
+          "details": "Dragons that have slumbered for an eon under the northern ice are awoken."
+     },
+     {
+          "year": "12 - 27",
+          "title": "Construction of citadel Grimspire",
+          "details": "Construction of citadel Grimspire is undertaken with the help of Icethorn, the ancient white dragon."
+     },
+     {
+          "year": "111",
+          "title": "Order of the Word founded",
+          "details": "The Sun Elves agree to teach Humans magic and the Order of The Word is formed."
+     },
+     {
+          "year": "192",
+          "title": "Fall of Grimspire",
+          "details": "Grimspire meets a tragic end. Encouraged by the Fire Witch Maldrath, a group of hunters attack Icethorn's mate, destroying her unhatched eggs. The ancient beast takes her revenge: she attacks Grimspire freezing the citadel, making it uninhabitable, even today."
+     },
+     {
+          "year": "381 - 391",
+          "title": "The Shadow War",
+          "details": "Civil war within the Order of the Word escalates widely and becomes The Shadow War. The Order is split into two factions: one lead by Ilistran Darkweaver who believes magic should be used to elevate mages to a status above mortals; the other led by Arica Dreamforger, believe magic should be used to help all people. The war ends with Ilistran's defeat and disappearance."
+     },
+     {
+          "year": "411 - 901",
+          "title": "Magical Prohibition",
+          "details": "Despite the end of the Shadow War, the continued incursions from other dimensions forces the Aeternian Empire to ban the use of magic by anyone other than those approved to do so by the Emperor. This continued for centuries. To this day the use of displacement and dimensional magic is still banned within Aeternia and viewed with grave suspicion elsewhere."
+     },
+     {
+          "year": "971",
+          "title": "Current year",
+          "details": "This is the year the campaign starts."
+     }
 ]

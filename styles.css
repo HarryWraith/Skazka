@@ -19,11 +19,13 @@
   --sb-text: #e6dccb;
   --sb-dim: #b9b09e;
   --sb-gold: #c2a13a;
+  --sb-gold-muted: #c2a03a51;
   --sb-divider: color-mix(in oklab, var(--sb-gold) 35%, transparent);
   --sb-gold-strong: #e1b84d;
   --sb-radius: 14px;
   --sb-gap: 10px;
   --sb-title: #ffb700ff;
+  --skz-gold: #d9b35a;
   --tl-clear-nudge-y: -2px;
   --tl-clear-nudge-x: -2px;
   --font-head: "Cinzel", serif;
@@ -124,6 +126,56 @@ body {
   background-attachment: scroll, scroll, scroll, scroll, scroll;
 }
 
+body strong {
+  font-weight: 300;
+  filter: brightness(1.5);
+}
+
+.blue {
+  color: blue;
+  filter: brightness(0.5);
+}
+
+.red {
+  color: red;
+  filter: brightness(0.5);
+}
+
+.gold {
+  color: var(--sb-gold-strong);
+  filter: brightness(0.5);
+}
+
+.violet {
+  color: violet;
+  filter: brightness(0.5);
+}
+
+.silver {
+  color: silver;
+  filter: brightness(0.5);
+}
+
+.black {
+  color: rgb(52, 51, 51);
+
+}
+
+.green {
+  color: green;
+  filter: brightness(0.5);
+}
+
+.white {
+  color: whitesmoke;
+  filter: brightness(0.5);
+}
+
+.grey {
+  color: grey;
+  filter: brightness(0.5);
+}
+
 a {
   color: var(--sb-gold);
   text-decoration: none;
@@ -155,11 +207,6 @@ h2 {
 
 h3 {
   font-size: 1.6rem;
-  font-weight: 900;
-}
-
-h3 {
-  font-size: 1.2rem;
   font-weight: 900;
 }
 
@@ -227,6 +274,15 @@ body p {
   max-width: 80%;
   margin: 2em auto 1em;
   align-items: start;
+}
+
+.grid-tears {
+  display: grid;
+  grid-template-columns: repeat(30% 30% 30%);
+  gap: 40px;
+  max-width: 80%;
+  margin: 2em auto 1em;
+  align-items: center;
 }
 
 .vertical {
@@ -329,6 +385,31 @@ textarea {
 
 textarea.contact {
   height: 300px;
+}
+
+/* === Global: show hand cursor on clickable controls === */
+button,
+[role="button"],
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+.btn,
+.button,
+.clickable,
+.timeline .event-header,
+/* your timeline headers toggle open/close */
+.skz-tl-more,
+/* "More…" pill */
+.skz-modal-close {
+  /* modal close pill */
+  cursor: pointer !important;
+}
+
+/* Sensible disabled state */
+button:disabled,
+[aria-disabled="true"],
+.disabled {
+  cursor: not-allowed !important;
 }
 
 button {
@@ -1563,7 +1644,6 @@ button.tb-ghost-btn {
 
 .muted {
   opacity: .75;
-  font-size: .85rem;
 }
 
 .small {
@@ -1745,14 +1825,15 @@ h3.tb-title.skz-title {
   color: var(--sb-text);
   box-shadow: 0 12px 24px rgba(0, 0, 0, .45), inset 0 1px 0 rgba(255, 255, 255, .02);
   margin: 0;
-  font-size: 1.1rem;
 }
 
 .vertical .tb-panel:not(:first-of-type) {
   margin-top: 40px;
 }
 
-
+.tb-panel+.tb-panel {
+  margin-top: 35px;
+}
 
 
 page-stats #stats-detail-panel.tb-panel,
@@ -2507,4 +2588,399 @@ page-stats #stats-detail-panel.tb-panel,
   margin: 8px 2px 6px;
   line-height: 1.25;
   opacity: .95;
+}
+
+/* ========== Tears page helpers ========== */
+.page-tears .toc-col {
+  position: relative;
+}
+
+.page-tears .toc.sticky {
+  position: sticky;
+  top: 80px;
+  display: block;
+  padding: 16px 18px;
+  background: var(--sb-panel2);
+  border: 1px solid var(--sb-border);
+  border-radius: 10px;
+}
+
+.page-tears .toc-list {
+  list-style: decimal;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.page-tears .toc-list a {
+  text-decoration: none;
+}
+
+.page-tears .toc-list a.active {
+  text-decoration: underline;
+}
+
+.page-tears .hero {
+  margin: 0 0 16px 0;
+}
+
+.page-tears .hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Readability without changing font-size */
+.page-tears :where(p, li) {
+  line-height: 1.6;
+}
+
+.page-tears .skz-kv {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.page-tears .skz-kv li {
+  margin: 8px 0;
+}
+
+/* === COLOUR CARDS: 3-across grid, centered, ~0.9rem === */
+/* (Fix: leading dot added so rule actually applies) */
+.page-tears .colour-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  list-style: none;
+  /* remove bullets */
+  padding-left: 0;
+  /* remove left indent */
+  margin: 0;
+  text-align: center;
+  font-size: 0.9rem;
+  /* local to this component only */
+}
+
+/* responsive fallbacks */
+@media (max-width: 1100px) {
+  .page-tears .colour-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .page-tears .colour-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* individual colour card */
+.page-tears .colour-list>li {
+  border: 1px solid var(--sb-border);
+  background: var(--sb-panel1);
+  border-radius: 12px;
+  padding: 16px 18px;
+  box-shadow:
+    inset 0 0 0 2px var(--skz-gold, #d9b35a),
+    /* inner gold ring */
+    0 1px 0 rgba(0, 0, 0, 0.06);
+}
+
+/* title row */
+.page-tears .colour-list h3 {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 8px 0;
+  font-size: inherit;
+}
+
+/* inner details centered, no bullets/indent */
+.page-tears .detail {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.page-tears .detail li {
+  margin: 4px 0;
+}
+
+/* general lists */
+.page-tears .bullets {
+  padding-left: 20px;
+}
+
+.page-tears .bullets li {
+  margin: 8px 0;
+}
+
+/* Colour chips — slightly larger for 0.9rem */
+.chip {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.chip-blue {
+  background: linear-gradient(135deg, #5bb0ff, #315bbf);
+}
+
+.chip-red {
+  background: linear-gradient(135deg, #ff6453, #a71d27);
+}
+
+.chip-gold {
+  background: linear-gradient(135deg, #ffd56b, #b88900);
+}
+
+.chip-violet {
+  background: linear-gradient(135deg, #a689ff, #5a3bb2);
+}
+
+.chip-silver {
+  background: linear-gradient(135deg, #dfe6ee, #9aa7b5);
+}
+
+.chip-black {
+  background: linear-gradient(135deg, #111, #333);
+}
+
+.chip-green {
+  background: linear-gradient(135deg, #79cf6b, #2f8a3a);
+}
+
+.chip-white {
+  background: linear-gradient(135deg, #fff, #dfe6ee);
+}
+
+.chip-grey {
+  background: linear-gradient(135deg, #bdbdbd, #888);
+}
+
+/* Accessibility helper */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+/* Page spacing */
+.page-tears .tb-panel {
+  margin-bottom: 16px;
+}
+
+.page-tears .tb-title {
+  margin-bottom: 8px;
+}
+
+/* === Artefact cards === */
+.artefact-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 1fr;
+  /* single column; change to repeat(2,1fr) if you want 2-up */
+}
+
+.artefact-card {
+  background: var(--sb-panel1);
+  border: 1px solid var(--sb-border);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+}
+
+.artefact-header {
+  padding: 16px 18px;
+  background: var(--sb-gold-muted);
+  /* safer fallback than --sb-gold-muted */
+  border-bottom: 1px solid var(--sb-border);
+}
+
+.artefact-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.artefact-subtitle {
+  margin: 6px 0 0 0;
+  opacity: 1;
+  font-size: inherit;
+}
+
+.artefact-body {
+  padding: 16px 18px;
+  display: grid;
+  gap: 14px;
+}
+
+.artefact-body h4 {
+  margin: 0 0 6px 0;
+  font-size: inherit;
+}
+
+.artefact-list {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.artefact-card--template {
+  outline: 1px dashed var(--sb-border);
+}
+
+.artefact-card--template .artefact-title::after {
+  content: "Artefact";
+  font-size: inherit;
+  margin-left: auto;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--sb-border);
+}
+
+/* keep your existing bullets utility */
+.nodec.bullets {
+  padding-left: 20px;
+}
+
+.nodec.bullets li {
+  margin: 6px 0;
+}
+
+/* =========================================================
+   SKAZKA Timeline • Modal + “More…” (end-of-summary button)
+   ========================================================= */
+
+/* Container that holds the pill at the end of the summary */
+.skz-tl-morewrap {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+/* “More…” pill — hard overrides to beat any global button styles */
+.skz-tl-more {
+  /* defeat global button sizing */
+  width: auto !important;
+  inline-size: auto !important;
+  height: 28px !important;
+  min-width: 0 !important;
+  max-width: none !important;
+
+  /* center the text perfectly */
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  line-height: 1 !important;
+  /* <- key for vertical centering */
+  padding: 0 12px !important;
+}
+
+.skz-tl-more:hover {
+  background: var(--sb-panel2);
+  transform: translateY(-1px);
+}
+
+.skz-tl-more:active {
+  transform: scale(0.99);
+}
+
+.skz-tl-more:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* -------------------- Modal -------------------- */
+#skz-tl-modal-root {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 99999;
+}
+
+#skz-tl-modal-root.open {
+  display: block;
+}
+
+.skz-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, .55);
+}
+
+.skz-modal-dialog {
+  position: absolute;
+  left: 50%;
+  top: 8%;
+  transform: translateX(-50%);
+  max-width: min(860px, 92vw);
+  max-height: 80vh;
+  overflow: auto;
+
+  background: var(--sb-panel2);
+  border: 1px solid var(--sb-border);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, .55);
+  border-radius: 14px;
+  padding: 14px 16px 18px;
+}
+
+/* Clean header row with the title at left and × at right */
+.skz-modal-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--sb-border);
+}
+
+.skz-modal-title {
+  flex: 1 1 auto;
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--sb-text);
+}
+
+/* Close button aligned to the right (no absolute positioning) */
+.skz-modal-close {
+  /* defeat global button sizing */
+  width: auto !important;
+  inline-size: auto !important;
+  height: 28px !important;
+  min-width: 28px !important;
+  /* keeps a nice square tap target */
+  max-width: none !important;
+
+  /* compact, right-aligned pill */
+  margin-left: auto;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  line-height: 1 !important;
+  padding: 0 10px !important;
+  border-radius: 999px;
+  font-size: 16px;
+  /* smaller × */
+}
+
+.skz-modal-close:hover {
+  background: var(--sb-panel2);
+  transform: translateY(-1px);
+}
+
+.skz-modal-body {
+  font-size: .95rem;
+  line-height: 1.55;
+  color: var(--sb-text);
+}
+
+body.skz-modal-open {
+  overflow: hidden;
 }
