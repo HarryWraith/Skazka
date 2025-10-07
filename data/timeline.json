@@ -28,13 +28,32 @@
           "expanded_html": true,
           "expanded": "This is the fully expanded version of the event in question."
      },
+
+     {
+          "year": "-9900",
+          "title": "The Shattering of the Veil",
+          "details": "A rift briefly tears open between Skazka and the Shadow Realm. Through it pour creatures of fractured glass and smoke, remembered in folk tales as the Mirrormen. They vanish as swiftly as they appear."
+     },
      {
           "year": "-9800",
           "title": "Rise of Kaijistan",
-          "details": "The Kingdom is formed when the nomadic tribes of the region agree to unite under a single ruler..",
-          "expanded_html": true
+          "details": "The Kingdom is formed when the nomadic tribes of the region agree to unite under a single ruler.."
      },
-
+     {
+          "year": "-9500",
+          "title": "The Pact of Everlight",
+          "details": "a conclave of elf seers binds themselves to keep its flame eternal. A rite is performed that binds their life essence to its protection. They become Ember wraiths - never alive nor dead. Bound to a single purpose - protect the Everlight."
+     },
+     {
+          "year": "-8500",
+          "title": "Founding of Velkaria",
+          "details": "The Jewel of Kaijistan rises on the banks of a river. Legends claim its throne was forged from a fallen starstone, and that every ruler since slowly grew violet-eyed from its touch."
+     },
+     {
+          "year": "-3300",
+          "title": "The Pact of Blood and Thorn",
+          "details": "A forgotten Annarr-kin, Veythra the Thorn-Mother, strikes a bargain with a small group of Elves. Their rites are quickly outlawed and those involved banished. Her cult survives in hidden corners of the world, blamed for the cursed brambles that still strangle ruined villages."
+     },
      {
           "year": "-3000",
           "title": "Divergence",
@@ -49,11 +68,6 @@
           "year": "-2800",
           "title": "Kitezh sacked",
           "details": "Dwarves rebel against their overlord and sack the city of Kitezh. They set out into the darkness to forge their own fate."
-     },
-     {
-          "year": "-2100",
-          "title": "The Gods abandon the Giants of Skia",
-          "details": "The Giants, said to be the off-spring of Gods and humans, withdraw to their ice castles. It is said they have been cursed by the Gods for some transgression. The humans of Skia are left to fend for themselves."
      },
      {
           "year": "-1800",
@@ -83,14 +97,33 @@
           "details": "Nobody outside of Ku'Than knows how it all came about, but it is said that, virtually over night, this forest became the domain of the goddess, Than."
      },
      {
+          "year": "-1300",
+          "title": "The Gods abandon the Giants of Skia",
+          "details": "The Giants, said to be the off-spring of Gods and humans, withdraw to their ice castles; infighting ravages their society. It is said they have been cursed by the Gods for some transgression. The humans of Skia are left to fend for themselves.",
+          "expanded_html": true,
+          "expanded": "The giants are said to be the result of mating between the Gods and human females. Tall, strong and commanding. Yet they reamin unhappy with their lot; it is said the Gods tasked them with keeping humans in check. But some among the giants took this a step further and enslaved them. Little is remembered of this time, but it is said the Giants had their human slaves mining; not for coal or gold, but for a mysterious relic.<br><br>A series of harsh winters and disease outbreaks erupts into civil war among the giants and they lose control of the human population. Open rebellion begins and the Giants retreat north to their castles made of ice and stone, believing they have been cursed by the Gods. The humans of Skia must learn to carve their own path.<br><br>They head south to warmer climate and setup small farming communities. Away from the whip of their masters, humans learn fast and adapt even faster. "
+     },
+     {
+          "year": "-1200",
+          "title": "The Trial of Ashen Bride",
+          "details": "A young witch fails the rite of survival in Ku’Than. Rather than die, she becomes a wraith bound to the Elden Wood, cursed to whisper riddles to children."
+     },
+     {
           "year": "-421",
           "title": "Exodus",
-          "details": "Humans traverse the great ocean between Skia and Kelos and settle on Snuuflund."
+          "details": "Humans traverse the great ocean between Skia and Kelos and settle on Snuuflund.",
+          "expanded_html": true,
+          "expanded": "Oral history is only ever as accurate as the willingness of those to remember factually. In this regard it is unclear why humans left Skia, an apparent paradise. Some historians go so far as to suggest that the oral traditions of the Sken are selective at best. At worst, willfuly untruthful. It is clear that the Sken did not leave Skia by choice. They fled. But from what? That is where the gaping hole in their history lies. There are no written records from this time to clarify the events which led to Exodus and their oral history is glaringly absent of detail. Folk legend suggests they awoke something deep in the mines they worked for their Giant masters and that the true reason the Giants fled north was to escape what was awoken. Whatever it was, it was terrible enough for an entire speciies to flee their home across a dangerous and vast ocean."
      },
      {
           "year": "-403",
           "title": "The decline of Kaijistan",
           "details": "The decline of this once magnificent Kingdom has begun. Within a single lifespan the kingdom will be no more and the sands will have engulfed all that was once great."
+     },
+     {
+          "year": "-370",
+          "title": "he Sandsea of Zhal’Shaar",
+          "details": "he Sandsea of Zhal’Shaar appear in the southern Ahmaq Desert. Vast roiling sandstorms which cross the entire south from coast to mountain. It will tear the rigging from any ship that gets too close and flay the flesh of a living man."
      },
      {
           "year": "-320",
@@ -103,10 +136,20 @@
           "details": "The first small settlements grow to be towns and unite under a single banner of Hrothgar the merciless. This move is largely driven by the need to organise militia against the hordes of undead that come down from the mountains."
      },
      {
+          "year": "-306",
+          "title": "Heir no more",
+          "details": "First born of Hrothgar Bloodlance is seduced by Kaelthir Duskbane, a vampire lord, and turned into a Thrall. Hrothgar vows to exterminate the vampire lords."
+     },
+     {
           "year": "0",
           "title": "Starfall",
           "details": "Kelos is struck by a devastating meteor shower. The impact iniates a cataclysmic event that begins a mini ice age. Priests and others who rely on their deities as the source of their magic report a dimming of their divine connection. The Walking Gods, or Prir, are not seen on Skazka from this point onwards.",
           "epoch": true
+     },
+     {
+          "year": "5",
+          "title": "Shattered Hosts",
+          "details": "After Starfall, Aeternian legions sent north vanish in blizzards of glass-ice. Their frozen standards still glitter beneath the wastes to this day."
      },
      {
           "year": "2",
@@ -124,20 +167,67 @@
           "details": "The Sun Elves agree to teach Humans magic and the Order of The Word is formed."
      },
      {
+          "year": "134",
+          "title": "The Purge of the White Sepulchre",
+          "details": "Fanatics of Aeter burn a sect of necromancers in the ruins of the White Sepulchre. Survivors scatter, carrying forbidden texts that will resurface centuries later. "
+     },
+     {
+          "year": "135",
+          "title": "The Shield of Dawn formed",
+          "details": "Those who took part in the massacre at the White Sepulchre band to form The Shield of Dawn, a sect of Aeter devoted to hunting undead.. "
+     },
+     {
           "year": "192",
           "title": "Fall of Grimspire",
           "details": "Grimspire meets a tragic end. Encouraged by the Fire Witch Maldrath, a group of hunters attack Icethorn's mate, destroying her unhatched eggs. The ancient beast takes her revenge: she attacks Grimspire freezing the citadel, making it uninhabitable, even today."
      },
      {
-          "year": "381 - 391",
+          "year": "197",
+          "title": "Expedition Oy",
+          "details": "The renowned explorer and historian, Matildas, convinced he knows the location of the mythical isle of Oy, sets of in three ships. He is never seen again.."
+     },
+     {
+          "year": "312",
+          "title": "The Frozen pilgrimage",
+          "details": "Hundreds of peasants march north in desperation after it is rumoured a bright magical light was spotted in the skies above the glaciers. No trace of them is ever found."
+     },
+     {
+          "year": "695 - 701",
           "title": "The Shadow War",
           "epoch": true,
           "details": "Civil war within the Order of the Word escalates widely and becomes The Shadow War. The Order is split into two factions: one lead by Ilistran Darkweaver who believes magic should be used to elevate mages to a status above mortals; the other led by Arica Dreamforger, believe magic should be used to help all people. The war ends with Ilistran's defeat and disappearance."
      },
      {
-          "year": "411 - 901",
+          "year": "696",
+          "title": "Battle of the Dunes",
+          "details": "The first major confrontation between the two warring factions within the Order of the Word.",
+          "expanded_html": true,
+          "expanded": "With the forces of both <strong>Ilistran Darkweaver</strong> and <strong>Arica Dreamforger</strong> searching for the same relic, a confrontation was inevitable. This took place in the sands of the Ahmaq Desert when both sets of forces converged on a small oasis and suspected resting place of the relic. The magics unleashed here were so powerful that it turned the sand to glass. The relic was never found."
+     },
+     {
+          "year": "700",
+          "title": "Nav'golam sealed",
+          "details": "King Theldon orders Nav'golam to be sealed shut to protect his kingdom from the Shadow War."
+     },
+     {
+          "year": "701 - 951",
           "title": "Magical Prohibition",
-          "details": "Despite the end of the Shadow War, the continued incursions from other dimensions forces the Aeternian Empire to ban the use of magic by anyone other than those approved to do so by the Emperor. This continued for centuries. To this day the use of displacement and dimensional magic is still banned within Aeternia and viewed with grave suspicion elsewhere."
+          "details": "Despite the end of the Shadow War, the continued incursions from other dimensions forces the Aeternian Empire to ban the use of magic by anyone other than those approved to do so by the Emperor. This continued for more than two centuries. To this day the use of displacement and dimensional magic is still banned within Aeternia and viewed with grave suspicion elsewhere."
+     },
+     {
+          "year": "801",
+          "title": "Nav'golam opens its doors once more",
+          "details": "The Kingdom is open once again to trade and visitors. It is said that King Theldon's self imposed isolation drove him mad."
+     },
+     {
+          "year": "950",
+          "title": "Rise of the Black Oak cult",
+          "details": "The Black Oak cult launches attacks against the Kingdom of Ku'Than then retreats to the Weird Wood. The implant living thorns into the skulls of captives who transform into hybrid creatures made of flesh and wood."
+     },
+     {
+          "year": "955",
+          "title": "The Weeping Plague",
+          "details": "A sickness spreads across Kelos: the infected weep blood before falling into comas. Survivors claim to dream of Fafnirog, begging to be reborn. The plague burns itself out, but leaves dread lingering in ports."
      },
      {
           "year": "971",
