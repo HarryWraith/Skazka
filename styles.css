@@ -1199,6 +1199,115 @@ img.popup {
   opacity: .85;
 }
 
+/* ================= EPOCH CARD + ORNAMENTS (DROP-IN) ================= */
+
+/* 1) Restore the gold frame + glow on epoch headers */
+#timeline .event.event--epoch .event-header {
+  position: relative;
+  overflow: visible;
+  /* allows ornaments outside edge */
+  background:
+    linear-gradient(var(--sb-panel2, #0f0f14), var(--sb-panel2, #0f0f14)) padding-box,
+    linear-gradient(145deg, #b08d00 0%, #e6c200 22%, #fff4bd 40%, #e6c200 60%, #b08d00 100%) border-box;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  box-shadow: 0 0 0.35rem rgba(230, 194, 0, .35), 0 0 1.25rem rgba(230, 194, 0, .28);
+  z-index: 1;
+}
+
+/* 2) Ornaments: inner dot REMOVED, outer edge = 3-dot triangle (point faces inward) */
+:root {
+  --orn-size: 8px;
+  /* apex dot size */
+  --orn-base: 6px;
+  /* base dots size */
+  --orn-apex-inset: 10px;
+  /* apex distance from card edge (move inward if it touches the border) */
+  --orn-base-out: 6px;
+  /* how far base dots extend outside (reduce if they kiss the border) */
+  --orn-rise: 7px;
+  /* vertical offset for base dots */
+}
+
+/* base dot look */
+#timeline .event.event--epoch .ornament {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: var(--orn-size);
+  height: var(--orn-size);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 2;
+  background: color-mix(in srgb, var(--accent, #e6c200) 85%, #fff 15%);
+  box-shadow:
+    0 0 6px rgba(230, 194, 0, .45),
+    0 0 1px rgba(255, 255, 255, .35) inset;
+}
+
+/* remove the INNER dot entirely */
+#timeline .event.event--epoch.event--right .ornament--left,
+#timeline .event.event--epoch.event--left .ornament--right {
+  display: none;
+}
+
+/* RIGHT column (outer edge = RIGHT) */
+#timeline .event.event--epoch.event--right .ornament--right {
+  right: var(--orn-apex-inset);
+}
+
+#timeline .event.event--epoch.event--right .ornament--right::before,
+#timeline .event.event--epoch.event--right .ornament--right::after {
+  content: "";
+  position: absolute;
+  width: var(--orn-base);
+  height: var(--orn-base);
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent, #e6c200) 85%, #fff 15%);
+  box-shadow:
+    0 0 5px rgba(230, 194, 0, .35),
+    0 0 1px rgba(255, 255, 255, .25) inset;
+}
+
+#timeline .event.event--epoch.event--right .ornament--right::before {
+  right: calc(var(--orn-base-out) * -1);
+  top: calc(var(--orn-rise) * -1);
+}
+
+#timeline .event.event--epoch.event--right .ornament--right::after {
+  right: calc(var(--orn-base-out) * -1);
+  top: var(--orn-rise);
+}
+
+/* LEFT column (outer edge = LEFT) — mirror */
+#timeline .event.event--epoch.event--left .ornament--left {
+  left: var(--orn-apex-inset);
+}
+
+#timeline .event.event--epoch.event--left .ornament--left::before,
+#timeline .event.event--epoch.event--left .ornament--left::after {
+  content: "";
+  position: absolute;
+  width: var(--orn-base);
+  height: var(--orn-base);
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent, #e6c200) 85%, #fff 15%);
+  box-shadow:
+    0 0 5px rgba(230, 194, 0, .35),
+    0 0 1px rgba(255, 255, 255, .25) inset;
+}
+
+#timeline .event.event--epoch.event--left .ornament--left::before {
+  left: calc(var(--orn-base-out) * -1);
+  top: calc(var(--orn-rise) * -1);
+}
+
+#timeline .event.event--epoch.event--left .ornament--left::after {
+  left: calc(var(--orn-base-out) * -1);
+  top: var(--orn-rise);
+}
+
+
 #tl-branches .leaf {
   fill: var(--sb-gold);
   filter: drop-shadow(0 0 8px rgba(226, 184, 77, .35));
@@ -2151,6 +2260,8 @@ page-stats #stats-detail-panel.tb-panel,
   padding: 2px;
   border-radius: 6px;
 }
+
+
 
 /* Responsive */
 @media (max-width: 900px) {

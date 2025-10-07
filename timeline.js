@@ -1,4 +1,4 @@
-// timeline.js — Skazka timeline (epochs + modal for expanded descriptions)
+// timeline.js — Skazka timeline (epochs, side-aware ornaments, modal)
 
 /* ---------------- Utilities ---------------- */
 const escapeHTML = (s = "") =>
@@ -39,7 +39,7 @@ function normalizeData(raw) {
      }));
 }
 
-/* ---------------- Modal (accessible, namespaced) ---------------- */
+/* ---------------- Modal ---------------- */
 const SkzModal = (() => {
      let root, dialog, titleEl, bodyEl, closeBtn, lastFocus;
 
@@ -70,7 +70,6 @@ const SkzModal = (() => {
           document.addEventListener("keydown", (e) => {
                if (!root.classList.contains("open")) return;
                if (e.key === "Escape") close();
-               // focus trap
                if (e.key === "Tab") {
                     const f = dialog.querySelectorAll(
                          'a[href],button,textarea,input,select,[tabindex]:not([tabindex="-1"])'
@@ -134,46 +133,31 @@ function makeEvent(
      const header = ev.querySelector(".event-header");
      const detailsEl = ev.querySelector(".event-details");
 
-     // Decorative ornaments only for epoch cards
-     if (epoch) {
-          const l = document.createElement("span"),
-               r = document.createElement("span");
-          l.className = "ornament ornament--left";
-          r.className = "ornament ornament--right";
-          l.setAttribute("aria-hidden", "true");
-          r.setAttribute("aria-hidden", "true");
-          header.append(l, r);
-     }
+     // Create ornaments only for epoch cards (two anchors; CSS will hide inner)
 
-     // Inline summary text
+     // Details
      detailsEl.innerHTML = html
           ? String(detail)
           : escapeHTML(String(detail)).replace(/\n/g, "<br>");
 
-     // “More…” only if expanded content exists — place it at the END of details
+     // Modal “More…”
      if (expanded && String(expanded).trim().length) {
           const wrap = document.createElement("div");
           wrap.className = "skz-tl-morewrap";
-
           const moreBtn = document.createElement("button");
           moreBtn.type = "button";
           moreBtn.className = "skz-tl-more";
           moreBtn.setAttribute("aria-label", `Open details for ${safeTitle}`);
           moreBtn.textContent = "More…";
-
-          // avoid header toggle/page-jump
           moreBtn.addEventListener("mousedown", (e) => e.preventDefault());
           moreBtn.addEventListener("click", (e) => {
                e.preventDefault();
                e.stopPropagation();
-
                const content = expanded_html
                     ? String(expanded)
                     : escapeHTML(String(expanded)).replace(/\n/g, "<br>");
-
                SkzModal.open({ title: safeTitle, content });
           });
-
           wrap.appendChild(moreBtn);
           detailsEl.appendChild(wrap);
      }
@@ -182,24 +166,53 @@ function makeEvent(
      ev.classList.add("open");
      header.setAttribute("aria-expanded", "true");
      requestAnimationFrame(() => {
-          detailsEl.style.maxHeight = detailsEl.scrollHeight + "px";
+          detailsEl.style.maxHeight = "none"; // don't cap open state
           Branches.scheduleBurst();
      });
 
-     // Toggle inline summary (and naturally hide the button when collapsed)
+     // Smooth open/close without clipping
+     const setMaxNoneAfterTransition = () => {
+          // when finished opening, uncap height
+          if (ev.classList.contains("open")) detailsEl.style.maxHeight = "none";
+          detailsEl.removeEventListener(
+               "transitionend",
+               setMaxNoneAfterTransition
+          );
+     };
+
      const toggle = () => {
-          const opening = !ev.classList.contains("open");
-          if (opening) {
+          const isOpening = !ev.classList.contains("open");
+
+          if (isOpening) {
                ev.classList.add("open");
                header.setAttribute("aria-expanded", "true");
-               detailsEl.style.maxHeight = detailsEl.scrollHeight + "px";
-          } else {
-               ev.classList.remove("open");
-               header.setAttribute("aria-expanded", "false");
+
+               // from 0 to target height
                detailsEl.style.maxHeight = "0px";
+               // force reflow to apply 0 first
+               void detailsEl.offsetHeight;
+               detailsEl.style.maxHeight = detailsEl.scrollHeight + "px";
+               detailsEl.addEventListener(
+                    "transitionend",
+                    setMaxNoneAfterTransition
+               );
+          } else {
+               header.setAttribute("aria-expanded", "false");
+
+               // if currently uncapped, set current pixel height first
+               if (getComputedStyle(detailsEl).maxHeight === "none") {
+                    detailsEl.style.maxHeight = detailsEl.scrollHeight + "px";
+                    // force reflow before collapsing
+                    void detailsEl.offsetHeight;
+               }
+
+               detailsEl.style.maxHeight = "0px";
+               ev.classList.remove("open");
           }
+
           Branches.scheduleBurst();
      };
+
      header.addEventListener("click", toggle);
      header.addEventListener("keydown", (e) => {
           if (e.key === "Enter" || e.key === " ") {
@@ -211,7 +224,7 @@ function makeEvent(
      return ev;
 }
 
-/* ---------------- Render + reveal ---------------- */
+/* ---------------- Render ---------------- */
 function renderTimeline(list) {
      const host = document.getElementById("timeline");
      if (!host) return;
@@ -221,20 +234,16 @@ function renderTimeline(list) {
      list.forEach((item, i) => frag.appendChild(makeEvent(item, i)));
      host.appendChild(frag);
 
-     const outer = document.querySelector(".timeline");
-     if (outer) outer.classList.add("reveal-ready");
-
      const cards = host.querySelectorAll(".event");
      if ("IntersectionObserver" in window) {
           const io = new IntersectionObserver(
-               (entries) => {
+               (entries) =>
                     entries.forEach((e) => {
                          if (e.isIntersecting) {
                               e.target.classList.add("in-view");
                               io.unobserve(e.target);
                          }
-                    });
-               },
+                    }),
                { threshold: 0.15 }
           );
           cards.forEach((c) => io.observe(c));
@@ -258,8 +267,8 @@ function renderTimeline(list) {
 const Branches = (() => {
      let drawQueued = false;
 
-     function ensureSvg(tl) {
-          let svg = tl.querySelector("#tl-branches");
+     function ensureSvg(container) {
+          let svg = container.querySelector("#tl-branches");
           if (!svg) {
                svg = document.createElementNS(
                     "http://www.w3.org/2000/svg",
@@ -267,22 +276,28 @@ const Branches = (() => {
                );
                svg.id = "tl-branches";
                svg.setAttribute("preserveAspectRatio", "none");
-               tl.prepend(svg);
+               svg.style.position = "absolute";
+               svg.style.inset = "0";
+               svg.style.pointerEvents = "none";
+               svg.style.zIndex = "0";
+               container.prepend(svg);
+               container.style.position =
+                    container.style.position || "relative";
           }
           return svg;
      }
 
      function draw() {
-          const tl = document.querySelector(".timeline");
-          if (!tl) return;
+          const host = document.getElementById("timeline");
+          if (!host) return;
 
-          const svg = ensureSvg(tl);
+          const svg = ensureSvg(host);
 
-          const rect = tl.getBoundingClientRect();
-          const W = Math.round(tl.clientWidth || rect.width || 0);
+          const rect = host.getBoundingClientRect();
+          const W = Math.round(host.clientWidth || rect.width || 0);
           const H = Math.max(
-               tl.scrollHeight,
-               tl.clientHeight,
+               host.scrollHeight,
+               host.clientHeight,
                Math.round(rect.height)
           );
           svg.setAttribute("width", W);
@@ -292,9 +307,9 @@ const Branches = (() => {
           while (svg.firstChild) svg.removeChild(svg.firstChild);
 
           const centerX = Math.round(W / 2);
-          const headers = tl.querySelectorAll(".event .event-header");
+          const headers = host.querySelectorAll(".event .event-header");
 
-          const rectTL = tl.getBoundingClientRect();
+          const rectTL = host.getBoundingClientRect();
           headers.forEach((header) => {
                const hRect = header.getBoundingClientRect();
                const titleEl = header.querySelector(".event-title");
@@ -308,6 +323,13 @@ const Branches = (() => {
                const left = hRect.left - rectTL.left;
                const right = hRect.right - rectTL.left;
                const onRight = (left + right) / 2 > centerX;
+
+               // Tag side on the event node so CSS knows which edge is outer/inner
+               const ev = header.closest(".event");
+               if (ev) {
+                    ev.classList.toggle("event--right", onRight);
+                    ev.classList.toggle("event--left", !onRight);
+               }
 
                const endX = onRight ? left : right;
                const startX = centerX;
@@ -356,9 +378,8 @@ const Branches = (() => {
      }
 
      function watch() {
-          const tl = document.querySelector(".timeline");
-          if (!tl) return;
-          tl.addEventListener("tl:rendered", scheduleBurst);
+          const host = document.getElementById("timeline");
+          if (!host) return;
           window.addEventListener("load", scheduleBurst);
           document.addEventListener("visibilitychange", () => {
                if (!document.hidden) scheduleBurst();
@@ -367,7 +388,7 @@ const Branches = (() => {
           window.addEventListener("scroll", scheduleBurst, { passive: true });
           if ("ResizeObserver" in window) {
                const ro = new ResizeObserver(() => scheduleBurst());
-               ro.observe(tl);
+               ro.observe(host);
           }
      }
 

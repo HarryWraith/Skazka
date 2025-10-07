@@ -1,5 +1,26 @@
 [
      {
+          "year": "-50000*",
+          "title": "The Primordials exist",
+          "details": "The Vekya or Primordials are belched into being by the universe.",
+          "expanded_html": true,
+          "expanded": "Beneath the obsidian veil of eternity, an endless astral sea sprawled — a blackened abyss that swallowed all light and hope. It was a void eternal and unmoving, where silence rotted in the bones of time. Yet, from the crushing depths of that dead stillness, an ember flickered to life. The abyss flared with a blaze — flames that burned with a hellish coldness, both scalding and frozen. <br><br>That cosmic fire raged, consuming the astral sea in its grasp. The fragile weave of the cosmos tore apart, cracking like shattered bone under an ethereal force. Splintered into countless jagged shards, the universe bled fragments into the dark expanse. Each shard, a realm cast into its own shadowed corner of time and space — birthplaces of realms both cursed and blessed, the fractured planes of existence. <br><br>For an age, the planes roared with untamed fury — flames of creation and chaos alike — but eventually, the fire began to fade. From its embers arose stars, worlds, and places of great power. And from those places, the first gods emerged: the <strong>Vekya</strong>, or <strong>Primordials</strong>."
+     },
+     {
+          "year": "-50000*",
+          "title": "Uzume creates the Annarr and Annarr-kin",
+          "details": "Using her essence, Uzume creates the Annarr and Annar-kin to carry out her will. The Annarr are the first gods, each served by what could be best termed a familiar or Annarr-kin.",
+          "expanded_html": true,
+          "expanded": "<strong>Uzume</strong> was alone, for both <strong>Kronos</strong> and and <strong>Kaos</strong> were relentless and unwavering in their task. Lonely in her divinity, <strong>Uzume</strong> tore a piece from her own essence and formed wondrous beings to accompany her and carry out her will across the multiverse. These were the <strong>Annarr</strong> and their companions, the <strong>Annarr-kin</strong>. The <strong>Annarr</strong> were gods in their own right — mighty and strange. The <strong>Annarr-kin</strong>, though formidable, fell short of godhood, and could, perhaps, be considered to be Familiars of a sort."
+     },
+     {
+          "year": "-50000*",
+          "title": "Fafnirog slays Uzume",
+          "details": "Kaos and Kronos, bitter and jealous, conspire to Uzume. They enter a pact with the great void wyrm, Fafnirog, who slays Uzume in exchange for Godhood.",
+          "expanded_html": true,
+          "expanded": "Seeing Uzume’s creations, <strong>Kaos</strong> and <strong>Kronos</strong> grew bitter. Jealousy poisoned their thoughts, and they conspired to steal her power. Yet some cosmic force forbade them from harming her directly. So they turned to the <strong>Annarr</strong> and <strong>Annarr-kin</strong>. None would join them — save one.<br><br> The Great Dragon <strong>Fafnirog</strong>, devourer of light, who slumbered in the darkest voids, accepted their offer. In return for his betrayal, he would be granted the power of a god.<br><br><strong>Kaos</strong> and <strong>Kronos</strong> lured <strong>Uzume</strong> to the <strong>Celestial Forge</strong>, where the first spark had been born. There, hidden in shadow, <strong>Fafnirog</strong> struck. He tore her open and scattered her essence."
+     },
+     {
           "year": "-10000",
           "title": "Ascent from darkness",
           "details": "The first Dark Elves emerge from the Underworld and are given the gift of Everlight by Aeter. Age of The Sun begins.",
@@ -8,19 +29,31 @@
           "expanded": "This is the fully expanded version of the event in question."
      },
      {
-          "year": "-9000",
-          "title": "Temple of Sinari constructed",
-          "details": "To honour and protect the gift of Everlight, the Dark Elves build the Temple of Sinari in the cave from which they first emerged from the darkness of the Underworld."
+          "year": "-9800",
+          "title": "Rise of Kaijistan",
+          "details": "The Kingdom is formed when the nomadic tribes of the region agree to unite under a single ruler..",
+          "expanded_html": true
      },
+
      {
           "year": "-3000",
           "title": "Divergence",
           "details": "Over next thousand years groups of Sun Elves migrate. The largest group travels south and founds Everdusk, and over time they become  the Wood Elves. Others travel east beyond the mountains and are  never seen nor heard of again."
      },
      {
+          "year": "-2700",
+          "title": "Temple of Sinari constructed",
+          "details": "To honour and protect the gift of Everlight, the Dark Elves build the Temple of Sinari in the cave from which they first emerged from the darkness of the Underworld."
+     },
+     {
           "year": "-2800",
           "title": "Kitezh sacked",
           "details": "Dwarves rebel against their overlord and sack the city of Kitezh. They set out into the darkness to forge their own fate."
+     },
+     {
+          "year": "-2100",
+          "title": "The Gods abandon the Giants of Skia",
+          "details": "The Giants, said to be the off-spring of Gods and humans, withdraw to their ice castles. It is said they have been cursed by the Gods for some transgression. The humans of Skia are left to fend for themselves."
      },
      {
           "year": "-1800",
@@ -42,7 +75,12 @@
           "title": "The Fading",
           "details": "An era defining moment when magic permanency began to fail.",
           "expanded_html": true,
-          "expanded": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"
+          "expanded": ""
+     },
+     {
+          "year": "-1650",
+          "title": "Ku'Than rises",
+          "details": "Nobody outside of Ku'Than knows how it all came about, but it is said that, virtually over night, this forest became the domain of the goddess, Than."
      },
      {
           "year": "-421",
@@ -50,9 +88,19 @@
           "details": "Humans traverse the great ocean between Skia and Kelos and settle on Snuuflund."
      },
      {
+          "year": "-403",
+          "title": "The decline of Kaijistan",
+          "details": "The decline of this once magnificent Kingdom has begun. Within a single lifespan the kingdom will be no more and the sands will have engulfed all that was once great."
+     },
+     {
           "year": "-320",
           "title": "Eastward",
           "details": "The human settlers of Snuuflund have outgrown the Serydina Isles.  Raiding parties set off east to the mainland of Kelos in search of new homes. One settles on the west coast. The other travels far to the east; they will eventually become the people of Caratania"
+     },
+     {
+          "year": "-307",
+          "title": "Caratania founded",
+          "details": "The first small settlements grow to be towns and unite under a single banner of Hrothgar the merciless. This move is largely driven by the need to organise militia against the hordes of undead that come down from the mountains."
      },
      {
           "year": "0",
@@ -83,6 +131,7 @@
      {
           "year": "381 - 391",
           "title": "The Shadow War",
+          "epoch": true,
           "details": "Civil war within the Order of the Word escalates widely and becomes The Shadow War. The Order is split into two factions: one lead by Ilistran Darkweaver who believes magic should be used to elevate mages to a status above mortals; the other led by Arica Dreamforger, believe magic should be used to help all people. The war ends with Ilistran's defeat and disappearance."
      },
      {
