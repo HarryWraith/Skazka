@@ -2,13 +2,13 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Search • Skazka</title>
   <link rel="stylesheet" href="navbar.css?v=3">
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" type="image/png" href="assets/skazka_logo.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="assets/skazka_logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
   <script src="navbar.js?v=3"></script>
   <script type="module" src="./main.js"></script>
 
@@ -68,6 +68,8 @@
       padding: 6px 10px;
       font-size: .95rem;
       cursor: pointer;
+      /* stylelint-disable-next-line property-no-vendor-prefix, plugin/no-unsupported-browser-features */
+      -webkit-user-select: none;
       user-select: none;
     }
 
@@ -107,13 +109,16 @@
       border-radius: 999px;
       cursor: pointer;
       line-height: 1.2;
+      /* stylelint-disable-next-line property-no-vendor-prefix, plugin/no-unsupported-browser-features */
+      -webkit-user-select: none;
+      /* Safari/iOS */
       user-select: none;
       transition: background .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease;
     }
 
     .chip:hover {
       background: rgba(226, 184, 77, .08);
-      border-color: color-mix(in oklab, var(--sb-gold) 35%, var(--sb-border));
+      border-color: color-mix(in srgb, var(--sb-gold) 35%, var(--sb-border));
     }
 
     .chip.is-on {
@@ -323,11 +328,11 @@
   <div id="navbar"></div>
 
   <section class="search-wrap">
-    <h2 class="sb-title" style="text-align:center;">Search the Skazka Glossary</h2>
+    <h2 class="sb-title">Search the Skazka Glossary</h2>
 
     <div class="search-bar">
       <input id="q" class="search-input" type="search" placeholder="Type a name, place, or keyword…">
-      <button id="clearBtn" class="sb-ghost-btn">Clear</button>
+      <button id="clearBtn" class="sb-ghost-btn" type="reset">Clear</button>
     </div>
 
     <section class="g-filter" aria-label="Filters">
@@ -345,14 +350,14 @@
   <div id="footer"></div>
 
   <!-- Quick-view modal -->
-  <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+  <div id="modal" class="modal" role="dialog" aria-modal="true">
     <div class="modal-card">
       <div class="modal-head">
         <div class="modal-title" id="modalTitle"></div>
-        <button class="modal-close" id="modalClose">Close</button>
+        <button class="modal-close" id="modalClose" type="reset">Close</button>
       </div>
       <div class="modal-grid">
-        <img id="modalImg" class="modal-img" alt="" />
+        <div id="modalImg" class="modal-img" alt=""></div>
         <div>
           <div class="g-meta" id="modalMeta"></div>
           <div class="modal-summary" id="modalSummary"></div>

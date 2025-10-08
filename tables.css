@@ -17,20 +17,22 @@
   position: relative;
   display: grid;
   gap: 12px;
-  background: linear-gradient(180deg, var(--sb-panel), var(--sb-panel2));
-  border: 1px solid var(--sb-border);
   padding: clamp(12px, 2vw, 18px);
-  color: var(--sb-text);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, .45), inset 0 1px 0 rgba(255, 255, 255, .02);
   margin: 18px 0;
   font-size: 1.1rem;
+  color: var(--sb-text);
+  background: linear-gradient(180deg, var(--sb-panel), var(--sb-panel2));
+  border: 1px solid var(--sb-border);
+  box-shadow:
+    0 12px 24px rgb(0 0 0 / 45%),
+    inset 0 1px 0 rgb(255 255 255 / 2%);
 }
 
 .tb-title {
   margin: 0 0 10px;
-  color: var(--sb-gold-strong);
-  letter-spacing: .3px;
   font-weight: 900;
+  color: var(--sb-gold-strong);
+  letter-spacing: 0.3px;
 }
 
 /* === Controls grid === */
@@ -46,52 +48,57 @@
   flex-direction: column;
   gap: 6px;
   font-weight: 800;
-  letter-spacing: .2px;
+  letter-spacing: 0.2px;
 }
 
 /* Inputs/selects/buttons */
 .tb-input,
 .tb-select {
   width: 100%;
-  background: #0f1117;
+  min-height: 42px;
+  padding: 10px 12px;
   color: var(--sb-text);
+  outline: none;
+  background: #0f1117;
   border: 1px solid var(--sb-border);
   border-radius: 10px;
-  padding: 10px 12px;
-  min-height: 42px;
-  outline: none;
 }
 
 .tb-input:focus,
 .tb-select:focus {
-  border-color: var(--sb-gold-strong);
-  box-shadow: 0 0 0 2px rgba(226, 184, 77, .25);
   background: #10131a;
+  border-color: var(--sb-gold-strong);
+  box-shadow: 0 0 0 2px rgb(226 184 77 / 25%);
 }
 
 .tb-actions {
   display: flex;
-  margin-top: 8px;
-  gap: 8px;
   flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
 }
 
 .tb-btn {
-  background: linear-gradient(180deg, var(--sb-gold-strong), var(--sb-gold));
-  color: #0b0a07;
-  border: 1px solid color-mix(in oklab, var(--sb-gold) 70%, black);
-  margin-top: 4px;
-  border-radius: 10px;
   padding: 10px 14px;
+  margin-top: 4px;
   font-weight: 700;
+  color: #0b0a07;
+  text-shadow: 0 1px 0 rgb(255 255 255 / 15%);
   cursor: pointer;
-  transition: transform .06s ease, box-shadow .2s ease, filter .2s ease;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.15);
+  background: linear-gradient(180deg, var(--sb-gold-strong), var(--sb-gold));
+  border: 1px solid color-mix(in oklab, var(--sb-gold) 70%, black);
+  border-radius: 10px;
+  transition:
+    transform 0.06s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
 }
 
 .tb-btn:hover {
+  box-shadow:
+    0 0 0 2px rgb(226 184 77 / 25%),
+    0 10px 24px rgb(226 184 77 / 25%);
   filter: brightness(1.05);
-  box-shadow: 0 0 0 2px rgba(226, 184, 77, .25), 0 10px 24px rgba(226, 184, 77, .25);
 }
 
 .tb-btn:active {
@@ -99,31 +106,33 @@
 }
 
 .tb-ghost-btn {
-  background: transparent;
+  padding: 10px 14px;
   color: var(--sb-gold-strong);
+  cursor: pointer;
+  background: transparent;
   border: 1px solid var(--sb-gold);
   border-radius: 10px;
-  padding: 10px 14px;
-  cursor: pointer;
-  transition: background .2s ease, box-shadow .2s ease;
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .tb-ghost-btn:hover {
-  background: rgba(226, 184, 77, .08);
-  box-shadow: inset 0 0 0 1px rgba(226, 184, 77, .18);
+  background: rgb(226 184 77 / 8%);
+  box-shadow: inset 0 0 0 1px rgb(226 184 77 / 18%);
 }
 
 /* === Result wrappers === */
 .tb-result {
   display: block;
-  margin-top: 10px;
   padding: 10px 12px;
+  margin-top: 10px;
+  line-height: 1.55;
+  color: var(--sb-text);
+  white-space: pre-wrap;
+  background: rgb(0 0 0 / 14%);
   border: 1px dashed var(--sb-border);
   border-radius: 10px;
-  color: var(--sb-text);
-  background: rgba(0, 0, 0, .14);
-  white-space: pre-wrap;
-  line-height: 1.55;
 }
 
 /* Traps: render multi-line nicely */
@@ -136,8 +145,8 @@
 }
 
 #trapResult .tb-label {
-  font-weight: 800;
   margin-right: 4px;
+  font-weight: 800;
 }
 
 /* Divider image */
@@ -155,8 +164,8 @@
 }
 
 .tb-result ul {
-  margin: 6px 0 0 1.1rem;
   padding: 0;
+  margin: 6px 0 0 1.1rem;
 }
 
 .tb-result li {
@@ -165,28 +174,28 @@
 
 /* === Key/Value grid === */
 .tb-kv {
-  margin: 2px 0;
   display: grid;
   grid-template-columns: minmax(12rem, 22rem) 1fr;
   gap: 6px 12px;
+  margin: 2px 0;
 }
 
 .tb-kv .k {
-  font-weight: 800;
   margin-right: 6px;
+  font-weight: 800;
 }
 
 /* === Tables === */
 .tb-table {
   width: 100%;
-  border-collapse: collapse;
   table-layout: fixed;
+  border-collapse: collapse;
 }
 
 .tb-table thead th {
-  text-align: left;
-  color: var(--sb-gold-strong);
   font-weight: 900;
+  color: var(--sb-gold-strong);
+  text-align: left;
 }
 
 .tb-table th,
@@ -201,8 +210,8 @@
 
 /* Blueprint detail table: keep cost visible and right-aligned */
 #bpDetail .tb-table {
-  table-layout: fixed;
   width: 100%;
+  table-layout: fixed;
 }
 
 #bpDetail .tb-table col.col-ing {
@@ -221,13 +230,12 @@
   width: auto;
 }
 
-
 /* shrink-to-content */
 #bpDetail .tb-table th.col-cost,
 #bpDetail .tb-table td.col-cost {
+  padding-right: 1rem;
   text-align: right;
   white-space: nowrap;
-  padding-right: 1rem;
 }
 
 #bpDetail .tb-table th.col-qty,
@@ -240,10 +248,10 @@
 }
 
 .tb-table .tb-detail-name {
+  margin: 0 0 2px;
   font: inherit;
   font-weight: 700;
   line-height: 1.25;
-  margin: 0 0 2px;
 }
 
 .tb-table tbody tr:last-child td {
@@ -253,11 +261,11 @@
 /* Segments */
 .tb-seg {
   display: flex;
-  gap: 6px;
   flex-wrap: wrap;
+  gap: 6px;
 }
 
-.tb-segbtn[aria-pressed="true"] {
+.tb-segbtn[aria-pressed='true'] {
   outline: 2px solid var(--sb-gold-strong);
   filter: saturate(1.2) brightness(2);
 }
@@ -265,15 +273,15 @@
 /* Detail header */
 .tb-detail-header {
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
   gap: 8px;
+  align-items: baseline;
+  justify-content: space-between;
   margin-bottom: 2px;
 }
 
 .tb-detail-name {
-  font-weight: 700;
   font-size: 1.125rem;
+  font-weight: 700;
   line-height: 1.2;
 }
 
@@ -287,12 +295,12 @@
   display: contents;
   gap: 8px;
   text-align: right;
-  opacity: .7;
+  opacity: 70%;
 }
 
 .tb-kv-key {
   width: 40%;
-  opacity: .8;
+  opacity: 80%;
 }
 
 .tb-kv-val {
@@ -301,13 +309,13 @@
 
 /* Coins */
 .tb-coins {
-  opacity: .7;
   margin-left: 6px;
   font-size: 12px;
+  opacity: 70%;
 }
 
 .tb-table tbody tr.is-selected {
-  filter: brightness(2.0);
+  filter: brightness(2);
 }
 
 .tb-table td:nth-child(1) {
@@ -329,10 +337,10 @@
 }
 
 .tb-detail {
-  max-width: 56rem;
-  margin-inline: auto;
   display: grid;
   gap: 10px;
+  max-width: 56rem;
+  margin-inline: auto;
 }
 
 #shopDetail.tb-result {
@@ -348,35 +356,34 @@
 
 #shopDetail .tb-detail-header {
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 10px;
   flex-wrap: wrap;
+  gap: 10px;
+  align-items: baseline;
+  justify-content: space-between;
 }
 
 #shopDetail .tb-detail-name {
-  font-weight: 800;
-  font-size: 1.25rem;
-  line-height: 1.2;
   margin: 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1.2;
 }
 
 .tb-detail-desc {
   margin: 2px 0 6px;
-  opacity: .9;
+  opacity: 90%;
 }
 
 #shopDetail .tb-badges {
   display: inline-flex;
-  gap: 6px;
   flex-wrap: wrap;
+  gap: 6px;
 }
 
 #shopDetail .tb-kv {
   display: grid;
   grid-template-columns: minmax(140px, 220px) 1fr;
-  column-gap: 16px;
-  row-gap: 6px;
+  gap: 6px 16px;
   align-items: baseline;
 }
 
@@ -385,14 +392,14 @@
 }
 
 #shopDetail .tb-kv-key {
-  color: var(--sb-dim);
   font-weight: 700;
-  opacity: .9;
+  color: var(--sb-dim);
+  opacity: 90%;
 }
 
 #shopDetail .tb-kv-val {
-  text-align: left;
   font-variant-numeric: tabular-nums;
+  text-align: left;
   white-space: normal;
 }
 
@@ -411,17 +418,17 @@
 
 #shopDetail .tb-detail-desc {
   margin-top: 4px;
-  opacity: .94;
   line-height: 1.46;
+  opacity: 94%;
 }
 
 /* ===== SHOP TABLE — 60 / 20 / 20 ===== */
 #shopResult {
   display: block;
+  max-height: var(--shop-max, 360px);
   padding: 0 !important;
   margin: 0;
   overflow: auto;
-  max-height: var(--shop-max, 360px);
   -webkit-overflow-scrolling: touch;
 }
 
@@ -435,15 +442,15 @@
 
 #shopResult .tb-table {
   width: 100%;
-  border-collapse: collapse;
   table-layout: fixed;
+  border-collapse: collapse;
 }
 
 #shopResult .tb-table thead th,
 #shopResult .tb-table td {
   padding: 6px 8px;
-  vertical-align: top;
   line-height: 1.25;
+  vertical-align: top;
   border-bottom: 1px dashed var(--sb-border);
 }
 
@@ -451,11 +458,11 @@
   position: sticky;
   top: 0;
   z-index: 3;
+  font-weight: 900;
+  color: var(--sb-gold-strong);
+  text-align: left;
   background: var(--sb-panel, #12131a);
   border-bottom: 1px solid var(--sb-border);
-  text-align: left;
-  color: var(--sb-gold-strong);
-  font-weight: 900;
 }
 
 /* Column widths */
@@ -474,9 +481,9 @@
 /* Price alignment */
 #shopResult .tb-table td.col-base,
 #shopResult .tb-table td.col-adjusted {
+  font-variant-numeric: tabular-nums;
   text-align: left;
   white-space: normal;
-  font-variant-numeric: tabular-nums;
 }
 
 .nowrap {
@@ -486,8 +493,8 @@
 #shopResult .tb-table td.col-base .tb-coins,
 #shopResult .tb-table td.col-adjusted .tb-coins {
   display: inline-flex;
-  align-items: baseline;
   gap: 4px;
+  align-items: baseline;
   margin-left: 8px;
   white-space: normal;
 }
@@ -495,22 +502,22 @@
 /* Name + badges on one line */
 #shopResult .tb-table .name-line {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
   align-items: baseline;
-  flex-wrap: wrap;
 }
 
 #shopResult .tb-table .tb-detail-name {
+  margin: 0;
   font: inherit;
   font-weight: 700;
   line-height: 1.22;
-  margin: 0;
 }
 
 #shopResult .tb-table .tb-badges {
   display: inline-flex;
-  gap: 6px;
   flex-wrap: wrap;
+  gap: 6px;
 }
 
 #shopResult .tb-table tbody tr:last-child td {
@@ -520,18 +527,18 @@
 /* === Shop privacy === */
 .tb-privacy {
   display: inline-flex;
+  gap: 0.5rem;
   align-items: center;
-  gap: .5rem;
 }
 
 .tb-privacy-label {
-  font-size: .9rem;
-  opacity: .8;
+  font-size: 0.9rem;
+  opacity: 80%;
 }
 
 .tb-privacy-status {
-  margin-left: .5rem;
-  opacity: .75;
+  margin-left: 0.5rem;
+  opacity: 75%;
 }
 
 .tb-privacy-slider {
@@ -544,36 +551,35 @@
 /* Track */
 .tb-privacy-slider::-webkit-slider-runnable-track {
   height: 28px;
-  border-radius: 999px;
   background: linear-gradient(90deg, #3aa655 0 50%, #3aa655 50% 100%);
+  border-radius: 999px;
 }
 
 .tb-privacy-slider::-moz-range-track {
   height: 28px;
-  border-radius: 999px;
   background: linear-gradient(90deg, #3aa655 0 50%, #3aa655 50% 100%);
+  border-radius: 999px;
 }
 
 /* Thumb */
 .tb-privacy-slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
   width: 26px;
   height: 26px;
-  border-radius: 50%;
-  background: #fff;
-  border: 2px solid rgba(0, 0, 0, .15);
   margin-top: 1px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+  appearance: none;
+  background: #fff;
+  border: 2px solid rgb(0 0 0 / 15%);
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 20%);
 }
 
 .tb-privacy-slider::-moz-range-thumb {
   width: 26px;
   height: 26px;
-  border-radius: 50%;
   background: #fff;
-  border: 2px solid rgba(0, 0, 0, .15);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+  border: 2px solid rgb(0 0 0 / 15%);
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 20%);
 }
 
 .tb-privacy-slider:focus-visible {
@@ -603,40 +609,39 @@
   margin: 2px 0 6px !important;
   font-weight: 900;
   color: var(--sb-gold-strong);
-  letter-spacing: .2px;
+  letter-spacing: 0.2px;
 }
 
 #forgeSheet .forge-p,
 #forgeSheet p {
   margin: 0;
-  opacity: .92;
   text-align: left !important;
   text-justify: auto !important;
+  opacity: 92%;
 }
 
 #forgeSheet .forge-list {
-  margin: 0 !important;
-  padding: 0 0 0 1rem !important;
-  list-style: disc outside;
   display: grid !important;
   gap: 4px !important;
+  padding: 0 0 0 1rem !important;
+  margin: 0 !important;
+  list-style: disc outside;
 }
 
 #forgeSheet .forge-list>li {
-  margin: 0 !important;
   padding: 0 !important;
+  margin: 0 !important;
   line-height: 1.46;
 }
 
 #forgeSheet .forge-grid-2 {
   display: grid;
   grid-template-columns: 1fr;
-  column-gap: 16px;
-  row-gap: 8px;
+  gap: 8px 16px;
   align-items: start;
 }
 
-@media (min-width: 960px) {
+@media (width >=960px) {
   #forgeSheet .forge-grid-2 {
     grid-template-columns: 1fr 1fr;
   }
@@ -650,29 +655,29 @@
 }
 
 #forgeSheet .forge-tool {
+  display: flex;
   flex: 1 1 180px;
-  border: 1px solid var(--sb-border);
-  border-radius: 12px;
+  flex-direction: column;
+  gap: 4px;
   padding-block: 6px;
   padding-inline: 10px;
   background: color-mix(in oklab, var(--sb-panel2) 85%, black);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .03);
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+  border: 1px solid var(--sb-border);
+  border-radius: 12px;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 3%);
 }
 
 #forgeSheet .forge-tool-title {
-  font-weight: 800;
   margin: 0;
+  font-weight: 800;
   color: var(--sb-gold-strong);
 }
 
 #forgeSheet .forge-tool-desc {
-  font-size: .92rem;
-  opacity: .88;
   margin: 0;
+  font-size: 0.92rem;
   text-align: left;
+  opacity: 88%;
 }
 
 #forgeSheet .forge-table {
@@ -703,25 +708,25 @@
 
 #forgeSheet .hr {
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--sb-border), transparent);
   margin: 4px 0;
+  background: linear-gradient(90deg, transparent, var(--sb-border), transparent);
   border: 0;
 }
 
 #forgeSheet .forge-gen {
-  border: 1px solid var(--sb-border);
-  border-radius: 12px;
-  padding: 10px;
-  background: color-mix(in oklab, var(--sb-panel2) 85%, black);
   display: grid;
   gap: 8px;
   align-content: start;
+  padding: 10px;
+  background: color-mix(in oklab, var(--sb-panel2) 85%, black);
+  border: 1px solid var(--sb-border);
+  border-radius: 12px;
 }
 
 #forgeSheet .forge-gen-title {
   font-weight: 900;
   color: var(--sb-gold-strong);
-  letter-spacing: .2px;
+  letter-spacing: 0.2px;
 }
 
 #forgeSheet .forge-gen-buttons {
@@ -731,18 +736,18 @@
 }
 
 #forgeSheet .forge-chip {
-  border: 1px solid var(--sb-gold);
-  background: transparent;
-  color: var(--sb-gold-strong);
   padding: 6px 10px;
-  border-radius: 999px;
   font-weight: 700;
+  color: var(--sb-gold-strong);
   cursor: pointer;
+  background: transparent;
+  border: 1px solid var(--sb-gold);
+  border-radius: 999px;
 }
 
 #forgeSheet .forge-chip:hover {
-  background: rgba(226, 184, 77, .08);
-  box-shadow: inset 0 0 0 1px rgba(226, 184, 77, .18);
+  background: rgb(226 184 77 / 8%);
+  box-shadow: inset 0 0 0 1px rgb(226 184 77 / 18%);
 }
 
 #forgeSheet .forge-gen-out {
@@ -753,17 +758,17 @@
 }
 
 #forgeSheet .forge-pill {
+  padding: 4px 8px;
+  font-size: 0.92rem;
   border: 1px dashed var(--sb-border);
   border-radius: 999px;
-  padding: 4px 8px;
-  font-size: .92rem;
-  opacity: .95;
+  opacity: 95%;
 }
 
 /* Options dropdown */
 #preset-list {
   z-index: 20;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, .35);
+  box-shadow: 0 6px 18px rgb(0 0 0 / 35%);
 }
 
 #preset-list .tb-option:hover,
@@ -774,125 +779,123 @@
 
 /* NPC — role */
 .tb-badge.npc-role {
-  background: #5b2c83;
   color: #fff;
+  background: #5b2c83;
   border-color: #e0c8ff;
 }
 
 /* NPC — alignment (base + variants) */
 .tb-badge.npc-align {
-  background: #12151d;
   color: #cfe3ff;
+  background: #12151d;
   border-color: #3c6fb8;
 }
 
 .tb-badge.npc-align.good {
-  background: #2c8a5f;
   color: #fff;
+  background: #2c8a5f;
   border-color: #cfe9cf;
 }
 
 .tb-badge.npc-align.neutral {
-  background: #3b4758;
   color: #cfd3da;
+  background: #3b4758;
   border-color: #6b707c;
 }
 
 .tb-badge.npc-align.evil {
-  background: #7e0c23;
   color: #ffe2e2;
+  background: #7e0c23;
   border-color: #d28b99;
 }
 
 /* Optional gender variants (if you want them) */
 .tb-badge.npc-gender.male {
-  background: #1f3a93;
   color: #fff;
+  background: #1f3a93;
   border-color: #8fb2ff;
 }
 
 .tb-badge.npc-gender.female {
-  background: #7a1f6f;
   color: #fff;
+  background: #7a1f6f;
   border-color: #f0b5ff;
 }
 
 .tb-badge.npc-race {
-  background: #7a1f6f;
   color: #36b761;
+  background: #7a1f6f;
   border-color: #068021;
 }
 
 /* Humans */
 .tb-badge.npc-race.human {
-  background: #2c3e50;
   color: #e6eef8;
+  background: #2c3e50;
   border: 1px solid #3b536b;
 }
 
 /* Elves */
 .tb-badge.npc-race.elf {
-  background: #1f5a3c;
   color: #d9f2e3;
+  background: #1f5a3c;
   border: 1px solid #2f7a56;
 }
 
 /* Dwarves */
 .tb-badge.npc-race.dwarf {
-  background: #5a3b1f;
   color: #f3e3cf;
+  background: #5a3b1f;
   border: 1px solid #7a552f;
 }
 
 /* Halflings */
 .tb-badge.npc-race.halfling {
-  background: #4b2c5e;
   color: #f0e6f7;
+  background: #4b2c5e;
   border: 1px solid #6b3f86;
 }
 
 /* Gnomes */
 .tb-badge.npc-race.gnome {
-  background: #2f4a6b;
   color: #e6f0fa;
+  background: #2f4a6b;
   border: 1px solid #3f6a9b;
 }
 
 /* Half-elf / Half-orc (hyphenated!) */
 .tb-badge.npc-race.half-elf {
-  background: #244d3f;
   color: #d9f2ea;
+  background: #244d3f;
   border: 1px solid #31725b;
 }
 
 .tb-badge.npc-race.half-orc {
-  background: #3c4d24;
   color: #edf6d9;
+  background: #3c4d24;
   border: 1px solid #587231;
 }
 
 /* Tieflings */
 .tb-badge.npc-race.tiefling {
-  background: #5a2130;
   color: #f8dee3;
+  background: #5a2130;
   border: 1px solid #7a2e43;
 }
 
 /* Dragonborn */
 .tb-badge.npc-race.dragonborn {
-  background: #2a3b6e;
   color: #e4ebfb;
+  background: #2a3b6e;
   border: 1px solid #3c57a3;
 }
 
 /* (Optional) Kenku, since inns may produce them */
 .tb-badge.npc-race.kenku {
-  background: #333333;
   color: #f0f0f0;
+  background: #333;
   border: 1px solid #4a4a4a;
 }
-
-
 
 /* ===========================
    NPC generator (scoped)
@@ -900,11 +903,11 @@
 #npc-controls {
   display: grid;
   grid-template-columns: repeat(2, minmax(260px, 1fr));
-  gap: .6rem;
+  gap: 0.6rem;
   align-items: start;
 }
 
-@media (max-width: 680px) {
+@media (width <=680px) {
   #npc-controls {
     grid-template-columns: 1fr;
   }
@@ -920,42 +923,42 @@
 }
 
 #npc-panel .tb-input {
-  width: 100%;
   display: block;
+  width: 100%;
 }
 
 #npc-panel .tb-list {
   position: absolute;
-  left: 0;
   right: 0;
+  left: 0;
+  z-index: 20;
+  display: none;
   max-height: 240px;
   overflow-y: auto;
-  display: none;
-  z-index: 20;
   background: #111;
-  border: 1px solid rgba(255, 255, 255, .12);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, .35);
+  border: 1px solid rgb(255 255 255 / 12%);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 35%);
 }
 
 #npc-panel .tb-option {
-  padding: .4rem .6rem;
+  padding: 0.4rem 0.6rem;
   cursor: pointer;
 }
 
 #npc-panel .tb-option:hover,
 #npc-panel .tb-option:focus {
-  background: rgba(255, 255, 255, .06);
   outline: none;
+  background: rgb(255 255 255 / 6%);
 }
 
 #npc-pretty.tb-result {
-  margin: 8px 0 0;
   padding: 8px 10px;
+  margin: 8px 0 0;
 }
 
 #npc-pretty .npc-card {
-  line-height: 1.28;
   margin: 0;
+  line-height: 1.28;
 }
 
 #npc-pretty .npc-card * {
@@ -974,36 +977,36 @@
 }
 
 #npc-pretty .npc-header {
-  margin-bottom: .22rem;
+  margin-bottom: 0.22rem;
 }
 
 #npc-pretty .npc-name {
-  font-weight: 700;
   font-size: 1.06rem;
+  font-weight: 700;
 }
 
 #npc-pretty .npc-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: .3rem;
-  margin-top: .12rem;
+  gap: 0.3rem;
+  margin-top: 0.12rem;
 }
 
 #npc-pretty .npc-card .tb-badge {
-  padding: .08rem .4rem;
-  font-size: .84em;
+  padding: 0.08rem 0.4rem;
+  font-size: 0.84em;
 }
 
 #npc-pretty .npc-meta {
-  margin: .12rem 0 .24rem;
+  margin: 0.12rem 0 0.24rem;
 }
 
 #npc-pretty .npc-meta .row {
   display: grid;
   grid-template-columns: 120px 1fr;
-  column-gap: .6rem;
+  column-gap: 0.6rem;
   align-items: baseline;
-  padding: .03rem 0;
+  padding: 0.03rem 0;
 }
 
 #npc-pretty .npc-meta .k {
@@ -1011,39 +1014,39 @@
 }
 
 #npc-pretty .npc-hooks {
-  margin: .22rem 0 .18rem;
+  margin: 0.22rem 0 0.18rem;
 }
 
 #npc-pretty .npc-hooks h3 {
-  font-size: .92rem;
+  margin-bottom: 0.14rem;
+  font-size: 0.92rem;
   font-weight: 700;
-  margin-bottom: .14rem;
 }
 
 #npc-pretty .npc-hooks .hooks {
+  padding-left: 0.9rem;
   list-style: disc;
-  padding-left: .9rem;
 }
 
 #npc-pretty .npc-hooks .hooks li {
-  margin: .06rem 0;
+  margin: 0.06rem 0;
   line-height: 1.28;
 }
 
 #npc-pretty .npc-opener {
-  margin: .26rem 0 0;
-  padding: .32rem .56rem;
-  border-left: 2px solid currentColor;
-  background: rgba(255, 255, 255, .06);
-  border-radius: .32rem;
-  opacity: .92;
+  padding: 0.32rem 0.56rem;
+  margin: 0.26rem 0 0;
+  background: rgb(255 255 255 / 6%);
+  border-left: 2px solid currentcolor;
+  border-radius: 0.32rem;
+  opacity: 92%;
 }
 
 #npc-panel #npc-pretty {
-  white-space: normal;
-  line-height: 1.32;
-  margin-top: 8px;
   padding: 8px 10px;
+  margin-top: 8px;
+  line-height: 1.32;
+  white-space: normal;
 }
 
 #npc-panel #npc-pretty .npc-card {
@@ -1062,36 +1065,36 @@
 }
 
 #npc-panel #npc-pretty .npc-header {
-  margin-bottom: .2rem;
+  margin-bottom: 0.2rem;
 }
 
 #npc-panel #npc-pretty .npc-name {
-  font-weight: 700;
   font-size: 1.06rem;
+  font-weight: 700;
 }
 
 #npc-panel #npc-pretty .npc-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: .3rem;
-  margin-top: .12rem;
+  gap: 0.3rem;
+  margin-top: 0.12rem;
 }
 
 #npc-panel #npc-pretty .npc-card .tb-badge {
-  padding: .08rem .4rem;
-  font-size: .84em;
+  padding: 0.08rem 0.4rem;
+  font-size: 0.84em;
 }
 
 #npc-panel #npc-pretty .npc-meta {
-  margin: .1rem 0 .22rem;
+  margin: 0.1rem 0 0.22rem;
 }
 
 #npc-panel #npc-pretty .npc-meta .row {
   display: grid;
   grid-template-columns: 120px 1fr;
-  column-gap: .6rem;
+  column-gap: 0.6rem;
   align-items: baseline;
-  padding: .02rem 0;
+  padding: 0.02rem 0;
 }
 
 #npc-panel #npc-pretty .npc-meta .k {
@@ -1099,60 +1102,60 @@
 }
 
 #npc-panel #npc-pretty .npc-hooks {
-  margin: .2rem 0 .16rem;
+  margin: 0.2rem 0 0.16rem;
 }
 
 #npc-panel #npc-pretty .npc-hooks h3 {
-  font-size: .92rem;
+  margin-bottom: 0.12rem;
+  font-size: 0.92rem;
   font-weight: 700;
-  margin-bottom: .12rem;
 }
 
 #npc-panel #npc-pretty .npc-hooks .hooks {
+  padding-left: 0.9rem;
   list-style: disc;
-  padding-left: .9rem;
 }
 
 #npc-panel #npc-pretty .npc-hooks .hooks li {
-  margin: .05rem 0;
+  margin: 0.05rem 0;
   line-height: 1.28;
 }
 
 #npc-panel #npc-pretty .npc-opener {
-  margin: .24rem 0 0;
-  padding: .3rem .56rem;
-  border-left: 2px solid currentColor;
-  background: rgba(255, 255, 255, .06);
-  border-radius: .32rem;
-  opacity: .92;
+  padding: 0.3rem 0.56rem;
+  margin: 0.24rem 0 0;
+  background: rgb(255 255 255 / 6%);
+  border-left: 2px solid currentcolor;
+  border-radius: 0.32rem;
+  opacity: 92%;
 }
 
 /* Clear button in inputs */
 #npc-panel .tb-combobox .tb-clear {
   position: absolute;
-  right: 10px;
   top: 50%;
-  transform: translateY(-50%);
-  height: 22px;
-  width: 22px;
+  right: 10px;
+  z-index: 21;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 0;
-  border-radius: 6px;
-  background: transparent;
-  color: var(--sb-dim);
-  cursor: pointer;
-  z-index: 21;
+  width: 22px;
+  height: 22px;
   padding: 0;
   line-height: 1;
+  color: var(--sb-dim);
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  border-radius: 6px;
+  transform: translateY(-50%);
 }
 
 #npc-panel .tb-combobox .tb-clear:hover,
 #npc-panel .tb-combobox .tb-clear:focus-visible {
-  background: rgba(255, 255, 255, .08);
   color: var(--sb-text);
   outline: none;
+  background: rgb(255 255 255 / 8%);
 }
 
 @supports (-webkit-touch-callout: none) {
@@ -1167,8 +1170,8 @@
 .tb-result .loot-line {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   gap: 6px 8px;
+  align-items: center;
   margin: 2px 0 2px 10px;
   line-height: 1.45;
   white-space: normal;
@@ -1177,8 +1180,8 @@
 .tb-result .loot-line .tb-badges {
   display: inline-flex;
   flex-wrap: wrap;
-  align-items: center;
   gap: 8px;
+  align-items: center;
   order: 2;
 }
 
@@ -1197,23 +1200,23 @@
 
 .coins {
   display: inline-flex;
-  align-items: center;
   gap: 4px;
+  align-items: center;
   margin-left: 6px;
   font-size: 16px;
-  opacity: .95;
   font-variant-numeric: tabular-nums;
+  opacity: 95%;
 }
 
 .coin {
   display: inline-flex;
   align-items: center;
   padding: 1px 6px;
-  border-radius: 999px;
-  border: 1px solid var(--sb-border);
-  background: color-mix(in oklab, var(--sb-panel2) 78%, #000);
   line-height: 1.2;
-  letter-spacing: .1px;
+  letter-spacing: 0.1px;
+  background: color-mix(in oklab, var(--sb-panel2) 78%, #000);
+  border: 1px solid var(--sb-border);
+  border-radius: 999px;
 }
 
 .coin-pp {
@@ -1237,15 +1240,15 @@
 }
 
 .coins-price .coin {
-  opacity: .95;
+  opacity: 95%;
 }
 
 .coins-sell .coin {
-  opacity: .85;
-  filter: saturate(.9);
+  opacity: 85%;
+  filter: saturate(0.9);
 }
 
-@media (max-width:560px) {
+@media (width <=560px) {
   .tb-result .loot-line .coins {
     margin-top: 2px;
   }
@@ -1275,33 +1278,30 @@
 
 .shop-controls .col-3 {
   grid-column: 3;
-  align-self: end;
-  justify-self: end;
+  place-self: end end;
 }
 
 .tb-coins-toggle {
   display: inline-flex;
   flex-direction: row;
-  align-items: center;
   gap: 8px;
-  white-space: nowrap;
+  place-self: end end;
+  align-items: center;
   margin: 0 0 0 auto;
-  justify-self: end;
-  align-self: end;
+  white-space: nowrap;
 }
 
 .tb-coins-toggle input {
   margin: 0;
 }
 
-@media (max-width: 1100px) {
+@media (width <=1100px) {
   .shop-controls {
     grid-template-columns: 1fr;
   }
 
   .shop-controls .col-3 {
-    align-self: start;
-    justify-self: start;
+    place-self: start start;
     margin-top: 4px;
   }
 }
@@ -1310,8 +1310,8 @@
    BLUEPRINTS — list & detail spacing
    =========================== */
 #bpResult.tb-result {
-  white-space: normal;
   line-height: 1.35;
+  white-space: normal;
 }
 
 #bpList {
@@ -1321,14 +1321,14 @@
 }
 
 #bpList .tb-list {
-  margin: 0;
   padding: 0;
+  margin: 0;
   list-style: none;
 }
 
 #bpList .tb-list-item {
   display: block;
-  padding: .5rem .75rem;
+  padding: 0.5rem 0.75rem;
   border-bottom: 1px dashed var(--sb-border);
 }
 
@@ -1336,14 +1336,14 @@
   border-bottom: 0;
 }
 
-#bpList .tb-list-item[aria-selected="true"] {
+#bpList .tb-list-item[aria-selected='true'] {
   outline: 2px solid var(--sb-gold-strong);
-  border-radius: .25rem;
+  border-radius: 0.25rem;
 }
 
 #bpDetail.tb-result {
-  white-space: normal;
   line-height: 1.35;
+  white-space: normal;
 }
 
 #bpDetail .tb-kv {
@@ -1373,12 +1373,11 @@
   width: auto;
 }
 
-
 #bpDetail .tb-table th.col-cost,
 #bpDetail .tb-table td.col-cost {
+  padding-right: 1rem;
   text-align: right;
   white-space: nowrap;
-  padding-right: 1rem;
 }
 
 #bpDetail .tb-table th.col-qty,
@@ -1390,7 +1389,8 @@
 .tb-list .tb-badges {
   display: inline-flex;
   gap: 6px;
-  margin-left: .5rem;
+  margin-left: 0.5rem;
+
   /* space after the name */
   vertical-align: middle;
 }
@@ -1399,12 +1399,13 @@
   display: inline-flex;
   align-items: center;
   padding: 2px 8px;
-  border-radius: 999px;
-  border: 1px solid var(--badge-border, #444);
-  /* pick colors you like, or let type-specific classes override */
-  background: var(--badge-bg, rgba(255, 255, 255, .06));
+  font-size: 0.9rem;
   color: var(--badge-fg, #ddd);
-  font-size: .9rem;
+
+  /* pick colors you like, or let type-specific classes override */
+  background: var(--badge-bg, rgb(255 255 255 / 6%));
+  border: 1px solid var(--badge-border, #444);
+  border-radius: 999px;
 }
 
 /* ============================================================
@@ -1413,21 +1414,21 @@
 
 /* Base pill */
 .tb-badge {
+  padding: 4px 10px;
   font-size: 14px;
   line-height: 1.15;
-  padding: 4px 10px;
-  border-radius: 999px;
-  border: 1px solid color-mix(in oklab, var(--sb-border) 80%, #000);
-  background: color-mix(in oklab, var(--sb-panel2) 85%, #000);
   color: var(--sb-dim);
   text-transform: none;
+  background: color-mix(in oklab, var(--sb-panel2) 85%, #000);
+  border: 1px solid color-mix(in oklab, var(--sb-border) 80%, #000);
+  border-radius: 999px;
 }
 
 /* One rule for layout */
 .tb-badges {
   display: inline-flex;
-  gap: 6px;
   flex-wrap: wrap;
+  gap: 6px;
   align-items: center;
 }
 
@@ -1471,27 +1472,27 @@
 
 /* Attunement / Consumable */
 .tb-badge.attune.attune-true {
-  background: #fff;
   color: #2e8b57;
+  background: #fff;
   border-color: #2e8b57;
 }
 
 .tb-badge.attune.attune-false {
-  background: #fff;
   color: #d64545;
+  background: #fff;
   border-color: #d64545;
 }
 
 .tb-badge.consumable {
-  background: #2c8a5f;
   color: #fff;
+  background: #2c8a5f;
   border-color: #fff;
 }
 
 /* Publication (SRD only shown) */
 .tb-badge.pub.pub-srd {
-  background: #fff;
   color: #0f2a5f;
+  background: #fff;
   border-color: #0f2a5f;
 }
 
@@ -1503,75 +1504,75 @@
 
 /* Ingredient types (blueprints detail) */
 .tb-badge.herb {
-  background: #2e7d32;
   color: #fff;
+  background: #2e7d32;
   border-color: #cfe9cf;
 }
 
 .tb-badge.packs {
-  background: #8b4dc0;
   color: #fff;
+  background: #8b4dc0;
   border-color: #e0c8ff;
 }
 
 .tb-badge.containers {
-  background: #290746;
   color: #fff;
+  background: #290746;
   border-color: #e0c8ff;
 }
 
 .tb-badge.goods {
-  background: #290746;
   color: #228bae;
+  background: #290746;
   border-color: #e0c8ff;
 }
 
 .tb-badge.art {
-  background: #290746;
   color: #20f2d9;
+  background: #290746;
   border-color: #e0c8ff;
 }
 
 .tb-badge.ammunition {
-  background: #7e0c23;
   color: #20f2d9;
+  background: #7e0c23;
   border-color: #ded3ec;
 }
 
 .tb-badge.foci.and.symbols {
-  background: #7e0c23;
   color: #20f282;
+  background: #7e0c23;
   border-color: #ded3ec;
 }
 
 .tb-badge.poisons {
-  background: #1be7a0;
   color: #df113d;
+  background: #1be7a0;
   border-color: #ded3ec;
 }
 
 .tb-badge.performing {
-  background: #cdf30d;
   color: #df113d;
+  background: #cdf30d;
   border-color: #ded3ec;
 }
 
 .tb-badge.mounts {
-  background: #574426;
   color: #faf9f9;
+  background: #574426;
   border-color: #ded3ec;
 }
 
 .tb-badge.gems,
 .tb-badge.gem {
-  background: #5b2c83;
   color: #fff;
+  background: #5b2c83;
   border-color: #e0c8ff;
 }
 
 .tb-badge.alchemical {
-  background: #22577a;
   color: #fff;
+  background: #22577a;
   border-color: #bfe6ff;
 }
 
@@ -1586,63 +1587,63 @@
 .tb-badge.rod,
 .tb-badge.ammo,
 .tb-badge.wondrous {
-  background: #2b6cb0;
   color: #fff;
+  background: #2b6cb0;
   border-color: #fff;
 }
 
 /* Other catalog types (neutral solids; tweak if desired) */
 .tb-badge.potion {
-  background: #6b46c1;
   color: #fff;
+  background: #6b46c1;
   border-color: #fff;
 }
 
 .tb-badge.clothing {
-  background: #eeedf1;
   color: #ea14aa;
-  border-color: #000000;
+  background: #eeedf1;
+  border-color: #000;
 }
 
 .tb-badge.tools {
-  background: #eeedf1;
   color: #371b2e;
-  border-color: #000000;
+  background: #eeedf1;
+  border-color: #000;
 }
 
 .tb-badge.vehicles {
-  background: #eeedf1;
   color: #3324a5;
-  border-color: #000000;
+  background: #eeedf1;
+  border-color: #000;
 }
 
 .tb-badge.scrolls {
-  background: #975a16;
   color: #fff;
+  background: #975a16;
   border-color: #fff;
 }
 
 .tb-badge.tool {
-  background: #2c5282;
   color: #fff;
+  background: #2c5282;
   border-color: #fff;
 }
 
 .tb-badge.trade_good {
-  background: #805ad5;
   color: #fff;
+  background: #805ad5;
   border-color: #fff;
 }
 
 .tb-badge.gear {
-  background: #2d3748;
   color: #fff;
+  background: #2d3748;
   border-color: #fff;
 }
 
 .tb-badge.material {
-  background: #22577a;
   color: #fff;
+  background: #22577a;
   border-color: #fff;
 }
 
@@ -1651,280 +1652,280 @@
 .tb-badge.container,
 .tb-badge.art_object,
 .tb-badge.writing {
-  background: rgba(255, 255, 255, .06);
   color: #c9c9d6;
+  background: rgb(255 255 255 / 6%);
   border-color: #6f6f7a;
 }
 
 /* Core reagent roles */
 .tb-badge.base {
-  background: #394257;
   color: #fff;
+  background: #394257;
   border-color: #fff;
 }
 
 /* Substances / materials */
 .tb-badge.powder {
   color: #d7c2a3;
+  background: rgb(120 90 40 / 18%);
   border-color: #8d6a3a;
-  background: rgba(120, 90, 40, .18);
 }
 
 .tb-badge.metal {
   color: #9bd;
+  background: rgb(80 100 130 / 22%);
   border-color: #5a7a9a;
-  background: rgba(80, 100, 130, .22);
 }
 
 .tb-badge.mineral {
   color: #cfe3ff;
+  background: rgb(30 60 90 / 20%);
   border-color: #466a92;
-  background: rgba(30, 60, 90, .20);
 }
 
 .tb-badge.glass {
   color: #9bd7ff;
+  background: rgb(60 120 160 / 20%);
   border-color: #5a9cc6;
-  background: rgba(60, 120, 160, .20);
 }
 
 .tb-badge.resin {
   color: #f6d07a;
+  background: rgb(80 60 20 / 22%);
   border-color: #b38b2c;
-  background: rgba(80, 60, 20, .22);
 }
 
 .tb-badge.wax {
   color: #eedc8a;
+  background: rgb(80 60 20 / 18%);
   border-color: #b38b2c;
-  background: rgba(80, 60, 20, .18);
 }
 
 .tb-badge.oil {
   color: #cbbdff;
+  background: rgb(40 30 70 / 28%);
   border-color: #6b5fb5;
-  background: rgba(40, 30, 70, .28);
 }
 
 .tb-badge.salt {
   color: #cfe3ff;
+  background: rgb(30 60 90 / 20%);
   border-color: #466a92;
-  background: rgba(30, 60, 90, .20);
 }
 
 .tb-badge.carbon {
   color: #8e8e97;
+  background: rgb(50 50 60 / 22%);
   border-color: #5b5b66;
-  background: rgba(50, 50, 60, .22);
 }
 
 .tb-badge.ash {
   color: #c9c9d6;
+  background: rgb(80 80 100 / 18%);
   border-color: #6f6f7a;
-  background: rgba(80, 80, 100, .18);
 }
 
 .tb-badge.earth {
   color: #d5b08a;
+  background: rgb(90 70 40 / 18%);
   border-color: #8d6a3a;
-  background: rgba(90, 70, 40, .18);
 }
 
 /* Organic / biological */
 .tb-badge.organic {
   color: #a7d7c9;
+  background: rgb(20 80 60 / 22%);
   border-color: #2d6b5a;
-  background: rgba(20, 80, 60, .22);
 }
 
 .tb-badge.moss {
   color: #a7d7c9;
+  background: rgb(20 80 60 / 20%);
   border-color: #2d6b5a;
-  background: rgba(20, 80, 60, .20);
 }
 
 .tb-badge.lichen {
   color: #cfe8ff;
+  background: rgb(40 80 110 / 16%);
   border-color: #5a7ea6;
-  background: rgba(40, 80, 110, .16);
 }
 
 .tb-badge.silk {
   color: #f1f3f5;
+  background: rgb(70 90 110 / 16%);
   border-color: #8aa3c0;
-  background: rgba(70, 90, 110, .16);
 }
 
 .tb-badge.avian {
   color: #cfe3ff;
+  background: rgb(30 60 90 / 16%);
   border-color: #466a92;
-  background: rgba(30, 60, 90, .16);
 }
 
 .tb-badge.scale {
   color: #ffcc8a;
+  background: rgb(120 60 20 / 22%);
   border-color: #a3631d;
-  background: rgba(120, 60, 20, .22);
 }
 
 .tb-badge.chitin {
   color: #ffcc8a;
+  background: rgb(120 60 20 / 18%);
   border-color: #a3631d;
-  background: rgba(120, 60, 20, .18);
 }
 
 .tb-badge.horn {
   color: #d7c2a3;
+  background: rgb(90 70 40 / 16%);
   border-color: #8d6a3a;
-  background: rgba(90, 70, 40, .16);
 }
 
 .tb-badge.hoof {
   color: #d7c2a3;
+  background: rgb(90 70 40 / 16%);
   border-color: #8d6a3a;
-  background: rgba(90, 70, 40, .16);
 }
 
 .tb-badge.monster_part {
   color: #ffcc8a;
+  background: rgb(120 60 20 / 25%);
   border-color: #a3631d;
-  background: rgba(120, 60, 20, .25);
 }
 
 /* Magical / planar themes */
 .tb-badge.arcane {
   color: #cbbdff;
+  background: rgb(40 40 80 / 22%);
   border-color: #6b5fb5;
-  background: rgba(40, 40, 80, .22);
 }
 
 .tb-badge.essence {
   color: #b888ff;
+  background: rgb(70 40 120 / 20%);
   border-color: #7a58c9;
-  background: rgba(70, 40, 120, .20);
 }
 
 .tb-badge.ectoplasm {
   color: #cbbdff;
+  background: rgb(60 50 100 / 22%);
   border-color: #6b5fb5;
-  background: rgba(60, 50, 100, .22);
 }
 
 .tb-badge.fey {
   color: #ff9bd7;
+  background: rgb(120 50 90 / 20%);
   border-color: #a54b7d;
-  background: rgba(120, 50, 90, .20);
 }
 
 .tb-badge.elemental {
   color: #a6e3ff;
+  background: rgb(60 100 160 / 16%);
   border-color: #5aa8ff;
-  background: rgba(60, 100, 160, .16);
 }
 
 .tb-badge.air {
   color: #cfe8ff;
+  background: rgb(80 120 170 / 16%);
   border-color: #5a9bd6;
-  background: rgba(80, 120, 170, .16);
 }
 
 .tb-badge.fire {
   color: #e07a3a;
+  background: rgb(140 60 20 / 22%);
   border-color: #a14a22;
-  background: rgba(140, 60, 20, .22);
 }
 
 .tb-badge.water {
   color: #8dd3ff;
+  background: rgb(20 80 110 / 20%);
   border-color: #3d7cab;
-  background: rgba(20, 80, 110, .20);
 }
 
 .tb-badge.earthy {
   color: #d5b08a;
+  background: rgb(90 70 40 / 18%);
   border-color: #8d6a3a;
-  background: rgba(90, 70, 40, .18);
 }
 
 .tb-badge.radiant {
   color: #f0c14b;
+  background: rgb(180 140 40 / 18%);
   border-color: #b38b2c;
-  background: rgba(180, 140, 40, .18);
 }
 
 .tb-badge.necrotic {
   color: #cba3ff;
+  background: rgb(60 40 90 / 26%);
   border-color: #7a58c9;
-  background: rgba(60, 40, 90, .26);
 }
 
 .tb-badge.frost {
   color: #8dd3ff;
+  background: rgb(70 130 180 / 20%);
   border-color: #5aa8ff;
-  background: rgba(70, 130, 180, .20);
 }
 
 .tb-badge.lightning {
   color: #b4d3ff;
+  background: rgb(60 90 160 / 20%);
   border-color: #6aa0ff;
-  background: rgba(60, 90, 160, .20);
 }
 
 .tb-badge.time {
   color: #f6e0a0;
+  background: rgb(120 100 60 / 14%);
   border-color: #b38b2c;
-  background: rgba(120, 100, 60, .14);
 }
 
 /* Scribing helpers (used elsewhere but handy here too) */
 .tb-badge.parchment {
   color: #f6e0a0;
+  background: rgb(80 70 40 / 22%);
   border-color: #b38b2c;
-  background: rgba(80, 70, 40, .22);
 }
 
 .tb-badge.ink {
   color: #cbbdff;
+  background: rgb(40 40 80 / 28%);
   border-color: #6b5fb5;
-  background: rgba(40, 40, 80, .28);
 }
 
 .tb-badge.reagent {
   color: #ffd86b;
+  background: rgb(22 66 38 / 22%);
   border-color: #b38b2c;
-  background: rgba(22, 66, 38, .22);
-  box-shadow: inset 0 0 0 1px rgba(255, 216, 107, .06);
+  box-shadow: inset 0 0 0 1px rgb(255 216 107 / 6%);
 }
 
 /* Herb subtypes / toxin — add styles */
 .tb-badge.enhancer {
   color: #9fd0ff;
+  background: rgb(30 70 120 / 20%);
   border-color: #3c6fb8;
-  background: rgba(30, 70, 120, .20);
 }
 
 .tb-badge.medicinal {
   color: #a7e3b8;
+  background: rgb(20 80 60 / 22%);
   border-color: #2d6b5a;
-  background: rgba(20, 80, 60, .22);
 }
 
 .tb-badge.toxin {
   color: #ff9b9b;
+  background: rgb(140 30 30 / 18%);
   border-color: #a33;
-  background: rgba(140, 30, 30, .18);
 }
 
 .tb-badge.extra {
-  background: rgba(100, 120, 255, .15);
-  border: 1px solid rgba(100, 120, 255, .35);
   color: #c8d0ff;
+  background: rgb(100 120 255 / 15%);
+  border: 1px solid rgb(100 120 255 / 35%);
 }
 
 /* INN / SERVICES */
 .tb-badge.kind {
-  background: #1f2a3a;
   color: #e6f0ff;
+  background: #1f2a3a;
   border-color: #5a7ab5;
 }
 
@@ -1933,20 +1934,20 @@
 }
 
 .tb-badge.tone {
-  background: #263244;
   color: #e6f0ff;
+  background: #263244;
   border-color: #5a7ab5;
 }
 
 .tb-badge.inn-tag {
-  background: #303b49;
   color: #dfe7f2;
+  background: #303b49;
   border-color: #6f8dbd;
 }
 
 .tb-badge.quality {
-  background: #2d2f36;
   color: #e6e6f0;
+  background: #2d2f36;
   border-color: #6b6f7a;
 }
 
@@ -1966,161 +1967,159 @@ tb-badge.quality.quality-high,
 }
 
 .tb-badge.model {
-  background: #000000;
-  color: #ffffff;
+  color: #fff;
+  background: #000;
   border-color: #5a728c;
 }
 
 .tb-badge.model.model-flat {
+  color: #fff;
   background: #854f4f;
-  color: #ffffff;
   border-color: #5a728c;
 }
 
 .tb-badge.model.model-per-person {
+  color: #fff;
   background: #867a4e;
-  color: #ffffff;
   border-color: #5a728c;
 }
 
 .tb-badge.model.model-per-meal {
+  color: #fff;
   background: #7a854c;
-  color: #ffffff;
   border-color: #5a728c;
 }
 
 .tb-badge.model.model-per-night {
+  color: #fff;
   background: #56834a;
-  color: #ffffff;
   border-color: #5a728c;
 }
 
 .tb-badge.model.model-per-hour {
+  color: #fff;
   background: #39853c;
-  color: #ffffff;
   border-color: #5a728c;
 }
 
 .tb-badge.model.model-per-day {
+  color: #fff;
   background: #47817b;
-  color: #ffffff;
   border-color: #5a728c;
 }
 
 .tb-badge.model.model-per-mile {
+  color: #fff;
   background: #3e5376;
-  color: #ffffff;
   border-color: #5a728c;
 }
 
 .tb-badge.model.model-per-animal-day {
+  color: #fff;
   background: #433d89;
-  color: #ffffff;
   border-color: #5a728c;
 }
 
 .tb-badge.model.model-per-page {
+  color: #fff;
   background: #503f76;
-  color: #ffffff;
   border-color: #5a728c;
 }
 
 .tb-badge.model.model-per-letter {
+  color: #fff;
   background: #5b2d88;
-  color: #ffffff;
   border-color: #5a728c;
 }
 
 .tb-badge.model.model-per-load {
+  color: #fff;
   background: #a93ca0;
-  color: #ffffff;
   border-color: #5a728c;
 }
 
 .tb-badge.illicit.tb-badge-warn {
+  color: #fff;
   background: #daac15;
-  color: #ffffff;
-  border-color: #ffffff;
+  border-color: #fff;
 }
 
 .tb-badge.count {
-  background: #1b2230;
   color: #cfe3ff;
+  background: #1b2230;
   border-color: #3c6fb8;
 }
 
 .tb-badge.type {
-  background: #1b2230;
   color: #cfe3ff;
+  background: #1b2230;
   border-color: #3c6fb8;
 }
 
-
 .tb-badge.type.type-inn {
-  background: #1b2230;
   color: #c5d816;
+  background: #1b2230;
   border-color: #3c6fb8;
-
 }
 
 .tb-badge.type.type-personal_services {
-  background: #1b2230;
   color: #d88e16;
+  background: #1b2230;
   border-color: #3c6fb8;
 }
 
 .tb-badge.type.type-public_services {
-  background: #1b2230;
   color: #eb5a0c;
+  background: #1b2230;
   border-color: #3c6fb8;
 }
 
 .tb-badge.type.type-transport {
-  background: #1b2230;
   color: #29d00c;
+  background: #1b2230;
   border-color: #3c6fb8;
 }
 
 .tb-badge.type.type-professional {
-  background: #1b2230;
   color: #16d88e;
+  background: #1b2230;
   border-color: #3c6fb8;
 }
 
 .tb-badge.type.type-magical {
-  background: #1b2230;
   color: #0fc3ae;
+  background: #1b2230;
   border-color: #3c6fb8;
 }
 
 .tb-badge.type.type-security {
-  background: #1b2230;
   color: #0f4bc3;
+  background: #1b2230;
   border-color: #3c6fb8;
 }
 
 .tb-badge.type.type-criminal {
-  background: #1b2230;
   color: #f2b08b;
+  background: #1b2230;
   border-color: #a8653b;
 }
 
 .tb-badge.type.type-banking {
-  background: #1b2230;
   color: #d96fde;
+  background: #1b2230;
   border-color: #a8653b;
 }
 
 .tb-badge.type.type-bureaucratic {
-  background: #1b2230;
   color: #da145d;
+  background: #1b2230;
   border-color: #a8653b;
 }
 
 .tb-badge.yield {
-  border: 1px solid #10c7e0;
-  background: #222a35;
   color: #dbe7ff;
+  background: #222a35;
+  border: 1px solid #10c7e0;
 }
 
 /* ===========================
@@ -2129,16 +2128,16 @@ tb-badge.quality.quality-high,
 .trap-header {
   display: flex;
   flex-wrap: wrap;
+  gap: 0.4rem 0.5rem;
   align-items: center;
-  gap: .4rem .5rem;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 .trap-dcs {
   display: flex;
   flex-wrap: wrap;
-  gap: .35rem .45rem;
-  margin-top: .5rem;
+  gap: 0.35rem 0.45rem;
+  margin-top: 0.5rem;
 }
 
 /* ===========================
@@ -2148,7 +2147,7 @@ tb-badge.quality.quality-high,
 /* LETHALITY — red scale, white text & border */
 .tb-badge.trap-lethality {
   color: #fff;
-  border-color: rgba(255, 255, 255, .8);
+  border-color: rgb(255 255 255 / 80%);
 }
 
 .tb-badge.trap-lethality.lethality-low {
@@ -2220,48 +2219,48 @@ tb-badge.quality.quality-high,
 }
 
 .tb-badge.trap-env {
-  background: #f3c3ec;
   color: #1e3a8a;
+  background: #f3c3ec;
   border-color: #bfdbfe;
 }
 
 .tb-badge.trap-area {
-  background: #ee67da;
   color: #1e3a8a;
+  background: #ee67da;
   border-color: #bfdbfe;
 }
 
 .tb-badge.trap-utility {
-  background: #e546cd;
   color: #c3ceee;
+  background: #e546cd;
   border-color: #bfdbfe;
 }
 
 /* TRAP TYPE — blue scale */
 .tb-badge.trap-type {
-  background: #e0f2fe;
   color: #075985;
+  background: #e0f2fe;
   border-color: #7dd3fc;
 }
 
 /* sky-100 */
 .tb-badge.trap-type.type-mechanical {
-  background: #dbeafe;
   color: #1e3a8a;
+  background: #dbeafe;
   border-color: #bfdbfe;
 }
 
 /* blue-100 */
 .tb-badge.trap-type.type-magical {
-  background: #dbeafe;
   color: #1e3a8a;
+  background: #dbeafe;
   border-color: #bfdbfe;
 }
 
 /* DAMAGE TYPE — orange scale (unified for all types) */
 .tb-badge.trap-dmg {
-  background: #fed7aa;
   color: #7c2d12;
+  background: #fed7aa;
   border-color: #fdba74;
 }
 
@@ -2269,8 +2268,8 @@ tb-badge.quality.quality-high,
 
 /* SAVE pills stay neutral; DC bar pills are labeled already */
 .tb-badge.trap-save {
-  background: #f1f5f9;
   color: #0f172a;
+  background: #f1f5f9;
   border-color: #cbd5e1;
 }
 
@@ -2278,10 +2277,9 @@ tb-badge.quality.quality-high,
 .trap-row {
   display: flex;
   flex-wrap: wrap;
+  gap: 0.35rem 0.5rem;
   align-items: baseline;
-  column-gap: .5rem;
-  row-gap: .35rem;
-  margin: .15rem 0 .35rem;
+  margin: 0.15rem 0 0.35rem;
 }
 
 .trap-row .row-text {
@@ -2291,39 +2289,38 @@ tb-badge.quality.quality-high,
 
 /* <= change to this */
 .trap-row .row-pills {
-  margin-left: auto;
-  flex: 0 1 40%;
   display: inline-flex;
-  gap: .35rem;
+  flex: 0 1 40%;
   flex-wrap: wrap;
+  gap: 0.35rem;
   justify-content: flex-end;
+  margin-left: auto;
 }
 
 .trap-footer-pills {
   display: flex;
   flex-wrap: wrap;
-  gap: .45rem;
-  margin-top: .65rem;
+  gap: 0.45rem;
+  margin-top: 0.65rem;
 }
 
 .trap-line {
-  margin: .25rem 0 .45rem;
+  margin: 0.25rem 0 0.45rem;
   line-height: 1.45;
 }
 
 .trap-line b {
-  margin-right: .35rem;
+  margin-right: 0.35rem;
 }
 
 .trap-line .line-pills {
   display: inline-flex;
-  gap: .35rem;
+  gap: 0.35rem;
   vertical-align: baseline;
 }
 
-
 /* Small screens: stack pills under the text */
-@media (max-width: 720px) {
+@media (width <=720px) {
   .trap-row .row-text {
     flex: 1 0 100%;
     min-width: 0;
@@ -2354,47 +2351,44 @@ tb-badge.quality.quality-high,
 
 /* risk severity overrides */
 .tb-badge.risk-safe {
-  background: #16a34a;
   color: #fff;
+  background: #16a34a;
 }
 
 .tb-badge.risk-low {
-  background: #22c55e;
   color: #0b0f0f;
+  background: #22c55e;
 }
 
 .tb-badge.risk-moderate {
-  background: #f59e0b;
   color: #111;
+  background: #f59e0b;
 }
 
 .tb-badge.risk-high {
-  background: #ef4444;
   color: #fff;
+  background: #ef4444;
 }
 
 .tb-badge.risk-deadly {
-  background: #991b1b;
   color: #fff;
+  background: #991b1b;
 }
 
-
 /* ========== Door pills (extend .tb-badge) ========== */
-/*challenge*/
 
+/* challenge */
 
 .tb-badge.door-chal {
-  background: #f6e602ff;
   color: #b23f11ff;
+  background: #f6e602ff;
   border-color: #b23f11ff;
 }
 
-
-
 /* Material */
 .tb-badge.door-mat {
+  color: #f9fafb;
   background: #374151;
-  color: #F9FAFB;
   border-color: white;
 }
 
@@ -2433,16 +2427,16 @@ tb-badge.quality.quality-high,
 
 /* Hardness (HP) */
 .tb-badge.door-hp {
+  color: #f9fafb;
   background: #1e3a8a;
-  color: #F9FAFB;
 }
 
 /* Toughness (Break DC) */
 .tb-badge.door-breakdc,
 .tb-badge.door-lockdc,
 .tb-badge.door-pickdc {
-  background: #7dd3fc;
   color: #111827;
+  background: #7dd3fc;
 }
 
 /* tone steps (match your dcToneClass e.g., dcv-8,10,...,26) */
@@ -2453,7 +2447,7 @@ tb-badge.quality.quality-high,
 
 .tb-badge.dcv-12,
 .tb-badge.dcv-14 {
-  filter: brightness(1.0);
+  filter: brightness(1);
 }
 
 .tb-badge.dcv-16,
@@ -2473,8 +2467,8 @@ tb-badge.quality.quality-high,
 
 /* Lock */
 .tb-badge.door-lock {
-  background: #075985;
   color: white;
+  background: #075985;
   border-color: white;
 }
 
@@ -2513,8 +2507,8 @@ tb-badge.quality.quality-high,
 
 /* Lock quality */
 .tb-badge.door-quality {
+  color: #f9fafb;
   background: #52525b;
-  color: #F9FAFB;
 }
 
 .tb-badge.quality-common {
@@ -2539,73 +2533,64 @@ tb-badge.quality.quality-high,
 
 /* Locked state + side */
 .tb-badge.door-state.state-open {
-  background-color: #068021;
   color: white;
+  background-color: #068021;
   border-color: whitesmoke;
 }
 
 .tb-badge.door-state.state-closed-unlocked {
-  background-color: greenyellow;
   color: white;
+  background-color: greenyellow;
   border-color: whitesmoke;
 }
 
 .tb-badge.door-state.state-closed-locked {
-  background-color: red;
   color: white;
+  background-color: red;
   border-color: whitesmoke;
 }
 
 .tb-badge.door-state.state-ajar {
-  background-color: orange;
   color: white;
+  background-color: orange;
   border-color: whitesmoke;
 }
 
 .tb-badge.door-state.state-obstructed {
-  background-color: red;
   color: orange;
+  background-color: red;
   border-color: whitesmoke;
 }
 
 .tb-badge.door-lockq {
+  color: white;
   background-color: blueviolet;
-  color: white;
   border-color: whitesmoke;
 }
 
 .tb-badge.door-side {
-  background-color: #3562abff;
   color: white;
+  background-color: #3562abff;
   border-color: whitesmoke;
 }
 
 .tb-badge.door-side {
-  background-color: #3562abff;
   color: white;
+  background-color: #3562abff;
   border-color: whitesmoke;
 }
 
 .tb-badge.door-pick.ok {
-  background-color: #3562abff;
   color: white;
+  background-color: #3562abff;
   border-color: whitesmoke;
 }
 
 .tb-badge.door-hingechip {
-  background-color: #3562abff;
   color: white;
+  background-color: #3562abff;
   border-color: whitesmoke;
 }
-
-
-
-
-
-
-
-
-
 
 .tb-badge.door-hingechip.hinge-noisy .hinge-jammed / .hinge-breaks .tb-badge.door-lockedfrom.side-this-side {
   background: #0f766e;
@@ -2617,72 +2602,72 @@ tb-badge.quality.quality-high,
 
 /* Pickability + Pick DC */
 .tb-badge.door-pick.pick-yes {
-  background: #0d9488;
   color: #fff;
+  background: #0d9488;
 }
 
-
 .tb-badge.door-pickdc.pick-impossible {
-  background: #7e0c23;
   color: #10c7e0;
+  background: #7e0c23;
 }
 
 /* Trap & Damage */
 .tb-badge.door-trap.trap-yes {
-  background: #b45309;
   color: #fff;
+  background: #b45309;
 }
 
 /* warn */
 .tb-badge.door-trap.trap-no {
+  color: #f9fafb;
   background: #475569;
-  color: #F9FAFB;
 }
 
 .tb-badge.door-damage.dmg-yes {
-  background: #dc2626;
   color: #fff;
+  background: #dc2626;
 }
 
 .tb-badge.door-damage.dmg-no {
-  background: #15803d;
   color: #fff;
+  background: #15803d;
 }
-
-
 
 /* ========== Vertical layout helpers (optional) ========== */
 
-
 .door-bracket {
-  opacity: .7;
-  padding: 0 .15rem;
+  padding: 0 0.15rem;
+  opacity: 70%;
 }
 
 /* Vertical door layout */
 .door-vertical .door-line {
-  margin: .3rem 0;
+  margin: 0.3rem 0;
 }
 
 .door-vertical .door-line .tb-badge {
-  margin-right: .25rem;
+  margin-right: 0.25rem;
 }
 
 .door-bracket {
-  opacity: .7;
-  padding: 0 .15rem;
+  padding: 0 0.15rem;
+  opacity: 70%;
 }
 
 /* Put the #doorChallenge select below its label inside the .tb-grid */
 #doorChallenge {
-  grid-column: 1 / -1;
-  /* start at column 1 and span the row → drops beneath label */
-  justify-self: start;
-  /* align left within the grid */
-  margin-top: .25rem;
   /* a little breathing room under the label */
   display: block;
+  grid-column: 1 / -1;
+
+  /* start at column 1 and span the row → drops beneath label */
+  justify-self: start;
+
   /* ensures it behaves like a block in case of resets */
   width: min(320px, 100%);
+
+  /* align left within the grid */
+  margin-top: 0.25rem;
+
   /* optional: keep it tidy */
 }

@@ -1,11 +1,15 @@
-<!-- index.html --><!DOCTYPE html><html lang="en"><head>
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Skazka - aeter</title>
     <link rel="stylesheet" href="navbar.css?v=3">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="assets/skazka_logo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Alegreya&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
     <script src="navbar.js?v=3"></script>
     <script type="module" src="./main.js"></script>
 
@@ -26,13 +30,13 @@
                 monarch and church has forged a state where piety is inseparable from politics, and faith is not a
                 private matter but the very lifeblood of public order.</p>
             <h2 class="tb-title">Population</h2>
-            <p>Caratania counts a population of roughly 400,000 souls. The heart of the kingdom is the fortified city of
+            <P>Caratania counts a population of roughly 400,000 souls. The heart of the kingdom is the fortified city of
                 Barasov, home to the royal court, and the high clergy. Beyond the city lie dozens of towns and
-                villages scattered across the foothills of the Blood Mountains.</p>
+                villages scattered across the foothills of the Blood Mountains.</P>
         </div>
 
         <div class="center-column"><!-- MIDDLE -->
-            <img src="assets/caratania.jpg" alt="Caratania">
+            <img src="assets/caratania.jpg">
             <p>Caratania is a brooding kingdom of mist-laden valleys and shadowed mountains, perched at the foot of
                 the
                 forbidding Blood Mountains. Its people are the descendants of warriors and martyrs, heirs to the
@@ -117,6 +121,6 @@
 
 
 
+</body>
 
-
-</body></html>
+</html>

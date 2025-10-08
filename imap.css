@@ -2,6 +2,7 @@
   --nav-h: 0px;
   --foot-h: 0px;
   --skz-freeze-scale: 1;
+
   /* used by label-freeze */
 }
 
@@ -19,9 +20,10 @@ body {
 /* Keep navbar/footer on top of Leaflet UIs */
 #navbar,
 #footer {
-  flex: 0 0 auto;
   position: relative;
   z-index: 5000;
+  flex: 0 0 auto;
+
   /* above Leaflet/Geoman panels */
 }
 
@@ -45,12 +47,12 @@ body {
 <svg xmlns='http://www.w3.org/2000/svg' width='128' height='128' viewBox='0 0 128 128'>\
   <filter id='n2'><feTurbulence type='fractalNoise' baseFrequency='0.45' numOctaves='2' stitchTiles='stitch'/></filter>\
   <rect width='100%' height='100%' filter='url(%23n2)' opacity='0.06'/></svg>"),
-    radial-gradient(100% 140% at 15% 20%, rgba(255, 255, 255, .05), transparent 40%),
-    radial-gradient(120% 150% at 85% 10%, rgba(255, 255, 255, .03), transparent 45%),
-    radial-gradient(120% 120% at 50% 40%, transparent 58%, rgba(0, 0, 0, .45) 78%, rgba(0, 0, 0, .75) 100%);
+    radial-gradient(100% 140% at 15% 20%, rgb(255 255 255 / 5%), transparent 40%),
+    radial-gradient(120% 150% at 85% 10%, rgb(255 255 255 / 3%), transparent 45%),
+    radial-gradient(120% 120% at 50% 40%, transparent 58%, rgb(0 0 0 / 45%) 78%, rgb(0 0 0 / 75%) 100%);
   background-repeat: repeat, repeat, no-repeat, no-repeat, no-repeat;
-  background-size: 160px 160px, 420px 420px, 100% 100%, 100% 100%, 100% 100%;
   background-position: 0 0, 0 0, center, center, center;
+  background-size: 160px 160px, 420px 420px, 100% 100%, 100% 100%, 100% 100%;
 }
 
 .leaflet-container {
@@ -68,48 +70,48 @@ body {
 
 /* Labels + freeze scaling actually applied */
 .leaflet-tooltip.skz-label {
+  font-size: .8rem;
+  font-weight: 800;
+  color: black;
+  text-shadow: 0 0 2px #fff, 0 0 6px #fff, 0 0 12px rgb(255 255 255 / 80%);
   background: transparent;
   border: none;
   box-shadow: none;
-  color: black;
-  font-size: .8rem;
-  font-weight: 800;
-  text-shadow: 0 0 2px #fff, 0 0 6px #fff, 0 0 12px rgba(255, 255, 255, .8);
   transform: scale(var(--skz-freeze-scale));
   transform-origin: bottom center;
 }
 
 .leaflet-zoom-anim .skz-label {
-  opacity: .12;
+  opacity: 12%;
   transition: opacity .12s linear;
 }
 
 /* Kill all Leaflet tooltip pointers */
 .leaflet-tooltip::before,
-.leaflet-tooltip:before,
+.leaflet-tooltip::before,
 .leaflet-tooltip-left::before,
 .leaflet-tooltip-right::before,
 .leaflet-tooltip-top::before,
 .leaflet-tooltip-bottom::before {
-  content: none !important;
-  border: 0 !important;
+  display: none !important;
   width: 0 !important;
   height: 0 !important;
-  display: none !important;
+  content: none !important;
+  border: 0 !important;
 }
 
 /* Label sizes per type */
 .leaflet-tooltip.skz-label--kingdom {
   font-size: 20px;
-  letter-spacing: .2em;
   font-weight: 800;
   text-transform: uppercase;
+  letter-spacing: .2em;
 }
 
 .leaflet-tooltip.skz-label--city {
   font-size: 15px;
-  color: red;
   font-weight: 700;
+  color: red;
 }
 
 .leaflet-tooltip.skz-label--town,
@@ -120,28 +122,28 @@ body {
 
 /* Popup styling */
 .leaflet-popup.skz-popup-wrap .leaflet-popup-content-wrapper {
-  background: #11131a;
   color: #efe9d8;
-  border: 1px solid rgba(255, 255, 255, .18);
+  background: #11131a;
+  border: 1px solid rgb(255 255 255 / 18%);
   border-radius: 10px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, .4);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 40%);
 }
 
 .leaflet-popup.skz-popup-wrap .leaflet-popup-tip {
   background: #11131a;
-  border: 1px solid rgba(255, 255, 255, .18);
+  border: 1px solid rgb(255 255 255 / 18%);
 }
 
 .skz-popup .t {
-  font-weight: 700;
   margin-bottom: 4px;
+  font-weight: 700;
   color: #efe9d8;
 }
 
 .skz-popup .d {
-  color: #d4cdbb;
-  opacity: .9;
   margin: 2px 0 6px;
+  color: #d4cdbb;
+  opacity: 90%;
 }
 
 .skz-popup a {
@@ -155,10 +157,10 @@ body {
 
 /* Icons */
 .skz-divicon-diamond {
+  position: relative;
   width: 10px;
   height: 10px;
-  position: relative;
-  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, .45)) drop-shadow(0 6px 14px rgba(0, 0, 0, .25));
+  filter: drop-shadow(0 2px 2px rgb(0 0 0 / 45%)) drop-shadow(0 6px 14px rgb(0 0 0 / 25%));
 }
 
 .skz-divicon-diamond .gem {
@@ -182,8 +184,8 @@ body {
   display: block;
   width: 100%;
   height: 100%;
+  border: 2px solid rgb(0 0 0 / 45%);
   border-radius: 50%;
-  border: 2px solid rgba(0, 0, 0, .45);
 }
 
 .pin.pin--town>span {
@@ -212,24 +214,23 @@ body {
 /* Search/list overlay */
 .skz-ui {
   position: absolute;
-  right: 12px;
   top: 12px;
+  right: 12px;
   z-index: 1500;
   width: 280px;
   max-height: calc(100% - 24px);
-  overflow-y: auto;
-  overflow-x: hidden;
-  -webkit-overflow-scrolling: touch;
-  background: rgba(18, 19, 25, .88);
-  color: #efe9d8;
-  border: 1px solid rgba(255, 255, 255, .15);
-  border-radius: 12px;
   padding: 10px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, .4);
-  backdrop-filter: blur(4px);
-  font: 14px/1.45 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  overflow: hidden auto;
+  font: 14px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #efe9d8;
+  scrollbar-color: rgb(255 255 255 / 35%) transparent;
   scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, .35) transparent;
+  background: rgb(18 19 25 / 88%);
+  border: 1px solid rgb(255 255 255 / 15%);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 40%);
+  backdrop-filter: blur(4px);
+  -webkit-overflow-scrolling: touch;
 }
 
 /* WebKit scrollbars */
@@ -242,51 +243,51 @@ body {
 }
 
 .skz-ui::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, .25);
-  border-radius: 8px;
-  border: 2px solid transparent;
+  background: rgb(255 255 255 / 25%);
   background-clip: padding-box;
+  border: 2px solid transparent;
+  border-radius: 8px;
 }
 
 .skz-ui::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, .38);
+  background: rgb(255 255 255 / 38%);
 }
 
 .skz-search {
-  width: 100%;
-  padding: 8px 10px;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, .18);
-  background: #0f1116;
-  color: #efe9d8;
-  outline: none;
   position: sticky;
   top: 0;
   z-index: 2;
+  width: 100%;
+  padding: 8px 10px;
   margin-top: 0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, .25);
+  color: #efe9d8;
+  outline: none;
+  background: #0f1116;
+  border: 1px solid rgb(255 255 255 / 18%);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 25%);
 }
 
 .skz-list {
-  list-style: none;
-  margin: 10px 0 0;
   padding: 0;
+  margin: 10px 0 0;
+  list-style: none;
 }
 
 .skz-list li {
-  padding: 6px;
-  border-radius: 8px;
-  cursor: pointer;
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 6px;
-  white-space: nowrap;
+  padding: 6px;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  border-radius: 8px;
 }
 
 .skz-list li:hover {
-  background: rgba(255, 255, 255, .06);
+  background: rgb(255 255 255 / 6%);
 }
 
 .skz-list .n {
@@ -294,91 +295,91 @@ body {
 }
 
 .skz-list .c {
-  opacity: .8;
   font-size: 12px;
+  opacity: 80%;
 }
 
 /* Effect pane (sunburst spotlight) */
 .leaflet-effects-pane {
-  pointer-events: none;
   z-index: 650;
+  pointer-events: none;
 }
 
 .skz-burst {
+  position: relative;
   width: 1px;
   height: 1px;
-  position: relative;
 }
 
 .skz-burst svg {
   position: absolute;
-  left: 50%;
   top: 50%;
+  left: 50%;
   width: 96px;
   height: 96px;
-  transform: translate(-50%, -50%) scale(1);
   overflow: visible;
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .skz-burst .rays {
-  animation: skz-burst-rays 2500ms ease-out forwards;
   transform-origin: 50% 50%;
+  animation: skz-burst-rays 2500ms ease-out forwards;
 }
 
 .skz-burst .rays rect {
-  fill: rgba(255, 215, 128, 1);
+  fill: rgb(255 215 128 / 100%);
 }
 
 .skz-burst .ring {
   fill: none;
-  stroke: rgba(255, 230, 160, 1);
+  stroke: rgb(255 230 160 / 100%);
   stroke-width: 2.5;
-  animation: skz-burst-ring 2500ms ease-out forwards;
   transform-origin: 50% 50%;
+  animation: skz-burst-ring 2500ms ease-out forwards;
 }
 
 .skz-burst .flash {
-  fill: rgba(255, 245, 200, 1);
-  animation: skz-burst-flash 1800ms ease-out forwards;
+  fill: rgb(255 245 200 / 100%);
   transform-origin: 50% 50%;
+  animation: skz-burst-flash 1800ms ease-out forwards;
 }
 
 @keyframes skz-burst-rays {
   0% {
-    opacity: 1;
+    opacity: 100%;
+    filter: blur(0);
     transform: scale(0.6) rotate(0deg);
-    filter: blur(0px);
   }
 
   100% {
-    opacity: 0;
-    transform: scale(1.6) rotate(24deg);
+    opacity: 0%;
     filter: blur(1px);
+    transform: scale(1.6) rotate(24deg);
   }
 }
 
 @keyframes skz-burst-ring {
   0% {
-    opacity: 1;
-    transform: scale(0.5);
+    opacity: 100%;
     stroke-width: 3;
+    transform: scale(0.5);
   }
 
   100% {
-    opacity: 0;
-    transform: scale(2.1);
+    opacity: 0%;
     stroke-width: 0.5;
+    transform: scale(2.1);
   }
 }
 
 @keyframes skz-burst-flash {
   0% {
-    opacity: 1;
+    opacity: 100%;
     transform: scale(0.8);
   }
 
   100% {
-    opacity: 0;
+    opacity: 0%;
     transform: scale(2.2);
   }
 }
@@ -412,18 +413,18 @@ body {
 
 /* Ruler UI */
 .rm-label.leaflet-tooltip {
-  background: rgba(18, 19, 25, .9);
-  color: #efe9d8;
-  border: 1px solid rgba(255, 255, 255, .15);
   padding: 2px 6px;
+  font: 12px/1.2 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: #efe9d8;
+  background: rgb(18 19 25 / 90%);
+  border: 1px solid rgb(255 255 255 / 15%);
   border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, .35);
-  font: 12px/1.2 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 35%);
 }
 
 .rm-ctrl.active a {
-  background: #2c2f38;
   color: #ffd780;
+  background: #2c2f38;
 }
 
 /* base circle for all pins (safe even if already present) */
@@ -431,37 +432,39 @@ body {
   display: block;
   width: 100%;
   height: 100%;
+  border: 2px solid rgb(0 0 0 / 45%);
   border-radius: 50%;
-  border: 2px solid rgba(0, 0, 0, .45);
 }
 
 /* kingdom-specific — higher specificity to win any cascade */
 .leaflet-marker-icon.pin.pin--kingdom>span {
   background-color: red;
-  opacity: 0.1;
+
   /* your intended fill */
   border-color: #1f1630;
+
   /* your intended border */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, .35);
+  box-shadow: 0 2px 6px rgb(0 0 0 / 35%);
+  opacity: 10%;
 }
 
 /* simple,unobtrusive scalebar */
 .skz-scale__bar {
   height: 8px;
   margin-bottom: 6px;
-  border-radius: 4px;
   background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.5) 0 50%, rgba(255, 255, 255, 0.75) 50% 100%);
+    linear-gradient(90deg, rgb(255 255 255 / 50%) 0 50%, rgb(255 255 255 / 75%) 50% 100%);
   background-size: 24px 100%;
-  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .35));
+  border-radius: 4px;
+  filter: drop-shadow(0 2px 6px rgb(0 0 0 / 35%));
 }
 
 .skz-scale__label {
-  text-align: right;
-  color: red;
-  opacity: .95;
   font-weight: 600;
+  color: red;
+  text-align: right;
   letter-spacing: .02em;
+  opacity: 95%;
 }
 
 /* Let the bottom-left corner span the full map width */
@@ -478,21 +481,25 @@ body {
 /* Center the scalebar inside that full-width corner */
 .leaflet-bottom.leaflet-left .skz-scale {
   position: absolute;
-  text-align: center;
-  left: 50%;
-  transform: translateX(-50%);
   bottom: 18px;
-  /* or whatever offset you prefer */
-  pointer-events: none;
+  left: 50%;
+
   /* keeps drag/zoom working through it */
   z-index: 2000;
+  text-align: center;
+
+  /* or whatever offset you prefer */
+  pointer-events: none;
+  transform: translateX(-50%);
 }
 
 .leaflet-bottom.leaflet-left .skz-scale__label {
-  text-align: center;
-  /* overrides the old right align */
-  white-space: nowrap;
   /* avoid wrapping */
   font-variant-numeric: tabular-nums;
+  text-align: center;
+
+  /* overrides the old right align */
+  white-space: nowrap;
+
   /* steadier number widths */
 }

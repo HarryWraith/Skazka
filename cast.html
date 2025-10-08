@@ -2,17 +2,15 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Skazka – Player Profiles</title>
 
     <link rel="stylesheet" href="navbar.css?v=3">
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" type="image/png" href="assets/skazka_logo.png" />
-    <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet" />
-
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="assets/skazka_logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
     <script src="navbar.js?v=3" defer></script>
-    <!-- main.js will import playerprofile.js -->
     <script type="module" src="./main.js"></script>
 </head>
 
@@ -21,8 +19,10 @@
 
     <section class="grid-two page-profile" id="playerProfile">
         <!-- Excel-like character tabs -->
-        <nav id="charTabs" class="char-strip" role="tablist" aria-label="Characters">
-            <div class="skeleton skeleton-tabs">Loading characters…</div>
+        <nav id="charTabs" class="char-strip" aria-label="Characters" aria-busy="true">
+            <div class="skeleton skeleton-tabs" role="status" aria-live="polite">
+                Loading characters…
+            </div>
         </nav>
 
         <!-- LEFT: story-first content -->

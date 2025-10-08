@@ -1,4 +1,5 @@
 /* dice-roller.css — Skazka World theme (dark + antique gold) */
+
 /* Scoped variables so only the dice/attributes panels change */
 :root {
   /* Core palette — prefer site vars if defined */
@@ -7,18 +8,24 @@
   --skz-panel-2: var(--sb-panel2, #171922);
   --skz-border: var(--sb-border, #2a2d36);
   --skz-text: var(--sb-text, #e6dccb);
+
   /* bone */
   --skz-dim: var(--sb-dim, #b9b09e);
+
   /* dim bone */
   --skz-accent: var(--sb-gold, #c2a13a);
+
   /* antique gold */
   --skz-accent-strong: var(--sb-gold-strong, #e1b84d);
+
   /* brighter gold */
   --skz-good: #2e7d57;
+
   /* moss */
   --skz-danger: #a33a3a;
+
   /* dried blood */
-  --skz-shadow: rgba(0, 0, 0, .55);
+  --skz-shadow: rgb(0 0 0 / 55%);
   --skz-chip: var(--sb-chip, #20222b);
 
   /* Sizing & radii */
@@ -42,36 +49,36 @@
 
 #skz-dice-roller,
 #skz-attr-roller {
+  padding: clamp(12px, 2.2vw, 18px);
   background: linear-gradient(180deg, var(--skz-panel), var(--skz-panel-2));
   border: 1px solid var(--skz-border);
   border-radius: var(--skz-radius);
-  box-shadow: 0 12px 24px var(--skz-shadow), inset 0 1px 0 rgba(255, 255, 255, 0.02);
-  padding: clamp(12px, 2.2vw, 18px);
+  box-shadow: 0 12px 24px var(--skz-shadow), inset 0 1px 0 rgb(255 255 255 / 2%);
 }
 
 /* Titles / headings */
 .skz-title,
 .skz-history-title {
+  margin: 0 0 8px;
   color: var(--skz-accent-strong);
   letter-spacing: .5px;
-  margin: 0 0 8px;
 }
 
 /* ---------- Buttons ---------- */
 .skz-btn {
-  background: linear-gradient(180deg, var(--skz-accent-strong), var(--skz-accent));
-  color: #0b0a07;
-  border: 1px solid color-mix(in oklab, var(--skz-accent) 70%, black);
-  border-radius: 10px;
   padding: 8px 12px;
   font-weight: 600;
+  color: #0b0a07;
   cursor: pointer;
+  background: linear-gradient(180deg, var(--skz-accent-strong), var(--skz-accent));
+  border: 1px solid color-mix(in oklab, var(--skz-accent) 70%, black);
+  border-radius: 10px;
   transition: transform .06s ease, box-shadow .2s ease, filter .2s ease;
 }
 
 .skz-btn:hover {
+  box-shadow: 0 0 0 2px rgb(226 184 77 / 25%), 0 0 14px rgb(226 184 77 / 35%);
   filter: brightness(1.05);
-  box-shadow: 0 0 0 2px rgba(226, 184, 77, .25), 0 0 14px rgba(226, 184, 77, .35);
 }
 
 .skz-btn:active {
@@ -79,29 +86,29 @@
 }
 
 .skz-ghost-btn {
-  background: transparent;
+  padding: 7px 12px;
   color: var(--skz-accent-strong);
+  cursor: pointer;
+  background: transparent;
   border: 1px solid var(--skz-accent);
   border-radius: 10px;
-  padding: 7px 12px;
-  cursor: pointer;
   transition: background .2s ease, box-shadow .2s ease;
 }
 
 .skz-ghost-btn:hover {
-  background: rgba(226, 184, 77, .08);
-  box-shadow: inset 0 0 0 1px rgba(226, 184, 77, .18);
+  background: rgb(226 184 77 / 8%);
+  box-shadow: inset 0 0 0 1px rgb(226 184 77 / 18%);
 }
 
 /* ---------- Inputs / selects ---------- */
 .skz-input,
 .skz-select {
-  background: #0f1117;
+  padding: 8px 10px;
   color: var(--skz-text);
+  outline: none;
+  background: #0f1117;
   border: 1px solid var(--skz-border);
   border-radius: 10px;
-  padding: 8px 10px;
-  outline: none;
 }
 
 .skz-input::placeholder {
@@ -111,7 +118,7 @@
 .skz-input:focus,
 .skz-select:focus {
   border-color: var(--skz-accent-strong);
-  box-shadow: 0 0 0 2px rgba(226, 184, 77, .25);
+  box-shadow: 0 0 0 2px rgb(226 184 77 / 25%);
 }
 
 /* ---------- Mode slider + centered label ---------- */
@@ -137,17 +144,17 @@
 }
 
 #skz-mode::-webkit-slider-runnable-track {
-  background: #1a1d26;
-  border-radius: 999px;
   height: 6px;
+  background: #1a1d26;
   border: 1px solid var(--skz-border);
+  border-radius: 999px;
 }
 
 #skz-mode::-moz-range-track {
-  background: #1a1d26;
-  border-radius: 999px;
   height: 6px;
+  background: #1a1d26;
   border: 1px solid var(--skz-border);
+  border-radius: 999px;
 }
 
 #skz-mode-label {
@@ -165,25 +172,25 @@
 
 .skz-die {
   position: relative;
-  background: linear-gradient(180deg, #1a1c24, #0f1117);
-  color: var(--skz-text);
-  border: 1px solid var(--skz-border);
-  border-radius: var(--skz-radius-sm);
   padding: 10px 12px;
+  color: var(--skz-text);
   text-align: left;
   cursor: pointer;
+  background: linear-gradient(180deg, #1a1c24, #0f1117);
+  border: 1px solid var(--skz-border);
+  border-radius: var(--skz-radius-sm);
   transition: box-shadow .2s ease, border-color .2s ease, transform .06s ease;
 }
 
 .skz-die small {
   display: block;
-  opacity: .75;
   font-size: .85rem;
+  opacity: 75%;
 }
 
 .skz-die:hover {
   border-color: var(--skz-accent);
-  box-shadow: 0 0 0 1px rgba(226, 184, 77, .18) inset, 0 0 10px rgba(226, 184, 77, .25);
+  box-shadow: 0 0 0 1px rgb(226 184 77 / 18%) inset, 0 0 10px rgb(226 184 77 / 25%);
 }
 
 .skz-die:active {
@@ -197,11 +204,11 @@
   right: 8px;
   padding: 2px 6px;
   font-size: .8rem;
-  border: 1px solid var(--skz-accent);
-  border-radius: 999px;
-  background: #0b0d12;
   color: var(--skz-accent-strong);
   pointer-events: none;
+  background: #0b0d12;
+  border: 1px solid var(--skz-accent);
+  border-radius: 999px;
 }
 
 /* Instruction under dice row */
@@ -213,11 +220,11 @@
 
 /* ---------- “Last roll” panel ---------- */
 .skz-last {
+  padding: var(--skz-pad);
   background: #0f1117;
   border: 1px solid var(--skz-border);
   border-radius: var(--skz-radius);
-  padding: var(--skz-pad);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .02);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 2%);
 }
 
 .skz-last strong {
@@ -225,11 +232,11 @@
 }
 
 .skz-last.skz-crit {
-  box-shadow: 0 0 0 2px rgba(46, 125, 87, .35) inset, 0 0 16px rgba(46, 125, 87, .25);
+  box-shadow: 0 0 0 2px rgb(46 125 87 / 35%) inset, 0 0 16px rgb(46 125 87 / 25%);
 }
 
 .skz-last.skz-fumble {
-  box-shadow: 0 0 0 2px rgba(163, 58, 58, .4) inset, 0 0 16px rgba(163, 58, 58, .25);
+  box-shadow: 0 0 0 2px rgb(163 58 58 / 40%) inset, 0 0 16px rgb(163 58 58 / 25%);
 }
 
 /* ---------- Toolbar & macros ---------- */
@@ -255,37 +262,37 @@
   grid-template-columns: auto auto 1fr auto auto;
   gap: 8px;
   align-items: center;
+  padding: 8px 10px;
   background: #0f1117;
   border: 1px solid var(--skz-border);
   border-radius: 10px;
-  padding: 8px 10px;
 }
 
 .skz-macro-name {
-  color: var(--skz-text);
   font-weight: 700;
+  color: var(--skz-text);
 }
 
 /* ---------- Export bar ---------- */
 .skz-export {
   display: flex;
-  gap: 8px;
   flex-wrap: wrap;
+  gap: 8px;
   margin-top: 10px;
 }
 
 /* ---------- History (right column) ---------- */
 .skz-history {
+  padding: 10px 12px;
   background: linear-gradient(180deg, var(--skz-panel), var(--skz-panel-2));
   border: 1px solid var(--skz-border);
   border-radius: var(--skz-radius);
-  padding: 10px 12px;
-  box-shadow: 0 12px 24px var(--skz-shadow), inset 0 1px 0 rgba(255, 255, 255, 0.02);
+  box-shadow: 0 12px 24px var(--skz-shadow), inset 0 1px 0 rgb(255 255 255 / 2%);
 }
 
 .skz-history-list {
-  margin: 8px 0 0;
   padding-left: 18px;
+  margin: 8px 0 0;
   font-family: var(--skz-mono);
   color: var(--skz-dim);
 }
@@ -296,26 +303,26 @@
 
 /* ---------- Attribute roller (left column) ---------- */
 .skz-attr-head {
-  color: var(--skz-accent-strong);
   margin: 0 0 6px;
+  color: var(--skz-accent-strong);
 }
 
 .skz-attr-table {
   width: 100%;
-  border-collapse: separate;
   border-spacing: 0 8px;
+  border-collapse: separate;
 }
 
 .skz-attr-table td {
-  background: #0f1117;
-  border: 1px solid var(--skz-border);
   padding: 8px 10px;
   vertical-align: middle;
+  background: #0f1117;
+  border: 1px solid var(--skz-border);
 }
 
 .skz-attr-table td:first-child {
-  border-radius: 10px 0 0 10px;
   color: var(--skz-dim);
+  border-radius: 10px 0 0 10px;
 }
 
 .skz-attr-table td:last-child {
@@ -328,17 +335,17 @@
 }
 
 .skz-lock {
+  padding: 2px 6px;
   margin-left: 8px;
-  background: transparent;
   color: var(--skz-accent-strong);
+  cursor: pointer;
+  background: transparent;
   border: 1px solid var(--skz-accent);
   border-radius: 8px;
-  padding: 2px 6px;
-  cursor: pointer;
 }
 
 .skz-lock.is-locked {
-  background: rgba(226, 184, 77, .12);
+  background: rgb(226 184 77 / 12%);
 }
 
 .skz-card {
@@ -346,15 +353,15 @@
   grid-auto-flow: column;
   gap: 8px;
   align-items: center;
+  padding: 8px 10px;
   background: #10131a;
   border: 1px solid var(--skz-border);
   border-radius: 10px;
-  padding: 8px 10px;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .02);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 2%);
 }
 
 .skz-card.selected {
-  box-shadow: 0 0 0 2px rgba(226, 184, 77, .25), 0 0 12px rgba(226, 184, 77, .25);
+  box-shadow: 0 0 0 2px rgb(226 184 77 / 25%), 0 0 12px rgb(226 184 77 / 25%);
 }
 
 .skz-card-total strong {
@@ -364,14 +371,14 @@
 .skz-chip {
   display: inline-block;
   min-width: 24px;
-  text-align: center;
   padding: 2px 6px;
-  border-radius: 8px;
-  background: var(--skz-chip);
-  border: 1px solid var(--skz-border);
-  color: var(--skz-text);
   font-family: var(--skz-mono);
   font-size: .9rem;
+  color: var(--skz-text);
+  text-align: center;
+  background: var(--skz-chip);
+  border: 1px solid var(--skz-border);
+  border-radius: 8px;
 }
 
 .skz-chip--dropped {
@@ -381,12 +388,12 @@
 
 .skz-badge {
   display: inline-block;
-  font-size: .85rem;
   padding: 2px 8px;
-  border-radius: 999px;
-  border: 1px solid var(--skz-border);
-  background: #0f1117;
+  font-size: .85rem;
   color: var(--skz-dim);
+  background: #0f1117;
+  border: 1px solid var(--skz-border);
+  border-radius: 999px;
 }
 
 /* Pool area */
@@ -398,34 +405,34 @@
 }
 
 .skz-pool-card {
+  padding: 8px 10px;
+  color: var(--skz-text);
   background: #10131a;
   border: 1px solid var(--skz-border);
   border-radius: 10px;
-  padding: 8px 10px;
-  color: var(--skz-text);
 }
 
 .skz-placeholder {
+  padding: 6px 8px;
   color: var(--skz-dim);
+  text-align: center;
   border: 1px dashed var(--skz-border);
   border-radius: 10px;
-  padding: 6px 8px;
-  text-align: center;
 }
 
 /* Reroll button on a score card */
 .skz-rebtn {
+  padding: 2px 6px;
   margin-left: auto;
-  background: transparent;
   color: var(--skz-accent-strong);
+  cursor: pointer;
+  background: transparent;
   border: 1px solid var(--skz-accent);
   border-radius: 8px;
-  padding: 2px 6px;
-  cursor: pointer;
 }
 
 .skz-rebtn:hover {
-  background: rgba(226, 184, 77, .12);
+  background: rgb(226 184 77 / 12%);
 }
 
 /* Copy-last action (small link-style) */
@@ -441,9 +448,9 @@
   padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip: rect(0, 0, 1px, 1px);
   white-space: nowrap;
   border: 0;
+  clip: rect(0, 0, 1px, 1px);
 }
 
 /* Fix mode slider overflow + alignment (Skazka dice roller) */
@@ -454,8 +461,8 @@
 .skz-roller .skz-slider-wrap {
   display: grid;
   grid-template-columns: auto 1fr auto;
-  align-items: center;
   column-gap: 12px;
+  align-items: center;
   width: 100%;
 }
 
@@ -464,9 +471,9 @@
 }
 
 .skz-roller .skz-slider-wrap #skz-mode {
+  box-sizing: border-box;
   width: 100%;
   min-width: 0;
-  box-sizing: border-box;
 }
 
 .skz-roller .skz-mode-label {
@@ -487,12 +494,12 @@
 }
 
 #skz-dice-roller .skz-mod-input {
-  background: #0f1117 !important;
-  color: var(--skz-text);
-  border: 0;
   padding: 8px 10px;
-  outline: none;
+  color: var(--skz-text);
   caret-color: var(--skz-text);
+  outline: none;
+  background: #0f1117 !important;
+  border: 0;
 }
 
 #skz-dice-roller .skz-mod-input::placeholder {
@@ -521,24 +528,29 @@
   position: relative;
   display: grid;
   gap: 12px;
-  background: linear-gradient(180deg, var(--sb-panel), var(--sb-panel2));
-  border-radius: var(--sb-radius);
   padding: clamp(12px, 2vw, 18px);
-  color: var(--sb-text);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, .45), inset 0 1px 0 rgba(255, 255, 255, .02);
   margin: 18px 0;
   font-size: 1.1rem;
+  color: var(--sb-text);
+  background: linear-gradient(180deg, var(--sb-panel), var(--sb-panel2));
   border: none;
+  border-radius: var(--sb-radius);
+  box-shadow: 0 12px 24px rgb(0 0 0 / 45%), inset 0 1px 0 rgb(255 255 255 / 2%);
 
   /* tweakables */
   --stroke-w: 2px;
+
   /* border thickness */
   --corner-strength: 1;
+
   /* 0–1; strong at corners */
   --side-strength: 0;
+
   /* 0–1; weak at side middles */
-  --border-color: oklch(75% 0.17 70);
+  --border-color: oklch(75% 0.17 70deg);
+
   /* orange stroke */
-  --glow-color: oklch(85% 0.15 85 / .85);
+  --glow-color: oklch(85% 0.15 85deg / 85%);
+
   /* gold glow */
 }

@@ -89,7 +89,12 @@
           "title": "The Fading",
           "details": "An era defining moment when magic permanency began to fail.",
           "expanded_html": true,
-          "expanded": ""
+          "expanded": "Scholars and historians can never agree on what caused The Fading. Some point to the arrival of the Orcs while others somehow link it to the Draconic slumber. In any event, this fracture in the weave of magic began nearly two millennia ago. Arms and armour—once vibrant with rune and incantation—started to dull. Enchanters found their bindings slipping; metals they had strengthened with ancient rites turned brittle. The forge cracked with panic; the spell faded before the heat cooled. From that day on, no enchantment held for the ages—unless by some rare and terrible force."
+     },
+     {
+          "year": "-1700",
+          "title": "The Great Draconic slumber",
+          "details": "Dragons, both great and small, across Skazka sought out places of safety and began an almost synchronised slumber. It is as though they could sense something and that hibernation was a natural defence that kicked in."
      },
      {
           "year": "-1650",
@@ -147,15 +152,16 @@
           "epoch": true
      },
      {
-          "year": "5",
-          "title": "Shattered Hosts",
-          "details": "After Starfall, Aeternian legions sent north vanish in blizzards of glass-ice. Their frozen standards still glitter beneath the wastes to this day."
-     },
-     {
           "year": "2",
           "title": "There be dragons",
           "details": "Dragons that have slumbered for an eon under the northern ice are awoken."
      },
+     {
+          "year": "5",
+          "title": "Shattered Hosts",
+          "details": "After Starfall, Aeternian legions sent north vanish in blizzards of glass-ice. Their frozen standards still glitter beneath the wastes to this day."
+     },
+
      {
           "year": "12 - 27",
           "title": "Construction of citadel Grimspire",
