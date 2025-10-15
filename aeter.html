@@ -5,10 +5,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Skazka - aeter</title>
+  <title>Aeter</title>
   <link rel="stylesheet" href="navbar.css?v=3">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/png" href="assets/skazka_logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
   <script src="navbar.js?v=3"></script>
   <script type="module" src="./main.js"></script>
@@ -18,123 +20,161 @@
 <body>
   <div id="navbar"></div><!-- Navbar will be loaded here -->
 
+  <header class="place-hero">
+    <div class="place-hero__icon">
+      <!-- YOUR ICON IMAGE -->
 
-  <section class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
-    <div class="tb-panel">
-      <h2 class="tb-title">Symbols</h2>
-      <ul class="nodec">
-        <li><b>Crown of Dazzling Rays</b>: Forged from pure light, it glimmers like the sun at zenith — an emblem of his
-          boundless
-          presence and wisdom.</li>
-
-        <li><b>Everlight Orb</b>: A small globe of concentrated sunlight that never dims — its warmth is healing, its
-          glow reveals
-          truth, and it can shatter unholy darkness.</li>
-
-        <li><b>Radiant Scepter</b>: Topped with a living flame that burns with the warmth of dawn, this staff channels
-          his
-          influence whenever light is needed.</li>
-      </ul>
     </div>
 
-    <div class="center-column"><!-- MIDDLE -->
-      <img src="assets/aeter.jpg" alt="the god aeter" />
+    <div class="place-hero__body">
+      <!-- PAGE TITLE -->
+      <h1 class="skz-viking">Aeter</h1>
+      <!-- SHORT TAGLINE / EPITHET -->
+      <p class="sub">The Sun God</p>
+    </div>
+    <div class="place-hero__spacer" aria-hidden="true"></div>
+  </header>
+
+  <!--two-wide for aside + overview -->
+  <section class="grid-two-wide">
+    <!-- ===== LEFT SIDEBAR: PROFILE CARD(S) ===== -->
+    <aside class="tb-panel" aria-labelledby="profile-title">
+      <h2 id="profile-title" class="tb-title skz-title">Profile</h2>
+
+      <!-- KEY/VALUE STATS TABLE -->
+      <table class="materials-table">
+        <tbody>
+          <!-- Replace the right-hand cells with your data -->
+          <tr>
+            <th class="tb-kv-key">Classification</th>
+            <td>Annarr</td>
+          </tr>
+          <tr>
+            <th class="tb-kv-key">Aliases</th>
+            <td>Lord of light</td>
+          </tr>
+          <tr>
+            <th class="tb-kv-key">Domains</th>
+            <td>Sun, Hope, Revealing truth</td>
+          </tr>
+          <tr>
+            <th class="tb-kv-key">Favoured</th>
+            <td>Elves, Undead hunters, Caratanians</td>
+          </tr>
+          <tr>
+            <th class="tb-kv-key">Alignment</th>
+            <td>Lawful Good</td>
+          </tr>
+          <tr>
+            <th class="tb-kv-key">Holy Symbol</th>
+            <td>A golden staff with a mircosun on top
+            </td>
+          </tr>
+          <tr>
+            <th class="tb-kv-key">Known forms</th>
+            <td>Is not known to have an avatar</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Optional: Orders/cults block if relevant -->
+      <section aria-labelledby="orders-title">
+        <img src="assets/aeter_symbol.jpg" alt="Aeter holy sigil">
+      </section>
+    </aside>
+
+    <!------------------------------------------------->
+    <!-- ===== RIGHT COLUMN: ALL MAIN SECTIONS ===== -->
+    <!------------------------------------------------->
+    <article class="tb-panel cent">
+      <!-- Optional lead image at top of article -->
+      <img class="noborder" src="assets/aeter.jpg" alt="uzume">
+
+
+      <!-- ===== Overview ===== -->
+      <h2 id="overview" class="tb-title">Overview</h2>
       <p>In the mythic pantheon of Skazka, Aeter, the radiant God of Light, reigns as a beacon against encroaching
-        darkness — both literal and spiritual. His brilliance brings clarity, hope, and renewal, yet he is neither
-        naive
-        nor
-        blind to temptation: true light requires responsibility. As the keeper of the celestial forge, Aeter is
-        revered
-        by
-        scholars, healers, and those who seek to banish shadow from the soul.</p>
-
-    </div>
-
-    <div class="right-column"> <!-- RIGHT -->
-      <img src="assets/aeter_symbol.jpg" alt="">
-    </div>
+        darkness — both literal and spiritual. His brilliance brings clarity, hope, and renewal, yet he is neither naive
+        nor blind to temptation: true light requires responsibility. As the keeper of the celestial forge, Aeter is
+        revered by scholars, healers, and those who seek to banish shadow from the soul.</p>
+    </article>
   </section>
 
-  <section class="grid-even"><!-- 3 COLUMN EVEN -->
-    <div class="tb-panel">
+  <div class="skz-divider skz-divider--diamond" aria-hidden="true"></div>
+
+  <!--move to 3 column-->
+  <section class="grid-even equal-cards">
+    <!-- ===== Influence
+ ===== -->
+    <div class="tb-panel" id="domains">
+      <h2 class="tb-title">Influence</h2>
+      <ul>
+        <li><strong>Illumination & Truth</strong>: Aeter is the arbiter of clarity, exposing lies and unveiling hidden
+          things. Scholars invoke him in pursuit of knowledge; judges in service of justice.</li>
+        <li><strong>Hope & Renewal</strong>: Especially during total darkness — night, winter, loss of faith — his
+          presence reminds the pantheon’s followers that morning always returns.</li>
+        <li><strong>Civilization & Artistic Flame</strong>: Poets, architects, musicians, and artisans seek inspiration
+          from his glow. Creativity flourishes under his favor, pushing civilization ever forward.</li>
+      </ul>
+    </div>
+
+    <!-- ===== Symbols & Omens ===== -->
+    <div class="tb-panel" id="symbols">
+      <h2 class="tb-title">Symbols</h2>
+      <ul>
+        <li><strong>Crown of Dazzling Rays</strong>: Forged from pure light, it glimmers like the sun at zenith — an
+          emblem of his boundless presence and wisdom.</li>
+        <li><strong>Everlight Orb</strong>: A small globe of concentrated sunlight that never dims — its warmth is
+          healing, its glow reveals truth, and it can shatter unholy darkness.</li>
+        <li><strong>Radiant Scepter</strong>: Topped with a living flame that burns with the warmth of dawn, this staff
+          channels his influence whenever light is needed.</li>
+      </ul>
+    </div>
+
+    <!-- ===== Tenets ===== -->
+    <div class="tb-panel" id="tenets">
+      <h2 class="tb-title">Tenets</h2>
+      <ul>
+        <li>Bear the Everlight responsibly—reveal truth without cruelty, and mend what the light uncovers. </li>
+        <li>Share your flame: knowledge, craft, and hope grow brighter when passed hand to hand. </li>
+        <li>Drive back shadow within and without—renew your vow at dawn and guard the spark at dusk.</li>
+      </ul>
+    </div>
+
+    <!-- ===== Rites & Offerings ===== -->
+    <div class="tb-panel" id="rites">
       <h2 class="tb-title">Rites</h2>
-
-      <ul class="nodec">
-        <li><b>Dawn’s Renewal</b>: At the break of dawn, Sun Elf communities gather in temple courtyards to kindle
-          communal
-          Everlight lamps. Each person brings a reflective plate that captures the morning sun before passing it to
-          their
-          neighbor — a symbol that light, once shared, grows brighter.</li>
-
-        <li><b>The Everlight Trials</b>: Young Sun Elves undergo a trial under Aeter’s observance. They must craft or
-          shape
-          something that reflects light —be it glasswork, art, song, or architecture. Success demonstrates mastery of
-          both
-          craft and purpose; failure reminds them that light untended fades.</li>
-
-        <li><b>Feast of the Turning</b>: On the summer solstice, temples open every window and let shouts of “Aeter,
-          guide our
-          path!” ring out at sunrise. Pilgrims carry candles that burn black smoke which turns godlen in the dawn
-          light.
-        </li>
+      <ul>
+        <li><strong>Dawn’s Renewal</strong>: At the break of dawn, Sun Elf communities gather in temple courtyards to
+          kindle communal Everlight lamps. Each person brings a reflective plate that captures the morning sun before
+          passing it to their neighbor — a symbol that light, once shared, grows brighter.</li>
+        <li><strong>The Everlight Trials</strong>: Young Sun Elves undergo a trial under Aeter’s observance. They must
+          craft or shape something that reflects light —be it glasswork, art, song, or architecture. Success
+          demonstrates mastery of both craft and purpose; failure reminds them that light untended fades.</li>
+        <li><strong>Feast of the Turning</strong>: On the summer solstice, temples open every window and let shouts of
+          “Aeter, guide our path!” ring out at sunrise. Pilgrims carry candles that burn black smoke which turns godlen
+          in the dawn light.</li>
       </ul>
     </div>
 
-    <div class="tb-panel">
-      <h2 class="tb-title">Domains</h2>
-      <ul class="nodec">
-        <li><b>Illumination & Truth</b>: Aeter is the arbiter of clarity, exposing lies and unveiling hidden things.
-          Scholars
-          invoke him in pursuit of knowledge; judges in service of justice.</li>
-
-        <li><b>Hope & Renewal</b>: Especially during total darkness — night, winter, loss of faith — his presence
-          reminds the
-          pantheon’s followers that morning always returns.</li>
-
-        <li><b>Civilization & Artistic Flame</b>: Poets, architects, musicians, and artisans seek inspiration from his
-          glow.
-          Creativity flourishes under his favor, pushing civilization ever forward.</li>
-      </ul>
+    <!-- ===== Avatars & Interventions ===== -->
+    <div class="tb-panel" id="avatars">
+      <h2 class="tb-title">Avatars</h2>
+      <p>Not known to take on any other form. Though his followers would suggest his avatar is the sun.
+      </p>
     </div>
 
-    <div class="tb-panel">
+    <!-- ===== Lore ===== -->
+    <div class="tb-panel" id="lore">
       <h2 class="tb-title">Lore</h2>
-      <ul class="nodec">
-        <li>
-          Long ago, when dark elven exiles — driven from the Underdark by their own misdeeds — fled upward to the
-          realm
-          of mortals, they were twisted by shadow and despair. Aeter pitying them, reached down and cast a fragment
-          of
-          pure
-          sunlight into their midst: the Everlight.
-        </li>
-        <li>
-          The infusion of Aeter’s gift altered their essence. Their once-dark skins glowed with a gentle
-          luminescence, their eyes reflecting dawn’s first light. These exiles became the first Sun Elves, noble and
-          fair,
-          dedicated to justice and to spreading light wherever darkness threatens.
-        </li>
-
-        <li>
-          Over generations, Sun Elves built grand solar temples, inscribed with stories of Everlight and Aeter’s
-          benevolence.
-          Each dawn, temple priests rekindle their altars with purified sunlight captured at sunrise, ensuring the
-          god’s
-          flame
-          never fades.
-        </li>
-      </ul>
+      <p>Long ago, when dark elven exiles — driven from the Underdark by their own misdeeds — fled upward to the realm
+        of mortals, they were twisted by shadow and despair. Aeter pitying them, reached down and cast a fragment of
+        pure sunlight into their midst: the Everlight.</p>
     </div>
-  </section>
 
+  </section>
 
   <div id="footer"></div>
-
-  <!-- Lightbox container (hidden by default) -->
-  <div id="lightbox">
-    <span class="close">&times;</span>
-    <img class="lightbox-img" alt="">
-  </div>
 
 </body>
 

@@ -5,10 +5,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>Search • Skazka</title>
+    <title>primordials</title>
     <link rel="stylesheet" href="navbar.css?v=3">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="assets/skazka_logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
     <script src="navbar.js?v=3"></script>
     <script type="module" src="./main.js"></script>
@@ -17,55 +19,33 @@
 
 <body>
     <div id="navbar"></div><!-- Navbar will be loaded here -->
-
-    <!-- Main Content Area -->
-    <section class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
-        <div class="left-column"> <!-- LEFT -->
+    <!--hero-->
+    <section class="place-hero">
+        <div class="place-hero__icon">
         </div>
 
-        <div class="center-column"><!-- MIDDLE -->
-            <img src="assets/forge.jpg" alt="the cosmic forge" />
+        <div class="place-hero__body">
+            <h1 id="intro" class="skz-viking">The Pprimordials</h1>
+            <p class="skz-quote-attribution">“What is greater than a god? A promise kept.” &ndash; unnamed High Priest
+                of Ioun</p>
+        </div>
+        <div class="place-hero__spacer" aria-hidden="true"></div>
+    </section>
+    <!--content-->
+    <section class="grid-single" aria-labelledby="intro">
+        <div class="tb-panel">
+            <img src="/assets/forge.jpg">
             <p>The Vekya are the first and most ancient powers — primordial deities born from the corpse-fire of the
-                cosmos
-                when all
-                things were still raw, bleeding, and half-formed. They are not gods in the manner of those who
-                hunger
-                for
-                worship or
-                cling to mortal praise. No — the Vekya are forces, vast and unknowable, carved from the marrow of
-                creation’s
-                agony. They
-                are will made flesh, hunger made law, eternity made conscious.</p>
-            <p>The Vekya number but three: <a href="./uzume.html">Uzume</a> the bring of life, <a
-                    href="./kaos.html">Kaos</a> the instigator of
-                entropy, and <a href="./kronos.html">Kronos</a> father of
-                time itself.</p>
-
-        </div>
-
-        <div class="right-column"> <!-- RIGHT -->
+                cosmos when all things were still raw, bleeding, and half-formed. They are not gods in the manner of
+                those who hunger for worship or cling to mortal praise. No — the Vekya are forces, vast and unknowable,
+                carved from the marrow of creation’s agony. They are will made flesh, hunger made law, eternity made
+                conscious.</p>
+            <p class="sum-links"><a href="uzume.html">Uzume</a><a href="kaos.html">Kaos</a><a
+                    href="kronos.html">Kronos</a></p>
         </div>
     </section>
-
-    <section class="grid-even"><!-- 3 COLUMN EVEN -->
-        <div>
-        </div>
-
-        <div>
-        </div>
-
-        <div>
-        </div>
-    </section>
-
 
     <div id="footer"></div>
-
-
-
-
-
-
 
 </body>
 

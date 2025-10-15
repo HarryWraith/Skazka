@@ -1,75 +1,85 @@
-<!-- index.html -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
+    <!-- Standard Skazka head (no inline CSS) -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>Skazka - aeter</title>
+    <title>Skazka — Dwarves</title>
+
     <link rel="stylesheet" href="navbar.css?v=3">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="assets/skazka_logo.png">
+    <link rel="icon" href="assets/skazka_logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
-    <script src="navbar.js"></script>
-    <script type="module" src="./main.js"></script>
 
+    <script src="navbar.js?v=3"></script>
+    <script type="module" src="./main.js"></script>
 </head>
 
 <body>
-    <div id="navbar"></div><!-- Navbar will be loaded here -->
-
-    <!-- Main Content Area -->
-    <section class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
-        <div class=" tb-panel"> <!-- LEFT -->
-            <h2 class="tb-title">Physical Description</h2>
-            <p>Every Dragonborn is a living testament to their draconic heritage, their scales shimmering across a
-                spectrum as vast as shadow and light. Some shine with the purity of untouched snow, while others are as
-                dark as a starless night. Between these extremes lie countless hues—the deep green of hidden forest
-                pools, the burning red of fresh blood, the golden glow of dying sunlight, and the pale silver of
-                starlight reflected on still waters. Their markings are no less striking, draconic patterns etched
-                across their bodies like natural tattoos. These unique speckles, streaks, or spots are said to reveal
-                lineage, and in some cases, destiny itself.</p>
-            <p>Their physical traits vary widely, reflecting the diversity of dragonkind. Some display regal frills
-                crowning their heads, delicate membranes that glow faintly in darkness, while others are adorned with
-                cruel horns, barbed spines, and silhouettes that command fear as much as respect. Yet it is their eyes
-                that betray their true nature—burning with inner fire, whether as the icy gleam of winter stars or the
-                warm radiance of a hearth flame. In every gaze lies the undeniable presence of draconic power bound
-                within mortal flesh.</p>
+    <div id="navbar"></div>
+    <!-- HERO -->
+    <section class="place-hero" id="hero">
+        <div class="place-hero__icon">
+            <img alt="Dragonborn Sigil" src="assets/icons/species/dragonborn_sigil.jpg">
         </div>
-
-        <div class="center-column"><!-- MIDDLE -->
-            <img src="assets/dragonborn.jpg" alt="" />
-            <p>The Dragonborn are enigmatic beings whispered to be the offspring of dragons and mortals, their
-                existence
-                a defiance of the natural order of Skazka. They did not walk the cursed realms until after
-                Starfall—the
-                cataclysmic night when the heavens bled secrets into the world and the ancient wyrms stirred from
-                their
-                timeless slumber. Whether they are strangers to this land or children born from its wounded magic,
-                their
-                sudden emergence is tied irrevocably to that event. To this day, their origin remains cloaked in
-                mystery, with scholars and Dragonborn alike struggling to unravel the truth of their creation.</p>
-
+        <div class="place-hero__body">
+            <h1 class="skz-viking">Dragonborn</h1>
+            <p>Mystical offspring of dragons &amp;humans</p>
         </div>
-
-        <div class="right-column, tb-panel"> <!-- RIGHT -->
-            <h2 class="tb-title">Heritage</h2>
-            <p>The heritage of the Dragonborn is as fractured and uncertain as the event that birthed them. Some
-                believe
-                Starfall tore open rifts between realms, allowing these hybrids to slip into Skazka from distant
-                planes.
-                Others whisper that the catastrophe awakened magic long dormant in the land, igniting dragon
-                blood
-                buried deep in the soil and reshaping it into living beings. Whatever the truth, the Dragonborn
-                themselves bear the heaviest burden of this mystery, for within them burns the unanswered
-                question of
-                who—or what—they truly are.</p>
-        </div>
-
+        <div class="place-hero__spacer"></div>
     </section>
-    <section class="vertical">
-        <div class="tb-panel"><!-- MIDDLE -->
-            <h2 class="tb-title">Motivation</h2>
+
+
+
+    <!-- PROFILE (left) + OVERVIEW (right) -->
+    <section class="grid-two-wide" id="profile-overview">
+        <aside class="tb-panel" id="profile">
+            <h2 class="tb-title">Profile</h2>
+            <table class="materials-table">
+                <tbody>
+                    <tr>
+                        <th class="tb-kv-key">Average Lifespan</th>
+                        <td>~80–120 years</td>
+                    </tr>
+                    <tr>
+                        <th class="tb-kv-key">Typical Size</th>
+                        <td>Medium; 6'–7' tall, heavily built</td>
+                    </tr>
+                    <tr>
+                        <th class="tb-kv-key">Homelands</th>
+                        <td>No homeland; large congregation around <a href="winter.html">Winter</a></td>
+                    </tr>
+                    <tr>
+                        <th class="tb-kv-key">Languages</th>
+                        <td>Draconic, Trade-tongue</td>
+                    </tr>
+                    <tr>
+                        <th class="tb-kv-key">Faiths</th>
+                        <td>No favoured faith though some worship <a href="fafnirog.html">Fafnirog</a></td>
+                    </tr>
+                    <tr>
+                        <th class="tb-kv-key">Temperament</th>
+                        <td>Stoic, oath-bound, mercantile-proud</td>
+                    </tr>
+                </tbody>
+            </table>
+            <img src="assets/dragonborn.jpg" alt="Dragonborn portrait" class="noborder">
+        </aside>
+
+        <article class="tb-panel" id="overview">
+            <h2 class="tb-title">Overview</h2>
+
+            <p>The Dragonborn are enigmatic beings whispered to be the offspring of dragons and <a
+                    href="humans.html">humans</a>, their existence a defiance of the natural order of Skazka. They did
+                not walk the cursed realms until after Starfall—the cataclysmic night when the heavens bled secrets into
+                the world and the ancient wyrms stirred from their timeless slumber. Whether they are strangers to this
+                land or children born from its wounded magic, their sudden emergence is tied irrevocably to that event.
+                To this day, their origin remains cloaked in mystery, with scholars and Dragonborn alike struggling to
+                unravel the truth of their creation.</p>
+
             <p>More than most races, the Dragonborn are driven by a hunger for understanding. They seek answers to their
                 own existence, desperate to uncover whether they are accidents of magic, chosen harbingers of change, or
                 the beginning of something greater. This pursuit shapes their lives, compelling them into study,
@@ -77,9 +87,6 @@
                 nature: some embrace the wanderlust and power of their draconic progenitors, while others seek belonging
                 and purpose among mortals. Their existence is both a question and a promise, and in their striving they
                 embody the tension between destiny and choice.</p>
-        </div>
-        <div class="tb-panel">
-            <h2 class="tb-title">Integration into Society</h2>
             <p>Despite their strange origins and often fearsome appearance, Dragonborn have found acceptance across much
                 of Skazka. In a land where survival demands strength and alliances, their intelligence, resilience, and
                 raw power make them valued companions rather than outcasts. Among kobold tribes, Dragonborn are revered
@@ -90,15 +97,230 @@
                 gravitas in matters of ancient knowledge and arcane lore. Yet, unlike most races, they have never forged
                 a kingdom or empire of their own. Their blood seems to carry a nomadic instinct, driving them to wander,
                 integrate, and enrich other cultures rather than build one unique to themselves. The only exception lies
-                in the northern town of Winter, where the greatest number of Dragonborn gather, drawn by some unseen
-                force. There, they serve as guardians of the harsh mountain settlement, embodying both protectors of
-                mortals and keepers of their own mysterious traditions.</p>
-        </div>
+                in the northern town of <a href="winter.html">Winter</a>, where the greatest number of Dragonborn
+                gather, drawn by some unseen force. There, they serve as guardians of the harsh mountain settlement,
+                embodying both protectors of mortals and keepers of their own mysterious traditions.</p>
+
+        </article>
     </section>
+
+    <div class="skz-divider skz-divider--diamond" aria-hidden="true"></div>
+
+    <!-- PHYSIOLOGY / CULTURE / FAITH -->
+    <section class="grid-even equal-cards" id="pillars">
+        <article class="tb-panel" id="physiology">
+            <h2 class="tb-title">Physiology & Traits</h2>
+            <ul>
+                <li><strong>Appearance:</strong> Broad-shouldered and tower-tall, dragonborn are covered in small,
+                    interlocking scales coloured and patterned depending on their heritage. Horns or crests frame the
+                    skull, with slit-pupiled
+                    eyes that catch torchlight like molten coin. </li>
+                <li><strong>Dimorphism:</strong> Dragonborn dimorphism is subtle but real: females tend to be a touch
+                    taller with longer, swept crests and finer brow ridges; males are broader across chest and wrists,
+                    with thicker horn rings and heavier jaw plates. </li>
+                <li><strong>Senses:</strong> Dragonborn eyes are built for dusk: broad slit pupils drink light.</li>
+                <li><strong>Innate Gifts:</strong> Each dragonborn carries a spark of their forebear’s element—fire,
+                    frost, storm, acid, or venom—and can pour it from their lungs in a sudden gout or cutting line of
+                    breath. Their scales shrug the same harm they wield.</li>
+            </ul>
+        </article>
+
+        <article class="tb-panel" id="culture">
+            <h2 class="tb-title">Culture & Society</h2>
+            <ul>
+                <li><strong>Virtues & Laws:</strong> Dragonborn uphold honor above all: speak truth, keep oaths, repay
+                    debts, and face foes openly.</li>
+                <li><strong>Craft & Trade:</strong> Dragonborn crafts favor heat and precision: breath-forged steel,
+                    scaled leathers, kiln-fired ceramics, and gemwork cut to razor tolerances. Haggling is expected,
+                    deceit is taboo, and a broken trade-oath stains a clan more deeply than rust.</li>
+                <li><strong>Family & Names:</strong> Dragonborn families are clan-first and oath-bound, built from
+                    blood, oath-siblings, and honored elders who guide each clutch to discipline and craft. </li>
+                <li><strong>Customs & Rites:</strong> Emberfast names the hatchlings over live coals, each kin gifting a
+                    measured breath to harden resolve. </li>
+            </ul>
+        </article>
+
+        <article class="tb-panel" id="faith">
+            <h2 class="tb-title">Faith & Myth</h2>
+            <ul>
+                <li><strong>Patrons:</strong> Dragonborn faith stays clan-first, Gods second.</li>
+                <li><strong>Origin Story:</strong> After Starfall, when the dragons roused from ages of slumber, the
+                    dragonborn appeared — absent from all prior records and chronicles. Whether wrought by the wyrms’
+                    waking will, quickened from long-sleeping eggs, or born of Starfall’s ash and omen is disputed; all
+                    agree their first footprints begin in that dawn.</li>
+                <li><strong>Rites & Taboos:</strong> promises are sealed with a pinch of salt. When someone dies, their
+                    kin cremate the body and
+                    fuse a thumb of ash into glass for the clan wall.</li>
+                <li><strong>Omens & Festivals:</strong> Emberfall marks the turning into long night: streets hung with
+                    red glass, braziers lit from a single traveling coal, and every doorway chalked to welcome strangers
+                    in from the cold.</li>
+            </ul>
+        </article>
+    </section>
+
+    <div class="skz-divider skz-divider--diamond" aria-hidden="true"></div>
+
+    <!-- LINEAGES -->
+    <section class="place-hero" id="hero">
+        <div class="place-hero__icon">
+
+        </div>
+        <div class="place-hero__body">
+            <h1 class="skz-viking">Subspecies</h1>
+            <p>In Skazka, dragonborn lineages show in the cast of their scales and the “flavor” of their breath—reds,
+                whites, greens, blues, bronzes, and subtler blends besides—each a quiet echo of the wyrms who woke after
+                Starfall. Clans read these hues the way others read sigils: not as destiny, but as a lean of temperament
+                and tradition. Over generations the colors braid, yielding new shades and habits, yet the old tones
+                linger at the throat and along the brow, a courteous nod to the subspecies from which a lineage first
+                took its fire.</p>
+        </div>
+        <div class="place-hero__spacer"></div>
+    </section>
+    <section id="lineages" class="grid-even equal-cards">
+
+        <article class="tb-panel">
+            <h3 class="tb-title">Emberborn</h3>
+            <p>Emberborn wear the furnace in their scales—ember reds that seem to hold a glow—and carry themselves like
+                wardens of the gate. Quick to stand, slow to yield, they prize oaths, watchfires, and work hammered
+                true, letting anger serve duty the way heat serves the forge. <span class="tag">Red</span></p>
+        </article>
+
+        <article class="tb-panel">
+            <h3 class="tb-title">Stormborn</h3>
+            <p>Stormborn wear the horizon in their scales—deep blues with a dusk sheen—and move with the hush before
+                rain. They are chart-minded and steady, given to long routes and few words, but when choice comes due
+                they strike like a clean thunderclap and are done. <span class="tag">Blue</span></p>
+        </article>
+
+        <article class="tb-panel">
+            <h3 class="tb-title">Frostborn</h3>
+            <p>Frostborn carry winter in their scales—matte whites that drink the light—and their calm is the hard
+                clarity of ice. They waste no motion, keep clean lines and clean accounts, and let resolve do the work
+                that anger never could.<span class="tag">White</span></p>
+        </article>
+
+        <article class="tb-panel">
+            <h3 class="tb-title">Voidborn</h3>
+            <p>Scales like spilled ink and a breath that seems to drink sound—Voidborn move with lamp-snuffer calm. They
+                finish work before they show it, speak names sparingly, and watch the edges where others only stare
+                inward.<span class="tag">Black</span></p>
+        </article>
+
+        <article class="tb-panel">
+            <h3 class="tb-title">Swampborn</h3>
+            <p>Moss-dark scales and patient eyes mark the Swampborn, who prize what endures: gardens on stilts,
+                ropewalks above the mire, and tools that mend rather than waste. They listen long, strike clean, and
+                leave wetlands better than they found them.<span class="tag">Green</span></p>
+        </article>
+
+        <article class="tb-panel">
+            <h3 class="tb-title">Giltborn</h3>
+            <p>Giltborn carry a quiet radiance, the poise of a verdict already weighed. They stand in doorways and
+                crossroads, keeping ceremonies honest and tempers cool, turning pride into duty like ore into coin.<span
+                    class="tag">Gold</span></p>
+        </article>
+
+        <article class="tb-panel">
+            <h3 class="tb-title">Argentborn</h3>
+            <p>Moon-bright and clear-voiced, the Argentborn are hearth-healers and keepers of the night watch. They
+                favor precision over force and set a table where feuds soften and truth has room to breathe.<span
+                    class="tag">Silver</span></p>
+        </article>
+
+        <article class="tb-panel">
+            <h3 class="tb-title">Tideborn</h3>
+            <p>Salt on the scales and rivets in the mind, Tideborn think in currents and caravans. They chart coasts,
+                bridge deltas, and keep schedules like oaths—steady hands that bring storms to heel by preparation
+                alone.<span class="tag">Bronze</span></p>
+        </article>
+
+        <article class="tb-panel">
+            <h3 class="tb-title">Brightborn</h3>
+            <p>Sun-warm and sociable, Brightborn turn marketplaces into living songs. They barter stories as much as
+                goods, coaxing strangers into kin and heat into hospitality.<span class="tag">Brass</span></p>
+        </article>
+
+        <article class="tb-panel">
+            <h3 class="tb-title">Songborn</h3>
+            <p>Copper hues and quick wit: the Songborn solve with clever joints and laughing challenges. Their workshops
+                hum after midnight, where problems become puzzles and puzzles become tools.<span
+                    class="tag">Copper</span>
+            </p>
+        </article>
+
+        <article class="tb-panel">
+            <h3 class="tb-title">Veilborn</h3>
+            <p>Twilight scales with a hint of inward glow—Veilborn speak softly and leave space for echoes. They tend
+                libraries and memory-walks, drawing meaning from the hush between words.<span
+                    class="tag">Amethyst</span>
+            </p>
+        </article>
+
+        <article class="tb-panel">
+            <h3 class="tb-title">Glassborn</h3>
+            <p>Clear plates that catch light like cut glass; Glassborn love clean lines, clean ledgers, and the elegance
+                of things that do exactly what they promise. In their presence, clutter seems to tidy itself.<span
+                    class="tag">Crystal</span></p>
+        </article>
+
+        <article class="tb-panel">
+            <h3 class="tb-title">Verdantborn</h3>
+            <p>Green as deep shade after rain, Verdantborn keep orchards, seedbanks, and patient treaties. They measure
+                worth by what grows from it, not how loudly it is announced.<span class="tag">Emerald</span></p>
+        </article>
+
+        <article class="tb-panel">
+            <h3 class="tb-title">Azureborn</h3>
+            <p>Cool blue scales with a star-prick sheen; Azureborn are map-minded and far-sighted. They favor high paths
+                and long plans, speaking little until the course is certain.<span class="tag">Sapphire</span></p>
+        </article>
+
+        <article class="tb-panel">
+            <h3 class="tb-title">Amberborn</h3>
+            <p>Honey-bright and warm to the touch, Amberborn make lantern-cities out of dark places. They store summer
+                in jars—food, stories, goodwill—and open them when winter bites.<span class="tag">Topaz</span></p>
+        </article>
+    </section>
+
+    <div class="skz-divider skz-divider--diamond" aria-hidden="true"></div>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="grid-four">
+        <article class="tb-panel">
+            <img src="assets/icons/species/dragonborn_clan_forge.png" alt="Clan forge" class="noborder">
+            <h3 class="tb-title">Clan Forge</h3>
+            <p>The clan’s craft-heart and right-to-make. Marked on workshop doors, masterwork plaques, tool chests, and
+                guild writs to certify training lines and quality. Worn as a small tattoo or pendant by smiths and
+                artisans; stamped beside a maker’s mark on finished pieces when the whole clan stands behind the work.
+            </p>
+        </article>
+        <article class="tb-panel">
+            <img src="assets/icons/species/dragonborn_oathmark.png" alt="Oathmark" class="noborder">
+            <h3 class="tb-title">Oathmark</h3>
+            <p>A witnessed promise made binding. Drawn at the start of negotiations, marriages, truces, and
+                apprenticeships; pressed beside signatures on contracts and placed on guest-boards to extend
+                hearth-right until morning. Erasing or altering an Oathmark without witness is a grave insult and
+                invites formal redress.</p>
+        </article>
+        <article class="tb-panel">
+            <img src="assets/icons/species/dragonborn_oathsail.png" alt="Stormsail" class="noborder">
+            <h3 class="tb-title">Stormsail</h3>
+            <p>Safe passage and prepared risk. Painted on caravan flags, ship pennants, travel permits, and expedition
+                logs before setting out; chalked on threshold stones when a household is away under clan protection.
+                Captains and roadwardens carry it on seals to claim escort, muster aid, or mark a storm plan in effect.
+            </p>
+        </article>
+        <article class="tb-panel">
+            <img src="assets/icons/species/dragonborn_rite_of_ash.png" alt="Rite of Ash" class="noborder">
+            <h3 class="tb-title">Rite of Ash</h3>
+            <p>Honoring the dead and releasing what must be let go. Used at cremations, memorial walls, end-of-year
+                remembrances, and when a clan retires a tool, banner, or name with dignity. Placed on letters of
+                condolence, on urn shelves before interring ash-glass, and on the anvil when a flawed work is broken to
+                teach, not to shame.</p>
+        </article>
+    </section>
+
     <div id="footer"></div>
-
-
-
 </body>
 
 </html>

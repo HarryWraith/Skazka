@@ -1,238 +1,300 @@
-<!-- index.html -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>Skazka - aeter</title>
+    <title>Skazka — Dargav</title>
+
     <link rel="stylesheet" href="navbar.css?v=3">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="assets/skazka_logo.png">
+    <link rel="icon" href="assets/skazka_logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+
     <script src="navbar.js?v=3"></script>
     <script type="module" src="./main.js"></script>
-
 </head>
 
 <body>
-    <div id="navbar"></div><!-- Navbar will be loaded here -->
+    <!-- Navbar injected by main.js -->
+    <div id="navbar"></div>
 
-    <!-- Main Content Area -->
-    <section class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
-        <div class=" tb-panel"> <!-- LEFT -->
-            <h2 class="tb-title">Politics</h2>
-            <p>Dargav recognizes no earthly authority, governed instead by the Council of the Silent—the spirits of the
-                most ancient dead who speak through the Keeper of Souls, the highest authority in Dargav. The necropolis
-                exists under an ancient treaty signed in blood, granting it sanctuary status that even kings and empires
-                have honored. No weapon may be drawn here, no violence committed, no disputes settled except through
-                ritual and ceremony.</p>
-            <p>The Keeper of Souls serves as both mayor and high priest, chosen not through election but through dreams
-                shared by the dead. When a Keeper dies, their successor is revealed through a series of nightmares that
-                afflict the living residents of the necropolis. The position is held until death.</p>
-
-
-            <h2 class="tb-title">Population</h2>
-            <P>The true population of Dargav numbers in the thousands, though none draw breath. Nearly ten thousand
-                souls rest within the ninety-nine crypts, their bones arranged on stone shelves like books in some grim
-                library of mortality. The earliest burials date back centuries, to when monks, followers of Agramaul,
-                first carved these houses for the dead.</P>
-            <p>Among the living, perhaps three hundred souls tend the necropolis. These guardians live in dedicated
-                accommodation, in houses built lower than the crypts, for it is considered hubris for the living to
-                dwell higher than the dead.</P>
+    <!-- ===== HERO (.place-hero) ===== -->
+    <section class="place-hero">
+        <div class="place-hero__icon">
+            <img src="assets/dargav_banner.jpg" alt="Dargav crest">
         </div>
 
-        <div class="center-column"><!-- MIDDLE -->
-            <img src="assets/dargav.jpg" alt="">
-            <p>Dargav rises from the mist-shrouded valley like a city built for the dead alone, its stone crypts
-                climbing the hillside in terraced rows that mirror the homes of the living. Here, where the sacred
-                valley is surrounded by the Blightmire, the boundary between life and death grows thin, and the
-                departed
-                hold court in halls built to outlast empires.</p>
-            <p>For seven centuries, the dead have been the sole citizens of this place, interred in family crypts
-                with
-                their weapons, jewellery, and the clothes they wore in life. The stone houses rise in step-like
-                fashion,
-                each with a single dark window facing the valley, as if the dead maintain an eternal vigil over the
-                world they left behind. </p>
-
-
+        <div class="place-hero__body">
+            <h1 class="skz-viking">Dargav</h1>
+            <p class="skz-quote-attribution">The Necropolis in the Mist—where the dead outnumber the living</p>
         </div>
 
-        <div class="right-column, tb-panel"> <!-- RIGHT -->
-            <img src="assets/dargav_banner.jpg" alt="">
-        </div>
+        <div class="place-hero__spacer" aria-hidden="true"></div>
     </section>
 
-    <section class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
-        <div class=" tb-panel"> <!-- LEFT -->
-            <h2 class="tb-title">Temple of Repose</h2>
+    <!-- ===== BODY: 30 / 70 ===== -->
+    <section class="grid-two-wide">
+        <!-- LEFT: PROFILE -->
+        <aside class="tb-panel">
+            <h2 class="tb-title">Profile</h2>
+            <table class="materials-table">
+                <tbody>
+                    <tr>
+                        <th>Type</th>
+                        <td>Necropolis-city; sacred valley settlement</td>
+                    </tr>
+                    <tr>
+                        <th>Seat</th>
+                        <td>Terraced Crypt Districts (no formal “capital”)</td>
+                    </tr>
+                    <tr>
+                        <th>Authority</th>
+                        <td>Keepers of the Dead</td>
+                    </tr>
+                    <tr>
+                        <th>Population</th>
+                        <td>Few living caretakers; vast necropolis</td>
+                    </tr>
+                    <tr>
+                        <th>Dominant Faith</th>
+                        <td>Ancestor rites; funerary law</td>
+                    </tr>
+                    <tr>
+                        <th>Militia</th>
+                        <td>Black Watch</td>
+                    </tr>
+                    <tr>
+                        <th>Terrain</th>
+                        <td>Mist-shrouded valley ringed by the Blightmire</td>
+                    </tr>
+                    <tr>
+                        <th>Known For</th>
+                        <td>Stone crypt terraces; thin boundary between life and death</td>
+                    </tr>
+                    <tr>
+                        <th>Languages</th>
+                        <td>Trade Tongue</td>
+                    </tr>
+                </tbody>
+            </table>
+        </aside>
+
+        <!-- RIGHT: LORE -->
+        <article class="tb-panel">
+            <img class="noborder" src="assets/dargav.jpg" alt="Mist valley necropolis of Dargav">
+            <h2 id="overview" class="tb-title" style="margin-top:10px">Overview</h2>
+
+            <p>Dargav rises from the mist-shrouded valley like a city built for the dead alone, its stone crypts
+                climbing the hillside in terraced rows that mirror the homes of the living. Here, where the sacred
+                valley is surrounded by the Blightmire, the boundary between life and death grows thin, and the departed
+                hold court in halls built to outlast empires.</p>
+
+            <p>For seven centuries, the dead have been the sole citizens of this place, interred in family crypts with
+                their weapons, jewellery, and the clothes they wore in life. The stone houses rise in step-like fashion,
+                each with a single dark window facing the valley, as if the dead maintain an eternal vigil over the
+                world they left behind.</p>
+
+            <p>Pilgrims and mourners arrive at Dargav bearing urns of ash, locks of hair, or personal effects of the
+                deceased they wish to honor. The necropolis serves as a waystation between the living world and whatever
+                lies beyond, where the bereaved can speak with shadows and receive answers from echoes. Visitors must
+                first undergo the Ritual of Descent at the ancient jetty where boats cross the river—removing their
+                shoes, washing their hands in blessed water, and speaking aloud the name of the person that has brought
+                them here.</p>
+
+            <p>The living are permitted to walk among the crypts only during daylight hours, when the dead rest deepest.
+                As shadows lengthen, visitors must retreat to the Guest House of Sorrows, a modest inn built at the
+                necropolis's edge where meals are served in silence and no mirrors hang upon the walls. Those who
+                violate the sunset curfew report experiencing the Fear of the Dead—a bone-deep terror that drives them
+                mad or catatonic, though some claim to have learned profound truths about mortality from their ordeal.
+            </p>
+            <!-- 3-up quick blocks -->
+            <div class="grid-even equal-cards">
+                <article class="tb-panel">
+                    <h3 class="tb-title" id="cities-factions">Districts & Custodians</h3>
+                    <ul>
+                        <li><strong>Terraced Crypts</strong> — stacked stone houses for the dead; family vaults and
+                            ossuaries</li>
+                        <li><strong>Jetty Quarter</strong> — arrival point for pilgrims and ferries across the mists
+                        </li>
+                        <li><strong>Keepers of the Dead</strong> — quiet custodians of rites and records </li>
+                    </ul>
+                </article>
+
+                <article class="tb-panel">
+                    <h3 class="tb-title">Rites & Laws</h3>
+                    <ul>
+                        <li>Offerings and vigil fires set beneath the terraces; names recited at dusk.
+                        </li>
+                        <li>Funerary law forbids plunder; relics remain with the honored dead.</li>
+                        <li>No blood may be spilled here. </li>
+                    </ul>
+                </article>
+
+                <article class="tb-panel">
+                    <blockquote>“Ash speaks where tongues fail. Walk softly.”</blockquote>
+                    <p class="skz-quote-attribution">— Jetty warden to a first-time pilgrim</p>
+                </article>
+            </div>
+
+            <!-- 2-up -->
+            <div class="grid-two">
+
+                <article class="tb-panel">
+                    <h3 class="tb-title" id="economy">Trade & Taboos</h3>
+                    <ul>
+                        <li>Limited provisioning for pilgrims (oil, candles, shrouds, stonecraft).</li>
+                        <li>No trade in grave goods; custodians enforce sanctity of vaults.</li>
+                        <li>Guided passage through mire paths by licensed wardens. </li>
+                    </ul>
+                </article>
+                <article class="tb-panel">
+                    <h3 class="tb-title" id="threats">Rumours & Hooks</h3>
+                    <ul>
+                        <li>Mist-wraiths seen along the Blightmire edge after moonset.
+                        </li>
+                        <li>A sealed terrace door weeps fresh candle-soot by dawn.</li>
+                        <li>An urn from a lost dynasty surfaces at the jetty—no one claims it.
+                        </li>
+                    </ul>
+                </article>
+            </div>
+        </article>
+    </section>
+    <div class="skz-divider skz-divider--diamond" aria-hidden="true"></div>
+    <!-- ===== LANDMARKS ===== -->
+    <section id="landmarks" class="grid-even equal-cards">
+        <article class="tb-panel">
+            <h2 class="tb-title">Places of Note</h2>
+            <img class="noborder" src="assets/landmark.jpg" alt="">
+
+
+        </article>
+
+        <article class="tb-panel">
+            <img src="assets/temple_of_repose.jpg" alt="The Blightmire">
+            <h3 class="tb-title">Temple of Repose</h3>
             <p>The sacred antechamber where the newly dead await their final rites, this white marble temple houses
-                preparation chambers dedicated to different gods and their burial customs. The temple's priests
-                possess
-                ancient knowledge of every death-ritual known to mortals, ensuring each soul departs according to
-                their
-                faith's demands. The temple's central fountain flows with blessed waters that prevent decay,
-                allowing
+                preparation chambers dedicated to different gods and their burial customs. The temple's priests possess
+                ancient knowledge of every death-ritual known to mortals, ensuring each soul departs according to their
+                faith's demands. The temple's central fountain flows with blessed waters that prevent decay, allowing
                 families time to gather for proper farewells.</p>
-            <h2 class="tb-title">Templum Ignis</h2>
-            <p>The great crematorium temple rises like a stepped pyramid crowned with eternal flames that burn
-                without
-                fuel or tending. Within its furnace halls, the Sacred Pyres burn day and night. The Flamekeepers,
-                robed
-                in cloth that grants immunity to fire, tend each pyre with ritualistic precision, chanting the
-                soul's
-                name until the last bone turns to ash. The smoke rises through carved chimney-towers that spiral
-                toward
+        </article>
+
+        <article class="tb-panel">
+            <img src="assets/fire_temple.jpg" alt="The Blightmire">
+            <h3 class="tb-title">The Fire Temple</h3>
+            <p>The great crematorium temple rises like a stepped pyramid crowned with eternal flames that burn without
+                fuel or tending. Within its furnace halls, the Sacred Pyres burn day and night. The Flamekeepers, robed
+                in cloth that grants immunity to fire, tend each pyre with ritualistic precision, chanting the soul's
+                name until the last bone turns to ash. The smoke rises through carved chimney-towers that spiral toward
                 the heavens, carrying prayers and final messages to the gods above.</p>
-            <h2 class="tb-title">Templum Memoriae</h2>
-            <p>This vast marble hall houses thousands of memorial plaques arranged in concentric circles around the
-                Hall
-                of Records—a circular chamber where scribes maintain the complete genealogies and deeds of every
-                soul
-                who has passed through Dargav. The plaques themselves are works of art, glowing faintly when touched
-                by
-                those who shared blood or love with the deceased. The Hall of Records contains not just names and
-                dates,
+        </article>
+
+        <article class="tb-panel">
+            <img src="assets/fire_temple.jpg" alt="The Blightmire">
+            <h3 class="tb-title">Temple of Memories</h3>
+            <p>This vast marble hall houses thousands of memorial plaques arranged in concentric circles around the Hall
+                of Records—a circular chamber where scribes maintain the complete genealogies and deeds of every soul
+                who has passed through Dargav. The plaques themselves are works of art, glowing faintly when touched by
+                those who shared blood or love with the deceased. The Hall of Records contains not just names and dates,
                 but detailed accounts of each person's life, fears, loves, and final words, creating the most
                 comprehensive library of mortality ever assembled.</p>
-            <h2 class="tb-title">Coemeterium Privatum</h2>
+        </article>
+
+        <article class="tb-panel">
+            <img src="assets/private_crem.jpg" alt="The Blightmire">
+            <h3 class="tb-title">Private Crematorium</h3>
             <p>Reserved for nobility and wealthy merchants, this terraced garden cemetery overlooks the valley with
-                elaborate mausoleums that rival palaces in their grandeur. Each tomb is a masterwork of
-                architecture.
-                The groundskeepers are master artisans who maintain elaborate topiary gardens shaped like the
-                heraldic
+                elaborate mausoleums that rival palaces in their grandeur. Each tomb is a masterwork of architecture.
+                The groundskeepers are master artisans who maintain elaborate topiary gardens shaped like the heraldic
                 beasts of each buried family, and the pathways are paved with stones that record the footsteps of
                 visitors, allowing the dead to know who remembers them.</p>
-            <h2 class="tb-title">Os Cisternam Veterem (The Bone Pits)</h2>
-            <p>Deep beneath Dargav lies an ancient cave system where those without coin for proper burial are laid
-                to
+        </article>
+
+        <article class="tb-panel">
+            <img src="assets/bone_pits.jpg" alt="The Blightmire">
+            <h3 class="tb-title">The Bone Pits</h3>
+            <p>Deep beneath Dargav lies an ancient cave system where those without coin for proper burial are laid to
                 rest in natural chambers carved by underground rivers. The caves stretch for miles through the
                 mountain's heart; their walls lined with alcoves holding countless remains. Here, the poor achieve a
                 democracy in death impossible in life—their bones eventually mixing together in great calcium pools
-                where individual identity dissolves into collective memory. The cave-spirits that dwell here are
-                ancient
+                where individual identity dissolves into collective memory. The cave-spirits that dwell here are ancient
                 beyond measure, and some claim they can answer questions about the very first humans to die in this
                 valley.</p>
-            <h2 class="tb-title">Nigrum Sacellum (The Black Chapel)</h2>
-            <p>Built from obsidian quarried from the Underworld, this chapel serves as the ceremonial heart of
-                Dargav
-                where the most sacred death-rites are performed. Its interior is lit only by phosphorescent fungi
-                that
-                grow in patterns resembling constellations, and its altar is carved from a single massive geode
-                filled
-                with crystals that resonate with the voices of the dead. Here, the Keeper of Souls performs the Rite
-                of
+        </article>
+
+        <article class="tb-panel">
+            <img src="assets/black_chapel.jpg" alt="The Blightmire">
+            <h3 class="tb-title">The Black Chapel</h3>
+            <p>Built from obsidian quarried from the Underworld, this chapel serves as the ceremonial heart of Dargav
+                where the most sacred death-rites are performed. Its interior is lit only by phosphorescent fungi that
+                grow in patterns resembling constellations, and its altar is carved from a single massive geode filled
+                with crystals that resonate with the voices of the dead. Here, the Keeper of Souls performs the Rite of
                 Final Passage for those souls who cannot rest, and the Chapel's acoustics are designed so that every
                 whisper echoes thirteen times—once for each traditional stage of death's journey.</p>
-        </div>
+        </article>
 
-        <div class="center-column"><!-- MIDDLE -->
-            <h2 class="tb-title">Visiting Dargav</h2>
-            <p>Pilgrims and mourners arrive at Dargav bearing urns of ash, locks of hair, or personal effects of the
-                deceased they wish to honor. The necropolis serves as a waystation between the living world and
-                whatever
-                lies beyond, where the bereaved can speak with shadows and receive answers from echoes. Visitors
-                must
-                first undergo the Ritual of Descent at the ancient jetty where boats cross the river—removing their
-                shoes, washing their hands in blessed water, and speaking aloud the name of the person that has
-                brought
-                them here.</p>
-            <p>The living are permitted to walk among the crypts only during daylight hours, when the dead rest
-                deepest.
-                As shadows lengthen, visitors must retreat to the Guest House of Sorrows, a modest inn built at the
-                necropolis's edge where meals are served in silence and no mirrors hang upon the walls. Those who
-                violate the sunset curfew report experiencing the Fear of the Dead—a bone-deep terror that drives
-                them
-                mad or catatonic, though some claim to have learned profound truths about mortality from their
-                ordeal.
-            </p>
-        </div>
-
-        <div class="right-column, tb-panel"> <!-- RIGHT -->
-            <h2 class="tb-title">Domus Sussuri (The House of Whispers)</h2>
-            <p>This sprawling inn provides lodging for mourners, pilgrims, and scholars who come to study
-                death's
-                mysteries. The innkeeper, always chosen from among those who have briefly died and returned to
-                life,
-                maintains strict rules about noise and conduct—for the inn serves both living guests and
-                spectral
-                visitors who require their own accommodations in the ethereal rooms that exist between the
-                physical
+        <article class="tb-panel">
+            <img src="assets/house_of_whispers.jpg" alt="The Blightmire">
+            <h3 class="tb-title">The House of Whispers</h3>
+            <p>This sprawling inn provides lodging for mourners, pilgrims, and scholars who come to study death's
+                mysteries. The innkeeper, always chosen from among those who have briefly died and returned to life,
+                maintains strict rules about noise and conduct—for the inn serves both living guests and spectral
+                visitors who require their own accommodations in the ethereal rooms that exist between the physical
                 spaces.</p>
-            <h2 class="tb-title">Domus Lupa (House of the She-wolf)</h2>
-            <p>Even in the city of the dead, the living have needs, and this establishment serves those whose
-                grief
-                manifests as hunger for human connection. The courtesans here practice the ancient art of
-                consolation,
-                skilled not just in physical pleasure but in the emotional healing of those bereaved. The house
-                is
-                run
-                by the Priestess of the Wolf, who ensures her charges are trained in psychology and theology as
-                well
-                as
-                more carnal arts. Many visitors find that the house offers them the first peaceful sleep they've
-                known
-                since their loss, for here grief is understood as a natural part of life rather than a burden to
-                be
+        </article>
+
+        <article class="tb-panel">
+            <img src="assets/house_of_devil.jpg" alt="The Blightmire">
+            <h3 class="tb-title">House of the She-devil</h3>
+            <p>Even in the city of the dead, the living have needs, and this establishment serves those whose grief
+                manifests as hunger for human connection. The courtesans here practice the ancient art of consolation,
+                skilled not just in physical pleasure but in the emotional healing of those bereaved. The house is run
+                by the Priestess of the Wolf, who ensures her charges are trained in psychology and theology as well as
+                more carnal arts. Many visitors find that the house offers them the first peaceful sleep they've known
+                since their loss, for here grief is understood as a natural part of life rather than a burden to be
                 hidden.</p>
-            <h2 class="tb-title">Aula Spirituum (Hall of Spirits)</h2>
-            <p>The most mystically charged location in Dargav, this circular hall is built at the exact center
-                of
-                the
-                necropolis where the barriers between worlds are thinnest. Séances and spirit-calling rituals
-                take
-                place
-                here under the guidance of mediums who have trained for decades to safely contact the dead. The
-                hall's
+        </article>
+
+        <article class="tb-panel">
+            <img src="assets/hall_of_spirits.jpg" alt="The Blightmire">
+            <h3 class="tb-title">Hall of Spirits</h3>
+            <p>The most mystically charged location in Dargav, this circular hall is built at the exact center of the
+                necropolis where the barriers between worlds are thinnest. Séances and spirit-calling rituals take place
+                here under the guidance of mediums who have trained for decades to safely contact the dead. The hall's
                 floor is inscribed with protective circles and summoning arrays in dozens of different magical
-                traditions, while its domed ceiling displays a map of the afterlife realms that shifts and
-                changes
-                as
+                traditions, while its domed ceiling displays a map of the afterlife realms that shifts and changes as
                 new territories of death are discovered and explored by departed souls.</p>
-            <h2 class="tb-title">Collegium Necromantiae</h2>
-            <p>This ancient academy trains scholars in the proper study of death, undeath, and the boundaries
-                between
-                life and oblivion. Students learn not the crude reanimation of corpses, but the subtle arts of
-                death-magic: preserving bodies without corruption, communicating across the veil, understanding
-                the
-                nature of souls, and maintaining the cosmic balance between life and death. The college's
-                library
-                contains the most complete collection of thanatological texts in existence, including many
-                volumes
-                written by the dead themselves and transcribed by living scribes during controlled séances.</p>
-            <h2 class="tb-title">Hospitium Renascentis (Hospital for the Reborn)</h2>
-            <p>The most mysterious institution in Dargav, this hospital treats those who have died and
-                returned—whether
-                through resurrection magic, divine intervention, or sheer stubborn will. The Reborn often suffer
-                from
-                unique maladies: memories that belong to other deceased persons, partial transparency, ability
-                to
-                see
-                and hear spirits constantly, or gradual fading back toward death. The hospital's physicians
-                specialize
+        </article>
+
+        <article class="tb-panel">
+            <img src="assets/college_of_necro.jpg" alt="The Blightmire">
+            <h3 class="tb-title">College of Necromancy</h3>
+            <p>The most mystically charged location in Dargav, this circular hall is built at the exact center of the
+                necropolis where the barriers between worlds are thinnest. Séances and spirit-calling rituals take place
+                here under the guidance of mediums who have trained for decades to safely contact the dead. The hall's
+                floor is inscribed with protective circles and summoning arrays in dozens of different magical
+                traditions, while its domed ceiling displays a map of the afterlife realms that shifts and changes as
+                new territories of death are discovered and explored by departed souls.</p>
+        </article>
+
+        <article class="tb-panel">
+            <img src="assets/hospital_for_reborn.jpg" alt="The Blightmire">
+            <h3 class="tb-title">Hospital for the Reborn</h3>
+            <p>The most mysterious institution in Dargav, this hospital treats those who have died and returned—whether
+                through resurrection magic, divine intervention, or sheer stubborn will. The Reborn often suffer from
+                unique maladies: memories that belong to other deceased persons, partial transparency, ability to see
+                and hear spirits constantly, or gradual fading back toward death. The hospital's physicians specialize
                 in anchoring souls to bodies that have already begun their journey toward the afterlife, using
                 treatments that blend medicine, magic, and theology in equal measure.</p>
-        </div>
+        </article>
     </section>
 
-
-
-
-
-
-
-
-
-
+    <!-- Footer injected by main.js -->
     <div id="footer"></div>
-
-
-
-
-
-
-
 </body>
 
 </html>

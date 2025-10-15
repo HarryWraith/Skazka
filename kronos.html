@@ -5,10 +5,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Search • Skazka</title>
+  <title>Kronos</title>
   <link rel="stylesheet" href="navbar.css?v=3">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/png" href="assets/skazka_logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
   <script src="navbar.js?v=3"></script>
   <script type="module" src="./main.js"></script>
@@ -18,67 +20,168 @@
 <body>
   <div id="navbar"></div><!-- Navbar will be loaded here -->
 
-  <!-- Main Content Area -->
-  <section class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
-    <div></div>
+  <header class="place-hero">
+    <div class="place-hero__icon">
+      <!-- YOUR ICON IMAGE -->
+
     </div>
 
-    <div class="center-column"><!-- MIDDLE -->
-      <img src="assets/cronos.jpg" alt="the god Kronos" />
-      <p>Before stars blinked or worlds spun, there was only the void—an abyss where silence rotted. From that
-        emptiness
-        rose the first gods: Uzume, goddess of creation; Kaos, lord of chaos; and Kronos, the cold keeper of cosmic
+    <div class="place-hero__body">
+      <!-- PAGE TITLE -->
+      <h1 class="skz-viking">Kronos</h1>
+      <!-- SHORT TAGLINE / EPITHET -->
+      <p class="sub">Keeper of time</p>
+    </div>
+    <div class="place-hero__spacer" aria-hidden="true"></div>
+  </header>
+
+  <!--two-wide for aside + overview -->
+  <section class="grid-two-wide">
+    <!-- ===== LEFT SIDEBAR: PROFILE CARD(S) ===== -->
+    <aside class="tb-panel" aria-labelledby="profile-title">
+      <h2 id="profile-title" class="tb-title skz-title">Profile</h2>
+
+      <!-- KEY/VALUE STATS TABLE -->
+      <table class="materials-table">
+        <tbody>
+          <!-- Replace the right-hand cells with your data -->
+          <tr>
+            <th class="tb-kv-key">Classification</th>
+            <td>Primordial</td>
+          </tr>
+          <tr>
+            <th class="tb-kv-key">Aliases</th>
+            <td>Lord of time, The Everafter</td>
+          </tr>
+          <tr>
+            <th class="tb-kv-key">Domains</th>
+            <td>Time</td>
+          </tr>
+          <tr>
+            <th class="tb-kv-key">Favoured</th>
+            <td></td>
+          </tr>
+          <tr>
+            <th class="tb-kv-key">Alignment</th>
+            <td></td>
+          </tr>
+          <tr>
+            <th class="tb-kv-key">Holy Symbol</th>
+            <td>A pendulum ending in a crescent moon.
+            </td>
+          </tr>
+          <tr>
+            <th class="tb-kv-key">Known forms</th>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Optional: Orders/cults block if relevant -->
+      <section aria-labelledby="orders-title">
+        <img src="assets/kronos_sigil.jpg" alt="{{Deity Name}} holy sigil">
+      </section>
+    </aside>
+
+    <!------------------------------------------------->
+    <!-- ===== RIGHT COLUMN: ALL MAIN SECTIONS ===== -->
+    <!------------------------------------------------->
+    <article class="tb-panel cent">
+      <!-- Optional lead image at top of article -->
+      <img class="noborder" src="assets/cronos.jpg" alt="uzume">
+
+
+      <!-- ===== Overview ===== -->
+      <h2 id="overview" class="tb-title">Overview</h2>
+      <p>Before stars blinked or worlds spun, there was only the void—an abyss where silence rotted. From that emptiness
+        rose the first gods: <a href="uzume.html">Uzume</a>, goddess of creation; <a href="kaos.html">Kaos</a>, lord of
+        chaos; and Kronos, the cold keeper of cosmic
         time.</p>
-
-      <p> Kronos did not shape or destroy—he counted. Time flowed through him, impartial and absolute. But when Uzume
-        crafted
-        the Annarr—divine beings born of love—Kronos grew bitter. She had purpose. He had only silence.</p>
-
-      <p>Forbidden from harming her, Kronos conspired with Kaos and the great dragon Fafnirog, promising the beast
-        divinity in
-        exchange for betrayal. At the Celestial Forge, Fafnirog struck Uzume down. Kronos watched as her light
-        scattered
-        across the cosmos.</p>
-
-      <p>But her dying breath cursed him. Uzume’s final gift was life itself, seeded in mortals—beyond the reach of
-        Kronos or Kaos. The orderly flow of time became fractured, colored by chaos, emotion, and mortality.</p>
-
+      <p>Kronos did not shape or destroy—he counted. Time flowed through him, impartial and absolute. But when <a
+          href="uzume.html">Uzume</a>
+        crafted the <a href="highones.html">Annarr</a>—divine beings born of love—Kronos grew bitter. She had purpose.
+        He had only silence.</p>
+      <p>Forbidden from harming her, Kronos conspired with <a href="kaos.html">Kaos</a> and the great dragon <a
+          href="fafnirog.html">Fafnirog</a>, promising the beast
+        divinity in exchange for betrayal. At the Celestial Forge, <a href="fafnirog.html">Fafnirog</a> struck <a
+          href="uzume.html">Uzume</a> down. Kronos watched as her
+        light scattered across the cosmos.</p>
+      <p>But her dying breath cursed him. <a href="uzume.html">Uzume’s</a> final gift was life itself, seeded in
+        mortals—beyond the reach of
+        Kronos or <a href="kaos.html">Kaos</a>. The orderly flow of time became fractured, colored by chaos, emotion,
+        and mortality.</p>
       <p>Kronos did not weep. He marked the moment.</p>
-
-      <p>Now he drifts unseen at the edge of existence—never worshipped, only feared. Time continues, and through it,
-        so
+      <p>Now he drifts unseen at the edge of existence—never worshipped, only feared. Time continues, and through it, so
         does he. Not as a god of mercy or wrath, but as a quiet inevitability.</p>
-
       <p>He does not answer prayers. He measures them.</p>
-
-    </div>
-
-    <div class="right-column"> <!-- RIGHT -->
-      <blockquote>"Time is not your enemy. It is your debt. And I am its collector."<br>
-        <span class="skz-quote-attribution">&mdash; Kronos</span>
-      </blockquote>
-    </div>
+    </article>
   </section>
 
-  <section class="grid-even"><!-- 3 COLUMN EVEN -->
-    <div>
+  <div class="skz-divider skz-divider--diamond" aria-hidden="true"></div>
+
+  <!--move to 3 column-->
+  <section class="grid-even equal-cards">
+    <!-- ===== Influence
+ ===== -->
+    <div class="tb-panel" id="domains">
+      <h2 class="tb-title">Influence</h2>
+      <ul>
+        <li>Time</li>
+        <li>Order</li>
+        <li>Witness</li>
+      </ul>
     </div>
 
-    <div>
+    <!-- ===== Symbols & Omens ===== -->
+    <div class="tb-panel" id="symbols">
+      <h2 class="tb-title">Symbols</h2>
+      <p>Echoes that are heard out of sequence are said to be a sign that Kronos is involved.</p>
     </div>
 
-    <div>
+    <!-- ===== Tenets ===== -->
+    <div class="tb-panel" id="tenets">
+      <h2 class="tb-title">Tenets</h2>
+      <ul>
+        <li><strong>Measure Without Mercy</strong> — record truth exactly; count deeds, debts, and years without
+          embellishment or exception.
+        </li>
+        <li><strong>Witness, Do Not Warden</strong> — observe and preserve the order of events; intervene only to
+          prevent falsification, not to favor outcome.</li>
+        <li><strong>Cut the Knot</strong> — when time snarls (lies, loops, oaths broken), sever the tangle cleanly so
+          the line runs true.</li>
+      </ul>
     </div>
+
+    <!-- ===== Rites & Offerings ===== -->
+    <div class="tb-panel" id="rites">
+      <h2 class="tb-title">Rites</h2>
+      <p><strong>Sealed Breath</strong>: Warm a strip of plain black wax between your fingers, press it to your lips
+        without speaking, then melt it onto a flat stone—speech withheld, recorded.</p>
+    </div>
+
+    <!-- ===== Avatars & Interventions ===== -->
+    <div class="tb-panel" id="avatars">
+      <h2 class="tb-title">Avatars</h2>
+      <p>It is said that Kronos takes the form of a shadow to watch key moments in history.</p>
+    </div>
+
+    <!-- ===== Lore ===== -->
+    <div class="tb-panel" id="lore">
+      <h2 class="tb-title">Lore</h2>
+      <p>It is said there was once an order of monks devoted to Kronos. In their old monastery where bells were never
+        cast, monks keep a single empty niche called the Quiet Seat; once in
+        a lifetime, each monk sits there at dusk and thinks of every word they wish they hadn’t said. If the air grows
+        cold and the candle thins to a needle, they rise knowing Kronos has counted their life exactly—and from that
+        night on, their name is written without titles, for the god remembers only the measure, not the adornment.</p>
+    </div>
+
   </section>
+
 
 
   <div id="footer"></div>
 
-  <!-- Lightbox container (hidden by default) -->
-  <div id="lightbox">
-    <span class="close">&times;</span>
-    <img class="lightbox-img" alt="">
-  </div>
+
 
 
 

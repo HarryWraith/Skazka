@@ -5,10 +5,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>Search • Skazka</title>
+    <title>seasons and time</title>
     <link rel="stylesheet" href="navbar.css?v=3">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="assets/skazka_logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
     <script src="navbar.js?v=3"></script>
     <script type="module" src="./main.js"></script>
@@ -18,66 +20,79 @@
 <body>
     <div id="navbar"></div><!-- Navbar will be loaded here -->
 
-    <!-- Main Content Area -->
-    <section class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
-        <div class=" tb-panel"> <!-- LEFT -->
-            <h2 class="tb-title">Age of the Sun</h2>
-            <p>The era before Starfall is commonly known as the Age of Sun. Written records from this period are scarce
-                and come almost exclusively from Elven or Dwarven sources. The farther back in time one looks, the more
-                legendary and embellished both spoken and written accounts become. As a result, much of the history of
-                the Age of Sun is considered mythical, and any dates associated with it should be treated as rough
-                approximations rather than precise facts.</p>
-            <h2 class="tb-title">Timekeeping</h2>
-            <p>Skazka rotates fully around its sun once every twenty-four hours. Most inhabitants structure their daily
-                lives around the natural cycle of daylight. While clocks and watches do not exist, people commonly mark
-                time using recognizable phases of the day, such as sunrise, high sun, sundown, and midnight,
-                coordinating activities and events according to these natural cues.</p>
-            <br><br><img src="assets/calendar.png" alt="">
+    <!-- HERO -->
+    <section class="place-hero">
+        <div class="place-hero__icon">
         </div>
 
-        <div class="center-column"><!-- MIDDLE -->
-            <img src="assets/seasons.jpg" alt="image of adventurers facing a ruined castle on a mountain">
+        <div class="place-hero__body">
+            <h1 id="intro" class="skz-viking">Seasons &amp; time</h1>
+            <p class="skz-quote-attribution">"In the depths of the void there is all the time you need. Kronos sees to
+                that" &ndash; Ilistran Darkweaver</p>
+        </div>
+        <div class="place-hero__spacer" aria-hidden="true"></div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="grid-single" aria-labelledby="intro">
+
+        <div class="tb-panel">
+            <img src="/assets/seasons.jpg">
             <p>The current year on Skazka is 972. Time here is measured relative to a pivotal event known as the
-                Starfall, which occurred 971 years ago. This cataclysmic celestial collision ushered in the Age of
-                Ice,
-                a period of harsh winters, frozen landscapes, and the awakening of dragons and the Dragonborn. The
-                Age
-                of Ice endured for centuries, shaping civilizations and altering the balance of power across the
-                world.
+                Starfall, which occurred 971 years ago. This cataclysmic celestial collision ushered in the Age of Ice,
+                a period of harsh winters, frozen landscapes, and the awakening of dragons and the <a
+                    href="dragonborn.html">Dragonborn</a>. The<a href="theages.html">
+                    Age
+                    of Ice
+                </a> endured for centuries, shaping civilizations and altering the balance of power across the world.
             </p>
-            <p>In the year 695, the Shadow War erupted, marking the beginning of the current era, the Age of Shadow. -
+            <p>In the year 695, the <a href="theages.html">Shadow War</a> erupted, marking the beginning of the current
+                era, the<a href="theages.html"> Age of Shadow</a>.
             </p>
-
-        </div>
-
-        <div class="right-column"> <!-- RIGHT -->
-            <blockquote>"In the depths of the void there is all the time you need. Kronos sees to that" <br>
-                <span class="skz-quote-attribution">&mdash; Ilistran Darkweaver</span>
-            </blockquote>
         </div>
     </section>
 
-    <section class="grid-even"><!-- 3 COLUMN EVEN -->
-        <div>
-
-        </div>
-        <div>
-
-        </div>
+    <div class="skz-divider skz-divider--diamond" aria-hidden="true"></div>
 
 
+    <section class="grid-even equal-cards" aria-labelledby="regions">
+        <article id="skia" class="tb-panel">
+            <img src="/assets/veil.jpg" alt="The western continent of Skia: a bustling village beneath jagged mountains"
+                loading="lazy">
+
+            <h3 class="tb-title">Age of the Sun</h3>
+            <p>
+                The era before Starfall is commonly known as the Age of Sun. Written records from this period are scarce
+                and come almost exclusively from Elven or Dwarven sources. The farther back in time one looks, the more
+                legendary and embellished both spoken and written accounts become. As a result, much of the history of
+                the Age of Sun is considered mythical, and any dates associated with it should be treated as rough
+                approximations rather than precise facts.
+            </p>
+        </article>
+
+        <article id="serydina" class="tb-panel">
+            <img src="/assets/calendar.png" alt="The Serydina Isles: sheep-grazed cliffs against a calm blue sea"
+                loading="lazy">
+
+        </article>
 
 
+        <article id="kelos" class="tb-panel">
+            <img src="/assets/shadowwar.jpg"
+                alt="The eastern continent of Kelos: a castle poised above misted highlands" loading="lazy">
+
+            <h3 class="tb-title">Timekeeping</h3>
+            <p>
+                Skazka rotates fully around its sun once every twenty-four hours. Most inhabitants structure their daily
+                lives around the natural cycle of daylight. While clocks and watches do not exist, people commonly mark
+                time using recognizable phases of the day, such as sunrise, high sun, sundown, and midnight,
+                coordinating activities and events according to these natural cues.
+            </p>
+        </article>
 
     </section>
 
     <div id="footer"></div>
-
-
-
-
-
-
 
 </body>
 

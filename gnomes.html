@@ -1,93 +1,408 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <!-- Standard Skazka head (no inline CSS) -->
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>Skazka - aeter</title>
+
+    <title>Skazka — gnomes</title>
+
     <link rel="stylesheet" href="navbar.css?v=3">
+
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="assets/skazka_logo.png">
+
+    <link rel="icon" href="assets/skazka_logo.png" type="image/png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+
+
     <script src="navbar.js?v=3"></script>
     <script type="module" src="./main.js"></script>
-
 </head>
 
 <body>
-    <div id="navbar"></div><!-- Navbar will be loaded here -->
-
-    <!-- section Content Area -->
-    <section class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
-        <div class=" tb-panel"> <!-- LEFT -->
-            <h2 class="tb-title">Physical Description</h2>
-            <p>While smaller in stature compared to most other races, Gnomes carry themselves with an energy and
-                presence that often makes one forget their size. Their hands are deft and precise, well-suited to the
-                detailed work of gem-cutting, clockwork engineering, and fine metalcraft. They often dress practically,
-                their clothing chosen for flexibility and utility rather than ornament—though in true Gnomish fashion,
-                even the simplest garments are likely to bear clever adjustments, hidden pockets, or ingenious
-                fastenings. In many ways, their very appearance reflects their character: compact, efficient, and full
-                of unexpected surprises.</p>
-        </div>
-
-        <div class="center-column"><!-- MIDDLE -->
-            <img src="assets/gnomes.jpg" alt="" />
-            <p>The Gnomes of Skazka are a people wrapped in mystery, their origins obscured in the mists of history.
-                Unlike Elves, whose ancestry stretches clearly back to ancient lineages, or Dwarves, who can trace their
-                roots to divine design, Gnomes seem to have simply appeared—a quiet people without fanfare, mythic
-                event, or cosmic purpose. This lack of a definitive origin has become part of their identity, shaping
-                them into a race defined less by destiny and more by ingenuity, adaptability, and a relentless drive to
-                improve the world around them. Where others rely on tradition, brute strength, or divine blessing,
-                Gnomes excel through innovation, subtle progress, and the quiet revolution of everyday invention.</p>
+    <div id="navbar"></div>
+    <!-- HERO -->
+    <section class="place-hero" id="hero">
+        <div class="place-hero__icon">
+            <img alt="a gnome sigil" src="assets/icons/species/gnome_sigil.jpg">
 
         </div>
-
-        <div class="tb-panel"> <!-- RIGHT -->
-            <h2 class="tb-title">Heritage</h2>
-            <p>The debate over Gnomish heritage has raged for centuries. Dwarven historians often argue that Gnomes are
-                their distant kin, an offshoot of their ancient bloodline that chose creativity over tradition, surface
-                trade over underground forges. They point to shared skills in mining and craftsmanship as evidence of a
-                common ancestor. Gnomes themselves, however, reject this claim. To them, the differences in philosophy
-                are too great to ignore—where Dwarves are bound by tradition, Gnomes thrive in experimentation. This
-                divide suggests that if there ever was a link, it has long since become irrelevant. What truly defines
-                Gnomes is not where they came from, but the inventive spirit they cultivated on their own path.</p>
+        <div class="place-hero__body">
+            <h1 class="skz-viking">Gnomes</h1>
+            <p>Small hands. Vast designs.</p>
         </div>
+        <div class="place-hero__spacer"></div>
     </section>
 
-    <section class="vertical"> <!-- 3 COLUMN 20-60-20 -->
+    <!-- PROFILE (left) + OVERVIEW (right) -->
+    <section class="grid-two-wide" id="profile-overview">
+        <aside class="tb-panel" id="profile">
+            <h2 class="tb-title">Profile</h2>
+            <table class="materials-table">
+                <tbody>
+                    <tr>
+                        <th class="tb-kv-key">Average Lifespan</th>
+                        <td>~400 years</td>
+                    </tr>
+                    <tr>
+                        <th class="tb-kv-key">Typical Size</th>
+                        <td>Medium; 3 - 4ft</td>
+                    </tr>
+                    <tr>
+                        <th class="tb-kv-key">Homelands</th>
+                        <td>
+                            Gnomes have no place they call home.
+                            Instead choosing to integrate into other
+                            cultures.
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="tb-kv-key">Languages</th>
+                        <td>Trade-tongue, Gnomish</td>
+                    </tr>
+                    <tr>
+                        <th class="tb-kv-key">Faiths</th>
+                        <td>
+                            Gnomes tend not to be overly religious,
+                            though when they are they call
+                            <a href="herukan.html">Herukan</a> their
+                            patron
+                        </td>
+                    </tr>
 
+                    <tr>
+                        <th class="tb-kv-key">Temperament</th>
+                        <td>
+                            Inquisitive, meticulous, irrepressible
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <img src="assets/gnomes.jpg" alt="gnome portrait" class="noborder">
 
-        <div class="tb-panel"><!-- MIDDLE -->
-            <h2 class="tb-title">Motivation</h2>
-            <p>At the heart of every Gnome lies an insatiable curiosity and an unshakable desire to solve problems. To
-                them, the world is not something to be endured, but a puzzle waiting for solutions. Their smiths design
-                weapons and tools that adapt to conditions, their alchemists brew concoctions that make life safer and
-                easier, and their engineers devise mechanisms that save lives in mines or make simple tasks more
-                efficient. Gnomes are not driven by conquest, wealth, or glory—though these may come as side effects—but
-                by the joy of discovery and the satisfaction of creating something that improves the lives of others.
-                They embody the belief that progress need not come from sacrifice, but from dedication, creativity, and
-                the clever application of knowledge.</p>
+        </aside>
+
+        <article class="tb-panel" id="overview">
+            <h2 class="tb-title">Overview</h2>
+
+            <p>
+                The Gnomes of Skazka are a people wrapped in mystery,
+                their origins obscured in the mists of history. Unlike
+                <a href="elves.html">Elves</a>, whose ancestry
+                stretches clearly back to ancient lineages, or
+                <a href="dwarves.html">Dwarves</a>, who can trace their
+                roots to divine design, Gnomes seem to have simply
+                appeared — a quiet people without fanfare, mythic
+                event, or cosmic purpose. This lack of a definitive
+                origin has become part of their identity, shaping them
+                into a race defined less by destiny and more by
+                ingenuity, adaptability, and a relentless drive to
+                improve the world around them. Where others rely on
+                tradition, brute strength, or divine blessing, Gnomes
+                excel through innovation, subtle progress, and the
+                quiet revolution of everyday invention.
+            </p>
+            <p>
+                At the heart of every Gnome lies an insatiable
+                curiosity and an unshakable desire to solve problems.
+                To them, the world is not something to be endured, but
+                a puzzle waiting for solutions. Their smiths design
+                weapons and tools that adapt to conditions, their
+                alchemists brew concoctions that make life safer and
+                easier, and their engineers devise mechanisms that save
+                lives in mines or make simple tasks more efficient.
+                Gnomes are not driven by conquest, wealth, or
+                glory—though these may come as side effects—but by the
+                joy of discovery and the satisfaction of creating
+                something that improves the lives of others. They
+                embody the belief that progress need not come from
+                sacrifice, but from dedication, creativity, and the
+                clever application of knowledge.
+            </p>
+            <p>
+                Gnomes fit seamlessly into the wider fabric of Skazkan
+                society, though always in their own distinctive way.
+                Their underground communities are masterworks of space
+                management and clever engineering, thriving around
+                natural resources and built with astonishing
+                efficiency. Surface settlements, meanwhile, tend to
+                appear in neglected corners of larger towns—areas too
+                cramped or inconvenient for others, which Gnomes
+                transform into vibrant districts filled with workshops,
+                markets, and ingenious innovations. Their culture,
+                unlike many others, values merit above bloodline, with
+                guilds and workshops granting status based on skill and
+                contribution rather than birthright. This meritocracy
+                produces brilliant merchants, teachers, and craftsmen
+                who spread their creations far and wide. Though
+                peaceful by inclination, Gnomes are not defenseless;
+                when threatened, their ingenuity turns to strategy,
+                traps, and tactical warfare. In both war and peace,
+                they prove that progress and survival alike rest on the
+                same foundation—intelligence, creativity, and
+                adaptability.
+            </p>
+        </article>
+    </section>
+
+    <div class="skz-divider skz-divider--diamond" aria-hidden="true"></div>
+
+    <!-- PHYSIOLOGY / CULTURE / FAITH -->
+    <section class="grid-even equal-cards" id="pillars">
+        <article class="tb-panel" id="physiology">
+            <h2 class="tb-title">Physiology & Traits</h2>
+            <ul>
+                <li>
+                    <strong>Appearance:</strong> Gnomes are small,
+                    sharp-eyed, and quick-fingered, with warm
+                    earth-toned skin, lively features, wiry hair
+                    (often with whiskers), and layered, pocketed
+                    clothes stuffed with tools and trinkets.
+                </li>
+                <li>
+                    <strong>Dimorphism:</strong> In gnomes, sex
+                    differences are clear to the eye: males are a
+                    little taller with squarer shoulders, denser body
+                    and facial hair, heavier brows, and deeper voices;
+                    females are shorter on average with softer
+                    features, fuller hips, finer body hair, and
+                    lighter voices. The contrast reads in
+                    silhouette—broad-torsoed, bearded tinkerers beside
+                    round-hipped, sharp-eyed craftswomen—yet both
+                    remain compact and quick-handed by nature.
+                </li>
+                <li>
+                    <strong>Senses:</strong> Gnomes read the world in
+                    fine print: dark and dim light bloom for them in
+                    soft greys, and they catch the tiny sounds—gear
+                    teeth kissing, a latch settling—that others miss.
+                    Their noses sort oils, metal filings, and singed
+                    varnish at a whiff, making a workshop speak like a
+                    book.
+                </li>
+                <li>
+                    <strong>Innate Gifts:</strong> Gnomes are born
+                    with a mind that magic can’t easily fool—their
+                    wits slip past charms and glamours as if through a
+                    hidden service door. Many carry a flicker of knack
+                    from their bloodline: forest gnomes idly weave
+                    whispers and light into harmless illusions and
+                    trade secrets with squirrels and sparrows, while
+                    rock gnomes “remember” how things work—names of
+                    compounds, quirks of old mechanisms—and can coax
+                    clever little clockworks to life from springs,
+                    wire, and patience. Small of stature but tireless
+                    of curiosity, they turn ingenuity into a kind of
+                    everyday sorcery: toys that walk, lanterns that
+                    hum, and ideas that refuse to break.
+                </li>
+            </ul>
+        </article>
+
+        <article class="tb-panel" id="culture">
+            <h2 class="tb-title">Culture & Society</h2>
+            <ul>
+                <li>
+                    <strong>Virtues & Laws:</strong> Gnomes prize
+                    curiosity yoked to craft: precision, fair dealing,
+                    and sharing useful discoveries once the work is
+                    proven safe. Their laws read like workshop
+                    rules—measure twice, mark your sources, honor
+                    patents and apprenticeships, test before trade—and
+                    fraud in tools or weights is treated as both a
+                    crime and a disgrace.
+                </li>
+                <li>
+                    <strong>Craft & Trade:</strong> Gnome craft is
+                    precision with personality: clockworks that purr,
+                    lenses true to the hair’s breadth, inks and resins
+                    mixed like alchemy, and toys whose whimsy hides
+                    serious engineering. Workshops run on
+                    apprenticeships, maker’s marks, and warranty
+                    oaths; every tool has a provenance, and
+                    “right-to-repair” is sacred—diagrams are shared
+                    once a design is proven safe. Trade favors
+                    bustling tinkers’ markets and traveling factors
+                    who barter prototypes, lease patents, and arrange
+                    maintenance contracts. Exports include fine
+                    instruments, springlocks, surveying kits, automata
+                    novelties, and calibrated lenses; imports trend
+                    toward rare alloys, crystal, volatile oils, and
+                    hardwoods. Nothing is wasted: salvage rights are
+                    codified, and scrap returns to the bench until it
+                    sings.
+                </li>
+                <li>
+                    <strong>Family & Names:</strong> Gnome families
+                    are busy, affectionate hives built around
+                    workshops and shared projects: grandparents,
+                    parents, apprentices, and foster-kin crowd the
+                    same benches, passing tools and stories in equal
+                    measure. Marriages are partnerships of invention
+                    as much as romance—vows often sealed by
+                    co-designed pieces—and children grow amid safe,
+                    supervised tinkering, earning their first toolroll
+                    when they can maintain it without prompting.
+                    Kinship stretches by mentorship and patent-sharing
+                    as readily as blood; it’s common to “adopt” a
+                    promising apprentice into the household, and
+                    elders keep meticulous family ledgers of designs,
+                    failures, and lessons so each generation starts a
+                    little further along the blueprint.
+                </li>
+                <li>
+                    <strong>Customs & Rites:</strong> Gnome customs
+                    turn work into ceremony:
+                    <ul>
+                        <li>newborns receive a tiny Naming Gear</li>
+                        <li>
+                            Youths prove themselves with a First Fix
+                        </li>
+                        <li>
+                            marriages are sealed by Twin Keys — each
+                            forges a key which are exchanged during
+                            the locking ceremony
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </article>
+
+        <article class="tb-panel" id="faith">
+            <h2 class="tb-title">Faith & Myth</h2>
+            <ul>
+                <li>
+                    <strong>Patrons:</strong> Gnomes lean towards
+                    <a href="herukan.html">Herukan</a> but sometimes
+                    <a href="ioun.html">Ioun</a>
+                </li>
+                <li>
+                    <strong>Origin Story:</strong> Gnomes say they
+                    “woke to the sound of making”—the first to rise
+                    after Starfall were small folk who followed a
+                    steady, hidden ticking through the wreckage and
+                    learned to coax order from broken things. In their
+                    oldest tales, craft itself is their patron: not a
+                    single god but the stubborn spark in gears, glass,
+                    and ink that taught them to measure, mend, and
+                    build a future from salvage.
+                </li>
+                <li>
+                    <strong>Rites & Taboos:</strong> Gnome rites
+                    center on the Naming Gear, First Fix, Twin Keys
+                    with a Calibration Vigil, and the Remembrance of
+                    Hands—small ceremonies that bind craft to kin.
+                    Their taboos are plain: never sell untested
+                    prototypes, never falsify measures or maker’s
+                    marks, don’t open another’s device without
+                    Bench-Right, and waste nothing that can be safely
+                    salvaged.
+                </li>
+                <li>
+                    <strong>Omens & Festivals (Sun Elves):</strong>Gnome festivals are bright, practical feasts:
+                    <ul>
+                        <li>
+                            Tinker’s Moon with lantern parades and
+                            clockwork pageants
+                        </li>
+                        <li>
+                            Founders’ Day when workshops open their
+                            benches for public lessons and free
+                            repairs
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </article>
+    </section>
+
+    <div class="skz-divider skz-divider--diamond" aria-hidden="true"></div>
+
+    <!-- LINEAGES -->
+    <section class="place-hero" id="hero">
+        <div class="place-hero__icon"></div>
+        <div class="place-hero__body">
+            <h1 class="skz-viking">Subspecies</h1>
+            <p>
+                Gnome folk tend to three broad lineages: forest gnomes,
+                soft-voiced whisperers with a knack for small illusions
+                and woodland bonds; rock gnomes, tireless tinkerers and
+                keepers of clever clockworks; and deep gnomes
+                (svirfneblin), flint-hard Underworld survivors famed
+                for stealth, stone-sense, and grim practicality.
+            </p>
         </div>
-        <div class="tb-panel">
-            <h2 class="tb-title">Integration into Society</h2>
-            <p>Gnomes fit seamlessly into the wider fabric of Skazkan society, though always in their own distinctive
-                way. Their underground communities are masterworks of space management and clever engineering, thriving
-                around natural resources and built with astonishing efficiency. Surface settlements, meanwhile, tend to
-                appear in neglected corners of larger towns—areas too cramped or inconvenient for others, which Gnomes
-                transform into vibrant districts filled with workshops, markets, and ingenious innovations. Their
-                culture, unlike many others, values merit above bloodline, with guilds and workshops granting status
-                based on skill and contribution rather than birthright. This meritocracy produces brilliant merchants,
-                teachers, and craftsmen who spread their creations far and wide. Though peaceful by inclination, Gnomes
-                are not defenseless; when threatened, their ingenuity turns to strategy, traps, and tactical warfare. In
-                both war and peace, they prove that progress and survival alike rest on the same
-                foundation—intelligence, creativity, and adaptability.</p>
-        </div>
+        <div class="place-hero__spacer"></div>
+    </section>
+    <section id="lineages" class="grid-even equal-cards">
+        <article class="tb-panel">
+            <h3 class="tb-title">Forest Gnomes</h3>
+            <p>
+                Forest gnomes are soft-footed whisperers of the
+                green—small, moss-toned folk who weave harmless
+                illusions like firefly lights and speak to squirrels
+                and sparrows as neighbors. They keep to root-homes and
+                hidden ladders in the boughs, trading in herbs, inks,
+                and clever camouflages rather than steel.<span class="tag">Forest</span>
+            </p>
+        </article>
 
+        <article class="tb-panel">
+            <h3 class="tb-title">Rock Gnomes</h3>
+            <p>
+                Rock gnomes are tireless bench-dwellers with magnifiers
+                on cords and pockets full of spare springs—masters of
+                fine instruments, sturdy clockworks, and inks that bite
+                true. They prize repeatable design and cheerful
+                iteration, trading calibrated lenses, survey kits, and
+                clever automata that look like toys until they save a
+                life.<span class="tag">Rock</span>
+            </p>
+        </article>
+
+        <article class="tb-panel">
+            <h3 class="tb-title">Deep gnomes</h3>
+            <p>
+                Deep gnomes (svirfneblin) are flint-hard Underworld
+                survivors—ashen-skinned, soft-voiced, and
+                near-invisible when they choose—whose stone-sense and
+                stoic pragmatism keep them alive where light is a
+                rumor. They trade in cut gems, salts, and precise
+                stonecraft, trusting clever camouflage and quiet routes
+                over banners or boasts.<span class="tag">svirfneblin</span>
+            </p>
+        </article>
+    </section>
+
+    <div class="skz-divider skz-divider--diamond" aria-hidden="true"></div>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="grid-four">
+        <article class="tb-panel">
+            <img src="assets/forest_gnome.jpg" alt="shadow elf" class="noborder">
+
+            <h3 class="tb-title">Forest Gnome</h3>
+        </article>
+        <article class="tb-panel">
+            <img src="assets/rock_gnome.jpg" alt="wood elf" class="noborder">
+
+            <h3 class="tb-title">Rock Gnome</h3>
+        </article>
+        <article class="tb-panel">
+            <img src="assets/deep_gnome.jpg" alt="sun elf" class="noborder">
+
+            <h3 class="tb-title">Deep Gnome</h3>
+        </article>
     </section>
 
     <div id="footer"></div>
-
 </body>
 
 </html>

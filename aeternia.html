@@ -1,36 +1,92 @@
-<!-- index.html -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>Skazka - aeter</title>
+    <title>Skazka — Aeternia</title>
+
     <link rel="stylesheet" href="navbar.css?v=3">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="assets/skazka_logo.png">
+    <link rel="icon" href="assets/skazka_logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+
     <script src="navbar.js?v=3"></script>
     <script type="module" src="./main.js"></script>
-
 </head>
 
 <body>
+    <!-- Navbar injected by main.js -->
     <div id="navbar"></div>
 
-
-    <section class="grid-container">
-        <div class="tb-panel">
-            <h2 class="tb-title">Politics</h2>
-            <p>A empire governed by an Emperor who is currently Shemon Starr, along with a council of Senators which
-                represent each district within the Empire.</p>
-            <h2 class="tb-title">Population</h2>
-            <P>The population of the Aeternian empire is around a million souls. Mostly Sun Elves but other races live
-                peacefully there. Eldinun is the most populous city with around 600,000 inhabitants.</P>
+    <!-- ===== HERO (uses your .page-hero) ===== -->
+    <section class="place-hero">
+        <div class="place-hero__icon">
+            <img src="assets/aeternia_banner.jpg" alt="Aeternia crest">
         </div>
 
-        <div class="center-column"><!-- MIDDLE -->
-            <img src="assets/elindun.jpg" alt="">
+        <div class="place-hero__body">
+            <h1 class="skz-viking">Aeternia</h1>
+            <p class="skz-quote-attribution">The Aeternian Empire — marble spires amid endless forests</p>
+        </div>
+
+        <!-- spacer balances the icon so text stays truly centered -->
+        <div class="place-hero__spacer" aria-hidden="true"></div>
+    </section>
+
+    <!-- ===== BODY: 30 / 70 (left profile, right lore) ===== -->
+    <section class="grid-two-wide">
+        <!-- LEFT: PROFILE (narrow) -->
+        <aside class="tb-panel">
+            <h2 class="tb-title">Profile</h2>
+            <table class="materials-table">
+                <tbody>
+                    <tr>
+                        <th>Government</th>
+                        <td>Empire (Emperor + Senatorial Council)</td>
+                    </tr>
+                    <tr>
+                        <th>Capital</th>
+                        <td>Eldinun</td>
+                    </tr>
+                    <tr>
+                        <th>Ruler</th>
+                        <td>Emperor Shemon Starr</td>
+                    </tr>
+                    <tr>
+                        <th>Population</th>
+                        <td>~1,000,000 (Eldinun ~600,000)</td>
+                    </tr>
+                    <tr>
+                        <th>Dominant Faith</th>
+                        <td>Aeter</td>
+                    </tr>
+                    <tr>
+                        <th>Military</th>
+                        <td>Standing army, civilian militia</td>
+                    </tr>
+                    <tr>
+                        <th>Terrain</th>
+                        <td>Vast forests; River Lool; northern hills; terraces</td>
+                    </tr>
+                    <tr>
+                        <th>Exports</th>
+                        <td>Glasswork, silks, forest herbs</td>
+                    </tr>
+                    <tr>
+                        <th>Languages</th>
+                        <td>Trade Tongue, Elvish</td>
+                    </tr>
+                </tbody>
+            </table>
+        </aside>
+
+        <!-- RIGHT: LORE (wide) -->
+        <article class="tb-panel">
+            <img class="noborder" src="assets/elindun.jpg" alt="Aeternia — forests and marble spires">
+            <h2 id="overview" class="tb-title" style="margin-top:10px">Overview</h2>
             <p>Aeternia, formally known as the Aeternian Empire, is a realm draped in timeless majesty, where legend and
                 history entwine as seamlessly as root and branch. Stretching from the rugged western coast of Kelos to
                 the gentle flow of the River Lool, and northward to the snow-touched town of Winter, Aeternia has stood
@@ -40,109 +96,166 @@
                 Aeter. He greeted them as they rose from the shadowed Underworld, offering sanctuary beneath the green
                 canopy of endless forests. In their devotion and artistry, they shaped the empire into a living
                 testament of harmony between divine blessing and mortal will.</p>
-            <p>Though Aeternia’s dominion spans vast forestland, its heart is a singular marvel: Eldinun, a city without
-                equal. Carved from luminous white marble quarried from the land itself, Eldinun sprawls like a shining
-                jewel set amid emerald woods. Its towers rise like frozen starlight, and its streets seem to shimmer
-                with the memory of ages past. Along the River Lool, towns and villages flourish, and in the clearings of
-                the great forests, farming communities nurture the empire’s lifeblood.</p>
-            <p>Among the places most revered stands the Cave Temple of Sinari, hidden in the northern hills. Once, it
-                cradled the Everlight, an artifact said to hold a fragment of Aeter’s own flame, casting radiance that
-                banished every shadow. Though the Everlight has long since departed, the temple resections a sacred
-                site,
-                drawing pilgrims from every corner of the empire.</p>
-            <p>The Aeternian Empire is guided by its Emperor, presently Shemon Starr, whose reign extends over the vast
-                districts of Eldinun and beyond. Each district sends forth a Senator, chosen by the people, to serve in
-                counsel, giving voice to the many within the unity of the whole. Thus, Aeternia’s governance reflects
-                both the enduring hand of divine mandate and the living chorus of its people.</p>
-
-        </div>
-
-        <div class="right-column">
-            <img src="assets/aeternia_banner.jpg" alt="">
-        </div>
-    </section>
-
-    <section class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
-
-        <div class="tb-panel"> <!-- LEFT -->
-            <h2 class="tb-title">The Whispering Glades</h2>
-            <p>A sacred forest grove where the trees are said to echo voices from ages past. Pilgrims come to hear
-                faint
-                whispers—believed to be the counsel of ancestors or fragments of Aeter’s voice carried on the wind.
+            <p>Though Aeternia&rsaquo;s dominion spans vast forestland, its heart is a singular marvel:
+                <strong>Eldinun</strong>, a city without equal. Carved from luminous white marble, Eldinun sprawls like
+                a shining jewel set amid emerald woods. Its towers rise like frozen starlight, and along the River Lool,
+                towns and villages flourish while farming communities in forest clearings nurture the empire&rsaquo;s
+                lifeblood.
             </p>
+            <p>Among the most revered places stands the <strong>Cave Temple of Sinari</strong> in the northern hills.
+                Once it cradled the Everlight—an artifact said to hold a fragment of Aeter&rsaquo;s flame, casting
+                radiance
+                that banished every shadow. Though the Everlight has long since departed, the temple remains a sacred
+                site drawing pilgrims from every corner of the empire.</p>
+            <p>The Empire is guided by its Emperor, presently <strong>Shemon Starr</strong>, whose reign extends over
+                the vast districts of Eldinun and beyond. Each district sends forth a Senator, chosen by the people, to
+                serve in counsel—giving voice to the many within the unity of the whole.</p>
+            To walk within Aeternia is to step into a land that breathes with living history. For travelers, Eldinun is
+            the crown jewel—a city where every avenue is flanked by white marble archways, every square hosts fountains
+            that sparkle under moonlight, and every district offers its own character. Markets bustle with artisans
+            selling glasswork that glimmers like captured dawn, silks woven with threads that shift colors in sunlight,
+            and foods flavored with herbs grown only in the deep forest clearings.
 
-            <h2 class="tb-title">The River Lool Bridges</h2>
-            <p>Dozens of stone bridges carved by elven artisans span the River Lool. Each one is unique, etched with
-                reliefs depicting tales of creation, triumph, and sorrow. The Moonveil Bridge is especially famous,
-                glowing silver beneath starlight as though woven from moonlight itself.</p>
 
-            <h2 class="tb-title">Eldinun’s Marble Spires</h2>
-            <p>The heart of the Empire, Eldinun’s white marble towers rise like frozen starlight above the forest
-                canopy. Each spire has a name and story—such as the Spire of Aeter’s Dawn, where the Emperor holds
-                ceremonies to honor the god who founded the nation.</p>
-        </div>
-
-
-        <div class="center-column"><!-- MIDDLE -->
-            <h2 class="skz-viking">Visiting The Aerternian Empire</h2>
-            <p>To walk within Aeternia is to step into a land that breathes with living history. For travelers, Eldinun
-                is the crown jewel—a city where every avenue is flanked by white marble archways, every square hosts
-                fountains that sparkle under moonlight, and every district offers its own character. Markets bustle with
-                artisans selling glasswork that glimmers like captured dawn, silks woven with threads that shift colors
-                in sunlight, and foods flavored with herbs grown only in the deep forest clearings.</p>
-            <p>Elven hospitality is marked by quiet grace: a visitor is welcomed with spiced wine and song, often
-                beneath vaulted halls where the acoustics carry every note like a prayer. Inns are rare in the
-                traditional sense, for locals often open their homes to travelers, offering comfort in exchange for
-                stories of distant lands.</p>
             <p>Life in Aeternia moves to the rhythm of the forest. Dawn brings soft flutes played in the courtyards,
                 midday sees the markets in full bloom, and evening is a time for gatherings under lantern-lit canopies,
                 where music and dance celebrate the harmony of people and nature. Festivals are plentiful, often tied to
                 celestial events, when the streets are filled with lights and the forests echo with laughter until dawn.
             </p>
+
             <p>Travelers are encouraged to visit the River Lool, where riverboats glide silently through misty waters,
                 offering views of both wild beauty and ancient stone bridges carved with tales of gods and heroes. The
                 northern pilgrimage route to the Cave Temple of Sinari resections a journey of reverence and quiet awe,
                 while those venturing to Winter will find a town where snow and song mingle, and the architecture seems
                 sculpted from frost itself.</p>
+
             <p>In Aeternia, even the simplest paths carry echoes of eternity. Whether wandering Eldinun’s marble
                 streets, listening to the whisper of the trees, or standing before the sanctuaries of old, every visitor
                 finds themselves part of a story that began long before their arrival—and will endure long after their
                 departure.</p>
-        </div>
 
-        <div class="right-column, tb-panel"> <!-- RIGHT -->
-            <h2 class="tb-title">Sinari Cave Temple</h2>
+            <p>Elven hospitality is marked by quiet grace: a visitor is welcomed with spiced wine and song, often
+                beneath vaulted halls where the acoustics carry every note like a prayer. Inns are rare in the
+                traditional sense, for locals often open their homes to travelers, offering comfort in exchange for
+                stories of distant lands.</p>
+            <!-- 3-up quick blocks -->
+            <div class="grid-even equal-cards">
+                <article class="tb-panel">
+                    <h3 class="tb-title" id="cities-factions">Towns &amp; Cities</h3>
+                    <ul>
+                        <li><strong>Eldinun</strong> — marble capital; spires of “frozen starlight”.</li>
+                        <li><strong>Onys</strong> — coastal city; home to naval fleet.</li>
+
+                    </ul>
+                </article>
+                <article class="tb-panel">
+                    <h3 class="tb-title">Factions & Orders</h3>
+                    <ul>
+                        <li><strong>Imperial Court of Eldinun</strong> — Emperor&rsquo;s household and ministries.</li>
+                        <li><strong>Senatorial Council</strong> — elected district Senators advising the throne.</li>
+                        <li><strong>Temple of Aeter</strong> — clergy maintaining sacred sites and rites.</li>
+                    </ul>
+                </article>
+                <article class="tb-panel">
+                    <blockquote>“Streets shimmer with the memory of ages; bridges carry tales of gods and heroes.”
+                    </blockquote>
+                    <p class="skz-quote-attribution">— Traveler on the River Lool</p>
+                </article>
+            </div>
+
+            <!-- 2-up (70/30 feel) -->
+            <div class="grid-two">
+                <article class="tb-panel">
+                    <h3 class="tb-title" id="economy">Economy & Trade</h3>
+                    <ul>
+                        <li>Artisan goods: <strong>glasswork</strong> that glimmers like captured dawn;
+                            <strong>silks</strong> with sun-shifting threads.
+                        </li>
+                        <li>Agriculture: <strong>Verdant Terraces</strong> west of Eldinun (intricate irrigation;
+                            harvest festivals).</li>
+                        <li>River commerce: quiet <strong>riverboats</strong> on the Lool linking forest towns and
+                            Eldinun.</li>
+                    </ul>
+                </article>
+                <article class="tb-panel">
+                    <h3 class="tb-title" id="threats">Rumours &amp; hooks</h3>
+                    <ul>
+                        <li>Whispers in the <strong>Whispering Glades</strong> — voices of ages or Aeter&rsaquo;s
+                            counsel on
+                            the wind.</li>
+                        <li>Sacred relic lore around the <strong>Everlight</strong> once housed at Sinari Temple.</li>
+                        <li>Poaching in deep forest</li>
+                    </ul>
+                </article>
+            </div>
+        </article>
+    </section>
+    <div class="skz-divider skz-divider--diamond" aria-hidden="true"></div>
+    <!-- ===== LANDMARKS (cards grid) ===== -->
+    <section id="landmarks" class="grid-even equal-cards">
+        <article class="tb-panel">
+            <h2>Places of Note</h2>
+            <img class="noborder" src="assets/landmark.jpg" alt="">
+        </article>
+
+        <article class="tb-panel">
+            <img src="assets/whispering_glade.jpg" alt="The Whispering Glades">
+            <h3 class="tb-title">The Whispering Glades</h3>
+            <p>A sacred forest grove where the trees are said to echo voices from ages past. Pilgrims come to hear faint
+                whispers—believed to be the counsel of ancestors or fragments of Aeter’s voice carried on the wind.</p>
+        </article>
+
+        <article class="tb-panel">
+            <img src="assets/lool_bridges.jpg" alt="River Lool Bridges">
+            <h3 class="tb-title">The River Lool Bridges</h3>
+            <p>Dozens of stone bridges carved by elven artisans span the River Lool. Each one is unique, etched with
+                reliefs depicting tales of creation, triumph, and sorrow. The Moonveil Bridge is especially famous,
+                glowing silver beneath starlight as though woven from moonlight itself.</p>
+        </article>
+
+        <article class="tb-panel">
+            <img src="assets/aeternia_eldinun_spires.jpg" alt="Eldinun&rsaquo;s Marble Spires">
+            <h3 class="tb-title">Eldinun&rsaquo;s Marble Spires</h3>
+            <p>The heart of the Empire, Eldinun’s white marble towers rise like frozen starlight above the forest
+                canopy. Each spire has a name and story—such as the Spire of Aeter’s Dawn, where the Emperor holds
+                ceremonies to honor the god who founded the nation.</p>
+        </article>
+
+        <article class="tb-panel">
+            <img src="assets/aeternia_sinari_cave_temple.jpg" alt="Sinari Cave Temple">
+            <h3 class="tb-title">Sinari Cave Temple</h3>
             <p>Carved deep into the northern mountains, this temple once held the Everlight. Though the artifact has
                 long vanished, the temple’s walls still shimmer faintly as though touched by its glow. Pilgrims leave
                 offerings here, hoping to catch a glimmer of divine blessing.</p>
+        </article>
 
-            <h2 class="tb-title">The Verdant Terraces</h2>
+        <article class="tb-panel">
+            <img src="assets/aeternia_verdant_terraces.jpg" alt="The Verdant Terraces">
+            <h3 class="tb-title">The Verdant Terraces</h3>
             <p>Vast stepped gardens carved into the hillsides west of Eldinun. Here, farming communities cultivate crops
                 with intricate irrigation channels said to have been designed by Aeter himself. Festivals of harvest
-                fill these terraces with music and lanterns.</p>
+                fill these terraces with music and lanterns.
+            </p>
+        </article>
 
-            <h2 class="tb-title">The Silverlight Amphitheatre</h2>
+        <article class="tb-panel">
+            <img src="assets/aeternia_silverlight_amphitheatre.jpg" alt="Silverlight Amphitheatre">
+            <h3 class="tb-title">The Silverlight Amphitheatre</h3>
             <p>An open-air structure in Eldinun where music, poetry, and drama are performed. At night, enchantments
                 woven into the marble cause the stage to shimmer with silvery radiance, enhancing performances with
                 dreamlike beauty.</p>
+        </article>
 
-            <h2 class="tb-title">The Starfallen Shrine</h2>
+        <article class="tb-panel">
+            <img src="assets/aeternia_starfalled_shrine.jpg" alt="Starfallen Shrine">
+            <h3 class="tb-title">The Starfallen Shrine</h3>
             <p>A secluded shrine in the western forests, said to mark where a star once fell from the heavens. The
                 crater glows faintly at night, and its waters are believed to hold healing powers.</p>
-        </div>
+        </article>
     </section>
 
-
-
-
+    <!-- Footer injected by main.js -->
     <div id="footer"></div>
-
-
-
-
-
-
-
 </body>
 
 </html>

@@ -5,10 +5,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Skazka - aeter</title>
+  <title>Chernabog</title>
   <link rel="stylesheet" href="navbar.css?v=3">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/png" href="assets/skazka_logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
   <script src="navbar.js?v=3"></script>
   <script type="module" src="./main.js"></script>
@@ -18,96 +20,162 @@
 <body>
   <div id="navbar"></div><!-- Navbar will be loaded here -->
 
-  <!-- Main Content Area -->
-  <section class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
-    <div class=" tb-panel"> <!-- LEFT -->
-      <h2 class="tb-title">Symbols</h2>
-      <ul class="nodec">
-        <li><b>The Blighted Eye</b>: A cracked, blackened eye weeping ash—seen etched on cursed altars, hidden in
-          desperate
-          places.</li>
-        <li><b>Withered Tree</b>: Once lush, now hollow and lifeless. Often carved where misfortune lingers long.</li>
-        <li><b>The Eclipse Halo</b>: A black circle around a pale disc—an eternal reminder of his birth beneath a dying
-          sun.
-        </li>
-      </ul>
+  <header class="place-hero">
+    <div class="place-hero__icon">
+      <!-- YOUR ICON IMAGE -->
+
     </div>
 
-    <div class="center-column"><!-- MIDDLE -->
-      <img src="assets/chernabog.jpg" alt="" />
-      <p>
-        Among all the Prir and twisted divines that haunt Skazka’s mythic past, Chernabog is the shadow cast by hope
+    <div class="place-hero__body">
+      <!-- PAGE TITLE -->
+      <h1 class="skz-viking">Chernabog</h1>
+      <!-- SHORT TAGLINE / EPITHET -->
+      <p class="sub">God of misfortune</p>
+    </div>
+    <div class="place-hero__spacer" aria-hidden="true"></div>
+  </header>
+
+  <!--two-wide for aside + overview -->
+  <section class="grid-two-wide">
+    <!-- ===== LEFT SIDEBAR: PROFILE CARD(S) ===== -->
+    <aside class="tb-panel" aria-labelledby="profile-title">
+      <h2 id="profile-title" class="tb-title skz-title">Profile</h2>
+
+      <!-- KEY/VALUE STATS TABLE -->
+      <table class="materials-table">
+        <tbody>
+          <!-- Replace the right-hand cells with your data -->
+          <tr>
+            <th class="tb-kv-key">Classification</th>
+            <td>Prir</td>
+          </tr>
+          <tr>
+            <th class="tb-kv-key">Aliases</th>
+            <td>The soul leech</td>
+          </tr>
+          <tr>
+            <th class="tb-kv-key">Domains</th>
+            <td>Misfortune, Despair, Corruption</td>
+          </tr>
+          <tr>
+            <th class="tb-kv-key">Favoured</th>
+            <td>Beggars, some orcs, the vengful</td>
+          </tr>
+          <tr>
+            <th class="tb-kv-key">Alignment</th>
+            <td>Chaotic Evil</td>
+          </tr>
+          <tr>
+            <th class="tb-kv-key">Holy Symbol</th>
+            <td>A black metallic triangle with a dead tree through it
+            </td>
+          </tr>
+          <tr>
+            <th class="tb-kv-key">Known forms</th>
+            <td>A human beggar</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Optional: Orders/cults block if relevant -->
+      <section aria-labelledby="orders-title">
+
+        <!-- YOUR SHORT LIST OR PARAGRAPH -->
+
+        <img src="assets/chernabog_symbol.jpg" alt="Njord holy sigil">
+
+      </section>
+    </aside>
+
+    <!------------------------------------------------->
+    <!-- ===== RIGHT COLUMN: ALL MAIN SECTIONS ===== -->
+    <!------------------------------------------------->
+    <article class="tb-panel cent">
+      <!-- Optional lead image at top of article -->
+      <img class="noborder" src="assets/chernabog.jpg" alt="uzume">
+
+
+      <!-- ===== Overview ===== -->
+      <h2 id="overview" class="tb-title">Overview</h2>
+      <p>mong all the Prir and twisted divines that haunt Skazka’s mythic past, Chernabog is the shadow cast by hope
         itself. Once a forsaken mortal, cursed by fate or Kaos itself, he became god not by ascension, but through
         corruption, hatred, and the mockery of divine pity. Chernabog is misfortune made incarnate: cold, inevitable,
-        and patient.
-      </p>
-
-    </div>
-
-    <div class="right-column"> <!-- RIGHT -->
-      <img src="assets/chernabog_symbol.jpg" alt="">
-    </div>
+        and patient.</p>
+    </article>
   </section>
 
-  <section class="grid-even"><!-- 3 COLUMN EVEN -->
-    <div class="tb-panel">
+  <div class="skz-divider skz-divider--diamond" aria-hidden="true"></div>
+
+  <!--move to 3 column-->
+  <section class="grid-even equal-cards">
+    <!-- ===== Influence
+ ===== -->
+    <div class="tb-panel" id="domains">
+      <h2 class="tb-title">Influence</h2>
+      <ul>
+        <li><strong>Misfortune</strong>: Wherever luck turns bitter and triumphs collapse, Chernabog walks unseen.</li>
+        <li><strong>Despair</strong>: Not raw destruction, but carefully sown ruin—turning hope to ash and bonds to
+          blades.</li>
+        <li><strong>Corruption</strong>: He is not the chaos of Kaos, but its precision; a seed of rot planted in
+          systems and souls.</li>
+        <li><strong>Creation of Monsters</strong>: From his rage, he forged the orcs—brutal reflections of his own
+          exile.</li>
+      </ul>
+    </div>
+
+    <!-- ===== Symbols  ===== -->
+    <div class="tb-panel" id="symbols">
+      <h2 class="tb-title">Symbols</h2>
+      <ul>
+        <li><strong>The Blighted Eye</strong>: A cracked, blackened eye weeping ash—seen etched on cursed altars, hidden
+          in desperate places.</li>
+        <li><strong>Withered Tree</strong>: Once lush, now hollow and lifeless. Often carved where misfortune lingers
+          long.</li>
+        <li><strong>The Eclipse Halo</strong>: A black circle around a pale disc—an eternal reminder of his birth
+          beneath a dying sun.</li>
+      </ul>
+    </div>
+
+    <!-- ===== Tenets ===== -->
+    <div class="tb-panel" id="tenets">
+      <h2 class="tb-title">Tenets</h2>
+      <ul>
+        <li>Honor decay—the end is sacred law, not failure.</li>
+        <li>Power is a pact; keep it to the letter or be hollowed.</li>
+        <li>Cull the unworthy—excise the rot so what remains endures.</li>
+      </ul>
+    </div>
+
+    <!-- ===== Rites & Offerings ===== -->
+    <div class="tb-panel" id="rites">
       <h2 class="tb-title">Rites</h2>
-      <ul class="nodec">
-        <li><b>The Mask of Ruin</b>: Said to be worn by Chernabog when walking among mortals. It bears no eyes, only a
-          faint
+      <ul>
+        <li>The Mask of Ruin: Said to be worn by Chernabog when walking among mortals. It bears no eyes, only a faint
           smile. It is now a symbol worn by priests of this deity.</li>
-        <li><b>Ashblade</b>: A sword carried by his earliest orc warlords, forged from volcanic glass and regret. It
-          breaks
-          not bodies, but loyalty. Said to be used to ordain priests in to the ranks of Chernabog.</li>
-        <li><b>The Thousand Whispers</b>: A forbidden prayer spoken only by those who have lost everything. The prayer
-          does
-          not ask for aid — it asks for vengeance through entropy.</li>
+        <li>Ashblade: A sword carried by his earliest orc warlords, forged from volcanic glass and regret. It breaks not
+          bodies, but loyalty. Said to be used to ordain priests in to the ranks of Chernabog.</li>
+        <li>The Thousand Whispers: A forbidden prayer spoken only by those who have lost everything. The prayer does not
+          ask for aid — it asks for vengeance through entropy.</li>
       </ul>
     </div>
 
-    <div class="tb-panel">
-      <h2 class="tb-title">Domains</h2>
-      <ul class="nodec">
-        <li><b>Misfortune</b>: Wherever luck turns bitter and triumphs collapse, Chernabog walks unseen.</li>
-        <li><b>Despair</b>: Not raw destruction, but carefully sown ruin—turning hope to ash and bonds to blades.</li>
-        <li><b>Corruption</b>: He is not the chaos of Kaos, but its precision; a seed of rot planted in systems and
-          souls.
-        </li>
-        <li><b>Creation of Monsters</b>: From his rage, he forged the orcs—brutal reflections of his own exile.</li>
-      </ul>
+    <!-- ===== Avatars & Interventions ===== -->
+    <div class="tb-panel" id="avatars">
+      <h2 class="tb-title">Avatars</h2>
+      <p>Takes the form of a beggar to get close to people without being noticed.
+      </p>
     </div>
 
-    <div class="tb-panel">
+    <!-- ===== Lore ===== -->
+    <div class="tb-panel" id="lore">
       <h2 class="tb-title">Lore</h2>
-      <ul class="nodec">
-        <li>On a far off world, Chernabog shaped the first orc from stone, ash,
-          and raw will. He did not gift them purpose — he gave them anger. Their hearts burn with echoes of
-          Chernabog’s
-          first scream.</li>
-        <li>When the orcs flooded from his sanctum, no god knew where the tide would end. Cities
-          vanished beneath choking smoke. Chernabog himself never lifted a blade — he whispered, and kings tore down
-          their own thrones.</li>
-        <li>Chernabog is not worshipped openly. His name is muttered only by the
-          broken—prisoners,
-          the plague-touched, exiled warlords. Secret cults called The Hollowed Eye plant despair deliberately,
-          believing
-          that only ruin brings truth.</li>
-      </ul>
+      <p>On a far off world, Chernabog shaped the first orc from stone, ash, and raw will. He did not gift them purpose
+        — he gave them anger. Their hearts burn with echoes of Chernabog’s first scream.</p>
     </div>
-  </section>
 
+  </section>
 
   <div id="footer"></div>
-
-  <!-- Lightbox container (hidden by default) -->
-  <div id="lightbox">
-    <span class="close">&times;</span>
-    <img class="lightbox-img" alt="">
-  </div>
-
-
-
-
 
 </body>
 

@@ -1,122 +1,218 @@
-<!-- index.html --><!DOCTYPE html><html lang="en"><head>
+<!doctype html>
+<html lang="en">
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>Skazka - aeter</title>
+    <title>Skazka — Caratania</title>
+
     <link rel="stylesheet" href="navbar.css?v=3">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="assets/skazka_logo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Alegreya&amp;display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/skazka_logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+
     <script src="navbar.js?v=3"></script>
     <script type="module" src="./main.js"></script>
-
 </head>
 
 <body>
-    <div id="navbar"></div><!-- Navbar will be loaded here -->
+    <!-- Navbar injected by main.js -->
+    <div id="navbar"></div>
 
-    <!-- Main Content Area -->
-    <section class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
-        <div class=" tb-panel"> <!-- LEFT -->
-            <h2 class="tb-title">Politics</h2>
-            <p>Caratania is a monarchy ruled by King Alaric IV, whose dynasty claims direct descent from Hrothgar
-                Bloodlance himself. While the crown commands loyalty, it is the Church of Aeter that truly shapes
-                Caratanian life. The Church, through its grand clergy and militant Shield of Dawn, wields enormous
-                influence over law, custom, and governance. Priests serve as judges, inquisitors, and advisors to the
-                nobility, ensuring that both throne and people remain steadfast in their devotion. This balance between
-                monarch and church has forged a state where piety is inseparable from politics, and faith is not a
-                private matter but the very lifeblood of public order.</p>
-            <h2 class="tb-title">Population</h2>
-            <p>Caratania counts a population of roughly 400,000 souls. The heart of the kingdom is the fortified city of
-                Barasov, home to the royal court, and the high clergy. Beyond the city lie dozens of towns and
-                villages scattered across the foothills of the Blood Mountains.</p>
+    <!-- ===== HERO (uses your .page-hero) ===== -->
+    <section class="place-hero">
+        <div class="place-hero__icon">
+            <img src="assets/caratania_banner.jpg" alt="Aeternia crest">
         </div>
-
-        <div class="center-column"><!-- MIDDLE -->
-            <img src="assets/caratania.jpg" alt="Caratania">
-            <p>Caratania is a brooding kingdom of mist-laden valleys and shadowed mountains, perched at the foot of
-                the
-                forbidding Blood Mountains. Its people are the descendants of warriors and martyrs, heirs to the
-                unyielding defiance of Hrothgar Bloodlance and his companions who cast down the vampire lords of
-                old.
-                This land is one of superstition and faith, where every hearth bears charms against the restless
-                dead
-                and every household whispers prayers to Aeter, the Eternal Flame, before nightfall. Yet Caratania is
-                not
-                only a kingdom of vigilant hearts; it is also a land of rich vineyards and crimson wine, whose deep
-                taste is said to carry both the sweetness of life and the memory of blood. It is a realm where
-                legend
-                and reality are woven so tightly that the people live in constant awe of their own history.</p>
-
+        <div class="place-hero__body">
+            <h1 class="skz-viking">Caratania</h1>
+            <p class="skz-quote-attribution">The Vigil of the Eternal Flame</p>
         </div>
-
-        <div class="right-column, tb-panel"> <!-- RIGHT -->
-            <img src="assets/caratania_banner.jpg" alt="">
-        </div>
+        <!-- spacer balances the icon so text stays truly centered -->
+        <div class="place-hero__spacer" aria-hidden="true"></div>
     </section>
 
-    <section class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
-        <div class=" tb-panel"> <!-- LEFT -->
-            <h2 class="tb-title">The Cathedral of the Eternal Flame</h2>
-            <p>A fortress-like basilica dedicated to Aeter that dominates the Barasov skyline. Its black stone walls
-                rise like cliffs above the city, its
-                spires crowned with perpetual torches said never to extinguish. Both citadel and sanctuary, it
-                houses
-                relics of the vampire wars and serves as the seat of the High Flamekeeper. </p>
-            <h2 class="tb-title">The Royal Palace of House Bloodlance</h2>
-            <p>A solemn stronghold at the heart of Barasov, where King Alaric IV and his court rule. Its walls
-                are adorned with tapestries recounting the slaying of vampire lords.</p>
-            <h2 class="tb-title">The Vineyards of town Valmere</h2>
-            <p>ast and fertile fields that produce Caratania’s famed crimson wines, beloved across Kelos for their
-                richness and depth.</p>
+    <!-- ===== BODY: 30 / 70 (left profile, right lore) ===== -->
+    <section class="grid-two-wide">
+        <!-- LEFT: PROFILE (narrow) -->
+        <aside class="tb-panel">
+            <h2 class="tb-title">Profile</h2>
+            <table class="materials-table">
+                <tbody>
+                    <tr>
+                        <th>Government</th>
+                        <td>Monarchy</td>
+                    </tr>
+                    <tr>
+                        <th>Capital</th>
+                        <td>Barasov</td>
+                    </tr>
+                    <tr>
+                        <th>Ruler</th>
+                        <td>King Alaric IV</td>
+                    </tr>
+                    <tr>
+                        <th>Population</th>
+                        <td>~400,000</td>
+                    </tr>
+                    <tr>
+                        <th>Dominant Faith</th>
+                        <td>Church of Aeter</td>
+                    </tr>
+                    <tr>
+                        <th>Military</th>
+                        <td>Shield of Dawn, standing army, civilian militia</td>
+                    </tr>
+                    <tr>
+                        <th>Terrain</th>
+                        <td>Mist-laden valleys; Blood Mountains</td>
+                    </tr>
+                    <tr>
+                        <th>Exports</th>
+                        <td>Crimson wine; ironwork; devotional art</td>
+                    </tr>
+                    <tr>
+                        <th>Languages</th>
+                        <td>Trade Tongue, High Caratan</td>
+                    </tr>
+                </tbody>
+            </table>
 
-        </div>
+        </aside>
 
-        <div class="center-column"><!-- MIDDLE -->
-            <h2 class="tb-title">Visiting Caratania</h2>
-            <p>Travelers who enter Caratania will find themselves in a land both beautiful and foreboding. The
-                vineyards
+        <!-- RIGHT: LORE (wide) -->
+        <article class="tb-panel">
+            <img class="noborder" src="assets/caratania.jpg" alt="Caratania landscape">
+            <h2 id="overview" class="tb-title" style="margin-top:10px">Overview</h2>
+            <p>Caratania is a brooding kingdom of mist-laden valleys and shadowed mountains, perched at the foot of the
+                forbidding Blood Mountains. Its people are the descendants of warriors and martyrs, heirs to the
+                unyielding defiance of Hrothgar Bloodlance and his companions who cast down the vampire lords of old.
+                This land is one of superstition and faith, where every hearth bears charms against the restless dead
+                and every household whispers prayers to Aeter, the Eternal Flame, before nightfall.</p>
+            <p>While the crown commands loyalty, it is the Church of Aeter that truly shapes Caratanian life. Priests
+                serve as judges, inquisitors, and advisors to the nobility, ensuring that both throne and people remain
+                steadfast in their devotion. The militant Shield of Dawn drills in relentless cadence, and foreigners
+                find welcome—measured, watchful, and always listening.</p>
+            <p>Travelers who enter Caratania will find themselves in a land both beautiful and foreboding. The vineyards
                 produce some of the most celebrated wines in all of Kelos, rich and dark, favored by nobles and
-                merchants alike. Visitors are often struck by the strong religious character of the
-                people—processions
-                wind through the streets, bells toll at every hour, and even the inns bear symbols of Aeter to ward
-                off
+                merchants alike. Visitors are often struck by the strong religious character of the people—processions
+                wind through the streets, bells toll at every hour, and even the inns bear symbols of Aeter to ward off
                 evil. Foreigners are welcomed warmly enough, but always with an edge of watchfulness, for strangers
-                might carry shadows with them. The nights are long in Caratania, and no traveler forgets the weight
-                of
+                might carry shadows with them. The nights are long in Caratania, and no traveler forgets the weight of
                 unseen eyes when the moonlight falls upon the mountains.</p>
 
-        </div>
+            <!-- 3-up quick blocks -->
+            <div class="grid-even equal-cards">
+                <article class="tb-panel">
+                    <h3 class="tb-title" id="cities-factions">Towns &amp; Cities</h3>
+                    <ul>
+                        <li><strong>Barasov</strong> — seat of crown and high clergy; skyline crowned with undying
+                            torches.</li>
+                        <li><strong>Valmere</strong> — vineyard town producing famed crimson vintages.</li>
+                        <li><strong>Grimwater</strong> — river port whose iron tithe arms the border garrisons.</li>
+                    </ul>
+                </article>
+                <article class="tb-panel">
+                    <h3 class="tb-title">Factions & Orders</h3>
+                    <ul>
+                        <li><strong>Church of Aeter</strong> — judges, scholars, exorcists.</li>
+                        <li><strong>Shield of Dawn</strong> — knightly wardens against the dark.</li>
+                        <li><strong>Guild of Vintners</strong> — wine, land, and quiet power.</li>
+                    </ul>
+                </article>
+                <article class="tb-panel">
+                    <blockquote>“Bells at every hour; blessings priced fairly—mostly.”</blockquote>
+                    <p class="skz-quote-attribution">— Market scribe, Barasov</p>
+                </article>
+            </div>
 
-        <div class="right-column, tb-panel"> <!-- RIGHT -->
-            <h2 class="tb-title">The Shield of Dawn Barracks</h2>
-            <p>Headquarters of the militant arm of the Church, where knights train relentlessly to stand as
-                humanity’s
+            <!-- 2-up (70/30 feel inside the wide column) -->
+            <div class="grid-two">
+
+                <article class="tb-panel">
+                    <h3 class="tb-title" id="economy">Economy & Trade</h3>
+                    <ul>
+                        <li>Crimson wine (Valmere), ironwork (Grimwater), devotional art (Barasov).</li>
+                        <li>Caravan tolls through the Moonlit Pass; escorts customary after dusk.</li>
+                    </ul>
+                </article>
+                <article class="tb-panel">
+                    <h3 class="tb-title" id="threats">Rumours &amp; hooks</h3>
+                    <ul>
+                        <li>Restless legions haunt the Moonlit Pass.</li>
+                        <li>Whispered debts to old vampire courts.</li>
+                        <li>Unlicensed witch-lanterns; forbidden relic trade.</li>
+                    </ul>
+                </article>
+            </div>
+        </article>
+    </section>
+    <div class="skz-divider skz-divider--diamond" aria-hidden="true"></div>
+    <!-- ===== LANDMARKS (cards grid) ===== -->
+    <section id="landmarks" class="grid-even equal-cards">
+        <article class="tb-panel">
+            <h2 class="tb-title">Places of Note</h2>
+            <img class="noborder" src="assets/landmark.jpg" alt="">
+
+
+        </article>
+
+        <article class="tb-panel">
+            <img src="./assets/cathedral_eternal_flame.jpg" alt="Cathedral of the Eternal Flame">
+            <h3 class="tb-title">The Cathedral of the Eternal Flame</h3>
+            <p>A fortress-like basilica dedicated to Aeter that dominates the Barasov skyline. Its black stone walls
+                rise like cliffs above the city, its spires crowned with perpetual torches said never to extinguish.
+                Both citadel and sanctuary, it houses relics of the vampire wars and serves as the seat of the High
+                Flamekeeper.</p>
+        </article>
+
+        <article class="tb-panel">
+            <img src="assets/palace_bloodlance.jpg" alt="Royal Palace of House Bloodlance">
+            <h3 class="tb-title">The Royal Palace of House Bloodlance</h3>
+            <p>A solemn stronghold at the heart of Barasov, where King Alaric IV and his court rule. Its walls are
+                adorned with tapestries recounting the slaying of vampire lords.</p>
+        </article>
+
+        <article class="tb-panel">
+            <img src="assets/vineyards.jpg" alt="Valmere Vineyards">
+            <h3 class="tb-title">The Vineyards of Valmere</h3>
+            <p>Vast and fertile fields that produce Caratania’s famed crimson wines, beloved across Kelos for their
+                richness and depth.</p>
+        </article>
+
+        <article class="tb-panel">
+            <img src="assets/barracks.jpg" alt="Shield of Dawn Barracks">
+            <h3 class="tb-title">The Shield of Dawn Barracks</h3>
+            <p>Headquarters of the militant arm of the Church, where knights train relentlessly to stand as humanity’s
                 bulwark against the dark.</p>
-            <h2 class="tb-title">The Moonlit Pass</h2>
-            <p>A treacherous mountain road said to be haunted by the spirits of the vampire legions who once
-                marched
+        </article>
+
+        <article class="tb-panel">
+            <img src="assets/moonlit_pass.jpg" alt="The Moonlit Pass">
+            <h3 class="tb-title">The Moonlit Pass</h3>
+            <p>A treacherous mountain road said to be haunted by the spirits of the vampire legions who once marched
                 there. Travelers speak of ghostly lights flickering in the mist.</p>
-            <h2 class="tb-title">The Pilgrim’s Market</h2>
-            <p>A bustling square within Barasov, filled with relic-sellers, wine merchants, and holy charms
-                blessed by priests of Aeter.</p>
-            <h2 class="tb-title">The Ossuary of Saint Hrothgar</h2>
-            <p>A sacred crypt holding the remains of Hrothgar Bloodlance and his companions, visited by pilgrims
-                who
+        </article>
+
+        <article class="tb-panel">
+            <img src="assets/caratania_market.jpg" alt="Pilgrim’s Market">
+            <h3 class="tb-title">The Pilgrim’s Market</h3>
+            <p>A bustling square within Barasov, filled with relic-sellers, wine merchants, and holy charms blessed by
+                priests of Aeter.</p>
+        </article>
+
+        <article class="tb-panel">
+            <img src="assets/hrothgar_crypt.jpg" alt="Pilgrim’s Market">
+            <h3 class="tb-title">The Ossuary of Saint Hrothgar</h3>
+            <p>A sacred crypt holding the remains of Hrothgar Bloodlance and his companions, visited by pilgrims who
                 seek blessings from their bones.</p>
-        </div>
+        </article>
     </section>
 
-
-
-
+    <!-- Footer injected by main.js -->
     <div id="footer"></div>
+</body>
 
-
-
-
-
-
-
-
-
-</body></html>
+</html>

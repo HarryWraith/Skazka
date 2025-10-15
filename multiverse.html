@@ -5,10 +5,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>Search • Skazka</title>
+    <title>multiverse</title>
     <link rel="stylesheet" href="navbar.css?v=3">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="assets/skazka_logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
     <script src="navbar.js?v=3"></script>
     <script type="module" src="./main.js"></script>
@@ -17,98 +19,107 @@
 
 <body>
     <div id="navbar"></div><!-- Navbar will be loaded here -->
+    <main>
+        <!-- HERO -->
+        <section class="place-hero">
+            <div class="place-hero__icon">
+            </div>
 
-    <section class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
-        <div></div>
+            <div class="place-hero__body">
+                <h1 id="intro" class="skz-viking">Skazka in the multiverse</h1>
+                <p class="skz-quote-attribution">Everything has a place</p>
+            </div>
+            <div class="place-hero__spacer" aria-hidden="true"></div>
+        </section>
 
-        <div class="center-column"><!-- MIDDLE -->
-            <img src="assets/cosmos.jpg" alt="the vastness of the cosmos" />
-            <h2 class="skz-viking">Skazka in the multiverse</h2>
-            <p>Skazka lies upon the Prime Material plane, a realm shadowed by twin moons that wheel through its
-                night
-                skies like watchful sentinels. Lunica, the smaller of the two, glows a pale, ghostly white, while
-                Mani
-                looms larger, a sickly green orb that chills the marrow of those who gaze upon it. Their
-                significance
-                shifts with the eyes that behold them: dwarves curse their light, muttering of misfortune and ill
-                portents, while certain Beast Races kneel in reverent worship, calling them gods. The Aeternian
-                Calendar, the measure of all mortal time in Skazka, bends to their inexorable movements, marking the
-                passage of fate itself.</p>
-            <p>Skazka is strange even among the stars. Over countless centuries, beings foreign to its lands have
-                appeared without warning, their origins cloaked in mystery. Scholars long puzzled over these
-                intrusions,
-                but it was only during the era of the Magical Prohibition that attention turned to their cause. They
-                discovered a perilous truth: Skazka’s borders with other realms are fragile, threadbare in places.
-                Here,
-                the substance of worlds thins, torn by unseen forces. These rifts—whispered of in dread tones as
-                ‘The
-                Veil’—open fleetingly, allowing passage to creatures and horrors from beyond, and leaving the land
-                ever
-                more haunted by the shadows of other realities.</p>
-        </div>
+        <!-- INTRO -->
+        <section class="grid-single" aria-labelledby="intro">
 
-        <div>
-        </div>
-    </section>
+            <div class="tb-panel">
+                <img src="/assets/cosmos.jpg">
+                <p>Skazka lies upon the Prime Material plane, a realm shadowed by twin moons that wheel through its
+                    night
+                    skies like watchful sentinels. Lunica, the smaller of the two, glows a pale, ghostly white, while
+                    Mani
+                    looms larger, a sickly green orb that chills the marrow of those who gaze upon it. Their
+                    significance
+                    shifts with the eyes that behold them: <a href="dwarves.html">dwarves</a> curse their light,
+                    muttering of misfortune and ill
+                    portents, while certain <a href="beastraces.html">Beast Races</a> kneel in reverent worship, calling
+                    them gods. The Aeternian
+                    Calendar, the measure of all mortal time in Skazka, bends to their inexorable movements, marking the
+                    passage of fate itself.</p>
+                <p>Skazka is strange even among the stars. Over countless centuries, beings foreign to its lands have
+                    appeared without warning, their origins cloaked in mystery. Scholars long puzzled over these
+                    intrusions,
+                    but it was only during the era of the Magical Prohibition that attention turned to their cause. They
+                    discovered a perilous truth: Skazka’s borders with other realms are fragile, threadbare in places.
+                    Here,
+                    the substance of worlds thins, torn by unseen forces. These rifts—whispered of in dread tones as
+                    ‘The
+                    Veil’—open fleetingly, allowing passage to creatures and horrors from beyond, and leaving the land
+                    ever
+                    more haunted by the shadows of other realities.</p>
+            </div>
+        </section>
 
-    <section class="grid-even"><!-- 3 COLUMN EVEN -->
+        <div class="skz-divider skz-divider--diamond" aria-hidden="true"></div>
 
-        <div class="tb-panel">
-            <img src="assets/veil.jpg" alt="The Veil - a glowing mystical barrier between realms" />
-            <h2 class="tb-title">The Veil</h2>
-            <p>
-                Skazka is positioned in the multiverse in such a way that the barrier
-                between it and other realms of existence is more fragile than on other
-                worlds. This barrier is known as the veil. Consequently, Skazka
-                frequently has visitors from other realms - some even make their home
-                here.
-            </p>
-        </div>
+        <!-- REGIONS -->
+        <section class="grid-even equal-cards" aria-labelledby="regions">
+            <article id="skia" class="tb-panel">
+                <img src="/assets/veil.jpg"
+                    alt="The western continent of Skia: a bustling village beneath jagged mountains" loading="lazy">
 
-        <div class="tb-panel">
-            <img src="assets/shadowwar.jpg" alt="" />
-            <h2 class="tb-title">The shadow war</h2>
-            <p>
-                This was a time of great turmoil when agents of Kaos sought to recover
-                the Shards of Uzume from Skazka. While those agents numbered few, they
-                possessed the ability to open rifts to other realms and call forth
-                servants of Kaos. After the Shadow War the Aeterian Empire banned the
-                study and practice of trans-dimensional travel, because it feared the
-                consequences such meddling may have on the world.
-            </p>
-        </div>
+                <h3 class="tb-title">The Veil</h3>
+                <p>
+                    Skazka sits where the multiverse thins: the Veil is fragile here, and in many places threadbare.
+                    Some realms press closer than others—most of all the Shadow Realm, forever within arm’s reach. From
+                    that near-dark, rifts are sometimes forced open by something—or someone—beyond the Veil. These
+                    Incursions tear into Skazka without warning, and they almost never herald peace: raids, hauntings,
+                    and other calamities spill through until the breach destabilises and shuts.
+                </p>
+            </article>
 
-        <div class="tb-panel">
-            <img src="assets/starfall.jpg" alt="" />
-            <h2 class="tb-title">Starfall</h2>
-            <p>PCenturies ago, a mysterious star collided with Skazka, triggering a cataclysmic event known as
-                the
-                Starfall. The impact plunged the world into a mini ice age, reshaping lands, civilizations, and
-                trade
-                routes. Ancient dragons awoke from long slumber, reclaiming their dominion, while a new humanoid
-                race—the Dragonborn—emerged, carrying the essence of dragons into the mortal realm.</p>
-            <p>PThe Starfall also severed direct divine influence. Priests and devotees found their prayers
-                unanswered,
-                forcing the gods to act through their most faithful followers. Today, the land still bears scars
-                of
-                the
-                celestial collision, dragons roam the skies, and the Dragonborn walk among mortals—reminders of
-                a
-                cosmic
-                event that forever changed Skazka’s fate.</p>
-        </div>
+            <!-- Kelos -->
+            <article id="kelos" class="tb-panel">
+                <img src="/assets/shadowwar.jpg"
+                    alt="The eastern continent of Kelos: a castle poised above misted highlands" loading="lazy">
 
-    </section>
+                <h3 class="tb-title">The Shadow War</h3>
+                <p>
+                    This was a time of great turmoil when agents of Kaos sought to recover
+                    the Shards of Uzume from Skazka. While those agents numbered few, they
+                    possessed the ability to open rifts to other realms and call forth
+                    servants of Kaos. After the Shadow War the Aeterian Empire banned the
+                    study and practice of trans-dimensional travel, because it feared the
+                    consequences such meddling may have on the world.
+                </p>
+            </article>
 
+            <!-- Serydina -->
+            <article id="serydina" class="tb-panel">
+                <img src="/assets/starfall.jpg" alt="The Serydina Isles: sheep-grazed cliffs against a calm blue sea"
+                    loading="lazy">
 
+                <h3 class="tb-title">Starfall</h3>
+                <p>Centuries ago, Skazka was structure by a shower of meteors, triggering a cataclysmic event known as
+                    the
+                    Starfall. The impact plunged the world into a mini ice age, reshaping lands, civilizations, and
+                    trade
+                    routes. Ancient dragons awoke from long slumber, reclaiming their dominion, while a new humanoid
+                    race — the <a href="dragonborn.html">Dragonborn</a> - emerged, carrying the essence of dragons into
+                    the mortal realm.</p>
+                <p>
+                    Skazka still wears the wounds of Starfall: dragons cut the skies, Dragonborn walk among mortals, and
+                    the heavens’ shatter seeded the world with tiny “Tears of Uzume”—spark-bright gems whose stray
+                    divinity can rouse simple enchantments into artifacts of legend.
+                </p>
+            </article>
+        </section>
+    </main>
 
     <div id="footer"></div>
-
-
-
-
-
-
 
 </body>
 

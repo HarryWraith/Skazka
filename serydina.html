@@ -1,149 +1,247 @@
-<!-- index.html -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>Search • Skazka</title>
+    <title>Skazka — Serydina Isles</title>
+
     <link rel="stylesheet" href="navbar.css?v=3">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="assets/skazka_logo.png">
+    <link rel="icon" href="assets/skazka_logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+
     <script src="navbar.js?v=3"></script>
     <script type="module" src="./main.js"></script>
-
 </head>
 
 <body>
-    <div id="navbar"></div><!-- Navbar will be loaded here -->
+    <!-- Navbar injected by main.js -->
+    <div id="navbar"></div>
 
-    <!-- Main Content Area -->
-    <section class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
-        <div class=" tb-panel"> <!-- LEFT -->
-            <h2 class="tb-title">Politics</h2>
-            <p>There is no single jarl or sea-king ruling the Serydina Isles, no unified throne carved from whalebone
-                and coral. Instead, power flows through the Drowning Courts—councils of jarls who have ritually drowned
-                and returned to speak for both the living and the sea-lost. Each major island maintains its own Thing,
-                though they meet as the Althing of Depths only during the spring tide eclipses when the barriers between
-                worlds grow thin and the drowned can vote alongside the living.</p>
-            <p>The courts govern through dream-law and the reading of omens in salt patterns and whale songs. Justice
-                flows like the tide—what is forbidden at high water may be permitted when the sea retreats. Disputes are
-                settled through the Ordeal of Depths, where both accuser and accused must dive to the sunken longships
-                of their ancestors and return with tokens from the drowned halls. Those who surface empty-handed face
-                exile to one of the many barren and almost uninhabitable islands.</p>
-
-            <h2 class="tb-title">Population</h2>
-            <P>The native Serydinki number perhaps six thousand souls scattered across the islands, descendants of the
-                Sken who traversed the great western ocean from Skia. They are tall and lean with skin bearing a faint
-                luminescence like moonlight on water, and eyes that hold depths mirroring the sea—gray-green and ancient
-                beyond their years. Many still bear the ritual scars of their ancestors: runic marks carved with
-                whalebone knives.</P>
+    <!-- ===== HERO (canonical .place-hero) ===== -->
+    <section class="place-hero">
+        <div class="place-hero__icon">
+            <img src="assets/serydina_banner.jpg" alt="Serydina crest">
         </div>
 
-        <div class="center-column"><!-- MIDDLE -->
-            <img src="assets/serydina.jpg" alt="">
-            <p>The Serydina Isles rise from the Weeping Sea like the broken bones of some primordial giant, a
-                scattered
-                archipelago of nine major islands shrouded in pearl-gray mists. These islands became a realm where
-                ancient longships rest in coral tombs and the descendants have learned to breathe sorrow like salt
-                air.
-                The largest isle, Snuuflund, is crowned by Mount Solnyi Plach (Salt Weeping)—a dormant volcano whose
-                crater lake weeps brine that flows down the mountainsides in crimson streams.</p>
-            <p>The smaller islands orbit this central mass like mourners around a corpse, connected by treacherous
-                currents that shift with supernatural unpredictability. Here, the line between sea and sky blurs in
-                eternal mists.</p>
-
+        <div class="place-hero__body">
+            <h1 class="skz-viking">The Serydina Isles</h1>
+            <p class="skz-quote-attribution">Nine mist-shrouded bones in the Weeping Sea</p>
         </div>
 
-        <div class="right-column, tb-panel"> <!-- RIGHT -->
-            <img src="assets/serydina_banner.jpg" alt="">
-        </div>
+        <div class="place-hero__spacer" aria-hidden="true"></div>
     </section>
 
-    <section class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
-        <div class=" tb-panel"> <!-- LEFT -->
-            <h2 class="tb-title">The Bone Mead-Hall of Jarl Grimheart</h2>
-            <p>Carved from the ribcage of a titanic whale that beached itself in grief, this great hall serves as
-                the
+    <!-- ===== BODY: 30 / 70 (left profile, right lore) ===== -->
+    <section class="grid-two-wide">
+        <!-- LEFT: PROFILE (narrow) -->
+        <aside class="tb-panel">
+            <h2 class="tb-title">Profile</h2>
+            <table class="materials-table">
+                <tbody>
+                    <tr>
+                        <th>Government</th>
+                        <td>Althing of Depths (council of jarls)</td>
+                    </tr>
+                    <tr>
+                        <th>Seat</th>
+                        <td>Bone Mead-Hall (Snuuflund)</td>
+                    </tr>
+                    <tr>
+                        <th>Ruler</th>
+                        <td>Jarl Grimheart (chair of the Althing)</td>
+                    </tr>
+                    <tr>
+                        <th>Population</th>
+                        <td>Scattered clans across nine isles (unknown total)</td>
+                    </tr>
+                    <tr>
+                        <th>Dominant Faith</th>
+                        <td>Ancestor/sea rites; the Saga of Sorrows</td>
+                    </tr>
+                    <tr>
+                        <th>Military</th>
+                        <td>Longship warbands; whale-bone arms; tide-scouts</td>
+                    </tr>
+                    <tr>
+                        <th>Terrain</th>
+                        <td>Volcanic highlands, black beaches, kelp-forests, treacherous currents</td>
+                    </tr>
+                    <tr>
+                        <th>Exports</th>
+                        <td>Salt, smoked fish, bone-craft, amber, wreck-recovered relics</td>
+                    </tr>
+                    <tr>
+                        <th>Languages</th>
+                        <td>Serydinki, Trade Tongue</td>
+                    </tr>
+                </tbody>
+            </table>
+        </aside>
+
+        <!-- RIGHT: LORE (wide) -->
+        <article class="tb-panel">
+            <img class="noborder" src="assets/serydina.jpg" alt="Misted archipelago of the Serydina Isles">
+            <h2 id="overview" class="tb-title" style="margin-top:10px">Overview</h2>
+            <p>The Serydina Isles rise from the Weeping Sea like the broken bones of a primordial giant—nine major
+                islands shrouded in pearl-gray mists and bound by currents that change with a mind of their own.
+                Foremost
+                lies <strong>Snuuflund</strong>, crowned by <strong>Mount Solnyi Plach</strong> (“Salt Weeping”),
+                a dormant volcano whose crater lake bleeds brine down its flanks in eerie crimson threads. The smaller
+                isles lay close like mourners round a bier, each with its own coves, kelp forests, and ruin-snagged
+                shoals.</p>
+            <p>Life here is hardship braided with ceremony. The clans keep longships and lore in equal measure; grief is
+                fermented into mead and sung into the <em>Saga of Sorrows</em>, an epic that lengthens each year. When
+                the <strong>Althing of Depths</strong> meets in the <strong>Bone Mead-Hall</strong>—a parliament carved
+                from the ribs of a titanic whale—judgment is rendered beneath bioluminescent kelp banners.
+            </p>
+            <p>Beneath the waves, whole <strong>forests of petrified longships</strong> stand in <strong>Utgård
+                    Bay</strong>, where pilgrims dive for counsel from drowned jarls. Some who rise again speak in the
+                language of whales for days.</p>
+            <p>Outsiders arriving at the Serydina Isles must first undergo the Rite of Salt-Welcome at the harbor of
+                Snuuflund, where they drink seawater mixed with spiced rum and speak their truest sorrow aloud before
+                the assembled crowd. Those who refuse or lie find their ships becalmed, unable to leave until they offer
+                genuine grief to the sea.</p>
+            <p>Trade must be conducted through the Merchants' Mourning, where foreign goods can only be exchanged after
+                sharing authentic tales of loss and regret. The Serydinki prize stories above gold, memories above
+                silver, and will pay handsomely for accounts of distant tragedies.</p>
+
+            <!-- 3-up quick blocks -->
+            <div class="grid-even equal-cards">
+                <article class="tb-panel">
+                    <h3 class="tb-title" id="cities-factions">Isles & Holdings</h3>
+                    <ul>
+                        <li><strong>Snuuflund</strong> — central isle; Mount Solnyi Plach; Bone Mead-Hall.
+                        </li>
+                        <li><strong>Utgård Bay</strong> — submerged longships; pilgrim dives.
+                        </li>
+                        <li><strong>Outer isles</strong> — sheep/goat holds; storm watches.
+                            <ul>
+                                <li><strong>Stormskar</strong> — “scar of the storm,” jagged islands lashed by tempests
+                                </li>
+                                <li><strong>Kravenholm</strong> — "home of the crows/ravens”</li>
+                                <li><strong>Eirvik</strong> — “bay of mercy”</li>
+                                <li><strong>Brimholt</strong> — “sea-wood,” only island where trees grow</li>
+                                <li><strong>Varðeyjar</strong> — Steep sided plateau</li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </article>
+
+                <article class="tb-panel">
+                    <h3 class="tb-title">Orders & Customs</h3>
+                    <ul>
+                        <li><strong>Althing of Depths</strong> — clan jarls convene in the Bone Mead-Hall.
+                        </li>
+                        <li><strong>Saga-keepers</strong> — add yearly verses to the Saga of Sorrows.
+                        </li>
+                        <li><strong>Tide-readers</strong> — chart the shifting currents & fog (lore-keepers).</li>
+                    </ul>
+                </article>
+
+                <article class="tb-panel">
+                    <blockquote>“Here, sorrow is a sail—catch it, or drown beneath it.”</blockquote>
+                    <p class="skz-quote-attribution">— Elder at the Bone Mead-Hall</p>
+                </article>
+            </div>
+
+            <!-- 2-up -->
+            <div class="grid-two">
+
+                <article class="tb-panel">
+                    <h3 class="tb-title" id="economy">Trade & Tides</h3>
+                    <ul>
+                        <li>Salt & smoked fish; whale-bone craft; amber and wreck salvage.</li>
+                        <li>Limited port-days for outsiders; barter under Althing writ.</li>
+                        <li>Storm-season stores: kelp-rope, oil, and brined meats.</li>
+                    </ul>
+                </article>
+                <article class="tb-panel">
+                    <h3 class="tb-title" id="threats">Rumours & Hooks</h3>
+                    <ul>
+                        <li>Currents “choose” victims—tide-readers seek a pattern in the fog.</li>
+                        <li>Crimson brine from Solnyi Plach thickens each year (omen?).
+                        </li>
+                        <li>Whale-song rites awaken something beneath Utgård Bay.
+                        </li>
+                    </ul>
+                </article>
+            </div>
+        </article>
+    </section>
+    <div class="skz-divider skz-divider--diamond" aria-hidden="true"></div>
+    <!-- ===== LANDMARKS (cards grid) ===== -->
+    <section id="landmarks" class="grid-even equal-cards">
+        <article class="tb-panel">
+            <h2 class="tb-title">Places of Note</h2>
+            <img class="noborder" src="assets/landmark.jpg" alt="">
+
+
+        </article>
+
+        <article class="tb-panel">
+            <img src="assets/bone_mead_hall.jpg" alt="The Bone Mead-Hall of Jarl Grimheart">
+            <h3 class="tb-title">The Bone Mead-Hall</h3>
+            <p>Carved from the ribcage of a titanic whale that beached itself in grief, this great hall serves as the
                 primary meeting place for the Althing of Depths. The roof is formed from interlaced whale ribs, and
-                bioluminescent kelp hangs like banners between the bone pillars. Here, the Serydinki gather to share
-                the
+                bioluminescent kelp hangs like banners between the bone pillars. Here, the Serydinki gather to share the
                 ritual mead brewed from fermented fish and recite the Saga of Sorrows—an epic poem that grows longer
-                each year as new griefs are added to its verses.</p>
-            <h2 class="tb-title">The Sunken Longships of Utgård Bay</h2>
-            <p>Beneath thirty fathoms of black water lie the preserved hulls of the original Viking fleet that
-                brought
+                each year as new griefs are added to its verses.
+            </p>
+        </article>
+
+        <article class="tb-panel">
+            <img src="assets/utgard_bay.jpg" alt="The Sunken Longships of Utgård Bay">
+            <h3 class="tb-title">The Sunken Longships of Utgård Bay</h3>
+            <p>Beneath thirty fathoms of black water lie the preserved hulls of the original Viking fleet that brought
                 the Serydinki's ancestors to these shores. The salt water has turned the wood to stone, creating an
-                underwater forest of petrified dragon-prowed vessels. Pilgrims dive to these depths seeking wisdom
-                from
-                the drowned jarls whose spirits still hold court in the flooded halls, though many who descend too
-                deep
-                return speaking only in the language of whales.</p>
-            <h2 class="tb-title">The Weeping Rune-Stones of Sorrow's Point</h2>
-            <p>Standing stones carved with runic inscriptions that weep tears of liquid silver mark the northernmost
-                tip
+                underwater forest of petrified dragon-prowed vessels. Pilgrims dive to these depths seeking wisdom from
+                the drowned jarls whose spirits still hold court in the flooded halls, though many who descend too deep
+                return speaking only in the language of whales.
+            </p>
+        </article>
+
+        <article class="tb-panel">
+            <img src="assets/serydina_stones.jpg" alt="Mount Solnyi Plach (Salt Weeping)">
+            <h3 class="tb-title">The Weeping Rune-Stones of Sorrow's Point</h3>
+            <p>Standing stones carved with runic inscriptions that weep tears of liquid silver mark the northernmost tip
                 of the main island. Each stone records a different aspect of the great catastrophe that drove the
                 ancestors from their homeland, but the runes shift and change when viewed directly, showing each
-                observer the particular grief that matches their own heart's wounds. Scholars who attempt to
-                transcribe
-                the runes find their notes dissolving into salt water before the ink can dry.</p>
-        </div>
+                observer the particular grief that matches their own heart's wounds. Scholars who attempt to transcribe
+                the runes find their notes dissolving into salt water before the ink can dry.
+            </p>
+        </article>
 
-        <div class="center-column"><!-- MIDDLE -->
-            <h2 class="tb-title">Visiting the Serydina Isles</h2>
-            <p>Outsiders arriving at the Serydina Isles must first undergo the Rite of Salt-Welcome at the harbor of
-                Snuuflund, where they drink seawater mixed with spiced rum and speak their truest sorrow aloud
-                before
-                the assembled crowd. Those who refuse or lie find their ships becalmed, unable to leave until they
-                offer
-                genuine grief to the sea. </p>
-            <p>Trade must be conducted through the Merchants' Mourning, where foreign goods can only be exchanged
-                after
-                sharing authentic tales of loss and regret. The Serydinki prize stories above gold, memories above
-                silver, and will pay handsomely for accounts of distant tragedies. </p>
-
-        </div>
-
-        <div class="right-column, tb-panel"> <!-- RIGHT -->
-            <h2 class="tb-title">The Frost-Giant's Cauldron</h2>
-            <p>A massive tidal pool formed in the crater of an extinct volcano on the isle of Morid-Heart, this
-                natural
-                formation is said to be where the last frost giant wept himself to death watching his kin perish
-                in
-                the
+        <article class="tb-panel">
+            <img src="assets/serydina_cauldron.jpg" alt="Mount Solnyi Plach (Salt Weeping)">
+            <h3 class="tb-title">The Frost Giant&rsaquo;s cauldron</h3>
+            <p>A massive tidal pool formed in the crater of an extinct volcano on the isle of Morid-Heart, this natural
+                formation is said to be where the last frost giant wept himself to death watching his kin perish in the
                 great thaw. The water never freezes despite the northern winds, and strange fish swim in its
-                depths—creatures with human faces that mouth words in the old tongue. The Serydinki cast
-                offerings
-                of
-                carved bone and braided hair into its waters, believing the giant's spirit can carry messages to
-                the
-                realm of the honoured dead.</p>
-            <h2 class="tb-title">The Corpse-Light Beacon of Maiden’s Rest</h2>
-            <p>Built from the fossilized bones of a fallen maiden, this lighthouse guides ships through the
-                treacherous
-                approaches to the main harbor. The beacon burns with corpse-light—a cold flame that provides no
-                warmth
-                but can be seen for leagues through even the thickest fog. The lighthouse keeper is always a
-                volunteer
+                depths—creatures with human faces that mouth words in the old tongue. The Serydinki cast offerings of
+                carved bone and braided hair into its waters, believing the giant's spirit can carry messages to the
+                realm of the honoured dead.
+            </p>
+        </article>
+
+        <article class="tb-panel">
+            <img src="assets/serydina_lighthouse.jpg" alt="Mount Solnyi Plach (Salt Weeping)">
+            <h3 class="tb-title">The Corpse-Light Beacon of Maiden&rsaquo;s Rest</h3>
+            <p>Built from the fossilized bones of a fallen maiden, this lighthouse guides ships through the treacherous
+                approaches to the main harbor. The beacon burns with corpse-light—a cold flame that provides no warmth
+                but can be seen for leagues through even the thickest fog. The lighthouse keeper is always a volunteer
                 who has lost their entire family to the sea, and they serve until death, tending the flame while
-                composing death-songs for sailors lost in the surrounding waters.</p>
-        </div>
+                composing death-songs for sailors lost in the surrounding waters.
+            </p>
+        </article>
     </section>
 
-
-
-
-
-
+    <!-- Footer injected by main.js -->
     <div id="footer"></div>
-
-
-
-
-
-
-
 </body>
 
 </html>

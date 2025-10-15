@@ -1,133 +1,221 @@
-<!-- index.html -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>Search • Skazka</title>
+    <title>Skazka — Nav’golam</title>
+
     <link rel="stylesheet" href="navbar.css?v=3">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="assets/skazka_logo.png">
+    <link rel="icon" href="assets/skazka_logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+
     <script src="navbar.js?v=3"></script>
     <script type="module" src="./main.js"></script>
-
 </head>
 
 <body>
-    <div id="navbar"></div><!-- Navbar will be loaded here -->
+    <!-- Navbar injected by main.js -->
+    <div id="navbar"></div>
 
-    <!-- Main Content Area -->
-    <section class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
-        <div class=" tb-panel"> <!-- LEFT -->
-            <h2 class="tb-title">Population</h2>
-            <p>Some 12,000 stoneborn souls make their home in Nav’golam. These include the dwarf clans
-                themselves—miners, smiths, gemcrafters—and a small retinue of subterranean beasts tamed for duty, such
-                as the golden-horned cave goats that haul ore and the stalwart burrow-beetles that tunnel through rock.
-                The city thrives on precise labor, shared feasting, and the steady rhythm of hammer against anvil.</p>
-            <h2 class="tb-title">Politics</h2>
-            <p>Nav’golam is ruled by King Theldon, 5th of his line, with the guidance of a council Forge Lords, each
-                representing one of the
-                city’s principal clans. Decisions are forged in heated debate in the echoing Council Halls
-                and bound by the ancient Pact of Firesmiths. Leadership passes by blood: but any king may be challenged
-                to trial by combat.</p>
+    <!-- ===== HERO ===== -->
+    <section class="place-hero">
+        <div class="place-hero__icon">
+            <img src="assets/navgolam_banner.jpg" alt="Nav’golam crest">
         </div>
-
-        <div class="center-column"><!-- MIDDLE -->
-            <img src="assets/nav-golam.jpg" alt="">
-            <p>Far below the living world lies Nav’golam, a vast dwarven city hewn into the bones of the earth. Born
-                in
-                the year –1800, it stands as the first true home of wandering dwarven clans, a place they could call
-                sanctuary after centuries in the Underworld. Here, stalactites and torchlight herald pillars of
-                stone,
-                and laughter echoes off endless halls. The name Nav’golam, “Stone’s Heart,” speaks of purpose: a
-                fortress shaped by will and fire, founded when dwarves at last found a home under the mountain.</p>
-
+        <div class="place-hero__body">
+            <h1 class="skz-viking">Nav’golam</h1>
+            <p class="skz-quote-attribution">Stone’s Heart — the first true dwarven home beneath the mountain</p>
         </div>
-
-        <div class="right-column, tb-panel"> <!-- RIGHT -->
-            <img src="assets/nav-golam_banner.jpg" alt="">
-            <p>The Brand of Duty</p>
-
-        </div>
+        <div class="place-hero__spacer" aria-hidden="true"></div>
     </section>
 
-    <section class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
-        <div class=" tb-panel"> <!-- LEFT -->
-            <h2 class="tb-title">The Black Gate</h2>
-            <p>A monolithic arch of iron-smelted stone marking the city's threshold—the first sight of Nav’golam’s
-                immensity. Ancient runes etched in basalt whisper of ancestral strength to those who pass beneath.
-            </p>
+    <!-- ===== BODY: 30 / 70 ===== -->
+    <section class="grid-two-wide">
+        <!-- LEFT: SIDEBAR -->
+        <aside>
+            <!-- Profile -->
+            <article class="tb-panel">
+                <h2 class="tb-title">Profile</h2>
+                <table class="materials-table">
+                    <tbody>
+                        <tr>
+                            <th>Government</th>
+                            <td>Monarchy with Council of Forge Lords</td>
+                        </tr>
+                        <tr>
+                            <th>Seat</th>
+                            <td>Nav’golam (single subterranean city)</td>
+                        </tr>
+                        <tr>
+                            <th>Ruler</th>
+                            <td>King Theldon V (with Forge Lords’ counsel)</td>
+                        </tr>
+                        <tr>
+                            <th>Population</th>
+                            <td>~12,000</td>
+                        </tr>
+                        <tr>
+                            <th>Dominant Faith</th>
+                            <td>None</td>
+                        </tr>
+                        <tr>
+                            <th>Military</th>
+                            <td>City watch & forge-guard</td>
+                        </tr>
+                        <tr>
+                            <th>Terrain</th>
+                            <td>Vast caverns, Underworks, glow-lit canals, basalt terraces</td>
+                        </tr>
+                        <tr>
+                            <th>Exports</th>
+                            <td>Worked metal, arms, tools, gems, stonecraft</td>
+                        </tr>
+                        <tr>
+                            <th>Languages</th>
+                            <td>Trade Tongue, Dwarvish</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
 
-            <h2 class="tb-title">The Great Forge</h2>
-            <p>
-                Within the heart of Nav’golam's Underworks, furnaces roar like underground suns. Here, the legendary
-                Ember-Anvil stands—a living forge that glows with perpetual forge-fire, used only on the most sacred
-                of
-                creations.
-            </p>
+            <!-- Guilds (sidebar) -->
+            <article class="tb-panel">
+                <h2 class="tb-title">Guilds & Orders</h2>
+                <ul>
+                    <li><strong>Forge Lords</strong> — principal clan heads; counsel to the king.</li>
+                    <li><strong>Duty-Stewards</strong> — receive and bind visiting contracts by oath & rune-stone.</li>
+                    <li><strong>Underworks Keepers</strong> — tend furnaces and the Ember-Anvil.</li>
+                    <li><strong>Canal Wardens</strong> — oversee glowstone waterways & freight.</li>
+                </ul>
+            </article>
+        </aside>
 
-            <h2 class="tb-title">Glowstone Canals</h2>
-            <p>
-                Narrow waterways lit by luminescent minerals. Small boats ferry ore and other goods through glowing
-                tunnels—an
-                eerie, dreamlike river of light carved from living rock.
-            </p>
-
-
-        </div>
-
-        <div class="center-column"><!-- MIDDLE -->
-            <h2 class="tb-title">Visiting Nav'golam</h2>
-            <p>Visitors arrive via the Spiral Shaft, a vast tunnel lit by luminous fungi and glowing ore veins.
-                After
+        <!-- RIGHT: LORE -->
+        <article class="tb-panel">
+            <img class="noborder" src="assets/nav-golam.jpg" alt="Nav’golam — dwarven halls beneath the mountain">
+            <h2 id="overview" class="tb-title">Overview</h2>
+            <p>Far below the living world lies Nav’golam, a vast dwarven city hewn into the bones of the earth. Born in
+                the year –1800, it stands as the first true home of wandering dwarven clans, a place they could call
+                sanctuary after centuries in the Underworld. Here, stalactites and torchlight herald pillars of stone,
+                and laughter echoes off endless halls. The name Nav’golam, “Stone’s Heart,” speaks of purpose: a
+                fortress shaped by will and fire, founded when dwarves at last found a home under the mountain.</p>
+            <p>Visitors arrive via the Spiral Shaft, a vast tunnel lit by luminous fungi and glowing ore veins. After
                 emerging in the Grand Antechamber, guests pass through the Watch-Pillars and are welcomed by the
-                Duty-Stewards. While dwarves are cautious of strangers, travelers who bring tales of distant
-                lands—or
+                Duty-Stewards. While dwarves are cautious of strangers, travelers who bring tales of distant lands—or
                 rare metals—are shown hospitality in the Hearth of Passing. Still, delveers beware: contracts are
                 binding in Nav’golam, enforced by oath and rune-stone.</p>
 
+            <!-- 3-up quick blocks (concise, evidence-based) -->
+            <div class="grid-even equal-cards">
+                <article class="tb-panel">
+                    <h3 class="tb-title" id="cities-factions">Halls &amp; Works</h3>
+                    <ul>
+                        <li><strong>Great Forge &amp; Ember-Anvil</strong> — core of industry and sacred craft.</li>
+                        <li><strong>Glowstone Canals</strong> — ore &amp; goods ferried through lighted tunnels.</li>
+                        <li><strong>Spiral Shaft &amp; Grand Antechamber</strong> — main ingress, freight &amp; muster.
+                        </li>
+                    </ul>
+                </article>
 
+                <article class="tb-panel">
+                    <h3 class="tb-title">Factions &amp; Orders</h3>
+                    <ul>
+                        <li><strong>Forge Lords</strong> — clan heads; counsel to the king.</li>
+                        <li><strong>Duty-Stewards</strong> — contracts &amp; oath-stones for visitors.</li>
+                        <li><strong>Underworks Keepers</strong> — furnaces &amp; Ember-Anvil rites.</li>
+                        <li><strong>Canal Wardens</strong> — glowstone waterways &amp; freight security.</li>
+                    </ul>
+                </article>
 
-        </div>
+                <article class="tb-panel">
+                    <blockquote>“Hammer-song is our clock; oath-stone is our law.”</blockquote>
+                    <p class="skz-quote-attribution">— Duty-Steward of the Watch-Pillars</p>
+                </article>
+            </div>
 
-        <div class="right-column, tb-panel"> <!-- RIGHT -->
-            <h2 class="tb-title">The Vault of A Thousand Hammers</h2>
-            <p>
-                A deep subterranean archive where dwarves deposit records of guilds, treaties, and genealogies
-                in
-                gem-encrusted chests. The walls themselves are lined in copper leaf, reflecting torchlight like
-                whispered
-                memory.
-            </p>
-
-            <h2 class="tb-title">Hall of Echoing Drums</h2>
-            <p>
-                A ceremonial chamber where resonant beats echo off cavern walls. It serves as a gathering point
-                for
-                festivals, ancestral remembrances, and when the Pact of Firesmiths is renewed, the drums speak
-                for
-                the
-                earth
-                itself.
-            </p>
-
-            <h2 class="tb-title">The Subterranean Gardens</h2>
-            <p>
-                Hidden within basalt chambers are pockets of engineered soil, where hardy mushrooms, glowing
-                lichen,
-                and
-                low-cropped root-veg are grown under torchlight—sustenance born of stone and ingenuity.
-            </p>
-        </div>
+            <!-- 2-up (concise format, no inline styles) -->
+            <div class="grid-two">
+                <article class="tb-panel">
+                    <h3 class="tb-title" id="economy">Economy & Trade</h3>
+                    <ul>
+                        <li>Metalwork (arms, tools), gem-craft, stone masonry, canal freight.</li>
+                        <li>Surface trade via contracted caravans; oath-priced work commissions.</li>
+                        <li>Archive services (genealogies, treaties) for allied clans.</li>
+                    </ul>
+                </article>
+                <article class="tb-panel">
+                    <h3 class="tb-title" id="threats">Risks & Rumours</h3>
+                    <ul>
+                        <li>Underworks hazards: furnace collapses, gas pockets, construct mishaps.</li>
+                        <li>Mire-edge incursions from the deep road; relic thieves on canals.</li>
+                        <li>Whispers of anvil-rites awakening something in old basalt vaults.</li>
+                    </ul>
+                </article>
+            </div>
+        </article>
     </section>
 
+    <div class="skz-divider skz-divider--diamond" aria-hidden="true"></div>
+
+    <!-- ===== PLACES OF NOTE (full, unshortened descriptions) ===== -->
+    <section id="landmarks" class="grid-even equal-cards">
+        <article class="tb-panel">
+            <h2 class="tb-title">Places of Note</h2>
+            <img class="noborder" src="assets/landmark.jpg" alt="">
+        </article>
+
+        <article class="tb-panel">
+            <img src="assets/nav_black_gate.jpg" alt="The gates to Nav'golam">
+            <h3 class="tb-title">The Black Gate</h3>
+            <p>A monolithic arch of iron-smelted stone marking the city's threshold—the first sight of Nav’golam’s
+                immensity. Ancient runes etched in basalt whisper of ancestral strength to those who pass beneath.</p>
+        </article>
+
+        <article class="tb-panel">
+            <img src="assets/nav_forge.jpg" alt="the great forge">
+            <h3 class="tb-title">The Great Forge</h3>
+            <p>Within the heart of Nav’golam's Underworks, furnaces roar like underground suns. Here, the legendary
+                Ember-Anvil stands—a living forge that glows with perpetual forge-fire, used only on the most sacred of
+                creations.</p>
+        </article>
+
+        <article class="tb-panel">
+            <img src="assets/nav_canals.jpg" alt="glowstone canals">
+            <h3 class="tb-title">Glowstone Canals</h3>
+            <p>Narrow waterways lit by luminescent minerals. Small boats ferry ore and other goods through glowing
+                tunnels—an eerie, dreamlike river of light carved from living rock.</p>
+        </article>
+
+        <article class="tb-panel">
+            <img src="assets/nav_archive.jpg" alt="An underground archive">
+            <h3 class="tb-title">The Vault of A Thousand Hammers</h3>
+            <p>A deep subterranean archive where dwarves deposit records of guilds, treaties, and genealogies in
+                gem-encrusted chests. The walls themselves are lined in copper leaf, reflecting torchlight like
+                whispered memory.</p>
+        </article>
+
+        <article class="tb-panel">
+            <img src="assets/nav_ceremony.jpg" alt="">
+            <h3 class="tb-title">Hall of Echoing Drums</h3>
+            <p>A ceremonial chamber where resonant beats echo off cavern walls. It serves as a gathering point for
+                festivals, ancestral remembrances, and when the Pact of Firesmiths is renewed, the drums speak for the
+                earth itself.</p>
+        </article>
+
+        <article class="tb-panel">
+            <img src="assets/nav_garden.jpg" alt="underworld garden">
+            <h3 class="tb-title">The Subterranean Gardens</h3>
+            <p>Hidden within basalt chambers are pockets of engineered soil, where hardy mushrooms, glowing lichen, and
+                low-cropped root-veg are grown under torchlight—sustenance born of stone and ingenuity.</p>
+        </article>
+    </section>
+
+    <!-- Footer injected by main.js -->
     <div id="footer"></div>
-
-
-
-
 </body>
 
 </html>

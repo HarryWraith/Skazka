@@ -5,10 +5,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Skazka - aeter</title>
+  <title>Skazka - creation</title>
   <link rel="stylesheet" href="navbar.css?v=3">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/png" href="assets/skazka_logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
   <script src="navbar.js?v=3"></script>
   <script type="module" src="./main.js"></script>
@@ -18,99 +20,86 @@
 <body>
   <div id="navbar"></div><!-- Navbar will be loaded here -->
 
-  <!-- Main Content Area -->
-  <section class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
-    <div></div>
 
-    <div class="center-column"><!-- MIDDLE -->
-      <img src="assets/pantheon.webp" alt="" />
-
-      <p>Beneath the obsidian veil of eternity, an endless astral sea sprawled — a blackened abyss that swallowed
-        all
-        light and
-        hope. It was a void eternal and unmoving, where silence rotted in the bones of time. Yet, from the crushing
-        depths
-        of that dead stillness, an ember flickered to life. The abyss flared with a blaze — flames that burned
-        with a hellish coldness, both scalding and frozen.</p>
-
-      <p>That cosmic fire raged, consuming the astral sea in its grasp. The fragile weave of the cosmos tore apart,
-        cracking like shattered bone under an ethereal force. Splintered into countless jagged shards, the universe
-        bled
-        fragments into the dark expanse. Each shard, a realm cast into its own shadowed corner of time and
-        space — birthplaces of realms both cursed and blessed, the fractured planes of existence.</p>
-
+  <!-- HERO -->
+  <section class="place-hero">
+    <div class="place-hero__icon">
     </div>
 
-    <div class="right-column"> <!-- RIGHT --></div>
+    <div class="place-hero__body">
+      <h1 id="intro" class="skz-viking">The story of creation</h1>
+      <p class="skz-quote-attribution">From chaos and song, Skazka rose.</p>
+    </div>
+    <div class="place-hero__spacer" aria-hidden="true"></div>
   </section>
 
-  <section class="grid-even"><!-- 3 COLUMN EVEN -->
-    <div class="tb-panel">
-      <h2 class="tb-title">In the beginning...</h2>
-      <p>
-        For an age, the planes roared with untamed fury — flames of creation and
-        chaos alike — but eventually, the fire began to fade. From its embers
-        arose stars, worlds, and places of great power. And from those places,
-        the first gods emerged: the Vekya, or Primals.
-      </p>
+  <!-- INTRO -->
+  <section class="grid-single" aria-labelledby="intro">
 
-      <p>
-        There were three:<br />
-        Uzume, goddess of creation,<br />
-        Kaos, lord of disorder,<br />
-        and Kronos, keeper of cosmic time.
-      </p>
+    <div class="tb-panel">
+      <img src="/assets/creation.jpg">
+      <p>Beneath the obsidian veil of eternity, an endless astral sea sprawled — a blackened abyss that swallowed all
+        light and hope. It was a void eternal and unmoving, where silence rotted in the bones of time. Yet, from the
+        crushing depths of that dead stillness, an ember flickered to life. The abyss flared with a blaze — flames that
+        burned with a hellish coldness, both scalding and frozen.</p>
+      <p>That cosmic fire raged, consuming the astral sea in its grasp. The fragile weave of the cosmos tore apart,
+        cracking like shattered bone under an ethereal force. Splintered into countless jagged shards, the universe bled
+        fragments into the dark expanse. Each shard, a realm cast into its own shadowed corner of time and space —
+        birthplaces of realms both cursed and blessed, the fractured planes of existence.</p>
     </div>
+  </section>
+
+  <div class="skz-divider skz-divider--diamond" aria-hidden="true"></div>
+
+  <!-- REGIONS -->
+  <section class="grid-even equal-cards" aria-labelledby="regions">
+    <article id="skia" class="tb-panel">
+      <h3 class="tb-title">In the beginning...</h3>
+      <p>
+        For an age, the planes roared with untamed fury — flames of creation and chaos alike — but eventually, the fire
+        began to fade. From its embers arose stars, worlds, and places of great power. And from those places, the first
+        gods emerged: the Vekya, or Primals.
+      </p>
+      <p>There were three:</p>
+      <ul class="nodec">
+        <li>Uzume, goddess of creation,</li>
+        <li>Kaos, lord of disorder,</li>
+        <li>and Kronos, keeper of cosmic time.</li>
+      </ul>
+    </article>
+
+    <!-- Kelos -->
+    <article id="kelos" class="tb-panel">
+
+      <h3 class="tb-title">Betrayal at the forge...</h3>
+      <p>Alone while Kronos and Kaos toiled without pause, Uzume tore a shard of her own essence and shaped companions:
+        the Annarr and their Annarr-kin. The Annarr were gods—mighty and strange—while the Annarr-kin, though
+        formidable, fell short of divinity, more like great familiars. Envy curdled Kronos and Kaos, yet a higher law
+        forbade them from striking Uzume directly. They sought turncoats among her creations; only one
+        answered—Fafnirog, the Great Dragon, devourer of light—tempted by the promise of godhood. Luring Uzume to the
+        Celestial Forge where the first spark was born, they hid in shadow as Fafnirog sprang, rending her and
+        scattering her essence to the void.</p>
+    </article>
+
+    <!-- Serydina -->
+    <article id="serydina" class="tb-panel">
+
+      <h3 class="tb-title">Rebirth...</h3>
+      <p>As Uzume’s divine light faded, the remaining Vekya tried to consume what remained—but her essence had become
+        poison to them. In her final breath, Uzume cast the last of herself into the cosmos, a gift to all—but the
+        Vekya.</p>
+
+      <p>And this is why the flowers bloom and wither; why trees grow from seedling to ancient oak; why the races of
+        Skazka can create life in each other.</p>
+
+      <p>Uzume’s gift lives on—in all things, except the gods who betrayed her.</p>
+    </article>
+  </section>
+
+  <section class="grid-single" aria-labelledby="intro">
 
     <div class="tb-panel">
-      <h2 class="tb-title">Daggers in the night...</h2>
-      <p>
-        Uzume was alone, for both Kronos and and Kaos were relentless and unwavering
-        in their task. Lonely in her divinity, Uzume tore a piece from her own essence
-        and formed wondrous beings to accompany her and carry out her will across
-        the multiverse. These were the Annarr and their companions, the
-        Annarr-kin. The Annarr were gods in their own right — mighty and
-        strange. The Annarr-kin, though formidable, fell short of godhood, and could,
-        perhaps, be considered to be Familiars of a sort.
-      </p>
-
-      <p>
-        Seeing Uzume’s creations, Kaos and Kronos grew bitter. Jealousy
-        poisoned their thoughts, and they conspired to steal her power. Yet
-        some cosmic force forbade them from harming her directly. So they
-        turned to the Annarr and Annarr-kin. None would join them — save one.
-      </p>
-
-      <p>
-        The Great Dragon Fafnirog, devourer of light, who slumbered in the
-        darkest voids, accepted their offer. In return for his betrayal, he
-        would be granted the power of a god.
-      </p>
-
-      <p>
-        Kaos and Kronos lured Uzume to the Celestial Forge, where the first
-        spark had been born. There, hidden in shadow, Fafnirog struck. He tore
-        her open and scattered her essence.
-      </p>
-    </div>
-
-    <div class="tb-panel">
-      <h2 class="tb-title">Rebirth...</h2>
-      <p>
-        As Uzume’s divine light faded, the remaining Vekya tried to consume
-        what remained—but her essence had become poison to them. In her final
-        breath, Uzume cast the last of herself into the cosmos, a gift to
-        all—but the Vekya.
-      </p>
-      <p>
-        And this is why the flowers bloom and wither. <br />
-        Why trees grow from seedling to ancient oak. <br />
-        Why the races of Skazka can create life in each other.
-      </p>
-
-      <p>
-        Uzume’s gift lives on—in all things, except the gods who betrayed her.
-      </p>
+      <img src="/assets/pantheon.webp">
     </div>
   </section>
 

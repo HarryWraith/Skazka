@@ -1,76 +1,85 @@
-<!-- index.html -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
+    <!-- Standard Skazka head (no inline CSS) -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>Skazka - aeter</title>
+    <title>Skazka — Dragonborn</title>
+
     <link rel="stylesheet" href="navbar.css?v=3">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="assets/skazka_logo.png">
+    <link rel="icon" href="assets/skazka_logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+
     <script src="navbar.js?v=3"></script>
     <script type="module" src="./main.js"></script>
-
 </head>
 
 <body>
-    <div id="navbar"></div><!-- Navbar will be loaded here -->
-
-    <!-- Main Content Area -->
-    <section class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
-        <div class="tb-panel"> <!-- LEFT -->
-            <h2 class="tb-title">Physical Description</h2>
-            <p>Though their lore speaks most loudly of their deeds and character, the Dwarves’ very bodies reflect the
-                resilience of their kind. Stocky and strong, they are built to endure the crushing weight of the world
-                above them and the unforgiving environments of the Underworld. Their arms are corded with the strength
-                of generations spent at forges and mines, and their hands are roughened from centuries of work with
-                hammer and pick. Every line on their faces carries the weight of endurance, determination, and the
-                fierce joy they find in both labor and revelry. Their physical presence is as solid and unyielding as
-                the mountains they inhabit, a living testament to their bond with stone and fire.</p>
+    <div id="navbar"></div>
+    <!-- HERO -->
+    <section class="place-hero" id="hero">
+        <div class="place-hero__icon">
+            <img alt="Dragonborn Sigil" src="assets/icons/species/dwarves_sigil.jpg">
         </div>
-
-        <div class="center-column"><!-- MIDDLE -->
-            <img src="assets/dwarves.jpg" alt="">
-            <p>The Dwarves are among the oldest mortal peoples to walk the lands of Skazka, forged in the deep
-                places
-                where mountains root themselves in streams of molten metal. Once servants of the gods, they were
-                metalsmiths, miners, and artisans of unparalleled skill, their craft so fine it shaped the very
-                tools
-                with which creation was reshaped. Yet, for all their glory and devotion, their early history is
-                steeped
-                in betrayal, servitude, and rebellion. From those trials arose a people whose spirit burns with the
-                fire
-                of freedom, whose loyalty is as unyielding as stone, and whose legacy is carved into the bones of
-                the
-                earth itself.</p>
-
+        <div class="place-hero__body">
+            <h1 class="skz-viking">Dwarves</h1>
+            <p>Former smiths to the Gods</p>
         </div>
-
-        <div class="right-column, tb-panel"> <!-- RIGHT -->
-            <h2 class="tb-title">Heritage</h2>
-            <p>The story of the Dwarves begins with divine service. They were bound by a bargain with Jutus, the
-                messenger of the gods, to labor for millennia in exchange for a kingdom of their own. When the
-                promised
-                city of Kitezh was granted, they found the gift tainted—freedom had not been part of the
-                bargain.
-                Betrayed but not broken, the Dwarves rebelled, turning their mastery of craft into weapons of
-                war. They
-                raised Kitezh from its roots and defied the gods, but true freedom came only with the founding
-                of
-                Nav’Golam, a city wholly their own, wrought entirely by Dwarven hands. This heritage of bondage,
-                betrayal, and triumph has etched itself into their very soul, shaping them into a people for
-                whom
-                independence is sacred and whose civilization stands as a monument to perseverance.</p>
-        </div>
+        <div class="place-hero__spacer"></div>
     </section>
 
-    <section class="vertical"> <!-- 3 COLUMN 20-60-20 -->
 
 
-        <div class="tb-panel"><!-- MIDDLE -->
-            <h2 class="tb-title">Motivation</h2>
+    <!-- PROFILE (left) + OVERVIEW (right) -->
+    <section class="grid-two-wide" id="profile-overview">
+        <aside class="tb-panel" id="profile">
+            <h2 class="tb-title">Profile</h2>
+            <table class="materials-table">
+                <tbody>
+                    <tr>
+                        <th class="tb-kv-key">Average Lifespan</th>
+                        <td>~350 - 400 years</td>
+                    </tr>
+                    <tr>
+                        <th class="tb-kv-key">Typical Size</th>
+                        <td>Medium; 4'4" - 4'10"; stock</td>
+                    </tr>
+                    <tr>
+                        <th class="tb-kv-key">Homelands</th>
+                        <td><a href="navgolam.html">Nav'golam</a> and other areas of the Underworld</td>
+                    </tr>
+                    <tr>
+                        <th class="tb-kv-key">Languages</th>
+                        <td>Dwarvish, Trade-tongue</td>
+                    </tr>
+                    <tr>
+                        <th class="tb-kv-key">Faiths</th>
+                        <td>Not bound to any faith, though some still feel a connection to <a
+                                href="jutus.html">Jutus</a></a></td>
+                    </tr>
+                    <tr>
+                        <th class="tb-kv-key">Temperament</th>
+                        <td>Stoic, stubborn, pragmatic</td>
+                    </tr>
+                </tbody>
+            </table>
+            <img src="assets/dwarves.jpg" alt="Dwarven portrait" class="noborder">
+        </aside>
+
+        <article class="tb-panel" id="overview">
+            <h2 class="tb-title">Overview</h2>
+
+            <p>The Dwarves are among the oldest mortal peoples to walk the lands of Skazka, forged in the deep places
+                where mountains root themselves in streams of molten metal. Once servants of the gods, they were
+                metalsmiths, miners, and artisans of unparalleled skill, their craft so fine it shaped the very tools
+                with which creation was reshaped. Yet, for all their glory and devotion, their early history is steeped
+                in betrayal, servitude, and rebellion. From those trials arose a people whose spirit burns with the fire
+                of freedom, whose loyalty is as unyielding as stone, and whose legacy is carved into the bones of the
+                earth itself.</p>
             <p>At the heart of the Dwarven spirit lies an unshakable desire for freedom and self-determination. Their
                 lives are driven by the memory of betrayal, and every hammer strike, every vein of ore mined, and every
                 work of art forged becomes a declaration of independence. They value loyalty above riches, for they know
@@ -79,30 +88,218 @@
                 Their contests of strength, love of gambling, and endless drive to create reflect a worldview shaped by
                 hardship but not defeated by it. For the Dwarves, life is both a wager and a forge—each moment a chance
                 to shape destiny anew.</p>
-        </div>
-        <div class="tb-panel">
-            <h2 class="tb-title">Integration into Society</h2>
             <p>In the world of Skazka, Dwarves stand as a people apart yet indispensable. Their cities, particularly
-                Nav’Golam, are bastions of stability and strength in the perilous depths, attracting trade, alliances,
+                <a href="navgolam.html">Nav’Golam</a>, are bastions of stability and strength in the perilous depths,
+                attracting trade, alliances,
                 and respect. Though mistrustful of gods and those who embody deceit, Dwarves are legendary allies to
                 mortals and nations who prove themselves worthy. Their loyalty is enduring, their word ironclad, and
                 their bonds stronger than steel. While their hatred for Lolth and her kind ensures eternal conflict in
                 the Underworld, on the surface and beyond, their reputation as smiths, warriors, and steadfast
                 companions makes them a cornerstone of wider civilization. Wherever they dwell, they integrate through
                 labor, craft, and unflinching honor, carving their place not through conquest but through the enduring
-                weight of their character.</p>
-        </div>
-
-
+                weight of their character.
+            </p>
+        </article>
     </section>
 
+    <div class="skz-divider skz-divider--diamond" aria-hidden="true"></div>
 
+    <!-- PHYSIOLOGY / CULTURE / FAITH -->
+    <section class="grid-even equal-cards" id="pillars">
+        <article class="tb-panel" id="physiology">
+            <h2 class="tb-title">Physiology & Traits</h2>
+            <ul>
+                <li><strong>Appearance:</strong> Compact and powerfully built, dwarves stand around 4½ feet tall with
+                    dense muscle, barrel chests, and thick forearms and calves built for toil and battle; their faces
+                    are square-jawed, noses blunt, and eyes set deep like coals in a hearth. Hair grows coarse and
+                    abundant—beards (for most adults, regardless of sex in many clans) are a point of pride, braided
+                    with clasps, beads, and metal rings that signal lineage or guild. </li>
+                <li><strong>Dimorphism:</strong> Among dwarves, the line between male and female is a quiet seam rather
+                    than a cleft: both are compact and iron-boned, broad across shoulder and hip, built to haul stone
+                    and hardship alike. The differences show in whispers — males a thumb taller on average, voices like
+                    gravel in a deep pan, brows a shade heavier; females a touch more enduring in cold tunnels, a
+                    steadier fire that burns long into the watch. Beards are a custom as much as a birthright: most men
+                    wear them proudly, some women too.</li>
+                <li><strong>Senses:</strong> Dwarven senses are practical and hard-earned rather than mystical: eyes
+                    adapted to dim spaces read texture and shadow well, catching hairline cracks, fine tool marks, and
+                    slight color shifts in ore.</li>
+                <li><strong>Innate Gifts:</strong> Born with the mountain in their marrow, dwarves carry quiet miracles:
+                    a stone-binding knack that lets them read load, fault, and age from a wall’s chill; a forge-hard
+                    constitution that shrugs off poison, stale air, and fever like sparks off an anvil; and a steadfast
+                    will that knots oaths so tightly even sorcery struggles to pry them loose. Their feet “hear”—a
+                    subtle ground-sense that feels tremors and footfalls through timber and rock—while their hands keep
+                    true heat: they can judge temper and brittleness by touch alone. </li>
+            </ul>
+        </article>
 
+        <article class="tb-panel" id="culture">
+            <h2 class="tb-title">Culture & Society</h2>
+            <ul>
+                <li><strong>Virtues & Laws:</strong> Dwarven virtue is measured in what endures: an oath kept, a tool
+                    well-made, a shift finished without complaint. Their law is carved in stone—plain words, few
+                    loopholes—yet carried with a craftsman’s pragmatism.</li>
+                <li><strong>Craft & Trade:</strong> Once smiths to the gods, dwarves still run their forges like temples
+                    to that contract. Ledgers keep the old clauses—oath-steel must not fail, measures must be true, and
+                    no sworn pattern is sold without release — so each workshop stamps a clan-mark beside a contract
+                    rune.
+                </li>
+                <li><strong>Family & Names:</strong> Dwarven family is a tight braid of blood, clan, and guild. Children
+                    grow at the hearth-circle, then apprentice early to a craft aunt or uncle; adoption by deed counts
+                    as birth. </li>
+                <li><strong>Customs & Rites:</strong> Dwarven life is counted in oaths and anvils. Hearth-Presentation
+                    marks a newborn with soot and a ledger entry; at coming of age, Beard-Binding or Ring-Braiding and a
+                    signed Craft-Oath bind the apprentice to a guild. </li>
+            </ul>
+        </article>
+
+        <article class="tb-panel" id="faith">
+            <h2 class="tb-title">Faith & Myth</h2>
+            <ul>
+                <li><strong>Patrons:</strong> Dwarven patronage begins at the tomb-wall, not the altar. Halls honor
+                    ancestral masters — the smith who solved a stubborn alloy, the delver who mapped a deadly seam—by
+                    keeping their tools oiled, their maxims posted above the bench, and their names rung before first
+                    strike. </li>
+                <li><strong>Origin Story:</strong> In the first winters of the world, when mountains were still cooling,
+                    the high powers drafted a great Contract and from the bedrock raised a people to be their makers:
+                    dwarves, tempered from ore-veins and fault-lines, sworn to forge the tools that would shape
+                    creation. For ages they worked by clause and measure, learning the secrets of star-iron and true
+                    temper, until the Contract’s gilding showed its teeth and service hardened into bondage. </li>
+                <li><strong>Rites & Taboos:</strong> Rites among dwarves are work-born: the First
+                    Fire each morning rekindles banked coals and rings the names of masters; Steel & Ink seals any
+                    contract with a tap on the anvil; the Stonewake tolls nine
+                    strikes for the dead.</li>
+                <li><strong>Omens & Festivals:</strong> Dwarves are a deeply suspicious lot; a hammer’s first strike
+                    that sings clear and long—good luck; a dull thud warns of hidden flaw or a coal brightening after
+                    the bellows stop—an ancestor approves.</li>
+            </ul>
+        </article>
+    </section>
+
+    <div class="skz-divider skz-divider--diamond" aria-hidden="true"></div>
+
+    <!-- LINEAGES -->
+    <section class="place-hero" id="hero">
+        <div class="place-hero__icon">
+
+        </div>
+        <div class="place-hero__body">
+            <h1 class="skz-viking">Subspecies</h1>
+            <p>Dwarven kind is one people tempered by many stones, their clans diverging where work and mountain shaped
+                them: Mountain halls keep the old law and weight of ancestry; Deep delvers prize caution and
+                fault-reading where rock sweats; sun-browned Hill folk braid trade roads to the underhalls; soot-flecked
+                Emberborn chase the perfect alloy at roaring forges; the stern Greybound (duergar) hold to hard bargains
+                and deed-first honor; and airy Rift spanwrights string bridges across chasms, measuring worth by the
+                steadiness of a step. All share the ledger and the anvil, but each reads the mountain in a different
+                script.</p>
+        </div>
+        <div class="place-hero__spacer"></div>
+    </section>
+    <section id="lineages" class="grid-even equal-cards">
+
+        <article class="tb-panel">
+            <h3 class="tb-title">Mountain Dwarves</h3>
+            <p>The old standard of the clans: broad-shouldered, methodical, and tradition-forward. They keep the grand
+                under-mountain halls, curate the tomb-walls, and enforce Steel & Ink to the letter; their tools are
+                austere, overbuilt, and meant to outlast dynasties. <span class="tag">Hall-kin</span></p>
+        </article>
+
+        <article class="tb-panel">
+            <h3 class="tb-title">Deep delvers</h3>
+            <p>Pale-eyed and quiet-voiced, they live near heat and pressure where stone “sweats.” Masters of
+                ventilation, shoring, and fault-reading, they prize caution over glory and judge worth by how many lives
+                a plan saves. <span class="tag">Delvers</span></p>
+        </article>
+
+        <article class="tb-panel">
+            <h3 class="tb-title">Hill Dwarves</h3>
+            <p>Surface-facing farmers, quarrymen, and teamsters who stitch valleys to halls with roads and bridges.
+                Sun-browned and gregarious, they handle most trade caravans and keep festivals loud, but their ledgers
+                are as exact as any hall’s.<span class="tag">Lowstone</span></p>
+        </article>
+
+        <article class="tb-panel">
+            <h3 class="tb-title">Emberforged</h3>
+            <p>Soot-marked, heat-hardy lines raised in great foundries; their skin freckled from sparks, their lungs
+                trained to long shifts. They chase alloy problems like puzzles and stamp maker’s marks with proud
+                notches naming the masters they “echo.”<span class="tag">Forge-kin</span></p>
+        </article>
+
+        <article class="tb-panel">
+            <h3 class="tb-title">Rift walkers</h3>
+            <p>Bridge-builders and cable-men who live over chasms and along cliff roads. Balance and rhythm are their
+                creed; they judge a leader by how steady their step is on a swaying catwalk and a clan by how silent its
+                rivets sit in the wind.<span class="tag">Rifters</span></p>
+        </article>
+
+        <article class="tb-panel">
+            <h3 class="tb-title">Greybound</h3>
+            <p>Once proud kin, the Greybound did not renounce Lolth—they cleaved to Her. Their oaths remain webbed to
+                the Spider Queen, renewed in seasons of fear and ambition; many bear living silk sigils rather than
+                scars. They do not call it bondage but contract. Lean, spare, and vigilant, they prize
+                deed-before-display only insofar as it tightens the web, rebuilding stature through impeccable craft and
+                binding terms layered with web-clauses. Their taboos invert the mountain’s: never break a clause once
+                spun; never grant a gift without leverage; never leave an agreement without a catch. Trust is earned one
+                precise snare at a time; mercy is measured, and their fairness is absolute to the letter, not the
+                spirit.<span class="tag">Duergar</span></p>
+        </article>
+    </section>
+
+    <div class="skz-divider skz-divider--diamond" aria-hidden="true"></div>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="grid-four">
+        <article class="tb-panel">
+            <img src="assets/stonewake.jpg" alt="Clan forge" class="noborder">
+            <h3 class="tb-title">Stonewake</h3>
+            <p>Stonewake is the year’s grave-quiet rite: at dusk the hall banks its forges, names of the dead are read
+                from the ledger, and the anvil is struck nine times so the mountain “remembers.” Each ancestor’s tool is
+                brought from its wall-niche, oiled, and set briefly to work by the heir who bears their craft
+                line—echoing the hand—then returned with a fresh scrap of cloth and a notch marked in the ledger.
+                Quarrels pause, guest-right widens, and fines are forgiven if restitution is made before the ninth
+                strike; only truth is spoken on Stonewake, and only the worthy are named, so that the living feel the
+                weight they must carry without cracking.</p>
+        </article>
+        <article class="tb-panel">
+            <img src="assets/unbinding.jpg" alt="Oathmark" class="noborder">
+            <h3 class="tb-title">Unbinding</h3>
+            <p>Unbinding is the vow hammered into freedom: at Chainquench, red-hot links of old chain are plunged into
+                snow troughs with a hiss like dying serpents, then drawn to the anvil and reforged into door-bands and
+                oath-rings—iron that once held a dwarf now bars danger and binds only by consent. The rite recalls the
+                loophole that broke the god-contract, so contracts today are sealed under Steel & Ink with the same
+                care, and a notch is cut beside the clan mark to show the work serves the work, not the wielder. By
+                taboo, no link quenched in Unbinding may ever be shaped back into fetter or collar; to do so would call
+                the mountain’s memory against you.</p>
+        </article>
+        <article class="tb-panel">
+            <img src="assets/duergar.jpg" alt="Stormsail" class="noborder">
+            <h3 class="tb-title">Duergar</h3>
+            <p>The duergar—Greybound to the halls above—still serve Lolth, their oaths knotted in living silk and signed
+                in blood-ink clauses only spiders fully read. Lean, silent, and surgical in their craft, they prize
+                results over reputation and weave web-clauses into every contract: leverage, favors, silence—nothing is
+                free, everything is binding. Their forges burn low and cold to keep secrets; tools carry eight-point
+                stamps and hair-thin barbs, beautiful and cruel. Ancestral niches hold reliquaries wrapped in spider
+                silk; apprentices swear to “spin true” before a brazier of chitin and iron. Taboos invert the
+                mountain’s: mercy without terms is folly, guest-right ends at the threshold, and a tool taken may be
+                kept if the contract was weak. To outsiders they are impeccably polite and predatory; to Lolth they are
+                the hammer-hand of the web, remaking dwarven craft into instruments of patience, entrapment, and
+                exquisite inevitability.
+            </p>
+        </article>
+        <article class="tb-panel">
+            <img src="assets/female_dwarf.jpg" alt="Rite of Ash" class="noborder">
+            <h3 class="tb-title">Beards not compulsory</h3>
+            <p>Not all female dwarves grow beards, and among those who do, not all choose to wear them. Beard growth
+                varies by bloodline and region—common in mountain and emberborn clans, rarer among hill and rift
+                folk—and hormones, age, and craft stresses (forge heat, ore dust) can thicken or thin growth over a
+                lifetime. Culture makes the rest: some women keep full braids as a mark of lineage; others shave for
+                visor fit, workshop safety, or simple preference; many who don’t beard at all ring-braid their head hair
+                with the same clan tokens used in beards. Status isn’t tied to facial hair but to oath and workmanship:
+                a clean-chinned master with a ledger of flawless proofs is honored as readily as a matriarch whose beard
+                bears five generations of rings.</p>
+        </article>
+    </section>
 
     <div id="footer"></div>
-
-
-
 </body>
 
 </html>

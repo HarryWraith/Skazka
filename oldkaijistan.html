@@ -1,118 +1,204 @@
-<!-- index.html -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>Search • Skazka</title>
+    <title>Skazka — Old Kaijistan</title>
+
     <link rel="stylesheet" href="navbar.css?v=3">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="assets/skazka_logo.png">
+    <link rel="icon" href="assets/skazka_logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+
     <script src="navbar.js?v=3"></script>
     <script type="module" src="./main.js"></script>
-
 </head>
 
 <body>
-    <div id="navbar"></div><!-- Navbar will be loaded here -->
+    <!-- Navbar injected by main.js -->
+    <div id="navbar"></div>
 
-    <!-- Main Content Area -->
-    <section class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
-        <div class=" tb-panel"> <!-- LEFT -->
-            <h2 class="tb-title">Politics</h2>
-            <p>There is no state, no crown, no unified banner. The people of Kaijistan now live in small, nomadic
-                tribes, each fiercely independent. Governance rests in the hands of elders, men or women whose age
-                grants them both authority and caution. Elders rule by consensus, and disputes between tribes are often
-                settled through barter, blood-price, or—when tensions boil too hot—sudden violence beneath the stars.
-            </p>
-            <p>While they have no kings or councils, the tribes share one agreement: outsiders are unwelcome. Foreigners
-                are
-                treated with suspicion, and few are ever invited to sit by a Kaijistani fire unless they have proven
-                themselves beyond doubt.</p>
-            <h2 class="tb-title">Population</h2>
-            <P>The precise number of Kaijistan’s people is unknown. Tribes are scattered across vast stretches of
-                desert, moving constantly between seasonal pastures, ruined cisterns, and secret oases. Some scholars
-                suggest that only a few thousand true Kaijistanis remain. The tribes themselves care little for such
-                numbers—what matters is survival, and blood ties that reach back to the fallen empire.</P>
+    <!-- ===== HERO (canonical .place-hero) ===== -->
+    <section class="place-hero">
+        <div class="place-hero__icon">
+            <img src="assets/old_kaijistan_banner.jpg" alt="Old Kaijistan crest">
         </div>
 
-        <div class="center-column"><!-- MIDDLE -->
-            <img src="assets/old_kaijistan.jpg" alt="">
-            <p>Once a great desert empire in the far south of Skazka, Kaijistan has been nothing more than a memory
-                for
-                the last thousand years. Its banners have long since turned to dust, its laws forgotten, and its
-                cities
-                swallowed by the sands. What remains are the whispers of its grandeur—legends of jeweled towers,
-                lost
-                waterworks, and its fabled capital Velkaria, “the Diamond of Kaijistan.” Though the empire is gone,
-                its
-                bloodline has not been entirely erased: the scattered descendants of Kaijistani nobility still
-                wander
-                the dunes, marked by their haunting violet eyes, said to glow faintly beneath the desert moon. These
-                desert dwellers live among the ruins, surviving by herding goats, eking sustenance from hidden
-                aquifers,
-                and scavenging relics of the old world to trade with daring outsiders.
-
+        <div class="place-hero__body">
+            <h1 class="skz-viking">Old Kaijistan</h1>
+            <p class="skz-quote-attribution">The Forbidden Jewel — violet-eyed heirs among sun-buried empires</p>
         </div>
 
-        <div class="right-column, tb-panel"> <!-- RIGHT -->
-            <img src="assets/old_kaijistan_banner.jpg" alt="">
-        </div>
+        <div class="place-hero__spacer" aria-hidden="true"></div>
     </section>
 
-    <section class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
-        <div class=" tb-panel"> <!-- LEFT -->
-            <h2 class="tb-title">The Ruins of Orishan</h2>
+    <!-- ===== BODY: 30 / 70 (left profile, right lore) ===== -->
+    <section class="grid-two-wide">
+        <!-- LEFT: PROFILE (narrow) -->
+        <aside class="tb-panel">
+            <h2 class="tb-title">Profile</h2>
+            <table class="materials-table">
+                <tbody>
+                    <tr>
+                        <th>Government</th>
+                        <td>Tribal elders; consensus rule (no state/crown)</td>
+                    </tr>
+                    <tr>
+                        <th>Capital</th>
+                        <td>None (legendary Velkaria lost)</td>
+                    </tr>
+                    <tr>
+                        <th>Ruler</th>
+                        <td>None; elders lead each tribe</td>
+                    </tr>
+                    <tr>
+                        <th>Population</th>
+                        <td>Unknown; scattered tribes (some scholars: only a few thousand)</td>
+                    </tr>
+                    <tr>
+                        <th>Dominant Faith</th>
+                        <td>Rites in memory of the old gods (local, tribal)</td>
+                    </tr>
+                    <tr>
+                        <th>Military</th>
+                        <td>Tribal warbands; blood-price & barter settle disputes</td>
+                    </tr>
+                    <tr>
+                        <th>Terrain</th>
+                        <td>Great southern deserts; ruins, oases, glassed sands</td>
+                    </tr>
+                    <tr>
+                        <th>Exports</th>
+                        <td>Relics & scavenged antiquities (limited trade with outsiders)</td>
+                    </tr>
+                    <tr>
+                        <th>Languages</th>
+                        <td>Kaiji dialects; Trade Tongue</td>
+                    </tr>
+                </tbody>
+            </table>
+        </aside>
+
+        <!-- RIGHT: LORE (wide) -->
+        <article class="tb-panel">
+            <img class="noborder" src="assets/old_kaijistan.jpg" alt="Desert ruins of Old Kaijistan">
+            <h2 id="overview" class="tb-title" style="margin-top:10px">Overview</h2>
+            <p>Once a great desert empire in the far south of Skazka, Kaijistan has been a memory for a thousand
+                years—its banners dust, its laws forgotten, its cities devoured by dunes. What remains are whispers:
+                jeweled towers, buried waterworks, and the lost capital Velkaria, the Diamond of Kaijistan.</p>
+            <p>Its descendants wander as fiercely independent tribes, guided by elders whose age grants both authority
+                and caution. Outsiders are unwelcome; few are invited to sit by a Kaijistani fire without proving
+                themselves beyond doubt. Their violet eyes—said to glow beneath the desert moon—mark the old blood still
+                alive in the sands.</p>
+            <p>The tribes survive by herding, tracing secret paths between seasonal pastures, ruined cisterns, and
+                hidden oases. They scavenge relics of the fallen empire to barter with daring foreigners, though most
+                returns are pottery shards and sun-bleached bones. The land remembers, and punishes the greedy.</p>
+            <p>The lands of Kaijistan are often called The Forbidden Jewel, a word that conjures both wealth and peril.
+                Treasure hunters, relic-seekers, and fortune-chasers regularly brave the endless sands, lured by the
+                promise of lost riches from Velkaria and its sister cities. Few return with more than broken pottery and
+                sun-bleached bones. Fewer still live to tell of the Sandsea of Zhal’Shaar, the cursed southern wastes
+                where supernatural sandstorms rise without warning, swallowing entire caravans and grinding stone to
+                powder. Tribal lore warns that the storms are the wrath of the empire itself, punishing those who dare
+                seek its hidden diamond.</p>
+
+            <!-- 3-up quick blocks -->
+            <div class="grid-even equal-cards">
+                <article class="tb-panel">
+                    <h3 class="tb-title" id="cities-factions">Tribes & Society</h3>
+                    <ul>
+                        <li>Elders rule by consensus; disputes by barter, blood-price, or sudden starlit violence.</li>
+                        <li>Foreigners treated with deep suspicion; trust must be earned.</li>
+                        <li>Nomad routes link pastures, cisterns, and hidden oases.</li>
+                    </ul>
+                </article>
+
+                <article class="tb-panel">
+                    <h3 class="tb-title">Sites & Hazards</h3>
+                    <ul>
+                        <li><strong>Orishan Ruins</strong> — half-buried minarets, secret cisterns, catacombs of rite.
+                        </li>
+                        <li><strong>Glass Dunes</strong> — black glass sheets where sorcerer-kings scarred the world.
+                        </li>
+                        <li><strong>Sandsea of Zhal&rsquo;Shaar</strong> — cursed storms that erase caravans.</li>
+                    </ul>
+                </article>
+
+                <article class="tb-panel">
+                    <blockquote>“Find Velkaria and you find death or a diamond. Often both.”</blockquote>
+                    <p class="skz-quote-attribution">— Caravan proverb</p>
+                </article>
+            </div>
+
+            <!-- 2-up -->
+            <div class="grid-two">
+
+                <article class="tb-panel">
+                    <h3 class="tb-title" id="economy">Trade & Survival</h3>
+                    <ul>
+                        <li>Herding; careful water rights around aquifers (Kaelir).</li>
+                        <li>Relic scavenging; rare trades with outsiders for tools and salt.</li>
+                        <li>Route-keeping as lore: stars, winds, and ruin shadows.</li>
+                    </ul>
+                </article>
+                <article class="tb-panel">
+                    <h3 class="tb-title" id="threats">Rumours & Hooks</h3>
+                    <ul>
+                        <li>Eyeless spirits haunt the <strong>Aquifers of Kaelir</strong>, guarding the water.</li>
+                        <li>Velkaria lies beneath Zhal&rsquo;Shaar, waiting for the worthy—or the damned.</li>
+                        <li>Violent tribal feuds rekindled by a newly found cistern map.</li>
+                    </ul>
+                </article>
+            </div>
+        </article>
+    </section>
+    <div class="skz-divider skz-divider--diamond" aria-hidden="true"></div>
+    <!-- ===== LANDMARKS (cards grid) ===== -->
+    <section id="landmarks" class="grid-even equal-cards">
+        <article class="tb-panel">
+            <h2 class="tb-title">Places of Note</h2>
+            <img class="noborder" src="assets/landmark.jpg" alt="">
+
+
+        </article>
+
+        <article class="tb-panel">
+            <img src="assets/orishan_main.jpg" alt="The Ruins of Orishan">
+            <h3 class="tb-title">The Ruins of Orishan</h3>
             <p>The half-buried remnants of an ancient city, its toppled minarets said to conceal secret cisterns and
-                catacombs where violet-eyed descendants still perform rites in memory of the old gods.</p>
-            <h2 class="tb-title">The Glass Dunes</h2>
+                catacombs where violet-eyed descendants still perform rites in memory of the old gods.
+            </p>
+        </article>
+
+        <article class="tb-panel">
+            <img src="assets/gladd_dunes.jpg" alt="The Glass Dunes">
+            <h3 class="tb-title">The Glass Dunes</h3>
             <p>A stretch of desert where the sand has been fused into sheets of black glass, as though seared by
                 unimaginable fire. Legends speak of a final battle here, where Kaijistan’s sorcerer-kings unleashed
                 weapons that scarred the land forever.</p>
+        </article>
 
+        <article class="tb-panel">
+            <img src="assets/kaelir_aquifers.jpg" alt="The Aquifers of Kaelir">
+            <h3 class="tb-title">The Aquifers of Kaelir</h3>
+            <p>Cavernous underground reservoirs, accessed only by those who know the shifting paths through the dunes.
+                Said to be haunted by pale, eyeless spirits that guard the water.
+            </p>
+        </article>
 
-        </div>
-
-        <div class="center-column"><!-- MIDDLE -->
-            <h2 class="tb-title">Visiting Old Kaijistan</h2>
-            <p>The lands of Kaijistan are often called The Forbidden Jewel, a word that conjures both wealth and
-                peril. Treasure hunters, relic-seekers, and fortune-chasers regularly brave the endless sands, lured
-                by
-                the promise of lost riches from Velkaria and its sister cities. Few return with more than broken
-                pottery
-                and sun-bleached bones. Fewer still live to tell of the Sandsea of Zhal’Shaar, the cursed southern
-                wastes where supernatural sandstorms rise without warning, swallowing entire caravans and grinding
-                stone
-                to powder. Tribal lore warns that the storms are the wrath of the empire itself, punishing those who
-                dare seek its hidden diamond.</p>
-        </div>
-
-        <div class="right-column, tb-panel"> <!-- RIGHT -->
-            <h2 class="tb-title">The Aquifers of Kaelir</h2>
-            <p>Cavernous underground reservoirs, accessed only by those who know the shifting paths through the
-                dunes.
-                Said to be haunted by pale, eyeless spirits that guard the water.</p>
-
-            <h2 class="tb-title">Velkaria, The Lost Diamond</h2>
-            <p>The fabled capital. No one knows its true location, though the tribes whisper that it lies buried
-                beneath
-                the Sandsea of Zhal’Shaar, waiting for the worthy—or the damned—to find it.</p>
-        </div>
+        <article class="tb-panel">
+            <img src="assets/velkaria_diamond.jpg" alt="Velkaria, The Lost Diamond">
+            <h3 class="tb-title">Velkaria, The Lost Diamond</h3>
+            <p>The fabled capital. No one knows its true location, though the tribes whisper that it lies buried beneath
+                the Sandsea of Zhal’Shaar, waiting for the worthy—or the damned—to find it.
+            </p>
+        </article>
     </section>
 
-
-
-
+    <!-- Footer injected by main.js -->
     <div id="footer"></div>
-
-
-
-
-
-
-
 </body>
 
 </html>

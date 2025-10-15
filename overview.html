@@ -1,115 +1,140 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>Search • Skazka</title>
-    <link rel="stylesheet" href="navbar.css?v=3">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="assets/skazka_logo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
-    <script src="navbar.js?v=3"></script>
-    <script type="module" src="./main.js"></script>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>Introduction to Skazka</title>
+
+    <!-- Fonts & CSS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="preload" href="/styles.css" as="style">
+
+    <link rel="stylesheet" href="/navbar.css">
+
+    <link rel="stylesheet" href="/styles.css">
+
+    <script src="/navbar.js"></script>
+    <script type="module" src="/main.js"></script>
+    <meta name="description"
+        content="An overview of Skazka — a land forged in myth, ruled by mystery, and whispered about in forgotten tongues.">
+
+    <meta property="og:title" content="Introduction to Skazka">
+
+    <meta property="og:type" content="website">
+
+    <meta property="og:image" content="/assets/overview.jpg">
+
+    <meta property="og:description"
+        content="A land forged in myth, ruled by mystery, and whispered about in forgotten tongues.">
 
 </head>
 
 <body>
-    <div id="navbar"></div><!-- Navbar will be loaded here -->
+    <!-- Navbar injected by JS -->
+    <div id="navbar"></div>
 
-    <!-- Main Content Area -->
-    <section class="grid-container" data-rune-seq> <!-- 3 COLUMN 20-60-20 -->
-        <div> <!-- LEFT -->
-        </div>
+    <main>
+        <!-- HERO -->
+        <section class="place-hero">
+            <div class="place-hero__icon">
+            </div>
 
-        <div class="center-column"><!-- MIDDLE -->
-            <img src="assets/overview.jpg" alt="a great machine with bronze coggs" />
-            <h2 class="skz-viking">Introduction to Skazka</h2>
-            <p>A land forged in myth, ruled by mystery, and whispered about in forgotten tongues. Here, ancient
-                creatures stir beneath moonlit forests, and the stars themselves bleed secrets into the night. This
-                is no place for the faint of heart.</p>
-            <p>Within these cursed realms, every tale is a trap, every wonder a warning. Yet those brave enough to
-                adventure here may uncover lost legends, forbidden magic, and truths too terrible to remain buried.
-            </p>
-            <p>But be warned - stories don't always have happy endings. </p>
+            <div class="place-hero__body">
+                <h1 id="intro" class="skz-viking">Introduction to Skazka</h1>
+                <p class="skz-quote-attribution">All endings had a beginning once</p>
+            </div>
+            <div class="place-hero__spacer" aria-hidden="true"></div>
+        </section>
 
+        <!-- INTRO -->
+        <section class="grid-single" aria-labelledby="intro">
 
-        </div>
+            <div class="tb-panel">
+                <img src="/assets/overview.jpg">
 
-        <div class="right-column"> <!-- RIGHT -->
-        </div>
-    </section>
+                <p>A land forged in myth, ruled by mystery, and whispered about in forgotten tongues. Here, ancient
+                    creatures stir beneath moonlit forests, and the stars themselves bleed secrets into the night.
+                    This
+                    is no place for the faint of heart.</p>
+                <p>Within these cursed realms, every tale is a trap, every wonder a warning. Yet those brave enough
+                    to
+                    adventure here may uncover lost legends, forbidden magic, and truths too terrible to remain
+                    buried.
+                    But be warned - stories don't always have happy endings.</p>
+            </div>
 
-    <section class="grid-even"><!-- 3 COLUMN EVEN -->
-        <div class="tb-panel">
-            <img src="assets/skia.jpg" alt="the western continent of Skia" />
-            <h2 class="tb-title">Western continent: Skia</h2>
-            <p>
-                Once remembered only in the oral traditions of the Sken, Skia was home
-                to humans enslaved by giants—the offspring of the ancient Gods. When
-                the Gods abandoned them, the giants waged war among themselves. Freed
-                from bondage, humanity cultivated the land, tended livestock, and
-                mined the earth. Their unquenchable curiosity drove them onward—across
-                hills, beneath mountains, into the unknown. Alarmed by humans’
-                ambition, the Gods debated intervention but ultimately stood by as
-                humans awakened a primeval force—greater than even the gods
-                themselves. Terrified, humanity fled eastward in search of a mythical
-                sanctuary.
-            </p>
-        </div>
+        </section>
 
-        <div class="tb-panel">
-            <img src="assets/kelos.jpg" alt="the eastern continent of Kelos" />
-            <h2 class="tb-title">Eastern continent: Kelos</h2>
-            <p>
-                Spanning from temperate zones to the Arctic, Kelos offers a tapestry
-                of landscapes—from frozen tundras to scorching deserts. It hosts over
-                a dozen intelligent species: ancient Dwarves once favored by gods,
-                fierce Orc tribes bred for war, graceful Elves, cunning Goblins and
-                Kobolds, and a myriad of Beast Folk. Their cultures and histories
-                intertwine across thousands of years.
-            </p>
-        </div>
+        <div class="skz-divider skz-divider--diamond" aria-hidden="true"></div>
 
-        <div class="tb-panel">
-            <img src="assets/Sery.jpg" alt="The Serydina isles" />
-            <h2 class="tb-title">The Serydina Isles</h2>
-            <p>
-                Just days’ sail west of Kelos lie the Serydina Isles, a small
-                archipelago centered on the island of Snuuflund. Several of its isles
-                are populated, while others serve as home to only sheep and goats.
-            </p>
-        </div>
+        <!-- REGIONS -->
+        <section class="grid-even equal-cards" aria-labelledby="regions">
+            <h2 id="regions" class="visually-hidden">Regions</h2>
 
-        <div><!--spaceer--></div>
+            <!-- Skia -->
+            <article id="skia" class="tb-panel">
+                <img src="/assets/skia.jpg"
+                    alt="The western continent of Skia: a bustling village beneath jagged mountains" loading="lazy">
 
-        <div class="tb-panel">
-            <img src="assets/oy.jpg" alt="the fabled island of the gods, Oy." />
-            <h2 class="tb-title">Oy: the mythical island of the gods</h2>
-            <p>
-                Oy is whispered to be the long-lost abode of the first Gods—a place of
-                myth and mystery. Archaeologists and theolurgists argue heatedly over
-                its nature: whether it exists physically on Skazka, or lies beyond the
-                veil, only reachable by those who truly believe.
-            </p>
-        </div>
+                <h3 class="tb-title">Western continent: Skia</h3>
+                <p>Now remembered only in the oral traditions of the Sken, Skia was home to humans enslaved by
+                    giants—the offspring of the ancient Gods. When the Gods abandoned them, the giants waged war among
+                    themselves. Freed from bondage, humanity cultivated the land, tended livestock, and mined the earth.
+                    Their unquenchable curiosity drove them onward—across hills, beneath mountains, into the unknown.
+                </p>
+                <p>Alarmed by humans’ ambition, the Gods debated intervention but ultimately stood by as humans awakened
+                    something &ndash; something terrible. Terrified, humanity fled eastward in search
+                    of a mythical sanctuary.</p>
+            </article>
 
-        <div><!--spaceer--></div>
+            <!-- Kelos -->
+            <article id="kelos" class="tb-panel">
+                <img src="/assets/kelos.jpg"
+                    alt="The eastern continent of Kelos: a castle poised above misted highlands" loading="lazy">
 
+                <h3 class="tb-title">Eastern continent: Kelos</h3>
+                <p>Spanning from temperate zones to the Arctic, Kelos offers a tapestry of landscapes—from frozen
+                    tundras to scorching deserts. It hosts over a dozen intelligent species: ancient <a
+                        href="dwarves.html">Dwarves</a> once
+                    favored by gods, fierce <a href="orcs.html">Orc</a> tribes bred for war, graceful <a
+                        href="elves.html">Elves</a>, cunning Goblins and Kobolds, and a
+                    myriad of <a href="beastraces.html">Beast Folk</a>. Their cultures and histories intertwine across
+                    thousands of years.</p>
+            </article>
 
-    </section>
+            <!-- Serydina -->
+            <article id="serydina" class="tb-panel">
+                <img src="/assets/Sery.jpg" alt="The Serydina Isles: sheep-grazed cliffs against a calm blue sea"
+                    loading="lazy">
 
+                <h3 class="tb-title">The Serydina Isles</h3>
+                <p>Just days’ sail west of Kelos lie the <a href="serydina.html">Serydina Isles</a>, a small archipelago
+                    centered on the island of
+                    Snuuflund. Several of its isles are populated, while others serve as home to only sheep and goats.
+                </p>
+            </article>
+        </section>
 
+        <!-- OY -->
+        <section class="grid-single" aria-labelledby="oy-title">
+            <article id="oy" class="tb-panel">
+                <img class="noborder" src="/assets/oy.jpg"
+                    alt="Oy, the mythical island of the gods: misted towers rising above a jade river" loading="lazy">
 
+                <h3 id="oy-title" class="tb-title">Oy: the mythical island of the gods</h3>
+                <p>Oy is whispered to be the long-lost abode of the first Gods—a place of myth and mystery.
+                    Archaeologists and theolurgists argue heatedly over its nature: whether it exists physically on
+                    Skazka, or lies beyond the veil, only reachable by those who truly believe. Some have set out
+                    in search of it, but none have returned to reveal its location.</p>
+            </article>
+        </section>
+    </main>
+    <!-- Footer injected by JS -->
     <div id="footer"></div>
-
-
-
-
-
-
-
 </body>
 
 </html>

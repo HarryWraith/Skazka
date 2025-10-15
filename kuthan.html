@@ -1,157 +1,208 @@
-<!-- index.html -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>Search • Skazka</title>
+    <title>Skazka — Ku’Than</title>
+
     <link rel="stylesheet" href="navbar.css?v=3">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="assets/skazka_logo.png">
+    <link rel="icon" href="assets/skazka_logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+
     <script src="navbar.js?v=3"></script>
     <script type="module" src="./main.js"></script>
-
 </head>
 
 <body>
-    <div id="navbar"></div><!-- Navbar will be loaded here -->
+    <!-- Navbar injected by main.js -->
+    <div id="navbar"></div>
 
-    <!-- Main Content Area -->
-    <section class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
-        <div class=" tb-panel"> <!-- LEFT -->
-            <h2 class="tb-title">Politics</h2>
-            <p>Ku’Than is an unwavering theocracy governed by the Council of Than, presided over by the High Witch,
-                currently Serona. The Council meets in shadowed arboreal halls, dosed in the hush of ancient oaks, where
-                decisions are rendered in whispers and the rustle of leaves. Authority stems not from lineage or wealth,
-                but from spiritual merit and ritual endurance. Every witch, forged in rigorous trials, commits herself
-                to the forest—and through that bond, binds with another witch in a symbiotic connection: death for one
-                means death for the other. Some legends claim that Ku’Than’s eternal purpose may be both protector—and
-                warden—of a sleeping, malevolent force imprisoned in the forest’s core, and that its politics revolve as
-                much around containment as worship.</p>
-
-
-            <h2 class="tb-title">Population</h2>
-            <p>Ku’Than is structured not on towns or villages, but on isolated covens—twelve in all—scattered deep
-                within the forest. Each coven forms the nucleus of a hidden enclave where witches—practitioners chosen
-                in childhood and forged by brutal rites of survival—rule as both guardians and devotees of Than.
-                Alongside them are many Familiars, non-witch servants dedicated to the forest’s protection. These loyal
-                aides may perform tasks from gathering sacred herbs to tending the forest’s shifting wards. Every member
-                of Ku’Than’s population, witch or familiar, serves a singular purpose: the worship of Than and the
-                guardian stewardship of the Elden Wood.</p>
+    <!-- ===== HERO (canonical .place-hero) ===== -->
+    <section class="place-hero">
+        <div class="place-hero__icon">
+            <img src="assets/kuthan_banner.jpg" alt="Ku’Than crest">
         </div>
 
-        <div class="center-column"><!-- MIDDLE -->
-            <img src="assets/kuthan.jpg" alt="">
-            <p>The woodland kingdom of Ku’Than—literally “the place where Than dwells”—lies in the far eastern
-                reaches
-                of Kelos, known as the Elden Wood. It is a realm shaped by ancient magic and unforgiving nature, a
-                living forest that veers between sacred sanctuary and dangerous labyrinth. Here, Than, an ancient
-                and
-                enigmatic forest deity of Skazka, reigns as the primal embodiment of the earth’s untamed spirit.
-                Revered
-                by a devoted theocracy, Ku’Than exists entirely to honor Than’s will and preserve the sanctity of
-                the
-                wild. Strange, shifting paths and living trees guard its secrets, making entry rare—and exit rarer
-                still.</p>
-
-
+        <div class="place-hero__body">
+            <h1 class="skz-viking">Ku’Than</h1>
+            <p class="skz-quote-attribution">Elden Wood’s Theocracy — witches bound in pairs, forest-bound in vow</p>
         </div>
 
-        <div class="right-column, tb-panel"> <!-- RIGHT -->
-            <img src="assets/kuthan_banner.jpg" alt="">
-        </div>
+        <div class="place-hero__spacer" aria-hidden="true"></div>
     </section>
 
-    <section class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
-        <div class=" tb-panel"> <!-- LEFT -->
-            <h2 class="tb-title">The Sanctuary of Revelations</h2>
-            <p>A sacred water cave deep within Elden Wood, where the ritual of Than’Dva unfolds. Two witches enter
-                and
-                emerge telepathically bonded, sharing secrets, fears, and visions through thoughts alone. It is said
-                the
-                cave walls pulse with faint bioluminescent runes—and the spirits of the forest linger in the mist.
-            </p>
+    <!-- ===== BODY: 30 / 70 (left profile, right lore) ===== -->
+    <section class="grid-two-wide">
+        <!-- LEFT: PROFILE (narrow) -->
+        <aside class="tb-panel">
+            <h2 class="tb-title">Profile</h2>
+            <table class="materials-table">
+                <tbody>
+                    <tr>
+                        <th>Government</th>
+                        <td>Theocracy — Council of Than, presided by the High Witch</td>
+                    </tr>
+                    <tr>
+                        <th>Capital</th>
+                        <td>None (hidden coven halls across Elden Wood)</td>
+                    </tr>
+                    <tr>
+                        <th>Ruler</th>
+                        <td>High Witch Serona (current)</td>
+                    </tr>
+                    <tr>
+                        <th>Population</th>
+                        <td>Twelve covens (witches) + many Familiars (non-witch aides)</td>
+                    </tr>
+                    <tr>
+                        <th>Dominant Faith</th>
+                        <td>Than — ancient forest deity</td>
+                    </tr>
+                    <tr>
+                        <th>Military</th>
+                        <td>Coven wardens, rite-bound witch pairs, animate wooden guardians</td>
+                    </tr>
+                    <tr>
+                        <th>Terrain</th>
+                        <td>Elden Wood: living, shifting forest; mists; root-braided paths</td>
+                    </tr>
+                    <tr>
+                        <th>Exports</th>
+                        <td>Clandestine edge-trade (herbs, tinctures, lore for favors)</td>
+                    </tr>
+                    <tr>
+                        <th>Languages</th>
+                        <td>Trade Tongue (rare), Druidic</td>
+                    </tr>
+                </tbody>
+            </table>
+        </aside>
 
-            <h2 class="tb-title">The Weird Wood</h2>
+        <!-- RIGHT: LORE (wide) -->
+        <article class="tb-panel">
+            <img class="noborder" src="assets/kuthan.jpg" alt="Elden Wood — realm of Ku’Than">
+            <h2 id="overview" class="tb-title" style="margin-top:10px">Overview</h2>
+            <p>Ku’Than—“where Than dwells”—is an unwavering theocracy nested in the living maze of Elden Wood. Authority
+                springs from ritual endurance and spiritual merit rather than lineage. Witches are forged by brutal
+                trials and bound in sacred pairs: death for one means death for the other. Some whisper the covens serve
+                both as Than’s clergy and as wardens over a sleeping malice at the forest’s core.</p>
+            <p>The realm is not built on towns but on isolated <em>coven halls</em>, grown from living wood and hidden
+                among breathing trunks and moss-soft floors. Familiars—devoted non-witch aides—tend herbs and wards,
+                while the Council of Than sits in shadowed arboreal chambers, its edicts rustling like leaves on still
+                air.</p>
+            <p>For outsiders, Ku’Than is mostly rumor and warning. The forest itself seems to think, shifting paths to
+                mislead intruders. Trade, if any, happens at the margins: whispered bargains under watchful boughs.</p>
+
+            <!-- 3-up quick blocks -->
+            <div class="grid-even equal-cards">
+                <article class="tb-panel">
+                    <h3 class="tb-title" id="cities-factions">Covens & Bonds</h3>
+                    <ul>
+                        <li>Twelve hidden covens act as the realm’s “districts.”</li>
+                        <li>Witches are paired by the rite of <strong>Than’Dva</strong>; thoughts and fates interlinked.
+                        </li>
+                        <li>Familiars serve as gatherers, ward-tenders, and messengers.</li>
+                    </ul>
+                </article>
+
+                <article class="tb-panel">
+                    <h3 class="tb-title">Edicts & Approach</h3>
+                    <ul>
+                        <li>Uninvited entry is perilous; paths confound the ill-willed.</li>
+                        <li>Petitions to the Council require ordeal, humility, and sponsorship.</li>
+                        <li>Edge-trade only; relic-seeking is forbidden and punished.</li>
+                    </ul>
+                </article>
+
+                <article class="tb-panel">
+                    <blockquote>“The Wood remembers, and it chooses.”</blockquote>
+                    <p class="skz-quote-attribution">— Whisper at the Sentinel’s Edge</p>
+                </article>
+            </div>
+
+            <!-- 2-up -->
+            <div class="grid-two">
+
+                <article class="tb-panel">
+                    <h3 class="tb-title" id="economy">Trade & Taboos</h3>
+                    <ul>
+                        <li>Clandestine barter at forest margins; no coin beyond courtesy.</li>
+                        <li>Herbs, salves, and ward-charms exchanged for safe passage or news.</li>
+                        <li>Desecration of sacred sites incurs ban and blood-price.</li>
+                    </ul>
+                </article>
+                <article class="tb-panel">
+                    <h3 class="tb-title" id="threats">Rumours & Hooks</h3>
+                    <ul>
+                        <li>A bioluminescent cave murmurs riddles during solstice rites.</li>
+                        <li>Vodnik fey from the Weird Wood tempt scouts with mirrored paths.</li>
+                        <li>A sealed coven hall beats like a heart—something waking beneath.</li>
+                    </ul>
+                </article>
+            </div>
+        </article>
+    </section>
+    <div class="skz-divider skz-divider--diamond" aria-hidden="true"></div>
+    <!-- ===== LANDMARKS (cards grid) ===== -->
+    <section id="landmarks" class="grid-even equal-cards">
+        <article class="tb-panel">
+            <h2 class="tb-title">Places of Note</h2>
+            <img class="noborder" src="assets/landmark.jpg" alt="">
+
+
+        </article>
+
+        <article class="tb-panel">
+            <img src="assets/kuthan_revelations.jpg" alt="Sanctuary of Revelations">
+            <h3 class="tb-title">Sanctuary of Revelations</h3>
+            <p>A sacred water cave deep within Elden Wood, where the ritual of Than’Dva unfolds. Two witches enter and
+                emerge telepathically bonded, sharing secrets, fears, and visions through thoughts alone. It is said the
+                cave walls pulse with faint bioluminescent runes—and the spirits of the forest linger in the mist.</p>
+        </article>
+
+        <article class="tb-panel">
+            <img src="assets/kuthan_weird.jpg" alt="The Weird Wood">
+            <h3 class="tb-title">The Weird Wood</h3>
             <p>A twisted, sickly section at the forest's edge, overrun by Black Oak druids and their progeny, the
-                ebony-skinned child-like fey known as Vodnik. Their domain floats above caverns cursed by Dark
-                Elves,
+                ebony-skinned child-like fey known as Vodnik. Their domain floats above caverns cursed by Dark Elves,
                 and the forest here bleeds with strange magic and grotesque beauty. Entrance to the Weird Wood is
                 forbade.</p>
+        </article>
 
-            <h2 class="tb-title">The Shifting Grove</h2>
-            <p>A labyrinthine glade where paths rearrange as if alive. Mist coils and roots braid overhead,
-                preventing
-                navigation. Only the initiated—those with latent forest magic—can pass through unlost. Many who
-                dared
+        <article class="tb-panel">
+            <img src="assets/kuthan_lab.jpg" alt="The Shifting Grove">
+            <h3 class="tb-title">The Shifting Grove</h3>
+            <p>A labyrinthine glade where paths rearrange as if alive. Mist coils and roots braid overhead, preventing
+                navigation. Only the initiated—those with latent forest magic—can pass through unlost. Many who dared
                 enter seek the Heart-Tree, rumored to stand at its centre, alive with faint thrum of Than’s will.
             </p>
-        </div>
+        </article>
 
-        <div class="center-column"><!-- MIDDLE -->
-            <h2 class="tb-title">Visiting Ku'Than</h2>
-            <p>Approach Ku’Than at your peril. The forest’s sentience warps paths and misleads the uninvited.
-                Intruders
-                vanish without trace, swallowed by green shadows. If any encounter succeeds, it is only via
-                clandestine
-                trade at the forest’s edge—typically conducted under the cover of night with whispered bargains and
-                wary
-                glances. Witches and peculiar treelike guardians stand watch. Rare travelers report moss-soft
-                whispers
-                on the wind, shapes that blur between bark and bone. Should you wish to petition the Council or seek
-                knowledge from Ku’Than, prepare for a trial of endurance, humility, and perhaps initiation—always at
-                Than’s discretion.</p>
-        </div>
-
-        <div class="right-column, tb-panel"> <!-- RIGHT -->
-            <h2 class="tb-title">The Midnight Clearing</h2>
-            <p>A circle of moonlit stones ringed by ancient trunks in which nocturnal rituals are held. Here,
-                under
-                twin
-                moons or solstice dusk, witches invoke Than’s fury or blessing in rites of silent communion that
-                twist
+        <article class="tb-panel">
+            <img src="assets/kuthan_moonlit.jpg" alt="The Midnight Clearing">
+            <h3 class="tb-title">The Midnight Clearing</h3>
+            <p>A circle of moonlit stones ringed by ancient trunks in which nocturnal rituals are held. Here, under twin
+                moons or solstice dusk, witches invoke Than’s fury or blessing in rites of silent communion that twist
                 reality into uncanny unity with nature.</p>
+        </article>
 
-            <h2 class="tb-title">The Sentinel’s Edge</h2>
-            <p>The forest's outer boundary where towering trees arch inwards like guards. Sightings here include
-                witches
-                flanked by animate wooden guardians—eerie, gnarled creatures half root, half bone—that fade into
-                the
-                mist after ensuring the forest’s safety. It is said that those who approach the Sentinel's Edge
-                can
-                hear
+        <article class="tb-panel">
+            <img src="assets/kuthan_guardian.jpg" alt="The Sentinel’s Edge">
+            <h3 class="tb-title">The Sentinel’s Edge</h3>
+            <p>The forest's outer boundary where towering trees arch inwards like guards. Sightings here include witches
+                flanked by animate wooden guardians—eerie, gnarled creatures half root, half bone—that fade into the
+                mist after ensuring the forest’s safety. It is said that those who approach the Sentinel's Edge can hear
                 strange voices that can send those will ill intent insane.</p>
+        </article>
 
-            <h2 class="tb-title">The Coven Halls</h2>
-            <p>Hidden enclaves, each village-centered around a coven and molded from living wood. Interiors are
-                carved
-                from sustainable bark and vine, built into great tree hollows. The architecture pulses with the
-                forest’s
-                life, walls breathing, floors soft as moss—these halls are home to both ritual and daily life,
-                planets
-                unto themselves.</p>
-        </div>
     </section>
 
-
-
-
-
-
-
-
-
-
+    <!-- Footer injected by main.js -->
     <div id="footer"></div>
-
-
-
-
-
-
-
 </body>
 
 </html>

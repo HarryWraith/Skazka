@@ -1,39 +1,82 @@
-<!-- index.html -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
+    <!-- Standard Skazka head (no inline CSS) -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>Skazka - aeter</title>
+    <title>Skazka — Elves</title>
+
     <link rel="stylesheet" href="navbar.css?v=3">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="assets/skazka_logo.png">
+    <link rel="icon" href="assets/skazka_logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+
     <script src="navbar.js?v=3"></script>
     <script type="module" src="./main.js"></script>
-
 </head>
 
 <body>
-    <div id="navbar"></div><!-- Navbar will be loaded here -->
-
-    <!-- Main Content Area -->
-    <section class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
-        <div class=" tb-panel"> <!-- LEFT -->
-            <h2 class="tb-title">Physical Description</h2>
-            <p>Elves are known for their striking beauty, but this beauty manifests differently across their kindreds.
-                Graceful and slender, they move with an otherworldly elegance that seems almost unnatural to mortal
-                eyes. Their features are sharp, often too perfect to be mistaken for merely human, and their eyes hold
-                depths that speak of lifetimes of experience. Yet their physical forms are shaped as much by their
-                environments and choices as by their ancestry. Dark Elves bear the midnight hues of their subterranean
-                origins, Sun Elves glow with golden tones kissed by the light of the Everlight, and Wood Elves carry the
-                subtle greens and browns of the forest canopy. In every case, their forms reflect the essence of the
-                realms they call home.</p>
+    <div id="navbar"></div>
+    <!-- HERO -->
+    <section class="place-hero" id="hero">
+        <div class="place-hero__icon">
+            <img alt="Dragonborn Sigil" src="assets/icons/species/dwarves_sigil.jpg">
         </div>
+        <div class="place-hero__body">
+            <h1 class="skz-viking">Elves</h1>
+            <p>Blessed by the sun. Cursed by the Dark.</p>
+        </div>
+        <div class="place-hero__spacer"></div>
+    </section>
 
-        <div class="center-column"><!-- MIDDLE -->
-            <img src="assets/elves.jpg" alt="" />
+
+
+    <!-- PROFILE (left) + OVERVIEW (right) -->
+    <section class="grid-two-wide" id="profile-overview">
+        <aside class="tb-panel" id="profile">
+            <h2 class="tb-title">Profile</h2>
+            <table class="materials-table">
+                <tbody>
+                    <tr>
+                        <th class="tb-kv-key">Average Lifespan</th>
+                        <td>~600 years</td>
+                    </tr>
+                    <tr>
+                        <th class="tb-kv-key">Typical Size</th>
+                        <td>Medium; 5'5" - 5'11"; Sun Elves are the tallest while Dark Elves are the shortest</td>
+                    </tr>
+                    <tr>
+                        <th class="tb-kv-key">Homelands</th>
+                        <td><a href="aeternia.html">Aeternia</a>, <a href="everdusk.html">Everdusk</a>, <a
+                                href="umbralyth">Umbralyth</a></td>
+                    </tr>
+                    <tr>
+                        <th class="tb-kv-key">Languages</th>
+                        <td>Trade-tongue, Undercommon, Elvish</td>
+                    </tr>
+                    <tr>
+                        <th class="tb-kv-key">Faiths</th>
+                        <td>All Elven subspecies are not bound to worship any deity, but Sun Elves are drawn to <a
+                                href="aeter.html">Aeter</a>
+                            while the Dark Elves of the Underworld are entwined with <a href="lolth.html">Lolth</a>. The
+                            Wood Elves of Everdusk
+                            are undoubtedly the most religiously diverse.</td>
+                    </tr>
+                    <tr>
+                        <th class="tb-kv-key">Temperament</th>
+                        <td>Artistic, measured, calcualting</td>
+                    </tr>
+                </tbody>
+            </table>
+            <img src="assets/elves.jpg" alt="elven portait" class="noborder">
+        </aside>
+
+        <article class="tb-panel" id="overview">
+            <h2 class="tb-title">Overview</h2>
+
             <p>The Elves of Skazka are a people defined by duality—beings who embody both shadow and light, beauty and
                 cruelty, wisdom and arrogance. Among all mortal races, none command such respect or inspire such unease.
                 Their lifespans stretch across centuries, allowing them to weave intricate schemes, cultivate vast
@@ -41,61 +84,129 @@
                 perceive. Yet despite their long memories, the origins of the Elves remain shrouded in mystery. They
                 emerged from a schism, one that continues to shape their destiny: a people born of shadow who have
                 chosen different paths toward or away from the light.</p>
-
-        </div>
-
-        <div class="right-column, tb-panel"> <!-- RIGHT -->
-            <h2 class="tb-title">Heritage</h2>
-            <p>All Elves share a common origin in the deep places of the world, where shadows and raw magic pooled in
-                the earliest ages. From this foundation, their people diverged. The Dark Elves remained below, bound to
-                Lolth, the Spider Queen, and shaped by her dominion of cruelty and deception. Those who fled her tyranny
-                emerged into the surface world, reborn under the guidance of Aeter, the God of Sun and Song, and became
-                the Sun Elves. Later still, the Sun Elves’ descendants spread outward into the forests, adapting
-                themselves to the rhythms of living woods and becoming the Wood Elves, or Haldaja. This branching
-                lineage—the eternal tension between shadow, light, and harmony—forms the eternal tapestry of Elvenkind.
-            </p>
-        </div>
-    </section>
-
-    <section class="vertical"> <!-- 3 COLUMN 20-60-20 -->
-
-
-        <div class="tb-panel"><!-- MIDDLE -->
-            <h2 class="tb-title">Motivation</h2>
             <p>At their core, the Elves are seekers. They are driven by questions of power, freedom, and meaning, but
                 the answers they pursue differ among their kindreds. Dark Elves hunger for control and dominance, their
-                desires shaped by Lolth’s cruel web. Sun Elves seek liberation and enlightenment, striving to build
+                desires shaped by <a href="lolth.html">Lolth’s</a> cruel web. Sun Elves seek liberation and
+                enlightenment, striving to build
                 communities founded on trust and cooperation. Wood Elves yearn for harmony with the natural world, their
                 lives guided by the cycles of forest and season. Yet across all their forms, Elves are united by an
                 insatiable curiosity and ambition. They cannot remain idle; whether through mastery of shadow, devotion
                 to light, or communion with the living world, they seek to shape destiny—both their own and that of
                 Skazka itself.</p>
-        </div>
-        <div class="tb-panel">
-            <h2 class="tb-title">Integration into Society</h2>
             <p>The Elves occupy an ambiguous place in the societies of Skazka. Their longevity and wisdom make them
                 invaluable as advisors, scholars, and spellcasters, but their air of superiority and hidden agendas
-                inspire mistrust. Sun Elves have integrated most readily, establishing kingdoms, trading with humans,
+                inspire mistrust. Sun Elves have integrated most readily, establishing kingdoms, trading with <a
+                    href="humans.html">humans</a>,
                 and spreading their knowledge. Wood Elves maintain selective alliances, offering counsel when it serves
                 to protect their forests but guarding their secrets closely. Dark Elves, in contrast, are rarely
-                welcomed; their loyalty to Lolth and their penchant for intrigue ensure that they are viewed as
+                welcomed; their loyalty to <a href="lolth.html">Lolth</a> and their penchant for intrigue ensure that
+                they are viewed as
                 dangerous adversaries more often than allies. Despite these divisions, all Elves exert an undeniable
                 influence wherever they walk, their presence a reminder that they are not merely another mortal race but
-                living echoes of forces older than time itself.</p>
-        </div>
-        <div class="tb-panel">
-            <h2 class="skz-viking">Elven sub-species</h2>
-            <h2 class="tb-title">Dark Elves – The Children of the Web</h2>
-            <p>The Dark Elves, or Drow, dwell in the deepest shadows of the Underworld. Born from living darkness, they
-                embody both beauty and corruption. Their cities are feats of impossible architecture, suspended from
-                cavern ceilings and paved with whispering stones, yet their civilization teeters constantly on the brink
-                of collapse. Lolth, the Spider Queen, reigns over them with ruthless devotion, shaping their society
-                into a hierarchy of betrayal, intrigue, and fear. Under her priestesses, every interaction becomes a
-                contest of manipulation, every relationship a fragile web ready to snap. Masters of poison,
-                shadow-magic, and deception, the Dark Elves are formidable foes, but their society’s self-destructive
-                nature ensures that they are as much a threat to themselves as they are to the world above.</p>
+                living echoes of forces older than time itself.
+            </p>
+        </article>
+    </section>
 
-            <h2 class="tb-title">Sun Elves – The Liberated Children of Light</h2>
+    <div class="skz-divider skz-divider--diamond" aria-hidden="true"></div>
+
+    <!-- PHYSIOLOGY / CULTURE / FAITH -->
+    <section class="grid-even equal-cards" id="pillars">
+        <article class="tb-panel" id="physiology">
+            <h2 class="tb-title">Physiology & Traits</h2>
+            <ul>
+                <li><strong>Appearance:</strong> Elves are fine-boned and long-limbed, with high cheekbones, tapering
+                    ears, and luminous eyes that catch even faint light—but their look shifts by kindred. </li>
+                <li><strong>Dimorphism:</strong> Elven sexual dimorphism is subtle: across kindreds, males and females
+                    are near-matched in height, agility, and lifespan, with differences showing more in bearing than in
+                    body. </li>
+                <li><strong>Senses:</strong> Elven senses sit a notch above mortal norms in quiet, effortless ways:
+                    sight that reads shape and motion in dim starlight as if the world were inked in silver.</li>
+                <li><strong>Innate Gifts:</strong> Elves carry a quiet birthright: eyes that read the world in moonlit
+                    greys, senses trained from a lifetime of listening, and a mind that shrugs off coaxing—charms slip,
+                    and sleep-magic finds no purchase. They do not truly sleep; instead they sink into a four-hour
+                    reverie, walking old memories like gardens and rising as rested as others after a full night. Their
+                    grace is practiced rather than gaudy—sure feet, balanced hands, and a talent for stillness that
+                    makes them hard to catch unready.</li>
+            </ul>
+        </article>
+
+        <article class="tb-panel" id="culture">
+            <h2 class="tb-title">Culture & Society</h2>
+            <ul>
+                <li><strong>Virtues & Laws:</strong> Elven virtue in Skazka centers on poise, memory, and stewardship:
+                    patience in craft and study, candor tempered by grace, promises kept across centuries, and a
+                    near-sacred duty to protect what endures—knowledge, living places, and sworn bonds.</li>
+                <li><strong>Craft & Trade:</strong> Elven craft marries longevity to grace: work meant to endure for
+                    centuries, tuned to light, line, and living materials.</li>
+                <li><strong>Family & Names:</strong> Elven families are long-rooted and deliberate: bonds form over
+                    decades, households often span three or four living generations, and fosterage between allied houses
+                    braids loyalties.</li>
+                <li><strong>Customs & Rites:</strong> Elven customs revolve around memory, oath, and the quiet
+                    stewardship of beautiful things.
+                    <ul>
+                        <li>Birth begins with a Naming Vigil, when kin keep watch while
+                            artisans craft a first token to “anchor” the child’s place in memory.</li>
+                        <li> marriages are sealed by Joined Work, a piece made together and gifted to the household
+                            shrine.</li>
+                        <li>Hospitality is sacred: guests eat before they speak.</li>
+                    </ul>
+                </li>
+            </ul>
+        </article>
+
+        <article class="tb-panel" id="faith">
+            <h2 class="tb-title">Faith & Myth</h2>
+            <ul>
+                <li><strong>Patrons:</strong> Elven worship in Skazka polarizes around two stark patrons: <a
+                        href="aeter.html">Aeter</a>, the
+                    Lightbringer, and <a href="lolth.html">Lolth</a>, the Spider Queen. </li>
+                <li><strong>Origin Story:</strong> In Skazka’s telling, the elven story begins in shadow: dark-elf
+                    ancestors lived under Lolth’s tyranny in the Underworld until a faction fled upward, surviving a
+                    brutal exodus to the surface where the god Aeter received them and bestowed the Everlight—a
+                    revelation that remade their bodies and ethos, giving rise to the radiant Sun Elves. </li>
+                <li><strong>Rites & Taboos:</strong> Beyond their better-known ceremonies, elves keep a lattice of
+                    quieter observances and red lines: eating what speaks (creatures known to mimic words),
+                    pointing with a naked blade, are both taboo.</li>
+                <li><strong>Omens & Festivals (Sun Elves):</strong>
+                    <ul>
+                        <li>Sun Elves: Dawn's renewal: at sunrise on the longest day, in silence, all lights are
+                            extinguished
+                            except one; the keeper lamp. The fire from this lamp is then used to relight all other lamps
+                            and torches.</li>
+                        <li>Dark Elves: The veil of shadows: for one day each year the city is illuminated with
+                            painfully bright lights. This is to remind all that the darkness protects them.</li>
+                    </ul>
+
+                </li>
+
+            </ul>
+        </article>
+    </section>
+
+    <div class="skz-divider skz-divider--diamond" aria-hidden="true"></div>
+
+    <!-- LINEAGES -->
+    <section class="place-hero" id="hero">
+        <div class="place-hero__icon">
+
+        </div>
+        <div class="place-hero__body">
+            <h1 class="skz-viking">Subspecies</h1>
+            <p>Elven kind in Skazka branches along three enduring lines—Sun, Wood, and Dark—each sprung from a shared
+                ancestry but reshaped by patronage, habitat, and long memory. All elves are keen-sensed, long-lived,
+                oath-minded, and crafted for grace; from that common spine, Sun Elves turn toward Aeter’s Everlight and
+                civic artistry, Wood Elves fold themselves into living forests with quiet stewardship and rangercraft,
+                and Dark Elves (drow) master the Underworld’s hierarchies, shadowed magics, and knife-edged politics
+                under Lolth’s gaze. What follows surveys their origins, temperaments, gifts, laws, and lifeways—where
+                they agree, where they differ, and how each kindred’s choices echo across centuries.</p>
+        </div>
+        <div class="place-hero__spacer"></div>
+    </section>
+    <section id="lineages" class="grid-even equal-cards">
+
+        <article class="tb-panel">
+            <h3 class="tb-title">Sun Elves</h3>
             <p>The Sun Elves trace their lineage to those who escaped Lolth’s tyranny, emerging into the light of the
                 surface after a harrowing exodus through the Underworld. Their salvation came with the god Aeter, who
                 granted them the Everlight and revealed that magic could heal, inspire, and illuminate rather than only
@@ -103,9 +214,11 @@
                 their hair warmed to tones of sunlight, and their eyes began to shine with the hues of the sky. Sun Elf
                 society is built upon cooperation, artistry, and trust, their lives devoted to building rather than
                 scheming. Yet their openness can also be a vulnerability, for their willingness to trust sometimes
-                leaves them unprepared for the ambitions of others.</p>
+                leaves them unprepared for the ambitions of others. <span class="tag">Children of the light</span></p>
+        </article>
 
-            <h2 class="tb-title">Wood Elves – The Forest-Crowned Haldaja</h2>
+        <article class="tb-panel">
+            <h3 class="tb-title">Wood Elves</h3>
             <p>From the Sun Elves came the Wood Elves, who journeyed into the vast forests of Kelos and reshaped
                 themselves in harmony with living nature. With green undertones to their skin, earthy hair, and silent,
                 fluid movements, they became creatures of the forest canopy. Their bond with the woodland is spiritual
@@ -115,31 +228,64 @@
                 nature, their trust is hard-won, for they have seen how easily outsiders can disrupt delicate balances.
                 Their tree-grown cities remain almost invisible to the untrained eye, living architecture that is
                 cultivated rather than built. They are the keepers of wisdom as old as Skazka itself, and they guard it
-                with unyielding resolve.</p>
-        </div>
-        <div class="tb-panel">
-            <h2 class="tb-title">The Eternal Tapestry</h2>
-            <p>Though divided into three great branches—Dark, Sun, and Wood—the Elves remain bound together by shared
-                origins. Each kindred represents a different answer to the same questions of power, freedom, and
-                balance. The Drow embraced dominance, the Sun Elves sought liberation, and the Wood Elves pursued
-                harmony. Each gained wisdom and power, but each also bears burdens unique to their path. Yet for all
-                their divisions, they remain unmistakably Elven: long-lived, ambitious, and forever caught between the
-                pull of shadow and the promise of light. Their choices ripple outward across Skazka, weaving destinies
-                that shape not only their people but the fate of the world itself.</p>
-        </div>
+                with unyielding resolve. <span class="tag">Haldaja</span></p>
+        </article>
+
+        <article class="tb-panel">
+            <h3 class="tb-title">Dark Elves</h3>
+            <p>The Dark Elves, or Drow, dwell in the deepest shadows of the Underworld. Born from living darkness, they
+                embody both beauty and corruption. Their cities are feats of impossible architecture, suspended from
+                cavern ceilings and paved with whispering stones, yet their civilization teeters constantly on the brink
+                of collapse. Lolth, the Spider Queen, reigns over them with ruthless devotion, shaping their society
+                into a hierarchy of betrayal, intrigue, and fear. Under her priestesses, every interaction becomes a
+                contest of manipulation, every relationship a fragile web ready to snap. Masters of poison,
+                shadow-magic, and deception, the Dark Elves are formidable foes, but their society’s self-destructive
+                nature ensures that they are as much a threat to themselves as they are to the world above.<span
+                    class="tag">Drow</span></p>
+        </article>
+
+        <article class="tb-panel">
+            <h3 class="tb-title">Shadow Elves</h3>
+            <p>Shadow Elves are an exiled kindred from a parallel dusk-realm, sworn to cross the veil wherever
+                corruption roots and to burn it out with truth. Pale as moon-ash with ink-dark eyes, they carry Ioun’s
+                sigil—the seeing diamond—on veils, rings, and lantern-helms, and hold that ignorance is the first evil:
+                lies, secrecy, and willful forgetfulness are sins to scour. Their creed marries piety to purpose—daily
+                recitations from memory-cods, fasts of silence before a hunt, and the Vow of Three Lights (to reveal, to
+                remember, to resist). In battle they are zeal made graceful: blades etched with scripture, prism-charms
+                that throw radiant lattices through shadow, and a talent for stepping along the rim of darkness without
+                being swallowed by it. They mistrust courts and cabals that hide behind oaths untested, feud bitterly
+                with Lolth’s priesthood, and treat Aeter’s faithful as distant kin who have forgotten the hard edge of
+                truth. When a gate opens, they arrive like a hush before storm—mask-lamps flaring, questions first,
+                steel after—and leave behind ordered archives so evil, once named, cannot take root again.<span
+                    class="tag">Zorniki</span></p>
+        </article>
 
 
     </section>
 
+    <div class="skz-divider skz-divider--diamond" aria-hidden="true"></div>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="grid-four">
+        <article class="tb-panel">
+            <img src="assets/shadow_elf.jpg" alt="shadow elf" class="noborder">
+            <h3 class="tb-title">Shadow Elf</h3>
+        </article>
+        <article class="tb-panel">
+            <img src="assets/wood_elf.jpg" alt="wood elf" class="noborder">
+            <h3 class="tb-title">Wood elf</h3>
+        </article>
+        <article class="tb-panel">
+            <img src="assets/sun_elf.jpg" alt="sun elf" class="noborder">
+            <h3 class="tb-title">Sun elf</h3>
+        </article>
+        <article class="tb-panel">
+            <img src="assets/drow.jpg" alt="dark elf" class="noborder">
+            <h3 class="tb-title">Dark elf</h3>
+        </article>
+    </section>
 
     <div id="footer"></div>
-
-
-
-
-
-
-
 </body>
 
 </html>

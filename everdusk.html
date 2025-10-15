@@ -1,140 +1,218 @@
-<!-- index.html -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>Skazka - aeter</title>
+    <title>Skazka — Everdusk</title>
+
     <link rel="stylesheet" href="navbar.css?v=3">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="assets/skazka_logo.png">
+    <link rel="icon" href="assets/skazka_logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+
     <script src="navbar.js?v=3"></script>
     <script type="module" src="./main.js"></script>
-
 </head>
 
 <body>
-    <div id="navbar"></div><!-- Navbar will be loaded here -->
+    <div id="navbar"></div>
 
-    <!-- Main Content Area -->
-    <section class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
-        <div class=" tb-panel"> <!-- LEFT -->
-            <h2 class="tb-title">Population</h2>
-            <p>Roughly 8,500 elves call Everdusk home, their numbers spread thin across hundreds of hidden enclaves
-                woven into the forest canopy. Families live in sprawling tree-homes carved without harm into trunks of
-                giant oaks. The Wood Elves are reclusive yet tightly bonded to their kin, relying on
-                archery, stealth, and druidic craft for survival. Outsiders rarely glimpse their true population, as
-                Everdusk seems to allow its inhabitants to appear and vanish with the shadows.</p>
-            <h2 class="tb-title">Politics</h2>
-            <p>Everdusk is governed by the Circle of Branches, a council of elders.
-                Decisions are made communally, guided by reverence for the Gloom Wood itself. The Circle does not
-                command; it interprets the will of the forest. Rarely, when grave threats arise, the Circle appoints a
-                Voice of the Trees—a single leader who speaks for the wood and wields authority until the balance is
-                restored.</p>
+    <!-- ===== HERO (.place-hero) ===== -->
+    <section class="place-hero">
+        <div class="place-hero__icon">
+            <img src="assets/everdusk_banner.jpg" alt="Everdusk crest">
         </div>
-
-        <div class="center-column"><!-- MIDDLE -->
-            <img src="assets/everdusk.jpg" alt="">
-            <p>Everdusk lies hidden within the shadowed canopy of the Gloom Wood, a realm where twilight lingers and
-                moonlight filters through endless leaves. For four millennia, the Wood Elves have dwelled here,
-                descendants of the wandering Dark Elves and kin to the radiant Sun Elves. Unlike their cousins, they
-                forsook stone and fire, choosing instead to weave their lives into the living forest. Their homes
-                are
-                not built upon the land but within it—lofty halls among branches, rope bridges spanning treetop to
-                treetop, and platforms where the green canopy serves as both roof and sky.</p>
-
+        <div class="place-hero__body">
+            <h1 class="skz-viking">Everdusk</h1>
+            <p class="skz-quote-attribution">Where the sun kneels low and the night never fully claims the sky</p>
         </div>
-
-        <div class="right-column, tb-panel"> <!-- RIGHT -->
-            <img src="assets/everdusk_banner.jpg" alt="">
-            <p>The Brand of Duty</p>
-
-        </div>
+        <div class="place-hero__spacer" aria-hidden="true"></div>
     </section>
 
-    <section class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
-        <div class=" tb-panel"> <!-- LEFT -->
-            <h2 class="tb-title">The Moon Bridge</h2>
+    <!-- ===== BODY: 30 / 70 ===== -->
+    <section class="grid-two-wide">
+        <!-- LEFT: SIDEBAR -->
+        <aside>
+            <!-- Profile -->
+            <article class="tb-panel">
+                <h2 class="tb-title">Profile</h2>
+                <table class="materials-table">
+                    <tbody>
+                        <tr>
+                            <th>Government</th>
+                            <td>Monarchy</td>
+                        </tr>
+                        <tr>
+                            <th>Seat</th>
+                            <td>Everdusk - vast number of interconnecting hamlets spread over hundreds of miles</td>
+                        </tr>
+                        <tr>
+                            <th>Ruler</th>
+                            <td>Queen S'rinas</td>
+                        </tr>
+                        <tr>
+                            <th>Population</th>
+                            <td>Mostly Wood Elves</td>
+                        </tr>
+                        <tr>
+                            <th>Dominant Faith</th>
+                            <td>Aeter, Than</td>
+                        </tr>
+                        <tr>
+                            <th>Military</th>
+                            <td>Night Watch / Lantern Guard (confirm)</td>
+                        </tr>
+                        <tr>
+                            <th>Terrain</th>
+                            <td>Deep ancient forest, old canals, fog-vales</td>
+                        </tr>
+                        <tr>
+                            <th>Exports</th>
+                            <td>Dyes, glass, night-bloom herbs, lanterncraft</td>
+                        </tr>
+                        <tr>
+                            <th>Languages</th>
+                            <td>Trade Tongue; Elvish</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+
+            <!-- Orders & Guilds (sidebar) -->
+            <article class="tb-panel">
+                <h2 class="tb-title">Orders & Guilds</h2>
+                <ul>
+                    <li><strong>Lantern Guild</strong> — warding lights, canal beacons, night-markets.</li>
+                    <li><strong>Archivists of Gloam</strong> — foglore, tide ledgers, eclipse augury.</li>
+                    <li><strong>Riverwardens</strong> — patrols on old canals and marsh edges.</li>
+                </ul>
+            </article>
+        </aside>
+
+        <!-- RIGHT: LORE -->
+        <article class="tb-panel">
+            <img class="noborder" src="assets/everdusk.jpg" alt="Everdusk at the edge of twilight">
+            <h2 id="overview" class="tb-title">Overview</h2>
+            <p>Everdusk lies hidden within the shadowed canopy of the <strong>Gloom Wood</strong>, a realm where
+                twilight lingers and
+                moonlight filters through endless leaves. For four millennia, the Wood Elves have dwelled here,
+                descendants of the wandering Dark Elves and kin to the radiant Sun Elves. Unlike their cousins, they
+                forsook stone and fire, choosing instead to weave their lives into the living forest. Their homes are
+                not built upon the land but within it—lofty halls among branches, rope bridges spanning treetop to
+                treetop, and platforms where the green canopy serves as both roof and sky.</p>
+            <p>Foreigners who wander the Gloom Wood seldom reach Everdusk unbidden—its paths are treacherous and patrols
+                of silent rangers keep a watchful eye. Guests are guided blindfolded until they reach the Moon-Bridge,
+                the ceremonial entrance into Everdusk. Hospitality is offered with caution: visitors are expected to
+                show reverence for the forest and to harm no living thing under its canopy. Those who come in peace may
+                be shown wonders; those who betray the forest’s trust are never seen again.</p>
+            <!-- 3-up quick blocks (concise, evidence-based) -->
+            <div class="grid-even equal-cards">
+                <article class="tb-panel">
+                    <h3 class="tb-title" id="cities-factions">Districts & Ways</h3>
+                    <ul>
+                        <li><strong>Lantern Quarter</strong> — markets, guild halls, canal stairs.</li>
+                        <li><strong>Gloam Ward</strong> — shrines, scriptoriums, fog gardens.</li>
+                        <li><strong>River Gate</strong> — ferries, pilings, tide-ledger keep.</li>
+                    </ul>
+                </article>
+
+                <article class="tb-panel">
+                    <h3 class="tb-title">Peoples & Customs</h3>
+                    <ul>
+                        <li>Pilgrims arrive at dusk; processions with glass-lanterns & night-bloom garlands.</li>
+                        <li>Tolling hours: work by bell, bargains by oath-light.</li>
+                        <li>Guest-right at waterside inns; whisper-singers in the fog.</li>
+                    </ul>
+                </article>
+
+                <article class="tb-panel">
+                    <blockquote>“In Everdusk, the light is a promise. Keep it.”</blockquote>
+                    <p class="skz-quote-attribution">— Keeper at the Canal Stairs</p>
+                </article>
+            </div>
+
+            <!-- 2-up (concise format, no inline styles) -->
+            <div class="grid-two">
+                <article class="tb-panel">
+                    <h3 class="tb-title" id="economy">Economy &amp; Trade</h3>
+                    <ul>
+                        <li>Lanterncraft, stained glass, night-dyes, marsh-herbs, river freight.</li>
+                        <li>Ferry tariffs & pilgrimage stipends; canal maintenance charters.</li>
+                        <li>Seasonal fair at last light; oath-lit auctions.</li>
+                    </ul>
+                </article>
+                <article class="tb-panel">
+                    <h3 class="tb-title" id="threats">Threats &amp; Hazards</h3>
+                    <ul>
+                        <li>Fog-theft along back canals; will-o’-lantern lures after bells.</li>
+                        <li>Marsh surge + spring tides; silting of old channels.</li>
+                        <li>Rival rites over eclipse omens; lantern-sigil disputes.</li>
+                    </ul>
+                </article>
+            </div>
+        </article>
+    </section>
+
+    <div class="skz-divider skz-divider--diamond" aria-hidden="true"></div>
+
+    <!-- ===== PLACES OF NOTE (full, unshortened descriptions) ===== -->
+    <section id="landmarks" class="grid-even equal-cards">
+        <article class="tb-panel">
+            <h2 class="tb-title">Places of Note</h2>
+            <img class="noborder" src="assets/landmark.jpg" alt="">
+        </article>
+
+        <!-- Replace the placeholder text below with your original POI content verbatim -->
+        <article class="tb-panel">
+            <img src="assets/everdusk_moonbridge.jpg" alt="POI 1 image">
+            <h3 class="tb-title">The Moonbridge</h3>
             <p>A silver-threaded rope bridge that appears only under moonlight, glowing faintly as though woven from
                 starlight. It marks the official threshold into Everdusk and spans a nameless river in a gorge deep
                 below.</p>
+        </article>
 
-            <h2 class="tb-title">The Silmwood Groves</h2>
-            <p>
-                Sacred stands of silmwood trees, whose pale bark glimmers under moonlight. The bark can only be
-                harvested at night, and when properly gathered it becomes a key ingredient in enchantments,
-                spell-scrolls, and living wards.
-            </p>
+        <article class="tb-panel">
+            <img src="assets/everdusk_silmwood.jpg" alt="POI 2 image">
+            <h3 class="tb-title">The Silmwood Groves</h3>
+            <p>Sacred stands of silmwood trees, whose pale bark glimmers under moonlight. The bark can only be harvested
+                at night, and when properly gathered it becomes a key ingredient in enchantments, spell-scrolls, and
+                living wards.</p>
+        </article>
 
-            <h2 class="tb-title">Canopy Markets</h2>
-            <p>
-                A suspended gathering place high above the forest floor, where elves trade fruits, herbs, and
-                moonlit
-                crafts. Lanterns of captured glowmoths illuminate the night, creating a shimmering constellation
-                among
-                branches.
-            </p>
+        <article class="tb-panel">
+            <img src="assets/everdusk_market.jpg" alt="POI 3 image">
+            <h3 class="tb-title">Canopy Markets</h3>
+            <p>A suspended gathering place high above the forest floor, where elves trade fruits, herbs, and moonlit
+                crafts. Lanterns of captured glowmoths illuminate the night, creating a shimmering constellation among
+                branches.</p>
+        </article>
 
+        <article class="tb-panel">
+            <img src="assets/everdusk_platform.jpg" alt="POI 4 image">
+            <h3 class="tb-title">Hall of whispering leaves</h3>
+            <p>A council platform encircling a colossal oak, where the Circle of Branches meets. It is said that the oak
+                itself murmurs wisdom when the wind passes through its boughs.</p>
+        </article>
 
-        </div>
+        <article class="tb-panel">
+            <img src="assets/everdusk_everfalls.jpg" alt="POI 5 image">
+            <h3 class="tb-title">Everfalls</h3>
+            <p>A waterfall cascading through the heart of the forest, its mist imbued with faint magical energy.
+                Platforms and rope paths cross its roaring descent, and nearby shrines honor the forest spirits.</p>
+        </article>
 
-        <div class="center-column"><!-- MIDDLE -->
-            <h2 class="tb-title">Visiting Everdusk</h2>
-            <p>Foreigners who wander the Gloom Wood seldom reach Everdusk unbidden—its paths are treacherous and
-                patrols of silent rangers keep a watchful eye. Guests are guided blindfolded until they reach the
-                Moon-Bridge, the
-                ceremonial entrance into Everdusk. Hospitality is offered with caution: visitors are expected to
-                show
-                reverence for the forest and to harm no living thing under its canopy. Those who come in peace may
-                be
-                shown wonders; those who betray the forest’s trust are never seen again.</p>
-
-        </div>
-
-        <div class="right-column, tb-panel"> <!-- RIGHT -->
-            <h2 class="tb-title">Hall of whispering leaves</h2>
-            <p>
-                A council platform encircling a colossal oak, where the Circle of Branches meets. It is said
-                that
-                the
-                oak itself murmurs wisdom when the wind passes through its boughs.
-            </p>
-
-            <h2 class="tb-title">Everfalls</h2>
-            <p>
-                A waterfall cascading through the heart of the forest, its mist imbued with faint magical
-                energy.
-                Platforms and rope paths cross its roaring descent, and nearby shrines honor the forest spirits.
-            </p>
-
-            <h2 class="tb-title">The Glade of silent arrows</h2>
-            <p>
-                A hidden training ground for the rangers of Everdusk, where targets are set among shadows and
-                leaves.
-                Here, archers learn to loose arrows so silent that no prey hears them before it is struck.
-            </p>
-        </div>
+        <article class="tb-panel">
+            <img src="assets/everdusk_training.jpg" alt="POI 6 image">
+            <h3 class="tb-title">The Glade of silent arrows</h3>
+            <p>A hidden training ground for the rangers of Everdusk, where targets are set among shadows and leaves.
+                Here, archers learn to loose arrows so silent that no prey hears them before it is struck.</p>
+        </article>
     </section>
 
-
-
-
-
-
-
-
-
-
     <div id="footer"></div>
-
-
-
-
-
-
-
 </body>
 
 </html>

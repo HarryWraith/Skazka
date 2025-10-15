@@ -8,9 +8,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Skazka - Monster Builder</title>
   <link rel="stylesheet" href="navbar.css?v=3">
-  <link rel="stylesheet" href="monster-builder.css" />
+  <link rel="stylesheet" href="monster-builder.css">
+
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/png" href="assets/skazka_logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
   <script src="navbar.js?v=3"></script>
   <script type="module" src="./main.js"></script>
@@ -20,7 +23,7 @@
 <body>
   <div id="navbar"></div>
 
-  <!-- Main Content Area -->
+
   <section class="grid-container">
     <div class="tb-panel">
       <section class="sb-panel">
@@ -56,7 +59,8 @@
         <!-- Header -->
         <div class="sb-grid">
           <label> Name
-            <input id="name" class="sb-input" placeholder="Gravewrought Myrmidon" />
+            <input id="name" class="sb-input" placeholder="Gravewrought Myrmidon">
+
           </label>
 
           <label> Size
@@ -89,10 +93,12 @@
                 <option>Undead</option>
                 <option value="_custom_">Custom…</option>
               </select>
-              <input id="typeCustom" class="sb-input" placeholder="Custom type" style="display:none" />
+              <input id="typeCustom" class="sb-input" placeholder="Custom type" style="display:none">
+
             </div>
             <small class="sb-tip">Optional tags appear in parentheses (e.g., <em>shapechanger, demon</em>).</small>
-            <input id="typeTags" class="sb-input" placeholder="Tags (optional)" />
+            <input id="typeTags" class="sb-input" placeholder="Tags (optional)">
+
           </label>
 
           <label> Alignment
@@ -115,16 +121,20 @@
         <!-- Defense / Vitality -->
         <div class="sb-grid">
           <label> Armor Class
-            <input id="ac" class="sb-input" placeholder="17 (plate, shield)" />
+            <input id="ac" class="sb-input" placeholder="17 (plate, shield)">
+
           </label>
           <label> Hit Points (avg & dice)
-            <input id="hp" class="sb-input" placeholder="85 (10d8 + 40)" />
+            <input id="hp" class="sb-input" placeholder="85 (10d8 + 40)">
+
           </label>
           <label> Speed
-            <input id="speed" class="sb-input" placeholder="30 ft., climb 20 ft." />
+            <input id="speed" class="sb-input" placeholder="30 ft., climb 20 ft.">
+
           </label>
           <label> Challenge Rating
-            <input id="cr" class="sb-input" placeholder="5" />
+            <input id="cr" class="sb-input" placeholder="5">
+
           </label>
         </div>
 
@@ -133,15 +143,22 @@
         <fieldset class="sb-ability">
 
           <div class="sb-ability-grid">
-            <label>STR <input id="str" class="sb-input sb-num" type="number" value="16" /></label>
-            <label>DEX <input id="dex" class="sb-input sb-num" type="number" value="12" /></label>
-            <label>CON <input id="con" class="sb-input sb-num" type="number" value="12" /></label>
-            <label>INT <input id="int" class="sb-input sb-num" type="number" value="18" /></label>
-            <label>WIS <input id="wis" class="sb-input sb-num" type="number" value="12" /></label>
-            <label>CHA <input id="cha" class="sb-input sb-num" type="number" value="10" /></label>
+            <label>STR <input id="str" class="sb-input sb-num" type="number" value="16">
+            </label>
+            <label>DEX <input id="dex" class="sb-input sb-num" type="number" value="12">
+            </label>
+            <label>CON <input id="con" class="sb-input sb-num" type="number" value="12">
+            </label>
+            <label>INT <input id="int" class="sb-input sb-num" type="number" value="18">
+            </label>
+            <label>WIS <input id="wis" class="sb-input sb-num" type="number" value="12">
+            </label>
+            <label>CHA <input id="cha" class="sb-input sb-num" type="number" value="10">
+            </label>
           </div>
           <label class="sb-inline">
-            <input type="checkbox" id="autoPassive" checked />
+            <input type="checkbox" id="autoPassive" checked>
+
             Auto-compute Passive Perception (10 + Perception mod)
           </label>
         </fieldset>
@@ -203,38 +220,47 @@
 
             <!-- override -->
             <label class="sb-inline" style="margin-top:6px;">
-              <input type="checkbox" id="saveOverride" />
+              <input type="checkbox" id="saveOverride">
+
               Override saving throw calculation (use manual values below)
             </label>
 
             <label for="saves" class="sb-inline" style="margin-top:6px;">Manual overrides (optional)</label>
-            <input id="saves" class="sb-input" placeholder="e.g., Str +6, Dex +5" />
+            <input id="saves" class="sb-input" placeholder="e.g., Str +6, Dex +5">
+
             <small class="sb-tip">When override is ON, the line uses only the manual values above.</small>
           </fieldset>
           <!-- /Saving Throws -->
 
           <label> Skills
-            <input id="skills" class="sb-input" placeholder="Perception +5, Stealth +6" />
+            <input id="skills" class="sb-input" placeholder="Perception +5, Stealth +6">
+
           </label>
           <label> Damage Vulnerabilities
-            <input id="vuln" class="sb-input" placeholder="radiant" />
+            <input id="vuln" class="sb-input" placeholder="radiant">
+
           </label>
           <label> Damage Resistances
             <input id="resist" class="sb-input"
-              placeholder="cold; bludgeoning, piercing, and slashing from nonmagical attacks" />
+              placeholder="cold; bludgeoning, piercing, and slashing from nonmagical attacks">
+
           </label>
           <label> Damage Immunities
-            <input id="imm" class="sb-input" placeholder="poison" />
+            <input id="imm" class="sb-input" placeholder="poison">
+
           </label>
           <label> Condition Immunities
-            <input id="condImm" class="sb-input" placeholder="charmed, poisoned" />
+            <input id="condImm" class="sb-input" placeholder="charmed, poisoned">
+
           </label>
           <label> Senses
             <input id="senses" class="sb-input"
-              placeholder="darkvision 60 ft., tremorsense 30 ft., passive Perception 15" />
+              placeholder="darkvision 60 ft., tremorsense 30 ft., passive Perception 15">
+
           </label>
           <label> Languages
-            <input id="langs" class="sb-input" placeholder="Common, Infernal" />
+            <input id="langs" class="sb-input" placeholder="Common, Infernal">
+
           </label>
         </div>
 
@@ -242,7 +268,8 @@
         <section class="sb-helper">
           <h2 class="sb-subtitle">Quick Attack Builder</h2>
           <div class="sb-mini-grid">
-            <label> Name <input id="atk_name" class="sb-input" placeholder="Longsword" /></label>
+            <label> Name <input id="atk_name" class="sb-input" placeholder="Longsword">
+            </label>
             <label> Attack Kind
               <select id="atk_kind" class="sb-select">
                 <option value="Melee Weapon Attack">Melee Weapon Attack</option>
@@ -262,17 +289,24 @@
                 <option value="CHA">CHA</option>
               </select>
             </label>
-            <label class="sb-inline"><input type="checkbox" id="atk_prof" checked /> Proficient</label>
-            <label> Extra to-hit <input id="atk_bonus_extra" class="sb-input sb-num" type="number" value="0" /></label>
-            <label> Reach / Range <input id="atk_range" class="sb-input"
-                placeholder="reach 5 ft. / range 20/60 ft." /></label>
-            <label> Target(s) <input id="atk_targets" class="sb-input" placeholder="one target" /></label>
-            <label> Damage Dice <input id="atk_dice" class="sb-input" placeholder="1d8" /></label>
-            <label class="sb-inline"><input type="checkbox" id="atk_add_mod" checked /> add ability mod to
+            <label class="sb-inline"><input type="checkbox" id="atk_prof" checked>
+              Proficient</label>
+            <label> Extra to-hit <input id="atk_bonus_extra" class="sb-input sb-num" type="number" value="0">
+            </label>
+            <label> Reach / Range <input id="atk_range" class="sb-input" placeholder="reach 5 ft. / range 20/60 ft.">
+            </label>
+            <label> Target(s) <input id="atk_targets" class="sb-input" placeholder="one target">
+            </label>
+            <label> Damage Dice <input id="atk_dice" class="sb-input" placeholder="1d8">
+            </label>
+            <label class="sb-inline"><input type="checkbox" id="atk_add_mod" checked>
+              add ability mod to
               damage</label>
-            <label> Damage Type <input id="atk_dtype" class="sb-input" placeholder="slashing" /></label>
+            <label> Damage Type <input id="atk_dtype" class="sb-input" placeholder="slashing">
+            </label>
             <label> Rider (optional) <input id="atk_rider" class="sb-input"
-                placeholder="and the target is knocked prone." /></label>
+                placeholder="and the target is knocked prone.">
+            </label>
           </div>
           <div class="sb-export">
             <button id="atk_add_action" class="sb-btn">Add as Action</button>
@@ -297,31 +331,44 @@
                 <option value="CHA" selected>CHA</option>
               </select>
             </label>
-            <label class="sb-inline"><input type="checkbox" id="sc_prof" checked /> Proficient (uses PB)</label>
-            <label> Caster level <input id="sc_level" class="sb-input sb-num" type="number" value="5" /></label>
-            <label> Class/Source <input id="sc_class" class="sb-input"
-                placeholder="wizard / warlock / innate" /></label>
+            <label class="sb-inline"><input type="checkbox" id="sc_prof" checked>
+              Proficient (uses PB)</label>
+            <label> Caster level <input id="sc_level" class="sb-input sb-num" type="number" value="5">
+            </label>
+            <label> Class/Source <input id="sc_class" class="sb-input" placeholder="wizard / warlock / innate">
+            </label>
           </div>
 
           <!-- Prepared lists -->
           <div id="sc_prepared" class="sb-spells">
-            <label> Cantrips (at will) <input id="sc_c0" class="sb-input" placeholder="fire bolt, mage hand" /></label>
-            <label> 1st (slots) <input id="sc_s1" class="sb-input" placeholder="4" /></label>
-            <label> 1st level spells <input id="sc_c1" class="sb-input" placeholder="shield, magic missile" /></label>
-            <label> 2nd (slots) <input id="sc_s2" class="sb-input" placeholder="3" /></label>
-            <label> 2nd level spells <input id="sc_c2" class="sb-input" placeholder="blur, misty step" /></label>
-            <label> 3rd (slots) <input id="sc_s3" class="sb-input" placeholder="2" /></label>
-            <label> 3rd level spells <input id="sc_c3" class="sb-input" placeholder="counterspell, fireball" /></label>
+            <label> Cantrips (at will) <input id="sc_c0" class="sb-input" placeholder="fire bolt, mage hand">
+            </label>
+            <label> 1st (slots) <input id="sc_s1" class="sb-input" placeholder="4">
+            </label>
+            <label> 1st level spells <input id="sc_c1" class="sb-input" placeholder="shield, magic missile">
+            </label>
+            <label> 2nd (slots) <input id="sc_s2" class="sb-input" placeholder="3">
+            </label>
+            <label> 2nd level spells <input id="sc_c2" class="sb-input" placeholder="blur, misty step">
+            </label>
+            <label> 3rd (slots) <input id="sc_s3" class="sb-input" placeholder="2">
+            </label>
+            <label> 3rd level spells <input id="sc_c3" class="sb-input" placeholder="counterspell, fireball">
+            </label>
             <label> Higher levels (optional) <textarea id="sc_higher" class="sb-input"
                 placeholder="4th (3 slots): blight, dimension door&#10;5th (1 slot): cone of cold"></textarea></label>
           </div>
 
           <!-- Innate lists -->
           <div id="sc_innate" class="sb-spells" style="display:none">
-            <label> At will <input id="si_atwill" class="sb-input" placeholder="detect magic, mage hand" /></label>
-            <label> 1/day each <input id="si_1" class="sb-input" placeholder="dimension door" /></label>
-            <label> 2/day each <input id="si_2" class="sb-input" placeholder="misty step" /></label>
-            <label> 3/day each <input id="si_3" class="sb-input" placeholder="shield" /></label>
+            <label> At will <input id="si_atwill" class="sb-input" placeholder="detect magic, mage hand">
+            </label>
+            <label> 1/day each <input id="si_1" class="sb-input" placeholder="dimension door">
+            </label>
+            <label> 2/day each <input id="si_2" class="sb-input" placeholder="misty step">
+            </label>
+            <label> 3/day each <input id="si_3" class="sb-input" placeholder="shield">
+            </label>
             <label> Other (free text) <textarea id="si_other" class="sb-input"
                 placeholder="Truesight 60 ft. while concentrating on X"></textarea></label>
           </div>
@@ -381,7 +428,8 @@
           <button id="downloadJson" class="sb-ghost-btn">Download .json (builder)</button>
           <button id="downloadO5e" class="sb-ghost-btn">Download .open5e.json</button>
           <button id="importJsonBtn" class="sb-ghost-btn">Import .json</button>
-          <input id="importJsonFile" type="file" accept=".json,application/json" style="display:none" />
+          <input id="importJsonFile" type="file" accept=".json,application/json" style="display:none">
+
         </div>
       </section>
     </div>

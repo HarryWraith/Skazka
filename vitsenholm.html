@@ -1,50 +1,114 @@
-<!-- index.html -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>Search • Skazka</title>
+    <title>Skazka — Vitsenholm</title>
+
     <link rel="stylesheet" href="navbar.css?v=3">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="assets/skazka_logo.png">
+    <link rel="icon" href="assets/skazka_logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+
     <script src="navbar.js?v=3"></script>
     <script type="module" src="./main.js"></script>
-
 </head>
 
 <body>
-    <div id="navbar"></div><!-- Navbar will be loaded here -->
+    <div id="navbar"></div>
 
-    <!-- section Content Area -->
-    <section class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
-        <div class="tb-panel"> <!-- LEFT -->
-            <h2 class="tb-title">Population</h2>
-            <p>Vitsenholm is a haven where the beast races flourish. Aarakocra and Thri-Kreen make up the
-                majority—talons and multifaceted eyes glinting with innate magic. But all manner of beings—Leonin,
-                Loxodon, Tabaxi—walk its promenades, while elves and humans mingle in cloaks and formal robes, as
-                diplomats or visiting scholars. Though small in number, its population is dense with talent, ambition,
-                and the restless curiosity that draws the magical-minded. Here, the air hums with the sounds of
-                different tongues and the soft flaps of feathered wings, all united by a shared belief: in
-                Vitsenholm, magic and acceptance are the pillars of society.</p>
-            <h2 class="tb-title">Politics</h2>
-            <p>Ruled by a Magocracy of seven mages—Magisters reigning through intellect and arcane power—Vitsenholm
-                blends authority and academia. Each Magister leads a guild essential to the city's function:</p>
-
-            <ul>
-                <li>The seventh seat is elected by the populace every four years—a rare democratic thread woven into an
-                    otherwise strict hierarchy.</li>
-                <li>Six guilds, each headed by a Magister drawn from the beast races, guide the city’s magic, research,
-                    law, and exploration.</li>
-            </ul>
-            <p>Together, these Magisters direct the city’s arcane defences, expansions, and alliances, forging decisions
-                in candlelit councils and dusty libraries.</p>
+    <!-- ===== HERO (.place-hero) ===== -->
+    <section class="place-hero">
+        <div class="place-hero__icon">
+            <img src="assets/vitsenholm_banner.jpg" alt="Vitsenholm crest">
         </div>
+        <div class="place-hero__body">
+            <h1 class="skz-viking">Vitsenholm</h1>
+            <p class="skz-quote-attribution">The City of Beasts — a floating magocracy above desert ruins</p>
+        </div>
+        <div class="place-hero__spacer" aria-hidden="true"></div>
+    </section>
 
-        <div class="center-column"><!-- MIDDLE -->
-            <img src="assets/Vitsenholm.jpg" alt="">
+    <!-- ===== BODY: 30 / 70 ===== -->
+    <section class="grid-two-wide">
+        <!-- LEFT: SIDEBAR -->
+        <aside>
+            <!-- Profile -->
+            <article class="tb-panel">
+                <h2 class="tb-title">Profile</h2>
+                <table class="materials-table">
+                    <tbody>
+                        <tr>
+                            <th>Government</th>
+                            <td>Magocracy of Seven (six guild Magisters + one elected seat)</td>
+                        </tr>
+                        <tr>
+                            <th>Capital</th>
+                            <td>— (single city-state)</td>
+                        </tr>
+                        <tr>
+                            <th>Ruler</th>
+                            <td>Council of Magisters</td>
+                        </tr>
+                        <tr>
+                            <th>Population</th>
+                            <td>Dense, multi-racial (Aarakocra &amp; Thri-Kreen majority; Leonin, Loxodon, Tabaxi;
+                                visiting elves/humans)</td>
+                        </tr>
+                        <tr>
+                            <th>Dominant Faith</th>
+                            <td>Secular/arcane traditions</td>
+                        </tr>
+                        <tr>
+                            <th>Military</th>
+                            <td>Domestic Protection (Eldritch Knights, inquisitors)</td>
+                        </tr>
+                        <tr>
+                            <th>Terrain</th>
+                            <td>Floating city ~300 ft above ancient desert ruins</td>
+                        </tr>
+                        <tr>
+                            <th>Exports</th>
+                            <td>Arcane services, Diplomatic services</td>
+                        </tr>
+                        <tr>
+                            <th>Languages</th>
+                            <td>Trade Tongue, Beast race languages</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+            <br>
+            <!-- Guilds (sidebar panel below profile) -->
+            <article class="tb-panel">
+                <h2 class="tb-title">Guilds of Vitsenholm</h2>
+                <ul>
+                    <li><strong>Domestic Protection</strong> — A city watch and investigative guild led by Magister
+                        Xekner Grandtooth, a Leonin Evocation wizard. His Eldritch Knights patrol the skies, while his
+                        Inquisitor Rogues decipher hidden threats.
+                    </li>
+                    <li><strong>Navigators</strong> — Caretakers of the Great Engine, the city's beating heart. Magister
+                        Tal’al, a Thri-Kreen Artificer, ensures the city resections aloft and humming.</li>
+                    <li><strong>Cultivation</strong> — More than an academy—this is where raw magical talent is sparked
+                        into brilliance. Overseen by Magister Badurid Stonebill, an Owlkin Clockwork Soul Sorcerer and
+                        headmaster extraordinaire.</li>
+                    <li><strong>Law Society</strong> — Bridging enchantment and governance, Magister Khaia—an Aarakocra
+                        Enchantment Wizard—crafts laws and diplomats in equal measure.</li>
+                    <li><strong>Antiquity</strong> — Driven into the sands below, Magister Pak’chaka, a Thri-Kreen Bard,
+                        leads expeditions to unravel the secrets of the ancient engine-city beneath.</li>
+                    <li><strong>Research</strong> — Standing at the city’s skylit workshops, Magister Cad, an Aarakocra
+                        Transmutation Wizard, dissects recovered artefacts in search of wonders yet unseen.</li>
+                </ul>
+            </article>
+        </aside>
+
+        <!-- RIGHT: LORE -->
+        <article class="tb-panel">
+            <img class="noborder" src="assets/vitsenholm.jpg" alt="Vitsenholm floating above the desert">
+            <h2 id="overview" class="tb-title" style="margin-top:10px">Overview</h2>
             <p>Perched like a mirage above the scorched desert sands, Vitsenholm—the City of Beasts—hovers 300 feet
                 aloft, a titanic relic of ancient power. Its foundations were forged not by mortal hands, but by the
                 activation of an otherworldly artefact embedded in a buried metallic city found in 921 CR. Suddenly
@@ -52,89 +116,133 @@
                 enigmatic energies. A realm of scholarship and wild wonder, it shimmers on the horizon—a sanctuary for
                 the beast races and those drawn to the magic that hums in its core. This is a city of whispered secrets,
                 magical brilliance, and creatures that blink at the limits of legend.</p>
-
-        </div>
-
-        <div class="right-column, tb-panel"> <!-- RIGHT -->
-            <img src="assets/Vitsenholm_insignia.jpg" alt="">
-            <p>An insignia found numerous times across the city - nobody has been able to decipher its meaning.</p>
-        </div>
-    </section>
-
-    <section class="grid-container"> <!-- 3 COLUMN 20-60-20 -->
-        <div class=" tb-panel"> <!-- LEFT -->
-            <h2 class="tb-title">The Raven Claw (Outer Ring)</h2>
-            <p>A modest inn with warm meals and jumbled laughter—anchored by a statue of a terrified Kenku. Speculation
-                over its presence circulates like smoke through the dining hall, but the staff smiles and turns away,
-                and the shadowed eyes of the statue seem to stare with knowing dread.</p>
-
-            <h2 class="tb-title">The House of Thorns (Outer Ring)</h2>
-            <p>A bathhouse and brothel that serves all—curves and claws welcome. Overseen by Noda Deq, an Owlkin
-                proprietor, its many alcoves offer solace, secrets, and a fragrant blend of oils steeped in forbidden
-                alchemy.</p>
-
-            <h2 class="tb-title">The Great Engine Chamber (Central Core)</h2>
-            <p>A cathedral of metal and magic at the city’s heart. The engine pulses with incandescent engravings and
-                the City’s anti-magic shield spreads outward from here, a protective cocoon shimmering like a heat-haze.
-            </p>
-
-            <h2 class="tb-title">The Forbidden Grotto (Lower Core)</h2>
-            <p>Behind sealed doors lies a labyrinth of black fungus—its spores drift in the stale air, whispering
-                madness. Rumours say the floor below contains vast archives and strange machinery left untouched since
-                the city was originally abandoned.</p>
-
-            <h2 class="tb-title">The Observatory of Seeing (Upper Core)</h2>
-            <p>Perched atop the administrative sector, its dome holds telescopes and crystal orbs. Magical resonance
-                drifts through the lenses, recording the far desert dunes—or perhaps the stars that bleed between
-                realms.</p>
-
-            <h2 class="tb-title">Guilded Promenade (Central to Outer Ring)</h2>
-            <p>A broad, covered walkway lined with stalls offering resplendent scrolls, trinkets, and flickering
-                potions. Here, whispers from the Antiquity Guild recruit daring explorers—and midnight auctions tempt
-                rogues yearning to taste artifacts forbidden to ordinary sight.</p>
-        </div>
-
-        <div class="center-column"><!-- MIDDLE -->
-            <h2 class="skz-viking">Visiting Vitsenholm</h2>
             <p>Travel here is a journey itself: either by the wings of Aarakocra or via the teleportation ring on the
                 desert floor, which catapults visitors into the floating realm. Once aboard expect narrow, solemn
                 corridors lit by glowing runes and the hum of magic. Markets teem with potent potions and shimmering
                 scrolls—still, they pale before the true wonders hidden in the sealed lower levels.</p>
-
             <p>Tongues of every race swirl together with the scent of exotic spices and the quiet crackle of arcane
                 wards.</p>
-
             <p>Beware, though: from beyond the Barrier, lizard-like dragon riders attack—swift and sudden assaults that
                 shatter serenity. Who these assailants are is still a mystery.</p>
 
-        </div>
+            <!-- 3-up quick blocks (concise, evidence-based) -->
+            <div class="grid-even equal-cards">
+                <article class="tb-panel">
+                    <h3 class="tb-title" id="cities-factions">Districts & Governance</h3>
+                    <ul>
+                        <li><strong>Magocracy of Seven</strong> — six guild Magisters + one elected seat (4-year term).
+                        </li>
+                        <li><strong>Guild administration</strong> — law, research, engine, cultivation, antiquities,
+                            defence.</li>
+                        <li><strong>Arcane civil service</strong> embedded across rings/sectors.</li>
+                    </ul>
+                </article>
 
-        <div class="tb-panel"> <!-- RIGHT -->
-            <h2 class="tb-title">Guilds</h2>
-            <p>Here’s a deeper look into the city’s driving forces:</p>
-            <p><b>Domestic Protection</b> – A city watch and investigative guild led by Magister Xekner Grandtooth, a
-                Leonin Evocation wizard. His Eldritch Knights patrol the skies, while his Inquisitor Rogues decipher
-                hidden threats.</p>
-            <p><b>Navigators</b> – Caretakers of the Great Engine, the city's beating heart. Magister Tal’al, a
-                Thri-Kreen Artificer, ensures the city resections aloft and humming.</p>
-            <p><b>Cultivation</b> – More than an academy—this is where raw magical talent is sparked into brilliance.
-                Overseen by Magister Badurid Stonebill, an Owlkin Clockwork Soul Sorcerer and headmaster extraordinaire.
-            </p>
-            <p><b>Law Society</b> – Bridging enchantment and governance, Magister Khaia—an Aarakocra Enchantment
-                Wizard—crafts laws and diplomats in equal measure.</p>
-            <p><b>Antiquity</b> – Driven into the sands below, Magister Pak’chaka, a Thri-Kreen Bard, leads expeditions
-                to unravel the secrets of the ancient engine-city beneath.</p>
-            <p><b>Research</b> – Standing at the city’s skylit workshops, Magister Cad, an Aarakocra Transmutation
-                Wizard, dissects recovered artefacts in search of wonders yet unseen.</p>
-        </div>
+                <article class="tb-panel">
+                    <h3 class="tb-title">Peoples & Customs</h3>
+                    <ul>
+                        <li><strong>Majority</strong> Aarakocra &amp; Thri-Kreen; Leonin, Loxodon, Tabaxi common;
+                            elves/humans visiting.</li>
+                        <li><strong>Rites</strong> secular-arcane (guild oaths; ancestor–scholarly tradition).</li>
+                        <li><strong>Insignia</strong> appears city-wide; meaning unknown (active study, no consensus).
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="tb-panel">
+                    <h3 class="tb-title">Access &amp; Hazards</h3>
+                    <ul>
+                        <li><strong>Arrival</strong> via Aarakocra flight or desert teleportation ring.</li>
+                        <li><strong>Lower levels</strong> sealed; rumours of archives &amp; machinery beneath the core.
+                        </li>
+                        <li><strong>Threat</strong> raids by lizardlike dragon riders beyond the Barrier (motive
+                            unclear).</li>
+                    </ul>
+                </article>
+            </div>
+
+            <!-- 2-up (concise format) -->
+            <div class="grid-two">
+
+                <article class="tb-panel">
+                    <h3 class="tb-title" id="economy">Economy &amp; Trade</h3>
+                    <ul>
+                        <li>Magical research &amp; consulting; enchanted goods &amp; scrollwork.</li>
+                        <li>Artefact recovery from the buried city; academic exchanges.</li>
+                        <li>Limited lay commerce; guild charters control markets &amp; permits.</li>
+                    </ul>
+                </article>
+                <article class="tb-panel">
+                    <h3 class="tb-title" id="threats">Threats &amp; Hazards</h3>
+                    <ul>
+                        <li>Engine dependency: disruption risks city stability and anti-magic shield.</li>
+                        <li>External raids from drake riders; purpose and origin unconfirmed.</li>
+                        <li>Internal risk: sealed zones below (contamination, constructs, or wards).</li>
+                    </ul>
+                </article>
+            </div>
+        </article>
     </section>
 
+    <div class="skz-divider skz-divider--diamond" aria-hidden="true"></div>
+
+    <!-- ===== PLACES OF NOTE (full, unshortened descriptions) ===== -->
+    <section id="landmarks" class="grid-even equal-cards">
+        <article class="tb-panel">
+            <h2 class="tb-title">Places of Note</h2>
+            <img class="noborder" src="assets/landmark.jpg" alt="">
+        </article>
+
+        <article class="tb-panel">
+            <img src="assets/vits_ravens_claw.jpg" alt="The Raven Claw (Outer Ring)">
+            <h3 class="tb-title">The Raven Claw (Outer Ring)</h3>
+            <p>A modest inn with warm meals and jumbled laughter—anchored by a statue of a terrified Kenku. Speculation
+                over its presence circulates like smoke through the dining hall, but the staff smiles and turns away,
+                and the shadowed eyes of the statue seem to stare with knowing dread.</p>
+        </article>
+
+        <article class="tb-panel">
+            <img src="assets/vits_bathhouse.jpg" alt="The House of Thorns (Outer Ring)">
+            <h3 class="tb-title">The House of Thorns (Outer Ring)</h3>
+            <p>A bathhouse and brothel that serves all—curves and claws welcome. Overseen by Noda Deq, an Owlkin
+                proprietor, its many alcoves offer solace, secrets, and a fragrant blend of oils steeped in forbidden
+                alchemy.</p>
+        </article>
+
+        <article class="tb-panel">
+            <img src="assets/vits_engine.jpg" alt="The Great Engine Chamber (Central Core)">
+            <h3 class="tb-title">The Great Engine Chamber (Central Core)</h3>
+            <p>A cathedral of metal and magic at the city’s heart. The engine pulses with incandescent engravings and
+                the City’s anti-magic shield spreads outward from here, a protective cocoon shimmering like a heat-haze.
+            </p>
+        </article>
+
+        <article class="tb-panel">
+            <img src="assets/vits_grotto.jpg" alt="The Forbidden Grotto (Lower Core)">
+            <h3 class="tb-title">The Forbidden Grotto (Lower Core)</h3>
+            <p>Behind sealed doors lies a labyrinth of black fungus—its spores drift in the stale air, whispering
+                madness. Rumours say the floor below contains vast archives and strange machinery left untouched since
+                the city was originally abandoned.</p>
+        </article>
+
+        <article class="tb-panel">
+            <img src="assets/vits_observatory.jpg" alt="The Observatory of Seeing (Upper Core)">
+            <h3 class="tb-title">The Observatory of Seeing (Upper Core)</h3>
+            <p>Perched atop the administrative sector, its dome holds telescopes and crystal orbs. Magical resonance
+                drifts through the lenses, recording the far desert dunes—or perhaps the stars that bleed between
+                realms.</p>
+        </article>
+
+        <article class="tb-panel">
+            <img src="assets/vits_promenade.jpg" alt="Guilded Promenade (Central to Outer Ring)">
+            <h3 class="tb-title">Guilded Promenade (Central to Outer Ring)</h3>
+            <p>A broad, covered walkway lined with stalls offering resplendent scrolls, trinkets, and flickering
+                potions. Here, whispers from the Antiquity Guild recruit daring explorers—and midnight auctions tempt
+                rogues yearning to taste artifacts forbidden to ordinary sight.</p>
+        </article>
+    </section>
 
     <div id="footer"></div>
-
-
-
-
 </body>
 
 </html>
