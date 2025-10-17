@@ -3507,3 +3507,7 @@ h3.tb-title.skz-title {
 body.skz-modal-open {
    overflow: hidden;
 }
+
+[hidden] {
+   display: none !important;
+}

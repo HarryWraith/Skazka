@@ -14,347 +14,174 @@
     <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
     <script src="navbar.js?v=3"></script>
     <script type="module" src="./main.js"></script>
-
 </head>
 
 <body>
     <div id="navbar"></div><!-- Navbar will be loaded here -->
-
-
-    <section class="grid-container">
-        <div></div>
+    <header class="place-hero" role="banner">
+        <div class="place-hero__icon" aria-hidden="true">
+            <!-- Optional: update to your heroes icon -->
         </div>
-
-        <div class="center-column">
-            <img src="assets/heroes.jpg" alt="">
-
-            <p>In the shadowed realm of Skazka, the line between hero and villain blurs like mist in the moonlight.
-                Here, where ancient powers stir beneath cursed skies and forgotten magics pulse through the very
-                earth,
-                those who dare to carve their names into legend are rarely what they first appear to be. The
-                champions
-                of this realm are forged not in glory, but in darkness—tempered by trials that would break lesser
-                souls
-                and shaped by choices that demand terrible prices.</p>
-
-            <p>Within these pages, you will encounter the souls who have left their mark upon Skazka's blood-soaked
-                history. From the noble fallen and the righteously wrathful to the cunningly beautiful and the
-                unspeakably ancient, each character represents a thread in the greater web of this realm's dark
-                mythology. They are the puppet masters and the pawns, the saviors and the damned, the whispered
-                names
-                that make even the bravest adventurers pause before speaking certain words aloud.</p>
-
-            <p>Remember, traveler, that in a land where every legend is born from truth and every truth carries the
-                weight of legend, these are not mere names to be catalogued, but living forces that continue to
-                shape
-                the very fabric of reality. Choose your allies carefully, for in Skazka, today's hero may be
-                tomorrow's
-                greatest nightmare.</p>
-
+        <div class="place-hero__body">
+            <h1 class="skz-viking">Heroes &amp; Villains</h1>
+            <p>Champions, tyrants, witches and legends whose deeds bend the Age of Shadow.</p>
         </div>
+        <div class="place-hero__spacer" aria-hidden="true"></div>
+    </header>
 
-        <div class="right-column">
-        </div>
-    </section>
+    <main id="content" class="grid-two-wide" role="main">
+        <aside aria-labelledby="toc-title">
+            <h2 id="toc-title" class="tb-title">Search</h2>
+            <form id="tl-searchbar" class="tl-search" role="search" onsubmit="return false;">
+                <input id="tl-q" name="q" type="text" role="searchbox" inputmode="search" enterkeyhint="search"
+                    autocomplete="off" autocapitalize="off" spellcheck="false" title="search heroes"
+                    placeholder="Search heroes…">
+                <button type="button" id="tl-clear" aria-label="Clear search">
+                    <svg viewBox="0 0 14 14" width="14" height="14" aria-hidden="true">
+                        <path d="M2 2L12 12M12 2L2 12" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round"></path>
+                    </svg>
+                </button>
+                <button type="submit" hidden aria-hidden="true"></button>
+                <output id="tl-count" aria-live="polite" class="tl-count"></output>
+            </form>
+        </aside>
 
-    <section class="grid-even"><!-- 3 COLUMN EVEN -->
-        <div class="tb-panel">
-            <img src="assets/king_theldon.jpg" alt="">
-            <h2 class="tb-title">King Theldon - the wild boar</h2>
-            <p>The wild boar, as he is known, became King of Nav'golam upon his father's death 658. He is best known
-                for
-                locking the gates to the city
-                at the start of the Shadow War in the year 700 and refusing to allow admitance to outsiders for 101
-                years.
-            </p>
-        </div>
+        <!-- Main column -->
+        <article class="tb-panel">
+            <h2 id="overview" class="tb-title">Overview</h2>
+            <p>In Skazka, the line between hero and villain is a blade in fog. Power wakes under cursed skies, and those
+                who earn a name do so in darkness and at a price. Here you’ll meet the figures who shaped its
+                blood-stitched history—puppeteers and pawns, saviors and the damned. Choose allies carefully: in Skazka,
+                today’s hero may be tomorrow’s nightmare.</p>
+        </article>
+    </main>
 
-        <div class="tb-panel">
-            <img src="assets/Ilistran.jpg" alt="">
+    <section id="heroes" class="grid-even equal-cards" aria-label="Heroes grid">
+        <article id="theldon" class="tb-panel" data-role="event">
+            <img src="assets/king_theldon.jpg" alt="King Theldon of Nav’golam, the Wild Boar">
+            <h2 class="tb-title">King Theldon</h2>
+            <p>The wild boar, as he is known, became King of Nav'golam upon his father's death 658. He is best known for
+                locking the gates to the city at the start of the Shadow War in the year 700 and refusing to allow
+                admitance to outsiders for 101 years.</p>
+            <blockquote>“Let the world break on our walls — we are the tusk.”</blockquote>
+        </article>
+
+        <article id="ilistran" class="tb-panel" data-role="event">
+            <img src="assets/Ilistran.jpg" alt="Ilistran Darkweaver">
             <h2 class="tb-title">Ilistran Darkweaver</h2>
-            <p>Ilistran Darkweaver rose to prominence as the enigmatic leader of the Order of the Word, one of
-                Skazka's
-                most powerful mage guilds. A master of chaos magic, Darkweaver possessed an insatiable hunger for
-                power
-                that extended far beyond the traditional bounds of arcane study. Unlike his peers who viewed magic
-                as a
-                tool for knowledge and protection, Ilistran believed that those who wielded such extraordinary
-                abilities
+            <p>Ilistran Darkweaver rose to prominence as the enigmatic leader of the Order of the Word, one of Skazka's
+                most powerful mage guilds. A master of chaos magic, Darkweaver possessed an insatiable hunger for power
+                that extended far beyond the traditional bounds of arcane study. Unlike his peers who viewed magic as a
+                tool for knowledge and protection, Ilistran believed that those who wielded such extraordinary abilities
                 had not only the right but the duty to rule over the mundane world. His charismatic leadership and
-                formidable magical prowess initially drew many followers to his cause, as he promised a new age
-                where
+                formidable magical prowess initially drew many followers to his cause, as he promised a new age where
                 mages would emerge from the shadows to claim their rightful place as the world's masters.</p>
-            <p>However, Darkweaver's radical vision ultimately fractured the very guild he led. When other members
-                of
-                the Order of the Word recognized the dangerous extremes of his ambition, they rose in rebellion
-                against
-                their former leader, sparking the devastating conflict known as the Shadow War. Desperate to
-                maintain
-                his grip on power and crush the insurgency, Ilistran turned to forbidden practices, seeking allies
-                from
-                the treacherous astral plane. His reckless manipulation of chaos magic tore holes in the fabric of
-                reality itself, creating the phenomenon known as The Veil—unstable rifts that connected Skazka to
-                other
-                worlds and dimensions.</p>
-            <p>The legacy of Ilistran Darkweaver remains one of ambition corrupted by power and the catastrophic
-                consequences of unchecked magical experimentation. The tears he created in reality continue to
-                threaten
-                the stability of Skazka, serving as a permanent reminder of how even the most gifted mages can
-                become
-                the architects of their world's destruction when they allow their desire for dominance to eclipse
-                their
-                wisdom and restraint.</p>
+            <p>However, Darkweaver's radical vision ultimately fractured the very guild he led. When other members of
+                the Order of the Word recognized the dangerous extremes of his ambition, they rose in rebellion against
+                their former leader, sparking the devastating conflict known as the Shadow War.</p>
             <blockquote>"They say that the abyss is empty. But it is not. I have looked into its eyes and saw myself
-                staring back."<br>
-                <span class="skz-quote-attribution">&mdash;Ilistran Darkweaver</span>
+                staring back."
             </blockquote>
-        </div>
+        </article>
 
-        <div class="tb-panel">
-            <img src="assets/serona.webp" alt="">
+        <article id="serona" class="tb-panel" data-role="event">
+            <img src="assets/serona.jpg" alt="High Witch Serona">
             <h2 class="tb-title">High Witch Serona</h2>
-            <p>High Witch Serona stands at the pinnacle of Ku’Than’s arcane hierarchy, the undisputed leader of
-                the
-                Witches of Ku’Than. Once admired for her brilliance, warmth, and steady hand in guiding her
-                sisters
-                through peril and political intrigue alike, she has become a figure both revered and feared
-                since
-                the
-                murder of her husband, Markus. Slain by assassins of the Black Oak—a cult of dark druids
-                festering
-                within the Weird Wood—his death shattered Serona’s once-harmonious life and sent ripples of
-                shadow
-                across her coven.</p>
-
-            <p>Her daughter, Solryn, now a Guardian of the Third Eye, might have been her anchor in such grief,
-                but
-                instead their bond has frayed beyond recognition. Serona, cloaked in grief and silence, grew
-                estranged
-                from her only child. Since Markus’s passing, she has spoken to Solryn only rarely, and always in
-                tones
-                distant and cold. To many, the High Witch appears a woman broken, her spirit fractured, her
-                heart
-                encased in frost. A sudden white streak has appeared in her hair, stark against the black, said
-                to
-                be
-                the physical mark of her hidden trauma.</p>
-
-            <p>In her seclusion, rumours have begun to spread: that Serona communes with spirits in secret, her
-                chambers
-                echoing with voices no living witch dares claim as her own. Some whisper that she bargains with
-                the
-                shades of the Weird Wood itself, calling to powers beyond even the coven’s control. Others fear
-                her
-                grief has cracked her reason, and that she courts madness at the edge of her power. Yet none can
-                deny
-                her presence remains formidable—when she emerges from solitude, her gaze is sharp enough to
-                silence
-                an
-                entire hall.</p>
-
-            <p>Serona now straddles a dangerous threshold: a leader bound to her people yet drifting ever deeper
-                into
-                occult mysteries, a grieving widow whose estrangement from her daughter leaves her legacy
-                uncertain,
-                and
-                perhaps a witch whose communion with the dead will one day tip the scales of fate across all of
-                Ku’Than.
+            <p>High Witch Serona stands at the pinnacle of Ku’Than’s arcane order—once a warm, steady hand guiding her
+                sisters through peril and intrigue, now a figure both revered and feared. Her turning point was the
+                murder of her husband, Markus, by the Black Oak cult festering in the Weird Wood. Grief splintered her
+                life and cooled her ties to her daughter, Solryn—now a Guardian of the Third Eye. They speak rarely, and
+                always at a distance. A stark white streak in Serona’s black hair is said to mark the wound no healing
+                can touch.</p>
+            <p>Secluded for long stretches, she’s trailed by rumor: that her chambers hold voices not of the living;
+                that she bargains with the Weird Wood’s shades; that power and sorrow have driven her near the edge. Yet
+                when she steps from solitude, her presence still stills a hall—judgment sharp, authority unquestioned.
             </p>
-        </div>
-    </section>
+            <p>Serona now walks a dangerous threshold: leader bound to her people yet pulled deeper into occult
+                currents; grieving widow estranged from her heir; a witch whose communion with the dead may steady
+                Ku’Than—or tip its fate into shadow.</p>
+        </article>
 
-    <section class="grid-even"><!-- 3 COLUMN EVEN -->
-
-        <div class="tb-panel">
-            <img src="assets/stranger.jpg" alt="">
+        <article id="stranger" class="tb-panel" data-role="event">
+            <img src="assets/stranger.jpg" alt="The Stranger">
             <h2 class="tb-title">The Stranger</h2>
-            <p>The Stranger is a mysterious individual who has appeared frequently throughout the history of
-                Skazka.</p>
-            <p>In addition to eye witness testimony, he has been captured in both paintings and literature. He
-                is viewed
-                as an angel of prophecy by some, allegedly having appeared at the site and time of various
-                historical
+            <p>The Stranger is a mysterious individual who has appeared frequently throughout the history of Skazka.</p>
+            <p>In addition to eye witness testimony, he has been captured in both paintings and literature. He is viewed
+                as an angel of prophecy by some, allegedly having appeared at the site and time of various historical
                 events of note. He is seen as benevolent by some but a sign of impending tragedy by others.</p>
-            <p>Irrespective of lore and supersticion, he always appears dressed the same: in immauclately clean
-                white
-                suits and carrying a notebook and quil. It is said that he appears and disappears in the blink
-                of an
+            <p>Irrespective of lore and supersticion, he always appears dressed the same: in immauclately clean white
+                suits and carrying a notebook and quil. It is said that he appears and disappears in the blink of an
                 eye.</p>
-        </div>
-        <div class="tb-panel">
-            <img src="assets/maldrath.jpg" alt="">
+        </article>
+
+        <article id="maldrath" class="tb-panel" data-role="event">
+            <img src="assets/maldrath.jpg" alt="The Stranger">
             <h2 class="tb-title">Maldrath the fire witch</h2>
-            <p>Maldrath was an enigmatic sorceress whose arrival in the north forever altered the tapestry of
-                Winter’s
-                fate. A wanderer from the verdant south, she brought with her not only flame and arcane power
-                but also
-                an intricate charisma that could orchestrate loyalty from even the most hardened hunters. She
-                offered
-                promises of victuals, riches, and glory, and in doing so convinced four score adventurers to
-                embark on
-                the doomed expedition against the dragon Icethorn.</p>
-
-            <p>To her followers, she was a captivating figure, weaving a mosaic of power and possibility that
-                seemed to
-                transcend the frozen world’s despair. To her enemies, she was a labyrinth of ambition and
-                deceit, a
-                firebrand who courted catastrophe. She led her hunters across the River Horn, where triumph soon
-                curdled
-                into tragedy: the death of Glaclalis, Icethorn’s mate, and the curse that fell upon Grimspire.
-            </p>
-
-            <p>Though her ultimate fate is uncertain, legends intertwine with whispers that Maldrath’s spirit
-                lingers
-                still, a burning shade in the frozen halls, her fire forever trapped in ice. For some, she is a
-                cautionary tale; for others, an invitation to delve into ambition’s crucible, where danger and
-                desire
-                beckon in equal measure.</p>
+            <p>Maldrath, a southern sorceress, came north with flame, cunning, and a charisma that bent even hard-bitten
+                hunters. Promising food, riches, and glory, she rallied fourscore adventurers for a doomed strike on the
+                dragon Icethorn.</p>
+            <p>To followers she was possibility incarnate; to rivals, a tangle of ambition and deceit. She led her host
+                across the River Horn, where victory soured: Glaclalis—Icethorn’s mate—was slain, and Grimspire fell
+                under a curse.</p>
+            <p>Her end is uncertain. Some say her spirit still burns in Winter’s halls, fire locked in ice. To many she
+                is a warning; to a few, an invitation to test ambition’s crucible.</p>
             <blockquote>
-                "She came like summer fire to our frozen lives, all promises of gold and glory… and left nothing
-                but
-                ashes. I still dream of her laughter, carried on the wind, and wonder how we ever followed a
-                witch into
-                the teeth of a dragon."<br>
-                <span class="skz-quote-attribution">&mdash; survivor of the Icethorn attack</span>
+                "She came like summer fire to our frozen lives, all promises of gold and glory… and left nothing but
+                ashes. I still dream of her laughter, carried on the wind, and wonder how we ever followed a witch into
+                the teeth of a dragon."
+                — survivor of the Icethorn attack
             </blockquote>
-        </div>
-        <div class="tb-panel">
-            <img src="assets/kul.jpg" alt="">
+        </article>
+
+
+        <article id="krul" class="tb-panel" data-role="event">
+            <img src="assets/kul.jpg" alt="Kul U Dragn">
             <h2 class="tb-title">Kul U Dran</h2>
-            <p>Kul U Dran rules as the chieftain of the Echo Tribe, a fierce and insular people who dwell in the
-                shadow
-                of Mount Echo, west of Caratania. To outsiders, the Echo are little more than savages—cannibals
-                whose
-                grisly rites involve consuming the hearts of their vanquished foes, believing that each morsel
-                passes
-                the enemy’s strength into their own blood. Yet within the tribe, Kul U Dran is revered as the
-                Voice of
-                Mekendo, the living mouthpiece of the Fire God said to slumber in the fiery belly of the
-                volcano. His
-                word is law, his will indistinguishable from the deity’s, and to question him is to defy the god
-                himself.</p>
-            <p>Towering, scarred, and painted in ash and blood, Kul U Dran embodies the brutal creed of his
-                people. His
-                leadership is not merely political but spiritual: he presides over the rites at the lip of the
-                smoking
-                crater, casting the hearts of enemies into the molten fire, listening for Mekendo’s crackling
-                reply in
-                the shifting roar of magma. In battle, he is both warrior and priest, and his presence alone is
-                enough
-                to drive his tribesmen into frenzied ecstasy.</p>
+            <p>Kul U Dran, chieftain of the Echo Tribe beneath Mount Echo west of Caratania, is to outsiders a cannibal
+                warlord; to his own, the Voice of Mekendo, mouthpiece of the fire god said to sleep in the volcano. His
+                word is law, indistinguishable from the deity’s.</p>
+            <p>Towering, scarred, and daubed in ash and blood, he serves as warrior-priest—casting enemy hearts into the
+                crater and reading Mekendo’s will in the roaring magma. His presence alone whips the Echo into
+                battle-frenzy.</p>
+        </article>
 
-        </div>
-    </section>
-
-    <section class="grid-even">
-        <div class="tb-panel">
-            <img src="assets/alaric.jpg" alt="">
+        <article id="alaric" class="tb-panel" data-role="event">
+            <img src="assets/alaric.jpg" alt="King Alaric IV">
             <h2 class="tb-title">King Alaric IV</h2>
-            <p>The present sovereign of Caratania, King Alaric IV, stands as both a living echo of his
-                forebears and a
-                mystery unto himself. Now in his mid-forties, Alaric is often remarked upon for his striking
-                resemblance
-                to the monarchs of old—so much so that courtiers and common folk alike whisper that his
-                likeness could
-                have stepped directly from the royal portraits that line the halls of the capital.</p>
+            <p>King Alaric IV, mid-forties, is a living echo of Caratania’s forebears—so like the kings in the gallery
+                that courtiers swear he’s stepped from the portraits. Rarely seen, he’s rumored to move with a hawk’s
+                speed, a talent that sits between truth and legend. A fervent devotee of Aeter, he shapes policy by
+                prayer more than counsel, his piety deepening through a four-year seclusion that feeds uneasy whispers:
+                closer communion… or hidden malady?</p>
+            <p>Yet the banners still fly, decrees still bear his seal. Seen or unseen, Alaric remains Caratania’s quiet
+                heart—unchanged in visage, swift as a shadow, faithful beyond measure.</p>
+        </article>
 
-            <p>Though rarely seen beyond the palace walls, those few who have encountered him speak of an
-                uncanny
-                swiftness that defies the natural measure of men. It is said he moves with the speed of a
-                hawk in
-                flight, though such claims blur the line between truth and legend.</p>
-
-            <p>Deeply devout, Alaric is known as one of the most ardent followers of Aeter in Caratania’s
-                history. His
-                rule is guided less by earthly counsel than by the teachings of the Eternal Light, to whom
-                he is said to
-                pray for many hours each day. This devotion has only deepened during his long seclusion.</p>
-
-            <p>For four years the King has not appeared in public, and the people of Caratania speak his
-                name with a
-                blend of reverence and unease. Is he communing more closely with Aeter than ever before, or
-                has some
-                secret malady, physical or spiritual, claimed him from their sight?</p>
-
-            <p>Yet the royal banners still fly, and his seal still marks the decrees of governance. Whether
-                glimpsed or
-                hidden, King Alaric IV remains the heart of Caratania—unchanged in visage, quick as a
-                shadow, and
-                faithful beyond all measure.</p>
-        </div>
-        <div class="tb-panel">
-            <img src="assets/arica.jpg" alt="">
+        <article id="arica" class="tb-panel" data-role="event">
+            <img src="assets/arica.jpg" alt="Arica Dreamforger">
             <h2 class="tb-title">Arica Dreamforger</h2>
+            <p>Arica Dreamforger—an elven psionic sorceress—led the faction that opposed Ilistran Darkweaver inside the
+                Order of the Word, a schism that sparked the Shadow War. Sharp-witted and resolute, she fought not for
+                dominion but to preserve balance and redeem a guild buckling under Ilistran’s ambition.</p>
+            <p>As Ilistran’s rifts widened, Arica marshaled a desperate defense. In the war’s last days, while sealing a
+                major Veil-tear, she was ambushed by Shadow-spawn and slain—brutally, far from any glory—while Ilistran
+                himself vanished.</p>
+            <p>Her name endures as a rallying cry against unchecked chaos. Even now, some swear her silhouette lingers
+                among broken stones at dusk—a dream woven into the memory of the world she tried to save.</p>
+        </article>
 
-            <p>In the twilight-touched history of Skazka, Arica Dreamforger stood as a defiant flame in the
-                brewing
-                darkness. An elven psionic sorceress of rare and unsettling gifts, she rose as the leader of
-                the faction
-                that opposed Ilistran Darkweaver during the internal war within the Order of the Word—the
-                catalyst that
-                ignited the cataclysmic Shadow War. While Ilistran vanished once the final echoes of battle
-                faded,
-                Arica’s story ended far more tragically: she fell late in the conflict, slain by a ruthless
-                incursion
-                from the Shadow Realm.</p>
-
-            <p>Sharp-witted and fiercely resolute, Arica embodied the discipline of a commander and the
-                vision of a
-                seer. Her elven heritage endowed her with both centuries of arcane knowledge and the subtle
-                grace of her
-                people. As leader of the rebel faction, she did not seek power for domination but for the
-                preservation
-                of balance—and the redemption of a guild teetering on the brink of ruin under Ilistran’s
-                unchecked
-                ambition.</p>
-            <p>As Ilistran’s Shadow incursions grew bolder, tearing open rifts into the material world,
-                Arica marshaled
-                her forces in a desperate defense. In the war’s waning days, during a ritual meant to seal
-                one of the
-                largest Veil-tear conduits, she was ambushed. Shadow-spawn poured through the
-                breach—amorphous horrors
-                of mind-corrupting will. Despite her unparalleled psionic defenses, she was overwhelmed. Her
-                death was
-                not noble but brutal—seen only by those who dared stand near.</p>
-            <p>Though her life ended in violence, Arica’s legacy endured long after the Shadow War’s final
-                embers were
-                stamped out. Her name became a rallying cry for those who would guard against chaoses
-                unchecked—an
-                emblem of resistance that even vanished heroes and broken guilds came to revere in whispered
-                legends. In
-                the lonely hours before dusk, some say you can still glimpse her silhouette amid the broken
-                stones and
-                whispering winds of Skazka: a dream woven into the memory of the world she strove to save.
-            </p>
-        </div>
-        <div class="tb-panel">
-            <img src="assets/emperor.jpg" alt="">
+        <article id="shemon" class="tb-panel" data-role="event">
+            <img src="assets/emperor.jpg" alt="Emperor Shemon Starr">
             <h2 class="tb-title">Emperor Shemon Starr</h2>
-            <p>Current Emperor of the Aeternian Empire.</p>
-        </div>
-    </section>
 
-    <section class="grid-even"><!-- 3 COLUMN EVEN -->
-        <div class="tb-panel">
-            <img src="assets/mystery.jpg" alt="">
-        </div>
-        <div class="tb-panel">
-            <img src="assets/mystery.jpg" alt="">
-        </div>
-        <div class="tb-panel">
-            <img src="assets/mystery.jpg" alt="">
-        </div>
-    </section>
+        </article>
 
+    </section>
 
     <div id="footer"></div>
 
-
-
-
-
-
-
+    <script src="timeline-search-addon.js" defer></script>
 </body>
 
 </html>

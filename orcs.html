@@ -2,111 +2,193 @@
 <html lang="en">
 
 <head>
+    <!-- Standard Skazka head (no inline CSS) -->
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>Skazka - aeter</title>
+
+    <title>Skazka — Orcs</title>
+
     <link rel="stylesheet" href="navbar.css?v=3">
+
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="assets/skazka_logo.png">
+
+    <link rel="icon" href="assets/skazka_logo.png" type="image/png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+
+
     <script src="navbar.js?v=3"></script>
     <script type="module" src="./main.js"></script>
 </head>
 
 <body>
-    <div id="navbar"></div><!-- Navbar will be loaded here -->
+    <div id="navbar"></div>
+    <!-- HERO -->
+    <section class="place-hero" id="hero">
+        <div class="place-hero__icon">
+            <img alt="a gnome sigil" src="assets/icons/species/orc_sigil.jpg">
 
-
-    <section class="grid-container">
-        <div class="tb-panel">
-            <h2 class="tb-title">Physical Description</h2>
-            <p>While the provided histories focus more on culture than appearance, Orcs carry the physical legacy of
-                their creation as soldiers. Their frames are built for endurance and strength, making them imposing
-                figures in both tribal and urban settings. Their physicality, honed for survival in hostile worlds and
-                endless battlefields, often fuels the reputation that they are brutish or violent. Yet this same form is
-                equally suited to guardianship, labor, and resilience, reflecting a people shaped for struggle but
-                capable of adapting to new roles when necessity demands.</p>
         </div>
-
-        <div class="center-column">
-            <img src="assets/orcs.jpg" alt="">
-
-            <p>The Orcs are a people whose very existence is defined by their origins as weapons of war. Unlike the
-                other races of Skazka, who evolved or emerged naturally within its borders, the Orcs were deliberately
-                created by the dark god Chernobog to serve as soldiers in battles beyond this world. Once the great wars
-                ended and their god’s cause was concluded, they found themselves stranded on a dying world beneath a
-                fading sun. In a rare moment of divine mercy, Chernobog transported the remnants of his warriors to
-                Skazka, offering them refuge in recognition of their devotion and service. Though they were born for
-                battle, their arrival in Skazka marked the beginning of an uncertain future—a new chapter where their
-                purpose had to be redefined.</p>
+        <div class="place-hero__body">
+            <h1 class="skz-viking">Orcs</h1>
+            <p>Bred for war.</p>
         </div>
-
-        <div class="tb-panel">
-            <h2 class="tb-title">Heritage</h2>
-            <p>The Orcish heritage is steeped in oral tradition, sectiontained by their storytellers, the Saga-Keepers.
-                Through spoken history, they preserve the memory of their dying homeworld and the cosmic battles that
-                defined their earliest existence. These tales are not only acts of remembrance but also of identity:
-                they acknowledge the sacrifices of those who fell in wars not of their choosing and remind every
-                generation that survival is itself a victory. Their stories speak of impossible battlefields—cities
-                adrift on molten seas, wars waged in the light of dying stars—and of Chernobog himself, not as a distant
-                god, but as a commanding presence who once walked among them. This heritage, rooted in both mythic
-                grandeur and hard-won survival, resections the foundation of their cultural identity.</p>
-        </div>
+        <div class="place-hero__spacer"></div>
     </section>
 
-    <section class="vertical">
+    <!-- PROFILE (left) + OVERVIEW (right) -->
+    <section class="grid-two-wide" id="profile-overview">
+        <aside class="tb-panel" id="profile">
+            <h2 class="tb-title">Profile</h2>
+            <table class="materials-table">
+                <tbody>
+                    <tr>
+                        <th class="tb-kv-key">Average Lifespan</th>
+                        <td>~60 years</td>
+                    </tr>
+                    <tr>
+                        <th class="tb-kv-key">Typical Size</th>
+                        <td>Medium; 5'4" - 6'2"</td>
+                    </tr>
+                    <tr>
+                        <th class="tb-kv-key">Homelands</th>
+                        <td>
+                            Orcs are not native to Skazka.
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="tb-kv-key">Languages</th>
+                        <td>Trade-tongue, Orcish</td>
+                    </tr>
+                    <tr>
+                        <th class="tb-kv-key">Faiths</th>
+                        <td>
+                            Orcs are free to worship who they like, but many still worship<a href="chernabog.html">
+                                Chernabog</a>.
+                        </td>
+                    </tr>
 
-        <div class="tb-panel">
-            <h2 class="tb-title">Motivation</h2>
-            <p>For Orcs, survival and endurance are the greatest victories. Their culture values loyalty over
-                convenience, strength tempered by adaptability, and perseverance in the face of overwhelming odds.
-                Having witnessed the collapse of a world and the death of its sun, Orcs carry with them a profound
-                understanding of impermanence. This perspective fuels their drive to find meaning in new forms of
-                existence, whether as tribal guardians defending their chosen lands or as urban settlers striving for
-                acceptance in foreign societies. Their desires are not limited to conquest or bloodshed; rather, they
-                yearn for purpose, whether that means safeguarding their people, honoring their heritage, or proving
-                their worth in the eyes of others.</p>
-        </div>
+                    <tr>
+                        <th class="tb-kv-key">Temperament</th>
+                        <td>
+                            Proud, Hot tempered, Oathbound
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <img src="assets/orcs.jpg" alt="gnome portrait" class="noborder">
 
-        <div class="tb-panel">
-            <h2 class="tb-title">Integration into Society</h2>
-            <p>Orcs exist in Skazka as both tribal warriors and urban settlers, each path reflecting different
-                approaches to survival. Tribal Orcs live in scattered groups across remote regions, where their
-                territorial instincts can be channeled into protecting rather than conquering land. Their
-                societies
-                sectiontain military hierarchies, but in practice, they often act as guardians of wilderness
-                frontiers,
-                deterring monsters and encroachment alike. Outsiders may misinterpret their directness and
-                comfort with
-                violence as savagery, but within their own culture, these traits are tempered by discipline and
-                an
-                understanding of defense rather than needless aggression.</p>
-            <p>At the same time, a minority of Orcs choose to leave their tribes and integrate into cities,
-                despite
-                facing deep-seated prejudice. These urban Orcs find employment in roles that allow them to
-                contribute
-                while drawing on their natural strengths—guards, builders, guides, and protectors of trade
-                routes. For
-                them, integration is not abandonment of heritage but a conscious adaptation to ensure their
-                people’s
-                survival in a changing world. While they endure mistrust and discrimination, they view these
-                struggles
-                as another battle, one to be met with persistence instead of violence. In doing so, they slowly
-                reshape
-                perceptions, demonstrating that Orcs can be more than soldiers—that they can build, protect, and
-                live
-                alongside others without losing their essence.</p>
-        </div>
+        </aside>
 
+        <article class="tb-panel" id="overview">
+            <h2 class="tb-title">Overview</h2>
+            <p>The Gnomes of Skazka are a people wrapped in mystery, their origins obscured in the mists of history.
+                Unlike Elves, whose ancestry stretches clearly back to ancient lineages, or Dwarves, who can trace their
+                roots to divine design, Gnomes seem to have simply appeared — a quiet people without fanfare, mythic
+                event, or cosmic purpose. This lack of a definitive origin has become part of their identity, shaping
+                them into a race defined less by destiny and more by ingenuity, adaptability, and a relentless drive to
+                improve the world around them. Where others rely on tradition, brute strength, or divine blessing,
+                Gnomes excel through innovation, subtle progress, and the quiet revolution of everyday invention.</p>
+            <p>At the heart of every Gnome lies an insatiable curiosity and an unshakable desire to solve problems. To
+                them, the world is not something to be endured, but a puzzle waiting for solutions. Their smiths design
+                weapons and tools that adapt to conditions, their alchemists brew concoctions that make life safer and
+                easier, and their engineers devise mechanisms that save lives in mines or make simple tasks more
+                efficient. Gnomes are not driven by conquest, wealth, or glory—though these may come as side effects—but
+                by the joy of discovery and the satisfaction of creating something that improves the lives of others.
+                They embody the belief that progress need not come from sacrifice, but from dedication, creativity, and
+                the clever application of knowledge.</p>
+            <p>Gnomes fit seamlessly into the wider fabric of Skazkan society, though always in their own distinctive
+                way. Their underground communities are masterworks of space management and clever engineering, thriving
+                around natural resources and built with astonishing efficiency. Surface settlements, meanwhile, tend to
+                appear in neglected corners of larger towns—areas too cramped or inconvenient for others, which Gnomes
+                transform into vibrant districts filled with workshops, markets, and ingenious innovations. Their
+                culture, unlike many others, values merit above bloodline, with guilds and workshops granting status
+                based on skill and contribution rather than birthright. This meritocracy produces brilliant merchants,
+                teachers, and craftsmen who spread their creations far and wide. Though peaceful by inclination, Gnomes
+                are not defenseless; when threatened, their ingenuity turns to strategy, traps, and tactical warfare. In
+                both war and peace, they prove that progress and survival alike rest on the same
+                foundation—intelligence, creativity, and adaptability.</p>
+        </article>
+    </section>
 
+    <div class="skz-divider skz-divider--diamond" aria-hidden="true"></div>
+
+    <!-- PHYSIOLOGY / CULTURE / FAITH -->
+    <section class="grid-even equal-cards" id="pillars">
+        <article class="tb-panel" id="physiology">
+            <h2 class="tb-title">Physiology & Traits</h2>
+            <p>Orcs are built for hard country and harder fights. Heavy bones carry rangy muscle; shoulders yoke wide,
+                hands like tools. Tusks jut from both sexes—longer and curving in many males, shorter and razor-worn in
+                many females—and jaws hinge with bull-strong bite. Skin runs green to ash-brown and takes scars like
+                script. In the dark they are at home: within sixty feet they read dim light like day and true night as a
+                gray wash—edges crisp even when color drains—so watchfires favor their enemies more than them.</p>
+            <p>When the blood drums, an orc can ignite a sudden burst—call it the battlefield surge, the old Aggressive
+                lunge or Adrenaline Rush that sends them hammering forward before thought. Their frames bear weight like
+                draft beasts—hauling gates, dragging comrades, counting as the next size up when lifting or shoving in
+                many 5e tellings (Powerful Build by another name). None of this is sorcery. It’s marrow and habit:
+                dark-sure eyes, a body that sprints through pain, and leverage enough to move the world a few inches
+                when it matters.</p>
+        </article>
+
+        <article class="tb-panel" id="culture">
+            <h2 class="tb-title">Culture & Society</h2>
+            <p>Orc society centers on the clan—hearth-circles of bonded partners, litter-mates, adoptees, and sworn kin
+                led by a war-mother or elder pair. Status is earned by provision and proof: who brings meat, mends gear,
+                guards the march, and keeps the fire lit. Law is public and proportional—oaths are witnessed, debts
+                repaid by work or blood-price, and guest-right holds once fire is shared. Craft is rugged and
+                modular—reworked steel, layered leather, bent-lam bows, yurts and wagon rigs—because orcs expect to move
+                and fight soon after.</p>
+            <p>Culture prizes simple virtues: feed the young, honor the fallen, waste nothing, mistake neither cruelty
+                for strength nor talk for deed. Leaders blend muscle with measure; scouts and quartermasters rise on
+                endurance and calm, shock captains on nerve and surge. Markets bloom after campaigns to turn loot into
+                tools at the weigh-stone. Faith is practical—ancestors at the cookfire, wind named at crossings,
+                war-spirits thanked with trophies. In peace they trade labor and salvage; in war they move like
+                weather—and always count who carried what home.</p>
+        </article>
+
+        <article class="tb-panel" id="faith">
+            <h2 class="tb-title">Faith & Myth</h2>
+            <p>Orc faith is portable and workmanlike—ancestor tokens at the cookfire, wind-names at crossings,
+                war-spirits thanked with trophies—but its spine is Chernabog, who forged the orcs for war and brought
+                them to Skazka. That origin is not a shame but a charter: be the blade that chooses its cut. Shamans
+                teach that every raid, oath, and mercy echoes the First March when the Black God set them down with
+                purpose. Offerings are plain—black fat on coals, a broken spear, a vow spoken before witnesses—because
+                Chernabog cares for paid costs, not pretty words.</p>
+            <p>Myths are short and cutting: the Chain Turned Back, the Night of Two Moons, the Lesson of the Quiet
+                Shield. Each hammers home his demands—no boast you won’t pay for, no kill without need, no oath carried
+                lightly. Orcs don’t beg him for miracles; they bargain: “balance this debt and we’ll carry the weight.”
+                In return they claim his charge—fight clean, end feuds, protect the young, and leave the field with
+                accounts settled—still the people he made for war, but war steered by duty rather than cruelty.</p>
+        </article>
+    </section>
+
+    <div class="skz-divider skz-divider--diamond" aria-hidden="true"></div>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="grid-four">
+        <article class="tb-panel">
+            <img src="assets/orc_barbarian.jpg" alt="shadow elf" class="noborder">
+
+            <h3 class="tb-title">Orc barbarian</h3>
+        </article>
+        <article class="tb-panel">
+            <img src="assets/orc_priest.jpg" alt="wood elf" class="noborder">
+
+            <h3 class="tb-title">Orc priest</h3>
+        </article>
+        <article class="tb-panel">
+            <img src="assets/orc_war_mother.jpg" alt="sun elf" class="noborder">
+
+            <h3 class="tb-title">Half orc</h3>
+        </article>
     </section>
 
     <div id="footer"></div>
-
-
-
 </body>
 
 </html>

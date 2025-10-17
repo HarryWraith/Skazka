@@ -1,94 +1,173 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <!-- Standard Skazka head (no inline CSS) -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>Skazka - aeter</title>
+    <title>Skazka — Blacksong Goblins</title>
     <link rel="stylesheet" href="navbar.css?v=3">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="assets/skazka_logo.png">
+    <link rel="icon" href="assets/skazka_logo.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
     <script src="navbar.js?v=3"></script>
     <script type="module" src="./main.js"></script>
-
 </head>
 
 <body>
-    <div id="navbar"></div><!-- Navbar will be loaded here -->
+    <div id="navbar"></div>
+    <!-- HERO -->
+    <section class="place-hero" id="hero">
+        <div class="place-hero__icon">
+            <img alt="a gnome sigil" src="assets/icons/species/goblin_sigil.jpg">
 
-    <!-- section Content Area -->
-    <section class="grid-container">
-        <div class=" tb-panel">
-            <h2 class="tb-title">Physical Description</h2>
-            <p>Blacksong Goblins are strikingly pale—skin as ghostly as swamp fog—and their eyes glow a vivid, unnerving
-                red, like crimson coals against white snow. Their wiry frames lend themselves to stealth and agility,
-                but don’t let their lean forms deceive you: in combat, they move with deadly speed and uncanny
-                precision. Their contrast—white flesh, red gaze—often unnerves outsiders, reinforcing their reputation
-                as spectral hunters born of dark superstition.</p>
         </div>
+        <div class="place-hero__body">
+            <h1 class="skz-viking">Blacksong Goblins</h1>
+            <p>River-born, spirit-bound</p>
+        </div>
+        <div class="place-hero__spacer"></div>
+    </section>
 
-        <div class="center-column">
-            <img src="assets/bsgoblin.jpg" alt="">
+    <!-- PROFILE (left) + OVERVIEW (right) -->
+    <section class="grid-two-wide" id="profile-overview">
+        <aside class="tb-panel" id="profile">
+            <h2 class="tb-title">Profile</h2>
+            <table class="materials-table">
+                <tbody>
+                    <tr>
+                        <th class="tb-kv-key">Average Lifespan</th>
+                        <td>40 years</td>
+                    </tr>
+                    <tr>
+                        <th class="tb-kv-key">Typical Size</th>
+                        <td>Small; 3-4'</td>
+                    </tr>
+                    <tr>
+                        <th class="tb-kv-key">Homelands</th>
+                        <td>
+                            Forests and swamps along the Blacksong River</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="tb-kv-key">Languages</th>
+                        <td>Trade-tongue, Goblin</td>
+                    </tr>
+                    <tr>
+                        <th class="tb-kv-key">Faiths</th>
+                        <td>
+                            Blacksong Goblins worship fog-wights and other local spirits, although there is a growing
+                            number who follow The Hags..
+                        </td>
+                    </tr>
 
-            <p>In the wetland-forest expanse surrounding the Blacksong River, a mysterious and ancient tribe has
+                    <tr>
+                        <th class="tb-kv-key">Temperament</th>
+                        <td>
+                            Wary, cunning, territorial.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <img src="assets/bsgoblin.jpg" alt="gnome portrait" class="noborder">
+
+        </aside>
+
+        <article class="tb-panel" id="overview">
+            <h2 class="tb-title">Overview</h2>
+
+            <p>
+                In the wetland-forest expanse surrounding the Blacksong River, a mysterious and ancient tribe has
                 emerged—known simply as the Blacksong Goblins. Appearing nearly a millennium ago, their origins are
                 whispered in fearful superstition: some say they rose from the river’s black depths, others believe they
                 slipped through the fragile Veil between realms. Though no records chronicle their arrival, they swiftly
                 established themselves as a warlike and insular people—proud of their isolation and guardians of arcane
-                taboos.</p>
-
-        </div>
-
-        <div class="tb-panel">
-            <h2 class="tb-title">Heritage</h2>
-            <p>They are neither elf nor common goblin: the Blacksong Goblins seemingly sprang into being about 1,000
-                years ago. Legends hold that they were formed as a spiritual response to the land’s mourning:
-                manifestations of the river’s ancient grief, or spirits trapped between planes drawn into mortal form by
-                cosmic disruption.</p>
-        </div>
-    </section>
-
-    <section class="vertical">
-
-        <div class="tb-panel">
-            <h2 class="tb-title">Motivation</h2>
-            <p>Driven by a primal need to survive and resection unseen, the Blacksong Goblins are deeply spiritual and
+                taboos.
+            </p>
+            <p>
+                Driven by a primal need to survive and resection unseen, the Blacksong Goblins are deeply spiritual and
                 superstitious. Magic is antithetical to them—regarded as a corrupter of the soul. Their leaders—whether
                 revered shamans or fearsome warriors—preach caution, even outright fear, toward sorcery. Instead, they
                 place faith in ancestral rites, charms woven from swamp reeds, and the communion with spirits believed
                 to inhabit the river’s eddies and fog-laden groves. Their motivations are simple: preserve the purity of
                 their tribe, uphold traditions, guard against the corrupting lure of magic, and resection masters of
-                their
-                eerie realm.</p>
-        </div>
-        <div class="tb-panel">
-            <h2 class="tb-title">Integration into Society</h2>
-            <p>The Blacksong Goblins resection fiercely territorial, rarely forging alliances or mingling with
-                outsiders.
-                Tribes cluster along the river’s marshy banks, each governed by a chieftain who is either a potent
-                shaman or a legendary warrior. These leaders mediate tribal actions through visions from the spirit
-                world or bloody feats of strength.</p>
-
-            <p>Though they seldom trade goods or share their customs, they sectiontain an uneasy balance with
-                neighbouring
-                peoples—through grudging compacts or silent mutual avoidance. Those who trespass risk swift retribution.
-                Even so, some outsiders sometimes glimpse them riding through mist, worg companions at their side:
-                warg-like beasts trained for hunt and war, fierce partners as much spiritual bonds as tools of violence.
+                their eerie realm.
             </p>
-        </div>
-
-
+            <p>
+                The Blacksong Goblins resection fiercely territorial, rarely forging alliances or mingling with
+                outsiders. Tribes cluster along the river’s marshy banks, each governed by a chieftain who is either a
+                potent shaman or a legendary warrior. These leaders mediate tribal actions through visions from the
+                spirit world or bloody feats of strength.
+            </p>
+            <p>
+                Though they seldom trade goods or share their customs, they sectiontain an uneasy balance with
+                neighbouring peoples—through grudging compacts or silent mutual avoidance. Those who trespass risk swift
+                retribution. Even so, some outsiders sometimes glimpse them riding through mist, worg companions at
+                their side: warg-like beasts trained for hunt and war, fierce partners as much spiritual bonds as tools
+                of violence.
+            </p>
+        </article>
     </section>
 
+    <div class="skz-divider skz-divider--diamond" aria-hidden="true"></div>
+
+    <section class="grid-even equal-cards" id="pillars">
+        <article class="tb-panel" id="physiology">
+            <h2 class="tb-title">Physiology & Traits</h2>
+            <p>Blacksong goblins are Small—wiry, whipcord muscle packed into 3–4 feet of quick leverage—built for swamps
+                and reed-choked banks. Skin runs mottled olive-gray with a damp sheen; ghost-pale eyes reflect like a
+                frog’s at night, giving keen low-light vision but a squint in glare. Ears are big and blade-thin,
+                catching the slap of oars or a worg’s breath; noses sort rot from river-fresh in a heartbeat. Long
+                forearms, splayed calloused feet, and hooky nails make them sure on mud, roots, and rotting planks, and
+                their guts shrug bad water and carrion better than most. In motion they’re all burst and vanish—slipping
+                grips, ducking reeds, and melting into shadow—with hands made for traps, knots, and quick theft. In 5e
+                terms, think sharp Darkvision, a knack for Disengage/Hide on the move, and ambush grit akin to Fury of
+                the Small—physiology and habit tuned to survive where the river swallows the unwary.</p>
+        </article>
+
+        <article class="tb-panel" id="culture">
+            <h2 class="tb-title">Culture & Society</h2>
+            <p>Blacksong goblins organize by water: reed-villages and raft-clans strung along cutbanks, each ruled by a
+                shaman and a clutch of trap-masters. Law is practical—territory, tolls, and taboos—with trespass paid in
+                fish, tools, or labor instead of blood if talks hold. They prize cunning over cruelty: woven deadfalls,
+                cord snares, signal whistles, and mud-ink marks that read like maps to those who know them. Trade is sly
+                but steady—salt fish, reeds, pitch, and swamp cures—bartered for iron scraps, dyes, and needles;
+                guest-right on the water is sacred so long as oars stay low and lamps stay hooded.</p>
+            <p>Faith is river and ancestor first: offerings sink with the tide, names are rung on shell strings, and
+                bright bonfires are taboo (they “call the hungry”). Magic is distrusted; hedge rites and bargains with
+                worg totems or bank-spirits are common, but showy sorcery draws arrows. Children learn by mimicry and
+                dare—first snare, first night ferry, first reed-mask—and adulthood is claimed with a silent crossing
+                past a rival dock. Outsiders see thieves; they see keepers of the margins, wary, cunning, and fiercely
+                territorial, surviving by pact and patience where the river eats the unwary.</p>
+        </article>
+
+        <article class="tb-panel" id="faith">
+            <h2 class="tb-title">Faith & Myth</h2>
+            <p>Blacksong goblin faith is river-first, god-last: they honor the Blacksong itself as a living will, along
+                with bank-spirits, fog-wights, and ancestor shades who “ride the current” back to advise the clan. Myths
+                tell that, after Starfall, the River drank moonlight and gifted goblins their ghost-pale eyes to see in
+                reed-shadow; in return, they swore three taboos—no great bonfires (which “call the hungry”), no metal
+                cast into running water, and no oath spoken on a rising flood. Rites are small and practical:
+                shell-strings rattled for names, reed masks worn to bargain with worg totems, fish-grease lamps set
+                adrift as questions to the current. They distrust showy sorcery, favoring hedge charms and pact-signs;
+                good omens are a gull that lands twice, a lamp that returns upstream, or a snag that releases at a
+                whispered name.</p>
+        </article>
+
+    </section>
+    <section class="grid-single">
+        <div>
+            <div class="skz-divider skz-divider--diamond" aria-hidden="true"></div>
+        </div>
+        <div class="tb-panel">
+            <img src="assets/blacksong village.jpg" alt="">
+            <h2 class="tb-title">Blacksong Goblin river village</h2>
+        </div>
+    </section>
 
     <div id="footer"></div>
-
-
-
 </body>
 
 </html>
