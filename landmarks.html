@@ -1,0 +1,65 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+        <title>Ruins of Velkaria</title>
+        <link rel="stylesheet" href="navbar.css?v=3">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" type="image/png" href="assets/skazka_logo.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+        <script src="navbar.js?v=3"></script>
+        <script type="module" src="./main.js"></script>
+
+</head>
+
+<body>
+        <div id="navbar"></div><!-- Navbar will be loaded here -->
+
+        <section class="place-hero">
+                <div class="place-hero__icon">
+                        <img src="assets/icons/places.jpg" alt="Landmarks icon">
+                </div>
+                <div class="place-hero__body">
+                        <h1 class="skz-viking">Landmarks of Skazka</h1>
+                        <p class="sub">A catalogue of notable sites across the realms</p>
+                </div>
+                <div class="place-hero__spacer"></div>
+        </section>
+
+        <!-- LANDMARKS GRID -->
+        <section id="landmarks" class="grid-even equal-cards">
+                <article class="tb-panel">
+                        <img src="assets/zs.jpg" alt="Landmark image">
+                        <h3 class="tb-title">Zhal’Shaar</h3>
+                        <p>In the region where the great city of Velkaria once stood now roars a raging sandstorm that
+                                strips the flesh from any who trespass. Nobody knowss if Velkaria still
+                                exists beyond this tempest of sand. </p>
+                        <p class="small muted">Rumours say the local tribes have passages that run under the storm.</p>
+                </article>
+
+                <article class="tb-panel">
+                        <img src="assets/gladd_dunes.jpg" alt="Landmark image">
+                        <h3 class="tb-title">Glass Dunes</h3>
+                        <p>In eastern Kiajistan there is a region of desert that was the site of a magical battle so
+                                intense that it turned the sand to black glass. In 696 The Battle of the Dunes took
+                                place between opposing forces in first open battle of The Shadow War. Five hundred
+                                wizards and sorcorers through magic at each other for two days straight. It is rumoured
+                                both sides searched for an artefact.</p>
+                        <p class="small muted">The surface is so smooth here that it can take a whole day to move just a
+                                mile.</p>
+                </article>
+
+
+        </section>
+
+        <div id="footer"></div>
+
+</body>
+
+
+</html>

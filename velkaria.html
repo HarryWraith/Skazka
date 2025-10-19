@@ -1,0 +1,193 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+        <title>Ruins of Velkaria</title>
+        <link rel="stylesheet" href="navbar.css?v=3">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" type="image/png" href="assets/skazka_logo.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+        <script src="navbar.js?v=3"></script>
+        <script type="module" src="./main.js"></script>
+
+</head>
+
+<body>
+        <div id="navbar"></div><!-- Navbar will be loaded here -->
+
+        <section class="place-hero">
+                <div class="place-hero__icon">
+                        <img src="assets/icons/ruins.svg" alt="Ruins icon">
+                </div>
+                <div class="place-hero__body">
+                        <h1 class="skz-viking">Ruins of Velkaria</h1>
+                        <p class="sub">Diamond of Old Kaijistan</p>
+                </div>
+                <div class="place-hero__spacer"></div>
+        </section>
+
+        <!-- MAIN GRID (Sidebar profile + Overview & core prose) -->
+        <main class="grid-two-wide">
+                <!-- Sidebar: Profile -->
+                <aside class="tb-panel" aria-labelledby="profile-title">
+                        <h2 id="profile-title" class="tb-title skz-title">Profile</h2>
+
+                        <table class="materials-table">
+                                <tbody>
+                                        <tr class="tr-left">
+                                                <td><strong>Region</strong></td>
+                                                <td>Kaijistan</td>
+                                        </tr>
+                                        <tr class="tr-left">
+                                                <td><strong>Founded</strong></td>
+                                                <td>~ - 8500</td>
+                                        </tr>
+                                        <tr class="tr-left">
+                                                <td><strong>Origin</strong></td>
+                                                <td>Capital city of Kaijistan</td>
+                                        </tr>
+                                        <tr class="tr-left">
+                                                <td><strong>Environment</strong></td>
+                                                <td>Unknow; suspected to lie beyond Zhal’Shaar</td>
+                                        </tr>
+                                        <tr class="tr-left">
+                                                <td><strong>Threat Level</strong></td>
+                                                <td>High; the sandstorms of Zhal’Shaar will strip the flesh from a man
+                                                </td>
+                                        </tr>
+                                        <tr class="tr-left">
+                                                <td><strong>Known Denizens</strong></td>
+                                                <td>Local nomadic tribes</td>
+                                        </tr>
+                                        <tr class="tr-left">
+                                                <td><strong>Access</strong></td>
+                                                <td>Unknown - beyond Zhal’Shaar</td>
+                                        </tr>
+                                        <tr class="tr-left">
+                                                <td><strong>Superstitions</strong></td>
+                                                <td>Local nomad tribes believe the place is cursed and won't touch any
+                                                        relics removed from the ruins</td>
+                                        </tr>
+                                </tbody>
+                        </table>
+                </aside>
+
+                <!-- Main article -->
+                <section class="tb-panel">
+                        <img class="noborder" src="assets/velkaria_diamond.jpg"
+                                alt="Sand-choked ruins at a dry river bed">
+                        <h2 id="overview" class="tb-title">Overview</h2>
+                        <p>Once the radiant heart of Old Kaijistan’s trade empires and counting-houses, Velkaria is now
+                                a buried legend—“death or a diamond, often both.” Tribes whisper it lies somewhere
+                                beneath the Sandsea of Zhal’Shaar, near black-glass deserts scorched by the
+                                sorcerer-kings’ last weapons, its aquifer roads watched by eyeless spirits.</p>
+
+                        <h3 class="tb-title">Origin, Decline &amp; Current state</h3>
+                        <p><strong>Origin</strong>: Velkaria began as the glittering capital of Old Kaijistan, raised by
+                                merchant-princes and their sorcerer-king patrons atop the Aquifers of Kaelir, where
+                                control of deep water made trade and counting-houses flourish beneath the dunes. Its
+                                guilds paved plazas in rune-cut stone and ringed the vaults with oath-wards, while
+                                subterranean ledgers and training halls spread under the banking quarter—birthplace of
+                                figures like Mortifer, “born beneath the counting-houses of Velkaria.”
+                        </p>
+                        <p><strong>Decline</strong>: Velkaria fell when the demons simply stopped holding back the
+                                desert they’d once restrained for the king’s bargain. The winds returned, the dunes
+                                marched, and the Sandsea poured through broken passes, choking plazas and
+                                counting-houses in silt. Aquifer stairs led only to packed grit and dry wells; cistern
+                                vaults collapsed under the weight of drifting stone. Oath-wards didn’t shatter—they were
+                                smothered, their sigils buried layer by layer until even their glow could not breathe.
+                                Caravans vanished on routes that changed by the hour, and the last survivors walked out
+                                under red skies as Velkaria was swallowed whole, lost not to fire or siege but to the
+                                patient appetite of the desert.</p>
+                        <p><strong>Current state</strong>: Not seen for at least a thousand years. It is impossible to
+                                know what state the ruins are in.</p>
+
+                        <!-- Places of Note (lead card list) -->
+                        <h2 class="tb-title" id="places">Places of Note</h2>
+                        <div class="grid-even equal-cards">
+                                <article class="tb-panel">
+                                        <h3 class="tb-title skz-title">The Ledger Quarter</h3>
+                                        <p>Collapsed basilicas of trade with calcified ledgers and vault doors fused by
+                                                heat; the under-cellars are a maze where Mortifer’s ilk once learned the
+                                                art of silence.</p>
+                                </article>
+                                <article class="tb-panel">
+                                        <h3 class="tb-title skz-title">Kaelir Gate & Cistern Steps:</h3>
+                                        <p>A sunken processional stair that once descended to the Aquifers of Kaelir;
+                                                mineral rings mark ancient water levels and ghost-cold drafts carry
+                                                distant footfalls.</p>
+                                </article>
+                                <article class="tb-panel">
+                                        <h3 class="tb-title skz-title">The Sorcerer-Kings’ Vaultmouth:</h3>
+                                        <p>A half-sealed tunnel glazed into black glass, its lips still warm on dry
+                                                season nights; ward sigils lurk beneath the sheen.</p>
+                                </article>
+
+
+                        </div>
+                </section>
+        </main>
+
+        <!-- DIVIDER -->
+        <div class="skz-divider skz-divider--diamond" aria-hidden="true"></div>
+
+        <!-- OPTIONAL: ADVENTURE HOOKS -->
+        <section class="grid-even equal-cards">
+                <article class="tb-panel">
+                        <h3 class="tb-title skz-title">Rumours</h3>
+                        <ul>
+                                <li>“Find Velkaria and you find death or a diamond.” Caravan lore marks three “shadow
+                                        rivers” in the dunes that converge at new moon—follow them to the gates.</li>
+                                <li>The eyeless spirits of Kaelir drown trespassers without water; only those who return
+                                        a stolen relic may pass unfollowed.</li>
+                                <li>Rumour: In the cistern depths, an Eyeless Auditor paces by the rattle of abacus
+                                        beads on bone; it tallies trespassers like ledgers, and those found “in arrears”
+                                        begin coughing dry sand until their lungs balance to zero.</li>
+
+
+                        </ul>
+                </article>
+                <article class="tb-panel">
+                        <h3 class="tb-title skz-title">Loot myth</h3>
+                        <ul>
+                                <li>The Last Ledger of Velkaria: a calcified account book that tallies truths; when you
+                                        speak a claim while touching it, falsehoods bleed as red ink only you can see.
+                                        (Said to be from the counting-houses.)</li>
+                                <li>Heart of Kaelir: a fist-sized diamond grown around a water-spirit’s tear; once per
+                                        day, pour it into a bowl and it becomes pure water for an hour.</li>
+                                <li>Seal of the Sorcerer-Kings: a black-glass signet that can “glaze” stone into
+                                        temporary armor or fuse doors shut; too much use risks vitrifying the bearer’s
+                                        fingertips.</li>
+                                <li>Mortifer’s Quiet Knife: an accountant’s slim stiletto engraved with tally marks;
+                                        once per long rest, a struck target cannot cry out or make verbal components for
+                                        1 round. (Origin story ties to Velkaria’s under-city.)</li>
+
+                        </ul>
+                </article>
+
+                <article class="tb-panel">
+                        <h3 class="tb-title skz-title">Dangers</h3>
+                        <ul>
+                                <li>Cursed storms of Zhal’Shaar erase tracks, uncovering and re-burying entrances within
+                                        hours.</li>
+                                <li>Aquifer hauntings: pale, eyeless guardians near water; chill auras, drowning dreams,
+                                        possession attempts.</li>
+                                <li>Residual wards of the sorcerer-kings—heat-fused corridors, glass-sealed glyphs, and
+                                        vault-runes that punish thieves.</li>
+                                <li>Urban predators: ruin-adders and glass-scarabs drawn to ember-heat under the dunes
+                                        (common in Old Kaijistan ruins).</li>
+
+                        </ul>
+                </article>
+        </section>
+
+        <div id="footer"></div>
+
+</body>
+
+</html>

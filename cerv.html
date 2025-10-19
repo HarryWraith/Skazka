@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+        <title>Skazka — Cerv Dominion</title>
+
+        <link rel="stylesheet" href="navbar.css?v=3">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" href="assets/skazka_logo.png" type="image/png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+
+        <script src="navbar.js?v=3"></script>
+        <script type="module" src="./main.js"></script>
+</head>
+
+<body>
+        <!-- Navbar injected by main.js -->
+        <div id="navbar"></div>
+        <!-- ===== HERO (uses your .page-hero) ===== -->
+        <section class="place-hero">
+                <div class="place-hero__icon">
+                        <img src="assets/cerv_banner.jpg" alt="Cerv Dominion crest">
+                </div>
+                <div class="place-hero__body">
+                        <h1 class="skz-viking">Cerv Dominion</h1>
+                        <p class="skz-quote-attribution">“Under stone, one law—spoken in scent, kept in silence.”</p>
+                </div>
+                <!-- spacer balances the icon so text stays truly centered -->
+                <div class="place-hero__spacer" aria-hidden="true"></div>
+        </section>
+
+        <!-- ===== BODY: 30 / 70 (left profile, right lore) ===== -->
+        <section class="grid-two-wide">
+                <!-- LEFT: PROFILE (narrow) -->
+                <aside class="tb-panel">
+                        <h2 class="tb-title">Profile</h2>
+                        <table class="materials-table">
+                                <tbody>
+                                        <tr>
+                                                <th>Government</th>
+                                                <td>Brood-Monarchy</td>
+                                        </tr>
+                                        <tr>
+                                                <th>Capital</th>
+                                                <td>Broodwell Basilica</td>
+                                        </tr>
+                                        <tr>
+                                                <th>Ruler</th>
+                                                <td>Her Sublime Mandate, the Queen of the Cerv</td>
+                                        </tr>
+                                        <tr>
+                                                <th>Population</th>
+                                                <td>Unknown; the Swarm-Bound clades</td>
+                                        </tr>
+                                        <tr>
+                                                <th>Dominant Faith</th>
+                                                <td>The Cerv view their queen as a goddessa</td>
+                                        </tr>
+                                        <tr>
+                                                <th>Military</th>
+                                                <td>Formicarii phalanxes; Vesprial shockwings; Carabid shieldbearers
+                                                </td>
+                                        </tr>
+                                        <tr>
+                                                <th>Terrain</th>
+                                                <td>Fungus gardens; resin spires; black chasms; acid falls</td>
+                                        </tr>
+                                        <tr>
+                                                <th>Exports</th>
+                                                <td>Acid vials; biolume pearls; silk-chitin lamellar</td>
+                                        </tr>
+                                        <tr>
+                                                <th>Languages</th>
+                                                <td>Truescent (pheromone) &amp; Tremorsong; broken Trade Tongue</td>
+                                        </tr>
+                                </tbody>
+                        </table>
+                        <img src="assets/cerv_queen.jpg" alt="">
+                        <p>The Cerv Queen</p>
+                </aside>
+
+                <!-- RIGHT: LORE (wide) -->
+                <article class="tb-panel">
+                        <img class="noborder" src="assets/cerv_overview.jpg" alt="Cerv Dominion under-realm">
+                        <h2 id="overview" class="tb-title" style="margin-top:10px">Overview</h2>
+                        <p>The Cerv Dominion is a compact under-realm where caverns ring like drums and law travels on
+                                the air itself.
+                                Sapient insect clades—ants, beetles, mantids, hornets and their silk-spinning
+                                allies—live as one polity beneath
+                                a single brood-queen. Their cities are grown more than built: resin towers veined with
+                                amber, bridges braided
+                                from silk and chitin, and halls tuned to carry the soft hum of command.</p>
+                        <p>All things are ordered by the <em>Mandate</em>, a pheromonal sovereignty that binds oath and
+                                ration, tribute
+                                and truce. Truth has a smell, perjury a taint. Outsiders are “solitaries” and receive
+                                chaperoned paths marked
+                                by scent-beacons and tremor-stones; hospitality is exact, gifts weighed against stores
+                                and wintering brood.</p>
+                        <p>To the Cerv, memory is harvest. Ancestors are sealed in amber reliquaries and consulted in
+                                ritual clicks and
+                                vibrations. War is geometry—hex phalanxes in narrow throats, vespid dives in vaulted
+                                chambers—swift, precise,
+                                and finished before echoes settle. Those who keep their word will find the Dominion
+                                alien but navigable; those
+                                who break it will learn how quickly silk can become a shroud.</p>
+                        <p>Not all is as it appears. Much of Cerv is alien - from its peoples to the structures, but
+                                visitors to this place cannot help but conclude much of the kingdom was built long ago
+                                and that the Cerv have merely redecorated. This place was made by hands that could not
+                                have been insectoid. Signs of an ancient civilisation are everywhere yet there is no
+                                documented hisotry. Who or what built this place?</p>
+
+                        <!-- 3-up quick blocks -->
+                        <div class="grid-even equal-cards">
+                                <article class="tb-panel">
+                                        <h3 class="tb-title" id="cities-factions">Warrens &amp; Hives</h3>
+                                        <ul>
+                                                <li><strong>Resin Crown</strong> — royal district of amber spires and
+                                                        the Queen’s choir-organs.</li>
+                                                <li><strong>Silk Span Quarter</strong> — bridges and wind-harps over the
+                                                        Black Chasm.</li>
+                                                <li><strong>Amber Ledger</strong> — store-vaults, ration halls, and
+                                                        scent-scribe cloisters.</li>
+                                        </ul>
+                                </article>
+                                <article class="tb-panel">
+                                        <h3 class="tb-title">Factions & Orders</h3>
+                                        <ul>
+                                                <li><strong>Resinwrights</strong> — termite-kin architects who cast
+                                                        living walls.</li>
+                                                <li><strong>Silkwrights</strong> — spider allies weaving bridges, veils,
+                                                        and war-nets.</li>
+                                                <li><strong>Pincers of War</strong> — Formicarii and Vesprial commanders
+                                                        of the Mandate.</li>
+                                        </ul>
+                                </article>
+                                <article class="tb-panel">
+                                        <blockquote>“A kept oath sweetens the air.”</blockquote>
+                                        <p class="skz-quote-attribution">— Cerv proverb, taught to solitaries</p>
+                                </article>
+                        </div>
+
+                        <!-- 2-up (70/30 feel inside the wide column) -->
+                        <div class="grid-two">
+
+                                <article class="tb-panel">
+                                        <h3 class="tb-title" id="economy">Economy & Trade</h3>
+                                        <ul>
+                                                <li>Rare, formal exchanges: acid ampoules, biolume pearls, silk-chitin
+                                                        armor for iron, salt, grain.</li>
+                                                <li>Markets hum in warm resin halls; tools cure while bargains are
+                                                        struck and scented.</li>
+                                        </ul>
+                                </article>
+                                <article class="tb-panel">
+                                        <h3 class="tb-title" id="threats">Rumours &amp; hooks</h3>
+                                        <ul>
+                                                <li>A counterfeit <em>Mandate</em> (false scent) spreads in the Resin
+                                                        Bazaar.</li>
+                                                <li>Three royal pupae quicken; rival clades court the future.</li>
+                                                <li>Silk Span sings at night—some say the bridges remember footsteps.
+                                                </li>
+                                        </ul>
+                                </article>
+                        </div>
+                </article>
+        </section>
+        <div class="skz-divider skz-divider--diamond" aria-hidden="true"></div>
+        <!-- ===== LANDMARKS (cards grid) ===== -->
+        <section id="landmarks" class="grid-even equal-cards">
+                <article class="tb-panel">
+                        <h2 class="tb-title">Places of Note</h2>
+                        <img class="noborder" src="assets/landmark.jpg" alt="">
+                </article>
+
+                <article class="tb-panel">
+                        <img src="assets/cerv_amber_spires.jpg" alt="Amber Spire">
+                        <h3 class="tb-title">The Amber Spire</h3>
+                        <p>A translucent resin tower veined with ancient inclusions. Within are sealed scent-relics—
+                                the Dominion’s memory distilled and kept for counsel.</p>
+                </article>
+
+                <article class="tb-panel">
+                        <img src="assets/cerv_broodwell.png" alt="Broodwell Basilica">
+                        <h3 class="tb-title">The Broodwell Basilica</h3>
+                        <p>A living vault of silk veils and tremor-organs where the Queen resides. Commands here are
+                                sung
+                                through stone and bone.</p>
+                </article>
+
+                <article class="tb-panel">
+                        <img src="assets/cerv_silk_span.jpg" alt="Silk Span">
+                        <h3 class="tb-title">The Silk Span</h3>
+                        <p>Suspension bridges stretched across a black chasm, lined with wind-harps. The cords thrumm
+                                warnings long before danger walks.</p>
+                </article>
+
+                <article class="tb-panel">
+                        <img src="assets/cerv_acid_falls.jpg" alt="Acid Falls">
+                        <h3 class="tb-title">The Acid Falls</h3>
+                        <p>Mineral cascades diverted into amber-rimmed vats. The Vitreol Keepers guard the flow that
+                                feeds
+                                craft and war.</p>
+                </article>
+
+                <article class="tb-panel">
+                        <img src="assets/cerv_bone_garden.jpg" alt="Bone-Gardens">
+                        <h3 class="tb-title">The Bone-Gardens</h3>
+                        <p>Ossuaries mulched with fungus-moss where names are sung as tremor hymns. The air is sweet
+                                with
+                                cedar resin.</p>
+                </article>
+
+                <article class="tb-panel">
+                        <img src="assets/cerv_chittergate.jpg" alt="Chittergate">
+                        <h3 class="tb-title">Chittergate</h3>
+                        <p>A portcullis of interlocking mandibles that opens with a choir of clicks. Beyond lies a maze
+                                of
+                                switchback tunnels and scent-beacons.</p>
+                </article>
+
+        </section>
+
+        <!-- Footer injected by main.js -->
+        <div id="footer"></div>
+</body>
+
+</html>

@@ -1,10 +1,11 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>Search • Skazka</title>
+    <title>Ruins of Velkaria</title>
     <link rel="stylesheet" href="navbar.css?v=3">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="assets/skazka_logo.png">
@@ -19,74 +20,144 @@
 <body>
     <div id="navbar"></div><!-- Navbar will be loaded here -->
 
-
-    <section class="grid-container">
-        <div></div>
+    <section class="place-hero">
+        <div class="place-hero__icon">
+            <img src="assets/icons/ruins.svg" alt="Ruins icon">
         </div>
-
-        <div class="center-column">
-
-            <h2 class="tb-title">Today</h2>
-            <p>Now, Grimspire is a haunted husk, its halls inhabited by restless, frostbitten spirits and strewn
-                with
-                frozen wealth. Icethorn’s progeny say she yet roosts atop shattered towers, guardian in grief. And
-                some
-                say the Dark Walkers endure—eternal shadows bound to honor, borne by magic and sorrow.</p>
-
-            The Frost-Veined Gate
-            The granite threshold of Grimspire’s lower courtyard, its carvings etched with runes of oath and
-            betrayal.
-            Frost pulses from the stone at dusk, as if the citadel itself breathes.
-
-            The Dark Walker’s Watch
-            A hidden watchtower carved into the rock, where spectral blades still glimmer in moonlight. Said to be
-            where
-            the Dark Walkers last stood guard, refusing the hunt.
-
-            Icethorn’s Nesting Perch
-            High among the crumbled battlements lies a spiraled tower where Icethorn is said to brood, her
-            silhouette
-            seen against pale moonlight, sorrow or vengeance in her gaze.
-
-            The Egg Chamber
-            A frozen crypt deep inside the citadel, where shattered eggshells and frost-encrusted treasures—stolen
-            but
-            cursed—lie as silent witnesses to that fateful hunt.
-
-            The Ghost Market
-            Once Grimspire’s trading square, now a spectral visage of commerce: phantom traders with intangible
-            wares.
-            Few dare linger, but some claim they’ve traded with lingering spirits for forbidden knowledge.
-
-            Winter’s Root
-            Far below, this labyrinth of mining tunnels connects Winter to Grimspire’s old foundations. It serves as
-            a
-            refuge for smugglers bringing out artifacts—or bones—though even these tunnels grow colder and more
-            restless
-            the deeper one goes.
-
+        <div class="place-hero__body">
+            <h1 class="skz-viking">Ruins of Grimspire</h1>
+            <p class="sub">Winter’s fallen citadel</p>
         </div>
-
-        <div class="right-column">
-        </div>
+        <div class="place-hero__spacer"></div>
     </section>
 
-    <section class="grid-even"><!-- 3 COLUMN EVEN -->
-        <div>
-        </div>
+    <!-- MAIN GRID (Sidebar profile + Overview & core prose) -->
+    <main class="grid-two-wide">
+        <!-- Sidebar: Profile -->
+        <aside class="tb-panel" aria-labelledby="profile-title">
+            <h2 id="profile-title" class="tb-title skz-title">Profile</h2>
 
-        <div>
-        </div>
+            <table class="materials-table">
+                <tbody>
+                    <tr class="tr-left">
+                        <td><strong>Region</strong></td>
+                        <td>Winter (north of the River Horn)</td>
+                    </tr>
+                    <tr class="tr-left">
+                        <td><strong>Founded</strong></td>
+                        <td>12</td>
+                    </tr>
+                    <tr class="tr-left">
+                        <td><strong>Origin</strong></td>
+                        <td>Mountain citadel and trade keep</td>
+                    </tr>
+                    <tr class="tr-left">
+                        <td><strong>Environment</strong></td>
+                        <td>High alpine; perpetual frost and gale exposure</td>
+                    </tr>
+                    <tr class="tr-left">
+                        <td><strong>Threat Level</strong></td>
+                        <td>Very high (curse, undead, dragon sign)</td>
+                    </tr>
+                    <tr class="tr-left">
+                        <td><strong>Known Denizens</strong></td>
+                        <td>Frostbitten spirits; rumoured Dark Walkers; Icethorn’s brood</td>
+                    </tr>
+                    <tr class="tr-left">
+                        <td><strong>Access</strong></td>
+                        <td>Ice paths from Winter; via Winter’s Root mine tunnels</td>
+                    </tr>
+                    <tr class="tr-left">
+                        <td><strong>Superstitions</strong></td>
+                        <td>“Fire dies at Grimspire; oaths freeze and break.”</td>
+                    </tr>
+                </tbody>
+            </table>
+        </aside>
 
-        <div>
-        </div>
+        <!-- Main article -->
+        <section class="tb-panel">
+            <img class="noborder" src="assets/grimspire.jpg" alt="Shattered, frost-rimmed battlements of Grimspire">
+            <h2 id="overview" class="tb-title">Overview</h2>
+            <p>Now a haunted husk, Grimspire’s halls are strewn with frozen wealth and watched by frost-numb
+                dead. After hunters slew Glaclalis—the mate of the dragon Icethorn—her grief and wrath
+                laid a lasting curse upon the citadel; some say the Dark Walkers still keep a sorrowed
+                vigil while Icethorn broods upon the shattered towers.</p>
+
+            <h3 class="tb-title">Origin, Decline &amp; Current state</h3>
+            <p><strong>Origin</strong>: Raised as a mountain stronghold over key passes, Grimspire served
+                Winter as a trade keep and watch-citadel, its gates cut with oath-runes and its markets
+                busy with alpine caravans.</p>
+            <p><strong>Decline</strong>: The slaying of Glaclalis brought Icethorn’s vengeance. Night winds
+                turned to razors, hoarfrost sealed doors, and the curse bound guardians where they
+                stood—commerce ended in a breath of ice.</p>
+            <p><strong>Current state</strong>: The fortress lies frost-locked and perilous. Smugglers reach
+                it by Winter’s Root, but paths collapse and spirits grow colder the deeper one goes.</p>
+
+            <!-- Places of Note (lead card list) -->
+            <h2 class="tb-title" id="places">Places of Note</h2>
+            <div class="grid-even equal-cards">
+                <article class="tb-panel">
+                    <h3 class="tb-title skz-title">The Frost-Veined Gate</h3>
+                    <p>Granite threshold etched with oaths and betrayals; at dusk, frost seems to
+                        pulse from the stone like breath.</p>
+                </article>
+                <article class="tb-panel">
+                    <h3 class="tb-title skz-title">The Dark Walker’s Watch</h3>
+                    <p>A hidden tower carved into the rock; moonlight shows spectral blades where
+                        the last loyal sentries refused the hunt.</p>
+                </article>
+                <article class="tb-panel">
+                    <h3 class="tb-title skz-title">Icethorn’s Nesting Perch</h3>
+                    <p>A spiraled, shattered battlement where the dragon is said to brood—her
+                        silhouette sometimes cuts the pale moon.</p>
+                </article>
+
+
+            </div>
+        </section>
+    </main>
+
+    <!-- DIVIDER -->
+    <div class="skz-divider skz-divider--diamond" aria-hidden="true"></div>
+
+    <!-- OPTIONAL: ADVENTURE HOOKS -->
+    <section class="grid-even equal-cards">
+        <article class="tb-panel">
+            <h3 class="tb-title skz-title">Rumours</h3>
+            <ul>
+                <li>Icethorn circles the peak on thin moons; her shadow can freeze torchflame to glass.</li>
+                <li>The Dark Walkers grant safe passage to those who swear an oath—and keep it by dawn.</li>
+                <li>A bell beneath the Ghost Market tolls each midwinter for every hunter yet unpaid.</li>
+            </ul>
+        </article>
+        <article class="tb-panel">
+            <h3 class="tb-title skz-title">Loot myth</h3>
+            <ul>
+                <li>Glaclalis’ Tear: a frost-clear gem that snuffs all flames within 30 ft for one
+                    minute; warm hands suffer biting cold.</li>
+                <li>Oath-Vellum of the Watch: a strip of ice-cured hide that binds a spoken vow; break
+                    it and a Dark Walker comes to collect.</li>
+                <li>Market’s Pale Coin: a translucent token spendable only with the dead—redeem for one
+                    true answer, then it melts.</li>
+            </ul>
+        </article>
+
+        <article class="tb-panel">
+            <h3 class="tb-title skz-title">Dangers</h3>
+            <ul>
+                <li>Icethorn’s wrath: white squalls and strafing passes near upper towers.</li>
+                <li>Frostbound dead: spirits locked in the moment of the curse; numbing cold auras.</li>
+                <li>Breakable paths: corniced ice and snow bridges over chasms; collapse on vibration.</li>
+                <li>Oath-wards: runes that punish deceit with paralysis and ice-lash welts.</li>
+                <li>Smugglers’ traps: false markers and deadfalls along Winter’s Root.</li>
+            </ul>
+        </article>
     </section>
-
 
     <div id="footer"></div>
 
-
-
 </body>
+
 
 </html>

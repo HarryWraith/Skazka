@@ -20,161 +20,176 @@
 <body>
     <div id="navbar"></div><!-- Navbar will be loaded here -->
 
+    <section class="place-hero">
+        <div class="place-hero__icon">
+            <img src="assets/icons/ruins.svg" alt="Ruins icon">
+        </div>
+        <div class="place-hero__body">
+            <h1 class="skz-viking">Ruins of Orishan</h1>
+            <p class="sub">“The sands remember.” Once a necromancer enclave on a long-dry river, now a bone-whispering
+                maze beneath Kaijistan’s dunes.</p>
+        </div>
+        <div class="place-hero__spacer"></div>
+    </section>
 
-    <section class="grid-container">
-        <div class=" tb-panel">
-            <h2 class="tb-title">Origins</h2>
-            <p>Orishan was founded during Kaijistan’s more temperate era, along a now-vanished river that once sustained
+    <!-- MAIN GRID (Sidebar profile + Overview & core prose) -->
+    <main class="grid-two-wide">
+        <!-- Sidebar: Profile -->
+        <aside class="tb-panel" aria-labelledby="profile-title">
+            <h2 id="profile-title" class="tb-title skz-title">Profile</h2>
+
+            <table class="materials-table">
+                <tbody>
+                    <tr class="tr-left">
+                        <td><strong>Region</strong></td>
+                        <td>Kaijistan</td>
+                    </tr>
+                    <tr class="tr-left">
+                        <td><strong>Founded</strong></td>
+                        <td>~ -8000</td>
+                    </tr>
+                    <tr class="tr-left">
+                        <td><strong>Origin</strong></td>
+                        <td>Small fishing town</td>
+                    </tr>
+                    <tr class="tr-left">
+                        <td><strong>Environment</strong></td>
+                        <td>Desert, frequent sandstorms</td>
+                    </tr>
+                    <tr class="tr-left">
+                        <td><strong>Threat Level</strong></td>
+                        <td>High (undead, traps, curses)</td>
+                    </tr>
+                    <tr class="tr-left">
+                        <td><strong>Known Denizens</strong></td>
+                        <td>Undead</td>
+                    </tr>
+                    <tr class="tr-left">
+                        <td><strong>Access</strong></td>
+                        <td>Unmarked tracks; entrances shift with dunes</td>
+                    </tr>
+                    <tr class="tr-left">
+                        <td><strong>Superstitions</strong></td>
+                        <td>Treasure carries misfortune; “the bones remember”</td>
+                    </tr>
+                </tbody>
+            </table>
+        </aside>
+
+        <!-- Main article -->
+        <article class="tb-panel">
+            <img class="noborder" src="assets/orishan_main.jpg" alt="Sand-choked ruins at a dry river bed">
+            <h2 id="overview" class="tb-title">Overview</h2>
+            <p>Once the heart of a powerful necromantic sect, the Ruins of Orishan lie amid the shifting dunes of
+                formerly fertile Kaijistan, on the banks of a long-dry river bed. As a living city, Orishan stood proud
+                in the Kingdom of Kaijistan; now, its skeleton stands half-buried in wind-blown sand, a grim warning to
+                those who dare to enter.</p>
+            <p>Though many adventurers have attempted to carve their names into its crumbling stone, few return — and
+                those who do tell hushed tales of whispers in the corridors and undead shadows moving beneath the moon.
+            </p>
+
+            <h3 class="tb-title">Origin, Decline &amp; Current state</h3>
+            <p><strong>Origin</strong>: Orishan was founded during Kaijistan’s more temperate era, along a now-vanished
+                river that once sustained
                 orchards and gardens. The necromancers who made it their home chose its location deliberately: near
                 water, near old trade routes, and yet remote enough to avoid unwanted eyes.</p>
-            <h2 class="tb-title">Decline</h2>
-            <p>As the climate shifted and the river dried, the life that sustained Orishan withered. The necromancers’
+            <p><strong>Decline</strong>: As the climate shifted and the river dried, the life that sustained Orishan
+                withered. The necromancers’
                 death-binding magic, once a source of power, may have ultimately contributed to its undoing: energies
                 unchecked, magical backlash, perhaps even revolt by spirits or undead. The city was abandoned, left to
                 the sands, but not to silence.</p>
-        </div>
+            <p><strong>Current state</strong>: Orishan is a place of eerie beauty and unquiet dread. The dry river bed
+                that skirts the ruins is now a cracked ribbon of worn stone, but during rare seasons, water may trickle
+                through — though no living thing seems drawn to it.</p>
 
-        <div class="center-column">
-            <img src="assets/orishan_main.jpg" alt="">
-            <p>Once the heart of a powerful necromantic sect, the Ruins of Orishan lie amid the shifting dunes of
-                formerly fertile Kaijistan, on the banks of a long-dry river bed. As a living city, Orishan stood
-                proud
-                in the Kingdom of Kaijistan; now, its skeleton stands half-buried in wind-blown sand, a grim warning
-                to
-                those who dare to enter.</p>
+            <blockquote>“Venture not into its halls, for the sands remember.” <span class="skz-quote-attribution">—
+                    local proverb</span></blockquote>
 
-            <p>Though many adventurers have attempted to carve their names into its crumbling stone, few return —
-                and
-                those who do tell hushed tales of whispers in the corridors and undead shadows moving beneath the
-                moon.
-            </p>
-        </div>
+            <!-- Places of Note (lead card list) -->
+            <h2 class="tb-title" id="places">Places of Note</h2>
+            <div class="grid-even equal-cards">
+                <article class="tb-panel">
+                    <h3 class="tb-title skz-title">Sand-choked Courtyard</h3>
+                    <p>Once a grand plaza with statues depicting necromancers in hooded robes and stylised skeletal
+                        figures, now half buried in dunes. Occasionally, wind exposes fragments of broken marble, some
+                        carved with half-erased glyphs.</p>
+                </article>
+                <article class="tb-panel">
+                    <h3 class="tb-title skz-title">Ossuary Hall</h3>
+                    <p>A long corridor lined with niches that once held skulls, bones, and bone-crafted reliquaries.
+                        Some niches remain, others are empty. Adventurers report a faint rattling of small bones
+                        shifting in the gloom.</p>
+                </article>
+                <article class="tb-panel">
+                    <h3 class="tb-title skz-title">Bone Glyph Chambers</h3>
+                    <p>Off the main hall lie several small chambers whose walls are carved with mystic runes inlaid with
+                        powdered bone dust. Some glyphs glow faintly in moonlight, and rumour has it they can animate
+                        skeletons from the sand.</p>
+                </article>
+            </div>
 
-        <div class="tb-panel">
-            <img src="assets/orishan_tablet.jpg" alt="">
-            <blockquote>“Venture not into its halls, for the sands remember.”<br>
-                <span class="skz-quote-attribution">&ndash; local proverb</span>
-            </blockquote>
-        </div>
-    </section>
+            <div class="grid-even equal-cards">
+                <article class="tb-panel">
+                    <h3 class="tb-title skz-title">Whispering Catacombs</h3>
+                    <p>Beneath the visible ruins lie catacombs partly filled by sand. Ancient wooden coffins, warped and
+                        rotted, rest among broken sarcophagi. Some say you can hear low, ghostly murmurs when the wind
+                        blows just right.</p>
+                </article>
+                <article class="tb-panel">
+                    <h3 class="tb-title skz-title">Necromancer’s Spire</h3>
+                    <p>Once a lighthouse-like tower rising above the city, its upper portion collapsed centuries ago.
+                        The lower spiral stair remains, leading into darkness. A few broken altars remain, stained and
+                        etched with dried blood and strange glyphic symbols.</p>
+                </article>
+                <article class="tb-panel">
+                    <h3 class="tb-title skz-title">Tribal Boundaries</h3>
+                    <p>The native tribes shun Orishan. Many refuse relics, saying the curse clings to all who carry
+                        them; elders speak of haunted dreams and clans undone by stolen bones, for necromancers bound
+                        the sands themselves to answer any intruder.</p>
+                </article>
+            </div>
+        </article>
+    </main>
 
-    <section class="grid-container"><!-- 3 COLUMN EVEN -->
-        <div class=" tb-panel">
-            <h2 class="tb-title">Dangers & Rumours</h2>
+    <!-- DIVIDER -->
+    <div class="skz-divider skz-divider--diamond" aria-hidden="true"></div>
 
-            <p>The Ruins of Orishan are notoriously hazardous, even to well-prepared parties:</p>
-
-            <ol class="toc-list">
-                <li>Frequent sandstorms blast across the dry river bed, sometimes uncovering buried corridors — and
-                    sometimes
-                    burying them again in hours.</li>
-                <li>Magical traps left by the necromancers (pressure plates, glyph wards) continue to trigger
-                    unpredictably,
-                    sometimes summoning skeletal guardians or releasing sudden gusts of choking sand.</li>
+    <!-- OPTIONAL: ADVENTURE HOOKS -->
+    <section class="grid-even equal-cards">
+        <article class="tb-panel">
+            <h3 class="tb-title skz-title">Rumours</h3>
+            <ul>
                 <li>The undead are said to wander: skeletal servants, ghoulish forms half-buried, animated bone-dust
-                    swirls.
-                    Some adventurers claim to have seen larger constructs loom in moonlit corridors.</li>
+                    swirls. Some adventurers claim to have seen larger constructs loom in moonlit corridors.</li>
                 <li>The local tribes consider Orishan cursed. They warn travellers: any treasure removed from the
-                    ruins
-                    carries a lingering curse, bringing misfortune, nightmares, or worse. Those who survive return
-                    afflicted by
-                    strange dreams or disease-like symptoms.</li>
+                    ruins carries a lingering curse, bringing misfortune, nightmares, or worse. Those who survive return
+                    afflicted by strange dreams or disease-like symptoms.</li>
                 <li>More than one search party has vanished entirely; local lore suggests that some corridors
-                    rearrange
-                    themselves, or lead into hidden subterranean chambers from which no one emerges.</li>
-            </ol>
-        </div>
+                    rearrange themselves, or lead into hidden subterranean chambers from which no one emerges.</li>
+            </ul>
+        </article>
+        <article class="tb-panel">
+            <h3 class="tb-title skz-title">Loot myth</h3>
+            <ul>
+                <li>Bone-filigree rings (whisper once/day), dust-caked spell scrolls, necromancer signets.</li>
+                <li>Shard-lamps that glow in moonlight; sand-hardened ceremonial masks; bone-ash vials.</li>
+            </ul>
+        </article>
 
-        <div>
-            <h2 class="center-column, tb-title">The Ruins Today</h2>
-
-            <p>
-                Orishan is a place of eerie beauty and unquiet dread. The dry river bed that skirts the ruins is now
-                a
-                cracked ribbon of worn stone, but during rare seasons, water may trickle through — though no living
-                thing
-                seems drawn to it.
-            </p>
-
-            <h2 class="tb-title">The Sand-choked Courtyard</h2>
-            <img src="assets/orishan_courtyard.jpg" alt="">
-            <p>
-                Once a grand plaza with statues depicting necromancers in hooded robes and stylised skeletal
-                figures,
-                now
-                half buried in dunes. Occasionally, wind exposes fragments of broken marble, some carved with
-                half-erased
-                glyphs.
-            </p>
-
-            <h2 class="tb-title">The Ossuary Hall</h2>
-            <p>
-                A long corridor lined with niches that once held skulls, bones, and bone-crafted reliquaries. Some
-                niches
-                remain, others are empty. Adventurers report a faint rattling of small bones shifting in the gloom.
-            </p>
-
-            <h2 class="tb-title">The Bone Glyph Chambers</h2>
-            <p>
-                Off the main hall lie several small chambers whose walls are carved with mystic runes inlaid with
-                powdered
-                bone dust. Some glyphs glow faintly in moonlight, and rumour has it they can animate skeletons from
-                the
-                sand.
-            </p>
-
-            <h2 class="tb-title">The Whispering Catacombs</h2>
-            <img src="assets/orishan_cata.jpg" alt="">
-            <p>
-                Beneath the visible ruins lie catacombs partly filled by sand. Ancient wooden coffins, warped and
-                rotted,
-                rest among broken sarcophagi. Some say you can hear low, ghostly murmurs when the wind blows just
-                right.
-            </p>
-
-            <h2 class="tb-title">The Necromancer’s Spire</h2>
-            <p>
-                Once a lighthouse-like tower rising above the city, its upper portion collapsed centuries ago. The
-                lower
-                spiral stair remains, leading into darkness. A few broken altars remain, stained and etched with
-                dried
-                blood
-                and strange glyphic symbols.
-            </p>
-        </div>
-
-        <div class="tb-panel">
-
-
-            <p>The native tribes regard Orishan with deep suspicion. Many refuse to accept goods recovered
-                from
-                its
-                ruins, claiming the curse travels with them. Some elders speak of dreams haunted by undead
-                forms;
-                others
-                whisper that thieves who steal relics bring back misfortune to their whole clan.</p>
-
-            <p>Some tribal legends suggest that the necromancers once invoked a curse on the city itself,
-                binding
-                restless spirits to the sands; thus, even buried sections of the ruins might respond to
-                intruders.
-            </p>
-            <blockquote>“No man who walks its halls escapes wholly untouched. The bones remember your
-                footsteps.”<br>
-                <span class="skz-quote-attribution">&mdash; Saying among the desert tribes</span>
-            </blockquote>
-
-        </div>
+        <article class="tb-panel">
+            <h3 class="tb-title skz-title">Dangers</h3>
+            <p>The Ruins of Orishan are notoriously hazardous, even to well-prepared parties:</p>
+            <ul>
+                <li>Frequent sandstorms blast across the dry river bed, sometimes uncovering buried corridors — and
+                    sometimes burying them again in hours.</li>
+                <li>Magical traps left by the necromancers (pressure plates, glyph wards) continue to trigger
+                    unpredictably, sometimes summoning skeletal guardians or releasing sudden gusts of choking
+                    sand.</li>
+            </ul>
+        </article>
     </section>
-
 
     <div id="footer"></div>
-
-
-
-
-
-
 
 </body>
 

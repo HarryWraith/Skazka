@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+        <title>Skazka — Vineta</title>
+
+        <link rel="stylesheet" href="navbar.css?v=3">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" href="assets/skazka_logo.png" type="image/png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+
+        <script src="navbar.js?v=3"></script>
+        <script type="module" src="./main.js"></script>
+</head>
+
+<body>
+        <!-- Navbar injected by main.js -->
+        <div id="navbar"></div>
+
+        <!-- ===== HERO (uses your .page-hero) ===== -->
+        <section class="place-hero">
+                <div class="place-hero__icon">
+                        <img src="assets/vineta_banner.jpg" alt="Vineta crest">
+                </div>
+                <div class="place-hero__body">
+                        <h1 class="skz-viking">Vineta</h1>
+                        <p class="skz-quote-attribution">The Sunken Tsardom—blessed by Njord, judged by the sea.</p>
+                </div>
+                <!-- spacer balances the icon so text stays truly centered -->
+                <div class="place-hero__spacer" aria-hidden="true"></div>
+        </section>
+
+        <!-- ===== BODY: 30 / 70 (left profile, right lore) ===== -->
+        <section class="grid-two-wide">
+                <!-- LEFT: PROFILE (narrow) -->
+                <aside class="tb-panel">
+                        <h2 class="tb-title">Profile</h2>
+                        <table class="materials-table">
+                                <tbody>
+                                        <tr>
+                                                <th>Government</th>
+                                                <td>The Drowned Court</td>
+                                        </tr>
+                                        <tr>
+                                                <th>Capital</th>
+                                                <td>Vineta; city state</td>
+                                        </tr>
+                                        <tr>
+                                                <th>Ruler</th>
+                                                <td>None acknowledged; whispers of a Rusalka Queen and Vodyanoy Wardens
+                                                </td>
+                                        </tr>
+                                        <tr>
+                                                <th>Population</th>
+                                                <td>Unknown</td>
+                                        </tr>
+                                        <tr>
+                                                <th>Dominant Faith</th>
+                                                <td>Njord, Lord of Calm Seas &amp; Fair Wind; vestiges of forbidden
+                                                        deep-cults</td>
+                                        </tr>
+                                        <tr>
+                                                <th>Military</th>
+                                                <td>Wreckwardens; Drowned Choirs</td>
+                                        </tr>
+                                        <tr>
+                                                <th>Terrain</th>
+                                                <td>Sunken streets; black-coral colonnades; kelp cloisters; silted
+                                                        harbors</td>
+                                        </tr>
+                                        <tr>
+                                                <th>Exports</th>
+                                                <td>Unknown</td>
+                                        </tr>
+                                        <tr>
+                                                <th>Languages</th>
+                                                <td>Old Vinian (remembered in lullabies); tide-cant</td>
+                                        </tr>
+                                </tbody>
+                        </table>
+
+                </aside>
+
+                <!-- RIGHT: LORE (wide) -->
+                <article class="tb-panel">
+                        <img class="noborder" src="assets/vineta.jpg" alt="Vineta seascape">
+                        <h2 id="overview" class="tb-title" style="margin-top:10px">Overview</h2>
+                        <p>There was an island once—bright sails in a ring of calm, markets rich with amber, salt, and
+                                song. Njord,
+                                the sea’s fair keeper, blessed Vineta for its seamanship and honest dealing. Winds
+                                favored its masts,
+                                fish ran to its nets, and no storm set its teeth upon those shores without leave.</p>
+                        <p>But prosperity fattened into pride. The islanders tithed less to Njord and more to darker
+                                altars raised
+                                in cellars and salt-caves. Night-feasts rang the Nine Harbor Bells to other names. When
+                                oaths turned
+                                false and weights in the market grew heavy with lies, Njord judged. He did not slay the
+                                people: mercy
+                                matched justice. At a single dawn-toll the sea rose, and Vineta sank—its towers drinking
+                                moonlight under
+                                green water. The folk were changed so they might live with what they had done: men and
+                                women grew into
+                                <em>Vodyanoy</em> and <em>Rusalki</em>, keepers and singers of the drowned city, bound
+                                to tides and
+                                truth.
+                        </p>
+                        <p>Now Vineta is a place of stories. Sometimes a fisherman hears bells toll from a windless
+                                horizon; sometimes
+                                a blue lamp glides beneath a skiff and a pale hand places a coin of saltglass upon a
+                                sleeper’s tongue.
+                                On midnights of great need—or great deceit—the city draws near to the surface like a
+                                memory rising from
+                                deep water. There is no road to it. Those who claim to have walked its colonnades speak
+                                of kelp
+                                cathedrals and whale-bone bridges, of markets held in silence where promises are weighed
+                                like pearls.
+                                They return with wet hair and eyes full of tide, remembering only that they were
+                                forgiven—or that they were not.</p>
+
+                        <!-- 3-up quick blocks -->
+                        <div class="grid-even equal-cards">
+                                <article class="tb-panel">
+                                        <h3 class="tb-title" id="cities-factions">Districts</h3>
+                                        <ul>
+                                                <li><strong>Nine Bells Quarter</strong> — the old market ring;
+                                                        bell-towers now chime through the sea.</li>
+                                                <li><strong>Salt-King’s Harbor</strong> — drowned docks where lamplight
+                                                        wanders like will-o’-the-waves.</li>
+                                                <li><strong>Whalebone Causey</strong> — a rib-arched avenue linking the
+                                                        palace mound to the basilica.</li>
+                                        </ul>
+                                </article>
+                                <article class="tb-panel">
+                                        <h3 class="tb-title">Factions & Orders</h3>
+                                        <ul>
+                                                <li><strong>Drowned Choir</strong> — Rusalki who judge in
+                                                        currents and song.</li>
+                                                <li><strong>Wreckwardens</strong> — Vodyanoy guardians of gates, nets,
+                                                        and true weights.</li>
+                                                <li><strong>Veilkeepers</strong> — those who tend the lamps and keep
+                                                        Vineta veiled from the world.</li>
+                                        </ul>
+                                </article>
+                                <article class="tb-panel">
+                                        <blockquote>“When the sea remembers your name, answer softly.”</blockquote>
+                                        <p class="skz-quote-attribution">— Old coastal warning</p>
+                                </article>
+                        </div>
+
+                        <!-- 2-up (70/30 feel inside the wide column) -->
+                        <div class="grid-two">
+
+                                <article class="tb-panel">
+                                        <h3 class="tb-title" id="economy">Economy & Trade</h3>
+                                        <ul>
+                                                <li>Vineta does not trade. At times, cursed coins and saltglass tokens
+                                                        wash ashore after storms.</li>
+                                                <li>Folk tales claim a true confession cast into the sea returns as a
+                                                        small blessing on the next tide.</li>
+                                        </ul>
+                                </article>
+                                <article class="tb-panel">
+                                        <h3 class="tb-title" id="threats">Rumours &amp; hooks</h3>
+                                        <ul>
+                                                <li>One day a year the city will rise above the sea.</li>
+                                                <li>Weights stolen from Vineta’s markets make every bargain sour until
+                                                        returned.</li>
+                                                <li>A bell-clapper taken from the Nine rings will toll once for each lie
+                                                        told nearby.</li>
+                                        </ul>
+                                </article>
+                        </div>
+                </article>
+        </section>
+        <div class="skz-divider skz-divider--diamond" aria-hidden="true"></div>
+        <!-- ===== LANDMARKS (cards grid) ===== -->
+        <section id="landmarks" class="grid-even equal-cards">
+                <article class="tb-panel">
+                        <h2 class="tb-title">Places of Note</h2>
+                        <img class="noborder" src="assets/landmark.jpg" alt="">
+                </article>
+
+                <article class="tb-panel">
+                        <img src="assets/vineta_nine_bells.jpg" alt="The Nine Bells">
+                        <h3 class="tb-title">The Nine Bells</h3>
+                        <p>Nine bronze towers that chime beneath the waves. Each bell tolls a different kind of
+                                truth—debt, oath,
+                                mercy, and more. Liars hear only silence.</p>
+                </article>
+
+                <article class="tb-panel">
+                        <img src="assets/vineta_njords_weir.jpg" alt="Njord’s Weir">
+                        <h3 class="tb-title">Njord’s Weir</h3>
+                        <p>A crescent of standing stones now reef-crowned. Currents curl here like braided ropes;
+                                petitions cast
+                                between the pillars are carried into fair winds—or sunk forever.</p>
+                </article>
+
+                <article class="tb-panel">
+                        <img src="assets/vineta_drowned_basilica.jpg" alt="Drowned Basilica">
+                        <h3 class="tb-title">The Drowned Basilica</h3>
+                        <p>Once the pride of the island. Its murals of fair trade are overgrown with kelp; the Drowned
+                                Choir sing
+                                judgments from its shadowed aisles.</p>
+                </article>
+
+                <article class="tb-panel">
+                        <img src="assets/vineta_salt_throne.jpg" alt="Salt Throne">
+                        <h3 class="tb-title">The Salt Throne</h3>
+                        <p>A crystalline seat accreted from centuries of sea-salt. No one sits there long; the sea
+                                weighs every word
+                                spoken upon it.</p>
+                </article>
+
+                <article class="tb-panel">
+                        <img src="assets/vineta_mirror_steps.jpg" alt="Mirror Steps">
+                        <h3 class="tb-title">The Mirror Steps</h3>
+                        <p>Stairs descending into a plaza whose water shows what was promised rather than what is. Many
+                                turn back;
+                                some step forward and are forgiven.</p>
+                </article>
+
+                <article class="tb-panel">
+                        <img src="assets/vineta_wreckers_gate.jpg" alt="Wrecker’s Gate">
+                        <h3 class="tb-title">The Wrecker’s Gate</h3>
+                        <p>A shattered arch where false beacons were once lit. The Wreckwardens keep it dark, and the
+                                currents there
+                                run sharp as knives.</p>
+                </article>
+
+        </section>
+
+        <!-- Footer injected by main.js -->
+        <div id="footer"></div>
+</body>
+
+</html>
