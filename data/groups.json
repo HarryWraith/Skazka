@@ -1,0 +1,32 @@
+[
+     {
+          "id": "black-coin",
+          "type": "cult",
+          "name": "The Black Coin Society",
+          "aliases": ["Brides & Grooms of Koshchei"],
+          "operation": ["assassination"],
+          "area": "continental",
+          "services": ["vengance", "assassin for hire"],
+          "legality": "illegal",
+          "power": "minor",
+          "membership": "by invitation only",
+          "images": { "icon": "assets/Kosh_symbol.jpg" },
+          "summary": ["Assassins who avenge the wronged."]
+     },
+     {
+          "id": "word",
+          "type": "guild",
+          "name": "Order of the Word",
+          "aliases": [""],
+          "operation": ["magical services"],
+          "area": "continental",
+          "services": ["magical consumables", "research", "magical tuition"],
+          "legality": "legal",
+          "power": "med",
+          "membership": "by payment of membership fee",
+          "images": { "icon": "assets/oow_sigil.jpg" },
+          "summary": [
+               "Order of the Word. The principlal mages guild on Kelos. Found in virtually every settlement that is a town or larger."
+          ]
+     }
+]

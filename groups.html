@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" data-group-type="all" data-data-url="data/groups.json">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+        <title>Skazka — Cerv Dominion</title>
+
+        <link rel="stylesheet" href="navbar.css?v=3">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" href="assets/skazka_logo.png" type="image/png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+
+        <script src="navbar.js?v=3"></script>
+        <script type="module" src="./main.js"></script>
+</head>
+
+<body>
+        <header id="navbar"></header>
+
+        <!-- HERO -->
+        <section class="place-hero">
+                <div class="place-hero__icon">
+                        <img src="assets/icons/groups/cults.png" alt="Cults emblem" />
+                </div>
+                <div class="place-hero__body">
+                        <h1 class="skz-viking">Cults of Skazka</h1>
+                        <p class="subtitle">The hidden congregations, forbidden rites, and whispered obediences beneath
+                                the lantern-light.</p>
+                </div>
+                <div class="place-hero__spacer" aria-hidden="true"></div>
+        </section>
+
+        <!-- INTRO + SEARCH -->
+        <main class="grid-two-wide">
+                <!-- Search (press `/` to focus) -->
+                <aside>
+                        <form id="tl-searchbar" class="tl-search" role="search" onsubmit="return false;">
+                                <input id="tl-q" type="text" role="searchbox" inputmode="search" enterkeyhint="search"
+                                        autocomplete="off" spellcheck="false" placeholder="Search cults…">
+                                <button type="button" id="tl-clear" aria-label="Clear search">
+                                        <svg viewBox="0 0 14 14" width="14" height="14" aria-hidden="true">
+                                                <path d="M2 2L12 12M12 2L2 12" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round"></path>
+                                        </svg>
+                                </button>
+                                <button type="submit" hidden aria-hidden="true"></button>
+                                <output id="tl-count" aria-live="polite" class="tl-count"></output>
+                        </form>
+                </aside>
+                <aside class="tb-panel">
+                        <h2 class="tb-title">About This Page</h2>
+                        <p>
+                                This page catalogues known and rumoured cults across Skazka. Each entry includes an
+                                overview,
+                                a short fact table, leadership and hierarchy, stated and hidden aims, and rumoured
+                                activities.
+                        </p>
+                </aside>
+
+
+
+        </main>
+
+        <!-- GRID OF GROUP CARDS (rendered by groups.js) -->
+        <section id="groups-grid" class="grid-even equal-cards" aria-live="polite"></section>
+
+        <div class="skz-divider skz-divider--diamond" aria-hidden="true"></div>
+
+
+
+        <footer id="footer"></footer>
+
+        <!-- Reuse your existing search helper -->
+        <script src="timeline-search-addon.js" defer></script>
+
+
+</body>
+
+</html>

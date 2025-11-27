@@ -66,6 +66,7 @@ import "./badges.js";
 import "./stats.js";
 import "./playerprofile.js";
 import "./beasts.js";
+import "./groups.js";
 
 // Logic-only modules (no DOM bleed)
 import * as weather from "./weather.js";
@@ -248,6 +249,16 @@ function startVoicesCarousel() {
 // ───────────────────────────────────────────────
 // Boot — wire everything
 async function boot() {
+     // ─────────────────── GROUPS (Cults/Guilds/etc.) ───────────────────
+     const GROUPS_SEL = "#groups-grid, [data-group-type]";
+     if (document.querySelector(GROUPS_SEL)) {
+          try {
+               await import("./groups.js"); // self-gating; no exports needed
+          } catch (e) {
+               console.error("Failed to load groups.js:", e);
+          }
+     }
+
      // Preload treasure data for Shop/Treasure UIs
      if (
           has("#treasure, [data-treasure]") ||

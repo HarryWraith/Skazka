@@ -3511,3 +3511,84 @@ body.skz-modal-open {
 [hidden] {
    display: none !important;
 }
+
+/* ========== Groups card (self-contained) ========== */
+
+/* Header: true 1/5 : 4/5 */
+.group-card .group-card__header {
+   display: grid;
+   grid-template-columns: minmax(56px, 20%) 1fr;
+   align-items: center;
+   gap: .75rem;
+   margin-bottom: .25rem;
+}
+
+.group-card .group-card__header>* {
+   min-width: 0
+}
+
+/* Icon */
+.group-card .group-card__icon {
+   width: 56px;
+   height: 56px;
+   object-fit: contain;
+   border-radius: 6px;
+   display: block;
+}
+
+/* Title track */
+.group-card .group-card__titlewrap {
+   display: flex;
+   align-items: center;
+   gap: .5rem;
+   flex-wrap: wrap;
+   min-width: 0;
+}
+
+/* Hard-reset the pill title ONLY inside group card, then restyle */
+.group-card h3.tb-title {
+   all: unset;
+   display: inline;
+   font: inherit;
+   color: inherit;
+   line-height: 1.2;
+}
+
+/* Aliases */
+.group-card .group-card__aliases {
+   opacity: .75;
+   font-size: .95em
+}
+
+/* Chips: kill inherited list/bullet styles, then style */
+.group-card .chip-row {
+   all: unset;
+   display: flex;
+   flex-wrap: wrap;
+   gap: .35rem .5rem;
+   margin: .25rem 0;
+}
+
+.group-card .chip {
+   all: unset;
+   display: inline-block;
+   padding: .15rem .5rem;
+   border: 1px solid currentColor;
+   border-radius: 999px;
+   font-size: .9em;
+   line-height: 1.2;
+   opacity: .9;
+}
+
+.group-card .group-card__summary {
+   margin: .25rem 0 .5rem;
+}
+
+.group-card .group-card__summary p {
+   margin: .2rem 0;
+}
+
+/* Facts spacing */
+.group-card .facts {
+   margin-top: .35rem
+}
